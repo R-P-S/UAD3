@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="Flamethrower" parent="UnitTemplate">
+        <Speed value="2.8281"/>
+        <AbilArray index="10" Link="Riflebutt"/>
+        <AbilArray index="11" Link="TeamLocation"/>
+        <AbilArray Link="HeroInventoryFlameNew"/>
+        <AbilArray Link="FlamethrowerResearch"/>
+        <AbilArray Link="FlamethrowerSkillUpgrades"/>
+        <AbilArray Link="DisarmFlamer"/>
+        <AbilArray Link="FireShield"/>
+        <AbilArray Link="PlasmaShield"/>
+        <AbilArray Link="OilDouse"/>
+        <AbilArray Link="WildfireGrenade"/>
+        <AbilArray Link="PlaceWildfireMine"/>
+        <BehaviorArray index="0" Link="NewMechanical"/>
+        <BehaviorArray index="2" Link="NewFitness"/>
+        <BehaviorArray index="3" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="4" Link="SoldierSkillsBonus"/>
+        <BehaviorArray index="5" Link="HeroLevelsMDF"/>
+        <BehaviorArray Link="1Mechanical"/>
+        <BehaviorArray Link="Firesuit"/>
+        <BehaviorArray Link="GasMask"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Birth" value="FlamethrowerSpawnSet"/>
+        <EffectArray index="Revive" value="FlamethrowerSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="5" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons index="8" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="FireShield" Type="AbilCmd" AbilCmd="FireShield,On" Row="0" Column="2"/>
+            <LayoutButtons Face="CancelE" Type="AbilCmd" AbilCmd="FireShield,Off" Row="0" Column="2"/>
+            <LayoutButtons Face="PlasmaShield" Type="AbilCmd" AbilCmd="PlasmaShield,Execute" Row="0" Column="3"/>
+            <LayoutButtons>
+                <Face value="Firesuit"/>
+                <Type value="Passive"/>
+                <Behavior value="Firesuit"/>
+                <Requirements value="FiresuitUse"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons Face="GasMask" Type="Passive" Behavior="GasMask" Row="2" Column="3"/>
+            <LayoutButtons Face="OilDouse" Type="AbilCmd" AbilCmd="OilDouse,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="WildfireGrenade" Type="AbilCmd" AbilCmd="WildfireGrenade,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="PlaceWildfireMine" Type="AbilCmd" AbilCmd="PlaceWildfireMine,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="Burning" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="Burning" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="Burning" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="Burning" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="Pyrotechnician" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="Pyrotechnician" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="Pyrotechnician" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="Pyrotechnician" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnOilDouse" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnOilDouse" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnOilDouse" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnOilDouse" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="WildfireEquipment" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="WildfireEquipment" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research20" Row="0" Column="4"/>
+            <LayoutButtons Face="WildfireEquipment" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research21" Row="0" Column="4"/>
+            <LayoutButtons Face="WildfireEquipment" Type="AbilCmd" AbilCmd="FlamethrowerResearch,Research18" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Disarm" Type="AbilCmd" AbilCmd="DisarmFlamer,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research4" Row="2" Column="3"/>
+            <LayoutButtons Face="BurningDebilitatingFlames" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="FireShieldResistance" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="PlasmaShieldBulwark" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research9" Row="0" Column="2"/>
+            <LayoutButtons Face="OilDouseLongevity" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research12" Row="0" Column="3"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="BurningRapidRoast" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research6" Row="1" Column="0"/>
+            <LayoutButtons Face="FireShieldRetribution" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research8" Row="1" Column="1"/>
+            <LayoutButtons Face="PlasmaShieldEfficiency" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research10" Row="1" Column="2"/>
+            <LayoutButtons Face="OilDouseConcentration" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research11" Row="1" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="WildfireGrenadeExtraCharge" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research13" Row="0" Column="0"/>
+            <LayoutButtons Face="PlaceWildfireMineEfficiency" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research15" Row="0" Column="1"/>
+            <LayoutButtons Face="PreviousPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="WildfireGrenadePotency" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research14" Row="1" Column="0"/>
+            <LayoutButtons Face="DetonateWildfireMineBlaze" Type="AbilCmd" AbilCmd="FlamethrowerSkillUpgrades,Research16" Row="1" Column="1"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <Description value="Button/Tooltip/74DFlamethrower"/>
+    </CUnit>
+</Catalog>

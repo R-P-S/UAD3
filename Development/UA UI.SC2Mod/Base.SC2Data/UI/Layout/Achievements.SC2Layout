@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="TabControl" name="AchievementContainer">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="-250" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Height val="650" />
+         <Width val="1250" />
+         <SelectedIndex val="0" />
+         <TabListItem val="$this/MenuButtonsContainer/Button00" />
+         <TabListItem val="$this/MenuButtonsContainer/Button01" />
+         <TabListItem val="$this/MenuButtonsContainer/Button02" />
+         <TabListItem val="$this/MenuButtonsContainer/Button03" />
+         <!--Options Button -->
+         <TabListItem val="$this/MenuButtonsContainer/Button05" />
+         <PanelListItem val="$this/PanelsContainer/Panel00" />
+         <PanelListItem val="$this/PanelsContainer/Panel01" />
+         <PanelListItem val="$this/PanelsContainer/Panel02" />
+         <PanelListItem val="$this/PanelsContainer/Panel03" />
+         <PanelListItem val="$this/PanelsContainer/Panel04" />
+         <Visible val="False" />
+         <Handle val="Achievements" />
+         <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate" />
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate" />
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate" />
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate" />
+         <!-- Grid Small -->
+         <Frame type="Image" name="BackgroundGridSmall">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="{$parent/@Width}" />
+            <Height val="{$parent/@Height}" />
+            <LayerCount val="2" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="0" />
+            <AlphaChannel val="Alpha" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <Tiled val="true" layer="0" />
+            <Texture val="Assets/Textures/white.dds" layer="1" />
+            <LayerAlpha val="20" layer="1" />
+            <LayerColor val="0,255,148" layer="1" />
+         </Frame>
+         <!-- Grid Anim -->
+         <Frame type="Image" name="BackgroundGridLargeWave">
+            <Anchor relative="$parent/BackgroundGridSmall" />
+            <LayerCount val="3" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <AlphaChannel val="Blue" layer="0" />
+            <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+            <WrapUV val="false" layer="0" />
+            <LayerAlpha val="128" layer="0" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+            <AlphaChannel val="Green" layer="1" />
+            <AlphaLayer val="true" layer="1" />
+            <Tiled val="true" layer="1" />
+            <Texture val="Assets/Textures/white.dds" layer="2" />
+            <LayerAlpha val="64" layer="2" />
+            <LayerColor val="0,255,148" layer="2" />
+            <BlendMode val="Add" />
+            <Animation name="LargeGridWave">
+               <Event event="OnShown" action="Play" />
+               <Event event="OnHidden" action="Stop,Pause" />
+               <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                  <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                  <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+                  <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+                  <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="BackgroundGridLargeWave2">
+            <Anchor relative="$parent/BackgroundGridSmall" />
+            <LayerCount val="3" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <AlphaChannel val="Blue" layer="0" />
+            <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+            <WrapUV val="false" layer="0" />
+            <LayerAlpha val="128" layer="0" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+            <AlphaChannel val="Green" layer="1" />
+            <AlphaLayer val="true" layer="1" />
+            <Tiled val="true" layer="1" />
+            <Texture val="Assets/Textures/white.dds" layer="2" />
+            <LayerAlpha val="64" layer="2" />
+            <LayerColor val="0,255,148" layer="2" />
+            <BlendMode val="Add" />
+            <Animation name="LargeGridWave">
+               <Event event="OnShown" action="Play" />
+               <Event event="OnHidden" action="Stop,Pause" />
+               <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                  <Key type="Curve" time="9.167" value="-1.75" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="3.333" value="1.75" inOut="Linear" />
+                  <Key type="Curve" time="6.167" value="1.75" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+                  <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" inOut="Linear" />
+                  <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+                  <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Background dots -->
+         <Frame type="Image" name="BackgroundGridDots">
+            <Anchor relative="$parent/BackgroundGridSmall" />
+            <LayerCount val="2" />
+            <BlendMode val="Add" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="0" />
+            <AlphaChannel val="Blue" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <Tiled val="true" layer="0" />
+            <Texture val="Assets/Textures/white.dds" layer="1" />
+            <LayerAlpha val="5" layer="1" />
+            <LayerColor val="0,255,148" layer="1" />
+         </Frame>
+         <!-- Background dots anim -->
+         <Frame type="Image" name="BackgroundGridDotsTwinkle">
+            <Anchor relative="$parent/BackgroundGridDots" />
+            <BlendMode val="Add" />
+            <LayerCount val="3" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <AlphaChannel val="Green" layer="0" />
+            <TextureCoords top="0" left="0" bottom="2" right="1" layer="0" />
+            <WrapUV val="true" layer="0" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+            <AlphaChannel val="Blue" layer="1" />
+            <AlphaLayer val="true" layer="1" />
+            <Tiled val="true" layer="1" />
+            <Texture val="Assets/Textures/white.dds" layer="2" />
+            <LayerAlpha val="35" layer="2" />
+            <LayerColor val="0,255,148" layer="2" />
+            <Animation name="TwinkleDots">
+               <Event event="OnShown" action="Play" />
+               <Event event="OnHidden" action="Stop,Pause" />
+               <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="fast" />
+                  <Key type="Curve" time="8" value="-2" in="fast" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="fast" />
+                  <Key type="Curve" time="8" value="-2" in="fast" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="fast" />
+                  <Key type="Curve" time="8" value="-1" in="fast" />
+               </Controller>
+               <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="fast" />
+                  <Key type="Curve" time="8" value="-1" in="fast" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Show/Hide Anim -->
+         <Animation name="DisplayAnim">
+            <Event event="Display" action="DirectionForward,Play" />
+            <Event event="Close" action="DirectionReverse,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+         <!-- Index Getter -->
+         <Frame type="Pulldown" name="ReadablePulldown">
+            <Anchor relative="$parent" />
+            <Visible val="False" />
+            <SelectedIndex val="{$parent/@SelectedIndex}" />
+         </Frame>
+         <Frame type="Frame" name="MenuButtonsContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="275" />
+            <Height val="650" />
+            <Handle val="ACHMenuButtonsContainer" />
+            <Frame type="Image" name="Background">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+               <TextureType val="Border" />
+               <Color val="0,255,148" />
+               <Alpha val="175" />
+            </Frame>
+            <Animation name="FadeIn">
+               <Event event="OnShown" action="Reset,Play" />
+               <Controller name="FadeIn" type="Fade" end="Pause">
+                  <Key type="Curve" time="0.0" value="0" in="Auto" />
+                  <Key type="Curve" time="0.15" value="0" in="Auto" />
+                  <Key type="Curve" time="0.35" value="255" out="Auto" />
+               </Controller>
+               <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                  <Key type="Curve" time="0" value="-40" out="Linear" />
+                  <Key type="Curve" time="0.15" value="-40" out="Linear" />
+                  <Key type="Curve" time="0.35" value="0" out="Linear" />
+               </Controller>
+            </Animation>
+            <Frame type="Button" name="Button00" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label">
+                  <Text val="DECAL CAMOUFLAGE" />
+               </Frame>
+               <StateGroup name="ToggleState">
+                  <DefaultState val="NotToggled" />
+                  <State name="NotToggled">
+                     <When type="Property" frame="$this" Toggled="False" />
+                     <Action type="SetProperty" frame="$this/Label" Color="255,255,255" />
+                  </State>
+                  <State name="Toggled">
+                     <When type="Property" frame="$this" Toggled="True" />
+                     <Action type="SetProperty" frame="$this/Label" Color="0,255,128" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="Button01" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button00" pos="Min" offset="100" />
+               <Anchor side="Left" relative="$parent/Button00" pos="Min" offset="0" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label">
+                  <Text val="MODE ACHIEVEMENTS" />
+                  <Options val="ScaleToPreventTruncation" />
+               </Frame>
+               <StateGroup name="ToggleState">
+                  <DefaultState val="NotToggled" />
+                  <State name="NotToggled">
+                     <When type="Property" frame="$this" Toggled="False" />
+                     <Action type="SetProperty" frame="$this/Label" Color="255,255,255" />
+                  </State>
+                  <State name="Toggled">
+                     <When type="Property" frame="$this" Toggled="True" />
+                     <Action type="SetProperty" frame="$this/Label" Color="0,255,128" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="Button02" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button01" pos="Min" offset="100" />
+               <Anchor side="Left" relative="$parent/Button01" pos="Min" offset="0" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label">
+                  <Text val="MOS ACHIEVEMENTS" />
+                  <Options val="ScaleToPreventTruncation" />
+               </Frame>
+               <StateGroup name="ToggleState">
+                  <DefaultState val="NotToggled" />
+                  <State name="NotToggled">
+                     <When type="Property" frame="$this" Toggled="False" />
+                     <Action type="SetProperty" frame="$this/Label" Color="255,255,255" />
+                  </State>
+                  <State name="Toggled">
+                     <When type="Property" frame="$this" Toggled="True" />
+                     <Action type="SetProperty" frame="$this/Label" Color="0,255,128" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="Button03" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button02" pos="Min" offset="100" />
+               <Anchor side="Left" relative="$parent/Button02" pos="Min" offset="0" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label">
+                  <Text val="MEDALS&lt;/n&gt;RIBBONS" />
+                  <Options val="ScaleToPreventTruncation" />
+               </Frame>
+               <StateGroup name="ToggleState">
+                  <DefaultState val="NotToggled" />
+                  <State name="NotToggled">
+                     <When type="Property" frame="$this" Toggled="False" />
+                     <Action type="SetProperty" frame="$this/Label" Color="255,255,255" />
+                  </State>
+                  <State name="Toggled">
+                     <When type="Property" frame="$this" Toggled="True" />
+                     <Action type="SetProperty" frame="$this/Label" Color="0,255,128" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="Button05" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button03" pos="Min" offset="100" />
+               <Anchor side="Left" relative="$parent/Button03" pos="Min" offset="0" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label">
+                  <Text val="Options" />
+                  <Options val="ScaleToPreventTruncation" />
+               </Frame>
+               <StateGroup name="ToggleState">
+                  <DefaultState val="NotToggled" />
+                  <State name="NotToggled">
+                     <When type="Property" frame="$this" Toggled="False" />
+                     <Action type="SetProperty" frame="$this/Label" Color="255,255,255" />
+                  </State>
+                  <State name="Toggled">
+                     <When type="Property" frame="$this" Toggled="True" />
+                     <Action type="SetProperty" frame="$this/Label" Color="0,255,128" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="Button04" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button05" pos="Min" offset="100" />
+               <Anchor side="Left" relative="$parent/Button05" pos="Min" offset="0" />
+               <Width val="225" />
+               <Height val="75" />
+               <Toggleable val="False" />
+               <Frame type="Label" name="Label">
+                  <Text val="CLOSE" />
+               </Frame>
+               <Animation name="CloseButtonAnim">
+                  <Event event="OnClick" action="Reset,Play" />
+                  <Controller type="Property" property="Toggled" frame="$PROF" end="Pause">
+                     <Key type="Property" time="0" value="False" />
+                  </Controller>
+               </Animation>
+            </Frame>
+         </Frame>
+         <Frame type="Frame" name="PanelsContainer">
+            <Anchor relative="$parent" />
+            <!-- Rotating Discs -->
+            <Frame type="Frame" name="RotatingDiscs" template="AchievementTemplates/RotatingDiscs">
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="80" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="-50" />
+               <Alpha val="60" />
+            </Frame>
+            <!-- Camo/Decal Selection Panel -->
+            <Frame type="Frame" name="Panel00">
+               <Anchor relative="$parent" />
+               <Frame type="Frame" name="ModelContainer" template="AchievementTemplates/ModelContainerTemplate" />
+               <!-- Camo Container -->
+               <Frame type="Frame" name="CamoContainer" template="AchievementTemplates/CDContainerTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="352" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="272" />
+                  <Frame type="TabControl" name="Camos" template="AchievementTemplates/CamoListTemplate" />
+               </Frame>
+               <!-- Decal Container -->
+               <Frame type="Frame" name="DecalContainer" template="AchievementTemplates/CDContainerTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="352" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="760" />
+                  <Frame type="TabControl" name="Decals" template="AchievementTemplates/DecalListTemplate" />
+               </Frame>
+               <!-- Camo Title -->
+               <Frame type="Label" name="CamoTitle" template="AchievementTemplates/CDLabelTemplate">
+                  <Anchor relative="$parent/CamoContainer/LabelContainer" />
+                  <Text val="Camo Patterns" />
+               </Frame>
+               <!-- Decal Title -->
+               <Frame type="Label" name="DecalTitle" template="AchievementTemplates/CDLabelTemplate">
+                  <Anchor relative="$parent/DecalContainer/LabelContainer" />
+                  <Text val="Decals" />
+               </Frame>
+               <!-- EKG -->
+               <Frame type="Frame" name="EKG" template="AchievementTemplates/EKGFrame">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="280" />
+               </Frame>
+               <Frame type="Frame" name="BlinkingBoxes" template="AchievementTemplates/BottomBlinkingBoxes">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="25"/>
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="275"/>
+                  <Alpha val="50"/>
+                </Frame>
+               <!-- Random Text 1 -->
+               <Frame type="Label" name="RandomNumbers1" template="RandomText/BaloneyNumbers2Template">
+                  <Anchor side="Top" relative="$parent/EKG" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/EKG" pos="Min" offset="0" />
+                  <RenderType val="LDR" />
+                  <Alpha val="65" />
+                  <Color val="0,255,168" />
+                  <Style val="PerfPanelButton" />
+               </Frame>
+               <!-- Random Text 2 -->
+               <Frame type="Label" name="RandomNumbers2" template="RandomText/BaloneyNumbers3Template">
+                  <Anchor side="Top" relative="$parent/RandomNumbers1" pos="Min" offset="0" />
+                  <Anchor side="Left" relative="$parent/RandomNumbers1" pos="Min" offset="90" />
+                  <RenderType val="LDR" />
+                  <Alpha val="65" />
+                  <Color val="0,255,168" />
+                  <Style val="PerfPanelButton" />
+               </Frame>
+               <!-- Model StateGroup -->
+               <StateGroup name="ModelFrame">
+                  <State name="Rifleman">
+                     <When type="AnimationState" MOSIndex="1" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame1" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame1" UnitLink="NewRifleman" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex1" />
+                  </State>
+                  <State name="CombatMedic">
+                     <When type="AnimationState" MOSIndex="2" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame2" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame2" UnitLink="CombatMedic" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex2" />
+                  </State>
+                  <State name="AutomaticRifleman">
+                     <When type="AnimationState" MOSIndex="3" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame3" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame3" UnitLink="AutomaticRifleman" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex3" />
+                  </State>
+                  <State name="CavalryScout">
+                     <When type="AnimationState" MOSIndex="4" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame4" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame4" UnitLink="CavalryScout" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex4" />
+                  </State>
+                  <State name="SFAAT">
+                     <When type="AnimationState" MOSIndex="5" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame5" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame5" UnitLink="SFAAT" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex5" />
+                  </State>
+                  <State name="JavelinGunner">
+                     <When type="AnimationState" MOSIndex="6" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame6" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame6" UnitLink="JavelinGunner" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex6" />
+                  </State>
+                  <State name="SDM">
+                     <When type="AnimationState" MOSIndex="7" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame7" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame7" UnitLink="SquadDesignatedMarksman" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex7" />
+                  </State>
+                  <State name="PlatoonLeader">
+                     <When type="AnimationState" MOSIndex="8" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame8" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame8" UnitLink="PlatoonLeader" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex8" />
+                  </State>
+                  <State name="Flamethrower">
+                     <When type="AnimationState" MOSIndex="9" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame9" Visible="True" />
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame9" UnitLink="Flamethrower" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex9" />
+                  </State>
+                  <State name="CombatEngineer">
+                     <When type="AnimationState" MOSIndex="10"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame10" Visible="True"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame10" UnitLink="CombatEngineer" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex10"/>
+                  </State>
+                  <State name="Cyborg">
+                     <When type="AnimationState" MOSIndex="11"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame11" Visible="True"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame11" UnitLink="Cyborg" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex11"/>
+                  </State>
+                  <State name="Ghost">
+                     <When type="AnimationState" MOSIndex="12"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame12" Visible="True"/>
+                     <Action type="SetProperty" frame="$this/ModelContainer/ModelFrame12" UnitLink="GhostMOS" />
+                     <Action type="SendEvent" frame="$this" event="MOSIndex12"/>
+                  </State>
+               </StateGroup>
+               <!-- Animation Attachment Hookups -->
+               <Animation name="RiflemanModel">
+                  <Event event="MOSIndex1" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame1" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="CombatMedicModel">
+                  <Event event="MOSIndex2" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame2" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel MedicalScanVisor {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel MedicShield {} {Shield 0} Shield_Armour_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel MedicChemicals {} {Forearm 0} Arm_Right_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="AutomaticRiflemanModel">
+                  <Event event="MOSIndex3" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame3" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel AutoRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel AmmoBackPack {} {Back 0} Back_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="CavalryScoutModel">
+                  <Event event="MOSIndex4" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame4" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel CarbineW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel ScoutVisor {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="SFAATModel">
+                  <Event event="MOSIndex5" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame5" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel ShotgunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel PistolRightLeg {} {Hardpoint 9} Leg_Right_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="JavelinGunnerModel">
+                  <Event event="MOSIndex6" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame6" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel StandardVisionVisor {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel RocketLauncher {} {Back 0} {Back_Attach RocketLauncherRotate}" />
+                  </Controller>
+               </Animation>
+               <Animation name="SquadDesignatedMarksmanModel">
+                  <Event event="MOSIndex7" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame7" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel SDMRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel Binoculars {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel WaistPack {} {Hardpoint 10} Waist_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel PistolLeftLeg {} {Hardpoint 7} Leg_Left_Attach" />
+                  </Controller>
+               </Animation>
+               <Animation name="PlatoonLeaderModel">
+                  <Event event="MOSIndex8" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame8" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel ArrayPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel TacticalVisor {} AMFilterHead SOpAttachHardPoint04" />
+                  </Controller>
+               </Animation>
+               <Animation name="FlamethrowerModel">
+                  <Event event="MOSIndex9" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame9" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel FlameThrowerMask {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel FlamethrowerTankPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerWeaponFlame {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerWeaponLight {} AMFilterWeapon00 SOpAttachWeapon00" />
+                  </Controller>
+               </Animation>
+               <Animation name="CombatEngineerModel">
+                  <Event event="MOSIndex10" action="Play"/>	
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame10" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel ShotgunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                  </Controller>
+               </Animation>
+               <Animation name="CyborgModel">
+                  <Event event="MOSIndex11" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame11" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel MinigunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel AmmoBackPack {} {Back 0} Back_Attach" />
+                     <Key type="Identifier" time="0.05" value="AttachModel MedicalScanVisor {} AMFilterHead SOpAttachHardPoint04" />
+                  </Controller>
+               </Animation>
+               <Animation name="GhostModel">
+                  <Event event="MOSIndex12" action="Play" />
+                  <Controller type="ActorMsg" end="Pause" frame="$this/ModelContainer/ModelFrame12" ModelFrameName="Model" SendToScope="False">
+                     <Key type="Identifier" time="0.05" value="AttachModel PlasmaRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel Binoculars {} AMFilterHead SOpAttachHardPoint04" />
+                     <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+                  </Controller>
+               </Animation>  
+            </Frame>
+            <!-- Mode Achievements Panel -->
+            <Frame type="Frame" name="Panel01">
+               <Anchor relative="$parent" />
+               <Anchor relative="$parent" />
+               <!-- Mode Achievements Container -->
+               <Frame type="TabControl" name="ModeAchievementsContainer" template="AchievementTemplates/ModeAchievementTemplate" />
+               <Frame type="Button" name="Campaign" template="StandardUADTemplates/UADLargeButtonTemplate">
+                  <Anchor relative="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button03" />
+                  <Toggleable val="True" />
+                  <Frame type="Image" name="NormalImage">
+                     <ColorAdjustMode val="Colorize" />
+                     <AdjustmentColor val="0,255,148" />
+                     <Texture val="@UI/NovaStory/Global/LargeButton_Disabled" layer="0" />
+                  </Frame>
+                  <Frame type="Image" name="HoverImage">
+                     <ColorAdjustMode val="Colorize" />
+                     <AdjustmentColor val="0,255,148" />
+                  </Frame>
+                  <Frame type="Label" name="Label">
+                     <Style val="BattlenetTopNavSmall" />
+                     <Text val="Campaign" />
+                  </Frame>
+                  <StateGroup name="Campaign">
+                     <DefaultState val="NotToggled" />
+                     <State name="Toggled">
+                        <When type="Property" frame="$this" Toggled="True" />
+                        <Action type="SetProperty" frame="$this" Visible="False" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button00" Visible="False" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button01" Visible="False" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button02" Visible="False" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button04" Visible="False" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button05" Visible="True" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer"                               SelectedIndex="5" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button06" Visible="True" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button07" Visible="True" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button08" Visible="True" />
+                        <Action type="SetProperty" frame="$parent/ModeAchievementsContainer/MenuButtonsContainer/Button09" Visible="True" />
+                        <Action type="SetProperty" frame="$parent/BackButton" Visible="True" />
+                     </State>
+                     <State name="NotToggled" />
+                  </StateGroup>
+               </Frame>
+               <Frame type="Button" name="BackButton" template="StandardUADTemplates/OptionsButtonTemplate">
+                  <Anchor side="Right" relative="$ACHMenuButtonsContainer" pos="Max" offset="55" />
+                  <Anchor side="Bottom" relative="$ACHMenuButtonsContainer" pos="Max" offset="-5" /> 
+                  <Height val="52" />
+                  <Width val="52" />
+                  <Visible val="False" />
+                  <AcceptsMouseTooltip val="True" />
+                  <Tooltip val="Return To Modes" />
+                  <TooltipFrame val="UADStandardTooltip" />
+                  <TooltipAnchorPosition val="TopCenter" />
+                  <Frame type="Image" name="Icon">
+                     <Texture val="Assets\Textures\btn-command-returncargo.dds" />
+                  </Frame>
+                  <Animation name="ClickAnim">
+                     <Event event="OnClick" action="Reset,Play" />
+                     <Controller type="Property" property="Toggled" frame="$parent/Campaign" end="Pause">
+                        <Key type="Property" time="0" Value="False" />
+                     </Controller>
+                  </Animation>
+               </Frame>
+               <Animation name="FadeIn">
+                  <Event event="OnShown" action="Reset,Play" />
+                  <Controller name="FadeIn" type="Fade" end="Pause">
+                     <Key type="Curve" time="0.0" value="0" in="Auto" />
+                     <Key type="Curve" time="0.15" value="0" in="Auto" />
+                     <Key type="Curve" time="0.35" value="255" out="Auto" />
+                  </Controller>
+               </Animation>
+            </Frame>
+            <!-- MOS Achievements Panel -->
+            <Frame type="Frame" name="Panel02">
+               <Anchor relative="$parent" />
+               <!-- MOS Achievements Container -->
+               <Frame type="TabControl" name="MOSAchievementsContainer" template="AchievementTemplates/MOSAchievementTemplate" />
+               <Animation name="FadeIn">
+                  <Event event="OnShown" action="Reset,Play" />
+                  <Controller name="FadeIn" type="Fade" end="Pause">
+                     <Key type="Curve" time="0.0" value="0" in="Auto" />
+                     <Key type="Curve" time="0.15" value="0" in="Auto" />
+                     <Key type="Curve" time="0.35" value="255" out="Auto" />
+                  </Controller>
+               </Animation>
+            </Frame>
+            <!-- Medals Panel -->
+            <Frame type="Frame" name="Panel03">
+               <Anchor relative="$parent" />
+               <!-- Medals Title Container -->
+               <Frame type="Frame" name="TitleContainer" template="AchievementTemplates/CDContainerTopTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                  <Anchor side="Left" relative="$ACHMenuButtonsContainer" pos="Max" offset="-3" />
+               </Frame>
+               <!-- Medals Title -->
+               <Frame type="Label" name="MedalsTitle" template="AchievementTemplates/CDLabelTemplate">
+                  <Anchor relative="$parent/TitleContainer" />
+                  <Text val="Medals &amp; Ribbons" />
+               </Frame>
+               <!-- Medal Page Spinner -->
+               <Frame type="Button" name="ButtonPrev" template="StandardUADTemplates/PageButtonTemplate">
+                  <Anchor side="Top" relative="$parent/Background" pos="Min" offset="250" />
+                  <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-60" />
+                  <StateGroup name="ButtonState">
+                     <DefaultState val="NotPushed" />
+                     <State name="NextPage3">
+                        <When type="Property" Pushed="True" />
+                        <When type="StateGroup" frame="$parent/PageNum" PageState="Page2" />
+                        <Action type="SetState" frame="$parent/PageNum" group="PageState" state="Page3" />
+                     </State>
+                     <State name="NextPage2">
+                        <When type="Property" Pushed="True" />
+                        <When type="StateGroup" frame="$parent/PageNum" PageState="Page1" />
+                        <Action type="SetState" frame="$parent/PageNum" group="PageState" state="Page2" />
+                     </State>
+                     <State name="NotPushed">
+                        <When type="Property" Pushed="False" />
+                     </State>
+                  </StateGroup>
+               </Frame>
+               <!-- Medal Page Spinner -->
+               <Frame type="Button" name="ButtonNext" template="StandardUADTemplates/PageButtonTemplate">
+                  <Anchor side="Top" relative="$parent/ButtonPrev" pos="Min" offset="80" />
+                  <Anchor side="Left" relative="$parent/ButtonPrev" pos="Min" offset="0" />
+                  <Frame type="Image" name="NormalImage">
+                     <Rotation val="-90" />
+                  </Frame>
+                  <Frame type="Image" name="HoverImage">
+                     <Rotation val="-90" />
+                  </Frame>
+                  <StateGroup name="ButtonState">
+                     <DefaultState val="NotPushed" />
+                     <State name="PrevPage1">
+                        <When type="Property" Pushed="True" />
+                        <When type="StateGroup" frame="$parent/PageNum" PageState="Page2" />
+                        <Action type="SetState" frame="$parent/PageNum" group="PageState" state="Page1" />
+                     </State>
+                     <State name="PrevPage2">
+                        <When type="Property" Pushed="True" />
+                        <When type="StateGroup" frame="$parent/PageNum" PageState="Page3" />
+                        <Action type="SetState" frame="$parent/PageNum" group="PageState" state="Page2" />
+                     </State>
+                     <State name="NotPushed">
+                        <When type="Property" Pushed="False" />
+                     </State>
+                  </StateGroup>
+               </Frame>
+               <!-- Medal Page Spinner Label -->
+               <Frame type="Label" name="PageNum" template="AchievementTemplates/CDLabelTemplate">
+                  <Anchor side="Top" relative="$parent/ButtonPrev" pos="Min" offset="65" />
+                  <Anchor side="Left" relative="$parent/ButtonPrev" pos="Min" offset="16" />
+                  <Width val="25" />
+                  <Height val="25" />
+                  <Text val="1" />
+                  <StateGroup name="PageState">
+                     <DefaultState val="Page1" />
+                     <State name="Page1" />
+                     <State name="Page2" />
+                     <State name="Page3" />
+                  </StateGroup>
+                  <StateGroup name="PageNum">
+                     <State name="SetPage1">
+                        <When type="StateGroup" PageState="Page1" />
+                        <Action type="SetProperty" Text="1" />
+                        <Action type="SetProperty" frame="$parent/ButtonNext" Enabled="False" />
+                     </State>
+                     <State name="SetPage2">
+                        <When type="StateGroup" PageState="Page2" />
+                        <Action type="SetProperty" Text="2" />
+                     </State>
+                     <State name="SetPage3">
+                        <When type="StateGroup" PageState="Page3" />
+                        <Action type="SetProperty" Text="3" />
+                        <Action type="SetProperty" frame="$parent/ButtonPrev" Enabled="False" />
+                     </State>
+                  </StateGroup>
+               </Frame>
+               <!-- Medals Background Addition -->
+               <Frame type="Frame" name="Background">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                  <Anchor side="Left" relative="$ACHMenuButtonsContainer" pos="Max" offset="368" />
+                  <Width val="606" />
+                  <Height val="650" />
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Medals Container -->
+               <Frame type="Frame" name="MedalsContainer" template="AchievementTemplates/MedalsTemplate">
+                  <Handle val="MedalsContainer" />
+               </Frame>
+            </Frame>
+            <!-- Options Panel -->
+            <Frame type="Frame" name="Panel04">
+               <Anchor relative="$parent" />
+               <Frame type="Frame" name="Background">
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                  <Width val="314"/>
+                  <Height val="85"/>
+                  <Alpha val="75" />
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Graph 1 -->
+               <Frame type="Frame" name="Graph1" template="AchievementTemplates/GraphThingyTemplate">
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                  <Alpha val="100"/>
+                  <Width val="310"/>
+               </Frame> 
+               <!-- Graph 2 -->
+               <Frame type="Frame" name="Graph2" template="AchievementTemplates/GraphThingyTemplate">
+                  <Anchor side="Top" relative="$parent/Graph1" pos="Max" offset="13"/>
+                  <Anchor side="Right" relative="$parent/Graph1" pos="Max" offset="0"/>
+                  <Width val="310"/>
+                  <Height val="30"/>
+                  <Alpha val="90"/>
+                  <RenderType val="LDR"/>
+               </Frame> 
+               <!-- Options Container 1 -->
+               <Frame type="Frame" name="OptionsContainer0">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                  <Anchor side="Left" relative="$ACHMenuButtonsContainer" pos="Max" offset="-3" />
+                  <RenderPriority val="516" />
+                  <AcceptsMouse val="True" />
+                  <Width val="550"/>
+                  <Height val="65"/>
+                  <Frame type="Label" name="OptionLabel" template="AchievementTemplates/CDLabelTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                     <RenderPriority val="550" />
+                     <Text val="Camera  Shake" />
+                  </Frame>
+                  <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="150" />
+                     <Height val="56" />
+                     <RenderPriority val="550" />
+                     <Handle val="GameplayOption0" />
+                     <Tooltip val="Camera will shake when in close proximity to explosions. " />
+                     <TooltipFrame val="UADStandardTooltip" />
+                  </Frame>
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Options Container 2 -->
+               <Frame type="Frame" name="OptionsContainer1">
+                  <Anchor side="Bottom" relative="$parent/OptionsContainer0" pos="Max" offset="62" />
+                  <Anchor side="Left" relative="$parent/OptionsContainer0" pos="Min" offset="0" />
+                  <RenderPriority val="516" />
+                  <AcceptsMouse val="True" />
+                  <Width val="550"/>
+                  <Height val="65"/>
+                  <Frame type="Label" name="OptionLabel" template="AchievementTemplates/CDLabelTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                     <RenderPriority val="550" />
+                     <Text val="Tactical  Sprint" />
+                  </Frame>
+                  <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="150" />
+                     <Height val="56" />
+                     <RenderPriority val="550" />
+                     <Handle val="GameplayOption1" />
+                     <Tooltip val="Sprint will auto initiate when in danger to high explosives. E.g. frag grenade." />
+                     <TooltipFrame val="UADStandardTooltip" />
+                  </Frame>
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Options Container 3 -->
+               <Frame type="Frame" name="OptionsContainer2">
+                  <Anchor side="Bottom" relative="$parent/OptionsContainer1" pos="Max" offset="61" />
+                  <Anchor side="Left" relative="$parent/OptionsContainer1" pos="Min" offset="0" />
+                  <RenderPriority val="516" />
+                  <AcceptsMouse val="True" />
+                  <Width val="550"/>
+                  <Height val="65"/>
+                  <Frame type="Label" name="OptionLabel" template="AchievementTemplates/CDLabelTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                     <RenderPriority val="550" />
+                     <Text val="Submenu  Cancel  Hotkey" />
+                  </Frame>
+                  <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="150" />
+                     <Height val="56" />
+                     <RenderPriority val="550" />
+                     <Handle val="GameplayOption2" />
+                  </Frame>
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Options Container 4 -->
+               <Frame type="Frame" name="OptionsContainer3">
+                  <Anchor side="Bottom" relative="$parent/OptionsContainer2" pos="Max" offset="61" />
+                  <Anchor side="Left" relative="$parent/OptionsContainer2" pos="Min" offset="0" />
+                  <RenderPriority val="516" />
+                  <AcceptsMouse val="True" />
+                  <Width val="550"/>
+                  <Height val="65"/>
+                  <Frame type="Label" name="OptionLabel" template="AchievementTemplates/CDLabelTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                     <RenderPriority val="550" />
+                     <Text val="Status Menu Vital Text" />
+                  </Frame>
+                  <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="150" />
+                     <Height val="56" />
+                     <RenderPriority val="550" />
+                     <Handle val="GameplayOption3" />
+                  </Frame>
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+               <!-- Options Container 5 -->
+               <Frame type="Frame" name="OptionsContainer4">
+                  <Anchor side="Bottom" relative="$parent/OptionsContainer3" pos="Max" offset="61" />
+                  <Anchor side="Left" relative="$parent/OptionsContainer3" pos="Min" offset="0" />
+                  <RenderPriority val="516" />
+                  <AcceptsMouse val="True" />
+                  <Width val="550"/>
+                  <Height val="65"/>
+                  <Frame type="Label" name="OptionLabel" template="AchievementTemplates/CDLabelTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                     <RenderPriority val="550" />
+                     <Text val="Segmented Status Bars" />
+                  </Frame>
+                  <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="150" />
+                     <Height val="56" />
+                     <RenderPriority val="550" />
+                     <Handle val="GameplayOption4" />
+                  </Frame>
+                  <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+               </Frame>
+            </Frame>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

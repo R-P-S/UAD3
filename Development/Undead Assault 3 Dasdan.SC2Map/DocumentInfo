@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <ModType>
+        <Value>Interface</Value>
+    </ModType>
+    <Icon>
+        <Value>Assets\Arcade Icon\UAD_Logo.tga</Value>
+    </Icon>
+    <Dependencies>
+        <Value>file:Mods\UAD\Development\UA Data.SC2Mod</Value>
+    </Dependencies>
+    <ModifiableDependencies>
+        <Value>Mods\UAD\Development\Utility.SC2Mod</Value>
+        <Value>Mods\UAD\Development\UA Data.SC2Mod</Value>
+    </ModifiableDependencies>
+    <Screenshot>
+        <File>
+            <Value>Assets\Map Preview\UA3_Arcade_Logo.tga</Value>
+            <Value>Assets\Map Preview\Mode_Selection.tga</Value>
+            <Value>Assets\Map Preview\Hero_Selection.tga</Value>
+            <Value>Assets\Map Preview\Skin_Selection.tga</Value>
+            <Value>Assets\Map Preview\Medals.tga</Value>
+        </File>
+        <CaptionId>
+            <Value>5</Value>
+            <Value>3</Value>
+            <Value>4</Value>
+            <Value>1</Value>
+            <Value>2</Value>
+        </CaptionId>
+        <Flags>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+        </Flags>
+    </Screenshot>
+    <ScreenshotHowToPlay>
+        <File>
+            <Value>Assets\Map Preview\UA3_Arcade_Logo.tga</Value>
+        </File>
+        <CaptionId>
+            <Value>1</Value>
+        </CaptionId>
+        <Flags>
+            <Value> </Value>
+        </Flags>
+    </ScreenshotHowToPlay>
+    <Preload>
+        <Value>AssetFile;UI\Layout\MenuBackGroundTemplate.SC2Layout</Value>
+        <Value>AssetFile;UI\Layout\CharSelection.SC2Layout</Value>
+        <Value>AssetFile;UI\Layout\LoadScreen.SC2Layout</Value>
+        <Value>Bank;UAD</Value>
+        <Value>Bank;UAD3</Value>
+    </Preload>
+</DocInfo>

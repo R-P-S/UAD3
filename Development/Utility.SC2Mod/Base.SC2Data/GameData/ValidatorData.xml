@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorLocationEnumArea id="CasterInfrontofTarget">
+        <ResultFailed value="TargetIsOutOfRange,Error/MustInfrontTarget"/>
+        <WhichLocation Value="TargetUnit"/>
+        <AreaArray>
+            <Arc value="180"/>
+            <Compare value="GE"/>
+            <Count value="1"/>
+            <Radius value="500"/>
+        </AreaArray>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+        <LaunchLocation Value="TargetUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Enemy"/>
+        <IncludeArray/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationEnumArea id="CasterBehindTarget" parent="CasterInfrontofTarget">
+        <ResultFailed value="TargetIsOutOfRange,Error/MustBehindTarget"/>
+        <AreaArray index="0">
+            <Arc value="180"/>
+            <Compare value="Eq"/>
+            <Count value="0"/>
+            <Radius value="500"/>
+        </AreaArray>
+        <AreaArray Compare="GE" Count="1" Radius="500"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareSpeed id="TargetIsMoving">
+        <Compare value="GT"/>
+    </CValidatorUnitCompareSpeed>
+</Catalog>

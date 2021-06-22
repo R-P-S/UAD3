@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="Nova_Color_Green_01" val="0,255,168" />
+   <!-- Oranges -->
+   <Constant name="Nova_Color_Orange_01" val="255,126,0" />
+   <!--
+    =========================
+    STORYMODE BACKGROUND 17,22,40
+    =========================
+    -->
+   <Constant name="Nova_Color_BgGrid" val="#Nova_Color_Green_01" />
+   <Constant name="Nova_Color_BgGridScan" val="#Nova_Color_Green_01" />
+   <Constant name="Nova_Color_BgGridShimmers" val="#Nova_Color_Green_01" />
+   <Constant name="Nova_Alpha_BgGrid" val="7" />
+   <Constant name="Nova_Alpha_BgGridScan" val="12" />
+   <Constant name="Nova_Alpha_BgGridShimmers" val="35" />
+   <!-- 
+    
+    
+    =============================
+    
+    POINT OF INTEREST TEMPLATE
+    
+    =============================
+    
+    
+    -->
+   <Frame type="Frame" name="PointOfInterestTemplate">
+      <Width val="351" />
+      <Height val="125" />
+      <RenderPriority val="616" />
+      <Visible val="True" />
+      <Frame type="Button" name="Button">
+         <Anchor side="Bottom" relative="$parent/Arrow" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="63" />
+         <Height val="54" />
+         <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent" />
+            <TextureType val="NineSlice" />
+            <Texture val="@UI/NovaStory/Briefing/General/CalloutBox" />
+         </Frame>
+         <Animation name="Expand">
+            <Event event="OnMouseEnter" action="DirectionForward,Play" />
+            <Event event="OnMouseExit" action="DirectionReverse,Play" />
+            <Controller type="Property" property="RenderPriority" end="Pause" frame="$parent">
+               <Key type="Property" time="0" value="512" />
+               <Key type="Property" time="0.01" value="515" />
+               <Key type="Property" time="0.59" value="515" />
+            </Controller>
+            <Controller type="Fade" end="Pause" frame="$parent/Icon">
+               <Key type="Curve" time="0" value="255" out="Fast" />
+               <Key type="Curve" time=".1" value="0" in="Slow" />
+               <Key type="Curve" time=".59" value="0" in="Slow" />
+            </Controller>
+            <Controller type="Fade" end="Pause" frame="$parent/Title">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time=".35" value="0" in="Slow" />
+               <Key type="Curve" time=".49" value="255" in="Slow" />
+               <Key type="Curve" time=".59" value="255" in="Slow" />
+            </Controller>
+            <!--
+                <Controller type="Fade" end="Pause" frame="$parent/Description">
+                    <Key type="Curve" time="0" value="0" out="Fast"/>
+                    <Key type="Curve" time=".44" value="0" in="Slow"/>
+                    <Key type="Curve" time=".59" value="255" in="Slow"/>
+                </Controller> -->
+            <Controller type="Dimension" dimension="Width" relative="False" percentage="False" end="Pause">
+               <Key type="Curve" time="0" value="63" />
+               <Key type="Curve" time=".1" value="63" />
+               <Key type="Curve" time=".19" value="200" />
+               <Key type="Curve" time=".59" value="200" />
+            </Controller>
+            <Controller type="Dimension" dimension="Height" relative="False" percentage="False" end="Pause">
+               <Key type="Curve" time="0" value="54" />
+               <Key type="Curve" time=".21" value="54" />
+               <Key type="Curve" time=".3" value="75" />
+               <Key type="Curve" time=".59" value="75" />
+            </Controller>
+            <Controller type="Sound" end="Pause">
+               <Key type="Sound" time=".05" sound="@UI_Nova_BriefingHoverOpen" direction="Forward" />
+               <Key type="Sound" time=".20" sound="@UI_Nova_BriefingHoverOpenCloseSwtnr" direction="Forward" />
+            </Controller>
+            <Controller type="Sound" end="Pause">
+               <Key type="Sound" time=".34" sound="@UI_Nova_BriefingHoverClose" direction="Reverse" />
+               <Key type="Sound" time=".54" sound="@UI_Nova_BriefingHoverOpenCloseSwtnr" direction="Reverse" />
+            </Controller>
+         </Animation>
+         <Animation name="ArrowBlink">
+            <Event event="OnMouseEnter" action="Reset,Play" />
+            <Event event="OnMouseExit" action="Reset,Stop" />
+            <Controller type="Fade" end="Loop" frame="$parent/Arrow">
+               <Key type="Curve" time="0" value="255" out="Fast" />
+               <Key type="Curve" time=".8" value="110" in="Slow" />
+               <Key type="Curve" time="1.6" value="255" in="Slow" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="Icon">
+         <Anchor side="Top" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent/Button" pos="Mid" offset="0" />
+         <Texture val="@UI/NovaStory/Briefing/General/CalloutIcon_Cave" />
+      </Frame>
+      <Frame type="Label" name="Title">
+         <!--
+			<Anchor side="Top" relative="$parent/Button" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent/Button" pos="Min" offset="18"/>
+            <Anchor side="Right" relative="$parent/Button" pos="Max" offset="-18"/> -->
+         <Anchor side="Top" relative="$parent/Button" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent/Button" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/Button" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/Button" pos="Max" offset="0" />
+         <Alpha val="0" />
+         <Style val="BattlenetMediumTabButtonSelected" />
+         <Text val="Title" />
+         <Color val="0,255,168" />
+      </Frame>
+      <!--
+        <Frame type="Label" name="Description">
+            <Anchor side="Top" relative="$parent/Title" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/Title" pos="Max" offset="0"/>
+            <Alpha val="0"/>
+            <Style val="SaveListDuration"/>
+            <Text val="Description"/>
+        </Frame> -->
+      <Frame type="Image" name="Arrow">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Texture val="@UI/NovaStory/Briefing/General/CalloutArrow" />
+         <Alpha val="0" />
+      </Frame>
+   </Frame>
+   <!-- 
+    
+    
+    =============================
+    
+    POINT OF INTEREST TEMPLATE II
+    
+    =============================
+    
+    
+    -->
+   <Frame type="Frame" name="PointOfInterestTemplateII">
+      <Width val="351" />
+      <Height val="125" />
+      <RenderPriority val="616" />
+      <Visible val="True" />
+      <Frame type="Button" name="Button">
+         <Anchor side="Bottom" relative="$parent/Arrow" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="63" />
+         <Height val="54" />
+         <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent" />
+            <TextureType val="NineSlice" />
+            <Texture val="@UI/NovaStory/Briefing/General/CalloutBox" />
+         </Frame>
+         <Animation name="Expand">
+            <Event event="OnMouseEnter" action="DirectionForward,Play" />
+            <Event event="OnMouseExit" action="DirectionReverse,Play" />
+            <Controller type="Property" property="RenderPriority" end="Pause" frame="$parent">
+               <Key type="Property" time="0" value="512" />
+               <Key type="Property" time="0.01" value="515" />
+               <Key type="Property" time="0.59" value="515" />
+            </Controller>
+            <Controller type="Fade" end="Pause" frame="$parent/Icon">
+               <Key type="Curve" time="0" value="255" out="Fast" />
+               <Key type="Curve" time=".1" value="0" in="Slow" />
+               <Key type="Curve" time=".59" value="0" in="Slow" />
+            </Controller>
+            <Controller type="Fade" end="Pause" frame="$parent/Title">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time=".35" value="0" in="Slow" />
+               <Key type="Curve" time=".49" value="255" in="Slow" />
+               <Key type="Curve" time=".59" value="255" in="Slow" />
+            </Controller>
+            <Controller type="Dimension" dimension="Width" relative="False" percentage="False" end="Pause">
+               <Key type="Curve" time="0" value="63" />
+               <Key type="Curve" time=".1" value="63" />
+               <Key type="Curve" time=".19" value="200" />
+               <Key type="Curve" time=".59" value="200" />
+            </Controller>
+            <Controller type="Dimension" dimension="Height" relative="False" percentage="False" end="Pause">
+               <Key type="Curve" time="0" value="54" />
+               <Key type="Curve" time=".21" value="54" />
+               <Key type="Curve" time=".3" value="75" />
+               <Key type="Curve" time=".59" value="75" />
+            </Controller>
+            <Controller type="Sound" end="Pause">
+               <Key type="Sound" time=".05" sound="@UI_Nova_BriefingHoverOpen" direction="Forward" />
+               <Key type="Sound" time=".20" sound="@UI_Nova_BriefingHoverOpenCloseSwtnr" direction="Forward" />
+            </Controller>
+            <Controller type="Sound" end="Pause">
+               <Key type="Sound" time=".34" sound="@UI_Nova_BriefingHoverClose" direction="Reverse" />
+               <Key type="Sound" time=".54" sound="@UI_Nova_BriefingHoverOpenCloseSwtnr" direction="Reverse" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="Icon">
+         <Anchor side="Top" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/Button" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent/Button" pos="Mid" offset="0" />
+         <Texture val="@UI/NovaStory/Briefing/General/CalloutIcon_Cave" />
+      </Frame>
+      <Frame type="Label" name="Title">
+         <Anchor side="Top" relative="$parent/Button" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent/Button" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/Button" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/Button" pos="Max" offset="0" />
+         <Style val="BattlenetMediumTabButtonSelected" />
+         <Alpha val="0" />
+         <Text val="Title" />
+         <Color val="0,255,168" />
+      </Frame>
+      <Frame type="Image" name="Arrow">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Texture val="@UI/NovaStory/Briefing/General/CalloutArrow" />
+         <Alpha val="0" />
+         <Visible val="False" />
+      </Frame>
+   </Frame>
+   <Animation name="IconFadeInTemplate">
+      <Event event="FadeIn" action="Play" />
+      <Controller type="Fade" end="Pause">
+         <Key type="Curve" time="0" value="0" out="Fast" />
+         <Key type="Curve" time="0.1" value="255" in="Slow" />
+         <Key type="Curve" time="0.2" value="0" out="Fast" />
+         <Key type="Curve" time="0.3" value="255" out="Slow" />
+      </Controller>
+   </Animation>
+   <!--
+    =========================
+    GRID BG SHIMMER TEMPLATES
+    =========================
+    -->
+   <!-- Vertical -->
+   <Frame type="Image" name="VerticalShimmerDownTemplate">
+      <Width val="51" />
+      <Height val="1632" />
+      <Visible val="False" />
+      <Color val="#Nova_Color_BgGridShimmers" />
+      <LayerCount val="2" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Primary" layer="0" />
+      <TextureCoords left="-.5" right=".5" top="0" bottom="32" layer="0" />
+      <AlphaLayer val="True" layer="0" />
+      <WrapUV val="True" layer="0" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Shimmer/Vertical" layer="1" />
+      <TextureCoords left="0" right="1" top="0" bottom=".6" layer="1" />
+      <LayerAlpha val="#Nova_Alpha_BgGridShimmers" layer="1" />
+      <Animation name="UVAnimation">
+         <Event event="OnShown" action="Reset,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="LayerUV" layer="1" side="Top" relative="False" sidelock="True" end="Loop">
+            <Key type="Curve" time="0" value="0.2" inout="linear" />
+            <Key type="Curve" time="5" value="-1" inout="linear" />
+            <Key type="Curve" time="24" value="-1" inout="linear" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <Frame type="Image" name="VerticalShimmerUpTemplate">
+      <Width val="51" />
+      <Height val="1632" />
+      <Visible val="False" />
+      <Color val="#Nova_Color_BgGridShimmers" />
+      <LayerCount val="2" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Primary" layer="0" />
+      <TextureCoords left="-.5" right=".5" top="0" bottom="32" layer="0" />
+      <AlphaLayer val="True" layer="0" />
+      <WrapUV val="True" layer="0" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Shimmer/Vertical" layer="1" />
+      <TextureCoords left="0" right="1" top="0" bottom=".6" layer="1" />
+      <LayerAlpha val="#Nova_Alpha_BgGridShimmers" layer="1" />
+      <Animation name="UVAnimation">
+         <Event event="OnShown" action="Reset,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="LayerUV" layer="1" side="Top" relative="False" sidelock="True" end="Loop">
+            <Key type="Curve" time="0" value="-1" inout="linear" />
+            <Key type="Curve" time="5" value="0.2" inout="linear" />
+            <Key type="Curve" time="24" value="0.2" inout="linear" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Horizontal -->
+   <Frame type="Image" name="HorizontalShimmerRightTemplate">
+      <Width val="2244" />
+      <Height val="51" />
+      <Visible val="False" />
+      <Color val="#Nova_Color_BgGridShimmers" />
+      <LayerCount val="2" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Primary" layer="0" />
+      <TextureCoords left="0" right="44" top="-.5" bottom=".5" layer="0" />
+      <AlphaLayer val="True" layer="0" />
+      <WrapUV val="True" layer="0" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Shimmer/Horizontal" layer="1" />
+      <TextureCoords left="0" right=".7" top="0" bottom="1" layer="1" />
+      <LayerAlpha val="#Nova_Alpha_BgGridShimmers" layer="1" />
+      <Animation name="UVAnimation">
+         <Event event="OnShown" action="Reset,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="LayerUV" layer="1" side="Left" relative="False" sidelock="True" end="Loop">
+            <Key type="Curve" time="0" value="0.2" inout="linear" />
+            <Key type="Curve" time="5" value="-1" inout="linear" />
+            <Key type="Curve" time="24" value="-1" inout="linear" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <Frame type="Image" name="HorizontalShimmerLeftTemplate">
+      <Width val="2244" />
+      <Height val="51" />
+      <Visible val="False" />
+      <Color val="#Nova_Color_BgGridShimmers" />
+      <LayerCount val="2" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Primary" layer="0" />
+      <TextureCoords left="0" right="44" top="-.5" bottom=".5" layer="0" />
+      <AlphaLayer val="True" layer="0" />
+      <WrapUV val="True" layer="0" />
+      <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Shimmer/Horizontal" layer="1" />
+      <TextureCoords left="0" right=".7" top="0" bottom="1" layer="1" />
+      <LayerAlpha val="#Nova_Alpha_BgGridShimmers" layer="1" />
+      <Animation name="UVAnimation">
+         <Event event="OnShown" action="Reset,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="LayerUV" layer="1" side="Left" relative="False" sidelock="True" end="Loop">
+            <Key type="Curve" time="0" value="-1" inout="linear" />
+            <Key type="Curve" time="5" value="0.2" inout="linear" />
+            <Key type="Curve" time="24" value="0.2" inout="linear" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!--
+    =========================
+    GRID BG
+    =========================
+    -->
+   <!-- GridBG -->
+   <Frame type="Frame" name="GridBGTemplate">
+      <Anchor relative="$parent" />
+      <!--
+        <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        <Width val="2244"/>
+        <Height val="1632"/> -->
+      <RenderType val="HDR" />
+      <Frame type="Image" name="GridImage">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Color val="#Nova_Color_BgGrid" />
+         <Alpha val="#Nova_Alpha_BgGrid" />
+         <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Primary" />
+         <TextureCoords left="0" right="44" top="0" bottom="32" />
+         <WrapUV val="True" />
+      </Frame>
+      <Animation name="StartShimmer">
+         <Event event="OnShown" action="Reset,Play" />
+         <Controller type="Event" end="Stop" frame="ShimmersContainer">
+            <Key type="Event" time="0" event="StartShimmer" />
+         </Controller>
+      </Animation>
+      <Frame type="Frame" name="ShimmersContainer">
+         <Anchor relative="$parent/GridImage" />
+         <Frame type="Image" name="BlurredLights">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="1920" />
+            <Height val="1200" />
+            <Texture val="@UI/NovaStory/Login/BackgroundLights" />
+            <ScaleWidthToTexture val="true" />
+            <GlowColor val="0,255,0" />
+            <Animation name="BackLighting">
+               <Event event="OnShown" action="Reset, Play" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Fade" end="Loop">
+                  <Key type="Curve" time="0" value="20" out="Fast" />
+                  <Key type="Curve" time="2.5" value="0" in="slow" />
+                  <Key type="Curve" time="4.5" value="20" out="Fast" />
+               </Controller>
+               <Controller type="Anchor" end="Loop" side="Left" relative="true">
+                  <Key type="Curve" time="0" value="0" out="Fast" />
+                  <Key type="Curve" time="2" value="-100" in="Slow" />
+                  <Key type="Curve" time="4.5" value="0" out="Fast" />
+               </Controller>
+               <Controller type="Anchor" end="Loop" side="Top" relative="true">
+                  <Key type="Curve" time="0" value="0" out="Fast" />
+                  <Key type="Curve" time="2" value="100" in="Slow" />
+                  <Key type="Curve" time="4.5" value="0" out="Fast" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalScan">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Texture val="@UI/NovaStory/Briefing/Flavor/BGGrid/Scan" />
+            <Height val="300" />
+            <Alpha val="#Nova_Alpha_BgGridScan" />
+            <Color val="#Nova_Color_BgGridScan" />
+            <Animation name="Shimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Anchor" end="Loop" side="Top" relative="true">
+                  <Key type="Curve" time="0" value="-500" out="Slow" />
+                  <Key type="Curve" time="5" value="-500" out="Slow" />
+                  <Key type="Curve" time="18" value="2000" in="Slow" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer01" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="52" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="52" />
+            <Visible val="False" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer02" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="154" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="154" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="21" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer03" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="256" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="256" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="9" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer04" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="358" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="358" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="16" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer05" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="460" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="460" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="4" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer06" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="562" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="562" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="14" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer07" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="664" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="664" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="22" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer08" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="766" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="766" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer09" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="868" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="868" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="6" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer10" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="970" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="970" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="13" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer11" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="1072" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="1072" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="20" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer12" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="1174" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="1174" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="9.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer13" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="2.4" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer14" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-152" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-152" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="17.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer15" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-254" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-254" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="11.2" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer16" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-356" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-356" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="0.1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer17" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-458" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-458" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="13.2" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer18" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-560" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-560" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="21.6" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer19" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-662" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-662" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="7.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer20" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-764" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-764" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="15.7" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer21" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-866" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-866" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="3" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer22" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-968" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-968" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="18" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer23" template="MenuBackGroundTemplate/VerticalShimmerUpTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-1070" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-1070" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="8.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VerticalShimmer24" template="MenuBackGroundTemplate/VerticalShimmerDownTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-1172" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-1172" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="23" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer01" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-52" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-52" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="6.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer02" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-154" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-154" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="17.4" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer03" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-256" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-256" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="21" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer04" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-359" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-359" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="3.7" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer05" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-460" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-460" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="14.1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer06" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-562" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-562" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="19.6" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer07" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="50" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="50" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="7.1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer08" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="151" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="151" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="12.7" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer09" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="253" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="253" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="22.1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer10" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="355" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="355" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="10.6" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer11" template="MenuBackGroundTemplate/HorizontalShimmerLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="457" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="457" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="18.9" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="HorizontalShimmer12" template="MenuBackGroundTemplate/HorizontalShimmerRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="559" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="559" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Animation name="StartShimmer">
+               <Event event="StartShimmer" action="Reset,Play" frame="$parent" />
+               <Event event="OnHidden" action="Reset,Stop" />
+               <Controller type="Visibility" end="Pause">
+                  <Key type="Bool" time="0" value="False" />
+                  <Key type="Bool" time="5.1" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="TargetInfoFrameTemplate" template="TargetInfoPanel/TargetInfoPanelTemplate">
+      <Width val="226" />
+      <Height val="95" />
+      <RenderPriority val="1000"/>
+      <AcceptsMouse val="True" />
+      <Frame type="Button" name="UnitSelectionButton" template="StandardUADTemplates/OptionsButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="4"/>
+         <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+         <Height val="48" />
+         <Width val="48" />
+         <Tooltip val="{Label/@Text}" />
+         <Frame type="Image" name="Icon">
+            <Texture val="{$parent/$parent/UnitCacheFrame/@Icon}" />
+         </Frame>
+         <Frame type="Label" name="Label">
+            <Visible val="False" />
+            <Text val="{$parent/$parent/UnitCacheFrame/@NameText}" />
+         </Frame>
+      </Frame>
+      <Frame type="UnitCacheFrame" name="UnitCacheFrame">
+         <Anchor relative="$parent" />
+         <Unit val="{$parent/HealthAndEnergyUnitStatusFrame/@Unit}"/>
+      </Frame>
+      <StateGroup name="UnitType">
+         <DefaultState val="Default"/>
+         <State name="SFAAT">
+            <When type="Property" frame="UnitCacheFrame" Unit="SFAAT" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" /> 
+         </State>
+         <State name="LNRifleman">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNRifleman" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="LNAutomaticRifleman">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNAutomaticRifleman" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />
+         </State>
+         <State name="LNShotgunner">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNShotgunner" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="LNMarksman">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNMarksman" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="LNJavelinGunner">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNJavelinGunner" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="LNRanger">
+            <When type="Property" frame="UnitCacheFrame" Unit="LNRanger" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="Other">
+            <When type="Property" frame="UnitCacheFrame" Valid="True" />
+            <When type="StateGroup" frame="$InfoPaneGroup" InfoPaneState="SFAATView"/>
+            <Action type="SetProperty" frame="$this" Visible="True" />  
+         </State>
+         <State name="Default" /> 
+      </StateGroup>
+   </Frame>
+   <!-- changes non-hero weapon/armor borders -->
+   <Frame type="EquipmentIcon" name="EquipmentIconTemplate" file="EquipmentIcon">
+      <Frame type="Label" name="LevelLabel">
+         <Visible val="False" />
+      </Frame>
+      <Frame type="Image" name="EquipmentIconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Texture val="Assets\Textures\ui_battlenet_glues_achievement_fanfare_achievementcontainer_terr.dds" />
+      </Frame>
+      <TooltipFrame val="UADStandardTooltip" />
+   </Frame>
+</Desc>

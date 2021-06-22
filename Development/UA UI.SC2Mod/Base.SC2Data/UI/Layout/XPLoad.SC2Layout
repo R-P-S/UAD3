@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="XPContainer">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="835" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-5" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="553" />
+         <Visible val="false" />
+         <Handle val="XPC" />
+         <StateGroup name="XPButtonState">
+            <State name="Show">
+               <When type="Property" frame="$HUDButton" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+            </State>
+            <State name="Hide">
+               <When type="Property" frame="$HUDButton" Visible="False" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+            </State>
+         </StateGroup>
+         <Frame type="Image" name="XPBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Rotation val="180" />
+            <Color val="0,255,148" />
+            <Animation name="HighlightOnEvent">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,255,0" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,0,0" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="XPIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Texture val="Assets\Icon Pack\btn-achievement-32-beta.dds" />
+            <Tooltip val="Display XP" />
+            <TooltipFrame val="UADStandardTooltip"/>
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="XPButton" template="Status/StatusButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/XPBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Handle val="XPB" />
+            <Alpha val="0" />
+            <AcceptsMouseTooltip val="false" />
+            <Frame type="Image" name="NormalImage">
+               <Texture val="Assets\Textures\sc2_ui_newplayerxp_experienceicon_veteran.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Texture val="Assets\Textures\sc2_ui_newplayerxp_experienceicon_veteran.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+               <Alpha val="0" />
+            </Frame>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/XPBorder">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/XPBorder">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+            <Animation name="ClickControl">
+               <Event event="Pushed" action="Reset,Play" />
+               <Controller type="Property" property="AcceptsMouse" end="Pause">
+                  <Key type="Property" time="0.0" value="false" />
+                  <Key type="Property" time="4.0" value="true" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

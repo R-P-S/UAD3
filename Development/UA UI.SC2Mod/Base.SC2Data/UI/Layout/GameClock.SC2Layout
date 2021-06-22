@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="Slide_Anchor_Value" val="-200" />
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <!-- Game Clock Display -->
+      <Frame type="Frame" name="GameClockFrame">
+         <Width val="200" />
+         <Height val="75" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Visible val="False" />
+         <Handle val="GCFrame" />
+         <!--
+         <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-35" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Width val="150" />
+            <Text val="Time Of Day" />
+            <Style val="@@ObjectivePanelCategory" />
+            <Visible val="true" />
+         </Frame>
+         <Frame type="Label" name="Time">
+            <Anchor side="Top" relative="$parent/Title" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-45" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Width val="80" />
+            <Text val="" />
+            <Style val="@@ObjectivePanelCategory" />
+            <Visible val="true" />
+         </Frame> -->
+         <!-- Weather Icon Display -->
+         <Frame type="Frame" name="WeatherFrame">
+            <Width val="46" />
+            <Height val="46" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+            <Frame type="Image" name="Icon" template="HUD/PlayerIconBasicTemplate">
+               <Anchor relative="$parent" />
+               <AcceptsMouseTooltip val="true" />
+               <Texture val="" />
+               <Visible val="True" />
+               <StateGroup name="WeatherState">
+                  <DefaultState val="Clear" />
+                  <State name="Clear">
+                     <When type="AnimationState" Weather="Clear" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Clear" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Clear" />
+                  </State>
+                  <State name="Thunderstorm">
+                     <When type="AnimationState" Weather="Thunderstorm" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Thunderstorm" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/ThunderStorm" />
+                  </State>
+                  <State name="Fog">
+                     <When type="AnimationState" Weather="Fog" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Fog" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Fog" />
+                  </State>
+                  <State name="Snow">
+                     <When type="AnimationState" Weather="Snow" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Snow" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Snow" />
+                  </State>
+                  <State name="RandomWeather">
+                     <When type="AnimationState" Weather="RandomWeather" />
+                     <Action type="SetProperty" frame="$this" Tooltip="" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/WeatherRandom" />
+                  </State>
+                  <State name="Rainstorm">
+                     <When type="AnimationState" Weather="Rainstorm" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Rainstorm" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Rainstorm" />
+                  </State>
+                  <State name="Cloudy">
+                     <When type="AnimationState" Weather="Cloudy" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Cloudy" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Cloudy" />
+                  </State>
+                  <State name="Tornadoes">
+                     <When type="AnimationState" Weather="Tornadoes" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_Tornadoes" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/Tornadoes" />
+                  </State>
+                  <State name="IntenseSunlight">
+                     <When type="AnimationState" Weather="IntenseSunlight" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_IntenseSunlight" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/IntenseSunlight" />
+                  </State>
+                  <State name="BloodMoon">
+                     <When type="AnimationState" Weather="BloodMoon" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_BloodMoon" />
+                     <Action type="SetProperty" frame="$this" Texture="@UI/BloodMoon" />
+                  </State>
+               </StateGroup>
+               <!-- Flash Animation -->
+               <Animation name="Pulse">
+                  <Event event="Flash" action="Reset,Play" />
+                  <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="25" out="Slow" />
+                     <Key type="Curve" time="1" value="255" in="Slow" />
+                     <Key type="Curve" time="1.5" value="25" out="Slow" />
+                     <Key type="Curve" time="2.0" value="255" out="Slow" />
+                  </Controller>
+               </Animation>
+            </Frame>
+         </Frame>
+         <Animation name="SlideAnim">
+            <Event event="OnShown" action="DirectionForward, Play" />
+            <Event event="OnHidden" action="DirectionReverse, Play" />
+            <Controller type="Anchor" end="Pause" side="Top" relative="false">
+               <Key type="Curve" time="0" value="#Slide_Anchor_Value" />
+               <Key type="Curve" time="0.25" value="0" />
+            </Controller>
+         </Animation>
+         <Animation name="Visibility">
+            <Event event="OnHidden" action="Reset,Play" frame="$this" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation>
+         <StateGroup name="WeatherIconDisplay">
+            <State name="Show">
+               <When type="Property" frame="$HUDButton" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+            </State>
+            <State name="Hide">
+               <When type="Property" frame="$HUDButton" Visible="False" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <!-- Game Clock Panel Button 
+      <Frame type="Frame" name="GCButtonContainer">
+         <Anchor side="Top" relative="$FTC" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$FTC" pos="Min" offset="50" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="554" />
+         <Visible val="false" />
+         <Handle val="GCC" />
+         
+         <StateGroup name="GCButtonState">
+            <State name="Show">
+               <When type="Property" frame="$HUDButton" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+               <Action type="SetProperty" frame="$GCFrame" Visible="True" />
+            </State>
+            <State name="Hide">
+               <When type="Property" frame="$HUDButton" Visible="False" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+               <Action type="SetProperty" frame="$GCFrame" Visible="False" />
+            </State>
+         </StateGroup>
+         <Frame type="Image" name="GCButtonBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Rotation val="180" />
+            <Color val="0,255,148" />
+            <Handle val="GCBorder" />
+            <Animation name="HighlightOnEvent">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,255,0" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,0,0" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="GCIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Texture val="@UI/WeatherIcon" />
+            <Tooltip val="Game Clock/Weather" />
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="GCButton" template="Status/StatusButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/GCButtonBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Handle val="GCB" />
+            <Alpha val="0" />
+            <Toggleable val="True" />
+            <AcceptsMouseTooltip val="false" />
+            <Frame type="Image" name="NormalImage">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Alpha val="0" />
+            </Frame>
+            <Animation name="ToggleOn">
+               <Event event="Toggled" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$GCFrame">
+                  <Key type="Event" time="0" event="Display" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleOff">
+               <Event event="Normal" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$GCFrame">
+                  <Key type="Event" time="0" event="Close" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$GCBorder">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$GCBorder">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame> -->
+   </Frame>
+</Desc>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+        <Frame type="Frame" name="UIContainer">
+            <Frame type="Frame" name="FullscreenUpperContainer/TriggerContainer">
+                <Frame type="Frame" name="SystemInfoOutput" template="SpecialFrameTemplates/SystemInfoOutputTemplate"/>
+                <Frame type="Frame" name="FrameRateContainer">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="-800" />
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                    <Height val="250" />
+                    <Width val="350" />
+                    <Alpha val="0" />
+                    <Handle val="FrameRateContainer"/>
+                    <Frame type="Label" name="PlayerFrameRateLabel1" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />
+                    <Frame type="Label" name="PlayerFrameRateLabel2" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />
+                    <Frame type="Label" name="PlayerFrameRateLabel3" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" /> 
+                    <Frame type="Label" name="PlayerFrameRateLabel4" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" /> 
+                    <Frame type="Label" name="PlayerFrameRateLabel5" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" /> 
+                    <Frame type="Label" name="PlayerFrameRateLabel6" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" /> 
+                    <Frame type="Label" name="PlayerFrameRateLabel7" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" /> 
+                    <Frame type="Label" name="PlayerFrameRateLabel8" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />
+                    <Frame type="Label" name="PlayerFrameRateLabel9" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />  
+                    <Frame type="Label" name="PlayerFrameRateLabel10" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />  
+                    <Frame type="Label" name="PlayerFrameRateLabel11" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />  
+                    <Frame type="Label" name="PlayerFrameRateLabel12" template="SpecialFrameTemplates/PlayerFrameRateLabelTemplate" />    
+                </Frame>
+                <Frame type="EditBox" name="TextBox" template="SpecialFrameTemplates/FrameRateTextBoxTemplate">
+                    <Visible val="False" />
+                    <Handle val="FrameRateEditBox"/>
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame> 
+</Desc>

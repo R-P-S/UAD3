@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="UnitStatusFrame" name="BossBarTemplate">
+      <Height val="50" />
+      <Width val="450" />
+      <OwnerRenderPriority val="812" />
+      <AllyRenderPriority val="712" />
+      <EnemyRenderPriority val="612" />
+      <Frame type="Frame" name="AttachPointFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="135" />
+         <Height val="0" />
+         <Width val="0" />
+      </Frame>
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate" template="HotS_UnitStatus/UnitStatusUnitNameTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="-2" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-270" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="BossShieldsBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="16" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-73" />
+         <Height val="13" />
+         <Width val="200" />
+         <BackgroundShown val="false" />
+         <BackgroundColor val="72,72,72" />
+         <BarInsetRect top="1" left="1" bottom="1" right="1" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <RenderType val="HDR" />
+         <RenderPriority val="513" />
+         <Segmented val="true" />
+         <SegmentValue val="{$parent/BarSegment/Shields/@ResultInt}" />
+         <SegmentGroupCount val="3" />
+         <SnapToDevicePixels val="true" />
+         <Texture val="@UI/HealthBar" />
+         <BarCount val="1" />
+         <OwnerColor val="46,115,24" />
+         <AllyColor val="46,115,24" />
+         <EnemyColor val="46,115,24" />
+         <ReductionColor val="46,115,24" />
+         <ReductionShown val="true" />
+         <IncreaseDuration val="3000" />
+         <DecreaseDuration val="6000" />
+      </Frame>
+      <Frame type="UnitStatusHealthBar" name="BossHealthBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="16" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-73" />
+         <Height val="13" />
+         <Width val="200" />
+         <BackgroundShown val="true" />
+         <BackgroundColor val="72,72,72" />
+         <BarInsetRect top="1" left="1" bottom="1" right="1" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <BorderWidth val="2" />
+         <RenderType val="HDR" />
+         <Segmented val="true" />
+         <SegmentValue val="{$parent/BarSegment/Health/@ResultInt}" />
+         <SegmentGroupCount val="20" />
+         <SnapToDevicePixels val="true" />
+         <Texture val="@UI/HealthBar" />
+         <BarCount val="1" />
+         <OwnerColor val="0,255,0" />
+         <AllyColor val="11,105,1" />
+         <EnemyColor val="150,15,50" />
+         <ReductionColor val="255,0,0" />
+         <ReductionShown val="true" />
+         <IncreaseDuration val="3000" />
+         <DecreaseDuration val="6000" />
+      </Frame>
+      <Frame type="UnitStatusEnergyBar" name="BossEnergyBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="29" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-73" />
+         <Height val="8" />
+         <Width val="200" />
+         <BackgroundShown val="true" />
+         <BackgroundColor val="72,72,72" />
+         <BorderWidth val="2" />
+         <SnapToDevicePixels val="true" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <BarInsetRect top="1" left="1" bottom="1" right="1" />
+         <Texture val="@UI/HotS_HeroUnit_Status_Bar" />
+         <OwnerColor val="150,40,220" />
+         <AllyColor val="150,40,220" />
+         <EnemyColor val="150,40,220" />
+         <ReductionColor val="96,96,96" />
+         <ReductionShown val="true" />
+         <IncreaseDuration val="3000" />
+         <DecreaseDuration val="6000" />
+         <RenderType val="HDR" />
+      </Frame>
+      <Frame type="UnitStatusDurationBar" name="BossDurationBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="36" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-73" />
+         <Height val="7" />
+         <Width val="200" />
+         <BackgroundShown val="true" />
+         <BackgroundColor val="72,72,72" />
+         <BorderWidth val="2" />
+         <SnapToDevicePixels val="true" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <BarInsetRect top="1" left="1" bottom="1" right="1" />
+         <Texture val="@UI/HotS_HeroUnit_Status_Bar" />
+         <BarCount val="1" />
+         <OwnerColor val="255,0,0" />
+         <AllyColor val="255,0,0" />
+         <EnemyColor val="255,0,0" />
+         <ReductionColor val="255,0,0" />
+         <ReductionShown val="true" />
+         <VisibleToAlly val="true" />
+         <VisibleToOwner val="true" />
+         <VisibleToEnemy val="true" />
+         <RenderPriority val="500" />
+      </Frame>
+      <Frame type="UnitFrame" name="BarSegment">
+         <Anchor relative="$parent" />
+         <UnitTag val="{$parent/@UnitTag}" />
+         <Frame type="MathFrame" name="Shields">
+            <Anchor relative="$parent" />
+            <A val="{$parent/@MaxShields}" />
+            <B val="3" />
+            <Operator val="Divide" />
+         </Frame>
+         <Frame type="MathFrame" name="Health">
+            <Anchor relative="$parent" />
+            <A val="{$parent/@MaxHealth}" />
+            <B val="20" />
+            <Operator val="Divide" />
+         </Frame>
+      </Frame>
+   </Frame>
+   
+   <Frame type="UnitStatusFrame" name="Cacumen" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-225" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Darreus" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-240" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Ares" template="BossBar/BossBarTemplate" />
+   <Frame type="UnitStatusFrame" name="Widower" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-235" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Arachnathid" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-200" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Minerva" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-238" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Metasis" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-238" />
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="BattleBot" template="BossBar/BossBarTemplate">
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-238" />
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="BossShieldsBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-55" />
+         <SegmentValue val="33.3" />
+         <SegmentGroupCount val="3" />
+         <OwnerColor val="128,128,128" />
+         <AllyColor val="128,128,128" />
+         <EnemyColor val="128,128,128" />
+         <ReductionColor val="128,128,128" />
+         <BorderWidth val="1" />
+         <Width val="100" />
+         <Segmented val="False" />
+      </Frame>
+      <Frame type="UnitStatusHealthBar" name="BossHealthBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-55" />
+         <SegmentValue val="150" />
+         <SegmentGroupCount val="4" />
+         <BorderWidth val="1" />
+         <Width val="100" />
+         <Segmented val="False" />
+      </Frame>
+      <Frame type="UnitStatusEnergyBar" name="BossEnergyBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="13" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-55" />
+         <BorderWidth val="1" />
+         <Width val="100" />
+      </Frame>
+      <Frame type="UnitStatusDurationBar" name="BossDurationBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+         <Anchor side="Left" relative="$parent/AttachPointFrame" pos="Min" offset="-55" />
+         <BorderWidth val="1" />
+         <Width val="100" />
+      </Frame>
+   </Frame>
+</Desc>

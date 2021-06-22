@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+        <Frame type="Frame" name="UIContainer">
+            <Frame type="Frame" name="FullscreenUpperContainer">
+                <Frame type="Frame" name="BankUtilityContainer">
+                    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+                    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+                    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+                    <Height val="250" />
+                    <Width val="425" />
+                    <Handle val="BankUtilFrame" />
+                    <Visible val="False"/>
+                    <Frame type="Image" name="BackgroundImage">
+                        <Anchor relative="$parent" />
+                        <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+                        <TextureType val="Border" />
+                        <Color val="0,255,148" />
+                    </Frame>
+                    <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate" />
+                    <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate" />
+                    <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate" />
+                    <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate" />
+                    <Frame type="Label" name="Handle0">
+                        <Anchor relative="$parent"/>
+                        <Alpha val="0"/>
+                    </Frame>
+                    <Frame type="Label" name="Handle1">
+                        <Anchor relative="$parent"/>
+                        <Alpha val="0"/>
+                    </Frame>
+                    <Frame type="Frame" name="TextBox0" template="StandardUADTemplates/BankEditBoxContainerTemplate">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="55"/>
+                        <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                        <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                        <Frame type="EditBox" name="TextBox">
+                            <Text val="{$parent/$parent/Handle0/@Text}" />
+                        </Frame>
+                    </Frame>
+                    <Frame type="Frame" name="TextBox1" template="StandardUADTemplates/BankEditBoxContainerTemplate">
+                        <Anchor side="Top" relative="$sibling-1" pos="Max" offset="5"/>
+                        <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                        <Frame type="EditBox" name="TextBox">
+                            <Text val="{$parent/$parent/Handle1/@Text}" />
+                        </Frame>
+                    </Frame>
+                    <Frame type="Frame" name="Country0">
+                        <Anchor side="Top" relative="$parent/TextBox0" pos="Mid" offset="-15"/>
+                        <Anchor side="Left" relative="$parent/TextBox0" pos="Min" offset="-60"/>
+                        <Height val="30"/>
+                        <Width val="60"/>
+                        <Frame type="Image" name="Flag">
+                            <Anchor relative="$parent"/>
+                            <Texture val="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_unitedstates.dds"/>
+                        </Frame>
+                    </Frame>
+                    <Frame type="Frame" name="Country1">
+                        <Anchor side="Top" relative="$parent/TextBox1" pos="Mid" offset="-15"/>
+                        <Anchor side="Left" relative="$parent/TextBox1" pos="Min" offset="-60"/>
+                        <Height val="30"/>
+                        <Width val="60"/>
+                        <Frame type="Image" name="Flag">
+                            <Anchor relative="$parent"/>
+                            <Texture val="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_southkorea.dds"/>
+                        </Frame>
+                    </Frame>
+                    <StateGroup name="Country">
+                        <State name="USMain">
+                            <When type="AnimationState" frame="$this" Region="1" />
+                            <Action type="SetProperty" frame="$this/Country0" Width="48" />
+                            <Action type="SetProperty" frame="$this/Country0/Flag" Texture="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_unitedstates.dds" />
+                            <Action type="SetProperty" frame="$this/Country1/Flag" Texture="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_southkorea.dds" />
+                        </State>
+                        <State name="KRMain">
+                            <When type="AnimationState" frame="$this" Region="2" />
+                            <Action type="SetProperty" frame="$this/Country1" Width="48" />
+                            <Action type="SetProperty" frame="$this/Country1/Flag" Texture="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_unitedstates.dds" />  
+                            <Action type="SetProperty" frame="$this/Country0/Flag" Texture="Assets\Textures\sc2_ui_collection_warchest_esports_countryflag_southkorea.dds" />  
+                        </State>
+                    </StateGroup>
+                    <StateGroup name="MenuState">
+                        <DefaultState val="Hidden"/>
+                        <State name="Visible">
+                            <When type="Property" frame="$this" Visible="True" />
+                            <Action type="SetProperty" frame="$GridBG" Visible="True" />
+                            <Action type="SetProperty" frame="$GridBG/ShimmersContainer/BlurredLights" Visible="False" />
+                            <Action type="SetProperty" frame="$XPFrame" Visible="False" />
+                            <Action type="SetProperty" frame="$MapPanel" Visible="False" />
+                        </State>
+                        <State name="Hidden"/>
+                    </StateGroup>
+                    <Animation name="DisplayAnim">
+                        <Event event="Display" action="Play" />
+                        <Controller type="Visibility" end="Pause">
+                            <Key type="Bool" time="0" value="False" />
+                            <Key type="Bool" time="0" value="True" />
+                        </Controller>
+                    </Animation> 
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

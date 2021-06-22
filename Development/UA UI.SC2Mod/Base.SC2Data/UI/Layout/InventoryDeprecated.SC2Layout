@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="InventoryPanel" name="GameUI/UIContainer/ConsoleUIContainer/InventoryPanel" file="GameUI">
+      <Frame type="InventoryContainer" name="InventoryButtons">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-210" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Handle val="InventoryContainer" />
+         <Frame type="CommandButton" name="Button05">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-28" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+            <Width val="76" />
+            <Height val="76" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+         </Frame>
+         <Frame type="CommandButton" name="Button04">
+            <Width val="76" />
+            <Height val="76" />
+            <Handle val="InvButton04" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+            <StateGroup name="WeaponSlot">
+               <DefaultState val="Enabled" />
+               <State name="Disabled">
+                  <When type="AnimationState" WeaponSlot="Disable" />
+                  <Action type="SetProperty" Enabled="False" />
+               </State>
+               <State name="Enabled" />
+            </StateGroup>
+         </Frame>
+         <Frame type="CommandButton" name="Button03">
+            <Width val="76" />
+            <Height val="76" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+         </Frame>
+         <Frame type="CommandButton" name="Button02">
+            <Width val="76" />
+            <Height val="76" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+         </Frame>
+         <Frame type="CommandButton" name="Button01">
+            <Width val="76" />
+            <Height val="76" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+         </Frame>
+         <Frame type="CommandButton" name="Button00">
+            <Width val="76" />
+            <Height val="76" />
+            <Frame type="CommandHotkeyFrame" name="HotkeyFrame">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Label" name="ChargeLabel">
+               <Color val="0,255,128" />
+            </Frame>
+         </Frame>
+         <Frame type="Frame" name="ContainerSizeFrame">
+            <Anchor side="Top" relative="$parent/Button00" pos="Min" offset="-55" />
+            <Anchor side="Bottom" relative="$parent/Button00" pos="Max" offset="28" />
+            <Anchor side="Left" relative="$parent/Button00" pos="Min" offset="-20" />
+            <Anchor side="Right" relative="$parent/Button05" pos="Max" offset="20" />
+         </Frame>
+         <StateGroup name="InventoryState">
+            <State name="Hidden">
+               <When type="Property" Visible="False" />
+            </State>
+            <State name="Visible">
+               <When type="Property" Visible="True" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="Cursor">
+         <StateGroup name="CursorImageState">
+            <DefaultState val="Visible" />
+            <State name="Option[1]">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Texture="Assets\Custom Icons\icon-mags.dds" index="1" />          
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$parent/CursorAnchor" Visible="True" />         
+            </State>
+            <State name="Option[2]">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Texture="BTNAmmoCase.dds" index="1" />          
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$parent/CursorAnchor" Visible="True" />         
+            </State>
+            <State name="Option[3]">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" operator="NotEqual" Texture="BTNAmmoCase.dds" index="1" />          
+               <Action type="SetProperty" frame="$parent/CursorAnchor" Visible="False" />         
+            </State>
+            <!-- Not Needed but just in case -->
+            <State name="Option[4]">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" operator="NotEqual" Texture="Assets\Custom Icons\icon-mags.dds" index="1" />          
+               <Action type="SetProperty" frame="$parent/CursorAnchor" Visible="False" />         
+            </State>
+            <State name="Visible" />
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="CursorAnchor">
+         <Anchor relative="$parent/Cursor" />
+         <Visible val="False" />
+         <LayerCount val="2"/>
+         <TextureType val="Normal" layer="0" />
+         <TextureType val="Normal" layer="1" />
+         <Texture val="{$parent/Cursor/@Texture[0]}" layer="0" />
+         <Texture val="{$parent/Cursor/@Texture[1]}" layer="1" />
+         <StateGroup name="CursorImage">
+            <DefaultState val="NoImage" />
+            <State name="Fuel">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$parent/Cursor" Texture="Assets\Custom Icons\icon-mags.dds" index="1" />        
+               <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" index="1" />     
+            </State>
+            <State name="FuelTank">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$parent/Cursor" Texture="BTNAmmoCase.dds" index="1" />        
+               <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-highcapacity.dds" index="1" />     
+            </State>
+            <State name="NoImage" />
+         </StateGroup>
+      </Frame> <!--
+      <Frame type="Image" name="InnerCircle">
+         <Anchor side="Top" relative="$parent/CursorAnchor" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/CursorAnchor" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/CursorAnchor" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent/CursorAnchor" pos="Mid" offset="0" />
+         <Texture val="@UI/Glues_Battlenet_DownloadPanel_InnerCircle" />
+         <Height val="84" />
+         <Width val="84" />
+         <Alpha val="0" />
+         <Visible val="False" />
+         <Animation name="Spin">
+            <Event event="OnShown" action="Reset, Play" />
+            <Controller type="Rotation" relative="False" end="Loop">
+               <Key type="Curve" time="0" value="0" out="linear" />
+               <Key type="Curve" time="3.5" value="-360" in="linear" />
+            </Controller>
+            <Controller type="Dimension" dimension="Width" relative="False" percentage="True" end="Pause">
+               <Key type="Curve" time="0" value="150" />
+               <Key type="Curve" time="0.3" value="100" />
+            </Controller>
+            <Controller type="Dimension" dimension="Height" relative="False" percentage="True" end="Pause">
+               <Key type="Curve" time="0" value="150" />
+               <Key type="Curve" time="0.3" value="100" />
+            </Controller>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Auto" />
+               <Key type="Curve" time="0.3" value="255" in="Auto" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="Arrows">
+         <Anchor side="Top" relative="$parent/InnerCircle" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/InnerCircle" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/InnerCircle" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent/InnerCircle" pos="Mid" offset="0" />
+         <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingIcon" />
+         <Height val="48" />
+         <Width val="47" />
+         <Alpha val="0" />
+         <Visible val="False" />
+         <Animation name="Spin">
+            <Event event="OnShown" action="Reset, Play" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Auto" />
+               <Key type="Curve" time="0.3" value="0" in="Auto" />
+               <Key type="Curve" time="0.5" value="255" in="Auto" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="ArrowHighlight1">
+         <Anchor side="Top" relative="$parent/Arrows" pos="Min" offset="5" />
+         <Anchor side="Left" relative="$parent/Arrows" pos="Min" offset="1" />
+         <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingHighlight" />
+         <Height val="34" />
+         <Width val="47" />
+         <Alpha val="0" />
+         <Visible val="False" />
+         <Animation name="Spin">
+            <Event event="OnShown" action="Reset, Play" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="0" out="Step" />
+               <Key type="Curve" time="0.5" value="255" in="Step" />
+               <Key type="Curve" time="0.8" value="0" in="Step" />
+               <Key type="Curve" time="1.1" value="0" in="Step" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="ArrowHighlight2">
+         <Anchor side="Top" relative="$parent/Arrows" pos="Min" offset="14" />
+         <Anchor side="Left" relative="$parent/Arrows" pos="Min" offset="1" />
+         <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingHighlight" />
+         <Height val="34" />
+         <Width val="47" />
+         <Alpha val="0" />
+         <Visible val="False" />
+         <Animation name="Spin">
+            <Event event="OnShown" action="Reset, Play" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="0" out="Step" />
+               <Key type="Curve" time="0.8" value="255" in="Step" />
+               <Key type="Curve" time="1.1" value="0" in="Step" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <StateGroup name="CursorColor">
+         <State name="CursorOrange">
+            <When type="StateGroup" frame="Cursor" CursorImageState="Flamethrower" />
+            <Action type="SetProperty" frame="InnerCircle" Visible="True" />
+            <Action type="SetProperty" frame="InnerCircle" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="InnerCircle" AdjustmentColor="255,69,0" />
+            <Action type="SetProperty" frame="Arrows" Visible="True" />
+            <Action type="SetProperty" frame="Arrows" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="Arrows" AdjustmentColor="255,69,0" />
+            <Action type="SetProperty" frame="ArrowHighlight1" Visible="True" />
+            <Action type="SetProperty" frame="ArrowHighlight1" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ArrowHighlight1" AdjustmentColor="255,69,0" />
+            <Action type="SetProperty" frame="ArrowHighlight2" Visible="True" />
+            <Action type="SetProperty" frame="ArrowHighlight2" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ArrowHighlight2" AdjustmentColor="255,69,0" />
+         </State>
+         <State name="CursorDefault">
+            <When type="StateGroup" frame="Cursor" CursorImageState="Default" />
+         </State>
+      </StateGroup> -->
+   </Frame>
+</Desc>

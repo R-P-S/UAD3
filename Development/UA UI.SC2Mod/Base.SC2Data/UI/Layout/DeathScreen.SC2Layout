@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        <Frame type="Frame" name="PlayerDeathFrame">
+            <Width val="400" />
+            <Height val="200" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-200" />
+            <Handle val="PDFrame" />
+            <Visible val="False" />
+
+            <Frame type="Image" name="Background">
+                <Anchor relative="$parent" />
+                <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+                <TextureType val="Border" />
+                <Color val="0,255,148" />
+            </Frame>
+
+            <Frame type="Label" name="PlayerTextMessage">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                <Height val="100" />
+                <Width val="400" />
+                <Text val="@DOCSTR_DeathScreenMessage"/>
+                <Style val="BossBarHP" />
+                <Color val="00FF40" />
+            </Frame>
+            
+            <!--
+            <Frame type="Button" name="CloseButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="-75" />
+                <Width val="150" />
+                <Height val="50" />
+                <Tooltip val="Close message." />
+                <Handle val="PDCloseButton" />
+                <Visible val="True"/>
+                <Toggleable val="false" />
+                <AcceptsMouseTooltip val="true" />
+                <Text val="Close" />
+
+                <Animation name="ClickAnim">
+                    <Event event="OnClick" action="Reset,Play" />
+                    <Controller type="Event" end="Pause" frame="$parent">
+                        <Key type="Event" time="0" event="Hide" />
+                    </Controller>
+                </Animation>
+
+            </Frame>
+            -->
+            
+            <Animation name="DisplayAnim">
+                <Event event="Display" action="Reset,Play" />    
+                <Controller type="Visibility" end="Pause">
+                   <Key type="Bool" time="0" value="True" />
+                   <Key type="Bool" time="10" value="False"/>
+                </Controller>
+
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Fast"/>
+                    <Key type="Curve" time="10" value="0" in="Slow"/>
+                </Controller>
+            </Animation>
+
+            <Animation name="HideAnim">
+                <Event event="Hide" action="Reset,Play" />    
+                <Controller type="Visibility" end="Pause">
+                   <Key type="Bool" time="0" value="False" />
+                </Controller>
+            </Animation>
+
+        </Frame>
+    </Frame>
+</Desc>

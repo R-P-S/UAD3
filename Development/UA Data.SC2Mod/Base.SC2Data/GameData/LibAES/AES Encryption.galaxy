@@ -1,0 +1,509 @@
+// CONSTANTS
+const int AES_ENCRYPTION_NB = 4;
+const int AES_ENCRYPTION_NK = 5;
+const int AES_ENCRYPTION_NR = 11;
+const int AES_ENCRYPTION_NKS = AES_ENCRYPTION_NB * (AES_ENCRYPTION_NR + 1);
+typedef byte[256] aes_encryption_table_t;
+aes_encryption_table_t AES_ENCRYPTION_SBOX;
+aes_encryption_table_t AES_ENCRYPTION_ISBOX;
+aes_encryption_table_t AES_ENCRYPTION_GM2;
+aes_encryption_table_t AES_ENCRYPTION_GM9;
+aes_encryption_table_t AES_ENCRYPTION_GM13;
+byte[30] AES_ENCRYPTION_RCON;
+// TYPES
+typedef int[AES_ENCRYPTION_NK] aes_encryption_key_t;
+typedef int[AES_ENCRYPTION_NB] aes_encryption_block_t;
+struct aes_encryption_t{
+   
+    int[AES_ENCRYPTION_NKS] keysched;
+   
+    int keypos;
+};
+void AESEncryptionSetup(structref<aes_encryption_t> obj, arrayref<aes_encryption_key_t> key);
+void AESEncryptionCipher(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block);
+void AESEncryptionInvCipher(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block);
+int AESEncryptionRotWord(int word);
+int AESEncryptionSubWord(int word, arrayref<aes_encryption_table_t> box);
+void AESEncryptionSubBytes(arrayref<aes_encryption_block_t> block);
+void AESEncryptionShiftRows(arrayref<aes_encryption_block_t> block);
+void AESEncryptionMixColumns(arrayref<aes_encryption_block_t> block);
+void AESEncryptionAddRoundKey(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block);
+void AESEncryptionKeyExpansion(structref<aes_encryption_t> obj, arrayref<aes_encryption_key_t> key);
+void AESEncryptionInvShiftRows(arrayref<aes_encryption_block_t> block);
+void AESEncryptionInvSubBytes(arrayref<aes_encryption_block_t> block);
+void AESEncryptionInvMixColumns(arrayref<aes_encryption_block_t> block);
+void AESEncryptionInit();
+ 
+// IMPLEMENTATION
+void AESEncryptionSetup(structref<aes_encryption_t> obj, arrayref<aes_encryption_key_t> key){
+    AESEncryptionKeyExpansion(obj, key);
+}
+void AESEncryptionCipher(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block){
+    int i;
+   
+    obj.keypos = 0;
+  
+    AESEncryptionAddRoundKey(obj, block);
+   
+    for( i = 1 ; i < AES_ENCRYPTION_NR ; i+= 1 ){
+        AESEncryptionSubBytes(block);
+        AESEncryptionShiftRows(block);
+        AESEncryptionMixColumns(block);
+        AESEncryptionAddRoundKey(obj, block);
+    }
+ 
+    AESEncryptionSubBytes(block);
+    AESEncryptionShiftRows(block);
+    AESEncryptionAddRoundKey(obj, block);
+}
+void AESEncryptionInvCipher(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block){
+    int i;
+  
+    obj.keypos = AES_ENCRYPTION_NKS - AES_ENCRYPTION_NB;
+    AESEncryptionAddRoundKey(obj, block);
+   
+    for( obj.keypos = (AES_ENCRYPTION_NR - 1) * AES_ENCRYPTION_NB ; obj.keypos > 0 ; obj.keypos-= AES_ENCRYPTION_NB * 2 ){
+        AESEncryptionInvShiftRows(block);
+        AESEncryptionInvSubBytes(block);
+        AESEncryptionAddRoundKey(obj, block);
+        AESEncryptionInvMixColumns(block);
+    }
+   
+    AESEncryptionInvShiftRows(block);
+    AESEncryptionInvSubBytes(block);
+    AESEncryptionAddRoundKey(obj, block);
+}
+int AESEncryptionRotWord(int word){
+    return (word << 24) | ((word >> 8) & 0xFFFFFF);
+}
+int AESEncryptionSubWord(int word, arrayref<aes_encryption_table_t> box){
+    int a;
+    int tc;
+ 
+    a = box[word & 0xFF];
+    tc = box[(word >> 8) & 0xFF];
+    a|= tc << 8;
+    tc = box[(word >> 16) & 0xFF];
+    a|= tc << 16;
+    tc = box[(word >> 24) & 0xFF];
+    a|= tc << 24;
+    return a;
+}
+void AESEncryptionSubBytes(arrayref<aes_encryption_block_t> block){
+  
+    block[0] = AESEncryptionSubWord(block[0], AES_ENCRYPTION_SBOX);
+    block[1] = AESEncryptionSubWord(block[1], AES_ENCRYPTION_SBOX);
+    block[2] = AESEncryptionSubWord(block[2], AES_ENCRYPTION_SBOX);
+    block[3] = AESEncryptionSubWord(block[3], AES_ENCRYPTION_SBOX);
+}
+void AESEncryptionShiftRows(arrayref<aes_encryption_block_t> block){
+  
+    int a;
+    int b;
+    int c;
+ 
+    a = (block[0] & 0xFF) | (block[1] & 0xFF00) | (block[2] & 0xFF0000) | (block[3] & ~0xFFFFFF);
+    b = (block[1] & 0xFF) | (block[2] & 0xFF00) | (block[3] & 0xFF0000) | (block[0] & ~0xFFFFFF);
+    c = (block[2] & 0xFF) | (block[3] & 0xFF00) | (block[0] & 0xFF0000) | (block[1] & ~0xFFFFFF);
+    block[3] = (block[3] & 0xFF) | (block[0] & 0xFF00) | (block[1] & 0xFF0000) | (block[2] & ~0xFFFFFF);
+    block[2] = c;
+    block[1] = b;
+    block[0] = a;
+}
+void AESEncryptionMixColumns(arrayref<aes_encryption_block_t> block){
+    int a;
+    int b;
+  
+    a = block[0];
+    b = AESEncryptionSubWord(a, AES_ENCRYPTION_GM2);
+    block[0] = b ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((a << 24) | ((a >> 8) & 0xFFFFFF)) ^ ((a << 16) | ((a >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    a = block[1];
+    b = AESEncryptionSubWord(a, AES_ENCRYPTION_GM2);
+    block[1] = b ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((a << 24) | ((a >> 8) & 0xFFFFFF)) ^ ((a << 16) | ((a >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    a = block[2];
+    b = AESEncryptionSubWord(a, AES_ENCRYPTION_GM2);
+    block[2] = b ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((a << 24) | ((a >> 8) & 0xFFFFFF)) ^ ((a << 16) | ((a >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    a = block[3];
+    b = AESEncryptionSubWord(a, AES_ENCRYPTION_GM2);
+    block[3] = b ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((a << 24) | ((a >> 8) & 0xFFFFFF)) ^ ((a << 16) | ((a >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+}
+void AESEncryptionAddRoundKey(structref<aes_encryption_t> obj, arrayref<aes_encryption_block_t> block){
+    block[0]^= obj.keysched[obj.keypos];
+    obj.keypos+= 1;
+    block[1]^= obj.keysched[obj.keypos];
+    obj.keypos+= 1;
+    block[2]^= obj.keysched[obj.keypos];
+    obj.keypos+= 1;
+    block[3]^= obj.keysched[obj.keypos];
+    obj.keypos+= 1;
+}
+void AESEncryptionKeyExpansion(structref<aes_encryption_t> obj, arrayref<aes_encryption_key_t> key){
+    int i;
+    int temp;
+    int conv;
+ 
+    for( i = 0 ; i < AES_ENCRYPTION_NK ; i+= 1 ){
+        obj.keysched[i] = key[i];
+    }
+   
+    for( ; i < AES_ENCRYPTION_NKS ; i+= 1 ){
+        temp = obj.keysched[i - 1];
+        if( (i % AES_ENCRYPTION_NK) == 0 ){
+          
+            conv = AES_ENCRYPTION_RCON[i / AES_ENCRYPTION_NK];
+            temp = AESEncryptionSubWord(AESEncryptionRotWord(temp), AES_ENCRYPTION_SBOX) ^ conv;
+        }
+        else if( (AES_ENCRYPTION_NK > 6) && ((i % AES_ENCRYPTION_NK) == 4) ){
+            temp = AESEncryptionSubWord(temp, AES_ENCRYPTION_SBOX);
+        }
+        obj.keysched[i] = obj.keysched[i - AES_ENCRYPTION_NK] ^ temp;
+    }
+}
+void AESEncryptionInvShiftRows(arrayref<aes_encryption_block_t> block){
+   
+    int a;
+    int b;
+    int c;
+   
+    a = (block[0] & 0xFF) | (block[3] & 0xFF00) | (block[2] & 0xFF0000) | (block[1] & ~0xFFFFFF);
+    b = (block[1] & 0xFF) | (block[0] & 0xFF00) | (block[3] & 0xFF0000) | (block[2] & ~0xFFFFFF);
+    c = (block[2] & 0xFF) | (block[1] & 0xFF00) | (block[0] & 0xFF0000) | (block[3] & ~0xFFFFFF);
+   
+    block[3] = (block[3] & 0xFF) | (block[2] & 0xFF00) | (block[1] & 0xFF0000) | (block[0] & ~0xFFFFFF);
+    block[2] = c;
+    block[1] = b;
+    block[0] = a;
+}
+void AESEncryptionInvSubBytes(arrayref<aes_encryption_block_t> block){
+    block[0] = AESEncryptionSubWord(block[0], AES_ENCRYPTION_ISBOX);
+    block[1] = AESEncryptionSubWord(block[1], AES_ENCRYPTION_ISBOX);
+    block[2] = AESEncryptionSubWord(block[2], AES_ENCRYPTION_ISBOX);
+    block[3] = AESEncryptionSubWord(block[3], AES_ENCRYPTION_ISBOX);
+}
+void AESEncryptionInvMixColumns(arrayref<aes_encryption_block_t> block){
+    int a;
+    int b;
+    int c;
+    int d;
+ 
+    d = block[0];
+    a = AESEncryptionSubWord(d, AES_ENCRYPTION_GM9);
+    b = a ^ AESEncryptionSubWord(d, AES_ENCRYPTION_GM2);
+    c = AESEncryptionSubWord(d, AES_ENCRYPTION_GM13);
+    d^= c ^ b ^ a;
+    block[0] = d ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((c << 16) | ((c >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    d = block[1];
+    a = AESEncryptionSubWord(d, AES_ENCRYPTION_GM9);
+    b = a ^ AESEncryptionSubWord(d, AES_ENCRYPTION_GM2);
+    c = AESEncryptionSubWord(d, AES_ENCRYPTION_GM13);
+    d^= c ^ b ^ a;
+    block[1] = d ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((c << 16) | ((c >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    d = block[2];
+    a = AESEncryptionSubWord(d, AES_ENCRYPTION_GM9);
+    b = a ^ AESEncryptionSubWord(d, AES_ENCRYPTION_GM2);
+    c = AESEncryptionSubWord(d, AES_ENCRYPTION_GM13);
+    d^= c ^ b ^ a;
+    block[2] = d ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((c << 16) | ((c >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+    d = block[3];
+    a = AESEncryptionSubWord(d, AES_ENCRYPTION_GM9);
+    b = a ^ AESEncryptionSubWord(d, AES_ENCRYPTION_GM2);
+    c = AESEncryptionSubWord(d, AES_ENCRYPTION_GM13);
+    d^= c ^ b ^ a;
+    block[3] = d ^ ((b << 24) | ((b >> 8) & 0xFFFFFF)) ^ ((c << 16) | ((c >> 16) & 0xFFFF)) ^ ((a << 8) | ((a >> 24) & 0xFF));
+}
+void AESEncryptionInit(){
+    int i;
+    int a;
+    byte b;
+  
+    AES_ENCRYPTION_SBOX[  0] = 0x63;
+    AES_ENCRYPTION_SBOX[  1] = 0x7C;
+    AES_ENCRYPTION_SBOX[  2] = 0x77;
+    AES_ENCRYPTION_SBOX[  3] = 0x7B;
+    AES_ENCRYPTION_SBOX[  4] = 0xF2;
+    AES_ENCRYPTION_SBOX[  5] = 0x6B;
+    AES_ENCRYPTION_SBOX[  6] = 0x6F;
+    AES_ENCRYPTION_SBOX[  7] = 0xC5;
+    AES_ENCRYPTION_SBOX[  8] = 0x30;
+    AES_ENCRYPTION_SBOX[  9] = 0x01;
+    AES_ENCRYPTION_SBOX[ 10] = 0x67;
+    AES_ENCRYPTION_SBOX[ 11] = 0x2B;
+    AES_ENCRYPTION_SBOX[ 12] = 0xFE;
+    AES_ENCRYPTION_SBOX[ 13] = 0xD7;
+    AES_ENCRYPTION_SBOX[ 14] = 0xAB;
+    AES_ENCRYPTION_SBOX[ 15] = 0x76;
+    AES_ENCRYPTION_SBOX[ 16] = 0xCA;
+    AES_ENCRYPTION_SBOX[ 17] = 0x82;
+    AES_ENCRYPTION_SBOX[ 18] = 0xC9;
+    AES_ENCRYPTION_SBOX[ 19] = 0x7D;
+    AES_ENCRYPTION_SBOX[ 20] = 0xFA;
+    AES_ENCRYPTION_SBOX[ 21] = 0x59;
+    AES_ENCRYPTION_SBOX[ 22] = 0x47;
+    AES_ENCRYPTION_SBOX[ 23] = 0xF0;
+    AES_ENCRYPTION_SBOX[ 24] = 0xAD;
+    AES_ENCRYPTION_SBOX[ 25] = 0xD4;
+    AES_ENCRYPTION_SBOX[ 26] = 0xA2;
+    AES_ENCRYPTION_SBOX[ 27] = 0xAF;
+    AES_ENCRYPTION_SBOX[ 28] = 0x9C;
+    AES_ENCRYPTION_SBOX[ 29] = 0xA4;
+    AES_ENCRYPTION_SBOX[ 30] = 0x72;
+    AES_ENCRYPTION_SBOX[ 31] = 0xC0;
+    AES_ENCRYPTION_SBOX[ 32] = 0xB7;
+    AES_ENCRYPTION_SBOX[ 33] = 0xFD;
+    AES_ENCRYPTION_SBOX[ 34] = 0x93;
+    AES_ENCRYPTION_SBOX[ 35] = 0x26;
+    AES_ENCRYPTION_SBOX[ 36] = 0x36;
+    AES_ENCRYPTION_SBOX[ 37] = 0x3F;
+    AES_ENCRYPTION_SBOX[ 38] = 0xF7;
+    AES_ENCRYPTION_SBOX[ 39] = 0xCC;
+    AES_ENCRYPTION_SBOX[ 40] = 0x34;
+    AES_ENCRYPTION_SBOX[ 41] = 0xA5;
+    AES_ENCRYPTION_SBOX[ 42] = 0xE5;
+    AES_ENCRYPTION_SBOX[ 43] = 0xF1;
+    AES_ENCRYPTION_SBOX[ 44] = 0x71;
+    AES_ENCRYPTION_SBOX[ 45] = 0xD8;
+    AES_ENCRYPTION_SBOX[ 46] = 0x31;
+    AES_ENCRYPTION_SBOX[ 47] = 0x15;
+    AES_ENCRYPTION_SBOX[ 48] = 0x04;
+    AES_ENCRYPTION_SBOX[ 49] = 0xC7;
+    AES_ENCRYPTION_SBOX[ 50] = 0x23;
+    AES_ENCRYPTION_SBOX[ 51] = 0xC3;
+    AES_ENCRYPTION_SBOX[ 52] = 0x18;
+    AES_ENCRYPTION_SBOX[ 53] = 0x96;
+    AES_ENCRYPTION_SBOX[ 54] = 0x05;
+    AES_ENCRYPTION_SBOX[ 55] = 0x9A;
+    AES_ENCRYPTION_SBOX[ 56] = 0x07;
+    AES_ENCRYPTION_SBOX[ 57] = 0x12;
+    AES_ENCRYPTION_SBOX[ 58] = 0x80;
+    AES_ENCRYPTION_SBOX[ 59] = 0xE2;
+    AES_ENCRYPTION_SBOX[ 60] = 0xEB;
+    AES_ENCRYPTION_SBOX[ 61] = 0x27;
+    AES_ENCRYPTION_SBOX[ 62] = 0xB2;
+    AES_ENCRYPTION_SBOX[ 63] = 0x75;
+    AES_ENCRYPTION_SBOX[ 64] = 0x09;
+    AES_ENCRYPTION_SBOX[ 65] = 0x83;
+    AES_ENCRYPTION_SBOX[ 66] = 0x2C;
+    AES_ENCRYPTION_SBOX[ 67] = 0x1A;
+    AES_ENCRYPTION_SBOX[ 68] = 0x1B;
+    AES_ENCRYPTION_SBOX[ 69] = 0x6E;
+    AES_ENCRYPTION_SBOX[ 70] = 0x5A;
+    AES_ENCRYPTION_SBOX[ 71] = 0xA0;
+    AES_ENCRYPTION_SBOX[ 72] = 0x52;
+    AES_ENCRYPTION_SBOX[ 73] = 0x3B;
+    AES_ENCRYPTION_SBOX[ 74] = 0xD6;
+    AES_ENCRYPTION_SBOX[ 75] = 0xB3;
+    AES_ENCRYPTION_SBOX[ 76] = 0x29;
+    AES_ENCRYPTION_SBOX[ 77] = 0xE3;
+    AES_ENCRYPTION_SBOX[ 78] = 0x2F;
+    AES_ENCRYPTION_SBOX[ 79] = 0x84;
+    AES_ENCRYPTION_SBOX[ 80] = 0x53;
+    AES_ENCRYPTION_SBOX[ 81] = 0xD1;
+    AES_ENCRYPTION_SBOX[ 82] = 0x00;
+    AES_ENCRYPTION_SBOX[ 83] = 0xED;
+    AES_ENCRYPTION_SBOX[ 84] = 0x20;
+    AES_ENCRYPTION_SBOX[ 85] = 0xFC;
+    AES_ENCRYPTION_SBOX[ 86] = 0xB1;
+    AES_ENCRYPTION_SBOX[ 87] = 0x5B;
+    AES_ENCRYPTION_SBOX[ 88] = 0x6A;
+    AES_ENCRYPTION_SBOX[ 89] = 0xCB;
+    AES_ENCRYPTION_SBOX[ 90] = 0xBE;
+    AES_ENCRYPTION_SBOX[ 91] = 0x39;
+    AES_ENCRYPTION_SBOX[ 92] = 0x4A;
+    AES_ENCRYPTION_SBOX[ 93] = 0x4C;
+    AES_ENCRYPTION_SBOX[ 94] = 0x58;
+    AES_ENCRYPTION_SBOX[ 95] = 0xCF;
+    AES_ENCRYPTION_SBOX[ 96] = 0xD0;
+    AES_ENCRYPTION_SBOX[ 97] = 0xEF;
+    AES_ENCRYPTION_SBOX[ 98] = 0xAA;
+    AES_ENCRYPTION_SBOX[ 99] = 0xFB;
+    AES_ENCRYPTION_SBOX[100] = 0x43;
+    AES_ENCRYPTION_SBOX[101] = 0x4D;
+    AES_ENCRYPTION_SBOX[102] = 0x33;
+    AES_ENCRYPTION_SBOX[103] = 0x85;
+    AES_ENCRYPTION_SBOX[104] = 0x45;
+    AES_ENCRYPTION_SBOX[105] = 0xF9;
+    AES_ENCRYPTION_SBOX[106] = 0x02;
+    AES_ENCRYPTION_SBOX[107] = 0x7F;
+    AES_ENCRYPTION_SBOX[108] = 0x50;
+    AES_ENCRYPTION_SBOX[109] = 0x3C;
+    AES_ENCRYPTION_SBOX[110] = 0x9F;
+    AES_ENCRYPTION_SBOX[111] = 0xA8;
+    AES_ENCRYPTION_SBOX[112] = 0x51;
+    AES_ENCRYPTION_SBOX[113] = 0xA3;
+    AES_ENCRYPTION_SBOX[114] = 0x40;
+    AES_ENCRYPTION_SBOX[115] = 0x8F;
+    AES_ENCRYPTION_SBOX[116] = 0x92;
+    AES_ENCRYPTION_SBOX[117] = 0x9D;
+    AES_ENCRYPTION_SBOX[118] = 0x38;
+    AES_ENCRYPTION_SBOX[119] = 0xF5;
+    AES_ENCRYPTION_SBOX[120] = 0xBC;
+    AES_ENCRYPTION_SBOX[121] = 0xB6;
+    AES_ENCRYPTION_SBOX[122] = 0xDA;
+    AES_ENCRYPTION_SBOX[123] = 0x21;
+    AES_ENCRYPTION_SBOX[124] = 0x10;
+    AES_ENCRYPTION_SBOX[125] = 0xFF;
+    AES_ENCRYPTION_SBOX[126] = 0xF3;
+    AES_ENCRYPTION_SBOX[127] = 0xD2;
+    AES_ENCRYPTION_SBOX[128] = 0xCD;
+    AES_ENCRYPTION_SBOX[129] = 0x0C;
+    AES_ENCRYPTION_SBOX[130] = 0x13;
+    AES_ENCRYPTION_SBOX[131] = 0xEC;
+    AES_ENCRYPTION_SBOX[132] = 0x5F;
+    AES_ENCRYPTION_SBOX[133] = 0x97;
+    AES_ENCRYPTION_SBOX[134] = 0x44;
+    AES_ENCRYPTION_SBOX[135] = 0x17;
+    AES_ENCRYPTION_SBOX[136] = 0xC4;
+    AES_ENCRYPTION_SBOX[137] = 0xA7;
+    AES_ENCRYPTION_SBOX[138] = 0x7E;
+    AES_ENCRYPTION_SBOX[139] = 0x3D;
+    AES_ENCRYPTION_SBOX[140] = 0x64;
+    AES_ENCRYPTION_SBOX[141] = 0x5D;
+    AES_ENCRYPTION_SBOX[142] = 0x19;
+    AES_ENCRYPTION_SBOX[143] = 0x73;
+    AES_ENCRYPTION_SBOX[144] = 0x60;
+    AES_ENCRYPTION_SBOX[145] = 0x81;
+    AES_ENCRYPTION_SBOX[146] = 0x4F;
+    AES_ENCRYPTION_SBOX[147] = 0xDC;
+    AES_ENCRYPTION_SBOX[148] = 0x22;
+    AES_ENCRYPTION_SBOX[149] = 0x2A;
+    AES_ENCRYPTION_SBOX[150] = 0x90;
+    AES_ENCRYPTION_SBOX[151] = 0x88;
+    AES_ENCRYPTION_SBOX[152] = 0x46;
+    AES_ENCRYPTION_SBOX[153] = 0xEE;
+    AES_ENCRYPTION_SBOX[154] = 0xB8;
+    AES_ENCRYPTION_SBOX[155] = 0x14;
+    AES_ENCRYPTION_SBOX[156] = 0xDE;
+    AES_ENCRYPTION_SBOX[157] = 0x5E;
+    AES_ENCRYPTION_SBOX[158] = 0x0B;
+    AES_ENCRYPTION_SBOX[159] = 0xDB;
+    AES_ENCRYPTION_SBOX[160] = 0xE0;
+    AES_ENCRYPTION_SBOX[161] = 0x32;
+    AES_ENCRYPTION_SBOX[162] = 0x3A;
+    AES_ENCRYPTION_SBOX[163] = 0x0A;
+    AES_ENCRYPTION_SBOX[164] = 0x49;
+    AES_ENCRYPTION_SBOX[165] = 0x06;
+    AES_ENCRYPTION_SBOX[166] = 0x24;
+    AES_ENCRYPTION_SBOX[167] = 0x5C;
+    AES_ENCRYPTION_SBOX[168] = 0xC2;
+    AES_ENCRYPTION_SBOX[169] = 0xD3;
+    AES_ENCRYPTION_SBOX[170] = 0xAC;
+    AES_ENCRYPTION_SBOX[171] = 0x62;
+    AES_ENCRYPTION_SBOX[172] = 0x91;
+    AES_ENCRYPTION_SBOX[173] = 0x95;
+    AES_ENCRYPTION_SBOX[174] = 0xE4;
+    AES_ENCRYPTION_SBOX[175] = 0x79;
+    AES_ENCRYPTION_SBOX[176] = 0xE7;
+    AES_ENCRYPTION_SBOX[177] = 0xC8;
+    AES_ENCRYPTION_SBOX[178] = 0x37;
+    AES_ENCRYPTION_SBOX[179] = 0x6D;
+    AES_ENCRYPTION_SBOX[180] = 0x8D;
+    AES_ENCRYPTION_SBOX[181] = 0xD5;
+    AES_ENCRYPTION_SBOX[182] = 0x4E;
+    AES_ENCRYPTION_SBOX[183] = 0xA9;
+    AES_ENCRYPTION_SBOX[184] = 0x6C;
+    AES_ENCRYPTION_SBOX[185] = 0x56;
+    AES_ENCRYPTION_SBOX[186] = 0xF4;
+    AES_ENCRYPTION_SBOX[187] = 0xEA;
+    AES_ENCRYPTION_SBOX[188] = 0x65;
+    AES_ENCRYPTION_SBOX[189] = 0x7A;
+    AES_ENCRYPTION_SBOX[190] = 0xAE;
+    AES_ENCRYPTION_SBOX[191] = 0x08;
+    AES_ENCRYPTION_SBOX[192] = 0xBA;
+    AES_ENCRYPTION_SBOX[193] = 0x78;
+    AES_ENCRYPTION_SBOX[194] = 0x25;
+    AES_ENCRYPTION_SBOX[195] = 0x2E;
+    AES_ENCRYPTION_SBOX[196] = 0x1C;
+    AES_ENCRYPTION_SBOX[197] = 0xA6;
+    AES_ENCRYPTION_SBOX[198] = 0xB4;
+    AES_ENCRYPTION_SBOX[199] = 0xC6;
+    AES_ENCRYPTION_SBOX[200] = 0xE8;
+    AES_ENCRYPTION_SBOX[201] = 0xDD;
+    AES_ENCRYPTION_SBOX[202] = 0x74;
+    AES_ENCRYPTION_SBOX[203] = 0x1F;
+    AES_ENCRYPTION_SBOX[204] = 0x4B;
+    AES_ENCRYPTION_SBOX[205] = 0xBD;
+    AES_ENCRYPTION_SBOX[206] = 0x8B;
+    AES_ENCRYPTION_SBOX[207] = 0x8A;
+    AES_ENCRYPTION_SBOX[208] = 0x70;
+    AES_ENCRYPTION_SBOX[209] = 0x3E;
+    AES_ENCRYPTION_SBOX[210] = 0xB5;
+    AES_ENCRYPTION_SBOX[211] = 0x66;
+    AES_ENCRYPTION_SBOX[212] = 0x48;
+    AES_ENCRYPTION_SBOX[213] = 0x03;
+    AES_ENCRYPTION_SBOX[214] = 0xF6;
+    AES_ENCRYPTION_SBOX[215] = 0x0E;
+    AES_ENCRYPTION_SBOX[216] = 0x61;
+    AES_ENCRYPTION_SBOX[217] = 0x35;
+    AES_ENCRYPTION_SBOX[218] = 0x57;
+    AES_ENCRYPTION_SBOX[219] = 0xB9;
+    AES_ENCRYPTION_SBOX[220] = 0x86;
+    AES_ENCRYPTION_SBOX[221] = 0xC1;
+    AES_ENCRYPTION_SBOX[222] = 0x1D;
+    AES_ENCRYPTION_SBOX[223] = 0x9E;
+    AES_ENCRYPTION_SBOX[224] = 0xE1;
+    AES_ENCRYPTION_SBOX[225] = 0xF8;
+    AES_ENCRYPTION_SBOX[226] = 0x98;
+    AES_ENCRYPTION_SBOX[227] = 0x11;
+    AES_ENCRYPTION_SBOX[228] = 0x69;
+    AES_ENCRYPTION_SBOX[229] = 0xD9;
+    AES_ENCRYPTION_SBOX[230] = 0x8E;
+    AES_ENCRYPTION_SBOX[231] = 0x94;
+    AES_ENCRYPTION_SBOX[232] = 0x9B;
+    AES_ENCRYPTION_SBOX[233] = 0x1E;
+    AES_ENCRYPTION_SBOX[234] = 0x87;
+    AES_ENCRYPTION_SBOX[235] = 0xE9;
+    AES_ENCRYPTION_SBOX[236] = 0xCE;
+    AES_ENCRYPTION_SBOX[237] = 0x55;
+    AES_ENCRYPTION_SBOX[238] = 0x28;
+    AES_ENCRYPTION_SBOX[239] = 0xDF;
+    AES_ENCRYPTION_SBOX[240] = 0x8C;
+    AES_ENCRYPTION_SBOX[241] = 0xA1;
+    AES_ENCRYPTION_SBOX[242] = 0x89;
+    AES_ENCRYPTION_SBOX[243] = 0x0D;
+    AES_ENCRYPTION_SBOX[244] = 0xBF;
+    AES_ENCRYPTION_SBOX[245] = 0xE6;
+    AES_ENCRYPTION_SBOX[246] = 0x42;
+    AES_ENCRYPTION_SBOX[247] = 0x68;
+    AES_ENCRYPTION_SBOX[248] = 0x41;
+    AES_ENCRYPTION_SBOX[249] = 0x99;
+    AES_ENCRYPTION_SBOX[250] = 0x2D;
+    AES_ENCRYPTION_SBOX[251] = 0x0F;
+    AES_ENCRYPTION_SBOX[252] = 0xB0;
+    AES_ENCRYPTION_SBOX[253] = 0x54;
+    AES_ENCRYPTION_SBOX[254] = 0xBB;
+    AES_ENCRYPTION_SBOX[255] = 0x16;
+    for( i = 0 ; i < 256 ; i+= 1 ){
+     
+        a = AES_ENCRYPTION_SBOX[i];
+        AES_ENCRYPTION_ISBOX[a] = i;
+    }
+    for( i = 0 ; i < 128 ; i+= 1 ){
+        AES_ENCRYPTION_GM2[i] = i << 1;
+    }
+    for( ; i < 256 ; i+= 1 ){
+        AES_ENCRYPTION_GM2[i] = ((i << 1) & 0xFF) ^ 0x1B;
+    }
+  
+    for( i = 0 ; i < 256 ; i+= 1 ){
+      
+        a = AES_ENCRYPTION_GM2[i];
+        a = AES_ENCRYPTION_GM2[a];
+        a = AES_ENCRYPTION_GM2[a];
+     
+        AES_ENCRYPTION_GM9[i] = a ^ i;
+    }
+    for( i = 0 ; i < 256 ; i+= 1 ){
+      
+        a = AES_ENCRYPTION_GM2[i];
+    
+        AES_ENCRYPTION_GM13[i] = AES_ENCRYPTION_GM2[a] ^ AES_ENCRYPTION_GM9[i];
+    }
+ 
+    AES_ENCRYPTION_RCON[0] = 0x8D;
+    a = 1;
+    for( i = 1 ; i < 30 ; i+= 1 ){
+        
+        AES_ENCRYPTION_RCON[i] = a;
+        a = AES_ENCRYPTION_GM2[a];
+    }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+        <Frame type="Frame" name="UIContainer">
+            <Frame type="Frame" name="FullscreenLowerContainer">
+                <Frame type="Frame" name="CutsceneContainer">
+                    <Anchor relative="$parent"/>
+                    <RenderType val="HDR"/>
+                    <Handle val="CutsceneContainer" />
+                    <Visible val="False" />
+                    <Frame type="CutsceneFrame" name="StatusWeb" template="CutsceneTemplates/StatusWebTemplate">
+                        <Handle val="StasisWebCutscene" />
+                    </Frame>   
+                </Frame>
+                <!-- Weather Switcher -->
+                <Frame type="Frame" name="WeatherFrame">
+                    <Anchor relative="$parent"/>
+                    <Visible val="False" />
+                    <Handle val="WeatherFrame" />
+                    <Stategroup name="Weather">
+                        <DefaultState val="Off" />
+                        <State name="RainStorm">
+                            <When type="AnimationState" frame="$this" Weather="Rainstorm" />
+                            <Action type="SetProperty" frame="$parent/RainFrame" Visible="True" />  
+                        </State>
+                        <State name="SnowStorm">
+                            <When type="AnimationState" frame="$this" Weather="Snowstorm" />
+                            <Action type="SetProperty" frame="$parent/SnowFrame" Visible="True" />  
+                        </State>
+                        <State name="Reset">
+                            <When type="AnimationState" frame="$this" Weather="Clear" />
+                        </State>
+                        <State name="Off" />
+                    </Stategroup>
+                </Frame>
+                <!-- Weather Events -->
+                <Frame type="Portrait" name="RainFrame" template="WeatherTemplate/RainTemplate" />
+                <Frame type="Portrait" name="SnowFrame" template="WeatherTemplate/SnowTemplate" />
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

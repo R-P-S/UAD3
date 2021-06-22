@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="InfestationIconTemplate">
+      <Width val="64" />
+      <Height val="64" />
+      <Frame type="Image" name="IconBorder">
+         <Anchor relative="$parent" />
+         <RenderPriority val="600" />
+         <Texture val="@@UI/HeroPanelHealthBarBackground" />
+         <TextureType val="Border" />
+         <Desaturated val="True" />
+         <DesaturationColor val="75,0,165" />
+         <RenderType val="HDR" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="InfestationLevel">
+         <Anchor side="Bottom" relative="$parent/$parent/FullscreenUpperContainer/ObjectiveDisplay" pos="Min" offset="-125" />
+         <Anchor side="Right" relative="$parent/$parent/FullscreenUpperContainer/ObjectiveDisplay" pos="Max" offset="-400" />
+         <Height val="225" />
+         <Width val="325" />
+         <Visible val="False" />
+         <Handle val="InfestationLevel" />
+         <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-98" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-72" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Width val="225" />
+            <Text val="Infestation Level" />
+            <Style val="@@ObjectivePanelCategory" />
+            <Visible val="true" />
+            <GlowColor val="148,0,211" />
+         </Frame>
+         <Frame type="Frame" name="Mutations">
+            <Anchor side="Top" relative="$parent/Title" pos="Mid" offset="10" />
+            <Anchor side="Bottom" relative="$parent/Title" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="210" />
+            <Height val="64" />
+            <Width val="64" />
+            <Visible val="False" />
+            <CollapseLayout val="True" />
+            <Handle val="InfestationIconFrame" />
+            <Frame type="Image" name="Icon" template="InfestationLevel/InfestationIconTemplate">
+               <Anchor relative="$parent" />
+               <Texture val="Assets/Icon Pack/btn-ability-zerg-oldparasite-color.dds" />
+               <AcceptsMouseTooltip val="True" />
+               <Tooltip val="@DOCSTR_MutationTooltip" />
+               <TooltipFrame val="UADStandardTooltip" />
+               <Frame type="Label" name="Label">
+                  <Width val="50" />
+                  <Height val="25" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="2" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="0" />
+               </Frame>
+            </Frame>
+            <StateGroup name="MutationCount">
+               <DefaultState val="Zero" />
+               <State name="GTO">
+                  <When type="Property" frame="$this/Icon/Label" operator="GreaterThanOrEqual" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="Zero">
+                  <When type="Property" frame="$this/Icon/Label" operator="Equal" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Modifier Icons -->
+         <Frame type="Frame" name="Icon0" template="StandardUADTemplates/ModifierIconTemplate">
+            <Anchor side="Top" relative="$parent/Mutations/Icon" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Mutations/Icon" pos="Max" offset="4" />
+            <Tooltip val="{$ModifierIcon0/@Tooltip}"/>
+            <Frame type="Image" name="IconImage">
+               <Texture val="{$ModifierIcon0/IconImage/@Texture}"/>
+            </Frame>
+            <Unclipped val="True"/>
+         </Frame>
+         <Frame type="Frame" name="Icon1" template="StandardUADTemplates/ModifierIconTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="4" />
+            <Tooltip val="{$ModifierIcon1/@Tooltip}"/>
+            <Frame type="Image" name="IconImage">
+               <Texture val="{$ModifierIcon1/IconImage/@Texture}"/>
+            </Frame>
+            <Unclipped val="True"/>
+         </Frame>
+         <Frame type="Frame" name="Icon2" template="StandardUADTemplates/ModifierIconTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="4" />
+            <Tooltip val="{$ModifierIcon2/@Tooltip}"/>
+            <Frame type="Image" name="IconImage">
+               <Texture val="{$ModifierIcon2/IconImage/@Texture}"/>
+            </Frame>
+            <Unclipped val="True"/>
+         </Frame>
+         <Frame type="Image" name="Arrow">
+            <Anchor side="Top" relative="$parent/Title" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/Title" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-5" />
+            <Texture val="@@UI/ObjectivePanelCategoryBackground" />
+            <Color val="148,0,211" />
+            <GlowColor val="148,0,211" />
+         </Frame>
+         <Frame type="DataRefFrame" name="Player14Supply">
+            <Anchor relative="$parent" />
+            <PlayerId val="14" />
+            <Handle val="P14Food" />
+            <Argument name="score" val="FoodUsed" />
+            <Frame type="CountdownLabel" name="Label">
+               <Anchor relative="$parent" />
+               <Text val="{$parent/@RealValue}" />
+            </Frame>
+         </Frame>
+         <Frame type="ProgressBar" name="InfestationProgressBar">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-49" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-115" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <UseFillContainer val="true" />
+            <Height val="30" />
+            <Width val="193" />
+            <MinValue val="0" />
+            <MaxValue val="250" />
+            <Value val="{$parent/Player14Supply/Label/@Text}" />
+            <AcceptsMouseTooltip val="true" />
+            <Tooltip val="@DOCSTR_InfestationLevel" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Frame type="Image" name="BorderImage">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\Infestation_Border.dds" />
+            </Frame>
+            <Frame type="Frame" name="FillImageContainer">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-6" />
+               <Frame type="Image" name="FillImage">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="1" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="-1" />
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="-12" />
+                  <Color val="148,0,211" />
+               </Frame>
+               <Frame type="Image" name="ShadowImage">
+                  <Anchor relative="$parent/FillImage" />
+                  <Texture val="@UI/Battlenet_Glue_Multiplayer_Score_BarShadow" />
+                  <TextureType val="Normal" />
+               </Frame>
+            </Frame>
+         </Frame>
+         <!-- Invisible Frame used to get % result from math frame -->
+         <Frame type="Label" name="Interpreter">
+            <Anchor side="Top" relative="$parent/InfestationProgressBar" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent/InfestationProgressBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/InfestationProgressBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/InfestationProgressBar" pos="Max" offset="0" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,0,0" />
+            <RenderPriority val="651" />
+            <Visible val="False" />
+            <Text val="{$parent/InfestationPercent/@Result}" />
+         </Frame>
+         <Frame type="Label" name="Level">
+            <Anchor side="Top" relative="$parent/InfestationProgressBar" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent/InfestationProgressBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/InfestationProgressBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/InfestationProgressBar" pos="Max" offset="0" />
+            <Text val="Nothing" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <RenderPriority val="650" />
+            <Visible val="True" />
+         </Frame>
+         <!-- StateGroups -->
+         <!-- Visibility Controller -->
+         <StateGroup name="InfestationBar">
+            <State name="VisibilityON">
+               <When type="Property" frame="$HUDButton" visible="True" />
+               <Action type="SetProperty" frame="$this" visible="True" />
+            </State>
+            <State name="VisibilityOFF">
+               <When type="Property" frame="$HUDButton" visible="False" />
+               <Action type="SetProperty" frame="$this" visible="False" />
+            </State>
+         </StateGroup>
+         <!-- Infestation Level Text Controller. States check in descending order -->
+         <StateGroup name="InfestationLevel">
+            <DefaultState val="Minor" />
+            <State name="Critical">
+               <When type="Property" frame="$this/Interpreter" operator="GreaterThanOrEqual" Text="0.8" />
+               <Action type="SetProperty" frame="$this/Level" Text="Critical" />
+            </State>
+            <State name="High">
+               <When type="Property" frame="$this/Interpreter" operator="GreaterThanOrEqual" Text="0.6" />
+               <Action type="SetProperty" frame="$this/Level" Text="High" />
+            </State>
+            <State name="Moderate">
+               <When type="Property" frame="$this/Interpreter" operator="GreaterThanOrEqual" Text="0.4" />
+               <Action type="SetProperty" frame="$this/Level" Text="Moderate" />
+            </State>
+            <State name="Low">
+               <When type="Property" frame="$this/Interpreter" operator="GreaterThanOrEqual" Text="0.2" />
+               <Action type="SetProperty" frame="$this/Level" Text="Low" />
+            </State>
+            <State name="Minor">
+               <When type="Property" frame="$this/Interpreter" operator="LessThan" Text="0.2" />
+               <Action type="SetProperty" frame="$this/Level" Text="Minor" />
+            </State>
+         </StateGroup>
+         <!-- Math frame divides progress bar value & maxValue -->
+         <Frame type="MathFrame" name="InfestationPercent">
+            <Anchor relative="$parent" />
+            <A val="{$parent/InfestationProgressBar/@Value}" />
+            <B val="{$parent/InfestationProgressBar/@MaxValue}" />
+            <Operator val="Divide" />
+         </Frame>
+         <Animation name="FadeIn">
+            <Event event="OnShown" action="Reset,Play" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time="2" value="255" in="Slow" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

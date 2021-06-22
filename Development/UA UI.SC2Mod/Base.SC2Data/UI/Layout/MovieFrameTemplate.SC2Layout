@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="ScreenMovie" template="ScreenMovie/ScreenMovie">
+        <RenderPriority val="512"/>
+        <Visible val="False"/>
+        <Frame type="Image" name="FullscreenBlackoutImage">
+            <Visible val="False"/>
+        </Frame>
+        <Frame type="SubtitleDisplay" name="SubtitleDisplay">
+            <Visible val="False"/>
+        </Frame>
+        <Frame type="Slider" name="StandardMovieProgressSlider">
+            <Alpha val="0"/>
+        </Frame>
+        <Frame type="Label" name="File">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="False"/>
+        </Frame>
+        <Frame type="MovieFrame" name="Movie">
+            <IgnoreGraphicsQuality val="True"/>
+        </Frame>
+        <StateGroup name="MovieState">
+            <State name="IsPlaying"/>
+            <State name="Finished"/>
+            <State name="Stop"/>
+        </StateGroup>
+        <StateGroup name="MovieVisibility">
+            <State name="ForceHide">
+                <When type="StateGroup" frame="$this" MovieState="Stop"/>
+                <Action type="SetProperty" frame="$this" Visible="False"/>
+            </State>
+            <State name="FinishedHide">
+                <When type="StateGroup" frame="$this" MovieState="Finished"/>
+                <Action type="SetProperty" frame="$this" Visible="False"/>
+            </State>
+            <State name="Visible">
+                <When type="StateGroup" frame="$this" MovieState="IsPlaying"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+        </StateGroup>
+        <StateGroup name="MovieActions">
+            <DefaultState val="NoMovie"/>
+            <State name="ForceStop">
+                <When type="AnimationState" frame="$this" Movie="Stop"/>
+                <Action type="SetState" frame="$this" group="MovieState" state="Stop"/>
+                <Action type="SetProperty" frame="Movie" File="" undo="False"/>
+            </State>
+            <State name="FinishedPlaying">
+                <When type="Property" frame="Movie" Finished="True"/>
+                <When type="StateGroup" frame="$this" operator="NotEqual" MovieState="Stop"/>
+                <Action type="SetState" frame="$this" group="MovieState" state="Finished"/>
+                <Action type="SetProperty" frame="Movie" File="" Undo="False"/>
+            </State>
+            <State name="NoMovie"/>
+        </StateGroup>
+        <StateGroup name="SetMovie">
+            <DefaultState val="Reset"/>
+            <State name="Movie">
+                <When type="AnimationState" frame="$this" Movie="Play"/>
+                <Action type="SetState" frame="$this" group="MovieState" state="IsPlaying"/>
+                <Action type="SetProperty" frame="Movie" File="{$parent/File/@Text}" Undo="False"/>
+            </State>
+            <State name="Reset">
+                <When type="AnimationState" frame="$this" Movie="Reset"/>
+            </State>
+        </StateGroup>
+        <StateGroup name="LoopMovie">
+            <DefaultState val="False"/>
+            <State name="True">
+                <When type="AnimationState" frame="$this" Loop="True"/>
+                <Action type="SetProperty" frame="Movie" Loop="True"/>
+            </State>
+            <State name="False">
+                <When type="AnimationState" frame="$this" Loop="False"/>
+                <Action type="SetProperty" frame="Movie" Loop="False"/>
+            </State>
+        </StateGroup>
+        <StateGroup name="PauseMovie">
+            <DefaultState val="False"/>
+            <State name="True">
+                <When type="AnimationState" frame="$this" PauseAllowed="True"/>
+                <Action type="SetProperty" frame="Movie" PauseAllowed="True"/>
+            </State>
+            <State name="False">
+                <When type="AnimationState" frame="$this" PauseAllowed="False"/>
+                <Action type="SetProperty" frame="Movie" PauseAllowed="False"/>
+            </State>
+        </StateGroup>
+        <StateGroup name="MuteAudio">
+            <DefaultState val="False"/>
+            <State name="True">
+                <When type="AnimationState" frame="$this" MuteAudio="True"/>
+                <Action type="SetProperty" frame="Movie" MuteBgMusicWhilePlaying ="True"/>
+            </State>
+            <State name="False">
+                <When type="AnimationState" frame="$this" MuteAudio="False"/>
+                <Action type="SetProperty" frame="Movie" MuteBgMusicWhilePlaying ="False"/>
+            </State>
+        </StateGroup>
+        <StateGroup name="ScreenSize">
+            <DefaultState val="NotFullscreen"/>
+            <State name="Fullscreen">
+                <When type="AnimationState" frame="$this" Fullscreen="True"/>
+                <Action type="SetProperty" frame="$parent" Height="{$parent/@Height}"/>
+                <Action type="SetProperty" frame="$parent" Width="{$parent/@Width}"/>
+                <Action type="SetProperty" frame="$parent/$parent" RenderPriority="3500"/>
+                <Action type="SetProperty" frame="$parent/$parent" Height="{$parent/@Height}"/>
+                <Action type="SetProperty" frame="$parent/$parent" Width="{$parent/@Width}"/>
+                <Action type="SetProperty" frame="$parent/$parent/Border" Visible="False"/>
+                <Action type="SetAnchor" frame="$parent/$parent/$parent" side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Action type="SetAnchor" frame="$parent/$parent/$parent" side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="$parent/$parent/$parent" side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="$parent/$parent/$parent" side="Right" relative="$parent" pos="Mid" offset="0"/>
+            </State>
+            <State name="NotFullscreen">
+                <When type="AnimationState" frame="$this" Fullscreen="False"/>
+            </State>
+        </StateGroup>
+    </Frame>
+    <Frame type="Frame" name="MovieFrame">
+        <Width val="766"/> <!-- 766 -->
+        <Height val="434"/> <!-- 434 -->
+        <Visible val="False"/> 
+        <Frame type="Image" name="Border">
+            <Anchor relative="$parent"/>
+            <Texture val="@UI/SC2_UI_NewPlayerXP_PreviewBorder"/>
+            <TextureType val="NineSlice"/>
+            <RenderPriority val="520"/>
+            <ColorAdjustMode val="Colorize"/>
+            <AdjustmentColor val="0,255,168"/>
+         </Frame>
+         <Frame type="Frame" name="ScreenContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3"/>
+			<Anchor side="Bottom" relative="$parent" pos="Max" offset="-3"/>
+			<Anchor side="Left" relative="$parent" pos="Min" offset="3"/>
+			<Anchor side="Right" relative="$parent" pos="Max" offset="-3"/>
+            <Frame type="Frame" name="MoviePlayer" template="MovieFrameTemplate/ScreenMovie">
+                <Anchor relative="$parent"/>
+            </Frame>
+        </Frame>
+        <Animation name="Show">
+            <Event event="Visible" action="DirectionForward,Play"/>
+            <Event event="Hidden" action="DirectionReverse,Play"/>
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+    </Frame>
+</Desc>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="JavelinGunner" parent="UnitTemplate">
+        <Speed value="2.8281"/>
+        <AbilArray index="3" Link="JavelinGunnerResearch"/>
+        <AbilArray index="4" Link="JavelinGunnerSkillUpgrades"/>
+        <AbilArray index="5" Link="HeroInventoryRifleNew"/>
+        <AbilArray index="6" Link="Sprint"/>
+        <AbilArray index="7" Link="ReloadHero"/>
+        <AbilArray index="8" Link="JumpHero"/>
+        <AbilArray index="9" Link="DropMagazine"/>
+        <AbilArray index="10" Link="Prone"/>
+        <AbilArray index="11" Link="PerformSelfAidHero"/>
+        <AbilArray Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="HERocket"/>
+        <AbilArray Link="ATRocket"/>
+        <AbilArray Link="StingerMissile"/>
+        <AbilArray Link="JavelinMissile"/>
+        <AbilArray Link="FiremodeBurst"/>
+        <BehaviorArray index="0" Link="NewMechanical"/>
+        <BehaviorArray index="1" Link="NewFitness"/>
+        <BehaviorArray index="2" Link="NewDexterity"/>
+        <BehaviorArray index="3" Link="HeroLevelsMFD"/>
+        <BehaviorArray index="4" Link="1Mechanical"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Birth" value="JavelinGunnerSpawnSet"/>
+        <EffectArray index="Revive" value="JavelinGunnerSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="4">
+                <Face value="NewAdditionalActions"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0003"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="LearnSkills" Type="Submenu" SubmenuCardId="0002" Row="2" Column="1"/>
+            <LayoutButtons index="6">
+                <Face value="TeamLocation"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="TeamLocation,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="HERocket"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="HERocket,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="1"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="ATRocket" Type="AbilCmd" AbilCmd="ATRocket,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="StingerMissile" Type="AbilCmd" AbilCmd="StingerMissile,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="JavelinMissile" Type="AbilCmd" AbilCmd="JavelinMissile,Execute" Row="0" Column="2"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="LearnHERocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnHERocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnHERocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnHERocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnATRocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnATRocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnATRocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnATRocket" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnStingerMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnStingerMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnStingerMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnStingerMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnJavelinMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnJavelinMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnJavelinMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research21" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnJavelinMissile" Type="AbilCmd" AbilCmd="JavelinGunnerResearch,Research20" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="FiremodeBurst"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FiremodeBurst,On"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="FiremodeSemi" Type="AbilCmd" AbilCmd="FiremodeBurst,Off" Row="1" Column="1"/>
+            <LayoutButtons index="10" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research4" Row="2" Column="3"/>
+            <LayoutButtons Face="HERocketAnnihilation" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="HERocketConcussiveImpact" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research8" Row="1" Column="1"/>
+            <LayoutButtons Face="ATRocketPinpoint" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research9" Row="0" Column="2"/>
+            <LayoutButtons Face="ATRocketArmorMelt" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research10" Row="1" Column="2"/>
+            <LayoutButtons Face="StingerMissileAnnihilation" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research11" Row="0" Column="3"/>
+            <LayoutButtons Face="StingerMissileEnhancedTracking" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research12" Row="1" Column="3"/>
+            <LayoutButtons Face="JavelinMissileClusterBombs" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research13" Row="0" Column="4"/>
+            <LayoutButtons Face="JavelinMissileLaserGuidance" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research14" Row="1" Column="4"/>
+            <LayoutButtons Face="JavelinSkillsSwiftLaunch" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="JavelinSkillsSafeEmissions" Type="AbilCmd" AbilCmd="JavelinGunnerSkillUpgrades,Research6" Row="1" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

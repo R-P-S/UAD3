@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CCommander id="UAD">
+        <AttributeId value="Rayn"/>
+        <Race value="Terr"/>
+        <ConsoleSkin value="Dflt"/>
+    </CCommander>
+</Catalog>

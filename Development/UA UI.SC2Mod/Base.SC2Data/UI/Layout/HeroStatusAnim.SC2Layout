@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- 
+========================================
+=  View Line 149 for UnitStatusBars    =
+========================================
+-->
+<!--
+<Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+		<Frame type="Frame" name="Temp">
+			<Width val="500"/>
+			<Height val="500"/>
+			<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Frame type="DataRefFrame" name="Data">
+			   <Anchor relative="$parent"/>	
+			   <Argument name="GalaxyVar" val="gv_magPool"/>
+            <Frame type="Label" name="Label">
+               <Anchor relative="$parent"/>
+               <Text val="{$parent/@RealValue}"/>
+               <Style val="@@ObjectivePanelCategory"/>
+               <Handle val="MagazinePool" />
+            </Frame>
+         </Frame>
+      </Frame>
+</Frame> -->
+<!--
+         <Frame type="UnitCountFrame" name="UnitCountFrameTemplate">
+               <Height val="68" />
+               <Width val="60" />
+               <AcceptsMouse val="False" />
+               <AcceptsMouseTooltip val="False" />
+               <Visible val="False" />
+               <CollapseLayout val="True" />
+               <PreserveAnchorOffset val="True" />
+               <Frame name="BackgroundButton" type="Button">
+                  <Anchor offset="0" pos="Min" relative="$parent" side="Top" />
+                  <Anchor offset="0" pos="Min" relative="$parent" side="Left" />
+                  <Anchor offset="-8" pos="Max" relative="$parent" side="Bottom" />
+                  <Anchor offset="0" pos="Max" relative="$parent" side="Right" />
+                  <Tooltip val="{FormattedText/@Text}" />
+                  <Frame name="NormalImage" type="Image">
+                     <Anchor offset="3" pos="Min" relative="$parent" side="Top" />
+                     <Anchor offset="3" pos="Min" relative="$parent" side="Left" />
+                     <Anchor offset="-3" pos="Max" relative="$parent" side="Bottom" />
+                     <Anchor offset="-3" pos="Max" relative="$parent" side="Right" />
+                     <Texture val="Assets/Textures/ui_production_border.dds" />
+                     <TextureType val="NineSlice" />
+                     <IgnoreParentColor val="True" />
+                     <Color val="0,255,168" />
+                     <Alpha val="175" />
+                  </Frame>
+                  <Frame name="HoverImage" type="Image">
+                     <Anchor relative="$parent/NormalImage" />
+                     <Texture val="Assets/Textures/ui_production_border.dds" />
+                     <TextureType val="NineSlice" />
+                     <Color val="0,255,168" />
+                     <Alpha val="255" />
+                  </Frame>
+                  <Frame type="TextFormatFrame" name="FormattedText">
+                     <Anchor relative="$parent" />
+                     <FormatText val="&lt;s val=&quot;StandardTooltipHeader_Terr&quot;&gt;%0%&lt;/s&gt;&#xA;&#xA;%1%" />
+                     <Replacement index="0" val="{$parent/$parent/@Tooltip}" />
+                     <Replacement index="1" val="{$parent/Label/@Tooltip}" />
+                  </Frame>
+                  <Frame type="Label" name="Label">
+                     <Anchor relative="$parent" />
+                     <Alpha val="255" />
+                     <AcceptsMouse val="False" />
+                  </Frame>
+               </Frame>
+               <Frame name="IconImage" type="Image">
+                  <Anchor offset="0" pos="8%" relative="$parent/BackgroundButton" side="Top" />
+                  <Anchor offset="0" pos="8%" relative="$parent/BackgroundButton" side="Left" />
+                  <Anchor offset="0" pos="92%" relative="$parent/BackgroundButton" side="Bottom" />
+                  <Anchor offset="0" pos="92%" relative="$parent/BackgroundButton" side="Right" />
+                  <Texture val="@@UI/LeaderPanelUnitBackground" />
+                  <IgnoreParentColor val="true" />
+                  <RenderPriority val="500" />
+               </Frame>
+               <Frame type="Label" name="NumberLabel">
+                  <Anchor offset="-6" pos="Max" relative="$parent/BackgroundButton" side="Bottom" />
+                  <Anchor offset="-6" pos="Max" relative="$parent/BackgroundButton" side="Right" />
+                  <IgnoreParentColor val="true" />
+                  <Style val="GameButtonCharge" />
+               </Frame>
+         </Frame>
+
+
+
+<Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+		<Frame type="Frame" name="Temp">
+			<Width val="600"/>
+			<Height val="600"/>
+			<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Frame type="PlayerOwnedUnitsFrame" name="Undead">
+               <Anchor relative="$parent" />
+               <ShowUnits val="True" />
+               <ShowStructures val="False" />
+               <ShowKilled val="True" />
+               <ShowComplete val="False" />
+               <PlayerId val="14" />
+               <Frame type="UnitCountFrame" name="UnitCountFrame0" Template="HeroStatusAnim/UnitCountFrameTemplate">
+                  <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+                  <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Left" />
+               </Frame>
+               <Frame type="UnitCountFrame" name="UnitCountFrame1" Template="HeroStatusAnim/UnitCountFrameTemplate">
+                  <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+                  <Anchor offset="#UpgradePadding" pos="Max" relative="$sibling-1" side="Left" />
+               </Frame>
+               <Frame type="UnitCountFrame" name="UnitCountFrame2" Template="HeroStatusAnim/UnitCountFrameTemplate">
+                  <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+                  <Anchor offset="#UpgradePadding" pos="Max" relative="$sibling-1" side="Left" />
+               </Frame>
+         </Frame> 
+      </Frame>
+</Frame> -->
+   <!-->
+	<Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+		
+		
+		<Frame type="Frame" name="Temp">
+			<Width val="500"/>
+			<Height val="500"/>
+			<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+		
+			<Frame type="Label" name="Label">
+				<Anchor relative="$parent"/>
+				<Text val="55"/>
+				<Style val="@@ObjectivePanelCategory"/>
+			</Frame> 
+
+			<Frame type="DataRefFrame" name="Data">
+			<Anchor relative="$parent"/>	
+			<PlayerId val="14"/>
+			<Argument name="red" val="FoodUsed"/>
+				<Frame type="CountdownLabel" name="Label">
+					<Anchor relative="$parent"/>
+					<Text val="{$parent/@RealValue}"/>
+					<FormatNumber val="True"/>
+					<Style val="@@ObjectivePanelCategory"/>
+					<Handle val="Blah"/>
+				</Frame>
+        </Frame>
+	</Frame>
+		
+	
+		
+		
+		<Frame type="DataRefFrame" name="RefValue">
+			<Anchor relative="$parent"/>	
+			<Argument name="GalaxyVar" val="libNtve_gv_test"/>
+				<Frame type="Label" name="Label">
+					<Anchor relative="$parent"/>
+					<Text val="{$parent/@StringValue}"/>
+					<Style val="@@ObjectivePanelCategory"/>
+				</Frame>
+        </Frame> 
+		
+			</Frame>
+	</Frame>
+				
+		<Frame type="DataRefFrame" name="Data">
+			<Anchor relative="$parent"/>	
+			<PlayerId val="14"/>
+			<Argument name="score" val="FoodUsed"/>
+				<Frame type="CountdownLabel" name="Label">
+					<Anchor relative="$parent"/>
+					<Text val="{$parent/@RealValue}"/>
+					<FormatNumber val="True"/>
+					<Style val="@@ObjectivePanelCategory"/>
+					<Handle val="Blah"/>
+				</Frame>
+        </Frame>
+	</Frame>
+ </Frame> -->
+   <!--		<Frame type="Label" name="TimeLabel">
+            <Width val="500"/>
+			<Height val="500"/>
+			<Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+			<Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+			<Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+			<Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="@@ObjectivePanelCategory"/>
+            <Text val="{$this/FormattedText/@Text}"/>
+			<Handle val="TimerStuff"/>
+			 
+            <Frame type="TimeFormatFrame" name="TimeFormatFrame">
+                <Anchor relative="$parent"/>
+                <FormatText val="&lt;hour2/&gt;:&lt;min2/&gt;:&lt;sec2/&gt;"/>
+                <Time val="{$parent/Time/@Result}"/>
+            </Frame> 
+        
+           <Frame type="TextFormatFrame" name="FormattedText">
+                <Anchor relative="$parent"/>
+                <FormatText val="Time Of Day: %0%"/>
+                <Replacement index="0" val="{$parent/TimeFormatFrame/@Text}"/>
+            </Frame>
+				
+			<Frame type="MathFrame" name="Time">
+				<Anchor relative="$parent"/>
+				<A val="60"/>
+		    	<B val="0"/>			
+				<Operator val="Add"/>
+			</Frame>
+			
+			<Animation name="Show">
+					<Event event="OnShown" action="RefreshBaseValue,Play"/>
+			
+					<Controller type="State" StateGroup="Counter" end="Loop">
+						<Key type="Identifier" time="0" value="Zero"/>
+						<Key type="Identifier" time="1" value="One"/>
+					</Controller>
+				</Animation>
+			<StateGroup name="Counter">
+					<State name="Zero">
+							<Action type="SetProperty" frame="$this/Time" B="0"/>
+						</State>
+						<State name="One">
+							<Action type="SetProperty" frame="$this/Time" B="60"/>
+						</State>
+					</StateGroup>	
+		</Frame>
+	</Frame> -->
+   <Frame type="UnitStatusFrame" name="HeroStatus" template="BossBar/BossBarTemplate">
+      <RenderType val="HDR" />
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="BossShieldsBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusHealthBar" name="BossHealthBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusEnergyBar" name="BossEnergyBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusDurationBar" name="BossDurationBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="Frame" name="TextBox">
+         <Anchor side="Top" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-35" />
+         <Anchor side="Left" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-100" />
+         <Width val="350" />
+         <Height val="64" />
+         <Frame type="Label" name="TextTag">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="" />
+            <Style val="CreditsSmallHeading" />
+            <Color val="255,255,255" />
+            <Animation name="FadeAnim">
+               <Event event="DisplayTag" action="Reset,Play" />
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0.0" value="255" />
+                  <Key type="Curve" time="3.0" value="0" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="TextBoxCountdown">
+         <Anchor side="Top" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-35" />
+         <Anchor side="Left" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-100" />
+         <Width val="350" />
+         <Height val="64" />
+         <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="" />
+            <Style val="FCT_Status" />
+            <Color val="255,0,0" />
+            <Animation name="AnimationVertical">
+               <Event event="Animate" action="Reset,Play" />
+               <Controller type="Anchor" side="Top" relative="true" frame="$this" end="Pause">
+                  <Key type="Curve" time="0.000" value="0" />
+                  <Key type="Curve" time="0.100" value="-10" />
+                  <Key type="Curve" time="0.200" value="-20" />
+                  <Key type="Curve" time="0.300" value="-30" />
+                  <Key type="Curve" time="0.425" value="-40" />
+               </Controller>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0.000" value="15" />
+                  <Key type="Curve" time="0.100" value="75" />
+                  <Key type="Curve" time="0.400" value="150" />
+                  <Key type="Curve" time="0.600" value="255" />
+                  <Key type="Curve" time="0.825" value="0" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+      <!--
+		<Frame type="UnitStatusValidatorAnimElement" name="StatusWebEvent">
+    		<Anchor relative="$parent"/>
+			<VisibleToOwner val="True" />
+			<VisibleToAlly val="False" />
+			<VisibleToEnemy val="False" />
+			<! Only Use Validators That Search For GTE Value 1 >
+			<Validator val="TargetIsHeroHasStasisWeb"/>
+			<Validator val="TargetIsHeroHasWebCutscene"/>
+			<Animation name="PlayBirth">
+				<Event event="TargetIsHeroHasStasisWeb" action="DirectionForward, Play"/>
+                <Controller type="Event" end="Stop" frame="$CutsceneContainer/StatusWeb">
+					<Key type="Event" time="0" event="PlayBirth"/>
+				</Controller>
+         </Animation>
+			<Animation name="PlayDeath">
+				<Event event="TargetIsHeroHasWebCutscene" action="DirectionForward, Play"/>
+                <Controller type="Event" end="Stop" frame="$CutsceneContainer/StatusWeb">
+					<Key type="Event" time="0" event="PlayDeath"/>
+				</Controller>
+         </Animation>
+		</Frame> -->
+      <!--
+      <Frame type="UnitStatusAbilCharge" name="MagazinePoolFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <AcceptsMouse val="False" />
+         <AbilityLink val="MagazinePool" />
+         <ChargeLink val="Abil/MagazinePool" />
+         <SendChargesEmptyAnimEvent val="False" />
+         <SendChargesFullAnimEvent val="False" />
+         <SendCurrentChangedAnimEvent val="True" />
+         <ChargeLocation val="Global" />
+         <Visible val="True" />
+         <Frame type="ProgressBar" name="ChargeFillProgress">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <AcceptsMouse val="False" />
+            <MinValue val="0" />
+            <MaxValue val="0" />
+            <Value val="0" />
+            <FillInset val="0.0" />
+            <Height val="66" />
+            <Width val="66" />
+            <Vertical val="True" />
+            <UseFillContainer val="False" />
+            <Visible val="False" />
+         </Frame>
+         <Frame type="Label" name="Label">
+            <Anchor relative="$parent"/>
+            <Text val="{$parent/ChargeFillProgress/@Value}"/>
+            <Style val="@@ObjectivePanelCategory"/>
+            <StateGroup name="Charges">
+               <State name="51">
+                  <When type="Property" frame="$this" Text="51"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="51"/>
+               </State>
+               <State name="50">
+                  <When type="Property" frame="$this" Text="50"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="50"/>
+               </State>
+               <State name="49">
+                  <When type="Property" frame="$this" Text="49"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="49"/>
+               </State>
+               <State name="48">
+                  <When type="Property" frame="$this" Text="48"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="48"/>
+               </State>
+               <State name="47">
+                  <When type="Property" frame="$this" Text="47"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="47"/>
+               </State>
+               <State name="46">
+                  <When type="Property" frame="$this" Text="46"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="46"/>
+               </State>
+               <State name="45">
+                  <When type="Property" frame="$this" Text="45"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="45"/>
+               </State>
+               <State name="44">
+                  <When type="Property" frame="$this" Text="44"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="44"/>
+               </State>
+               <State name="43">
+                  <When type="Property" frame="$this" Text="43"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="43"/>
+               </State>
+               <State name="42">
+                  <When type="Property" frame="$this" Text="42"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="42"/>
+               </State>
+               <State name="41">
+                  <When type="Property" frame="$this" Text="41"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="41"/>
+               </State>
+               <State name="40">
+                  <When type="Property" frame="$this" Text="40"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="40"/>
+               </State>
+               <State name="39">
+                  <When type="Property" frame="$this" Text="39"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="39"/>
+               </State>
+               <State name="38">
+                  <When type="Property" frame="$this" Text="38"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="38"/>
+               </State>
+               <State name="37">
+                  <When type="Property" frame="$this" Text="37"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="37"/>
+               </State>
+               <State name="36">
+                  <When type="Property" frame="$this" Text="36"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="36"/>
+               </State>
+               <State name="35">
+                  <When type="Property" frame="$this" Text="35"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="35"/>
+               </State>
+               <State name="34">
+                  <When type="Property" frame="$this" Text="34"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="34"/>
+               </State>
+               <State name="33">
+                  <When type="Property" frame="$this" Text="33"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="33"/>
+               </State>
+               <State name="32">
+                  <When type="Property" frame="$this" Text="32"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="32"/>
+               </State>
+               <State name="31">
+                  <When type="Property" frame="$this" Text="31"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="31"/>
+               </State>
+               <State name="30">
+                  <When type="Property" frame="$this" Text="30"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="30"/>
+               </State>
+               <State name="29">
+                  <When type="Property" frame="$this" Text="29"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="29"/>
+               </State>
+               <State name="28">
+                  <When type="Property" frame="$this" Text="28"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="28"/>
+               </State>
+               <State name="27">
+                  <When type="Property" frame="$this" Text="27"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="27"/>
+               </State>
+               <State name="26">
+                  <When type="Property" frame="$this" Text="26"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="26"/>
+               </State>
+               <State name="25">
+                  <When type="Property" frame="$this" Text="25"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="25"/>
+               </State>
+               <State name="24">
+                  <When type="Property" frame="$this" Text="24"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="24"/>
+               </State>
+               <State name="23">
+                  <When type="Property" frame="$this" Text="23"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="23"/>
+               </State>
+               <State name="22">
+                  <When type="Property" frame="$this" Text="22"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="22"/>
+               </State>
+               <State name="21">
+                  <When type="Property" frame="$this" Text="21"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="21"/>
+               </State>
+               <State name="20">
+                  <When type="Property" frame="$this" Text="20"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="20"/>
+               </State>
+               <State name="19">
+                  <When type="Property" frame="$this" Text="19"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="19"/>
+               </State> 
+               <State name="18">
+                  <When type="Property" frame="$this" Text="18"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="18"/>
+               </State> 
+               <State name="17">
+                  <When type="Property" frame="$this" Text="17"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="17"/>
+               </State> 
+               <State name="16">
+                  <When type="Property" frame="$this" Text="16"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="16"/>
+               </State> 
+               <State name="15">
+                  <When type="Property" frame="$this" Text="15"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="15"/>
+               </State> 
+               <State name="14">
+                  <When type="Property" frame="$this" Text="14"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="14"/>
+               </State> 
+               <State name="13">
+                  <When type="Property" frame="$this" Text="13"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="13"/>
+               </State> 
+               <State name="12">
+                  <When type="Property" frame="$this" Text="12"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="12"/>
+               </State> 
+               <State name="11">
+                  <When type="Property" frame="$this" Text="11"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="11"/>
+               </State> 
+               <State name="10">
+                  <When type="Property" frame="$this" Text="10"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="10"/>
+               </State> 
+               <State name="9">
+                  <When type="Property" frame="$this" Text="9"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="9"/>
+               </State> 
+               <State name="8">
+                  <When type="Property" frame="$this" Text="8"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="8"/>
+               </State> 
+               <State name="7">
+                  <When type="Property" frame="$this" Text="7"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="7"/>
+               </State> 
+               <State name="6">
+                  <When type="Property" frame="$this" Text="6"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="6"/>
+               </State> 
+               <State name="5">
+                  <When type="Property" frame="$this" Text="5"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="5"/>
+               </State> 
+               <State name="4">
+                  <When type="Property" frame="$this" Text="4"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="4"/>
+               </State> 
+               <State name="3">
+                  <When type="Property" frame="$this" Text="3"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="3"/>
+               </State> 
+               <State name="2">
+                  <When type="Property" frame="$this" Text="2"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="2"/>
+               </State> 
+               <State name="1">
+                  <When type="Property" frame="$this" Text="1"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="1"/>
+               </State> 
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0"/>
+                  <Action type="SetProperty" frame="$MagazinePool" Text="0"/>
+               </State>  
+            </StateGroup> 
+         </Frame>
+      </Frame> -->
+      <!--		<Frame type="UnitStatusValidatorAnimElement" name="ReloadingText">
+				<Anchor relative="$parent"/>
+				<Validator val="HasBehaviorReloadTime"/>
+				
+				<Animation name="Reload">
+
+					<Event event="HasBehaviorReloadTime" action="Reset, Play"/>
+					<Controller type="Property" property="Text" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Property" time="0.0" value="Reloading!"/>
+					</Controller>
+					<Controller type="Fade" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Curve" time="0.0" value="255"/>
+						<Key type="Curve" time="2.5" value="0"/>
+					</Controller>					
+				</Animation>
+		</Frame>
+		
+		<Frame type="UnitStatusValidatorAnimElement" name="ReloadingTextPoliceShotgun">
+				<Anchor relative="$parent"/>
+				<Validator val="HasNPCShotgunReload"/>
+				
+				<Animation name="Reload">
+
+					<Event event="HasNPCShotgunReload" action="Reset, Play"/>
+					<Controller type="Property" property="Text" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Property" time="0.0" value="Reloading!"/>
+					</Controller>
+					<Controller type="Fade" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Curve" time="0.0" value="255"/>
+						<Key type="Curve" time="2.5" value="0"/>
+					</Controller>					
+				</Animation>
+		</Frame>
+		
+		<Frame type="UnitStatusValidatorAnimElement" name="ReloadingTextPoliceRifle">
+				<Anchor relative="$parent"/>
+				<Validator val="HasNPCRifleReload"/>
+				
+				<Animation name="Reload">
+
+					<Event event="HasNPCRifleReload" action="Reset, Play"/>
+					<Controller type="Property" property="Text" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Property" time="0.0" value="Reloading!"/>
+					</Controller>
+					<Controller type="Fade" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Curve" time="0.0" value="255"/>
+						<Key type="Curve" time="2.5" value="0"/>
+					</Controller>					
+				</Animation>
+		</Frame>		
+	
+		<Frame type="UnitStatusValidatorAnimElement" name="ReloadingTextLNAR">
+				<Anchor relative="$parent"/>
+				<Validator val="HasLNAutomaticRiflemanReload"/>
+				
+				<Animation name="Reload">
+
+					<Event event="HasLNAutomaticRiflemanReload" action="Reset, Play"/>
+					<Controller type="Property" property="Text" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Property" time="0.0" value="Reloading!"/>
+					</Controller>
+					<Controller type="Fade" frame="$parent/TextBox/TextTag" end="Pause">
+						<Key type="Curve" time="0.0" value="255"/>
+						<Key type="Curve" time="2.5" value="0"/>
+					</Controller>					
+				</Animation>
+		</Frame> -->
+      <!--	
+		<Frame type="UnitFrame" name="UnitBarTemplate">
+			
+		</Frame> -->
+      <!--	
+		<Frame type="UnitStatusScoreValue" name="BarTemplatedd">
+		</Frame> -->
+      <!--		<Frame type="UnitStatusValidatorAnimElement" name="BehaviorEvents">
+            <Anchor relative="$parent"/>
+            <Validator val="HasBehaviorReloadTime"/>
+			<Validator val="DoesntHaveBehaviorReloadTime"/>
+			
+			<StateGroup name="ValidatorState">
+				<DefaultState val="Enabled"/>
+				<State name="Disabled">
+				
+					<Action type="SetState" frame="$InvButton04" group="WeaponSlot" state="Disabled"/> 
+					<Action type="SetProperty" frame="$InvButton04" Enabled="false"/>
+				</State>
+				<State name="Enabled">
+					<Action type="SetState" frame="$InvButton04" group="WeaponSlot" state="Enabled"/>
+					<Action type="SetProperty" frame="$InvButton04" Enabled="true"/> 
+				</State>
+			</StateGroup>
+            
+			<Animation name="SendEvent1">
+				<Event event="HasBehaviorReloadTime" action="DirectionForward, Play"/>
+			
+				<Controller type="State" stateGroup="ValidatorState" end="Stop">
+					<Key type="Identifier" time="0" value="Disabled"/>
+				</Controller>
+				
+			<Event event="HasBehaviorReloadTime" action="DirectionForward, Play"/>
+			<Event event="DoesntHaveBehaviorReloadTime" action="DirectionReverse, Play"/>
+				<Controller type="Property" property="Enabled" end="Stop" frame="$InvButton04">
+					<Key type="Property" time="0" value="false"/>
+					<Key type="Property" time="1" value="true"/>
+				</Controller>
+				<Controller type="Event" end="Stop" frame="$InvButton04">
+					<Key type="Event" time="0" event="Disable"/>
+				</Controller>
+           </Animation>
+			
+			<Animation name="SendEvent2">
+				<Event event="DoesntHaveBehaviorReloadTime" action="DirectionForward, Play"/>
+
+                <Controller type="State" stateGroup="ValidatorState" end="Stop">
+					<Key type="Identifier" time="0" value="Enabled"/>
+				</Controller>
+            </Animation>
+		</Frame> 
+		
+		<Frame type="UnitStatusValidatorAnimElement" name="BehaviorEvents2">
+            <Anchor relative="$parent"/>
+            
+			<Validator val="UnitDoesntHaveEncumbered"/>
+			<Validator val="UnitHasEncumbered"/>
+			
+			<Animation name="SendEvent1">
+				<Event event="UnitHasEncumbered" action="DirectionForward, Play"/>
+
+                <Controller type="Event" end="Stop" frame="$TTT">
+					<Key type="Event" time="0" event="Red"/>
+				</Controller>
+            </Animation>
+			
+			<Animation name="SendEvent2">
+				<Event event="UnitDoesntHaveEncumbered" action="DirectionForward, Play"/>
+
+                <Controller type="Event" end="Stop" frame="$TTT">
+					<Key type="Event" time="0" event="Blue"/>
+				</Controller>
+            </Animation>
+		</Frame>
+		
+		<Frame type="UnitStatusValidatorAnimElement" name="BehaviorEvents3">
+            <Anchor relative="$parent"/>
+            
+			<Validator val="NotOutOfAmmo"/>
+			<Validator val="HasOutOfAmmo"/>
+			
+			<Animation name="SendEvent1">
+				<Event event="HasOutOfAmmo" action="DirectionForward, Play"/>
+
+                <Controller type="Event" end="Stop" frame="$FFF">
+					<Key type="Event" time="0" event="Red"/>
+				</Controller>
+            </Animation>
+			
+			<Animation name="SendEvent2">
+				<Event event="NotOutOfAmmo" action="DirectionForward, Play"/>
+
+                <Controller type="Event" end="Stop" frame="$FFF">
+					<Key type="Event" time="0" event="Blue"/>
+				</Controller>
+            </Animation> 
+		</Frame> -->
+   </Frame>
+   <Frame type="UnitStatusFrame" name="Sentry" template="BossBar/BossBarTemplate">
+      <RenderType val="HDR" />
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="BossShieldsBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusHealthBar" name="BossHealthBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusEnergyBar" name="BossEnergyBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusDurationBar" name="BossDurationBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="Frame" name="SentryTextBox">
+         <Anchor side="Top" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-10" />
+         <Anchor side="Left" relative="$parent/BossDurationBarTemplate" pos="Min" offset="0" />
+         <Width val="150" />
+         <Height val="150" />
+         <Frame type="Image" name="Image">
+            <Anchor relative="$parent" />
+            <SnapToDevicePixels val="true" />
+            <Texture val="Assets/Accessory Textures/Sentry_Text.dds" />
+            <Animation name="RotateRightStart">
+               <Event event="Spin" action="Play" />
+               <Controller type="Rotation" relative="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="linear" />
+                  <Key type="Curve" time="35" value="360" in="linear" />
+               </Controller>
+               <Controller type="Fade" end="Loop">
+                  <Key type="Curve" time="0.0" value="25" out="Slow" />
+                  <Key type="Curve" time="3.0" value="255" in="Slow" />
+                  <Key type="Curve" time="6.0" value="25" out="Fast" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+   </Frame>
+   <Frame type="UnitStatusFrame" name="StandingLocation" template="BossBar/BossBarTemplate">
+      <RenderType val="HDR" />
+      <Frame type="UnitStatusUnitName" name="BossUnitNameLabelTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="BossShieldsBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusHealthBar" name="BossHealthBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusEnergyBar" name="BossEnergyBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="UnitStatusDurationBar" name="BossDurationBarTemplate">
+         <Alpha val="0" />
+      </Frame>
+      <Frame type="Frame" name="StandingLocationTextBox">
+         <Anchor side="Top" relative="$parent/BossDurationBarTemplate" pos="Min" offset="-10" />
+         <Anchor side="Left" relative="$parent/BossDurationBarTemplate" pos="Min" offset="0" />
+         <Width val="150" />
+         <Height val="150" />
+         <Frame type="Image" name="Image">
+            <Anchor relative="$parent" />
+            <SnapToDevicePixels val="true" />
+            <Texture val="Assets/Accessory Textures/Stand_Here_Text.dds" />
+            <Animation name="RotateRightStart">
+               <Event event="Spin" action="Play" />
+               <Controller type="Rotation" relative="false" end="Loop">
+                  <Key type="Curve" time="0" value="0" out="linear" />
+                  <Key type="Curve" time="35" value="360" in="linear" />
+               </Controller>
+               <Controller type="Fade" end="Loop">
+                  <Key type="Curve" time="0.0" value="25" out="Slow" />
+                  <Key type="Curve" time="3.0" value="255" in="Slow" />
+                  <Key type="Curve" time="6.0" value="25" out="Fast" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

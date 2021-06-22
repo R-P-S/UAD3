@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CConsoleSkin id="ConsoleTerran_Alliance">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <MinimapPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <CommandPanelImage value=""/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Classic">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_CovertOps">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Horde">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <MinimapPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <CommandPanelImage value=""/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Horner">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Imperial">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <MinimapPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <!-- <RequiredReward value="ConsoleProtoss_Nerazim"/> -->
+        <CommandPanelImage value=""/>
+        <!-- <ProductId value="48752"/> -->
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Scourge">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <MinimapPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <CommandPanelImage value=""/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Sentinels">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <MinimapPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <CommandPanelImage value=""/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_Swann">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_XelNaga">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+    </CConsoleSkin>
+    <CConsoleSkin id="ConsoleTerran_ArcadePurple">
+        <MinimapPanelModel Model="@@UI/ConsoleModelMinimapPanel"/>
+        <InfoPanelModel Model="@@UI/ConsoleModelInfopanel"/>
+        <CommandPanelModel Model="@@UI/ConsoleModelCommandPanel"/>
+        <CommandPanelImage value=""/>
+        <InfoPanelImage value=""/>
+        <MinimapPanelImage value=""/>
+    </CConsoleSkin>
+</Catalog>

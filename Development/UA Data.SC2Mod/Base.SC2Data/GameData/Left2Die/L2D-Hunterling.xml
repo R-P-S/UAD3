@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="HunterlingLeapAttacking">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="LeapAttacking"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="HunterlingLeapTargetScan">
+        <AreaArray>
+            <Compare value="GT"/>
+            <Count value="0"/>
+            <Radius value="0.25"/>
+            <Validator value="TargetNotBeingLeapAttacked"/>
+        </AreaArray>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Item,Buried,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorLocationCompareRange id="InRangeOfLeapTargetPoint">
+        <Compare value="GT"/>
+        <Range value="0.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="HunterlingLeapingOrLanding">
+        <CombineArray value="HunterlingLeaping"/>
+        <CombineArray value="HunterlingLanding"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HunterlingLeaping">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="Leaping"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HunterlingLanding">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="Landing"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CEffectCreatePersistent id="LeapAttackDelayPersistent" parent="TemplateCreatePersistent">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="LeapAttackingBehaviorsApplySet"/>
+        <ExpireDelay value="0.25"/>
+        <FinalEffect value="LeapAttackingPersistent"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyUnit id="LeapNoTargetDummy" parent="TemplateModifyUnit">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="LeapSwitch" parent="TemplateSwitch">
+        <EditorCategories value="Race:Zerg"/>
+        <CaseArray Validator="HunterlingLeapTargetScan" Effect="LeapSearchArea"/>
+        <CaseDefault value="LeapNoTargetDummy"/>
+    </CEffectSwitch>
+    <CEffectIssueOrder id="LeapIssueMoveOrder">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="move"/>
+        <Player Value="Caster"/>
+        <Target Effect="LeapLeapingPersistent" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="LeapMorphToFlyingForm">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="LeapAttackMorphToFlyingForm"/>
+        <Player Value="Caster"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="LeapMorphToNormalForm">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="LeapAttackMorphToNormalForm"/>
+        <Player Value="Caster"/>
+    </CEffectIssueOrder>
+    <CEffectDamage id="HunterlingClawsDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Melee"/>
+        <Amount value="20"/>
+        <Random value="4"/>
+        <Death value="Eviscerate"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <ShieldFactor value="-0.2"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="LeapApplyAttackingBehavior" parent="TemplateApplyBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="LeapAttacking"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="LeapApplyLeapingBehavior" parent="TemplateApplyBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="Leaping"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="LeapApplyStunBehavior" parent="TemplateApplyBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="LeapStun"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="LeapAttackingBehaviorsApplySet" parent="TemplateSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="LeapApplyStunBehaviorShort"/>
+        <EffectArray value="LeapApplyAttackingBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="LeapAttackingBehaviorsRemoveSet" parent="TemplateSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="LeapRemoveStunBehavior"/>
+        <EffectArray value="LeapRemoveAttackingBehavior"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="LeapAttackingPersistent" parent="TemplateCreatePersistent">
+        <ValidatorArray value="CasterAndTargetNotDead"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="LeapApplyStunBehavior"/>
+        <FinalEffect value="LeapAttackingBehaviorsRemoveSet"/>
+        <PeriodicValidator value="CasterAndTargetNotDead"/>
+        <PeriodicEffectArray value="LeapDamage"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="LeapDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ShieldFactor value="-0.65"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Melee"/>
+        <Amount value="12"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="LeapImpactSet" parent="TemplateSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="LeapRemoveLeapingBehavior"/>
+        <EffectArray value="LeapMorphToNormalForm"/>
+        <EffectArray value="LeapSwitch"/>
+        <EffectArray value="LeapIssueMoveOrder"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="LeapLeapingPersistent" parent="TemplateCreatePersistent">
+        <ValidatorArray value="Pathable"/>
+        <ValidatorArray value="InRangeOfLeapTargetPoint"/>
+        <EditorCategories value="Race:Zerg"/>
+        <InitialEffect value="LeapMorphToFlyingForm"/>
+        <FinalEffect value="LeapImpactSet"/>
+        <PeriodCount value="80"/>
+        <PeriodicValidator value="InRangeOfLeapTargetPoint"/>
+        <PeriodicEffectArray value="LeapPullForce"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyForce id="LeapPullForce">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetPoint"/>
+        <WhichUnit Value="Caster"/>
+        <Amount value="-2"/>
+    </CEffectApplyForce>
+    <CEffectRemoveBehavior id="LeapRemoveAttackingBehavior" parent="TemplateRemoveBehavior">
+        <Name value="Effect/Name/LeapRemoveAttackingBehavior"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="LeapAttacking"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="LeapRemoveLeapingBehavior" parent="TemplateRemoveBehavior">
+        <Name value="Effect/Name/LeapRemoveLeapingBehavior"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="Leaping"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="LeapRemoveStunBehavior" parent="TemplateRemoveBehavior">
+        <Name value="Effect/Name/LeapRemoveStunBehavior"/>
+        <EditorCategories value="Race:Zerg"/>
+        <BehaviorLink value="LeapStun"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="LeapSearchArea" parent="TemplateSearchArea">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Psionic,Structure,Missile,Item,Buried,Dead,Hidden,Invulnerable"/>
+        <AreaArray index="0" MaxCount="1" Radius="0.25" Effect="LeapAttackDelayPersistent"/>
+    </CEffectEnumArea>
+    <CAbilEffectTarget id="LeapAttack" parent="TemplateEffectTarget">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect index="0" value="LeapLeapingPersistent"/>
+        <Flags index="AllowMovement" value="0"/>
+        <Flags index="ReApproachable" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="1"/>
+        <Cost index="0">
+            <Charge Link=""/>
+            <Cooldown Link="Abil/LeapAttack" TimeUse="4"/>
+        </Cost>
+        <Range value="10"/>
+        <AINotifyEffect value="LeapAttack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LeapAttack">
+            <Flags index="ToSelection" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilMorph id="LeapAttackMorphToFlyingForm">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="CicadisLeaping"/>
+    </CAbilMorph>
+    <CAbilMorph id="LeapAttackMorphToNormalForm">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="Cicadis"/>
+    </CAbilMorph>
+    <CButton id="LeapAttack" parent="TemplateButton">
+        <Icon value="Assets\Textures\btn-ability-zerg-swarmseeds.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <!--                                                                                         -->
+    <!-- Hunterling ............................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="CicadisActor" parent="TemplateT2Zombie" unitName="Cicadis">
+        <Aliases index="2" value="_MissileHybrids"/>
+        <Aliases value="_UnitMedium"/>
+        <On index="64" Terms="UnitDeathCustomize; AnimPlaying Jump" Send="DeathCustomize Flying"/>
+        <On index="65" Terms="UnitDeathCustomize; ValidateUnit HunterlingLeapAttacking" Send="DeathCustomize Flying"/>
+        <On index="66" Terms="UnitDeathCustomize; ValidateUnit HunterlingLeapingOrLanding" Send="DeathCustomize Flying"/>
+        <On index="67" Terms="ActorCreation" Send="TimerSet 5.000000 Ambience"/>
+        <On index="68" Terms="TimerExpired; TimerName Ambience; PassChance 50.000000" Send="Create Left2Die_Hunterling_Ambience"/>
+        <On Terms="TimerExpired; TimerName Ambience" Send="TimerSet 5.000000 Ambience"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit HunterlingLeaping" Send="DeathCustomize Flying"/>
+        <On Terms="Behavior.HunterlingJump.Launch" Send="AnimBracketStart Jump Jump,Start Jump Jump,End,A"/>
+        <On Terms="Behavior.HunterlingJump.Launch" Send="AnimBlendTimeApply 0.000000"/>
+        <On Terms="Behavior.HunterlingJump.LandDown" Send="AnimBracketStop Jump"/>
+        <On Terms="Behavior.HunterlingJump.LandDown" Send="AnimBlendTimeApply"/>
+        <On Terms="Behavior.HunterlingJump.LandUp" Send="AnimBracketStop Jump"/>
+        <On Terms="Behavior.HunterlingJump.LandUp" Send="AnimBlendTimeApply"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.LeapAttack.SourceCastStart" Send="AnimClear Jump"/>
+        <On Terms="Abil.LeapAttack.SourceCastStart" Send="AnimBracketStart LeapAttack Jump,Start Jump IGNORE"/>
+        <On Terms="Effect.LeapImpactSet.Start; At Caster" Send="AnimBracketStop LeapAttack"/>
+        <On Terms="Effect.LeapNoTargetDummy.Start; At Caster" Send="AnimPlay Land Jump,End,A"/>
+        <On Terms="Effect.LeapAttackDelayPersistent.Start; At Caster" Send="AnimPlay Falling Jump,End 0 0.000000 0.000000"/>
+        <On Terms="Effect.LeapAttackingPersistent.Start; At Caster" Send="AnimPlay PounceAttacking Spell PlayForever"/>
+        <On Terms="Behavior.LeapAttacking.Off" Send="AnimClear PounceAttacking"/>
+        <Model value="Hunterling"/>
+        <BuildModel value="Hunterling"/>
+        <DeathArray index="Normal" ModelLink="HunterlingDeath" SoundLink="Hunterling_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="HunterlingDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Eviscerate" ModelLink="HunterlingDeathEviscerate" SoundLink="Hunterling_DeathFXEviscerate"/>
+        <DeathArray index="Fire" ModelLink="HunterlingDeathFire" SoundLink="Hunterling_DeathFXFire"/>
+        <DeathCustoms ModelLink="HunterlingAirDeath" Name="Flying"/>
+        <PlacementModel value="Hunterling"/>
+        <PortraitModel value="HunterlingPortrait"/>
+        <WalkAnimMoveSpeed value="2.8515"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-hunterling.dds"/>
+        </GroupIcon>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-brutalisk.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-hunterling.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="CicadisPlaceholderActor" parent="GenericUnitStandard" unitName="CicadisPlaceholder">
+        <Model value="Hunterling"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-hunterling.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSound id="Left2Die_Hunterling_Ambience" parent="SoundOneShot"/>
+    <!-- Jump                                                                                    -->
+    <CActorModel id="HunterlingJumpLandDownModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <On Terms="Behavior.HunterlingJump.LandDown" Send="Create"/>
+        <On Terms="Behavior.HunterlingJump.LandUp" Send="Create"/>
+        <On Terms="Behavior.HunterlingJump.LandDown" Send="TimerSet 0.300000 TriggerSound"/>
+        <On Terms="TimerExpired; TimerName TriggerSound" Send="Create HunterlingJumpLandSound"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpShadow"/>
+    </CActorModel>
+    <CActorSound id="HunterlingJumpLandSound" parent="SoundOneShot">
+        <On Terms="Behavior.HunterlingJump.LandUp" Send="Create"/>
+        <Sound value="Hunterling_JumpLand"/>
+    </CActorSound>
+    <CActorModel id="HunterlingJumpLaunchModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <On Terms="Behavior.HunterlingJump.Launch" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpShadow" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="HunterlingJumpLaunchSound" parent="SoundOneShot">
+        <On Terms="Behavior.HunterlingJump.Launch" Send="Create"/>
+        <Sound value="Hunterling_JumpLaunch"/>
+    </CActorSound>
+    <!-- Attack                                                                                  -->
+    <CActorAction id="HunterlingAttack" parent="GenericAttack" effectAttack="HunterlingClawsDamage">
+        <ImpactAttachQuery Methods="AMFilterTargetVolumes"/>
+        <ImpactMap index="None" Sound="Hunterling_AttackImpact"/>
+    </CActorAction>
+    <CActorSound id="HunterlingAttackStart" parent="SoundOneShot">
+        <On Terms="WeaponStart.CicadisClaws.AttackStart" Send="Create"/>
+        <Sound value="Hunterling_AttackLaunch"/>
+    </CActorSound>
+    <CWeaponLegacy id="CicadisClaws" parent="UndeadWeaponTemplate">
+        <Name value="Weapon/Name/CicadisClaws"/>
+        <Tip value="Weapon/Tip/CicadisClaws"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <DisplayEffect value="HunterlingClawsDamage"/>
+        <TargetFilters value="Ground,Visible;Psionic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireTargetSorts>
+            <SortArray value="TSGetSatchel"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSPriority"/>
+        </AcquireTargetSorts>
+        <Range value="0.1"/>
+        <Period value="0.696"/>
+        <Effect value="HunterlingClawsDamage"/>
+    </CWeaponLegacy>
+    <CModel id="HunterlingAirDeath" parent="UnitDeath" Race="Zerg">
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+    </CModel>
+    <CModel id="HunterlingPortrait" parent="Portrait" Race="Zerg"/>
+    <CModel id="LeapImpactModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\HunterlingPounceImpact\HunterlingPounceImpact.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="Hunterling" parent="Unit" Race="Zerg">
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.300000"/>
+        <SelectionRadius value="0.441400"/>
+        <ShadowRadius value="0.441400"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.400000"/>
+        <TipabilityWidth value="0.400000"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="HunterlingUpgrade" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\ZerglingUpgrade\ZerglingUpgrade.m3"/>
+        <AttachProps Id="Ref_Weapon Left">
+            <Keys index="Weapon" value="1"/>
+            <Keys index="Work" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon Right">
+            <Keys index="Weapon" value="1"/>
+        </AttachProps>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.300000"/>
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
+        <SelectionRadius value="0.441400"/>
+        <ShadowRadius value="0.441400"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.400000"/>
+        <TipabilityWidth value="0.400000"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="HunterlingJumpLandDownModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\ReaperJumpLandDown\ReaperJumpLandDown.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="HunterlingJumpLaunchModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\ReaperJumpLaunch\ReaperJumpLaunch.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="HunterlingDeath" parent="UnitDeath" Race="Zerg">
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="HunterlingDeathAcid" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Units\Zerg\HunterlingDeath\HunterlingDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="HunterlingDeathEviscerate" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Units\Zerg\HunterlingDeath\HunterlingDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+        <Variations>
+            <Number value="0"/>
+            <Probability value="0"/>
+            <Radius value="0.000000"/>
+            <RadiusLoose value="0.000000"/>
+        </Variations>
+        <Variations>
+            <Number value="0"/>
+            <Probability value="0"/>
+            <Radius value="0.000000"/>
+            <RadiusLoose value="0.000000"/>
+        </Variations>
+    </CModel>
+    <CModel id="HunterlingDeathFire" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Units\Zerg\HunterlingDeath\HunterlingDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CSound id="Left2Die_Hunterling_Ambience">
+        <Category value="UI"/>
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="4"/>
+    </CSound>
+    <CSound id="Hunterling_JumpLand" parent="Movement">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\SpineCrawler\SpineCrawler_AttackImpact2.wav"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-0.890000,0.840000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Hunterling_JumpLaunch" parent="Movement">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_What1.ogg"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="Hunterling_AttackImpact" parent="Zerg_AttackImpactSmallPierce"/>
+    <CSound id="Hunterling_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch10.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch11.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch12.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch13.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch14.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch15.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch5.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch6.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch7.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch8.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Zergling\Zergling_AttackLaunch9.wav"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-0.890000,0.840000"/>
+        <VariationMinimum value="8"/>
+        <Volume value="-4.560000,-4.560000"/>
+    </CSound>
+    <CSound id="LeapImpactSound" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact3.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="Hunterling_Explode" parent="Zerg_ExplosionSmall">
+        <AssetArray index="0" File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall0.wav" Pitch="-3.000000,6.000000" Volume="-3.000000,0.000000"/>
+        <AssetArray index="1" File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall1.wav" Pitch="-3.000000,6.000000" Volume="-3.000000,0.000000"/>
+    </CSound>
+    <CSound id="Hunterling_DeathFXEviscerate" parent="Uni_DeathFXEviscerate">
+        <EditorCategories value="Race:Zerg"/>
+    </CSound>
+    <CSound id="Hunterling_DeathFXFire" parent="Uni_DeathFXFire">
+        <EditorCategories value="Race:Zerg"/>
+    </CSound>
+    <CUnit id="Cicadis" parent="TemplateT2Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="410"/>
+        <LifeMax value="410"/>
+        <ShieldsStart value="105"/>
+        <ShieldsMax value="105"/>
+        <Mover value="CliffJumper"/>
+        <Speed value="2.8515"/>
+        <BehaviorArray index="1" Link="HunterlingJump"/>
+        <BehaviorArray Link="SatchelPriorityDummy"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="CicadisClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="1.5"/>
+    </CUnit>
+    <CUnit id="CicadisLeaping" parent="TemplateT2Zombie">
+        <Collide index="Ground" value="0"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="410"/>
+        <LifeMax value="410"/>
+        <ShieldsStart value="105"/>
+        <ShieldsMax value="105"/>
+        <Mover value="Fly"/>
+        <Speed value="3.8515"/>
+        <AbilArray Link="LeapAttack"/>
+        <AbilArray Link="LeapAttackMorphToFlyingForm"/>
+        <AbilArray Link="LeapAttackMorphToNormalForm"/>
+        <BehaviorArray index="1" Link="Leaping"/>
+        <WeaponArray Link="CicadisClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="LeapAttack" Type="AbilCmd" AbilCmd="LeapAttack,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <MinimapRadius value="1.5"/>
+    </CUnit>
+    <CUnit id="CicadisPlaceholder" parent="PLACEHOLDER">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Collide index="Structure" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <SeparationRadius value="0.375"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <LeaderAlias value=""/>
+    </CUnit>
+    <CBehaviorJump id="HunterlingJump">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <TriggerHeightDeltaMin value="1.5"/>
+        <TriggerHeightDeltaMax value="4.5"/>
+        <InitiateRangeUp value="1.5"/>
+        <InitiateRangeDown value="0.5"/>
+        <JumpRangeMax value="12"/>
+        <Mover value="CliffJumper"/>
+        <MoverUp value="ReaperJumpDown"/>
+        <MoverDown value="ReaperJumpDown"/>
+        <DurationPreLaunch value="0.05"/>
+        <DurationPostLand value="0.075"/>
+        <DurationMoveOut value="0.08"/>
+        <Placeholder value="CicadisPlaceholder"/>
+        <LandAdjustmentDown value="1"/>
+        <LandArrivalRange value="0.05"/>
+        <LandCheckRadius value="5"/>
+    </CBehaviorJump>
+    <CBehaviorBuff id="LeapAttacking" parent="TemplateBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <AbilLinkDisableArray value="move"/>
+            <WeaponDisableArray value="CicadisClaws"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LeapStun" parent="TemplateBuff">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-swarmseeds.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Leaping" parent="TemplateBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <FinalEffect value="LeapApplyLandingBehavior"/>
+        <Modification Height="3" MoveSpeedBonus="3">
+            <StateFlags index="SuppressCollision" value="1"/>
+            <HeightTime index="Start" value="0.25"/>
+            <HeightTime index="Stop" value="0.375"/>
+        </Modification>
+    </CBehaviorBuff>
+</Catalog>

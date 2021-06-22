@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <ModType>
+        <Value>Interface</Value>
+    </ModType>
+    <Preload>
+        <Value>AssetFile;Assets\Textures\ui_loadingbar_bar_highlighted_terran.dds</Value>
+    </Preload>
+</DocInfo>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer" file="GameUI">
+      <Frame type="Frame" name="DebugFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Height val="600" />
+         <Width val="400" />
+         <PreserveAnchorOffset val="true" />
+         <Visible val="false" />
+         <StateGroup name="VisibleState">
+            <State name="Display">
+               <When type="AnimationState" Display="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+            </State>
+         </StateGroup>
+         <Frame type="Image" name="BG">
+            <Anchor relative="$parent" />
+            <Color val="10,10,10" />
+            <Alpha val="172" />
+         </Frame>
+         <Frame type="Label" name="WidthLabel">
+            <Anchor side="Top" relative="$parent/Width" pos="Min" offset="-25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Text val="Halo Width" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Label" name="WidthValue">
+            <Anchor side="Top" relative="$parent/WidthLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/WidthLabel" pos="Max" offset="10" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Slider" name="Width" template="StandardTemplates/StandardSliderTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="60" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="300" />
+            <Height val="40" />
+            <StepValue val="1" />
+            <Value val="1" />
+            <MaxValue val="9" />
+         </Frame>
+         <Frame type="Label" name="TypeLabel">
+            <Anchor side="Top" relative="$parent/Type" pos="Min" offset="-25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Text val="Halo Type" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Label" name="TypeValue">
+            <Anchor side="Top" relative="$parent/TypeLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/TypeLabel" pos="Max" offset="10" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Slider" name="Type" template="StandardTemplates/StandardSliderTemplate">
+            <Anchor side="Top" relative="$parent/Width" pos="Max" offset="60" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="300" />
+            <Height val="40" />
+            <StepValue val="1" />
+            <Value val="0" />
+            <MaxValue val="4" />
+         </Frame>
+         <Frame type="Label" name="RasterModeLabel">
+            <Anchor side="Top" relative="$parent/RasterMode" pos="Min" offset="-25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Text val="RasterMode" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Label" name="RasterModeValue">
+            <Anchor side="Top" relative="$parent/RasterModeLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/RasterModeLabel" pos="Max" offset="10" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Slider" name="RasterMode" template="StandardTemplates/StandardSliderTemplate">
+            <Anchor side="Top" relative="$parent/Type" pos="Max" offset="60" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="300" />
+            <Height val="40" />
+            <StepValue val="1" />
+            <Value val="0" />
+            <MaxValue val="2" />
+         </Frame>
+         <Frame type="Label" name="ColorLabel">
+            <Anchor side="Top" relative="$parent/Color" pos="Min" offset="-25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Text val="Halo Color" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Label" name="ColorValue">
+            <Anchor side="Top" relative="$parent/ColorLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/ColorLabel" pos="Max" offset="10" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Slider" name="Color" template="StandardTemplates/StandardSliderTemplate">
+            <Anchor side="Top" relative="$parent/RasterMode" pos="Max" offset="60" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="300" />
+            <Height val="40" />
+            <StepValue val="1" />
+            <Value val="2" />
+            <MaxValue val="5" />
+         </Frame>
+         <Frame type="Label" name="EmissionLabel">
+            <Anchor side="Top" relative="$parent/Emission" pos="Min" offset="-25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-50" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-50" />
+            <Text val="Emission Width" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Label" name="EmissionValue">
+            <Anchor side="Top" relative="$parent/EmissionLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/EmissionLabel" pos="Max" offset="10" />
+            <Style val="Debug" />
+         </Frame>
+         <Frame type="Slider" name="Emission" template="StandardTemplates/StandardSliderTemplate">
+            <Anchor side="Top" relative="$parent/Color" pos="Max" offset="60" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="300" />
+            <Height val="40" />
+            <StepValue val="1" />
+            <Value val="4" />
+            <MaxValue val="4" />
+         </Frame>
+         <Frame type="Button" name="Reset" template="StandardTemplates/StandardGlueButton">
+            <Anchor side="Top" relative="$parent/Emission" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-80" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-80" />
+            <Height val="60" />
+            <Width val="150" />
+            <Frame type="Label" name="Label">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+               <Text val="Reset" />
+               <Style val="Debug" />
+               <RenderPriority val="600" />
+            </Frame>
+         </Frame>
+         <Frame type="Button" name="HaloOn" template="StandardTemplates/StandardGlueButton">
+            <Anchor side="Top" relative="$parent/Emission" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="80" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="80" />
+            <Height val="60" />
+            <Width val="150" />
+            <Visible val="false" />
+            <Frame type="Label" name="Label">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+               <Text val="Halos On" />
+               <Style val="Debug" />
+               <RenderPriority val="600" />
+            </Frame>
+         </Frame>
+         <Frame type="Button" name="HaloOff" template="StandardTemplates/StandardGlueButton">
+            <Anchor side="Top" relative="$parent/Emission" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="80" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="80" />
+            <Height val="60" />
+            <Width val="150" />
+            <Frame type="Label" name="Label">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="4" />
+               <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+               <Text val="Halos Off" />
+               <Style val="Debug" />
+               <RenderPriority val="600" />
+            </Frame>
+         </Frame>
+         <!-- WIDTH VALUE -->
+         <StateGroup name="WidthState">
+            <DefaultState val="Width01" />
+            <State name="Width00">
+               <When type="Property" frame="Width" Value="0" />
+               <Action type="SetProperty" frame="WidthValue" text="0" />
+            </State>
+            <State name="Width01">
+               <When type="Property" frame="Width" Value="1" />
+               <Action type="SetProperty" frame="WidthValue" text="1" />
+            </State>
+            <State name="Width02">
+               <When type="Property" frame="Width" Value="2" />
+               <Action type="SetProperty" frame="WidthValue" text="2" />
+            </State>
+            <State name="Width03">
+               <When type="Property" frame="Width" Value="3" />
+               <Action type="SetProperty" frame="WidthValue" text="3" />
+            </State>
+            <State name="Width04">
+               <When type="Property" frame="Width" Value="4" />
+               <Action type="SetProperty" frame="WidthValue" text="4" />
+            </State>
+            <State name="Width08">
+               <When type="Property" frame="Width" Value="5" />
+               <Action type="SetProperty" frame="WidthValue" text="8" />
+            </State>
+            <State name="Width16">
+               <When type="Property" frame="Width" Value="6" />
+               <Action type="SetProperty" frame="WidthValue" text="16" />
+            </State>
+            <State name="Width24">
+               <When type="Property" frame="Width" Value="7" />
+               <Action type="SetProperty" frame="WidthValue" text="24" />
+            </State>
+            <State name="Width32">
+               <When type="Property" frame="Width" Value="8" />
+               <Action type="SetProperty" frame="WidthValue" text="32" />
+            </State>
+            <State name="Width64">
+               <When type="Property" frame="Width" Value="9" />
+               <Action type="SetProperty" frame="WidthValue" text="64" />
+            </State>
+         </StateGroup>
+         <!-- EMISSION VALUE -->
+         <StateGroup name="EmissionState">
+            <DefaultState val="Emission100" />
+            <State name="Emission000">
+               <When type="Property" frame="Emission" Value="0" />
+               <Action type="SetProperty" frame="EmissionValue" text="0%" />
+            </State>
+            <State name="Emission025">
+               <When type="Property" frame="Emission" Value="1" />
+               <Action type="SetProperty" frame="EmissionValue" text="25%" />
+            </State>
+            <State name="Emission050">
+               <When type="Property" frame="Emission" Value="2" />
+               <Action type="SetProperty" frame="EmissionValue" text="50%" />
+            </State>
+            <State name="Emission075">
+               <When type="Property" frame="Emission" Value="3" />
+               <Action type="SetProperty" frame="EmissionValue" text="75%" />
+            </State>
+            <State name="Emission100">
+               <When type="Property" frame="Emission" Value="4" />
+               <Action type="SetProperty" frame="EmissionValue" text="100%" />
+            </State>
+         </StateGroup>
+         <!-- HALO MODE TYPE -->
+         <StateGroup name="ModeState">
+            <DefaultState val="ModeLegacy" />
+            <State name="ModeLegacy">
+               <When type="Property" frame="Type" Value="0" />
+               <Action type="SetProperty" frame="TypeValue" text="Legacy" />
+            </State>
+            <State name="ModeLinear">
+               <When type="Property" frame="Type" Value="1" />
+               <Action type="SetProperty" frame="TypeValue" text="Linear" />
+            </State>
+            <State name="ModeQuadratic">
+               <When type="Property" frame="Type" Value="2" />
+               <Action type="SetProperty" frame="TypeValue" text="Quadratic" />
+            </State>
+            <State name="ModeSharp">
+               <When type="Property" frame="Type" Value="3" />
+               <Action type="SetProperty" frame="TypeValue" text="Sharp" />
+            </State>
+            <State name="ModeGaussian">
+               <When type="Property" frame="Type" Value="4" />
+               <Action type="SetProperty" frame="TypeValue" text="Gaussian" />
+            </State>
+         </StateGroup>
+         <!-- RASTERMODE -->
+         <StateGroup name="RasterModeState">
+            <DefaultState val="RasterModeAdd" />
+            <State name="RasterModeLegacy">
+               <When type="Property" frame="RasterMode" Value="0" />
+               <Action type="SetProperty" frame="RasterModeValue" text="Add" />
+            </State>
+            <State name="RasterModeAlphaBlend">
+               <When type="Property" frame="RasterMode" Value="1" />
+               <Action type="SetProperty" frame="RasterModeValue" text="AlphaBlend" />
+            </State>
+            <State name="RasterModeMultiply">
+               <When type="Property" frame="RasterMode" Value="2" />
+               <Action type="SetProperty" frame="RasterModeValue" text="Multiply" />
+            </State>
+         </StateGroup>
+         <!-- HALO COLOR -->
+         <StateGroup name="ColorState">
+            <DefaultState val="ColorWhite" />
+            <State name="ColorBlack">
+               <When type="Property" frame="Color" Value="0" />
+               <Action type="SetProperty" frame="ColorValue" text="Black" />
+            </State>
+            <State name="ColorGrey">
+               <When type="Property" frame="Color" Value="1" />
+               <Action type="SetProperty" frame="ColorValue" text="Grey" />
+            </State>
+            <State name="ColorWhite">
+               <When type="Property" frame="Color" Value="2" />
+               <Action type="SetProperty" frame="ColorValue" text="White" />
+            </State>
+            <State name="ColorBlue">
+               <When type="Property" frame="Color" Value="3" />
+               <Action type="SetProperty" frame="ColorValue" text="Blue" />
+            </State>
+            <State name="ColorGreen">
+               <When type="Property" frame="Color" Value="4" />
+               <Action type="SetProperty" frame="ColorValue" text="Green" />
+            </State>
+            <State name="ColorRed">
+               <When type="Property" frame="Color" Value="5" />
+               <Action type="SetProperty" frame="ColorValue" text="Red" />
+            </State>
+         </StateGroup>
+      </Frame>
+   </Frame>
+</Desc>

@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="LookAtFrameCorrectionFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Height val="100" />
+         <Width val="100" />
+         <Frame type="Frame" name="LAFCX">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Height val="1" />
+            <Width val="1" />
+         </Frame>
+         <Frame type="Frame" name="LAFCY">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+            <Height val="1" />
+            <Width val="1" />
+         </Frame>
+         <Frame type="Frame" name="Corner">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+            <Height val="1" />
+            <Width val="1" />
+         </Frame>
+         <Frame type="LookAtFrame" name="XDistFrame">
+            <SourceFrame val="$parent/LAFCX" />
+            <DestFrame val="$parent/Corner" />
+         </Frame>
+         <Frame type="LookAtFrame" name="YDistFrame">
+            <SourceFrame val="$parent/LAFCY" />
+            <DestFrame val="$parent/Corner" />
+         </Frame>
+         <Frame type="MathFrame" name="XRatio">
+            <A val="{$parent/XDistFrame/@Distance}" />
+            <B val="100" />
+            <Operator val="Divide" />
+            <Handle val="XRatio" />
+         </Frame>
+         <Frame type="MathFrame" name="YRatio">
+            <A val="{$parent/YDistFrame/@Distance}" />
+            <B val="100" />
+            <Operator val="Divide" />
+            <Handle val="YRatio" />
+         </Frame>
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="CoordinatesTemplate">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Height val="1" />
+      <Width val="1" />
+      <Frame type="Frame" name="XCorner">
+         <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/$parent" pos="Min" offset="0" />
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Frame" name="YCorner">
+         <Anchor side="Top" relative="$parent/$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="0" />
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Frame" name="Corner">
+         <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="0" />
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="LookAtFrame" name="XDistFrame">
+         <SourceFrame val="$parent/XCorner" />
+         <DestFrame val="$parent/Corner" />
+      </Frame>
+      <Frame type="LookAtFrame" name="YDistFrame">
+         <SourceFrame val="$parent/YCorner" />
+         <DestFrame val="$parent/Corner" />
+      </Frame>
+      <Frame type="MathFrame" name="XValue">
+         <A val="{$parent/XDistFrame/@Distance}" />
+         <B val="{$XRatio/@Result}" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="YValue">
+         <A val="{$parent/YDistFrame/@Distance}" />
+         <B val="{$YRatio/@Result}" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="YThousandDigit">
+         <A val="{$parent/YValue/@ResultInt}" />
+         <B val="1000" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="YThousandRemoved">
+         <A val="{$parent/YValue/@ResultInt}" />
+         <B val="1000" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="MathFrame" name="YHundredDigit">
+         <A val="{$parent/YThousandRemoved/@ResultInt}" />
+         <B val="100" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="YHundredRemoved">
+         <A val="{$parent/YThousandRemoved/@ResultInt}" />
+         <B val="100" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="MathFrame" name="YTenDigit">
+         <A val="{$parent/YHundredRemoved/@ResultInt}" />
+         <B val="10" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="YSingleDigit">
+         <A val="{$parent/YHundredRemoved/@ResultInt}" />
+         <B val="10" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="MathFrame" name="XThousandDigit">
+         <A val="{$parent/XValue/@ResultInt}" />
+         <B val="1000" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="XThousandRemoved">
+         <A val="{$parent/XValue/@ResultInt}" />
+         <B val="1000" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="MathFrame" name="XHundredDigit">
+         <A val="{$parent/XThousandRemoved/@ResultInt}" />
+         <B val="100" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="XHundredRemoved">
+         <A val="{$parent/XThousandRemoved/@ResultInt}" />
+         <B val="100" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="MathFrame" name="XTenDigit">
+         <A val="{$parent/XHundredRemoved/@ResultInt}" />
+         <B val="10" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="XSingleDigit">
+         <A val="{$parent/XHundredRemoved/@ResultInt}" />
+         <B val="10" />
+         <Operator val="Modulo" />
+      </Frame>
+      <Frame type="Pulldown" name="YThousandPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="YHundredPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="YTenPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="YSinglePull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="XThousandPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="XHundredPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="XTenPull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <Frame type="Pulldown" name="XSinglePull">
+         <Height val="1" />
+         <Width val="1" />
+      </Frame>
+      <StateGroup name="YThousandSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/YThousandDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/YThousandPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="YHundredSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/YHundredDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/YHundredPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="YTenSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/YTenDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/YTenPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="YSingleSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/YSingleDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/YSinglePull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="XThousandSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/XThousandDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/XThousandPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="XHundredSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/XHundredDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/XHundredPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="XTenSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/XTenDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/XTenPull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+      <StateGroup name="XSingleSet">
+         <DefaultState val="0Digit" />
+         <State name="0Digit">
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="0" />
+         </State>
+         <State name="1Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="1" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="1" />
+         </State>
+         <State name="2Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="2" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="2" />
+         </State>
+         <State name="3Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="3" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="3" />
+         </State>
+         <State name="4Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="4" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="4" />
+         </State>
+         <State name="5Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="5" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="5" />
+         </State>
+         <State name="6Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="6" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="6" />
+         </State>
+         <State name="7Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="7" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="7" />
+         </State>
+         <State name="8Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="8" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="8" />
+         </State>
+         <State name="9Digit">
+            <When type="Property" frame="$this/XSingleDigit" ResultInt="9" />
+            <Action type="SetProperty" frame="$this/XSinglePull" SelectedIndex="9" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <!-- Self Cast Panel Position [Main Template] -->
+   <Frame type="Frame" name="CoordinatesResultsTemplate">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Height val="1" />
+      <Width val="1" />
+      <Frame type="Frame" name="OffsetFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="CornerFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="XSideFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="YSideFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/SelfCastFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="LookAtFrame" name="XDistFrame">
+         <SourceFrame val="$parent/XSideFrame" />
+         <DestFrame val="$parent/CornerFrame" />
+      </Frame>
+      <Frame type="LookAtFrame" name="YDistFrame">
+         <SourceFrame val="$parent/YSideFrame" />
+         <DestFrame val="$parent/CornerFrame" />
+      </Frame>
+      <Frame type="MathFrame" name="HeightMath">
+         <A val="{$parent/YDistFrame/@Distance}" />
+         <B val="{$YRatio/@Result}" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="MathFrame" name="WidthMath">
+         <A val="{$parent/XDistFrame/@Distance}" />
+         <B val="{$XRatio/@Result}" />
+         <Operator val="Divide" />
+      </Frame>
+      <Frame type="Label" name="OffsetX">
+         <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Text val="{$parent/WidthMath/@ResultInt}" />
+      </Frame>
+      <Frame type="Label" name="OffsetY">
+         <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/OffsetX" pos="Max" offset="0" />
+         <Text val="{$parent/HeightMath/@ResultInt}" />
+      </Frame>
+   </Frame>
+   <!-- Tips Panel Position -->
+   <Frame type="Frame" name="CoordinatesResultsTipTemplate" template="CoordinatesReporter/CoordinatesResultsTemplate">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Height val="1" />
+      <Width val="1" />
+      <Frame type="Frame" name="OffsetFrame">
+         <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="CornerFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="XSideFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Frame" name="YSideFrame">
+         <Height val="1" />
+         <Width val="1" />
+         <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Label" name="OffsetX">
+         <Anchor side="Top" relative="$parent/$parent/TipDragFrame" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/$parent/TipDragFrame" pos="Min" offset="0" />
+         <Text val="{$parent/WidthMath/@ResultInt}" />
+      </Frame>
+      <Frame type="Label" name="OffsetY">
+         <Anchor side="Top" relative="$parent/$parent/TipDragFrame" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/OffsetX" pos="Max" offset="0" />
+         <Text val="{$parent/HeightMath/@ResultInt}" />
+      </Frame>
+      <Frame type="TextFormatFrame" name="FormattedText">
+         <Anchor relative="$parent" />
+         <FormatText val="%0% %1%" />
+         <Replacement index="0" val="{$parent/OffsetX/@Text}" />
+         <Replacement index="1" val="{$parent/OffsetY/@Text}" />
+         <Handle val="CoordDebug" />
+      </Frame>
+   </Frame>
+</Desc>

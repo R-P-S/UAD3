@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="SquadDesignatedMarksman" parent="UnitTemplate">
+        <BehaviorArray index="0" Link="NewDexterity"/>
+        <BehaviorArray index="1" Link="NewFitness"/>
+        <BehaviorArray index="4" Link="HeroLevelsDFM"/>
+        <BehaviorArray index="5" Link="1Dexterity"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="Hawkeyes"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="4">
+                <Face value="NewAdditionalActions"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0003"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="LearnSkills" Type="Submenu" SubmenuCardId="0002" Row="2" Column="1"/>
+            <LayoutButtons index="6">
+                <Face value="TeamLocation"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="TeamLocation,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="BinocularsMOS"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="BinocularsSDM,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="1"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="GroundFlare" Type="AbilCmd" AbilCmd="GroundFlareSDM,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="ReconDrone" Type="AbilCmd" AbilCmd="ReconDroneSDM,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="RapidFire" Type="AbilCmd" AbilCmd="RapidFire,On" Row="0" Column="3"/>
+            <LayoutButtons Face="CancelR" Type="AbilCmd" AbilCmd="RapidFire,Off" Row="0" Column="3"/>
+            <LayoutButtons Face="MonomolecularWire" Type="AbilCmd" AbilCmd="MonomolecularWire,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="FlareGunItem" Type="AbilCmd" AbilCmd="RiflemanFlareGun,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="DMRMarksmanship" Type="AbilCmd" AbilCmd="SDMResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="DMRMarksmanship" Type="AbilCmd" AbilCmd="SDMResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="DMRMarksmanship" Type="AbilCmd" AbilCmd="SDMResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="DMRMarksmanship" Type="AbilCmd" AbilCmd="SDMResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="MarksmanSkills" Type="AbilCmd" AbilCmd="SDMResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="MarksmanSkills" Type="AbilCmd" AbilCmd="SDMResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="MarksmanSkills" Type="AbilCmd" AbilCmd="SDMResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="MarksmanSkills" Type="AbilCmd" AbilCmd="SDMResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnRapidFire" Type="AbilCmd" AbilCmd="SDMResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnRapidFire" Type="AbilCmd" AbilCmd="SDMResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnRapidFire" Type="AbilCmd" AbilCmd="SDMResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnMonomolecularWire" Type="AbilCmd" AbilCmd="SDMResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMonomolecularWire" Type="AbilCmd" AbilCmd="SDMResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMonomolecularWire" Type="AbilCmd" AbilCmd="SDMResearch,Research17" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMonomolecularWire" Type="AbilCmd" AbilCmd="SDMResearch,Research20" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="Hawkeyes"/>
+                <Type value="Passive"/>
+                <Behavior value="Hawkeyes"/>
+                <Requirements value="HawkeyesUse"/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="0"/>
+            <LayoutButtons index="10">
+                <Face value="Jump"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="JumpHero,Execute"/>
+                <Requirements value=""/>
+                <Row value="0"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="11" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research6" Row="0" Column="0"/>
+            <LayoutButtons Face="ReconDroneDeploySmoke" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research12" Row="0" Column="1"/>
+            <LayoutButtons Face="RapidFireIntensity" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research14" Row="0" Column="2"/>
+            <LayoutButtons Face="GroundFlareMGLDelivery" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research10" Row="0" Column="3"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="MarksmanshipSniperDMR" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research7" Row="1" Column="0"/>
+            <LayoutButtons Face="ReconDroneEnhancedSensors" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research13" Row="1" Column="1"/>
+            <LayoutButtons Face="RapidFireSleightofHand" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research15" Row="1" Column="2"/>
+            <LayoutButtons Face="GroundFlarePotency" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research11" Row="1" Column="3"/>
+            <LayoutButtons Face="SoldierSkillsHawkeye" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research4" Row="2" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="BinocularsPotency" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research8" Row="0" Column="0"/>
+            <LayoutButtons Face="BinocularsTargetPainting" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research9" Row="1" Column="0"/>
+            <LayoutButtons Face="PreviousPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="MonomolecularWireStunningBlow" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research16" Row="0" Column="1"/>
+            <LayoutButtons Face="MonomolecularWireVolatility" Type="AbilCmd" AbilCmd="SDMSkillUpgrades,Research17" Row="1" Column="1"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <AbilArray index="3" Link="SDMResearch"/>
+        <AbilArray index="4" Link="SDMSkillUpgrades"/>
+        <AbilArray index="5" Link="Sprint"/>
+        <AbilArray index="6" Link="ReloadHero"/>
+        <AbilArray index="7" Link="JumpHero"/>
+        <AbilArray index="8" Link="DropMagazine"/>
+        <AbilArray index="9" Link="Prone"/>
+        <AbilArray index="10" Link="PerformSelfAidHero"/>
+        <AbilArray index="11" Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="BinocularsSDM"/>
+        <AbilArray Link="GroundFlareSDM"/>
+        <AbilArray Link="ReconDroneSDM"/>
+        <AbilArray Link="RapidFire"/>
+        <AbilArray Link="MonomolecularWire"/>
+        <AbilArray Link="RiflemanFlareGun"/>
+        <AbilArray Link="HeroInventorySDMNew"/>
+        <EffectArray index="Birth" value="SDMSpawnSet"/>
+        <EffectArray index="Revive" value="SDMSpawnSet"/>
+    </CUnit>
+</Catalog>

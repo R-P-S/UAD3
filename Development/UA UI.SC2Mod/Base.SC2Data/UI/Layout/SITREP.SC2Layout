@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="MOSIconTemplate">
+      <Width val="32" />
+      <Height val="32" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Texture val="Assets/Textures/btn-border-research.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="Label" name="LabelTemplate">
+      <Width val="125" />
+      <Height val="40" />
+      <Style val="Swarm_BoldXSmall" />
+      <Text val="Player Name" />
+   </Frame>
+   <Frame type="Frame" name="HealthIconTemplate">
+      <Width val="26" />
+      <Height val="26" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <Texture val="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="Label" name="HealthLabelTemplate">
+      <Width val="50" />
+      <Height val="40" />
+      <Style val="Swarm_BoldXSmall" />
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="SITREPContainer">
+         <Anchor side="Top" relative="$parent" pos="Max" offset="-1000" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="915" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Width val="423" />
+         <Height val="430" />
+         <Visible val="false" />
+         <Animation name="DisplaySITREP">
+            <Event event="Display" action="Reset,Play" frame="$this" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="true" />
+               <Key type="Bool" time="8" value="false" />
+            </Controller>
+         </Animation>
+         <Frame type="Frame" name="BackgroundContainer">
+            <Anchor relative="$parent" />
+            <Width val="{$parent/@Width}" />
+            <Height val="{$parent/@Height}" />
+            <Alpha val="75" />
+            <Frame type="Image" name="Background">
+               <Anchor relative="$parent" />
+               <Texture val="@@UI/HeroPanelHealthBarBackground" />
+               <TextureType val="Border" />
+               <Animation name="ShowSITREP">
+                  <Event event="OnShown" action="Reset,Play" frame="$this" />
+                  <Controller name="Width_Anim" type="Dimension" end="Pause" dimension="Width" relative="false" unclip="false" percentage="true" frame="$this">
+                     <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="0.4" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="0.7" inout="Linear" value="100" />
+                     <Key type="CurveReal" time="7.3" inout="Linear" value="100" />
+                     <Key type="CurveReal" time="7.6" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="8" inout="Linear" value="0" />
+                  </Controller>
+                  <Controller name="Height_Anim" type="Dimension" end="Pause" dimension="Height" relative="false" unclip="false" percentage="true" frame="$this">
+                     <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="0.1" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="0.4" inout="Linear" value="100" />
+                     <Key type="CurveReal" time="7.6" inout="Linear" value="100" />
+                     <Key type="CurveReal" time="7.9" inout="Linear" value="0" />
+                     <Key type="CurveReal" time="8" inout="Linear" value="0" />
+                  </Controller>
+                  <Controller name="Fade_0" type="Fade" end="Pause" frame="$this">
+                     <Key type="CurveReal" time="0" inout="Linear,Fast" value="0" />
+                     <Key type="CurveReal" time="0.2" inout="Linear,Fast" value="0" />
+                     <Key type="CurveReal" time="0.4" inout="Slow,Linear" value="255" />
+                     <Key type="CurveReal" time="7.6" inout="Slow,Linear" value="255" />
+                     <Key type="CurveReal" time="7.8" inout="Linear,Fast" value="0" />
+                     <Key type="CurveReal" time="8" inout="Linear,Fast" value="0" />
+                  </Controller>
+               </Animation>
+            </Frame>
+         </Frame>
+         <Frame type="Frame" name="InfoContainer">
+            <Anchor relative="$parent" />
+            <Width val="{$parent/@Width}" />
+            <Height val="{$parent/@Height}" />
+            <Animation name="ShowInfo">
+               <Event event="OnShown" action="Reset,Play" frame="$this" />
+               <Controller name="Width_Anim" type="Dimension" end="Pause" dimension="Width" relative="false" unclip="false" percentage="true" frame="$this">
+                  <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="0.4" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="0.7" inout="Linear" value="100" />
+                  <Key type="CurveReal" time="7.3" inout="Linear" value="100" />
+                  <Key type="CurveReal" time="7.6" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="8" inout="Linear" value="0" />
+               </Controller>
+               <Controller name="Height_Anim" type="Dimension" end="Pause" dimension="Height" relative="false" unclip="false" percentage="true" frame="$this">
+                  <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="0.1" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="0.4" inout="Linear" value="100" />
+                  <Key type="CurveReal" time="7.6" inout="Linear" value="100" />
+                  <Key type="CurveReal" time="7.9" inout="Linear" value="0" />
+                  <Key type="CurveReal" time="8" inout="Linear" value="0" />
+               </Controller>
+               <Controller name="Fade_0" type="Fade" end="Pause" frame="$this">
+                  <Key type="CurveReal" time="0" inout="Linear,Fast" value="0" />
+                  <Key type="CurveReal" time="0.2" inout="Linear,Fast" value="0" />
+                  <Key type="CurveReal" time="0.4" inout="Slow,Linear" value="255" />
+                  <Key type="CurveReal" time="7.6" inout="Slow,Linear" value="255" />
+                  <Key type="CurveReal" time="7.8" inout="Linear,Fast" value="0" />
+                  <Key type="CurveReal" time="8" inout="Linear,Fast" value="0" />
+               </Controller>
+            </Animation>
+            <Frame type="Image" name="Player01" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent" pos="Min" offset="7" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="7" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player01" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player02" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player02" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player03" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player03" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player04" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player04" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player05" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player05" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player06" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player06" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player07" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player07" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player08" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player08" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player09" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player09" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player010" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player010" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012" template="SITREP/MOSIconTemplate">
+               <Texture val="Buttons\BTNAutoRifle.dds" />
+               <Anchor side="Top" relative="$parent/Player011" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player011" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName01" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player01" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player01" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName02" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player02" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player02" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName03" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player03" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player03" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName04" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player04" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player04" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName05" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player05" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player05" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName06" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player06" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player06" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName07" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player07" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player07" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName08" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player08" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player08" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName09" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player09" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player09" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName010" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player010" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player010" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName011" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player011" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player011" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerName012" template="SITREP/LabelTemplate">
+               <Anchor side="Top" relative="$parent/Player012" pos="Min" offset="-3" />
+               <Anchor side="Left" relative="$parent/Player012" pos="Min" offset="40" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="160" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth01" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth02" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth02" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth03" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth03" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth04" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth04" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth05" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth05" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth07" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth06" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth06" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth08" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth07" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth07" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth09" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth08" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth08" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth010" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth09" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth09" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth011" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth010" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth010" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="PlayerHealth012" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\icon-health-nobg.dds" />
+               <Anchor side="Top" relative="$parent/PlayerHealth011" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealth011" pos="Min" offset="0" />
+               <Tooltip val="Health" />
+               <Visible val="false" />
+               <AcceptsMouse val="true" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel01" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="190" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel02" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel01" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel03" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel02" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel02" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel04" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel03" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel03" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel05" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel04" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel04" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel06" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel05" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel05" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel07" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel06" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel06" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel08" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel07" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel07" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel09" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel08" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel08" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel010" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel09" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel09" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel011" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel010" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel010" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Label" name="PlayerHealthLabel012" template="SITREP/HealthLabelTemplate">
+               <Anchor side="Top" relative="$parent/PlayerHealthLabel011" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/PlayerHealthLabel011" pos="Min" offset="0" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="250" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player01Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player01Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player01Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player01Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player01Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player01Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player01Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player01Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player02Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player02Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player02Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player02Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player02Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player02Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player02Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player02Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player03Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player03Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player03Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player03Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player03Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player03Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player03Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player03Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player04Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player04Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player04Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player04Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player04Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player04Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player04Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player04Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player05Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player05Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player05Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player05Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player05Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player05Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player05Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player05Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player06Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player06Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player06Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player06Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player06Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player06Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player06Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player06Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player07Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player07Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player07Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player07Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player07Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player07Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player07Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player07Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player08Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player08Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player08Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player08Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player08Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player08Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player08Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player08Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player09Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player09Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player09Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player09Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player09Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player09Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player09Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player09Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player010Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player010Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player010Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player010Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player010Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player010Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player010Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player010Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player011Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player011Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player011Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player011Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player011Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player011Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior01" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player011Behavior01" pos="Min" offset="35" />
+               <Anchor side="Left" relative="$parent/Player011Behavior01" pos="Min" offset="0" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior02" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player012Behavior01" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player012Behavior01" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior03" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player012Behavior02" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player012Behavior02" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior04" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player012Behavior03" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player012Behavior03" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior05" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player012Behavior04" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player012Behavior04" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+            <Frame type="Image" name="Player012Behavior06" template="SITREP/HealthIconTemplate">
+               <Texture val="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds" />
+               <Anchor side="Top" relative="$parent/Player012Behavior05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Player012Behavior05" pos="Min" offset="28" />
+               <Tooltip val="Ailment" />
+               <AcceptsMouse val="true" />
+               <Visible val="false" />
+            </Frame>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

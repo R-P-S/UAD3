@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CActorQuad id="VoidHighTemplarPsiOrbAttackGuide2" parent="ZergGuideVisualQuadDown" abil="VoidHighTemplarPsiOrb">
+        <Remove Terms="ActorDestruction" Target="_GuideQuadSegment" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorDestruction" Target="_GuideQuadSegment" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <LaunchActor value="ProtossGuideVisualQuadLargeLaunch"/>
+        <CenterActor value="ProtossGuideVisualQuadLargeCenter"/>
+        <ImpactActor value="ProtossGuideVisualQuadLargeImpact"/>
+        <Height value="13.000000"/>
+        <Width value="10.000000"/>
+    </CActorQuad>
+    <CActorModel id="VoidHighTemplarPsiOrbAttackImpactModel2">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD {} {} Death ContentPlayOnce 0.200000 AsTimeScale"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="VoidHighTemplarPsiOrbAttackImpactModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSplat id="VoidHighTemplarPsiOrbCursorSplat2" parent="ProtossCursorSplat" abil="VoidHighTemplarPsiOrb">
+        <Model value="VoidHighTemplarPsiOrbCursorSplat"/>
+    </CActorSplat>
+    <CActorMissile id="VoidHighTemplarPsiOrbMissile2" parent="GenericAttackMissile" unitName="VoidHighTemplarPsiOrbMissile">
+        <Macros value="GlobalLoopMacro"/>
+        <On Terms="ActorCreation" Send="Create PsionicOrbLoopSound"/>
+        <On Terms="ActorCreation" Send="Create VoidHighTemplarPsiOrbMissileStorm"/>
+        <On Terms="ActorDestruction" Target="PsionicOrbLoopSound" Send="Destroy"/>
+    </CActorMissile>
+    <CModel id="PsiOrbCursorSplat" parent="UI">
+        <Model value="Assets\UI\Cursors\ProtossCursor1\ProtossCursor1.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="VoidHighTemplarPsiOrbCursorSplat"/>
+        <ScaleMax value="0.250000,0.250000,0.250000"/>
+        <ScaleMin value="0.250000,0.250000,0.250000"/>
+        <SelectionRadius value="2.500000"/>
+        <ShadowRadius value="2.500000"/>
+    </CModel>
+    <CModel id="PsiOrbFinalImpactModel">
+        <Model value="Assets\Effects\Protoss\HighTemplarTaldarim_PsionicOrb_Impact\HighTemplarTaldarim_PsionicOrb_Impact.m3"/>
+    </CModel>
+    <CModel id="HighTemplarPsiOrbMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\HighTemplarTaldarim_PsionicOrb_Missile\HighTemplarTaldarim_PsionicOrb_Missile.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Lighting value="VoidHighTemplarPsiOrbMissile"/>
+    </CModel>
+    <CMoverMissile id="VoidHighTemplarPsiOrbMissile2" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="4"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

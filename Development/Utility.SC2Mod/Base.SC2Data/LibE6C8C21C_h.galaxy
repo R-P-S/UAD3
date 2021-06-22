@@ -1,0 +1,108 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Utility Lib
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libE6C8C21C_ge_DebugOnOff_DebugOn = 0;
+const int libE6C8C21C_ge_DebugOnOff_DebugOff = 1;
+
+// Variable Declarations
+int libE6C8C21C_gv_debugSliderHaloEmission;
+int libE6C8C21C_gv_debugSliderHaloWidth;
+int libE6C8C21C_gv_debugSliderHaloType;
+int libE6C8C21C_gv_debugSliderHaloRasterMode;
+int libE6C8C21C_gv_debugSliderHaloColor;
+int libE6C8C21C_gv_debugButtonHaloReset;
+int libE6C8C21C_gv_debugButtonHaloOn;
+int libE6C8C21C_gv_debugButtonHaloOff;
+int libE6C8C21C_gv_debugHaloFrame;
+string[10] libE6C8C21C_gv_sceneHaloWidth;
+string[6] libE6C8C21C_gv_sceneHaloType;
+string[4] libE6C8C21C_gv_sceneHaloRasterMode;
+string[8] libE6C8C21C_gv_sceneHaloEmission;
+string[7] libE6C8C21C_gv_sceneHaloColor;
+bool libE6C8C21C_gv_global_Debug;
+unit libE6C8C21C_gv_NM_FlyoverUnit;
+bool libE6C8C21C_gv_NM_FlyoverModeEnabled;
+
+// Function Declarations
+void libE6C8C21C_gf_SmoothRotateActor (fixed lp_rotationTime, actor lp_actor, int lp_rotationPoints, fixed lp_forwardX, fixed lp_forwardY, fixed lp_forwardZ, fixed lp_upX, fixed lp_upY, fixed lp_upZ);
+void libE6C8C21C_gf_GAx3_ActorSiteDestroy (actor lp_actor);
+void libE6C8C21C_gf_InitVariables ();
+void libE6C8C21C_gf_InitDebugUI ();
+void libE6C8C21C_gf_GlobalHaloOn ();
+void libE6C8C21C_gf_GlobalHaloOff ();
+void libE6C8C21C_gf_GlobalHaloReset ();
+void libE6C8C21C_gf_DynamicArrayCreate (string lp_arrayName);
+void libE6C8C21C_gf_DynamicArrayDestroy (string lp_arrayName);
+void libE6C8C21C_gf_DynamicArrayPopBack (string lp_arrayName);
+int libE6C8C21C_gf_DynamicArraySize (string lp_arrayName);
+int libE6C8C21C_gf_DynamicArrayLastElement (string lp_arrayName);
+bool libE6C8C21C_gf_DynamicArrayIsEmpty (string lp_arrayName);
+string libE6C8C21C_gf_DynamicArrayGetDatabaseName (string lp_arrayName, int lp_index);
+void libE6C8C21C_gf_DynamicPointArraySet (string lp_arrayName, int lp_index, point lp_value);
+point libE6C8C21C_gf_DynamicPointArrayGet (string lp_arrayName, int lp_index);
+void libE6C8C21C_gf_DynamicPointArrayPushBack (string lp_arrayName, point lp_addedValue);
+void libE6C8C21C_gf_DynamicPointArrayRemove (string lp_arrayName, int lp_index);
+void libE6C8C21C_gf_DynamicPointArrayAdd (string lp_arrayName, int lp_index, point lp_value);
+void libE6C8C21C_gf_DynamicPointArrayCallback (string lp_arrayName);
+void libE6C8C21C_gf_DynamicIntArraySet (string lp_arrayName, int lp_index, int lp_value);
+int libE6C8C21C_gf_DynamicIntArrayGet (string lp_arrayName, int lp_index);
+void libE6C8C21C_gf_DynamicIntArrayPushBack (string lp_arrayName, int lp_addedValue);
+void libE6C8C21C_gf_DynamicIntArrayRemove (string lp_arrayName, int lp_index);
+void libE6C8C21C_gf_DynamicIntArrayAdd (string lp_arrayName, int lp_index, int lp_value);
+void libE6C8C21C_gf_DynamicIntArrayCallback (string lp_arrayName);
+string libE6C8C21C_gf_GetCurrentTime (string lp_time);
+bool libE6C8C21C_gf_GlobalGetDebug ();
+text libE6C8C21C_gf_DebugUnitInfo (unit lp_u);
+bool libE6C8C21C_gf_DebugStatus (int lp_enableDebug);
+void Debug (string lp_nameofAbility, string lp_ability, unit lp_triggeringUnit);
+void Debug2 (string lp_nameofFunction, int lp_variableInteger, unit lp_triggeringUnit);
+void Debug3 (string lp_nameofFunction, fixed lp_variableReal, unit lp_triggeringUnit);
+void libE6C8C21C_gf_DebugMessageFindTableValueNameValue (int lp_dataTableListValue, int lp_player);
+void libE6C8C21C_gf_DebugMessageSearchDataTable (int lp_dataTableStartValue, int lp_player);
+fixed libE6C8C21C_gf_ConvertBooleanToReal (bool lp_boolean);
+void libE6C8C21C_gf_CreateOneWaySightBlocker (point lp_point);
+fixed libE6C8C21C_gf_RandomGaussianReal (fixed lp_expectedValue, fixed lp_variance);
+bool libE6C8C21C_gf_AngleIsBetweenBounds (fixed lp_angle, fixed lp_minBound, fixed lp_maxBound);
+bool libE6C8C21C_gf_StringIsValid2 (int lp_integer);
+int libE6C8C21C_gf_SignInteger (int lp_inputInteger);
+fixed libE6C8C21C_gf_SignReal (fixed lp_inputReal);
+int libE6C8C21C_gf_GetRandomPlayerfromPlayerGroup (playergroup lp_playerGroup);
+text libE6C8C21C_gf_TextWithStyle (text lp_text, string lp_style);
+void libE6C8C21C_gf_AddTimeToTimer (timer lp_timer, fixed lp_additionalTime);
+void libE6C8C21C_gf_ReduceTimeOfTimer (timer lp_timer, fixed lp_reductionTime);
+bool libE6C8C21C_gf_CallbackIsRunning (string lp_name);
+int libE6C8C21C_gf_CallbackTriggeringPlayer (string lp_name);
+unit libE6C8C21C_gf_CallbackParameterUnit (string lp_name, int lp_index);
+int libE6C8C21C_gf_CallbackParameterInteger (string lp_name, int lp_index);
+void libE6C8C21C_gf_RegisterCallback (trigger lp_trigger, string lp_name);
+void libE6C8C21C_gf_RegisterCallbackPlayer (trigger lp_trigger, string lp_name, int lp_player);
+void libE6C8C21C_gf_RunCallback (string lp_name);
+void libE6C8C21C_gf_RunCallbackPlayer (string lp_name, int lp_player);
+void libE6C8C21C_gf_SetCallbackParameterInteger (string lp_name, int lp_index, int lp_value);
+void libE6C8C21C_gf_SetCallbackParameterUnit (string lp_name, int lp_index, unit lp_value);
+void libE6C8C21C_gf_EnableDisableAllCommandTypes (bool lp_enableDisable, playergroup lp_players);
+void libE6C8C21C_gf_ChangeUnitHeightAtRate (unit lp_unit, fixed lp_height, fixed lp_rate);
+void libE6C8C21C_gf_ForceAbilityToCooldown (unit lp_unit, abilcmd lp_abilityCommand, int lp_spendLocation);
+void libE6C8C21C_gf_ForceAbilityToSkipCooldown (unit lp_unit, abilcmd lp_abilityCommand, int lp_spendLocation);
+bool libE6C8C21C_gf_AttackerbehindTarget (unit lp_attacker, unit lp_target, fixed lp_rearAngle);
+bool libE6C8C21C_gf_UnitisCarryingItemofType (unit lp_unit, string lp_carriedItem);
+unit libE6C8C21C_gf_ReturnUnit (unit lp_unit);
+
+// Trigger Declarations
+trigger libE6C8C21C_gt_Init;
+trigger libE6C8C21C_gt_DebugFrameSetHaloWidth;
+trigger libE6C8C21C_gt_DebugFrameSetHaloEmission;
+trigger libE6C8C21C_gt_DebugFrameSetHaloType;
+trigger libE6C8C21C_gt_DebugFrameSetHaloRasterMode;
+trigger libE6C8C21C_gt_DebugFrameSetHaloColor;
+trigger libE6C8C21C_gt_DebugFrameButtonHaloOn;
+trigger libE6C8C21C_gt_DebugFrameButtonHaloOff;
+trigger libE6C8C21C_gt_DebugFrameButtonHaloReset;
+trigger libE6C8C21C_gt_NM_ToggleFlyoverMode;
+
+// Library Initialization
+void libE6C8C21C_InitVariables ();
+

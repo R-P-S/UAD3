@@ -1,0 +1,8 @@
+//--------------------------------------------------------------------------------------------------
+void AIinit() {
+    //TriggerAddEventPlayerEffectUsed(TriggerCreate("PoliceAI"), 0, "AICooldownAB");
+    TriggerAddEventPlayerEffectUsed(TriggerCreate("RefreshAttackOrder"), 14, "UnitIdle");
+    TriggerAddEventUnitAbility(TriggerCreate("ScorpCharge"), null, AbilityCommand("ArachnathidCharge", 0), c_abilEffectStageCast, false);
+	TriggerAddEventPlayerEffectUsed(TriggerCreate("PMCRefreshAttackOrder"), 15, "PMCUnitIdle");
+}
+//--------------------------------------------------------------------------------------------------

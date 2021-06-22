@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="BGMain" template="MenuBackgroundTemplate/GridBGTemplate">
+         <Anchor relative="$parent" />
+         <Visible val="False" />
+         <Handle val="GridBG"/>
+         <Animation name="DisplayAnim">
+            <Event event="Display" action="DirectionForward,Play" />
+            <Event event="Hide" action="DirectionReverse,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+         <Animation name="ChapterTransitionAnim">
+            <Event event="TransitionOn" action="DirectionForward,Play" />
+            <Event event="TransitionOff" action="DirectionReverse,Play" />
+            <Controller type="Fade" frame="$parent/BlackMask" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Fast"/>
+               <Key type="Curve" time="2.5" value="255" in="Slow"/>
+            </Controller>
+         </Animation>
+         <Animation name="ChapterTransitionVisibility">
+            <Event event="DisplayBlackMask" action="DirectionForward,Play" />
+            <Event event="HideBlackMask" action="DirectionReverse,Play" />
+            <Controller type="Visibility" frame="$parent/BlackMask" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Frame" name="BlackMask">
+         <Anchor relative="$parent" />
+         <RenderPriority val="615" />
+         <Visible val="False" />
+         <AcceptsMouse val="False" />
+         <Alpha val="0" />
+         <Frame type="Image" name="Image">
+            <Anchor relative="$parent" />  
+            <Color val="0,0,0," />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="SFAAT" parent="UnitTemplate">
+        <AbilArray index="3" Link="SFAATResearch"/>
+        <AbilArray index="4" Link="SFAATSkillUpgrades"/>
+        <AbilArray index="5" Link="Sprint"/>
+        <AbilArray index="6" Link="ReloadHero"/>
+        <AbilArray index="7" Link="JumpHero"/>
+        <AbilArray index="8" Link="DropMagazine"/>
+        <AbilArray index="9" Link="Prone"/>
+        <AbilArray index="10" Link="PerformSelfAidHero"/>
+        <AbilArray index="11" Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="HeroInventoryShotgunNew"/>
+        <AbilArray Link="AegisAura"/>
+        <AbilArray Link="ReinforcePosition"/>
+        <AbilArray Link="RallyLocalNationals"/>
+        <AbilArray Link="LNGroupSprint"/>
+        <AbilArray Link="LNGroupJump"/>
+        <AbilArray Link="OffensiveRally"/>
+        <AbilArray Link="SetRallyPoint"/>
+        <AbilArray Link="LNSITREP"/>
+        <AbilArray Link="RecruitLN"/>
+        <BehaviorArray index="3" Link="HeroLevelsFDM"/>
+        <BehaviorArray index="4" Link="1Fitness"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Birth" value="SFAATSpawnSet"/>
+        <EffectArray index="Revive" value="SFAATSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="4">
+                <Face value="NewAdditionalActions"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0003"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="LearnSkills" Type="Submenu" SubmenuCardId="0002" Row="2" Column="1"/>
+            <LayoutButtons index="6">
+                <Face value="TeamLocation"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="TeamLocation,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="AegisAura"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="AegisAura,On"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="CancelE" Type="AbilCmd" AbilCmd="AegisAura,Off" Row="0" Column="2"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="ReinforcePosition" Type="AbilCmd" AbilCmd="ReinforcePosition,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="SetRallyPointLN" Type="AbilCmd" AbilCmd="SetRallyPoint,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="RallyLocalNationals" Type="AbilCmd" AbilCmd="RallyLocalNationals,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="OffensiveRally" Type="AbilCmd" AbilCmd="OffensiveRally,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="LNGroupSprint" Type="AbilCmd" AbilCmd="LNGroupSprint,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="LNGroupJump" Type="AbilCmd" AbilCmd="LNGroupJump,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="RecruitLocalNationals" Type="AbilCmd" AbilCmd="RecruitLN,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="ShotgunMarksmanship" Type="AbilCmd" AbilCmd="SFAATResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="ShotgunMarksmanship" Type="AbilCmd" AbilCmd="SFAATResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="ShotgunMarksmanship" Type="AbilCmd" AbilCmd="SFAATResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="ShotgunMarksmanship" Type="AbilCmd" AbilCmd="SFAATResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="Training" Type="AbilCmd" AbilCmd="SFAATResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="Training" Type="AbilCmd" AbilCmd="SFAATResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="Training" Type="AbilCmd" AbilCmd="SFAATResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="Training" Type="AbilCmd" AbilCmd="SFAATResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="Leadership" Type="AbilCmd" AbilCmd="SFAATResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="Leadership" Type="AbilCmd" AbilCmd="SFAATResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="Leadership" Type="AbilCmd" AbilCmd="SFAATResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="Leadership" Type="AbilCmd" AbilCmd="SFAATResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="Tactics" Type="AbilCmd" AbilCmd="SFAATResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="Tactics" Type="AbilCmd" AbilCmd="SFAATResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="Tactics" Type="AbilCmd" AbilCmd="SFAATResearch,Research21" Row="0" Column="4"/>
+            <LayoutButtons Face="Tactics" Type="AbilCmd" AbilCmd="SFAATResearch,Research20" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="10">
+                <Face value="SprintHero"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Sprint,Execute"/>
+                <Requirements value=""/>
+                <Row value="0"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="11" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="LNSITREP" Type="AbilCmd" AbilCmd="LNSITREP,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research3" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipSpread" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research4" Row="1" Column="0"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research5" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research6" Row="2" Column="3"/>
+            <LayoutButtons Face="ReinforcePositionEfficiency" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="ReinforcePositionArmoredVests" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research8" Row="1" Column="1"/>
+            <LayoutButtons Face="TacticsAdvancedTactics" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research9" Row="0" Column="2"/>
+            <LayoutButtons Face="TacticsBarbaric" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research10" Row="1" Column="2"/>
+            <LayoutButtons Face="TacticsSkill3" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research11" Row="0" Column="3"/>
+            <LayoutButtons Face="TacticsSkill4" Type="AbilCmd" AbilCmd="SFAATSkillUpgrades,Research12" Row="1" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

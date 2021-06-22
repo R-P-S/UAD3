@@ -1,0 +1,2774 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="UnitModelFrame" name="UnitModelFrameTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Height val="350" />
+      <Width val="350" />
+      <Visible val="true" />
+      <TeamColorIndex val="0" />
+      <AcceptsMouse val="False" />
+      <TurningEnabled val="false" />
+      <Rotation val="335" />
+      <Frame type="Model" name="Model">
+         <Anchor relative="$parent" />
+         <UseAlternateTime val="false" />
+         <UseAspectScaling val="false" />
+      </Frame>
+      <StateGroup name="UnitState">
+         <State name="Rifleman">
+            <When type="Property" frame="$this" UnitLink="NewRifleman" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Rifleman" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_RifleDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.898" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Assault Rifle" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  3.9s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Dex_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Mech_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Fit_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Marks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Frag" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_SFrag" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_FocusFire" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="BTNFragGrenade.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-flashgrenade.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Buttons\BTNFocusFire.dds" />
+            <Action type="SendEvent" frame="$this" event="Rifleman" />
+         </State>
+         <State name="CombatMedic">
+            <When type="Property" frame="$this" UnitLink="CombatMedic" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Combat Medic" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_MedicDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.898" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Assault Rifle" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  3.9s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_HealingKit" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_CuringKit" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_EnhancementKit" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_AugmentationKit" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-ability-terran-heal-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-ability-terran-stimpack-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-upgrade-terran-nova-repairbeamcloak.dds" />
+            <Action type="SendEvent" frame="$this" event="CombatMedic" />
+         </State>
+         <State name="AutomaticRifleman">
+            <When type="Property" frame="$this" UnitLink="AutomaticRifleman" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Automatic Rifleman" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_ARDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.828" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Machine Gun" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  6.25s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  21" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Dex_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Mech_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Marks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_MachineGun" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_FullAuto" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_Incen" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-upgrade-terran-nova-combatmastery.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Buttons/Abilities/BTNIncendiary.dds" />
+            <Action type="SendEvent" frame="$this" event="AutomaticRifleman" />
+         </State>
+         <State name="CalvaryScout">
+            <When type="Property" frame="$this" UnitLink="CavalryScout" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Cavalry Scout" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_CSDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.934" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Carbine" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  3.7s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Fit_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Mech_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Marks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_ExplosivesExpert" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_Reconnaissance" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_Bandolier" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-upgrade-terran-explosiveshrapnelshells.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-ability-terran-scannersweep-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Icon Pack\btn-backpack.dds" />
+            <Action type="SendEvent" frame="$this" event="CavalryScout" />
+         </State>
+         <State name="SFAAT">
+            <When type="Property" frame="$this" UnitLink="SFAAT" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="SFAAT" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_SFAATDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.910" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Shotgun" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  4.2s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Fit_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Dex_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Mech_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_SMarks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Training" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_Leadership" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_Tactics" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-techupgrade-terran-consumption.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Buttons\Abilities\BTNLeadership.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-ability-terran-battlefieldawareness.dds" />
+            <Action type="SendEvent" frame="$this" event="SFAAT" />
+         </State>
+         <State name="JavelinGunner">
+            <When type="Property" frame="$this" UnitLink="JavelinGunner" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Javelin Gunner" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_JavDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.828" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Assault Rifle" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  3.9s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_HERocket" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_ATRockets" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_StingerMissile" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_JavelinMissile" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Buttons\Misc Items\BTNRocketLauncher.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-ability-terran-punishergrenade-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-ability-hornerhan-viking-missileupgrade.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds" />
+            <Action type="SendEvent" frame="$this" event="JavelinGunner" />
+         </State>
+         <State name="SquadDesignatedMarksman">
+            <When type="Property" frame="$this" UnitLink="SquadDesignatedMarksman" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Squad Designated Marksman" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_SDMDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.898" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  DMR" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  4.5s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Dex_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Mech_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_DMRMarks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_MarksmanSkills" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_RapidFire" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_Mono" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-ability-terran-snipe-color.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Icon Pack\btn-ability-terran-penetratorround-color.dds" />
+            <Action type="SendEvent" frame="$this" event="SquadDesignatedMarksman" />
+         </State>
+         <State name="PlatoonLeader">
+            <When type="Property" frame="$this" UnitLink="PlatoonLeader" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Platoon Leader" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_PLDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.898" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon:  Assault Rifle" />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time:  3.9s" />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Dex_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Fit_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Marks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_BornToLead" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_Instructor" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_MortarStrike" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Buttons\BTNLeadershipSkills.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Icon Pack\btn-custom-terran-marinearmor.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-ability-terran-superconcussive.dds" />
+            <Action type="SendEvent" frame="$this" event="PlatoonLeader" />
+         </State>
+         <State name="Flamethrower">
+            <When type="Property" frame="$this" UnitLink="Flamethrower" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Flamethrower" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_FLDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.828" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon: Flamethrower " />
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time: 6.0s  " />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  18" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Dex_S" />
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Fit_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Burning" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Pyrotechnician" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_OilDouse" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_WildFireEquipment" />
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-ability-zerg-fireroach-increasefiredamage.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Icon Pack\btn-custom-terran-flamethrower.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-ability-tychus-firebat-oilspill.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-ability-zerg-yagdra-firewave.dds" />
+            <Action type="SendEvent" frame="$this" event="Flamethrower" />
+         </State>
+         <State name="CombatEngineer"> 
+            <When type="Property" frame="$this" UnitLink="CombatEngineer" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Combat Engineer" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_CEDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.852" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon: Shotgun " />	
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time: 4.2s  " />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />			
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />			
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_Architect" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Security" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_BattleBot" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_EngineeringSkills" />	
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Icon Pack\btn-ability-terran-build.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-upgrade-terran-durablematerials.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\killbots_coop.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-research-zerg-regenerativebio-steel.dds" />	
+            <Action type="SendEvent" frame="$this" event="CombatEngineer" />	
+         </State>
+         <State name="Cyborg"> 
+            <When type="Property" frame="$this" UnitLink="Cyborg" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Cyborg" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_CYDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.828" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon: M135 Minigun " />	
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time: 7.2s  " />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  21" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />			
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Fit_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Mech_S" />			
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_M135Marks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Strength" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_Gunner" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_Hunter" />	
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Buttons\BTNStrength.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-upgrade-tychus-attackspeed.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Buttons\BTNStealth.dds" />	
+            <Action type="SendEvent" frame="$this" event="Cyborg" />	
+         </State>
+         <State name="Ghost"> 
+            <When type="Property" frame="$this" UnitLink="GhostMOS" />
+            <Action type="SetProperty" frame="$this" Camera="Star2CameraMid01" />
+            <Action type="SetProperty" frame="$parent/MOSTitle" Text="Ghost" />
+            <Action type="SetProperty" frame="$parent/MOSDescription" Text="@DOCSTR_GYDesc" />
+            <Action type="SetProperty" frame="$parent/MS" Text="Movement Speed:  2.900" />
+            <Action type="SetProperty" frame="$parent/Weapon" Text="Weapon: Plasma Rifle " />	
+            <Action type="SetProperty" frame="$parent/Reload" Text="Reload Time: 4.25s  " />
+            <Action type="SetProperty" frame="$parent/Encumberance" Text="Encumbrance:  15" />
+            <Action type="SetProperty" frame="$parent/A1" Texture="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+            <Action type="SetProperty" frame="$parent/A2" Texture="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />			
+            <Action type="SetProperty" frame="$parent/A3" Texture="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+            <Action type="SetProperty" frame="$parent/A1" Tooltip="@DOCSTR_Mech_P" />
+            <Action type="SetProperty" frame="$parent/A2" Tooltip="@DOCSTR_Fit_S" />			
+            <Action type="SetProperty" frame="$parent/A3" Tooltip="@DOCSTR_Dex_T" />
+            <Action type="SetProperty" frame="$parent/Abil1" Tooltip="@DOCSTR_SoldierSkills" />
+            <Action type="SetProperty" frame="$parent/Abil2" Tooltip="@DOCSTR_PlasmaMarks" />
+            <Action type="SetProperty" frame="$parent/Abil3" Tooltip="@DOCSTR_Infiltrator" />
+            <Action type="SetProperty" frame="$parent/Abil4" Tooltip="@DOCSTR_CombatEnhancements" />
+            <Action type="SetProperty" frame="$parent/Abil5" Tooltip="@DOCSTR_CryoEquipment" />	
+            <Action type="SetProperty" frame="$parent/Abil1" Texture="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+            <Action type="SetProperty" frame="$parent/Abil2" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+            <Action type="SetProperty" frame="$parent/Abil3" Texture="Assets\Textures\btn-ability-terran-detectionconedebuff.dds" />
+            <Action type="SetProperty" frame="$parent/Abil4" Texture="Assets\Textures\btn-upgrade-terran-magrailmunitions.dds" />
+            <Action type="SetProperty" frame="$parent/Abil5" Texture="Assets\Textures\btn-upgrade-nova-blink.dds" />	
+            <Action type="SendEvent" frame="$this" event="Ghost" />	
+         </State>
+      </StateGroup>
+      <Animation name="RiflemanModel">
+         <Event event="Rifleman" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="CombatMedicModel">
+         <Event event="CombatMedic" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel MedicalScanVisor {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel MedicShield {} {Shield 0} Shield_Armour_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel MedicChemicals {} {Forearm 0} Arm_Right_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="AutomaticRiflemanModel">
+         <Event event="AutomaticRifleman" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel AutoRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel AmmoBackPack {} {Back 0} Back_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="CavalryScoutModel">
+         <Event event="CavalryScout" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel CarbineW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel ScoutVisor {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="SFAATModel">
+         <Event event="SFAAT" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel ShotgunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel PistolRightLeg {} {Hardpoint 9} Leg_Right_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="JavelinGunnerModel">
+         <Event event="JavelinGunner" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel BackPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel StandardVisionVisor {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel RocketLauncher {} {Back 0} {Back_Attach RocketLauncherRotate}" />
+         </Controller>
+      </Animation>
+      <Animation name="SquadDesignatedMarksmanModel">
+         <Event event="SquadDesignatedMarksman" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel SDMRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel Binoculars {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel WaistPack {} {Hardpoint 10} Waist_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel PistolLeftLeg {} {Hardpoint 7} Leg_Left_Attach" />
+         </Controller>
+      </Animation>
+      <Animation name="PlatoonLeaderModel">
+         <Event event="PlatoonLeader" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel RifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel ArrayPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel TacticalVisor {} AMFilterHead SOpAttachHardPoint04" />
+         </Controller>
+      </Animation>
+      <Animation name="FlamethrowerModel">
+         <Event event="Flamethrower" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel FlameThrowerMask {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel FlamethrowerTankPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerWeaponFlame {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel M79FlamethrowerWeaponLight {} AMFilterWeapon00 SOpAttachWeapon00" />
+         </Controller>
+      </Animation>
+      <Animation name="CombatEngineerModel">
+         <Event event="CombatEngineer" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel ShotgunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+         </Controller>
+      </Animation>
+      <Animation name="CyborgModel">
+         <Event event="Cyborg" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel MinigunW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel AmmoBackPack {} {Back 0} Back_Attach" />
+            <Key type="Identifier" time="0.05" value="AttachModel MedicalScanVisor {} AMFilterHead SOpAttachHardPoint04" />
+         </Controller>
+      </Animation>
+      <Animation name="GhostModel">
+         <Event event="Ghost" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.05" value="AttachModel PlasmaRifleW {} AMFilterWeapon00 SOpAttachWeapon00" />
+            <Key type="Identifier" time="0.05" value="AttachModel CommsHeadset {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel Binoculars {} AMFilterHead SOpAttachHardPoint04" />
+            <Key type="Identifier" time="0.05" value="AttachModel CommsPack {} {Back 0} Back_Attach" />
+         </Controller>
+      </Animation>
+      <!-- Dance Animations -->
+      <Animation name="Dance0">
+         <Event event="Dance0" action="Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Dance Stand Dance  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Dance Stand Dance  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+      <Animation name="Dance1">
+         <Event event="Dance1" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Dance 01 Stand Dance 01  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Dance 01 Stand Dance 01  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+      <Animation name="Dance2">
+         <Event event="Dance2" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Dance 02 Stand Dance 02  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Dance 02 Stand Dance 02  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+      <Animation name="Dance3">
+         <Event event="Dance3" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Dance 03 Stand Dance 03  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Dance 03 Stand Dance 03  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+      <Animation name="Dance4">
+         <Event event="Dance4" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Victory  Stand Victory  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Victory  Stand Victory  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+      <Animation name="Dance5">
+         <Event event="Dance5" action="Reset,Play" />
+         <Controller type="ActorMsg" end="Reset" frame="$this" ModelFrameName="Model" SendToScope="False">
+            <Key type="Identifier" time="0.00" value="AnimPlay Stand Victory 01  Stand Victory 01  PlayForever" />
+            <Key type="Identifier" time="0.01" value="AnimPlay Stand Victory 01  Stand Victory 01  PlayForever" />
+            <Key type="Identifier" time="5.02" value="AnimPlay Stand Stand  PlayForever" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <Frame type="Label" name="MOSTitleTemplate">
+      <Width val="350" />
+      <Height val="75" />
+      <Text val="Rifleman" />
+      <Style val="Item_Header" />
+      <Color val="255,255,255" />
+   </Frame>
+   <Frame type="Label" name="MOSDescTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="330" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+      <Width val="225" />
+      <Height val="35" />
+      <Text val="Armor: " />
+      <Style val="Descript_Left" />
+      <Color val="255,255,255" />
+   </Frame>
+   <Frame type="Label" name="MOSDescTemplate2">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="65" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="425" />
+      <Width val="450" />
+      <Height val="400" />
+      <Text val="@DOCSTR_RifleDesc" />
+      <Style val="Descript_Left" />
+      <Color val="255,255,255" />
+   </Frame>
+   <Frame type="ProgressBar" name="MOSXPTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="1000" />
+      <Anchor side="Bottom" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="135" />
+      <Anchor side="Right" relative="$parent" pos="Min" offset="0" />
+      <Height val="105" />
+      <Width val="105" />
+      <Circular val="true" />
+      <CircularStart val="200" />
+      <CircularEndOffset val="319" />
+      <MinValue val="0" />
+      <MaxValue val="0" />
+      <Value val="0" />
+      <UseFillContainer val="false" />
+      <Tooltip val="MOS XP" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <RenderPriority val="610" />
+      <Visible val="true" />
+      <Frame type="Image" name="BorderImage">
+         <Anchor relative="$parent" />
+         <Texture val="Assets\Textures\mos_level_bar_background.dds" />
+         <Desaturated val="True" />
+         <DesaturationColor val="105,105,105" />
+         <Alpha val="75" />
+      </Frame>
+      <Frame type="Frame" name="FillImageContainer">
+         <Anchor relative="$parent" />
+         <Frame type="Image" name="FillImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\mos_level_bar_fill.dds" />
+            <TextureType val="Circular" />
+            <GlowColor val="0,255,128" />
+         </Frame>
+      </Frame>
+   </Frame>
+   <Frame type="Label" name="MOSLevelTemplate">
+      <Width val="25" />
+      <Height val="25" />
+      <Text val="0" />
+      <Style val="Item_Header" />
+      <Color val="255,255,255" />
+   </Frame>
+   <Frame type="CountdownLabel" name="MOSXPLabelTemplate">
+      <RenderPriority val="615" />
+      <Text val="0 XP" />
+      <FormatNumber val="true" />
+      <TargetValue val="0" />
+      <Style val="Item_Description" />
+      <Visible val="true" />
+      <Color val="255,255,255" />
+      <Height val="75" />
+      <Width val="100" />
+      <CountdownSound val="AC_UI_XPBarFillLoop" />
+      <Animation name="CountUp">
+         <Event event="OnShown" action="Reset,Play" frame="$this" />
+         <Controller name="Counter_0" type="Counter" end="Pause" frame="$this">
+            <Key type="Curve" time="0.0" value="0.0" out="Slow" />
+            <Key type="Curve" time="0.5" value="1.0" in="Slow" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <Frame type="Frame" name="RankIconBorderTemplate">
+      <Width val="100" />
+      <Height val="100" />
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Texture val="Assets\Textures\ui_battlenet_glues_achievement_fanfare_achievementcontainer_terr.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="Image" name="RankIconImageTemplate">
+      <RenderPriority val="600" />
+      <Width val="85" />
+      <Height val="85" />
+      <AcceptsMouse val="true" />
+      <TooltipFrame val="UADStandardTooltip" />
+   </Frame>
+   <Frame type="Image" name="UnlockTemplate" template="UnitHeroPanel/AttributeIconTemplate">
+      <Anchor side="Top" relative="$parent/MOSProgress" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent/MOSProgress" pos="Min" offset="110" />
+      <Width val="48" />
+      <Height val="48" />
+      <Texture val="Assets\Accessory Textures\medal_lock.dds" />
+      <Tooltip val="@DOCSTR_Novice_Locked" />
+      <AcceptsMouse val="True" />
+      <RenderPriority val="675" />
+   </Frame>
+   <Frame type="Frame" name="RibbonContainerTemplate">
+      <Anchor side="Top" relative="$parent/Abil5" pos="Min" offset="6" />
+      <Anchor side="Left" relative="$parent/Abil5" pos="Max" offset="48" />
+      <Width val="110" />
+      <Height val="35" />
+      <Enabled val="False" />
+      <AcceptsMouse val="True" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <TooltipAnchorPosition val="TopCenter" />
+      <Frame type="Frame" name="BackgroundImage">
+         <Anchor relative="$parent" />
+      </Frame>
+      <Frame type="Image" name="Ribbon">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Width val="100" />
+         <Height val="25" />
+         <Texture val="@UI/Ribbon/Rifleman" />
+         <DesaturateOnDisable val="True" />
+         <OnDisableDesaturationColor val="0e1812" /> <!-- 31533e -->
+      </Frame>
+      <Frame type="Image" name="LockIcon" template="AchievementTemplates/MedalLockedTemplate">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+         <Height val="42" />
+         <Width val="42" />
+         <Texture val="" />
+         <DesaturateOnDisable val="False" />
+         <AcceptsMouse val="False" />
+         <Visible val="True" />
+         <Animation name="LockGlitchAnim" template="AchievementTemplates/StaticTemplate1" />
+         <StateGroup name="LockedState">
+            <DefaultState val="Locked" />
+               <State name="Unlocked">
+                  <When type="Property" frame="$parent" Enabled="True" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            <State name="Locked" />
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+      <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+      <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+      <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+      <Frame type="TextFormatFrame" name="RibbonLockedFormatFrame">
+         <Anchor relative="$parent" />
+         <FormatText val="@UI/CharSelection/RibbonLocked" />
+         <Replacement index="0" val="" />
+         <ReplacedName index="0" val="MOS" />
+      </Frame>
+      <StateGroup name="Tooltip">
+         <!-- Locked States -->
+         <State name="RiflemanLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="0" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" /> <!-- {$parent/MOSTitle/@Text} replacement param crashes game -->
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Rifleman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Rifleman" />
+         </State>
+         <State name="CombatMedicLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="1" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Combat Medic" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CombatMedic" />
+         </State>
+         <State name="AutomaticRiflemanLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="2" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Automatic Rifleman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/AutomaticRifleman" />
+         </State>
+         <State name="CavalryScoutLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="3" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Cavalry Scout" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CavalryScout" />
+         </State>
+         <State name="SFAATLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="4" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="SFAAT" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/SFAAT" />
+         </State>
+         <State name="JavelinGunnerLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="5" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Javelin Gunner" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/JavelinGunner" />
+         </State>
+         <State name="SquadDesignatedMarksmanLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="6" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Squad Designated Marksman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/SquadDesignatedMarksman" />
+         </State>
+         <State name="PlatoonLeaderLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="7" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Platoon Leader" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/PlatoonLeader" />
+         </State>
+         <State name="FlamethrowerLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="8" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Flamethrower" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Flamethrower" />
+         </State>
+         <State name="CombatEngineerLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="9" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Combat Engineer" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CombatEngineer" />
+         </State>
+         <State name="CyborgLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="10" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Cyborg" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Cyborg" />
+         </State>
+         <State name="GhostLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="11" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Ghost" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Ghost" />
+         </State>
+         <State name="FireSupportSpecialistLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="12" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Fire Support Specialist" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/FireSupportSpecialist" />
+         </State>
+         <State name="CommandoLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="13" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Locked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Commando" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Commando" />
+         </State>
+         <!-- Unlocked -->
+         <State name="RiflemanUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="0" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Rifleman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Rifleman" />
+         </State>
+         <State name="CombatMedicUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="1" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Combat Medic" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CombatMedic" />
+         </State>
+         <State name="AutomaticRiflemanUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="2" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Automatic Rifleman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/AutomaticRifleman" />
+         </State>
+         <State name="CavalryScoutUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="3" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Cavalry Scout" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CavalryScout" />
+         </State>
+         <State name="SFAATUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="4" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="SFAAT" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/SFAAT" />
+         </State>
+         <State name="JavelinGunnerUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="5" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Javelin Gunner" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/JavelinGunner" />
+         </State>
+         <State name="SquadDesignatedMarksmanUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="6" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Squad Designated Marksman" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/SquadDesignatedMarksman" />
+         </State>
+         <State name="PlatoonLeaderUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="7" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Platoon Leader" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/PlatoonLeader" />
+         </State>
+         <State name="FlamethrowerUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="8" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Flamethrower" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Flamethrower" />
+         </State>
+         <State name="CombatEngineerUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="9" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Combat Engineer" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/CombatEngineer" />
+         </State>
+         <State name="CyborgUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="10" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Cyborg" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Cyborg" />
+         </State>
+         <State name="GhostUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="11" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Ghost" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Ghost" />
+         </State>
+         <State name="FireSupportSpecialistUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="12" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Fire Support Specialist" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/FireSupportSpecialist" />
+         </State>
+         <State name="CommandoUnLocked">
+            <When type="Property" frame="$MOSSelection" SelectedIndex="13" />
+            <When type="StateGroup" frame="$this/LockIcon" LockedState="Unlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" FormatText="@UI/CharSelection/RibbonUnlocked" />
+            <Action type="SetProperty" frame="$this/RibbonLockedFormatFrame" Replacement="Commando" index="0" />
+            <Action type="SetProperty" frame="$this" Tooltip="{$this/RibbonLockedFormatFrame/@Text}" />
+            <Action type="SetProperty" frame="$this/Ribbon" Texture="@UI/Ribbon/Commando" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Frame" name="MOSPanelTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+      <Frame type="Image" name="Background">
+         <Anchor relative="$parent" />
+         <Alpha val="125" />
+         <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+         <TextureType val="Border" layer="0" />
+         <Color val="0,255,148" /> 
+      </Frame>
+      <Frame type="Frame" name="BackgroundWipeContainer">
+         <Anchor side="Top" relative="$parent/Background" pos="Min" offset="0"/>
+         <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="0"/>
+         <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-9"/>
+         <Anchor side="Right" relative="$parent/Background" pos="Max" offset="9"/>
+         <Frame type="Image" name="WipeImage">
+            <Anchor side="Bottom" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Texture val="@UI/NovaStory/EquipmentUpgrades/PaperDoll_BoxWipe"/>
+            <Alpha val="0"/>
+            <BlendMode val="Add"/>
+            <Animation name="Wipe">
+               <Event event="OnShown" action="Reset,Play" frame="$this"/>
+               <Controller type="Anchor" end="Pause" side="Bottom" relative="True">
+                  <Key type="Curve" time="0" value="0" out="Fast"/>
+                  <Key type="Curve" time="0.6" value="770" in="Fast"/>
+                  <Key type="Curve" time="3.0" value="770" out="Fast"/>
+               </Controller>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Fast"/>
+                  <Key type="Curve" time="0.3" value="100" out="Fast"/>
+                  <Key type="Curve" time="0.55" value="100" out="Fast"/>
+                  <Key type="Curve" time="1.0" value="0" out="Fast"/>
+                  <Key type="Curve" time="3.0" value="0" out="Fast"/>
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+      <Frame type="Image" name="CornerTopLeft">
+         <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4"/>
+         <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4"/>
+         <Width val="18"/>
+         <Height val="19"/>
+         <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+         <Color val="255,255,255"/>
+         <Animation name="Show">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Linear"/>
+               <Key type="Curve" time="0.5" value="0" out="Linear"/>
+               <Key type="Curve" time="0.55" value="255" out="Linear"/>
+               <Key type="Curve" time="0.60" value="0" out="Linear"/>
+               <Key type="Curve" time="0.65" value="255" out="Linear"/>
+               <Key type="Curve" time="0.70" value="0" out="Linear"/>
+               <Key type="Curve" time="0.8" value="255" out="Linear"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="CornerTopRight">
+         <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4"/>
+         <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4"/>
+         <Width val="18"/>
+         <Height val="19"/>
+         <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+         <TextureCoords top="0" left="1" bottom="1" right="0" layer="0"/>
+         <Color val="255,255,255"/>
+         <Animation name="Show">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Linear"/>
+               <Key type="Curve" time="0.5" value="0" out="Linear"/>
+               <Key type="Curve" time="0.55" value="255" out="Linear"/>
+               <Key type="Curve" time="0.60" value="0" out="Linear"/>
+               <Key type="Curve" time="0.65" value="255" out="Linear"/>
+               <Key type="Curve" time="0.70" value="0" out="Linear"/>
+               <Key type="Curve" time="0.8" value="255" out="Linear"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="CornerBottomLeft">
+         <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4"/>
+         <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4"/>
+         <Width val="18"/>
+         <Height val="19"/>
+         <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+         <Color val="255,255,255"/>
+         <TextureCoords top="1" left="0" bottom="0" right="1" layer="0"/>
+         <Animation name="Show">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Linear"/>
+               <Key type="Curve" time="0.5" value="0" out="Linear"/>
+               <Key type="Curve" time="0.55" value="255" out="Linear"/>
+               <Key type="Curve" time="0.60" value="0" out="Linear"/>
+               <Key type="Curve" time="0.65" value="255" out="Linear"/>
+               <Key type="Curve" time="0.70" value="0" out="Linear"/>
+               <Key type="Curve" time="0.8" value="255" out="Linear"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="CornerBottomRight">
+         <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4"/>
+         <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4"/>
+         <Width val="18"/>
+         <Height val="19"/>
+         <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+         <Color val="255,255,255"/>
+         <TextureCoords top="1" left="1" bottom="0" right="0" layer="0"/>
+         <Animation name="Show">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Linear"/>
+               <Key type="Curve" time="0.5" value="0" out="Linear"/>
+               <Key type="Curve" time="0.55" value="255" out="Linear"/>
+               <Key type="Curve" time="0.60" value="0" out="Linear"/>
+               <Key type="Curve" time="0.65" value="255" out="Linear"/>
+               <Key type="Curve" time="0.70" value="0" out="Linear"/>
+               <Key type="Curve" time="0.8" value="255" out="Linear"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <!-- Grid Small -->
+      <Frame type="Image" name="BackgroundGridSmall">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="{$parent/@Width}" />
+         <Height val="{$parent/@Height}" />
+         <LayerCount val="2" />
+         <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="0" />
+         <AlphaChannel val="Alpha" layer="0" />
+         <AlphaLayer val="true" layer="0" />
+         <Tiled val="true" layer="0" />
+         <Texture val="Assets/Textures/white.dds" layer="1" />
+         <LayerAlpha val="20" layer="1" />
+         <LayerColor val="0,255,148" layer="1" />
+         <RenderPriority val="510" />
+      </Frame>
+      <!-- Grid Anim -->
+      <Frame type="Image" name="BackgroundGridLargeWave">
+         <Anchor relative="$parent/BackgroundGridSmall" />
+         <LayerCount val="3" />
+         <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+         <AlphaLayer val="true" layer="0" />
+         <AlphaChannel val="Blue" layer="0" />
+         <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+         <WrapUV val="false" layer="0" />
+         <LayerAlpha val="128" layer="0" />
+         <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+         <AlphaChannel val="Green" layer="1" />
+         <AlphaLayer val="true" layer="1" />
+         <Tiled val="true" layer="1" />
+         <Texture val="Assets/Textures/white.dds" layer="2" />
+         <LayerAlpha val="64" layer="2" />
+         <LayerColor val="0,255,148" layer="2" />
+         <BlendMode val="Add" />
+         <RenderPriority val="510" />
+         <Animation name="LargeGridWave">
+            <Event event="OnShown" action="Play" />
+            <Event event="OnHidden" action="Stop,Pause" />
+            <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+               <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+               <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+               <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+               <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="BackgroundGridLargeWave2">
+         <Anchor relative="$parent/BackgroundGridSmall" />
+         <LayerCount val="3" />
+         <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+         <AlphaLayer val="true" layer="0" />
+         <AlphaChannel val="Blue" layer="0" />
+         <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+         <WrapUV val="false" layer="0" />
+         <LayerAlpha val="128" layer="0" />
+         <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+         <AlphaChannel val="Green" layer="1" />
+         <AlphaLayer val="true" layer="1" />
+         <Tiled val="true" layer="1" />
+         <Texture val="Assets/Textures/white.dds" layer="2" />
+         <LayerAlpha val="64" layer="2" />
+         <LayerColor val="0,255,148" layer="2" />
+         <BlendMode val="Add" />
+         <RenderPriority val="510" />
+         <Animation name="LargeGridWave">
+            <Event event="OnShown" action="Play" />
+            <Event event="OnHidden" action="Stop,Pause" />
+            <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+               <Key type="Curve" time="9.167" value="-1.75" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="3.333" value="1.75" inOut="Linear" />
+               <Key type="Curve" time="6.167" value="1.75" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+               <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+            </Controller>
+            <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+               <Key type="Curve" time="0" value="0" inOut="Linear" />
+               <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+               <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Image" name="Divider">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-55" />
+         <LayerColor val="##StandardBorder" />
+         <Texture val="@@UI/TechGlossaryDivider" />
+      </Frame>
+      <Frame type="Label" name="MOSTitle" template="CharSelection/MOSTitleTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="25" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-500" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      </Frame>
+      <Frame type="Label" name="AbilityTitle" template="CharSelection/MOSDescTemplate2">
+         <Width val="125" />
+         <Height val="30" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="375" />
+         <Text val="Learn Skills" />
+      </Frame>
+      <Frame type="Label" name="Attributes" template="CharSelection/MOSDescTemplate2">
+         <Width val="150" />
+         <Height val="30" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="473" />
+         <Text val="Attributes" />
+      </Frame>
+      <Frame type="Label" name="UpgradesTitle" template="CharSelection/MOSDescTemplate2">
+         <Width val="125" />
+         <Height val="30" />
+         <Anchor side="Top" relative="$parent/Attributes" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Attributes" pos="Min" offset="250" />
+         <Text val="Skill Upgrades" />
+      </Frame>
+      <Frame type="Image" name="RankIconBorder" template="CharSelection/RankIconBorderTemplate">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="38" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-168" />
+         <Texture val="Assets\Textures\Black.dds" />
+      </Frame>
+      <Frame type="Image" name="RankIcon" template="CharSelection/RankIconImageTemplate">
+         <Width val="85" />
+         <Height val="85" />
+         <Anchor side="Top" relative="$parent/RankIconBorder" pos="Min" offset="-2" />
+         <Anchor side="Bottom" relative="$parent/RankIconBorder" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/RankIconBorder" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/RankIconBorder" pos="Max" offset="0" />
+      </Frame>
+      <Frame type="Label" name="MOSDescription" template="CharSelection/MOSDescTemplate2" />
+      <Frame type="Label" name="Weapon" template="CharSelection/MOSDescTemplate" />
+      <Frame type="Label" name="Reload" template="CharSelection/MOSDescTemplate">
+         <Anchor side="Top" relative="$parent/Weapon" pos="Min" offset="25" />
+      </Frame>
+      <Frame type="Label" name="Encumberance" template="CharSelection/MOSDescTemplate">
+         <Anchor side="Top" relative="$parent/Reload" pos="Min" offset="25" />
+      </Frame>
+      <Frame type="Label" name="MS" template="CharSelection/MOSDescTemplate">
+         <Anchor side="Top" relative="$parent/Encumberance" pos="Min" offset="25" />
+      </Frame>
+      <Frame type="Label" name="XPText">
+         <Height val="75" />
+         <Width val="125" />
+         <Anchor side="Top" relative="$parent/MOSProgress" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent/MOSProgress" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/MOSProgress" pos="Min" offset="4" />
+         <Anchor side="Right" relative="$parent/MOSProgress" pos="Max" offset="0" />
+         <Text val="Beginner" />
+         <Style val="Item_Description" />
+         <Color val="255,255,255" />
+         <Tooltip val="MOS XP" />
+      </Frame>
+      <Frame type="CountdownLabel" name="MOSXPLabel" template="CharSelection/MOSXPLabelTemplate">
+         <Anchor side="Top" relative="$parent/MOSProgress" pos="Min" offset="135" />
+         <Anchor side="Bottom" relative="$parent/MOSProgress" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/MOSProgress" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/MOSProgress" pos="Max" offset="0" />
+         <Text val="0" />
+         <FormatNumber val="true" />
+         <TargetValue val="{$parent/MOSProgress/@Value}" />
+         <Color val="255,255,255" />
+         <Tooltip val="@DOCSTR_MOSXPDesc" />
+         <AcceptsMouseTooltip val="False" />
+      </Frame>
+      <Frame type="UnitModelFrame" name="MOS" template="CharSelection/UnitModelFrameTemplate">
+         <UnitLink val="NewRifleman" />
+         <StateGroup name="DanceState">
+            <DefaultState val="NotReady" />
+            <State name="Ready" />
+            <State name="NotReady" />
+         </StateGroup>
+         <Frame type="MathFrame" name="RandomDanceAnimation">
+            <Anchor relative="$parent" />
+            <A val="0" />
+            <B val="5" />
+            <Operator val="Random" />
+         </Frame>
+         <StateGroup name="DanceResult">
+            <State name="Dance0">
+               <When type="StateGroup" DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="0" />
+               <Action type="SendEvent" event="Dance0" />
+            </State>
+            <State name="Dance1">
+               <When type="StateGroup" DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="1" />
+               <Action type="SendEvent" event="Dance1" />
+            </State>
+            <State name="Dance2">
+               <When type="StateGroup"  DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="2" />
+               <Action type="SendEvent" event="Dance2" />
+            </State>
+            <State name="Dance3">
+               <When type="StateGroup" DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="3" />
+               <Action type="SendEvent" event="Dance3" />
+            </State>
+            <State name="Dance4">
+               <When type="StateGroup" DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="4" />
+               <Action type="SendEvent" event="Dance4" />
+            </State>
+            <State name="Dance5">
+               <When type="StateGroup" DanceState="Ready" />
+               <When type="Property" frame="RandomDanceAnimation" ResultInt="5" />
+               <Action type="SendEvent" event="Dance5" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="Abil1" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="425" />
+         <Tooltip val="@DOCSTR_SoldierSkills" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="Abil2" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="Assets\Textures\btn-tips-terran-penetrator.dds" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+         <Anchor side="Left" relative="$parent/Abil1" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Marks" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="Abil3" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="BTNFragGrenade.dds" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+         <Anchor side="Left" relative="$parent/Abil2" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Frag" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="Abil4" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-flashgrenade.dds" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+         <Anchor side="Left" relative="$parent/Abil3" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_SFrag" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="Abil5" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="Buttons\BTNFocusFire.dds" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="400" />
+         <Anchor side="Left" relative="$parent/Abil4" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_FocusFire" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="A1" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Anchor side="Top" relative="$parent/Mastery05" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="425" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="A2" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Anchor side="Top" relative="$parent/A1" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/A1" pos="Min" offset="50" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="A3" template="UnitHeroPanel/AttributeIconTemplate">
+         <Width val="48" />
+         <Height val="48" />
+         <Anchor side="Top" relative="$parent/A2" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/A2" pos="Min" offset="50" />
+         <AcceptsMouse val="true" />
+      </Frame>
+      <Frame type="Image" name="UpgradesImage" template="UnitHeroPanel/AttributeIconTemplate">
+         <Anchor side="Top" relative="$parent/A3" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/A3" pos="Min" offset="150" />
+         <Width val="48" />
+         <Height val="48" />
+         <Texture val="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+         <Tooltip val="@DOCSTR_Skill_Upgrades" />
+         <AcceptsMouse val="True" />
+         <Frame type="Label" name="UpgradesCurrent">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="Descript_Left" />
+            <RenderPriority val="516" />
+            <Color val="255,255,255" />
+            <Text val="0" />
+         </Frame>
+      </Frame>
+      <Frame type="ProgressBar" name="MOSProgress" template="CharSelection/MOSXPTemplate" />
+      <Frame type="Image" name="Unlock01" template="CharSelection/UnlockTemplate" />
+      <Frame type="Image" name="Unlock02" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Unlock01" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Unlock01" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Adept_Locked" />
+      </Frame>
+      <Frame type="Image" name="Unlock03" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Unlock02" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Unlock02" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Skilled_Locked" />
+      </Frame>
+      <Frame type="Image" name="Unlock04" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Unlock03" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Unlock03" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Expert_Locked" />
+      </Frame>
+      <Frame type="Image" name="Unlock05" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Unlock04" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Unlock04" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_Master_Locked" />
+      </Frame>
+      <Frame type="Image" name="Mastery01" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Unlock01" pos="Min" offset="50" />
+         <Anchor side="Left" relative="$parent/Unlock01" pos="Min" offset="0" />
+         <Tooltip val="@DOCSTR_MasteryI_Locked" />
+      </Frame>
+      <Frame type="Image" name="Mastery02" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Mastery01" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Mastery01" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_MasteryII_Locked" />
+      </Frame>
+      <Frame type="Image" name="Mastery03" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Mastery02" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Mastery02" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_MasteryIII_Locked" />
+      </Frame>
+      <Frame type="Image" name="Mastery04" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Mastery03" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Mastery03" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_MasteryIV_Locked" />
+      </Frame>
+      <Frame type="Image" name="Mastery05" template="CharSelection/UnlockTemplate">
+         <Anchor side="Top" relative="$parent/Mastery04" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Mastery04" pos="Min" offset="50" />
+         <Tooltip val="@DOCSTR_MasteryV_Locked" />
+      </Frame>
+      <Frame type="Label" name="MosLevelImageController">
+         <Width val="150" />
+         <Height val="30" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Visible val="false" />
+         <Text val="0" />
+      </Frame>
+      <Frame type="Frame" name="Ribbon" template="CharSelection/RibbonContainerTemplate" />
+      <Animation name="Show">
+         <Event event="OnShown" action="Reset,Play" />
+         <Controller type="Fade" end="Pause">
+            <Key type="Curve" time="0" value="0" out="Slow" />
+            <Key type="Curve" time=".2" value="255" in="Slow" />
+         </Controller>
+      </Animation>
+      <StateGroup name="RibbonState">
+         <DefaultState val="Disabled" />
+         <State name="Enabled">
+            <When type="AnimationState" frame="$this" Ribbon="Unlocked" />
+            <Action type="SetProperty" frame="$this/Ribbon" Enabled="True" /> 
+         </State>
+         <State name="Disabled" />
+      </StateGroup>
+      <StateGroup name="MOSLevelStateTemplate">
+         <State name="Novice">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Novice" />
+         </State>
+         <State name="Adept">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Adept" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Adept" />
+         </State>
+         <State name="Skilled">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Skilled" />
+         </State>
+         <State name="Expert">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Expert" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Expert" />
+         </State>
+         <State name="Master">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Master" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Master" />
+         </State>
+         <State name="MasteryI">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Mastery I" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery01" Texture="@UI/MasteryI" />
+            <Action type="SetProperty" frame="$this/Mastery01" Tooltip="@DOCSTR_MasteryI_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Mastery I" />
+         </State>
+         <State name="MasteryII">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Mastery II" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery01" Texture="@UI/MasteryI" />
+            <Action type="SetProperty" frame="$this/Mastery01" Tooltip="@DOCSTR_MasteryI_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery02" Texture="@UI/MasteryII" />
+            <Action type="SetProperty" frame="$this/Mastery02" Tooltip="@DOCSTR_MasteryII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Mastery II" />
+         </State>
+         <State name="MasteryIII">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Mastery III" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery01" Texture="@UI/MasteryI" />
+            <Action type="SetProperty" frame="$this/Mastery01" Tooltip="@DOCSTR_MasteryI_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery02" Texture="@UI/MasteryII" />
+            <Action type="SetProperty" frame="$this/Mastery02" Tooltip="@DOCSTR_MasteryII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery03" Texture="@UI/MasteryIII" />
+            <Action type="SetProperty" frame="$this/Mastery03" Tooltip="@DOCSTR_MasteryIII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Mastery III" />
+         </State>
+         <State name="MasteryIV">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Mastery IV" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery01" Texture="@UI/MasteryI" />
+            <Action type="SetProperty" frame="$this/Mastery01" Tooltip="@DOCSTR_MasteryI_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery02" Texture="@UI/MasteryII" />
+            <Action type="SetProperty" frame="$this/Mastery02" Tooltip="@DOCSTR_MasteryII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery03" Texture="@UI/MasteryIII" />
+            <Action type="SetProperty" frame="$this/Mastery03" Tooltip="@DOCSTR_MasteryIII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery04" Texture="@UI/MasteryIV" />
+            <Action type="SetProperty" frame="$this/Mastery04" Tooltip="@DOCSTR_MasteryIV_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Mastery IV" />
+         </State>
+         <State name="MasteryV">
+            <When type="Property" frame="$this/MosLevelImageController" Text="Mastery V" />
+            <Action type="SetProperty" frame="$this/Unlock01" Texture="@UI/Novice" />
+            <Action type="SetProperty" frame="$this/Unlock01" Tooltip="@DOCSTR_Novice_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock02" Texture="@UI/Adept" />
+            <Action type="SetProperty" frame="$this/Unlock02" Tooltip="@DOCSTR_Adept_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock03" Texture="@UI/Skilled" />
+            <Action type="SetProperty" frame="$this/Unlock03" Tooltip="@DOCSTR_Skilled_Unlocked" />
+            <Action type="SetProperty" frame="$this/Unlock03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock04" Texture="@UI/Expert" />
+            <Action type="SetProperty" frame="$this/Unlock04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Unlock05" Texture="@UI/Master" />
+            <Action type="SetProperty" frame="$this/Unlock05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery01" Texture="@UI/MasteryI" />
+            <Action type="SetProperty" frame="$this/Mastery01" Tooltip="@DOCSTR_MasteryI_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery01" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery02" Texture="@UI/MasteryII" />
+            <Action type="SetProperty" frame="$this/Mastery02" Tooltip="@DOCSTR_MasteryII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery02" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery03" Texture="@UI/MasteryIII" />
+            <Action type="SetProperty" frame="$this/Mastery03" Tooltip="@DOCSTR_MasteryIII_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery03" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery04" Texture="@UI/MasteryIV" />
+            <Action type="SetProperty" frame="$this/Mastery04" Tooltip="@DOCSTR_MasteryIV_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery04" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/Mastery05" Texture="@UI/MasteryV" />
+            <Action type="SetProperty" frame="$this/Mastery05" Tooltip="@DOCSTR_MasteryV_Unlocked" />
+            <Action type="SetProperty" frame="$this/Mastery05" Color="255,255,255" />
+            <Action type="SetProperty" frame="$this/XPText" Text="Mastery V" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Button" name="MOSButtonTemplate" template="StandardUADTemplates/StandardIconButtonLargeTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+      <Toggleable val="True" />
+      <Enabled val="False" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+      <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1">
+         <Texture val="Buttons\BTNSoldier.dds" />
+      </Frame>
+      <Frame type="Image" name="NoChargesIcon">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-2"/>
+         <Height val="32" />
+         <Width val="38" />
+         <Visible val="False" />
+         <Texture val="Assets/Textures/ui_nova_armyupgrades_upgradeitemframe_otherequipped.dds" />
+      </Frame>
+      <Frame type="Image" name="SelectedIcon">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+         <Height val="32" />
+         <Width val="38" />
+         <Visible val="False" />
+         <Texture val="Assets/Textures/ui_nova_armyupgrades_upgradeitemframe_selfequipped.dds" />
+      </Frame>
+      <Frame type="Image" name="MOSLockedIcon">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+         <Height val="36" />
+         <Width val="42" />
+         <DesaturateOnDisable val="False" />
+         <AcceptsMouse val="False" />
+         <Visible val="True" />
+         <Texture val="Assets/Textures/ui_nova_armyupgrades_upgradeitemframe_itemlocked.dds" />
+      </Frame>
+      <Frame type="Label" name="Charge">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="52" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+         <Text val="12" />
+         <Style val="GameButtonCharge" />  
+         <Frame type="Image" name="LabelBackground">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-1" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-4" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Color val="83,167,132" />
+            <Alpha val="55" />
+         </Frame>
+         <StateGroup name="ChargeLabelState">
+            <DefaultState val="Default" />
+            <State name="ChargeGTZero_MOS.Selected">
+               <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+               <When type="StateGroup" frame="$this" MOSStatusState="MOS.Selected" />
+               <Action type="SetProperty" frame="$parent/SelectedIcon" Visible="True" />
+            </State>
+            <State name="ChargesZero_MOS.Selected">
+               <When type="Property" frame="$this" Text="0" />
+               <When type="StateGroup" frame="$this" MOSStatusState="MOS.Selected" />
+               <Action type="SetProperty" frame="$parent/Icon" Desaturated="True" />
+               <Action type="SetProperty" frame="$parent/SelectedIcon" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+            </State>
+            <State name="ChargesZero_MOS.NotSelected">
+               <When type="Property" frame="$this" Text="0" />
+               <When type="StateGroup" frame="$this" MOSStatusState="MOS.NotSelected" />
+               <Action type="SetProperty" frame="$parent/Icon" Desaturated="True" />
+               <Action type="SetProperty" frame="$parent/NoChargesIcon" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+            </State>
+            <State name="Default" />
+         </StateGroup>
+         <StateGroup name="MOSStatusState">
+            <DefaultState val="MOS.NotSelected" />
+            <State name="MOS.NotSelected" />
+            <State name="MOS.Selected">
+               <When type="AnimationState" MOS="Selected" />
+            </State>
+         </StateGroup>
+         <!-- Controls lock icon -->
+         <StateGroup name="MOSLockedState">
+            <DefaultState val="Locked" /> 
+            <State name="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" MOS="Unlocked" />
+               <Action type="SetProperty" frame="$parent/MOSLockedIcon" Visible="False" undo="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="ActiveIndicator">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="6" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-6" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="6" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="-6" />
+         <Width val="78" />
+         <Height val="78" />
+         <LayerCount val="2" />
+         <RenderPriority val="800" />
+         <Alpha val="0" />
+         <Texture val="Assets/Textures/ui_ingame_coop_topbar_stetmann_slider_activeindicator_mask.dds" layer="0" />
+         <AlphaLayer val="True" layer="0" />
+         <Texture val="Assets/Textures/sc2_ui_global_genericeffect_mirroredanglegradient_256x256.dds" layer="1" />
+         <LayerColor val="0,255,0" layer="1"/>
+         <Animation name="Rotate">
+            <Event event="Toggled" action="Reset,Play" frame="$parent" />
+            <Event event="Normal" action="Reset,Stop" frame="$parent" />
+            <Event event="OnHidden" action="Reset,Stop" frame="$parent" />
+            <Event event="OnDisabled" action="Reset,Stop" frame="$parent" />
+            <Controller type="Property" property="TextureCoordRotation" curve="True" index="1"  end="Loop" frame="$this">
+               <Key type="Property" time="0.000" value="0" inOut="Linear" />
+               <Key type="Property" time="1.250" value="-360" inOut="Linear" />
+            </Controller>
+            <Controller type="Fade" end="Pause" frame="$this">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time="0.1" value="255" in="Slow" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="TabControl" name="CharSelectionTabs">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="-150" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-150" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="1600" />
+         <Height val="900" />
+         <Visible val="False" />
+         <SelectedIndex val="0" />
+         <Handle val="MOSSelection" />
+         <TabListItem val="$this/TabButtonsContainer/Button00" />
+         <TabListItem val="$this/TabButtonsContainer/Button01" />
+         <TabListItem val="$this/TabButtonsContainer/Button02" />
+         <TabListItem val="$this/TabButtonsContainer/Button03" />
+         <TabListItem val="$this/TabButtonsContainer/Button04" />
+         <TabListItem val="$this/TabButtonsContainer/Button05" />
+         <TabListItem val="$this/TabButtonsContainer/Button06" />
+         <TabListItem val="$this/TabButtonsContainer/Button07" />
+         <TabListItem val="$this/TabButtonsContainer/Button08" />
+         <TabListItem val="$this/TabButtonsContainer/Button09" />
+         <TabListItem val="$this/TabButtonsContainer/Button010" />
+         <TabListItem val="$this/TabButtonsContainer/Button011" />
+         <PanelListItem val="$this/PanelsContainer/Panel00" />
+         <PanelListItem val="$this/PanelsContainer/Panel01" />
+         <PanelListItem val="$this/PanelsContainer/Panel02" />
+         <PanelListItem val="$this/PanelsContainer/Panel03" />
+         <PanelListItem val="$this/PanelsContainer/Panel04" />
+         <PanelListItem val="$this/PanelsContainer/Panel05" />
+         <PanelListItem val="$this/PanelsContainer/Panel06" />
+         <PanelListItem val="$this/PanelsContainer/Panel07" />
+         <PanelListItem val="$this/PanelsContainer/Panel08" />
+			<PanelListItem val="$this/PanelsContainer/Panel09" />
+         <PanelListItem val="$this/PanelsContainer/Panel010" />
+         <PanelListItem val="$this/PanelsContainer/Panel011" />
+         <!-- This will be used to track players selection instead of button clicks -->
+         <Frame type="Pulldown" name="MOSSelection">
+            <Anchor relative="$parent" />
+            <Visible val="False" />
+            <SelectedIndex val="{$parent/@SelectedIndex}" />
+            <Handle val="SelectionSwitcher" />
+         </Frame>
+         <Animation name="CharSelectionAnim">
+            <Event event="OnShown" action="Reset,Play" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time="3.0" value="255" in="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="CharSelectionDisplay">
+            <Event event="ShowCharSelection" action="DirectionForward,Play" />
+            <Event event="HideCharSelection" action="DirectionReverse,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+         <StateGroup name="SelectedState">
+            <State name="Rifleman">
+               <When type="AnimationState" Index="0" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="0" />
+            </State>
+            <State name="CombatMedic">
+               <When type="AnimationState" Index="1" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="1" />
+            </State>
+            <State name="AutomaticRifleman">
+               <When type="AnimationState" Index="2" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="2" />
+            </State>
+            <State name="CavalryScout">
+               <When type="AnimationState" Index="3" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="3" />
+            </State>
+            <State name="SFAAT">
+               <When type="AnimationState" Index="4" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="4" />
+            </State>
+            <State name="JavelinGunner">
+               <When type="AnimationState" Index="5" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="5" />
+            </State>
+            <State name="SquadDesignatedMarksman">
+               <When type="AnimationState" Index="6" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="6" />
+            </State>
+            <State name="PlatoonLeader">
+               <When type="AnimationState" Index="7" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="7" />
+            </State>
+            <State name="Flamethrower">
+               <When type="AnimationState" Index="8" />
+               <Action type="SetProperty" frame="$this" SelectedIndex="8" />
+            </State>
+				<State name="CombatEngineer"> 
+					<When type="AnimationState" Index="9" />
+					<Action type="SetProperty" frame="$this" SelectedIndex="9" />
+				</State>
+            <State name="Cyborg"> 
+					<When type="AnimationState" Index="10" />
+					<Action type="SetProperty" frame="$this" SelectedIndex="10" />
+				</State>
+            <State name="Ghost"> 
+					<When type="AnimationState" Index="11" />
+					<Action type="SetProperty" frame="$this" SelectedIndex="11" />
+				</State>
+         </StateGroup>
+         <Frame type="Label" name="SelectionTitle">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="145" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+            <Width val="175" />
+            <Height val="75" />
+            <Text val="Select MOS" />
+            <Style val="GameButtonCharge" />
+         </Frame>
+         <Frame type="Button" name="Ready" template="StandardUADTemplates/UADLargeButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="350" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-319" />
+            <Height val="75" />
+            <Width val="175" />
+            <ClickSound val="@UI_ActionButtonSelect" />
+            <Toggleable val="False" />
+            <AcceptsMouseTooltip val="True" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="ReadyButton" />
+            <Frame type="Image" name="NormalImage">
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,148" />
+               <Texture val="@UI/NovaStory/Global/LargeButton_Disabled" layer="0" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,148" />
+            </Frame>
+            <Frame type="Label" name="ReadyLabel">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+               <Text val="Ready" />
+               <Style val="Item_Header" />
+               <Color val="255,255,255" />
+               <Handle val="ReadyLabel" />
+               <StateGroup name="ReadyState">
+                  <State name="Enabled">
+                     <When type="AnimationState" Button="Enable" />
+                     <Action type="SetProperty" frame="$parent" AcceptsMouse="False" />
+                     <Action type="SendEvent" event="Wait" />
+                     <Action type="SetState" group="MOSSelected" state="Selected" />
+                  </State>
+               </StateGroup>
+               <StateGroup name="MOSSelected">
+                  <DefaultState val="NotSelected" />
+                  <State name="Selected" />
+                  <State name="NotSelected" />
+               </StateGroup>
+               <StateGroup name="HeroSelected">
+                  <State name="Index0">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="0" />
+                     <Action type="SetState" frame="$RefModel0" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index1">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="1" />
+                     <Action type="SetState" frame="$RefModel1" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index2">
+                     <When type="StateGroup"  MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="2" />
+                     <Action type="SetState" frame="$RefModel2" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index3">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="3" />
+                     <Action type="SetState" frame="$RefModel3" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index4">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="4" />
+                     <Action type="SetState" frame="$RefModel4" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index5">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="5" />
+                     <Action type="SetState" frame="$RefModel5" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index6">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="6" />
+                     <Action type="SetState" frame="$RefModel6" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index7">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="7" />
+                     <Action type="SetState" frame="$RefModel7" group="DanceState" state="Ready" />
+                  </State>
+                  <State name="Index8">
+                     <When type="StateGroup" MOSSelected="Selected" />
+                     <When type="Property" frame="$MOSSelection" SelectedIndex="8" />
+                     <Action type="SetState" frame="$RefModel8" group="DanceState" state="Ready" />
+                  </State>
+						<State name="Index9">
+							<When type="StateGroup" frame="$this" MOSSelected="Selected" />
+							<When type="Property" frame="$MOSSelection" SelectedIndex="9" />	    
+							<Action type="SetState" frame="$RefModel9" group="DanceState" state="Ready" />
+						</State>
+                  <State name="Index10">
+							<When type="StateGroup" frame="$this" MOSSelected="Selected" />
+							<When type="Property" frame="$MOSSelection" SelectedIndex="10" />	    
+							<Action type="SetState" frame="$RefModel10" group="DanceState" state="Ready" />
+						</State>
+                  <State name="Index11">
+							<When type="StateGroup" frame="$this" MOSSelected="Selected" />
+							<When type="Property" frame="$MOSSelection" SelectedIndex="11" />	    
+							<Action type="SetState" frame="$RefModel11" group="DanceState" state="Ready" />
+						</State>
+               </StateGroup>
+               <Animation name="WaitAnim">
+                  <Event event="Wait" action="Reset,Play" frame="$this" />
+                  <Event event="OnHidden" action="Reset,Pause" frame="$MOSSelection" />
+                  <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                     <Key type="Curve" time="0" value="52" out="Fast" />
+                  </Controller>
+                  <Controller type="Anchor" end="Pause" side="Top" relative="True">
+                     <Key type="Curve" time="0" value="25" out="Fast" />
+                  </Controller>
+                  <Controller type="Property" property="Style" end="Pause">
+                     <Key type="Property" time="0" value="Descript_Left" />
+                  </Controller>
+                  <Controller type="Text" end="Loop">
+                     <Key type="Text" time="0" text="Waiting" />
+                     <Key type="Text" time=".5" text="Waiting." />
+                     <Key type="Text" time="1" text="Waiting.." />
+                     <Key type="Text" time="1.5" text="Waiting..." />
+                     <Key type="Text" time="2.0" text="Waiting" />
+                  </Controller>
+               </Animation>
+            </Frame>
+             <StateGroup name="ButtonState">
+               <DefaultState val="Default" />
+               <State name="Rifleman">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="0" />
+                  <When type="Property" frame="$MOS.TabButtons/Button00/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="CombatMedic">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="1" />
+                  <When type="Property" frame="$MOS.TabButtons/Button01/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="AutomaticRifleman">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="2" />
+                  <When type="Property" frame="$MOS.TabButtons/Button02/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="CavalryScout">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="3" />
+                  <When type="Property" frame="$MOS.TabButtons/Button03/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="SFAAT">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="4" />
+                  <When type="Property" frame="$MOS.TabButtons/Button04/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="JavelinGunner">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="5" />
+                  <When type="Property" frame="$MOS.TabButtons/Button05/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="SquadDesignatedMarksman">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="6" />
+                  <When type="Property" frame="$MOS.TabButtons/Button06/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="PlatoonLeader">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="7" />
+                  <When type="Property" frame="$MOS.TabButtons/Button07/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="Flamethrower">
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="8" />
+                  <When type="Property" frame="$MOS.TabButtons/Button08/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="CombatEngineer"> 
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="9" />
+                  <When type="Property" frame="$MOS.TabButtons/Button09/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="Cyborg"> 
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="10" />
+                  <When type="Property" frame="$MOS.TabButtons/Button010/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="Ghost"> 
+                  <When type="Property" frame="$SelectionSwitcher" SelectedIndex="11" />
+                  <When type="Property" frame="$MOS.TabButtons/Button011/Charge" Text="0" />
+                  <When type="StateGroup" frame="$this/ReadyLabel" MOSSelected="NotSelected" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$this" Tooltip="Cannot Select" />
+                  <Action type="SetProperty" frame="$MOSInfoContainer" Visible="True" />
+               </State>
+               <State name="Default" />
+            </StateGroup>
+         </Frame>
+         <Frame type="Frame" name="SelectedMOSInfoContainer">
+            <Anchor side="Top" relative="$parent/Ready" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Ready" pos="Max" offset="10" />
+            <Height val="75" />
+            <Width val="500" />
+            <Visible val="False" />
+            <Handle val="MOSInfoContainer" />
+            <Frame type="Image" name="AlertIcon">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+               <Anchor side="Left" relative="$parent" pos="Min" offset="2"/>
+               <Height val="42" />
+               <Width val="48" />
+               <Texture val="Assets/Textures/ui_nova_armyupgrades_upgradeitemframe_otherequipped.dds" />
+            </Frame>
+            <Frame type="Image" name="SelectedMOSTitleBG">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="19" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="45" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-13" />
+               <Height val="34" />
+               <Color val="83,167,132" />
+               <Alpha val="26" />
+            </Frame>
+            <Frame type="Image" name="SelectedMOSTitleBGAccent">
+               <Anchor side="Top" relative="$parent/SelectedMOSTitleBG" pos="Min" offset="0" />
+               <Anchor side="Bottom" relative="$parent/SelectedMOSTitleBG" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent/SelectedMOSTitleBG" pos="Min" offset="0" />
+               <Width val="6" />
+               <Color val="103,193,156" />
+               <Alpha val="128" />
+            </Frame>
+            <Frame type="Label" name="SelectedMOSTitle">
+               <Anchor side="Top" relative="$parent/SelectedMOSTitleBG" pos="Min" offset="4" />
+               <Anchor side="Bottom" relative="$parent/SelectedMOSTitleBG" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent/SelectedMOSTitleBG" pos="Min" offset="18" />
+               <Anchor side="Right" relative="$parent/SelectedMOSTitleBG" pos="Max" offset="-5" />
+               <Style val="Descript_Left"/>
+               <Color val="255,255,255" />
+               <Text val="{$this/FormattedText/@Text}" />
+               <Frame type="TextFormatFrame" name="FormattedText">
+                  <Anchor relative="$parent" />
+                  <FormatText val="%0% is no longer available" />
+                  <Replacement index="0" val="{$parent/MOSName/@Text}" />
+               </Frame>
+               <Frame type="Label" name="MOSName">
+                  <Anchor relative="$parent" />
+                  <Alpha val="0" />
+                  <Handle val="MOSNameLabel" />
+                  <StateGroup name="SelectedState">
+                     <State name="Rifleman">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="0" />
+                        <Action type="SetProperty" frame="$this" Text="Rifleman" />
+                     </State>
+                     <State name="CombatMedic">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="1" />
+                        <Action type="SetProperty" frame="$this" Text="Combat Medic" />
+                     </State>
+                     <State name="AutomaticRifleman">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="2" />
+                        <Action type="SetProperty" frame="$this" Text="Automatic Rifleman" />
+                     </State>
+                     <State name="CavalryScout">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="3" />
+                        <Action type="SetProperty" frame="$this" Text="Cavalry Scout" />
+                     </State>
+                     <State name="SFAAT">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="4" />
+                        <Action type="SetProperty" frame="$this" Text="SFAAT" />
+                     </State>
+                     <State name="JavelinGunner">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="5" />
+                        <Action type="SetProperty" frame="$this" Text="Javelin Gunner" />
+                     </State>
+                     <State name="SquadDesignatedMarksman">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="6" />
+                        <Action type="SetProperty" frame="$this" Text="Squad Designated Marksman" />
+                     </State>
+                     <State name="PlatoonLeader">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="7" />
+                        <Action type="SetProperty" frame="$this" Text="Platoon Leader" />
+                     </State>
+                     <State name="Flamethrower">
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="8" />
+                        <Action type="SetProperty" frame="$this" Text="Flamethrower" />
+                     </State>
+                     <State name="CombatEngineer"> 
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="9" />
+                        <Action type="SetProperty" frame="$this" Text="Combat Engineer" />
+                     </State>
+                     <State name="Cyborg"> 
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="10" />
+                        <Action type="SetProperty" frame="$this" Text="Cyborg" />
+                     </State>
+                     <State name="Ghost"> 
+                        <When type="Property" frame="$SelectionSwitcher" SelectedIndex="11" />
+                        <Action type="SetProperty" frame="$this" Text="Ghost" />
+                     </State>
+                  </StateGroup>
+               </Frame>
+            </Frame>
+         </Frame>
+         <Frame type="Frame" name="TabButtonsContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="200" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Handle val="MOS.TabButtons" />
+            <Width val="600" />
+            <Height val="600" />
+            <!-- Rifleman -->
+            <Frame type="Button" name="Button00" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Enabled val="True" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\BTNSoldier.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="12" /> 
+               </Frame>
+               <Frame type="Image" name="MOSLockedIcon">
+                  <Visible val="False" />
+               </Frame>
+            </Frame>
+            <!-- Combat Medic -->
+            <Frame type="Button" name="Button01" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button00" pos="Min" offset="80" />
+               <Enabled val="True" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTN_Combat_Medic_Portrait.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="3" />
+               </Frame>
+               <Frame type="Image" name="MOSLockedIcon">
+                  <Visible val="False" />
+               </Frame>
+            </Frame>
+            <!-- Automatic Rifleman -->
+            <Frame type="Button" name="Button02" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button01" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\BTNAutoRifle.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="2" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Cavalry Scout -->
+            <Frame type="Button" name="Button03" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button02" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTNCavalryScout.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="2" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- SFAAT -->
+            <Frame type="Button" name="Button04" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button03" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTNSFAAT.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="1" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Javelin Gunner -->
+            <Frame type="Button" name="Button05" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button00" pos="Min" offset="80" />
+               <Anchor side="Left" relative="$parent/Button00" pos="Min" offset="0" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTN_Jav_Portrait.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="2" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Squad Designated Marksman -->
+            <Frame type="Button" name="Button06" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button05" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button05" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTNMarksman.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="2" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Platoon Leader -->
+            <Frame type="Button" name="Button07" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button06" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button06" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Assets\Buttons\BTN_PL.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="1" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Flamethrower -->
+            <Frame type="Button" name="Button08" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button07" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button07" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Firebat.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="2" />
+               </Frame>
+               <StateGroup name="MOSState">
+                  <DefaultState val="Locked" />
+                  <State name="Locked" />
+                  <State name="Unlocked">
+                     <When type="AnimationState" MOSUnlocked="True" />
+                     <Action type="SetProperty" frame="$this" Enabled="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Combat Engineer -->
+            <Frame type="Button" name="Button09" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button08" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button08" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTN_Combat_Engineer_Portrait.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="1" />
+               </Frame>
+					<StateGroup name="MOSState">
+						<DefaultState val="Locked"/>
+						<State name="Locked"/>
+						<State name="Unlocked">			    
+							<When type="AnimationState" MOSUnlocked="True"/>
+							<Action type="SetProperty" frame="$this" Enabled="True"/>
+						</State>
+					</StateGroup>
+            </Frame>
+            <!-- Cyborg -->
+            <Frame type="Button" name="Button010" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button05" pos="Min" offset="80" />
+               <Anchor side="Left" relative="$parent/Button05" pos="Min" offset="0" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTN_Cyborg_Portrait.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="1" />
+               </Frame>
+					<StateGroup name="MOSState">
+						<DefaultState val="Locked"/>
+						<State name="Locked"/>
+						<State name="Unlocked">			    
+							<When type="AnimationState" MOSUnlocked="True"/>
+							<Action type="SetProperty" frame="$this" Enabled="True"/>
+						</State>
+					</StateGroup>
+            </Frame>
+            <!-- Ghost -->
+            <Frame type="Button" name="Button011" template="CharSelection/MOSButtonTemplate">
+               <Anchor side="Top" relative="$parent/Button010" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/Button010" pos="Min" offset="80" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Buttons\Portraits\BTN_Ghost_Portrait.dds" />
+               </Frame>
+               <Frame type="Label" name="Charge">
+                  <Text val="1" />
+               </Frame>
+					<StateGroup name="MOSState">
+						<DefaultState val="Locked"/>
+						<State name="Locked"/>
+						<State name="Unlocked">			    
+							<When type="AnimationState" MOSUnlocked="True"/>
+							<Action type="SetProperty" frame="$this" Enabled="True"/>
+						</State>
+					</StateGroup>
+            </Frame>
+            <StateGroup name="DevelopmentMode">
+               <DefaultState val="Locked" />
+               <State name="Locked" />
+               <State name="Unlocked">
+                  <When type="AnimationState" DevelopementMode="ON" />
+                  <Action type="SetProperty" frame="$this/Button02" Enabled="true" />
+                  <Action type="SetProperty" frame="$this/Button03" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button04" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button05" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button06" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button07" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button08" Enabled="True" />
+						<Action type="SetProperty" frame="$this/Button09" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button010" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button011" Enabled="True" />
+                  <Action type="SetProperty" frame="$this/Button02/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button03/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button04/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button05/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button06/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button07/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button08/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button09/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button010/MOSLockedIcon" Visible="False" />
+                  <Action type="SetProperty" frame="$this/Button011/MOSLockedIcon" Visible="False" />
+               </State>
+            </StateGroup>
+            <Frame type="Frame" name="MutationFrame">
+               <Anchor relative="$parent"/>
+               <Visible val="False" />
+               <Handle val="MutationMOSSelection"/>
+               <StateGroup name="MutationType">
+                  <DefaultState val="None" />
+                  <State name="None" />
+                  <State name="Rifle">
+                     <When type="AnimationState" RifleMode="ON" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <StateGroup name="MutationSwitchUI">
+               <DefaultState val="Default" />
+               <State name="Default" />
+               <State name="RifleMode">
+                  <When type="StateGroup" frame="$this/MutationFrame" MutationType="Rifle"/>
+                  <Action type="SetProperty" frame="$this/Button02" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button03" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button04" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button05" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button06" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button07" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button08" Enabled="False" />
+						<Action type="SetProperty" frame="$this/Button09" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button010" Enabled="False" />
+                  <Action type="SetProperty" frame="$this/Button011" Enabled="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- MOS Info Panel -->
+         <Frame type="Frame" name="PanelsContainer">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="-810" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="250" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Width val="900" />
+            <Height val="600" />
+            <!-- Rifleman -->
+            <Frame type="Frame" name="Panel00" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="NewRifleman" />
+                  <Handle val="RefModel0" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked1" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked1" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked1" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked1" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked1" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked1" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Combat Medic -->
+            <Frame type="Frame" name="Panel01" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="CombatMedic" />
+                  <Handle val="RefModel1" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked2" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked2" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked2" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked2" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked2" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked2" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Automatic Rifleman -->
+            <Frame type="Frame" name="Panel02" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="AutomaticRifleman" />
+                  <Handle val="RefModel2" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked3" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked3" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked3" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked3" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked3" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked3" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Cavalry Scout -->
+            <Frame type="Frame" name="Panel03" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="CavalryScout" />
+                  <Handle val="RefModel3" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked4" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked4" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked4" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked4" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked4" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked4" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- SFAAT -->
+            <Frame type="Frame" name="Panel04" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="SFAAT" />
+                  <Handle val="RefModel4" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked5" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked5" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked5" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked5" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked5" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked5" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Javelin Gunner -->
+            <Frame type="Frame" name="Panel05" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="JavelinGunner" />
+                  <Handle val="RefModel5" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked6" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked6" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked6" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked6" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked6" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked6" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- SDM -->
+            <Frame type="Frame" name="Panel06" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="SquadDesignatedMarksman" />
+                  <Handle val="RefModel6" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked7" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked7" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked7" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked7" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked7" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked7" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Platoon Leader -->
+            <Frame type="Frame" name="Panel07" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="PlatoonLeader" />
+                  <Handle val="RefModel7" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked8" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked8" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked8" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked8" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked8" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked8" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Flamethrower -->
+            <Frame type="Frame" name="Panel08" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="Flamethrower" />
+                  <Handle val="RefModel8" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked9" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked9" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked9" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked9" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked9" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked9" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Combat Engineer -->
+				<Frame type="Frame" name="Panel09" template="CharSelection/MOSPanelTemplate">
+					<Frame type="UnitModelFrame" name="MOS">
+						<UnitLink val="CombatEngineer" />
+						<Handle val="RefModel9" />
+					</Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked10" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked10" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked10" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked10" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked10" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked10" />
+                  </State>
+               </StateGroup>
+				</Frame>
+            <!-- Cyborg -->
+            <Frame type="Frame" name="Panel010" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="Cyborg" />
+                  <Handle val="RefModel10" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1" />
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked11" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked11" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked11" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked11" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked11" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked11" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!-- Ghost-->
+            <Frame type="Frame" name="Panel011" template="CharSelection/MOSPanelTemplate">
+               <Frame type="UnitModelFrame" name="MOS">
+                  <UnitLink val="GhostMOS" />
+                  <Handle val="RefModel11" />
+               </Frame>
+               <StateGroup name="RewardDisplay">
+                  <DefaultState val="Reward1"/>
+                  <State name="Reward1">
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Locked12" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked12" />
+                  </State>
+                  <State name="Reward2">
+                     <When type="AnimationState" Index="Expert" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked12" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Locked12" />
+                  </State>
+                  <State name="Reward3">
+                     <When type="AnimationState" Index="Master" />
+                     <Action type="SetProperty" frame="Unlock04" Tooltip="@DOCSTR_Expert_Unlocked12" />
+                     <Action type="SetProperty" frame="Unlock05" Tooltip="@DOCSTR_Master_Unlocked12" />
+                  </State>
+               </StateGroup>
+            </Frame>
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="CommandCardType">
+         <Anchor side="Bottom" relative="$parent/CharSelectionTabs" pos="Max" offset="-35" />
+         <Anchor side="Right" relative="$parent/CharSelectionTabs" pos="Max" offset="-210" />
+         <Height val="75" />
+         <Width val="220" />
+         <Visible val="True" />
+         <AcceptsMouse val="True" />
+         <Frame type="CheckBox" name="Option" template="StandardTemplates/StandardCheckBoxTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Checked val="False" />
+            <Tooltip val="@DOCSTR_ClassicCard" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent/Option" pos="Min" offset="2" />
+            <Anchor side="Left" relative="$parent/Option" pos="Min" offset="35" />
+            <Height val="30" />
+            <Width val="350" />
+            <Text val="Enable Classic Card" />
+            <Style val="Descript_Left" />
+            <Color val="255,255,255" />
+         </Frame>
+         <StateGroup name="MosSelectionVisible">
+            <DefaultState val="Hidden" />
+            <State name="Hidden">
+               <When type="Property" frame="$MOSSelection" Visible="False" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+               <Action type="SetProperty" frame="$this" Enabled="False" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+            <State name="Visible">
+               <When type="Property" frame="$MOSSelection" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+               <Action type="SetProperty" frame="$this" Enabled="True" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+         </StateGroup>
+         <Animation name="FadeIn">
+            <Event event="OnShown" action="Reset,Play" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

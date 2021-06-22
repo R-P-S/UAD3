@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Image" name="PBSegmentTemplate">
+      <Width val="2" />
+      <Height val="20" />
+      <Texture val="Assets\Textures\ui_aiurchef_frame_line01.dds" />
+      <TextureType val="Normal" />
+      <Color val="255,255,255" />
+      <RenderPriority val="601" />
+   </Frame>
+
+   <Frame type="Frame" name="TugOfWarPanelTemplate">
+      <Width val="400" />
+      <Height val="120" />
+      <Frame type="Image" name="LeftIconImage" template="UnitHeroPanel/AttributeIconTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Texture val="Assets\Achievements\Achievement_#1.dds" />
+         <Width val="64" />
+         <Height val="64" />
+         <RenderPriority val="520" />
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-2"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-2"/>
+         </Frame>
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="2"/>
+         </Frame>
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-2"/>
+         </Frame>
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="2"/>
+         </Frame>
+      </Frame>
+      <Frame type="Image" name="RightIconImage" template="UnitHeroPanel/AttributeIconTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Texture val="Assets\Icon Pack\btn-upgrade-zerg-wretchedness.dds" />
+         <Width val="64" />
+         <Height val="64" />
+         <RenderPriority val="520" />
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-2"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-2"/>
+         </Frame>
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="2"/>
+         </Frame>
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-2"/>
+         </Frame>
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="2"/>
+         </Frame>
+      </Frame>
+      <Frame type="Label" name="LeftNameLabel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="-2" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="70" />
+         <Style val="Void_BossUnitFrameUnitName" />
+         <Text val="Dasdan" />
+         <RenderPriority val="521" />
+      </Frame>
+      <Frame type="Label" name="RightNameLabel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="-2" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-70" />
+         <Style val="Void_BossUnitFrameUnitName" />
+         <Text val="Undead" />
+         <RenderPriority val="521" />
+      </Frame>
+      <Frame type="ProgressBar" name="ProgressBar" template="StandardUADTemplates/ProgressBarAnimTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="288" />
+         <Height val="70" />
+         <MaxValue val="100" />
+         <Value val="50" />
+         <Frame type="Image" name="BorderImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <AdjustmentColor val="148,0,211"/>
+            <ColorAdjustMode val="Colorize"/>
+            <RenderPriority val="510"/>
+         </Frame>
+         <Frame type="Image" name="Divider" template="TugOfWarFrame/PBSegmentTemplate">
+            <Anchor side="Top" relative="$parent/FillImageContainer" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/FillImageContainer" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/FillImageContainer" pos="Max" offset="0" />
+            <Height val="40"/>
+         </Frame>
+         <StateGroup name="PercentState">
+            <State name="GT50">
+               <When type="Property" frame="$this" operator="GreaterThan" ProgressPercent="0.5" />
+               <Action type="SetProperty" frame="$this/BorderImage" AdjustmentColor="0,255,148" />
+               <Action type="SendEvent" frame="$this" event="RestartPurple"/>
+               <Action type="SendEvent" frame="$this" event="PlayGreen"/>   
+            </State>
+            <State name="EQ50">
+               <When type="Property" frame="$this" ProgressPercent="0.5" />
+               <Action type="SetProperty" frame="$this/BorderImage" AdjustmentColor="0,255,148" />
+               <Action type="SendEvent" frame="$this" event="RestartPurple"/>
+               <Action type="SendEvent" frame="$this" event="RestartGreen"/>
+            </State>
+            <State name="LT50">
+               <When type="Property" frame="$this" operator="LessThan" ProgressPercent="0.5" />
+               <Action type="SetProperty" frame="$this/BorderImage" AdjustmentColor="148,0,211" />
+               <Action type="SendEvent" frame="$this" event="RestartGreen"/> 
+               <Action type="SendEvent" frame="$this" event="PlayPurple"/>   
+            </State>
+         </StateGroup>   
+         <Animation name="GreenBarSpeed" speed="1">
+            <Event event="PlayGreen" action="Play"/>
+            <Event event="RestartGreen" action="Restart"/>
+            <Controller type="AnimationSpeed" frame="FillImageContainer/FillImage" end="Pause" animation="BarAnim">
+               <Key type="Curve" time="0" value="1.0" inout="Linear"/>
+               <Key type="Curve" time="0.1" value="5.0" inout="Linear"/>
+            </Controller>
+         </Animation>
+         <Animation name="PurpleBarSpeed" speed="1">
+            <Event event="PlayPurple" action="Play"/>
+            <Event event="RestartPurple" action="Restart"/>
+            <Controller type="AnimationSpeed" frame="$parent/ProgressBar2/FillImageContainer/FillImage" end="Pause" animation="BarAnim">
+               <Key type="Curve" time="0" value="1.0" inout="Linear"/>
+               <Key type="Curve" time="0.1" value="5.0" inout="Linear"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="ProgressBar" name="ProgressBar2" template="StandardUADTemplates/ProgressBarAnimTemplate">
+         <Anchor relative="$parent/ProgressBar"/>
+         <MaxValue val="{$parent/ProgressBar/@MaxValue}" />
+         <Value val="{Diff/@Result}" />
+         <Frame type="Image" name="BorderImage">
+            <Visible val="False" />
+         </Frame>
+         <Frame type="Frame" name="FillImageContainer">
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Frame type="Image" name="FillImage">
+               <AdjustmentColor val="148,0,211" />
+               <Animation name="BarAnim">
+                  <Event event="OnShown" action="DirectionForward" frame="$parent"/>
+                  <Event event="OnShown" action="Play" frame="$parent"/>
+                  <Controller type="LayerUV" layer="1" side="Left" relative="True" sidelock="True" end="Loop" >
+                     <Key type="Curve" time="0" value="-1" out="linear"/>
+                     <Key type="Curve" time="30" value="1" in="linear"/>
+                  </Controller>
+               </Animation>
+            </Frame>
+         </Frame>
+         <Frame type="MathFrame" name="Diff">
+            <Anchor relative="$parent" />
+            <A val="{$parent/$parent/ProgressBar/@MaxValue}" />
+            <B val="{$parent/$parent/ProgressBar/@Value}" />
+            <Operator val="Subtract" />
+         </Frame>
+      </Frame>
+      <Frame type="DataRefFrame" name="RefValue">
+         <Anchor relative="$parent" />
+         <PlayerId val="0" />
+      </Frame>
+   </Frame>
+   
+   <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+      <Frame type="Frame" name="TugOfWarPanel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Height val="350" />
+         <Width val="{$parent/@Width}" />
+         <Visible val="False" />
+         <Handle val="TugOfWarPanel" />
+         <Frame type="Frame" name="TCP1Frame" template="TugOfWarFrame/TugOfWarPanelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="450" />
+            <Handle val="TCP1" />
+            <Frame type="Label" name="LeftNameLabel">
+               <Text val="West TCP" />
+            </Frame>       
+            <Frame type="ProgressBar" name="ProgressBar">
+               <Value val="{$parent/RefValue/@RealValue}" />
+            </Frame>
+            <Frame type="DataRefFrame" name="RefValue">
+               <Argument name="Score" val="TCP1" />
+            </Frame>
+            <Animation name="TCPFailed">
+               <Event event="Fail" action="Reset,Play"/> 
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Slow"/>
+                  <Key type="Curve" time=".2" value="125" in="Slow"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Frame" name="TCP2Frame" template="TugOfWarFrame/TugOfWarPanelTemplate">
+            <Anchor side="Top" relative="$parent\TCP1Frame" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent\TCP1Frame" pos="Min" offset="450" />
+            <Handle val="TCP2" />
+            <Frame type="Label" name="LeftNameLabel">
+               <Text val="South TCP" />
+            </Frame>            
+            <Frame type="ProgressBar" name="ProgressBar">
+               <Value val="{$parent/RefValue/@RealValue}" />
+            </Frame>
+            <Frame type="DataRefFrame" name="RefValue">
+               <Argument name="Score" val="TCP2" />
+            </Frame>
+            <Animation name="TCPFailed">
+               <Event event="Fail" action="Reset,Play"/> 
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Slow"/>
+                  <Key type="Curve" time=".2" value="125" in="Slow"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Frame" name="TCP3Frame" template="TugOfWarFrame/TugOfWarPanelTemplate">
+            <Anchor side="Top" relative="$parent\TCP2Frame" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent\TCP2Frame" pos="Min" offset="450" />
+            <Handle val="TCP3" />
+            <Frame type="Label" name="LeftNameLabel">
+               <Text val="East TCP" />
+            </Frame>
+            <Frame type="ProgressBar" name="ProgressBar">
+               <Value val="{$parent/RefValue/@RealValue}" />
+            </Frame>
+            <Frame type="DataRefFrame" name="RefValue">
+               <Argument name="Score" val="TCP3" />
+            </Frame>
+            <Animation name="TCPFailed">
+               <Event event="Fail" action="Reset,Play"/> 
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Slow"/>
+                  <Key type="Curve" time=".2" value="125" in="Slow"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Show/Hide Tug Of War Frame -->
+         <Animation name="TugOfWarAnim">
+            <Event event="Display" action="DirectionForward,Play" />
+            <Event event="Hide" action="DirectionReverse,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0.1" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

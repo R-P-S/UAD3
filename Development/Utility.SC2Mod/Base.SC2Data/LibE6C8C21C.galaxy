@@ -1,0 +1,1393 @@
+include "TriggerLibs/NativeLib"
+
+include "LibE6C8C21C_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Utility Lib
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libE6C8C21C_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool libE6C8C21C_InitVariables_completed = false;
+
+void libE6C8C21C_InitVariables () {
+    if (libE6C8C21C_InitVariables_completed) {
+        return;
+    }
+
+    libE6C8C21C_InitVariables_completed = true;
+
+    libE6C8C21C_gv_debugSliderHaloEmission = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugSliderHaloWidth = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugSliderHaloType = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugSliderHaloRasterMode = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugSliderHaloColor = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugButtonHaloReset = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugButtonHaloOn = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugButtonHaloOff = c_invalidDialogControlId;
+    libE6C8C21C_gv_debugHaloFrame = c_invalidDialogControlId;
+}
+
+// Custom Script
+//--------------------------------------------------------------------------------------------------
+// Custom Script: Bootstrap
+//--------------------------------------------------------------------------------------------------
+include "TriggerLibs/GAx3"
+
+void libE6C8C21C_InitCustomScript () {
+}
+
+// Presets
+// Functions
+void libE6C8C21C_gf_SmoothRotateActor (fixed lp_rotationTime, actor lp_actor, int lp_rotationPoints, fixed lp_forwardX, fixed lp_forwardY, fixed lp_forwardZ, fixed lp_upX, fixed lp_upY, fixed lp_upZ) {
+    // Variable Declarations
+    actorscope lv_scope;
+    actor lv_rotation;
+    fixed lv_rotationtimeinterval;
+
+    // Automatic Variable Declarations
+    int autoCC3F206B_ae;
+    int autoCC3F206B_var;
+
+    // Variable Initialization
+    lv_rotationtimeinterval = (lp_rotationTime / lp_rotationPoints);
+
+    // Implementation
+    lv_scope = ActorScopeFromActor(lp_actor);
+    ActorCreate(lv_scope, "PropertyCurveSet", null, null, null);
+    lv_rotation = libNtve_gf_ActorLastCreated();
+    ActorSend(lv_rotation, "PropertyCurveAdd Rotation Looping ::Main UnitRotate");
+    autoCC3F206B_ae = lp_rotationPoints;
+    autoCC3F206B_var = 0;
+    for ( ; autoCC3F206B_var <= autoCC3F206B_ae; autoCC3F206B_var += 1 ) {
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_AFE68C93", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_AFE68C93", "A", FixedToText(lp_forwardX, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_AFE68C93"));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_B99856BF", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_B99856BF", "A", FixedToText(lp_forwardY, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_B99856BF"));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_0949D58D", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_0949D58D", "A", FixedToText(lp_forwardZ, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_0949D58D"));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_A99A4718", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_A99A4718", "A", FixedToText(lp_upX, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_A99A4718"));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_65664E79", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_65664E79", "A", FixedToText(lp_upY, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_65664E79"));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_A8A7DCA7", "B", FixedToText((autoCC3F206B_var * lv_rotationtimeinterval), c_fixedPrecisionAny));
+        TextExpressionSetToken("Param/Expression/lib_E6C8C21C_A8A7DCA7", "A", FixedToText(lp_upZ, c_fixedPrecisionAny));
+        ActorSendAsText(lv_rotation, TextExpressionAssemble("Param/Expression/lib_E6C8C21C_A8A7DCA7"));
+    }
+    ActorSend(lv_rotation, "PropertyCurveStart UnitRotate");
+}
+
+void libE6C8C21C_gf_GAx3_ActorSiteDestroy (actor lp_actor) {
+    // Automatic Variable Declarations
+    // Implementation
+    ActorSend(lp_actor, "Destroy");
+}
+
+void libE6C8C21C_gf_InitVariables () {
+    // Automatic Variable Declarations
+    // Implementation
+    libE6C8C21C_gv_sceneHaloEmission[0] = "SceneHalo_Emission_000";
+    libE6C8C21C_gv_sceneHaloEmission[1] = "SceneHalo_Emission_025";
+    libE6C8C21C_gv_sceneHaloEmission[2] = "SceneHalo_Emission_050";
+    libE6C8C21C_gv_sceneHaloEmission[3] = "SceneHalo_Emission_075";
+    libE6C8C21C_gv_sceneHaloEmission[4] = "SceneHalo_Emission_100";
+    libE6C8C21C_gv_sceneHaloWidth[0] = "SceneHalo_Width_00";
+    libE6C8C21C_gv_sceneHaloWidth[1] = "SceneHalo_Width_01";
+    libE6C8C21C_gv_sceneHaloWidth[2] = "SceneHalo_Width_02";
+    libE6C8C21C_gv_sceneHaloWidth[3] = "SceneHalo_Width_03";
+    libE6C8C21C_gv_sceneHaloWidth[4] = "SceneHalo_Width_04";
+    libE6C8C21C_gv_sceneHaloWidth[5] = "SceneHalo_Width_08";
+    libE6C8C21C_gv_sceneHaloWidth[6] = "SceneHalo_Width_16";
+    libE6C8C21C_gv_sceneHaloWidth[7] = "SceneHalo_Width_24";
+    libE6C8C21C_gv_sceneHaloWidth[8] = "SceneHalo_Width_32";
+    libE6C8C21C_gv_sceneHaloWidth[9] = "SceneHalo_Width_64";
+    libE6C8C21C_gv_sceneHaloType[0] = "SceneHalo_Type_Legacy";
+    libE6C8C21C_gv_sceneHaloType[1] = "SceneHalo_Type_Linear";
+    libE6C8C21C_gv_sceneHaloType[2] = "SceneHalo_Type_Quadratic";
+    libE6C8C21C_gv_sceneHaloType[3] = "SceneHalo_Type_Sharp";
+    libE6C8C21C_gv_sceneHaloType[4] = "SceneHalo_Type_Gaussian";
+    libE6C8C21C_gv_sceneHaloRasterMode[0] = "SceneHalo_RasterMode_Add";
+    libE6C8C21C_gv_sceneHaloRasterMode[1] = "SceneHalo_RasterMode_AlphaBlend";
+    libE6C8C21C_gv_sceneHaloRasterMode[2] = "SceneHalo_RasterMode_Multiply";
+    libE6C8C21C_gv_sceneHaloColor[0] = "SceneHalo_Color_Black";
+    libE6C8C21C_gv_sceneHaloColor[1] = "SceneHalo_Color_Grey";
+    libE6C8C21C_gv_sceneHaloColor[2] = "SceneHalo_Color_White";
+    libE6C8C21C_gv_sceneHaloColor[3] = "SceneHalo_Color_Blue";
+    libE6C8C21C_gv_sceneHaloColor[4] = "SceneHalo_Color_Green";
+    libE6C8C21C_gv_sceneHaloColor[5] = "SceneHalo_Color_Red";
+}
+
+void libE6C8C21C_gf_InitDebugUI () {
+    // Automatic Variable Declarations
+    // Implementation
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/DebugFrame");
+    libE6C8C21C_gv_debugHaloFrame = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeSlider, "UIContainer/DebugFrame/Emission");
+    libE6C8C21C_gv_debugSliderHaloEmission = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameSetHaloEmission, c_playerAny, libE6C8C21C_gv_debugSliderHaloEmission, c_triggerControlEventTypeValueChanged);
+    DialogControlHookupStandard(c_triggerControlTypeSlider, "UIContainer/DebugFrame/Width");
+    libE6C8C21C_gv_debugSliderHaloWidth = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameSetHaloWidth, c_playerAny, libE6C8C21C_gv_debugSliderHaloWidth, c_triggerControlEventTypeValueChanged);
+    DialogControlHookupStandard(c_triggerControlTypeSlider, "UIContainer/DebugFrame/Type");
+    libE6C8C21C_gv_debugSliderHaloType = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameSetHaloType, c_playerAny, libE6C8C21C_gv_debugSliderHaloType, c_triggerControlEventTypeValueChanged);
+    DialogControlHookupStandard(c_triggerControlTypeSlider, "UIContainer/DebugFrame/RasterMode");
+    libE6C8C21C_gv_debugSliderHaloRasterMode = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameSetHaloRasterMode, c_playerAny, libE6C8C21C_gv_debugSliderHaloRasterMode, c_triggerControlEventTypeValueChanged);
+    DialogControlHookupStandard(c_triggerControlTypeSlider, "UIContainer/DebugFrame/Color");
+    libE6C8C21C_gv_debugSliderHaloColor = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameSetHaloColor, c_playerAny, libE6C8C21C_gv_debugSliderHaloColor, c_triggerControlEventTypeValueChanged);
+    DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/DebugFrame/Reset");
+    libE6C8C21C_gv_debugButtonHaloReset = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameButtonHaloReset, c_playerAny, libE6C8C21C_gv_debugButtonHaloReset, c_triggerControlEventTypeClick);
+    DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/DebugFrame/HaloOn");
+    libE6C8C21C_gv_debugButtonHaloOn = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameButtonHaloOn, c_playerAny, libE6C8C21C_gv_debugButtonHaloOn, c_triggerControlEventTypeClick);
+    DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/DebugFrame/HaloOff");
+    libE6C8C21C_gv_debugButtonHaloOff = DialogControlLastCreated();
+    TriggerAddEventDialogControl(libE6C8C21C_gt_DebugFrameButtonHaloOff, c_playerAny, libE6C8C21C_gv_debugButtonHaloOff, c_triggerControlEventTypeClick);
+}
+
+void libE6C8C21C_gf_GlobalHaloOn () {
+    // Automatic Variable Declarations
+    unitgroup autoE67BAD33_g;
+    int autoE67BAD33_u;
+    unit autoE67BAD33_var;
+
+    // Implementation
+    autoE67BAD33_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoE67BAD33_u = UnitGroupCount(autoE67BAD33_g, c_unitCountAll);
+    for (;; autoE67BAD33_u -= 1) {
+        autoE67BAD33_var = UnitGroupUnitFromEnd(autoE67BAD33_g, autoE67BAD33_u);
+        if (autoE67BAD33_var == null) { break; }
+        libNtve_gf_SendActorMessageToUnit(autoE67BAD33_var, "HaloStart");
+    }
+}
+
+void libE6C8C21C_gf_GlobalHaloOff () {
+    // Automatic Variable Declarations
+    unitgroup auto36BBAAC5_g;
+    int auto36BBAAC5_u;
+    unit auto36BBAAC5_var;
+
+    // Implementation
+    auto36BBAAC5_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto36BBAAC5_u = UnitGroupCount(auto36BBAAC5_g, c_unitCountAll);
+    for (;; auto36BBAAC5_u -= 1) {
+        auto36BBAAC5_var = UnitGroupUnitFromEnd(auto36BBAAC5_g, auto36BBAAC5_u);
+        if (auto36BBAAC5_var == null) { break; }
+        libNtve_gf_SendActorMessageToUnit(auto36BBAAC5_var, "HaloStop");
+    }
+}
+
+void libE6C8C21C_gf_GlobalHaloReset () {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemCurrentValue(libE6C8C21C_gv_debugSliderHaloWidth, 1.0, PlayerGroupAll());
+    libNtve_gf_SetDialogItemCurrentValue(libE6C8C21C_gv_debugSliderHaloType, 0.0, PlayerGroupAll());
+    libNtve_gf_SetDialogItemCurrentValue(libE6C8C21C_gv_debugSliderHaloRasterMode, 0.0, PlayerGroupAll());
+    libNtve_gf_SetDialogItemCurrentValue(libE6C8C21C_gv_debugSliderHaloEmission, 4.0, PlayerGroupAll());
+    libNtve_gf_SetDialogItemCurrentValue(libE6C8C21C_gv_debugSliderHaloColor, 2.0, PlayerGroupAll());
+}
+
+void libE6C8C21C_gf_DynamicArrayCreate (string lp_arrayName) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((DataTableValueExists(true, lp_arrayName) == false)) {
+        DataTableSetInt(true, lp_arrayName, 0);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_EE5579F2") + StringToText(lp_arrayName) + StringExternal("Param/Value/lib_E6C8C21C_03F7C96E")), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicArrayDestroy (string lp_arrayName) {
+    // Automatic Variable Declarations
+    int auto39346F76_ae;
+    int auto39346F76_var;
+
+    // Implementation
+    auto39346F76_ae = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 1);
+    auto39346F76_var = 0;
+    for ( ; auto39346F76_var <= auto39346F76_ae; auto39346F76_var += 1 ) {
+        DataTableValueRemove(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto39346F76_var));
+    }
+}
+
+void libE6C8C21C_gf_DynamicArrayPopBack (string lp_arrayName) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((DataTableGetInt(true, lp_arrayName) > 0)) {
+        DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) - 1));
+        DataTableValueRemove(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, DataTableGetInt(true, lp_arrayName)));
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), StringExternal("Param/Value/lib_E6C8C21C_88468429"), SoundLink("UI_GenericError", 0));
+    }
+}
+
+int libE6C8C21C_gf_DynamicArraySize (string lp_arrayName) {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(true, lp_arrayName);
+}
+
+int libE6C8C21C_gf_DynamicArrayLastElement (string lp_arrayName) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (DataTableGetInt(true, lp_arrayName) - 1);
+}
+
+bool libE6C8C21C_gf_DynamicArrayIsEmpty (string lp_arrayName) {
+    // Variable Declarations
+    bool lv_result;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libE6C8C21C_gf_DynamicArraySize(lp_arrayName) == 0)) {
+        lv_result = true;
+    }
+
+    return lv_result;
+}
+
+string libE6C8C21C_gf_DynamicArrayGetDatabaseName (string lp_arrayName, int lp_index) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (lp_arrayName + "[" + IntToString(lp_index) + "]");
+}
+
+void libE6C8C21C_gf_DynamicPointArraySet (string lp_arrayName, int lp_index, point lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        DataTableSetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_FD469E3B") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_2DD503D6") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+point libE6C8C21C_gf_DynamicPointArrayGet (string lp_arrayName, int lp_index) {
+    // Variable Declarations
+    point lv_returnvalue;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        lv_returnvalue = DataTableGetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_89056149") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_9F0974C9") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+    return lv_returnvalue;
+}
+
+void libE6C8C21C_gf_DynamicPointArrayPushBack (string lp_arrayName, point lp_addedValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, libE6C8C21C_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
+    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
+}
+
+void libE6C8C21C_gf_DynamicPointArrayRemove (string lp_arrayName, int lp_index) {
+    // Automatic Variable Declarations
+    int auto91AAB676_ae;
+    int auto91AAB676_var;
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        auto91AAB676_ae = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 2);
+        auto91AAB676_var = lp_index;
+        for ( ; auto91AAB676_var <= auto91AAB676_ae; auto91AAB676_var += 1 ) {
+            DataTableSetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto91AAB676_var), DataTableGetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto91AAB676_var + 1))));
+        }
+        libE6C8C21C_gf_DynamicArrayPopBack(lp_arrayName);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_5F951DF7") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_E72EAEE3") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicPointArrayAdd (string lp_arrayName, int lp_index, point lp_value) {
+    // Variable Declarations
+    int lv_start;
+    int lv_end;
+
+    // Automatic Variable Declarations
+    int auto3FEC5E1A_ae;
+    int auto3FEC5E1A_var;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        libE6C8C21C_gf_DynamicPointArrayPushBack(lp_arrayName, libE6C8C21C_gf_DynamicPointArrayGet(lp_arrayName, (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 1)));
+        lv_start = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 2);
+        lv_end = (lp_index + 1);
+        auto3FEC5E1A_ae = (lv_start - lv_end);
+        auto3FEC5E1A_var = 0;
+        for ( ; auto3FEC5E1A_var <= auto3FEC5E1A_ae; auto3FEC5E1A_var += 1 ) {
+            DataTableSetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto3FEC5E1A_var)), DataTableGetPoint(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - auto3FEC5E1A_var - 1))));
+        }
+        libE6C8C21C_gf_DynamicPointArraySet(lp_arrayName, lp_index, lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_BCF267BB") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_026182C1") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicPointArrayCallback (string lp_arrayName) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    int autoFFC48E86_ae;
+    const int autoFFC48E86_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libE6C8C21C_gf_DynamicArrayIsEmpty(lp_arrayName) == false)) {
+        autoFFC48E86_ae = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 1);
+        lv_i = 0;
+        for ( ; ( (autoFFC48E86_ai >= 0 && lv_i <= autoFFC48E86_ae) || (autoFFC48E86_ai < 0 && lv_i >= autoFFC48E86_ae) ) ; lv_i += autoFFC48E86_ai ) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringToText(libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lv_i)) + StringExternal("Param/Value/lib_E6C8C21C_878D99F2") + GAx3_PointToText(libE6C8C21C_gf_DynamicPointArrayGet(lp_arrayName, lv_i))));
+        }
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_7CB8B501") + StringToText(lp_arrayName) + StringExternal("Param/Value/lib_E6C8C21C_7243CD27")), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicIntArraySet (string lp_arrayName, int lp_index, int lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        DataTableSetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index), lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_3DE9AB5A") + IntToText(lp_value) + StringExternal("Param/Value/lib_E6C8C21C_950FC104") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_9DFE3EED") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+int libE6C8C21C_gf_DynamicIntArrayGet (string lp_arrayName, int lp_index) {
+    // Variable Declarations
+    int lv_returnvalue;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_returnvalue = -1;
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        lv_returnvalue = DataTableGetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lp_index));
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_CA756844") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_5BD000B0") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+    return lv_returnvalue;
+}
+
+void libE6C8C21C_gf_DynamicIntArrayPushBack (string lp_arrayName, int lp_addedValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, libE6C8C21C_gf_DynamicArraySize(lp_arrayName)), lp_addedValue);
+    DataTableSetInt(true, lp_arrayName, (DataTableGetInt(true, lp_arrayName) + 1));
+}
+
+void libE6C8C21C_gf_DynamicIntArrayRemove (string lp_arrayName, int lp_index) {
+    // Automatic Variable Declarations
+    int auto98E89B40_ae;
+    int auto98E89B40_var;
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        auto98E89B40_ae = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 2);
+        auto98E89B40_var = lp_index;
+        for ( ; auto98E89B40_var <= auto98E89B40_ae; auto98E89B40_var += 1 ) {
+            DataTableSetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, auto98E89B40_var), DataTableGetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (auto98E89B40_var + 1))));
+        }
+        libE6C8C21C_gf_DynamicArrayPopBack(lp_arrayName);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_5972664D") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_71C5D90B") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicIntArrayAdd (string lp_arrayName, int lp_index, int lp_value) {
+    // Variable Declarations
+    int lv_start;
+    int lv_end;
+
+    // Automatic Variable Declarations
+    int autoAF0C9B37_ae;
+    int autoAF0C9B37_var;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_index < libE6C8C21C_gf_DynamicArraySize(lp_arrayName))) {
+        libE6C8C21C_gf_DynamicIntArrayPushBack(lp_arrayName, libE6C8C21C_gf_DynamicIntArrayGet(lp_arrayName, (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 1)));
+        lv_start = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 2);
+        lv_end = (lp_index + 1);
+        autoAF0C9B37_ae = (lv_start - lv_end);
+        autoAF0C9B37_var = 0;
+        for ( ; autoAF0C9B37_var <= autoAF0C9B37_ae; autoAF0C9B37_var += 1 ) {
+            DataTableSetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - autoAF0C9B37_var)), DataTableGetInt(true, libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, (lv_start - autoAF0C9B37_var - 1))));
+        }
+        libE6C8C21C_gf_DynamicIntArraySet(lp_arrayName, lp_index, lp_value);
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_404344EE") + IntToText(lp_value) + StringExternal("Param/Value/lib_E6C8C21C_49E537DA") + IntToText(lp_index) + StringExternal("Param/Value/lib_E6C8C21C_F5E8AF3A") + IntToText(libE6C8C21C_gf_DynamicArraySize(lp_arrayName))), SoundLink("UI_GenericError", 0));
+    }
+}
+
+void libE6C8C21C_gf_DynamicIntArrayCallback (string lp_arrayName) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    int autoF79EE906_ae;
+    const int autoF79EE906_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libE6C8C21C_gf_DynamicArrayIsEmpty(lp_arrayName) == false)) {
+        autoF79EE906_ae = (libE6C8C21C_gf_DynamicArraySize(lp_arrayName) - 1);
+        lv_i = 0;
+        for ( ; ( (autoF79EE906_ai >= 0 && lv_i <= autoF79EE906_ae) || (autoF79EE906_ai < 0 && lv_i >= autoF79EE906_ae) ) ; lv_i += autoF79EE906_ai ) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, (StringToText(libE6C8C21C_gf_DynamicArrayGetDatabaseName(lp_arrayName, lv_i)) + StringExternal("Param/Value/lib_E6C8C21C_FDF091F8") + IntToText(libE6C8C21C_gf_DynamicIntArrayGet(lp_arrayName, lv_i))));
+        }
+    }
+    else {
+        libNtve_gf_UIErrorMessage(PlayerGroupAll(), (StringExternal("Param/Value/lib_E6C8C21C_658D8E49") + StringToText(lp_arrayName) + StringExternal("Param/Value/lib_E6C8C21C_A211057E")), SoundLink("UI_GenericError", 0));
+    }
+}
+
+string libE6C8C21C_gf_GetCurrentTime (string lp_time) {
+    // Automatic Variable Declarations
+    // Implementation
+    return lp_time;
+}
+
+bool libE6C8C21C_gf_GlobalGetDebug () {
+    // Automatic Variable Declarations
+    // Implementation
+    return libE6C8C21C_gv_global_Debug;
+}
+
+text libE6C8C21C_gf_DebugUnitInfo (unit lp_u) {
+    // Variable Declarations
+    text lv_msg;
+    int lv_owner;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_msg = StringToText("");
+
+    // Implementation
+    lv_owner = UnitGetOwner(lp_u);
+    lv_msg = StringExternal("Param/Value/lib_E6C8C21C_D175350A");
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_7F52937F") + IntToText(lv_owner) + StringExternal("Param/Value/lib_E6C8C21C_8A7076B8"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_1EF29A7A"));
+    lv_msg = (lv_msg + IntToText(PlayerGetPropertyInt(lv_owner, c_playerPropMinerals)) + StringExternal("Param/Value/lib_E6C8C21C_FC0C8139"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_071E11BF"));
+    lv_msg = (lv_msg + IntToText(PlayerGetPropertyInt(lv_owner, c_playerPropVespene)) + StringExternal("Param/Value/lib_E6C8C21C_9E59010B"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_FE69E6C9"));
+    lv_msg = (lv_msg + IntToText(PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesUsed)) + StringToText(""));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_0639FAFC"));
+    lv_msg = (lv_msg + IntToText(MinI(PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesMade), PlayerGetPropertyInt(lv_owner, c_playerPropSuppliesLimit))) + StringExternal("Param/Value/lib_E6C8C21C_228ABDAD"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_25BE41AC"));
+    lv_msg = (lv_msg + UnitTypeGetName(UnitGetType(lp_u)));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_1228FA42"));
+    lv_msg = (lv_msg + FixedToText(UnitGetPropertyFixed(lp_u, c_unitPropShields, c_unitPropCurrent), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_1B51081F"));
+    lv_msg = (lv_msg + FixedToText(UnitGetPropertyFixed(lp_u, c_unitPropLife, c_unitPropCurrent), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_5AC6E76F"));
+    lv_msg = (lv_msg + FixedToText(UnitGetPropertyFixed(lp_u, c_unitPropEnergy, c_unitPropCurrent), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_7DD5ECD2"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_A99E6A5A"));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_FD008B91"));
+    lv_msg = (lv_msg + FixedToText(PointGetX(UnitGetPosition(lp_u)), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_4621A69F"));
+    lv_msg = (lv_msg + FixedToText(PointGetY(UnitGetPosition(lp_u)), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_85B6E69D"));
+    lv_msg = (lv_msg + FixedToText(UnitGetFacing(lp_u), 0));
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_2CE429CF"));
+    if ((libNtve_gf_UnitIsPaused(lp_u) == true)) {
+        lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_1B1C8725"));
+    }
+
+    if ((libNtve_gf_UnitIsHidden(lp_u) == true)) {
+        lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_B193CBB5"));
+    }
+
+    if ((UnitIsAlive(lp_u) == false)) {
+        lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_126864BD"));
+    }
+
+    lv_msg = (lv_msg + StringExternal("Param/Value/lib_E6C8C21C_F78B998F"));
+    return lv_msg;
+}
+
+bool libE6C8C21C_gf_DebugStatus (int lp_enableDebug) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_enableDebug == libE6C8C21C_ge_DebugOnOff_DebugOn)) {
+        if ((GameIsTestMap(false) == true)) {
+            libE6C8C21C_gv_global_Debug = true;
+            return true;
+        }
+        else {
+            libE6C8C21C_gv_global_Debug = false;
+        }
+    }
+
+    return false;
+}
+
+void Debug (string lp_nameofAbility, string lp_ability, unit lp_triggeringUnit) {
+    // Variable Declarations
+    int lv_abilityLevel;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_abilityLevel = (UnitAbilityGetLevel(lp_triggeringUnit, lp_ability) + 1);
+
+    // Implementation
+    if ((libE6C8C21C_gv_global_Debug == true)) {
+        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(lp_triggeringUnit)), c_messageAreaDebug, StringToText(("Ability - " + lp_nameofAbility + " - Level: " + IntToString(lv_abilityLevel))));
+    }
+
+}
+
+trigger auto_Debug2_Trigger = null;
+string auto_Debug2_lp_nameofFunction;
+int auto_Debug2_lp_variableInteger;
+unit auto_Debug2_lp_triggeringUnit;
+
+void Debug2 (string lp_nameofFunction, int lp_variableInteger, unit lp_triggeringUnit) {
+    auto_Debug2_lp_nameofFunction = lp_nameofFunction;
+    auto_Debug2_lp_variableInteger = lp_variableInteger;
+    auto_Debug2_lp_triggeringUnit = lp_triggeringUnit;
+
+    if (auto_Debug2_Trigger == null) {
+        auto_Debug2_Trigger = TriggerCreate("auto_Debug2_TriggerFunc");
+    }
+
+    TriggerExecute(auto_Debug2_Trigger, false, false);
+}
+
+bool auto_Debug2_TriggerFunc (bool testConds, bool runActions) {
+    string lp_nameofFunction = auto_Debug2_lp_nameofFunction;
+    int lp_variableInteger = auto_Debug2_lp_variableInteger;
+    unit lp_triggeringUnit = auto_Debug2_lp_triggeringUnit;
+
+    // Variable Declarations
+    int lv_abilityLevel;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libE6C8C21C_gv_global_Debug == true)) {
+        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(lp_triggeringUnit)), c_messageAreaDebug, StringToText(("Function - " + lp_nameofFunction + ":  " + IntToString(lp_variableInteger))));
+    }
+
+    return true;
+}
+
+trigger auto_Debug3_Trigger = null;
+string auto_Debug3_lp_nameofFunction;
+fixed auto_Debug3_lp_variableReal;
+unit auto_Debug3_lp_triggeringUnit;
+
+void Debug3 (string lp_nameofFunction, fixed lp_variableReal, unit lp_triggeringUnit) {
+    auto_Debug3_lp_nameofFunction = lp_nameofFunction;
+    auto_Debug3_lp_variableReal = lp_variableReal;
+    auto_Debug3_lp_triggeringUnit = lp_triggeringUnit;
+
+    if (auto_Debug3_Trigger == null) {
+        auto_Debug3_Trigger = TriggerCreate("auto_Debug3_TriggerFunc");
+    }
+
+    TriggerExecute(auto_Debug3_Trigger, false, false);
+}
+
+bool auto_Debug3_TriggerFunc (bool testConds, bool runActions) {
+    string lp_nameofFunction = auto_Debug3_lp_nameofFunction;
+    fixed lp_variableReal = auto_Debug3_lp_variableReal;
+    unit lp_triggeringUnit = auto_Debug3_lp_triggeringUnit;
+
+    // Variable Declarations
+    int lv_abilityLevel;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libE6C8C21C_gv_global_Debug == true)) {
+        UIDisplayMessage(PlayerGroupSingle(UnitGetOwner(lp_triggeringUnit)), c_messageAreaDebug, StringToText(("Function - " + lp_nameofFunction + ": " + FixedToString(lp_variableReal, 2))));
+    }
+
+    return true;
+}
+
+void libE6C8C21C_gf_DebugMessageFindTableValueNameValue (int lp_dataTableListValue, int lp_player) {
+    // Variable Declarations
+    string lv_dataTableName;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_dataTableName = DataTableValueName(true, lp_dataTableListValue);
+
+    // Implementation
+    if ((libE6C8C21C_gv_global_Debug == true)) {
+        UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaDebug, StringToText(("Data Table Name: " + lv_dataTableName + " - " + "Data Table Stored Value: " + IntToString(DataTableGetInt(true, lv_dataTableName)))));
+    }
+
+}
+
+trigger auto_libE6C8C21C_gf_DebugMessageSearchDataTable_Trigger = null;
+int auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_dataTableStartValue;
+int auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_player;
+
+void libE6C8C21C_gf_DebugMessageSearchDataTable (int lp_dataTableStartValue, int lp_player) {
+    auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_dataTableStartValue = lp_dataTableStartValue;
+    auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_player = lp_player;
+
+    if (auto_libE6C8C21C_gf_DebugMessageSearchDataTable_Trigger == null) {
+        auto_libE6C8C21C_gf_DebugMessageSearchDataTable_Trigger = TriggerCreate("auto_libE6C8C21C_gf_DebugMessageSearchDataTable_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libE6C8C21C_gf_DebugMessageSearchDataTable_Trigger, false, false);
+}
+
+bool auto_libE6C8C21C_gf_DebugMessageSearchDataTable_TriggerFunc (bool testConds, bool runActions) {
+    int lp_dataTableStartValue = auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_dataTableStartValue;
+    int lp_player = auto_libE6C8C21C_gf_DebugMessageSearchDataTable_lp_player;
+
+    // Variable Declarations
+    int lv_int;
+    string lv_dataTableName;
+
+    // Automatic Variable Declarations
+    int auto8B1FE8CF_ae;
+    const int auto8B1FE8CF_ai = 1;
+
+    // Variable Initialization
+    lv_dataTableName = "";
+
+    // Implementation
+    if ((libE6C8C21C_gv_global_Debug == true)) {
+        auto8B1FE8CF_ae = DataTableValueCount(true);
+        lv_int = lp_dataTableStartValue;
+        for ( ; ( (auto8B1FE8CF_ai >= 0 && lv_int <= auto8B1FE8CF_ae) || (auto8B1FE8CF_ai < 0 && lv_int >= auto8B1FE8CF_ae) ) ; lv_int += auto8B1FE8CF_ai ) {
+            lv_dataTableName = DataTableValueName(true, lv_int);
+            UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaDebug, StringToText(("Data Table Name: " + lv_dataTableName + " - Data Table List Value: " + IntToString(lv_int))));
+            UIDisplayMessage(PlayerGroupSingle(lp_player), c_messageAreaDebug, StringToText(("Data Table Name: " + lv_dataTableName + " - " + "Data Table Stored Value: " + IntToString(DataTableGetInt(true, lv_dataTableName)))));
+            Wait(1.5, c_timeGame);
+        }
+    }
+
+    return true;
+}
+
+fixed libE6C8C21C_gf_ConvertBooleanToReal (bool lp_boolean) {
+    // Automatic Variable Declarations
+    // Implementation
+    return IntToFixed(BoolToInt(lp_boolean));
+}
+
+void libE6C8C21C_gf_CreateOneWaySightBlocker (point lp_point) {
+    // Automatic Variable Declarations
+    // Implementation
+    UnitCreate(1, "OneWayLOSBlocker1x1", c_unitCreateIgnorePlacement, 1, lp_point, 270.0);
+}
+
+fixed libE6C8C21C_gf_RandomGaussianReal (fixed lp_expectedValue, fixed lp_variance) {
+    // Variable Declarations
+    fixed lv_u;
+    fixed lv_v;
+    fixed lv_s;
+    fixed lv_c;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_u = RandomFixed(-1.0, 1.0);
+    lv_v = RandomFixed(-1.0, 1.0);
+    lv_s = ((lv_u * lv_u) + (lv_v * lv_v));
+
+    // Implementation
+    while (((lv_s == 0.0) || (lv_s >= 1.0))) {
+        lv_u = RandomFixed(-1.0, 1.0);
+        lv_v = RandomFixed(-1.0, 1.0);
+        lv_s = ((lv_u * lv_u) + (lv_v * lv_v));
+    }
+    lv_c = SquareRoot(((-2.0 * (Log2(lv_s) / Log2(2.7183))) / lv_s));
+    return (lp_expectedValue + (lp_variance * (lv_u * lv_s)));
+}
+
+bool libE6C8C21C_gf_AngleIsBetweenBounds (fixed lp_angle, fixed lp_minBound, fixed lp_maxBound) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_angle < lp_maxBound) && (lp_angle > lp_minBound)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool libE6C8C21C_gf_StringIsValid2 (int lp_integer) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((ModI(lp_integer, 2) == 1)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+int libE6C8C21C_gf_SignInteger (int lp_inputInteger) {
+    // Variable Declarations
+    int lv_sign;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_inputInteger > 0)) {
+        lv_sign = 1;
+    }
+    else if ((lp_inputInteger == 0)) {
+        lv_sign = 0;
+    }
+    else if ((lp_inputInteger < 0)) {
+        lv_sign = -1;
+    }
+    return lv_sign;
+}
+
+fixed libE6C8C21C_gf_SignReal (fixed lp_inputReal) {
+    // Variable Declarations
+    fixed lv_sign;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_inputReal > 0.0)) {
+        lv_sign = 1.0;
+    }
+    else if ((lp_inputReal == 0.0)) {
+        lv_sign = 0.0;
+    }
+    else if ((lp_inputReal < 0.0)) {
+        lv_sign = -1.0;
+    }
+    return lv_sign;
+}
+
+int libE6C8C21C_gf_GetRandomPlayerfromPlayerGroup (playergroup lp_playerGroup) {
+    // Automatic Variable Declarations
+    // Implementation
+    return PlayerGroupPlayer(lp_playerGroup, RandomInt(1, PlayerGroupCount(lp_playerGroup)));
+}
+
+text libE6C8C21C_gf_TextWithStyle (text lp_text, string lp_style) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (StringExternal("Param/Value/lib_E6C8C21C_43FCB691") + StringToText((lp_style)) + StringExternal("Param/Value/lib_E6C8C21C_AC0886AE") + lp_text + StringExternal("Param/Value/lib_E6C8C21C_DE8FF215"));
+}
+
+void libE6C8C21C_gf_AddTimeToTimer (timer lp_timer, fixed lp_additionalTime) {
+    // Automatic Variable Declarations
+    // Implementation
+    TimerStart(lp_timer, (TimerGetRemaining(lp_timer) + lp_additionalTime), false, c_timeGame);
+}
+
+void libE6C8C21C_gf_ReduceTimeOfTimer (timer lp_timer, fixed lp_reductionTime) {
+    // Automatic Variable Declarations
+    // Implementation
+    TimerStart(lp_timer, (TimerGetRemaining(lp_timer) - lp_reductionTime), false, c_timeGame);
+}
+
+bool libE6C8C21C_gf_CallbackIsRunning (string lp_name) {
+    // Variable Declarations
+    string lv_path;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_path = ("Callbacks/" + lp_name + "/Running");
+
+    // Implementation
+    return (DataTableValueExists(true, lv_path) && DataTableGetBool(true, lv_path));
+}
+
+int libE6C8C21C_gf_CallbackTriggeringPlayer (string lp_name) {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(true, ("Callbacks/" + lp_name + "/Player"));
+}
+
+unit libE6C8C21C_gf_CallbackParameterUnit (string lp_name, int lp_index) {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetUnit(true, ("Callbacks/" + lp_name + "/Parameter" + IntToString(lp_index)));
+}
+
+int libE6C8C21C_gf_CallbackParameterInteger (string lp_name, int lp_index) {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(true, ("Callbacks/" + lp_name + "/Parameter" + IntToString(lp_index)));
+}
+
+void libE6C8C21C_gf_RegisterCallback (trigger lp_trigger, string lp_name) {
+    // Variable Declarations
+    string lv_path;
+    int lv_index;
+    int lv_count;
+
+    // Automatic Variable Declarations
+    int autoA322B970_ae;
+    const int autoA322B970_ai = 1;
+
+    // Variable Initialization
+    lv_path = ("Callbacks/" + lp_name);
+    lv_count = DataTableGetInt(true, (lv_path + "/Count"));
+
+    // Implementation
+    autoA322B970_ae = (lv_count - 1);
+    lv_index = 0;
+    for ( ; ( (autoA322B970_ai >= 0 && lv_index <= autoA322B970_ae) || (autoA322B970_ai < 0 && lv_index >= autoA322B970_ae) ) ; lv_index += autoA322B970_ai ) {
+        if ((DataTableGetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index))) == lp_trigger)) {
+            return ;
+        }
+
+    }
+    DataTableSetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index)), lp_trigger);
+    DataTableSetInt(true, (lv_path + "/Count"), (lv_count + 1));
+}
+
+void libE6C8C21C_gf_RegisterCallbackPlayer (trigger lp_trigger, string lp_name, int lp_player) {
+    // Variable Declarations
+    string lv_path;
+    int lv_mask;
+    int lv_index;
+    int lv_count;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_path = ("Callbacks/" + lp_name);
+    lv_count = DataTableGetInt(true, (lv_path + "/Count"));
+
+    // Implementation
+    if ((lp_player != c_playerAny)) {
+        lv_mask = (1 << lp_player);
+    }
+    else {
+        lv_mask = 0xFFFFFF;
+    }
+    while ((lv_index < lv_count) && (lv_mask != 0)) {
+        if ((DataTableGetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index))) == lp_trigger)) {
+            lv_mask &= (~DataTableGetInt(true, (lv_path + "/Mask" + IntToString(lv_index))));
+        }
+
+        lv_index += 1;
+    }
+    if ((lv_mask != 0)) {
+        DataTableSetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index)), lp_trigger);
+        DataTableSetInt(true, (lv_path + "/Mask" + IntToString(lv_index)), lv_mask);
+        DataTableSetInt(true, (lv_path + "/Count"), (lv_count + 1));
+    }
+
+}
+
+void libE6C8C21C_gf_RunCallback (string lp_name) {
+    // Variable Declarations
+    string lv_path;
+    int lv_index;
+
+    // Automatic Variable Declarations
+    int auto14592DBA_ae;
+    const int auto14592DBA_ai = 1;
+
+    // Variable Initialization
+    lv_path = ("Callbacks/" + lp_name);
+
+    // Implementation
+    DataTableSetBool(true, (lv_path + "/Running"), true);
+    auto14592DBA_ae = (DataTableGetInt(true, (lv_path + "/Count")) - 1);
+    lv_index = 0;
+    for ( ; ( (auto14592DBA_ai >= 0 && lv_index <= auto14592DBA_ae) || (auto14592DBA_ai < 0 && lv_index >= auto14592DBA_ae) ) ; lv_index += auto14592DBA_ai ) {
+        TriggerExecute(DataTableGetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index))), true, false);
+    }
+    DataTableSetBool(true, (lv_path + "/Running"), false);
+}
+
+void libE6C8C21C_gf_RunCallbackPlayer (string lp_name, int lp_player) {
+    // Variable Declarations
+    string lv_path;
+    int lv_index;
+
+    // Automatic Variable Declarations
+    int auto2D61D905_ae;
+    const int auto2D61D905_ai = 1;
+
+    // Variable Initialization
+    lv_path = ("Callbacks/" + lp_name);
+
+    // Implementation
+    DataTableSetBool(true, (lv_path + "/Running"), true);
+    DataTableSetInt(true, (lv_path + "/Player"), lp_player);
+    auto2D61D905_ae = (DataTableGetInt(true, (lv_path + "/Count")) - 1);
+    lv_index = 0;
+    for ( ; ( (auto2D61D905_ai >= 0 && lv_index <= auto2D61D905_ae) || (auto2D61D905_ai < 0 && lv_index >= auto2D61D905_ae) ) ; lv_index += auto2D61D905_ai ) {
+        if ((((1 << lp_player) & DataTableGetInt(true, (lv_path + "/Mask" + IntToString(lv_index)))) != 0)) {
+            TriggerExecute(DataTableGetTrigger(true, (lv_path + "/Trigger" + IntToString(lv_index))), true, false);
+        }
+
+    }
+    DataTableValueRemove(true, (lv_path + "/Player"));
+    DataTableSetBool(true, (lv_path + "/Running"), false);
+}
+
+void libE6C8C21C_gf_SetCallbackParameterInteger (string lp_name, int lp_index, int lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(true, ("Callbacks/" + lp_name + "/Parameter" + IntToString(lp_index)), lp_value);
+}
+
+void libE6C8C21C_gf_SetCallbackParameterUnit (string lp_name, int lp_index, unit lp_value) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetUnit(true, ("Callbacks/" + lp_name + "/Parameter" + IntToString(lp_index)), lp_value);
+}
+
+void libE6C8C21C_gf_EnableDisableAllCommandTypes (bool lp_enableDisable, playergroup lp_players) {
+    // Automatic Variable Declarations
+    // Implementation
+    UISetCommandAllowed(lp_players, c_uiCommandAllowButtons, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowHotkeys, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowInfoPanel, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowMinimap, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowModifiers, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowPings, lp_enableDisable);
+    UISetCommandAllowed(lp_players, c_uiCommandAllowSmartClick, lp_enableDisable);
+}
+
+void libE6C8C21C_gf_ChangeUnitHeightAtRate (unit lp_unit, fixed lp_height, fixed lp_rate) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_rate == 0.0)) {
+        return ;
+    }
+
+    UnitSetHeight(lp_unit, lp_height, AbsF(((lp_height - UnitGetHeight(lp_unit)) / lp_rate)));
+}
+
+void libE6C8C21C_gf_ForceAbilityToCooldown (unit lp_unit, abilcmd lp_abilityCommand, int lp_spendLocation) {
+    // Automatic Variable Declarations
+    // Implementation
+    UnitAbilityReset(lp_unit, lp_abilityCommand, lp_spendLocation);
+    UnitAbilitySpendExplicit(lp_unit, lp_abilityCommand, lp_spendLocation, 1.0, 1.0, 1.0, 1.0);
+}
+
+void libE6C8C21C_gf_ForceAbilityToSkipCooldown (unit lp_unit, abilcmd lp_abilityCommand, int lp_spendLocation) {
+    // Automatic Variable Declarations
+    // Implementation
+    UnitAbilityReset(lp_unit, lp_abilityCommand, lp_spendLocation);
+}
+
+bool libE6C8C21C_gf_AttackerbehindTarget (unit lp_attacker, unit lp_target, fixed lp_rearAngle) {
+    // Variable Declarations
+    fixed lv_angleofAttackedUnit;
+    fixed lv_angleofAttackingUnit;
+    fixed lv_correctedAngleofAttackingUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_angleofAttackedUnit = UnitGetFacing(lp_target);
+    lv_angleofAttackingUnit = AngleBetweenPoints(UnitGetPosition(lp_target), UnitGetPosition(lp_attacker));
+
+    // Implementation
+    if ((lv_angleofAttackedUnit < 0.0)) {
+        lv_angleofAttackedUnit += 360.0;
+    }
+    if ((lv_angleofAttackingUnit < 0.0)) {
+        lv_angleofAttackingUnit += 360.0;
+    }
+    lv_correctedAngleofAttackingUnit = (lv_angleofAttackingUnit - lv_angleofAttackedUnit);
+    if ((lv_correctedAngleofAttackingUnit < 0.0)) {
+        lv_correctedAngleofAttackingUnit += 360.0;
+    }
+    if ((lv_correctedAngleofAttackingUnit >= (lp_rearAngle  - (lv_correctedAngleofAttackingUnit/2))) && (lv_correctedAngleofAttackingUnit <= (lp_rearAngle  + (lv_correctedAngleofAttackingUnit/2)))) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool libE6C8C21C_gf_UnitisCarryingItemofType (unit lp_unit, string lp_carriedItem) {
+    // Automatic Variable Declarations
+    unitgroup auto8AC8A4F1_g;
+    int auto8AC8A4F1_u;
+    unit auto8AC8A4F1_var;
+
+    // Implementation
+    auto8AC8A4F1_g = UnitInventoryGroup(lp_unit);
+    auto8AC8A4F1_u = UnitGroupCount(auto8AC8A4F1_g, c_unitCountAll);
+    for (;; auto8AC8A4F1_u -= 1) {
+        auto8AC8A4F1_var = UnitGroupUnitFromEnd(auto8AC8A4F1_g, auto8AC8A4F1_u);
+        if (auto8AC8A4F1_var == null) { break; }
+        if ((UnitGetType(auto8AC8A4F1_var) == lp_carriedItem)) {
+            return true;
+        }
+
+    }
+    return false;
+}
+
+unit libE6C8C21C_gf_ReturnUnit (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return lp_unit;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_Init_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libE6C8C21C_gv_global_Debug == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloOff, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloOn, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloReset, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloColor, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloEmission, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloRasterMode, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloType, true);
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloWidth, true);
+    libE6C8C21C_gf_InitVariables();
+    libE6C8C21C_gf_InitDebugUI();
+    libE6C8C21C_gf_GlobalHaloOn();
+    DialogControlSetAnimationState(libE6C8C21C_gv_debugHaloFrame, PlayerGroupAll(), "Display", "True");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_Init_Init () {
+    libE6C8C21C_gt_Init = TriggerCreate("libE6C8C21C_gt_Init_Func");
+    TriggerAddEventChatMessage(libE6C8C21C_gt_Init, c_playerAny, "-debug Halo", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameSetHaloWidth
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameSetHaloWidth_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selectionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_selectionIndex = FixedToInt(libNtve_gf_DialogItemValue(EventDialogControl(), EventPlayer()));
+    libNtve_gf_CreateActorAtPoint(libE6C8C21C_gv_sceneHaloWidth[lv_selectionIndex], Point(0.0, 0.0));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameSetHaloWidth_Init () {
+    libE6C8C21C_gt_DebugFrameSetHaloWidth = TriggerCreate("libE6C8C21C_gt_DebugFrameSetHaloWidth_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloWidth, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameSetHaloEmission
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameSetHaloEmission_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selectionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_selectionIndex = FixedToInt(libNtve_gf_DialogItemValue(EventDialogControl(), EventPlayer()));
+    libNtve_gf_CreateActorAtPoint(libE6C8C21C_gv_sceneHaloEmission[lv_selectionIndex], Point(0.0, 0.0));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameSetHaloEmission_Init () {
+    libE6C8C21C_gt_DebugFrameSetHaloEmission = TriggerCreate("libE6C8C21C_gt_DebugFrameSetHaloEmission_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloEmission, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameSetHaloType
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameSetHaloType_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selectionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_selectionIndex = FixedToInt(libNtve_gf_DialogItemValue(EventDialogControl(), EventPlayer()));
+    libNtve_gf_CreateActorAtPoint(libE6C8C21C_gv_sceneHaloType[lv_selectionIndex], Point(0.0, 0.0));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameSetHaloType_Init () {
+    libE6C8C21C_gt_DebugFrameSetHaloType = TriggerCreate("libE6C8C21C_gt_DebugFrameSetHaloType_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloType, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameSetHaloRasterMode
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameSetHaloRasterMode_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selectionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_selectionIndex = FixedToInt(libNtve_gf_DialogItemValue(EventDialogControl(), EventPlayer()));
+    libNtve_gf_CreateActorAtPoint(libE6C8C21C_gv_sceneHaloRasterMode[lv_selectionIndex], Point(0.0, 0.0));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameSetHaloRasterMode_Init () {
+    libE6C8C21C_gt_DebugFrameSetHaloRasterMode = TriggerCreate("libE6C8C21C_gt_DebugFrameSetHaloRasterMode_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloRasterMode, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameSetHaloColor
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameSetHaloColor_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_selectionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_selectionIndex = FixedToInt(libNtve_gf_DialogItemValue(EventDialogControl(), EventPlayer()));
+    libNtve_gf_CreateActorAtPoint(libE6C8C21C_gv_sceneHaloColor[lv_selectionIndex], Point(0.0, 0.0));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameSetHaloColor_Init () {
+    libE6C8C21C_gt_DebugFrameSetHaloColor = TriggerCreate("libE6C8C21C_gt_DebugFrameSetHaloColor_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameSetHaloColor, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameButtonHaloOn
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameButtonHaloOn_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogControlSetVisible(libE6C8C21C_gv_debugButtonHaloOff, PlayerGroupAll(), true);
+    DialogControlSetVisible(libE6C8C21C_gv_debugButtonHaloOn, PlayerGroupAll(), false);
+    libE6C8C21C_gf_GlobalHaloOn();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameButtonHaloOn_Init () {
+    libE6C8C21C_gt_DebugFrameButtonHaloOn = TriggerCreate("libE6C8C21C_gt_DebugFrameButtonHaloOn_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloOn, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameButtonHaloOff
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameButtonHaloOff_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogControlSetVisible(libE6C8C21C_gv_debugButtonHaloOff, PlayerGroupAll(), false);
+    DialogControlSetVisible(libE6C8C21C_gv_debugButtonHaloOn, PlayerGroupAll(), true);
+    libE6C8C21C_gf_GlobalHaloOff();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameButtonHaloOff_Init () {
+    libE6C8C21C_gt_DebugFrameButtonHaloOff = TriggerCreate("libE6C8C21C_gt_DebugFrameButtonHaloOff_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloOff, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugFrameButtonHaloReset
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_DebugFrameButtonHaloReset_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libE6C8C21C_gf_GlobalHaloReset();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_DebugFrameButtonHaloReset_Init () {
+    libE6C8C21C_gt_DebugFrameButtonHaloReset = TriggerCreate("libE6C8C21C_gt_DebugFrameButtonHaloReset_Func");
+    TriggerEnable(libE6C8C21C_gt_DebugFrameButtonHaloReset, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: NM_ToggleFlyoverMode
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_gt_NM_ToggleFlyoverMode_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!((libE6C8C21C_gv_global_Debug == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((libE6C8C21C_gv_NM_FlyoverModeEnabled == false)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "CameraUnit", 0, lv_player, RegionGetCenter(RegionEntireMap()));
+        libE6C8C21C_gv_NM_FlyoverUnit = UnitLastCreated();
+        UnitGroupSelect(UnitGroupSelected(lv_player), lv_player, false);
+        UnitSelect(libE6C8C21C_gv_NM_FlyoverUnit, lv_player, true);
+        libNtve_gf_HideGameUI(false, PlayerGroupSingle(lv_player));
+        UISetDragSelectEnabled(PlayerGroupSingle(lv_player), false);
+        UISetSelectionTypeEnabled(PlayerGroupSingle(lv_player), c_localSelectionTypeUnknown, false);
+        CameraFollowUnitGroup(lv_player, UnitLastCreatedGroup(), true, false);
+        CameraForceFollowUnitGroup(lv_player, true);
+        CameraLockInput(lv_player, true);
+        ConsoleCommand("togui", true, true);
+        libE6C8C21C_gv_NM_FlyoverModeEnabled = true;
+    }
+    else {
+        UISetDragSelectEnabled(PlayerGroupSingle(lv_player), true);
+        UISetSelectionTypeEnabled(PlayerGroupSingle(lv_player), c_localSelectionTypeUnknown, true);
+        UnitKill(libE6C8C21C_gv_NM_FlyoverUnit);
+        CameraLockInput(lv_player, false);
+        ConsoleCommand("togui", true, true);
+        libNtve_gf_HideGameUI(true, PlayerGroupSingle(lv_player));
+        libE6C8C21C_gv_NM_FlyoverUnit = null;
+        libE6C8C21C_gv_NM_FlyoverModeEnabled = false;
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE6C8C21C_gt_NM_ToggleFlyoverMode_Init () {
+    libE6C8C21C_gt_NM_ToggleFlyoverMode = TriggerCreate("libE6C8C21C_gt_NM_ToggleFlyoverMode_Func");
+    TriggerAddEventChatMessage(libE6C8C21C_gt_NM_ToggleFlyoverMode, c_playerAny, "FlyoverMode", true);
+}
+
+void libE6C8C21C_InitTriggers () {
+    libE6C8C21C_gt_Init_Init();
+    libE6C8C21C_gt_DebugFrameSetHaloWidth_Init();
+    libE6C8C21C_gt_DebugFrameSetHaloEmission_Init();
+    libE6C8C21C_gt_DebugFrameSetHaloType_Init();
+    libE6C8C21C_gt_DebugFrameSetHaloRasterMode_Init();
+    libE6C8C21C_gt_DebugFrameSetHaloColor_Init();
+    libE6C8C21C_gt_DebugFrameButtonHaloOn_Init();
+    libE6C8C21C_gt_DebugFrameButtonHaloOff_Init();
+    libE6C8C21C_gt_DebugFrameButtonHaloReset_Init();
+    libE6C8C21C_gt_NM_ToggleFlyoverMode_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libE6C8C21C_InitLib_completed = false;
+
+void libE6C8C21C_InitLib () {
+    if (libE6C8C21C_InitLib_completed) {
+        return;
+    }
+
+    libE6C8C21C_InitLib_completed = true;
+
+    libE6C8C21C_InitLibraries();
+    libE6C8C21C_InitVariables();
+    libE6C8C21C_InitCustomScript();
+    libE6C8C21C_InitTriggers();
+}
+

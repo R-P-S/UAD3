@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI" file="GameUI">
+      <Frame type="Frame" name="UIContainer">
+         <Frame type="Frame" name="FullscreenUpperContainer">
+            <Frame type="Frame" name="TimerContainer">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="-1000" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+               <Width val="175" />
+               <Height val="175" />
+               <Visible val="True" />
+               <Frame type="Image" name="InnerDial">
+                  <Anchor relative="$parent" />
+                  <Texture val="@UI/CircleInnerdial" />
+                  <Alpha val="175" />
+                  <Animation name="RotateLeftStart">
+                     <Event event="OnShown" action="Reset, Play" />
+                     <Controller type="Rotation" relative="False" frame="$this" end="Loop">
+                        <Key type="Curve" time="0" value="0" out="linear" />
+                        <Key type="Curve" time="45" value="-360" in="linear" />
+                     </Controller>
+                  </Animation>
+                  <Animation name="RotationLeftStop">
+                     <Event event="OnHidden" action="Reset, Play" />
+                     <Controller type="Animation" end="Stop" frame="$this" animation="RotateLeftStart">
+                        <Key type="Animation" time="0" action="Reset" />
+                        <Key type="Animation" time="0" action="Pause" />
+                     </Controller>
+                  </Animation>
+               </Frame>
+               <Frame type="Image" name="OuterDial">
+                  <Anchor relative="$parent" />
+                  <Texture val="@UI/CircleOuterdial" />
+                  <Animation name="RotateRightStart">
+                     <Event event="OnShown" action="Reset, Play" />
+                     <Controller type="Rotation" relative="False" frame="$this" end="Loop">
+                        <Key type="Curve" time="0" value="0" out="linear" />
+                        <Key type="Curve" time="20" value="360" in="linear" />
+                     </Controller>
+                     <Controller type="Fade" end="Loop">
+                        <Key type="Curve" time="0.0" value="0" out="Slow" />
+                        <Key type="Curve" time="5.0" value="255" in="Slow" />
+                        <Key type="Curve" time="10.0" value="0" out="Fast" />
+                     </Controller>
+                  </Animation>
+                  <Animation name="RotationRightStop">
+                     <Event event="OnHidden" action="Reset, Play" />
+                     <Controller type="Animation" end="Stop" frame="$this" animation="RotateRightStart">
+                        <Key type="Animation" time="0" action="Reset" />
+                        <Key type="Animation" time="0" action="Pause" />
+                     </Controller>
+                  </Animation>
+               </Frame>
+               <Frame type="Label" name="TimeLabel">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="3" />
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+                  <Style val="LeaguePromotionTitleLabel" />
+                  <Text Val="90" />
+                  <RenderPriority val="515" />
+                  <Color val="255,255,255" />
+                  <GlowColor val="255,255,255" />
+                  <!-- Turns color red when < 10 sec & hides at 0 -->
+                  <StateGroup name="TextColor">
+                     <State name="10">
+                        <When type="Property" frame="$this" Text="10" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="9">
+                        <When type="Property" frame="$this" Text="9" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="8">
+                        <When type="Property" frame="$this" Text="8" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="7">
+                        <When type="Property" frame="$this" Text="7" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="6">
+                        <When type="Property" frame="$this" Text="6" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="5">
+                        <When type="Property" frame="$this" Text="5" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="4">
+                        <When type="Property" frame="$this" Text="4" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="3">
+                        <When type="Property" frame="$this" Text="3" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="2">
+                        <When type="Property" frame="$this" Text="2" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="1">
+                        <When type="Property" frame="$this" Text="1" />
+                        <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                        <Action type="SetProperty" frame="$this" GlowColor="255,0,0" />
+                     </State>
+                     <State name="0">
+                        <When type="Property" frame="$this" Text="0" />
+                        <Action type="SetProperty" frame="$this" Visible="False" />
+                     </State>
+                  </StateGroup>
+               </Frame>
+               <!-- Turns Off Rotation Animation -->
+               <StateGroup name="VisibleState">
+                  <State name="Hidden">
+                     <When type="Property" frame="$MOSSelection" Visible="False" />
+                     <Action type="SetProperty" frame="$this" Visible="False" />
+                  </State>
+               </StateGroup>
+            </Frame>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

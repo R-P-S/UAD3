@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="GhostMOS" parent="UnitTemplate">
+        <BehaviorArray index="0" Link="NewMechanical"/>
+        <BehaviorArray index="1" Link="NewFitness"/>
+        <BehaviorArray index="2" Link="NewDexterity"/>
+        <BehaviorArray index="3" Link="HeroLevelsMFD"/>
+        <BehaviorArray index="4" Link="1Mechanical"/>
+        <BehaviorArray Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="MetaFlexArmor"/>
+        <BehaviorArray Link="HeatSignatureDissapate"/>
+        <BehaviorArray Link="IRSensor"/>
+        <BehaviorArray Link="HeatSensorGhost"/>
+        <AbilArray Link="GhostResearch"/>
+        <AbilArray Link="GhostSkillUpgrades"/>
+        <AbilArray Link="HeroInventoryPlasmaNew"/>
+        <AbilArray Link="BinocularsGhost"/>
+        <AbilArray Link="CryoRounds"/>
+        <AbilArray Link="DisruptorRounds"/>
+        <AbilArray Link="LaserDesignatorGhost"/>
+        <AbilArray Link="ToggleLightFilter"/>
+        <AbilArray Link="DisarmGhost"/>
+        <AbilArray Link="CryoGrenade"/>
+        <AbilArray Link="PlaceCryoMine"/>
+        <AbilArray Link="InterferenceWave"/>
+        <AbilArray Link="GapGenerator"/>
+        <EffectArray index="Birth" value="GhostSpawnSet"/>
+        <EffectArray index="Revive" value="GhostSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="2" Face="HeatSensorCC" Type="Passive" Requirements="HeatSensorGhostShowClassicCard" Row="0" Column="0"/>
+            <LayoutButtons index="3" Face="LightFilterCC" Type="Passive" Requirements="LightFilterGhostShowClassicCard" Row="0" Column="0"/>
+            <LayoutButtons index="5" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons index="8" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeatSignature" Type="Passive" Behavior="None" Row="0" Column="3"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="HeatSensorCC" Type="Passive" Requirements="HeatSensorGhostShowCustomCard" Row="0" Column="0"/>
+            <LayoutButtons index="9" Face="LightFilterCC" Type="Passive" Requirements="LightFilterGhostShowCustomCard" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="LightFilter" Type="AbilCmd" AbilCmd="ToggleLightFilter,On" Row="0" Column="1"/>
+            <LayoutButtons Face="HeatSensor" Type="AbilCmd" AbilCmd="ToggleLightFilter,Off" Row="0" Column="1"/>
+            <LayoutButtons>
+                <Face value="IRSensor"/>
+                <Type value="Passive"/>
+                <Behavior value="IRSensor"/>
+                <Requirements value="IRSensorUse"/>
+                <Row value="1"/>
+                <Column value="0"/>
+            </LayoutButtons>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research6" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipSniper" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research7" Row="1" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research4" Row="2" Column="3"/>
+            <LayoutButtons Face="HeatSensorPotency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research9" Row="0" Column="2"/>
+            <LayoutButtons Face="HeatSensorLightFilter" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research8" Row="1" Column="2"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSoundtrack id="Centurion" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Centurion"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Catalyst" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Catalyst"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="IntroMenuMusic" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="IntroMenuSong"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Thunder" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Thunder"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Charon" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Charon"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Agent" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Agent"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Finale" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Finale"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="FinalDOOMHorizonSoundtrack">
+        <CueArray>
+            <MasterLayer Sound="DOOMPMC"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="FinalDOOMDOOM2Soundtrack">
+        <CueArray>
+            <MasterLayer Sound="DOOMBOSSM"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="FinalDOOMMetalSoundtrack">
+        <CueArray>
+            <MasterLayer Sound="DOOM"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="DrumsOfWar" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="DrumsOfWar"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Convoy" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Convoy"/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="Lieutenant" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="Lieutenant"/>
+        </CueArray>
+    </CSoundtrack>
+</Catalog>

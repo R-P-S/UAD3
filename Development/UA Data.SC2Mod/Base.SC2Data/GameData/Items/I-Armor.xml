@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="KevlarBodyArmor" parent="ItemCrateTemplate">
+        <Name value="Unit/Name/KevlarBodyArmor"/>
+        <Description value="Button/Tooltip/KevlarBodyArmor"/>
+        <Item value="KevlarBodyArmor"/>
+        <HotkeyAlias value="KevlarBodyArmor"/>
+        <EquipmentArray index="0" Icon="Buttons\BTNKevlar.dds"/>
+        <EffectArray index="Birth" value="CreateArmor"/>
+    </CUnit>
+    <CUnit id="OPA" parent="ItemCrateTemplate">
+        <Name value="Unit/Name/OPA"/>
+        <Description value="Button/Tooltip/OPA"/>
+        <Item value="OPA"/>
+        <HotkeyAlias value="OPA"/>
+        <EquipmentArray index="0" Icon="Buttons\BTNPlateCarrier.dds"/>
+        <FlagArray index="Invulnerable" value="1"/>
+    </CUnit>
+    <CUnit id="SPCS" parent="ItemCrateTemplate">
+        <Name value="Unit/Name/SPCS"/>
+        <Description value="Button/Tooltip/SPCS"/>
+        <Item value="SPCS"/>
+        <HotkeyAlias value="SPCS"/>
+        <EquipmentArray index="0" Icon="Buttons\BTNIOTV.dds"/>
+        <EffectArray index="Birth" value="CreateArmor"/>
+    </CUnit>
+</Catalog>

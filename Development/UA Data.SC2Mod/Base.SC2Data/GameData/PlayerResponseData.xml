@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDeath id="CacumenBloodLust">
+        <Location value="Attacker"/>
+        <Handled value="BloodLustAB"/>
+        <ValidatorArray value="CasterIsCacumen"/>
+        <CasterFilters value="Massive;Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDeath>
+    <CPlayerResponseUnitBirth id="HardenedWill">
+        <Handled value="HardenedWillDamageResponeAB"/>
+        <ValidatorArray value="FoodGT4"/>
+    </CPlayerResponseUnitBirth>
+    <CPlayerResponseUnitBirth id="Barrier">
+        <Handled value="BarrierDamageResponseAB"/>
+    </CPlayerResponseUnitBirth>
+    <CPlayerResponseUnitDamage id="PlayerHitStat">
+        <Handled value="UpdateHitStat"/>
+        <CasterFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <Minimum value="10"/>
+        <TargetFilters value="-;Player,Ally,Neutral,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitBirth id="SpeedFreaks">
+        <Handled value="SpeedFreaksAB"/>
+    </CPlayerResponseUnitBirth>
+    <CPlayerResponseUnitDeath id="SquadLeaderDeath">
+        <Handled value="SquadLeaderKillCounterAB"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <ValidatorArray value="CasterIsSquadLeader"/>
+    </CPlayerResponseUnitDeath>
+    <CPlayerResponseUnitDeath id="PMCDeath">
+        <Handled value="PMCKillCounterAB"/>
+    </CPlayerResponseUnitDeath>
+    <CPlayerResponseUnitBirth id="WeMoveUnseen">
+        <Handled value="WeMoveUnseenAB"/>
+    </CPlayerResponseUnitBirth>
+</Catalog>

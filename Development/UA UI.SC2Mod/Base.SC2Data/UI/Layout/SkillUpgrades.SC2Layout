@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Button" name="SkillUpgradesButtonTemplate">
+      <Width val="35" />
+      <Height val="35" />
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <HighlightOnHover val="true" />
+      <HighlightOnFocus val="true" />
+      <ClickSound val="@UI_ReplayButtonSelect" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Image" name="NormalImage">
+         <DescFlags val="Internal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <DescFlags val="Internal" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="SkillUpgradesContainer">
+         <Anchor side="Top" relative="$parent/MenuBar" pos="Mid" offset="-26" />
+         <Anchor side="Left" relative="$parent/MenuBar" pos="Mid" offset="-181" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="550" />
+         <Visible val="false" />
+         <Handle val="SUC" />
+         <Frame type="Image" name="SkillUpgradeBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Visible val="true" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="SkillUpgradeIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+            <Visible val="true" />
+            <Tooltip val="Skill Upgrades Available" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="SkillUpgradesButton" template="SkillUpgrades/SkillUpgradesButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/SkillUpgradeBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Frame type="Image" name="NormalImage">
+               <Texture val="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Texture val="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+            </Frame>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel1">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel2">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel3">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel4">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel5">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel6">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel7">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel8">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel9">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel10">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel11">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel12">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel1">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel2">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel3">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel4">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel5">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel6">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel7">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel8">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel9">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel10">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel11">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/SkillUpgradesLabel12">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="SkillUpgradesLabelContainer">
+            <Width val="23" />
+            <Height val="23" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+            <Texture val="Assets\Textures\ui_battlenet_glue_coop_abilityframe_levelbg.dds" />
+            <TextureType val="NineSlice" />
+            <RenderPriority val="520" />
+            <Visible val="true" />
+            <Color val="##StandardButtonBorder" />
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel1">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU1/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="1" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="1" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel2">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU2/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="2" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="2" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel3">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU3/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="3" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="3" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel4">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU4/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="4" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="4" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel5">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU5/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="5" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="5" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel6">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU6/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="6" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="6" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel7">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU7/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="7" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="7" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel8">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU8/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="8" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="8" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel9">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU9/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="9" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="9" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel10">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU10/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="10" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="10" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel11">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU11/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="11" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="11" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="SkillUpgradesLabel12">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatSU12/Label/@Text}" />
+            <RenderPriority val="621" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="UpgradeCount">
+               <State name="0">
+                  <When type="Property" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="12" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="0" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="12" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton13/NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+                  <Action type="SetProperty" frame="$GameUI_CommandPanel/CommandButton13/ChargeLabel" Alpha="255" />
+                  <Action type="SendEvent" frame="$SUActiveIndicator" event="Active" />
+               </State>
+            </StateGroup>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

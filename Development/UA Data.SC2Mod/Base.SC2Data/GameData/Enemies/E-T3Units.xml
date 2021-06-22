@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="Hellhound" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="120"/>
+        <LifeMax value="120"/>
+        <Speed value="3.3984"/>
+        <BehaviorArray Link="GlazeFire"/>
+        <WeaponArray Link="HellhoundBite"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.4375"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Vore" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="265"/>
+        <LifeMax value="265"/>
+        <Speed value="2.4492"/>
+        <WeaponArray Link="VolatileSpit"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+    </CUnit>
+    <CUnit id="Bee" parent="TemplateT3Zombie">
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="52"/>
+        <LifeMax value="52"/>
+        <LifeRegenRateCreep value="0"/>
+        <Mover value="Fly"/>
+        <Speed value="3.1992"/>
+        <Height value="3"/>
+        <BehaviorArray index="0" Link="MutationUpgrade"/>
+        <BehaviorArray index="1" Link="WeatherEffectZombiesFlying"/>
+        <BehaviorArray index="2" removed="1"/>
+        <WeaponArray Link="BeeStinger"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.25"/>
+        <SeparationRadius value="0.25"/>
+        <MinimapRadius value="0.25"/>
+    </CUnit>
+    <CUnit id="Mutant" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="120"/>
+        <LifeMax value="120"/>
+        <Speed value="2"/>
+        <WeaponArray Link="MutantClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Bloated" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="330"/>
+        <LifeMax value="330"/>
+        <Speed value="2.6835"/>
+        <WeaponArray Link="BloatedClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <MinimapRadius value="0.625"/>
+        <EffectArray index="Death" value="BloatedDeathPuddle"/>
+    </CUnit>
+    <CUnit id="Corrupted" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="75"/>
+        <LifeMax value="75"/>
+        <Speed value="2.5"/>
+        <WeaponArray Link="CorruptedClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Rotten" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="520"/>
+        <LifeMax value="520"/>
+        <Speed value="1.8984"/>
+        <WeaponArray Link="RottenClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Unclean" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <Speed value="2.6992"/>
+        <WeaponArray Link="UncleanClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Unwilling" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="160"/>
+        <LifeMax value="160"/>
+        <Speed value="1.6992"/>
+        <WeaponArray Link="UnwillingClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Widow" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="56"/>
+        <LifeMax value="56"/>
+        <Speed value="2.6406"/>
+        <WeaponArray Link="WidowFangs"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.3125"/>
+        <MinimapRadius value="0.3125"/>
+        <Mass value="0.2"/>
+    </CUnit>
+    <CUnit id="T3Wraith" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="445"/>
+        <LifeMax value="445"/>
+        <EnergyMax value="20"/>
+        <EnergyRegenRate value="1"/>
+        <Speed value="2.879"/>
+        <AbilArray Link="WraithTeleport"/>
+        <BehaviorArray index="1" Link="KeenSense3"/>
+        <BehaviorArray index="2" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="WraithClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="WraithTeleport" Type="AbilCmd" AbilCmd="WraithTeleport,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Swarmer" parent="TemplateT3Zombie">
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="70"/>
+        <LifeMax value="70"/>
+        <Speed value="2.8085"/>
+        <Height value="3"/>
+        <BehaviorArray index="0" Link="MutationUpgrade"/>
+        <BehaviorArray index="1" Link="WeatherEffectZombiesFlying"/>
+        <BehaviorArray index="2" removed="1"/>
+        <WeaponArray Link="SeekerSpines"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <MinimapRadius value="0.375"/>
+        <Mover value="Fly"/>
+    </CUnit>
+    <CUnit id="Unburied" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="395"/>
+        <LifeMax value="395"/>
+        <Speed value="2.1992"/>
+        <WeaponArray Link="UnburiedClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Krill" parent="TemplateT3Zombie">
+        <FlagArray index="Cloaked" value="1"/>
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="65"/>
+        <LifeMax value="65"/>
+        <LifeRegenRateCreep value="0"/>
+        <Mover value="Fly"/>
+        <Speed value="2.9492"/>
+        <Height value="3"/>
+        <BehaviorArray index="0" Link="KeenSense3A"/>
+        <BehaviorArray index="2" Link="WeatherEffectZombiesFlying"/>
+        <WeaponArray Link="KrillBite"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.33"/>
+        <MinimapRadius value="0.33"/>
+    </CUnit>
+    <CUnit id="Shredder" parent="TemplateT3Zombie">
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="120"/>
+        <LifeMax value="120"/>
+        <LifeRegenRateCreep value="0"/>
+        <Mover value="Fly"/>
+        <Speed value="2.75"/>
+        <StationaryTurningRate value="360"/>
+        <TurningRate value="360"/>
+        <Height value="3"/>
+        <BehaviorArray index="0" Link="KeenSense3A"/>
+        <BehaviorArray index="2" Link="WeatherEffectZombiesFlying"/>
+        <WeaponArray Link="ShredderClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Drake" parent="TemplateT3Zombie">
+        <PlaneArray index="Air" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="315"/>
+        <LifeMax value="315"/>
+        <ShieldsStart value="35"/>
+        <ShieldsMax value="35"/>
+        <Mover value="Arachnathid"/>
+        <Speed value="2.5585"/>
+        <Height value="0.5"/>
+        <BehaviorArray index="1" Link="KeenSense3"/>
+        <BehaviorArray index="2" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="DrakeClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <MinimapRadius value="0.4"/>
+    </CUnit>
+    <CUnit id="Hopper" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="35"/>
+        <LifeMax value="35"/>
+        <Mover value="CliffJumper"/>
+        <Speed value="3.8007"/>
+        <BehaviorArray index="1" Link="HopperJump"/>
+        <BehaviorArray index="2" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="HopperClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.3125"/>
+        <MinimapRadius value="0.3125"/>
+        <Mass value="0.2"/>
+    </CUnit>
+    <CUnit id="Crab" parent="TemplateT3Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <ShieldsStart value="40"/>
+        <ShieldsMax value="40"/>
+        <Speed value="2.6015"/>
+        <WeaponArray Link="CrabSting"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Licker" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="345"/>
+        <LifeMax value="345"/>
+        <EnergyMax value="50"/>
+        <EnergyRegenRate value="1"/>
+        <Speed value="2.3398"/>
+        <AbilArray Link="LickerTongue"/>
+        <BehaviorArray index="2" Link="KeenSense3"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="LickerClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="LickerTongue" Type="AbilCmd" AbilCmd="LickerTongue,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Leaper" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="220"/>
+        <LifeMax value="220"/>
+        <EnergyMax value="12"/>
+        <EnergyRegenRate value="1"/>
+        <Speed value="2.3984"/>
+        <AbilArray Link="Leap"/>
+        <WeaponArray Link="LeaperClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="Leap" Type="AbilCmd" AbilCmd="Leap,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Pooch" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="70"/>
+        <LifeMax value="70"/>
+        <Speed value="3.3007"/>
+        <WeaponArray Link="PoochBite"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.4375"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Swollen" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="260"/>
+        <LifeMax value="260"/>
+        <Speed value="2.7187"/>
+        <WeaponArray Link="SwollenClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <MinimapRadius value="0.625"/>
+        <EffectArray index="Death" value="SwollenExplosionSearch"/>
+    </CUnit>
+    <CUnit id="Creeper" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="190"/>
+        <LifeMax value="190"/>
+        <Speed value="2.1015"/>
+        <WeaponArray Link="CreeperClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Boomer" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="170"/>
+        <LifeMax value="170"/>
+        <Speed value="2.7812"/>
+        <WeaponArray Link="BoomerClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="0.625"/>
+        <EffectArray index="Death" value="BoomerExplosionDmg"/>
+    </CUnit>
+    <CUnit id="Tarantula" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="42"/>
+        <LifeMax value="42"/>
+        <Speed value="2.6406"/>
+        <WeaponArray Link="TarantulaFangs"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.3125"/>
+        <MinimapRadius value="0.3125"/>
+        <Mass value="0.2"/>
+    </CUnit>
+    <CUnit id="Risen" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="315"/>
+        <LifeMax value="315"/>
+        <Speed value="2.1992"/>
+        <WeaponArray Link="RisenClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Eel" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="20"/>
+        <LifeMax value="20"/>
+        <Speed value="3"/>
+        <WeaponArray Link="EelBite"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="Infected" parent="TemplateT3Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <Speed value="2"/>
+        <WeaponArray Link="InfectedClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+</Catalog>

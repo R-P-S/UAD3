@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="assets\icon pack\btn-custom-terran-marine-merc.dds" Type="Image"/>
+<Asset path="ui\layout\menubackgroundtemplate.sc2layout" Type="Layout"/>
+<Asset path="ui\layout\loadscreen.sc2layout" Type="Layout"/>
+<Asset path="btndropmagazine.dds" Type="Image"/>
+<Asset path="images\ua3 logo.dds" Type="Image"/>
+<Asset path="assets\custom icons\reload.dds" Type="Image"/>
+<Asset path="assets\textures\btn-upgrade-mengsk-veterancy.dds" Type="Image"/>
+<Asset path="ui\layout\charselection.sc2layout" Type="Layout"/>
+<Asset path="assets\custom icons\icon-mags.dds" Type="Image"/>
+<Asset path="assets\textures\ui_battlenet_glues_achievement_fanfare_achievementcontainer_terr.dds" Type="Image"/>
+<Asset path="btnammocase.dds" Type="Image"/>
+<Abil id="move"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="CompoundSewers_Tank" Variations="1,5"/>
+<Actor id="DOM_Crate" Variations="1,4"/>
+<Actor id="DOM_LabCrates" Variations="7"/>
+<Actor id="DesertCaveEntrance"/>
+<Actor id="Elsecaro_Curtain1x1" Variations="4"/>
+<Actor id="Elsecaro_Curtain2x2" Variations="1"/>
+<Actor id="Elsecaro_Dock" Variations="3"/>
+<Actor id="Elsecaro_Large_Rock" Variations="5"/>
+<Actor id="Elsecaro_Large_Rock_NoShadow" Variations="3"/>
+<Actor id="Elsecaro_Medium_Rock_Group" Variations="2,5"/>
+<Actor id="Elsecaro_SeaWeeds" Variations="5"/>
+<Actor id="Elsecaro_SeaWeeds_Group" Variations="2"/>
+<Actor id="Elsecaro_Small_Rock_Group" Variations="0,2"/>
+<Actor id="JarbanMinor_Crate" Variations="1,3,5"/>
+<Actor id="JarbanMinor_Fence" Variations="0"/>
+<Actor id="MarineStatue"/>
+<Actor id="WaterGenerator" Variations="0,4"/>
+<Actor id="AgriaCrops" Variations="0,1,2"/>
+<Actor id="AgriaCurtain" Variations="1"/>
+<Actor id="AgriaTree" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="AgriaUnderbrush" Variations="0,1,2,3"/>
+<Actor id="AiurCurtain" Variations="0,1,2,3"/>
+<Actor id="Checkpoint"/>
+<Actor id="BelShirCurtain" Variations="0,1,2,3"/>
+<Actor id="BelShirTree" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="BioDomeDoodad" Variations="1,2"/>
+<Actor id="BraxisAlphaBarrels" Variations="1,2"/>
+<Actor id="BraxisAlphaFloodLights" Variations="0,1"/>
+<Actor id="BubbasFuelStop"/>
+<Actor id="CableLight"/>
+<Actor id="CastanarGenerator" Variations="0"/>
+<Actor id="CastanarMonitorFloor" Variations="0"/>
+<Actor id="ChainLinkFenceDiagonal" Variations="0,1,3"/>
+<Actor id="ChainLinkFencePost"/>
+<Actor id="ChainLinkFenceStraight" Variations="1,3,4,5,6,7"/>
+<Actor id="Crate" Variations="0,1,2,3,4,5"/>
+<Actor id="Decal" Variations="0,1,3,4,5,6,7,14,17,19,20,22,23,24"/>
+<Actor id="Dumpster" Variations="0,1,3"/>
+<Actor id="Floodlight" Variations="0"/>
+<Actor id="Garage" Variations="0"/>
+<Actor id="GarageLarge" Variations="0,1"/>
+<Actor id="GasStation"/>
+<Actor id="HavenDoodadsCrates" Variations="0,1,2,3,4"/>
+<Actor id="HavenTree" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="LandingLights" Variations="1,3"/>
+<Actor id="MarSaraBridgeDestroyed"/>
+<Actor id="BridgeCardinalFootprint"/>
+<Actor id="BridgeOrdinalFootprint"/>
+<Actor id="NewFolsomPrisonTower"/>
+<Actor id="Outhouse" Variations="1"/>
+<Actor id="PortZionDumpster"/>
+<Actor id="PortZionTower" Variations="2,3,6,8,9"/>
+<Actor id="RedstoneRockSpires" Variations="4"/>
+<Actor id="Rock" Variations="0,1,2,3,4,5,6,7,8,9,10"/>
+<Actor id="RockArch" Variations="8"/>
+<Actor id="RockGiant" Variations="4,5,14"/>
+<Actor id="RockLarge" Variations="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"/>
+<Actor id="RooftopEntrance"/>
+<Actor id="SecurityFenceStraight"/>
+<Actor id="SpacePlatformGenerator" Variations="1"/>
+<Actor id="SpacePlatformReactor" Variations="2"/>
+<Actor id="Streetlight" Variations="0"/>
+<Actor id="SupplyTanks"/>
+<Actor id="TrafficSignalBroken" Variations="2,3"/>
+<Actor id="VespeneTank" Variations="0,2"/>
+<Actor id="WaterTank" Variations="1,2"/>
+<Actor id="WaterTankTall" Variations="0"/>
+<Actor id="WindTurbine"/>
+<Actor id="WreckedCargoTruckCorpse" Variations="0,2"/>
+<Actor id="CargoTruck" Variations="0,1,2"/>
+<Actor id="ColonistSupplies" Variations="0,2,3,6,8,9"/>
+<Actor id="ColonistSupplyCrate" Variations="0,1,2,3,4,5,6,7,8"/>
+<Actor id="HavenCurtain" Variations="0,1,2,3"/>
+<Actor id="KorhalFlag" Variations="0"/>
+<Actor id="ColonistHutDoodad" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="HomeSmallDoodad" Variations="0,1"/>
+<Actor id="HomeLargeDoodad" Variations="0"/>
+<Actor id="TerrainObjectCastanarPowerGeneratorDoodad"/>
+<Actor id="TRaynor01RadarDish"/>
+<Actor id="TruckTanker"/>
+<Actor id="TruckDump"/>
+<Actor id="ChainLinkFenceDiagonal2" Variations="0,1,3"/>
+<Behavior id="GhostHoldFireB"/>
+<Behavior id="Invulnerable"/>
+<Behavior id="AbdulTruckOverheat"/>
+<Behavior id="DisarmingSilo"/>
+<Behavior id="RASquadLeader"/>
+<Behavior id="ScrapPartsCampaignPickup"/>
+<Behavior id="SearchingHouse"/>
+<Behavior id="HackingTerminal"/>
+<Behavior id="SelfAidDisable"/>
+<Behavior id="ThePlague"/>
+<Behavior id="RefugeeSpeed"/>
+<Behavior id="CivilianWander"/>
+<Behavior id="SatchelDamageResponse"/>
+<Behavior id="PlotArmor"/>
+<Behavior id="UB"/>
+<Behavior id="RepairingVehicle"/>
+<Behavior id="CollectingFoodSample"/>
+<Behavior id="Unpowered"/>
+<Behavior id="ConvoyAntiStuck"/>
+<Behavior id="DarkDecay"/>
+<Behavior id="LMTVAntiStuck"/>
+<Behavior id="BulwarkAntiStuck"/>
+<Button id="NODInfrared"/>
+<Button id="NOD"/>
+<Effect id="RecruitLNDummy"/>
+<Effect id="CampaignSiloDamage"/>
+<Effect id="NPCIssueOrderSprint"/>
+<Effect id="MissionSurvivalSatchelDamage"/>
+<Effect id="ReviveDummy"/>
+<Effect id="ReviveModifyUnit"/>
+<Light id="UADDawn"/>
+<Light id="UADDay"/>
+<Light id="UADDusk"/>
+<Light id="UADNight"/>
+<Model id="BeaconAttack"/>
+<Model id="PingArrow"/>
+<Model id="PingBoss"/>
+<Model id="PingObjective"/>
+<Model id="PingSimple"/>
+<Model id="PingWarning"/>
+<Model id="BeaconDefendPing"/>
+<Model id="BeaconClaimPing"/>
+<Model id="Rock"/>
+<Model id="BriefingHighlight"/>
+<Model id="BriefingUnitSelect"/>
+<Model id="BriefingUnitSelectLarge"/>
+<Model id="PingBonus"/>
+<Model id="ChallengeShield"/>
+<Model id="WreckedBattlecruiserHeliosFinal"/>
+<Model id="RegionHighlight"/>
+<Sound id="Banshee_Help"/>
+<Sound id="Ghost_Death"/>
+<Sound id="UI_GenericError"/>
+<Sound id="UI_MissionFailed" Variations="2"/>
+<Sound id="TRaynor01MusicEventA"/>
+<Sound id="TRaynor01MusicOutro"/>
+<Sound id="TRaynor03MusicOutro"/>
+<Sound id="UI_ObjectiveUpdate"/>
+<Sound id="UI_TextPrintout"/>
+<Sound id="TUIWarningPing"/>
+<Sound id="Doodad_CharCrashingDebrisDrop"/>
+<Sound id="Brutalisk_Roar" Variations="2"/>
+<Sound id="SS_Battlecruiser_Explode"/>
+<Sound id="Terran_BuildingExplosion_medium"/>
+<Sound id="UI_Nova_BriefingTextCallout_Open"/>
+<Sound id="RadioChatter"/>
+<Soundtrack id="ZChar01MusicMain"/>
+<Soundtrack id="nDLC_Music_Nova08_Main_Intense"/>
+<Soundtrack id="nDLC_Music_Nova09_Main_Intense"/>
+<Soundtrack id="nDLC_Music_Nova09_Main"/>
+<Soundtrack id="Centurion"/>
+<Soundtrack id="IntroMenuMusic"/>
+<Soundtrack id="Thunder"/>
+<Soundtrack id="Agent"/>
+<Soundtrack id="Finale"/>
+<Soundtrack id="FinalDOOMHorizonSoundtrack"/>
+<Soundtrack id="DrumsOfWar"/>
+<Soundtrack id="Convoy"/>
+<Soundtrack id="Lieutenant"/>
+<Terrain id="AgriaEx1"/>
+<Unit id="PointDefenseDrone"/>
+<Unit id="Barracks"/>
+<Unit id="EngineeringBay"/>
+<Unit id="DestructibleDebris6x6"/>
+<Unit id="ColonistShipFlying"/>
+<Unit id="ColonistShip"/>
+<Unit id="CargoTruckUnitTrailer"/>
+<Unit id="Civilian" Variations="0,1,2"/>
+<Unit id="CivilianFemale" Variations="0,1,2"/>
+<Unit id="TerranDropPod"/>
+<Unit id="ClaymoreItem"/>
+<Unit id="InfantryForwardObserver"/>
+<Unit id="InfantrySniper"/>
+<Unit id="ScrapPartsCampaign"/>
+<Unit id="MissionDummyUnit"/>
+<Unit id="RepairKit"/>
+<Unit id="InfantryCommander"/>
+<Unit id="InfantryMedic"/>
+<Unit id="VespeneTankSilo"/>
+<Unit id="AdvancedAntiVeninShot"/>
+<Unit id="AdvancedFirstAidKit"/>
+<Unit id="AdvancedQuikClot"/>
+<Unit id="AntiVeninShot"/>
+<Unit id="CivilianEngineer"/>
+<Unit id="SpiderEgg"/>
+<Unit id="MATVConvoy"/>
+<Unit id="PoliceOfficer"/>
+<Unit id="Glutton"/>
+<Unit id="InfantryAutomaticRifleman"/>
+<Unit id="Vesania"/>
+<Unit id="VulcanMK88SentryGun"/>
+<Unit id="M200SatchelCharge"/>
+<Unit id="MRLRocket2"/>
+<Unit id="Binoculars"/>
+<Unit id="Darreus"/>
+<Unit id="FragGrenade"/>
+<Unit id="FoodSample"/>
+<Unit id="InfantryMarksman"/>
+<Unit id="LMTV"/>
+<Unit id="M1Abrams"/>
+<Unit id="Sanies"/>
+<Unit id="FirstAidKit"/>
+<Unit id="40mmGrenadeItem"/>
+<Unit id="FlareGun"/>
+<Unit id="M2BradleyIFV"/>
+<Unit id="GroundFlareItem"/>
+<Unit id="EnergyCell"/>
+<Unit id="InfestedSilo"/>
+<Unit id="PoliceOfficerShotgun"/>
+<Unit id="VulcanMK88SentryGunItem"/>
+<Unit id="Flashlight"/>
+<Unit id="FarmerBlackma"/>
+<Unit id="HeroSelector"/>
+<Unit id="Magazines"/>
+<Unit id="AmmoCase"/>
+<Unit id="QuikClot"/>
+<Unit id="InfantryRifleman"/>
+<Unit id="BossRushSpawner"/>
+<Unit id="StandHereText"/>
+<Unit id="SentryText"/>
+<Unit id="Mayor"/>
+<Unit id="PoliceChief"/>
+<Unit id="InfantryShotgunner"/>
+<Unit id="Widower"/>
+<Unit id="Ares"/>
+<Unit id="Gargantuan"/>
+<Unit id="Gourmand"/>
+<Unit id="Immussilus"/>
+<Unit id="Minerva"/>
+<Unit id="Cicadis"/>
+<Unit id="Krill"/>
+<Unit id="T2Reaper"/>
+<Unit id="Baron"/>
+<Unit id="Metasis"/>
+<Unit id="Arachnathid"/>
+<Unit id="Cacumen"/>
+<Unit id="Cursed"/>
+<Unit id="SpittingSpider"/>
+<Unit id="Apiary"/>
+<User id="MOSSetup"/>
+<PlayerResponse id="CacumenBloodLust"/>
+<PlayerResponse id="PlayerHitStat"/>
+<PlayerResponse id="PMCDeath"/>
+</Preload>

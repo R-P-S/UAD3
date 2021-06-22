@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="ResourcePanel" name="GameUI/UIContainer/FullscreenUpperContainer/ResourcePanel" file="GameUI">
+      <Anchor side="Top" relative="$parent/$parent/ConsoleUIContainer/InventoryPanel" pos="Mid" offset="235" />
+      <Anchor side="Right" relative="$parent/$parent/ConsoleUIContainer/InventoryPanel" pos="Mid" offset="-115" />
+      <Frame type="ResourceFrame" name="ResourceFrame">
+         <Handle val="AmmoBar" />
+         <Visible val="True" />
+         <Frame type="Image" name="SupplyIcon">
+            <TooltipAnchorPosition val="TopRight" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="Image" name="ResourceIcon0">
+            <TooltipAnchorPosition val="TopRight" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="Image" name="ResourceIcon1">
+            <TooltipAnchorPosition val="TopRight" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="CountdownLabel" name="ResourceLabel0">
+            <Style val="0UI_LCD" />
+            <Handle val="FFF" />
+            <Anchor side="Top" relative="$parent/ResourceLabel1" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/ResourceIcon1" pos="Min" offset="-20"/>
+            <Animation name="ColorRed">
+               <Event event="Red" action="Reset,Play" />
+               <Controller type="Property" property="Style" end="Pause">
+                  <Key type="Property" time="0" value="0UI_LCD_RED" />
+               </Controller>
+            </Animation>
+            <Animation name="ColorBlue">
+               <Event event="Blue" action="Reset,Play" />
+               <Controller type="Property" property="Style" end="Pause">
+                  <Key type="Property" time="0" value="0UI_LCD" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="CountdownLabel" name="ResourceLabel1">
+            <Style val="0UI_LCD" />
+            <Handle val="TTT" />
+            <Animation name="ColorRed">
+               <Event event="Red" action="Reset,Play" />
+               <Controller type="Property" property="Style" end="Pause">
+                  <Key type="Property" time="0" value="0UI_LCD_RED" />
+               </Controller>
+            </Animation>
+            <Animation name="ColorBlue">
+               <Event event="Blue" action="Reset,Play" />
+               <Controller type="Property" property="Style" end="Pause">
+                  <Key type="Property" time="0" value="0UI_LCD" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!--
+         <Frame type="CountdownLabel" name="Magazines">
+            <Anchor relative="$parent/ResourceLabel1" />
+            <Style val="0UI_LCD" />
+            <Text val="{DataRefScore/@RealValue}" />
+            <Frame type="DataRefFrame" name="DataRefScore">
+               <Anchor relative="$parent"/>
+               <PlayerId val="0"/>
+               <Argument name="score" val="VespeneCurrent"/>
+            </Frame>
+            <StateGroup name="Visible">
+               <DefaultState val="Hidden" />
+               <State name="Hidden" />
+               <State name="NotHidden">
+                  <When type="Property" frame="$AmmoBar" Visible="True" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame> -->
+         <Frame type="CountdownLabel" name="SupplyLabel">
+            <Style val="0UI_LCD" />
+            <Color val="FFFFFF" />
+            <AcceptsMouse val="false" />
+            <Alpha val="0" />
+         </Frame>
+         <Frame type="CountdownLabel" name="ReloadLabel">
+            <Width val="95" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/SupplyLabel" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/SupplyLabel" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/SupplyLabel" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/SupplyLabel" pos="Mid" offset="-25" />
+            <Style val="0UI_LCD" />
+            <AcceptsMouse val="false" />
+            <Text val="4.00" />
+         </Frame>
+         <Frame type="Image" name="ResourceIconBorder0">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/ResourceIcon0" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ResourceIcon0" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/ResourceIcon0" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/ResourceIcon0" pos="Mid" offset="0" />
+            <AcceptsMouse val="false" />
+            <TextureType val="Normal" />
+            <CollapseLayout val="true" />
+            <RenderPriority val="521" />
+            <Texture val="Assets/Textures/btn-border-research.dds" />
+            <LayerColor val="##StandardButtonBorder" />
+         </Frame>
+         <Frame type="Image" name="ResourceIconBorder1">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/ResourceIcon1" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ResourceIcon1" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/ResourceIcon1" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/ResourceIcon1" pos="Mid" offset="0" />
+            <AcceptsMouse val="false" />
+            <TextureType val="Normal" />
+            <CollapseLayout val="true" />
+            <RenderPriority val="521" />
+            <Texture val="Assets/Textures/btn-border-research.dds" />
+            <LayerColor val="##StandardButtonBorder" />
+         </Frame>
+        <Frame type="Image" name="BlackMask">
+            <Anchor side="Top" relative="$parent/ResourceIconBorder0" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/ResourceIconBorder0" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/ResourceIconBorder0" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ResourceIconBorder0" pos="Mid" offset="0" />
+            <Width val="28" />
+            <Height val="28" />
+            <Color val="0,0,0" />
+            <RenderPriority val="519" />
+            <Visible val="False"/>
+         </Frame>
+         <Frame type="Image" name="ResourceIconBorder2">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/SupplyIcon" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/SupplyIcon" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/SupplyIcon" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/SupplyIcon" pos="Mid" offset="0" />
+            <AcceptsMouse val="false" />
+            <TextureType val="Normal" />
+            <CollapseLayout val="true" />
+            <RenderPriority val="521" />
+            <Texture val="Assets/Textures/btn-border-research.dds" />
+            <LayerColor val="##StandardButtonBorder" />
+         </Frame>
+         <Frame type="Image" name="Background">
+            <Width val="400" />
+            <Height val="41" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="355" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_ingame_resourcesharing_frame_message.dds" />
+            <TextureType val="HorizontalBorder" />
+            <Alpha val="95" />
+            <Visible val="false" />
+         </Frame>
+         <StateGroup name="ResourceIcons">
+            <DefaultState val="DefaultIcon" />
+            <State name="DefaultIcon" />
+            <State name="Flamethrower">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <Action type="SetProperty" frame="SupplyIcon" Texture="Assets\Buttons\Flamethrower_Reload.dds" />
+               <Action type="SetProperty" frame="ResourceIcon0" Texture="Assets\Buttons\Flamethrower_Fuel.dds" />
+               <Action type="SetProperty" frame="ResourceIcon0" Tooltip="@DOCSTR_FlamethrowerResource0" />
+               <Action type="SetProperty" frame="ResourceIcon1" Texture="Assets\Textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" />
+               <Action type="SetProperty" frame="ResourceIcon1" Tooltip="@DOCSTR_FlamethrowerResource1" />
+            </State>
+            <State name="Ghost">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <Action type="SetProperty" frame="SupplyIcon" Texture="Assets\Buttons\Plasma_Reload.dds" />
+               <Action type="SetProperty" frame="ResourceIcon0" Texture="Assets\Textures\icon-energy-nobg.dds" />
+               <Action type="SetProperty" frame="BlackMask" Visible="True" />
+               <Action type="SetProperty" frame="ResourceIcon0" Tooltip="@DOCSTR_PlasmaResource0" />
+               <Action type="SetProperty" frame="ResourceIcon1" Texture="Assets\Buttons\Plasma_Cells.dds" />
+               <Action type="SetProperty" frame="ResourceIcon1" Tooltip="@DOCSTR_PlasmaResource1" />
+            </State>
+         </StateGroup>
+      </Frame>
+   </Frame>
+</Desc>

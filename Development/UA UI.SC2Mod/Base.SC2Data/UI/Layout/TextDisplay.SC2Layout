@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Mission Text -->
+   <Frame type="GameMessageDisplay" name="GameUI/UIContainer/FullscreenUpperContainer/ObjectiveDisplay" file="GameUI">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="315" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <MessageArea val="Objective" />
+      <MaxMessages val="15" />
+      <MessageDuration val="15000" />
+      <FadeDuration val="5000" />
+      <TopToBottom val="false" />
+      <Style val="GameButtonCharge" />
+      <AcceptsMouse val="false" />
+      <Width val="750" />
+      <Height val="500" />
+   </Frame>
+   <!-- Error Text -->
+   <Frame type="GameMessageDisplay" name="GameUI/UIContainer/FullscreenUpperContainer/ErrorDisplay" file="GameUI">
+      <Anchor side="Top" relative="$parent/AlertPanel" pos="Max" offset="-100" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="10" />
+      <MessageArea val="Error" />
+      <MaxMessages val="4" />
+      <MessageDuration val="7000" />
+      <FadeDuration val="4000" />
+      <Style val="GameButtonCharge" />
+      <AcceptsMouse val="false" />
+      <Width val="550" />
+      <Height val="150" />
+      <Color val="255,0,0" />
+   </Frame>
+   <!-- Debug Text -->
+   <Frame type="GameMessageDisplay" name="GameUI/UIContainer/FullscreenUpperContainer/DebugDisplay" file="GameUI">
+      <Style val="GameButtonCharge" />
+      <Handle val="Debug" />
+   </Frame>
+   <!-- Directive Text -->
+   <Frame type="GameMessageDisplay" name="GameUI/UIContainer/FullscreenUpperContainer/DirectiveDisplay" file="GameUI">
+      <BatchText val="true" />
+      <MessageArea val="Directive" />
+      <MaxMessages val="128" />
+      <MessageDuration val="3800" />
+      <FadeDuration val="2500" />
+      <TopToBottom val="true" />
+      <Style val="GameButtonCharge" />
+      <AcceptsMouse val="false" />
+      <Anchor side="Top" relative="$parent" pos="Min" offset="750" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-1550" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="550" />
+      <Height val="250" />
+   </Frame>
+   <Frame type="WorldTooltip" name="WorldTooltip" file="WorldTooltip">
+      <Frame type="Label" name="TipLabel">
+         <Handle val="WorldTipLabel" />
+         <StateGroup name="AmmoType">
+            <DefaultState val="BasicAmmunition" />
+            <!-- Flamethrower -->
+            <State name="FuelTanks[1]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Tanks [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelTanks[2]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Tanks [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelTanks[3]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Tanks [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="EmptyFuelCrate">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Empty Ammo Case&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Empty Fuel Crate&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[1]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[2]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[3]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[4]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [4]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [4]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[5]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [5]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [5]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[6]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [6]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [6]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[7]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [7]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [7]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[8]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [8]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [8]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[9]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [9]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [9]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <State name="FuelCrate[10]">
+               <When type="Property" frame="$UnitIndexLabel" Text="1" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [10]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Fuel Crate [10]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+            </State>
+            <!-- Plasma Weapon Users "Index '2' " -->
+            <State name="PlasmaCells[1]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Cell [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="23"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="2"/>
+            </State>
+            <State name="PlasmaCells[2]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Cell [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="22"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="2"/>
+            </State>
+            <State name="PlasmaCells[3]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Magazines [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Cell [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="23"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="2"/>
+            </State>
+            <State name="EmptyPlasmaPack">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Empty Ammo Case&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Empty Plasma Crate&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="17"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="8"/>
+            </State>
+            <State name="PlasmaPack[1]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [1]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[2]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [2]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[3]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [3]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[4]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [4]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [4]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[5]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [5]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [5]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[6]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [6]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [6]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="6"/>
+            </State>
+            <State name="PlasmaPack[7]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [7]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [7]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="7"/>
+            </State>
+            <State name="PlasmaPack[8]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [8]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [8]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="7"/>
+            </State>
+            <State name="PlasmaPack[9]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [9]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [9]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="19"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="7"/>
+            </State>
+            <State name="PlasmaPack[10]">
+               <When type="Property" frame="$UnitIndexLabel" Text="2" />
+               <When type="Property" frame="$this" Text="&lt;s val=&quot;Item_Header&quot;&gt;Ammo Case [10]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Text="&lt;s val=&quot;Item_Header&quot;&gt;Plasma Crate [10]&lt;/s&gt;" />
+               <Action type="SetProperty" frame="$this" Alpha="0" />
+               <Action type="SetProperty" frame="$WorldTipLabel2" Alpha="255" />
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Left" relative="$parent" pos="Min" offset="18"/>
+               <Action type="SetAnchor" frame="$WorldTipLabel2" side="Right" relative="$parent" pos="Max" offset="7"/>
+            </State>
+            <State name="BasicAmmunition" />
+         </StateGroup>
+      </Frame>
+      <Frame type="Label" name="TipLabel2">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="12" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="{$WorldTipLabel/@Height}" />
+         <Width val="{$WorldTipLabel/@Width}" />
+         <Handle val="WorldTipLabel2" />
+         <Alpha val="0" />
+         <Text val="" /> 
+      </Frame>
+      <Frame type="Image" name="BackgroundImage">
+         <Visible val="false" />
+         <Alpha val="0" />
+      </Frame>
+   </Frame>
+</Desc>

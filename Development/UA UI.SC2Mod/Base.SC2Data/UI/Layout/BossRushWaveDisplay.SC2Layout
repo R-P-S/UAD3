@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <!-- Display the current wave out of max -->
+      <Frame type="Frame" name="BossRushWaveDisplayFrame">
+         <Width val="500" />
+         <Height val="75" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-250" />
+         <Visible val="False" />
+         <Handle val="BRWDFrame" />
+         <Frame type="Label" name="WaveText">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="55" />
+            <Width val="500" />
+            <Text val="" />
+            <Style val="BattlenetTopNav" />
+            <WriteOutText val="True" />
+            <WriteOutTextDuration val="2000" />
+            <Color val="FFFFFF" />
+            <Visible val="True" />
+            <StateGroup name="WaveState">
+               <DefaultState val="NotComplete"/>
+               <State name="WaveOneComplete">
+                  <When type="Property" Text="Wave: 1 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveTwoComplete">
+                  <When type="Property" Text="Wave: 2 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveThreeComplete">
+                  <When type="Property" Text="Wave: 3 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveFourComplete">
+                  <When type="Property" Text="Wave: 4 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveFiveComplete">
+                  <When type="Property" Text="Wave: 5 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveSixComplete">
+                  <When type="Property" Text="Wave: 6 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveSevenComplete">
+                  <When type="Property" Text="Wave: 7 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveEightComplete">
+                  <When type="Property" Text="Wave: 8 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveNineComplete">
+                  <When type="Property" Text="Wave: 9 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="WaveTenComplete">
+                  <When type="Property" Text="Wave: 10 Completed" />
+                  <Action type="SetProperty" Color="0,255,148" />
+               </State>
+               <State name="NotComplete"/>
+            </StateGroup>
+         </Frame>
+         <!-- Will display/hide for all players based when calling generic event -->
+         <StateGroup name="BRWDDisplayState">
+            <State name="Show">
+               <When type="AnimationState" Display="Show" />
+               <Action type="SetProperty" Visible="True" />
+            </State>
+            <State name="Hide">
+               <When type="AnimationState" Display="Hide" />
+               <Action type="SetProperty" Visible="False" />
+            </State>
+         </StateGroup>
+         <StateGroup name="HUDVisible">
+            <DefaultState val="NotVisible" />
+            <State name="Visible">
+               <When type="Property" frame="$HUD" Visible="True" />
+               <Action type="SetProperty" Alpha="0" />
+            </State>
+            <State name="NotVisible" />
+         </StateGroup>
+      </Frame>
+   </Frame>
+</Desc>

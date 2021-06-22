@@ -1,0 +1,13 @@
+void DeprecatedScript() {
+    //Liberty Natives
+    TriggerDestroy(libLbty_gt_PingUsed);
+    TriggerDestroy(libLbty_gt_PingResetTimerExprires);
+    TriggerDestroy(libLbty_gt_PingPanelAutoDisable);
+    TriggerDestroy(libLbty_gt_MeleeSurrender_Surrender);
+    TriggerDestroy(libLbty_gt_MeleeSurrender_SurrenderClickedButton);
+    TriggerDestroy(libLbty_gt_MeleeSurrender_FlashDialog);
+    TriggerDestroy(libLbty_gt_StarCraftEvents);
+    TriggerDestroy(libLbty_gt_TransportController);
+    TriggerDestroy(libLbty_gt_AutoRevealRegionController);
+    TriggerDestroy(libNtve_gt_ScreenButtonClicked);
+}

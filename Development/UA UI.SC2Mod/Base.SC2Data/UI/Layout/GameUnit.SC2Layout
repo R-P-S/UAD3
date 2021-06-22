@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="UnitStatusFrame" name="UnitStatusBarGameTemplate">
+      <Height val="30" />
+      <Width val="288" />
+      <Frame type="UnitStatusHealthBar" name="HealthBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="-18" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-147" />
+         <Height val="38" />
+         <Width val="294" />
+         <BackgroundShown val="true" />
+         <BackgroundColor val="50,50,50" />
+         <BarInsetRect top="2" left="1" bottom="1" right="1" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <BorderWidth val="1" />
+         <RenderType val="HDR" />
+         <Segmented val="false" />
+         <SnapToDevicePixels val="True" />
+         <Texture val="@UI/LotV_Shared_InGame_BossBarFill" />
+         <BarCount val="1" />
+         <OwnerColor val="41,208,0" />
+         <AllyColor val="41,208,0" />
+         <EnemyColor val="41,208,0" />
+         <ReductionColor val="255,0,0" />
+         <ReductionShown val="True" />
+         <IncreaseDuration val="3000" />
+         <DecreaseDuration val="3000" />
+      </Frame>
+      <Frame type="UnitStatusShieldsBar" name="ShieldsBarTemplate">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="-18" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-147" />
+         <Height val="38" />
+         <Width val="294" />
+         <BackgroundShown val="false" />
+         <BarInsetRect top="1" left="1" bottom="1" right="1" />
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1" />
+         <RenderType val="HDR" />
+         <RenderPriority val="513" />
+         <Segmented val="false" />
+         <SnapToDevicePixels val="True" />
+         <Texture val="@UI/LotV_Shared_InGame_BossBarFill" />
+         <BarCount val="1" />
+         <OwnerColor val="192,192,192" />
+         <AllyColor val="192,192,192" />
+         <EnemyColor val="192,192,192" />
+         <ReductionColor val="128,128,155" />
+         <ReductionShown val="true" />
+         <IncreaseDuration val="3000" />
+         <DecreaseDuration val="3000" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="UnitBarTitle">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="55" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Width val="316" />
+         <Height val="60" />
+         <Handle val="UnitBarTitle" />
+         <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Text val="Convoy" />
+            <Color val="0,255,168" />
+            <StateGroup name="T1Boss">
+               <DefaultState val="NotT1"/>
+               <State name="Widower">
+                  <When type="Property" frame="$this" Text="Widower" />
+                  <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" ColorAdjustMode="Colorize" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" AdjustmentColor="255,0,0" />
+               </State>
+               <State name="Darreus">
+                  <When type="Property" frame="$this" Text="Darreus" />
+                  <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" ColorAdjustMode="Colorize" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" AdjustmentColor="255,0,0" />
+               </State>
+               <State name="Cacumen">
+                  <When type="Property" frame="$this" Text="Cacumen" />
+                  <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" ColorAdjustMode="Colorize" />
+                  <Action type="SetProperty" frame="$GameUnitBar/HealthBarBorder" AdjustmentColor="255,0,0" />
+               </State>
+               <State name="NotT1" />
+            </StateGroup>
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="UnitBar">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="90" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Width val="316" />
+         <Height val="60" />
+         <Handle val="GameUnitBar" />
+         <Frame type="Image" name="HealthBarBorder">
+            <Anchor relative="$parent" />
+            <Texture val="@UI/LotV_Shared_InGame_ObjectiveBarFrameFlash" />
+            <RenderPriority val="510" />
+            <AcceptsMouse val="True" />
+         </Frame>
+         <Frame type="UnitStatusFrame" name="UnitStatusBar" template="GameUnit/UnitStatusBarGameTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <RenderPriority val="509" />
+            <Width val="316" />
+            <Height val="60" />
+            <Frame type="UnitStatusShieldsBar" name="UnitShieldsBar" template="GameUnit/UnitStatusBarGameTemplate/ShieldsBarTemplate" />
+            <Frame type="UnitStatusHealthBar" name="UnitHealthBar" template="GameUnit/UnitStatusBarGameTemplate/HealthBarTemplate" />
+         </Frame>
+         <Frame type="UnitFrame" name="UnitStats">
+            <UnitTag val="{$parent/UnitStatusBar/@UnitTag}" />
+            <Handle val="GameUnitFrame" />
+         </Frame>
+         <Frame type="Label" name="HealthPercent">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="{$parent/FormattedHealthText/@Text}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <Visible val="False" />
+            <Handle val="HealthPercent" />
+            <StateGroup name="Danger">
+               <State name="HighHealth">
+                  <When type="Property" Text="100%" />
+                  <Action type="SetProperty" Color="255,255,255" />
+                  <Action type="SetProperty" Frame="$parent" Visible="True" />
+               </State>
+               <State name="LowHealth25">
+                  <When type="Property" Text="25%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth24">
+                  <When type="Property" Text="24%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth23">
+                  <When type="Property" Text="23%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth22">
+                  <When type="Property" Text="22%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth21">
+                  <When type="Property" Text="21%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth20">
+                  <When type="Property" Text="20%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth19">
+                  <When type="Property" Text="19%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth18">
+                  <When type="Property" Text="18%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth17">
+                  <When type="Property" Text="17%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth16">
+                  <When type="Property" Text="16%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth15">
+                  <When type="Property" Text="15%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth14">
+                  <When type="Property" Text="14%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth13">
+                  <When type="Property" Text="13%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth12">
+                  <When type="Property" Text="12%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth11">
+                  <When type="Property" Text="11%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth10">
+                  <When type="Property" Text="10%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth9">
+                  <When type="Property" Text="9%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth8">
+                  <When type="Property" Text="8%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth7">
+                  <When type="Property" Text="7%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth6">
+                  <When type="Property" Text="6%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth5">
+                  <When type="Property" Text="5%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth4">
+                  <When type="Property" Text="4%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth3">
+                  <When type="Property" Text="3%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth2">
+                  <When type="Property" Text="2%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth1">
+                  <When type="Property" Text="1%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+               </State>
+               <State name="LowHealth0">
+                  <When type="Property" Text="0%" />
+                  <Action type="SetProperty" Color="255,0,0" />
+                  <Action type="SetProperty" Frame="$parent" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="ShieldPercent">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="{$parent/FormattedShieldsText/@Text}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <Visible val="False" />
+            <StateGroup name="VisibleState">
+               <State name="HighHealth">
+                  <When type="Property" operator="GreaterThan" Text="0%" />
+                  <Action type="SetProperty" Visible="True" />
+               </State>
+               <State name="LowHealth0">
+                  <When type="Property" Text="0%" />
+                  <Action type="SetProperty" Visible="False" />
+                  <Action type="SetProperty" Frame="$parent/UnitStatusBar/UnitShieldsBar" Visible="False" />
+                  <Action type="SetProperty" Frame="$HealthPercent" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Health -->
+         <Frame type="TextFormatFrame" name="FormattedHealthText">
+            <Anchor relative="$parent" />
+            <FormatText val="%0%%" />
+            <Replacement index="0" val="{$parent/MathHealthResult/@Text}" />
+         </Frame>
+         <Frame type="Label" name="MathHealthResult">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="{$parent/MathB/@ResultRound}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <Visible val="False" />
+         </Frame>
+         <Frame type="MathFrame" name="MathA">
+            <Anchor relative="$parent" />
+            <A val="{$parent/UnitStats/@CurrentHealth}" />
+            <B val="{$parent/UnitStats/@MaxHealth}" />
+            <Operator val="Divide" />
+         </Frame>
+         <Frame type="MathFrame" name="MathB">
+            <Anchor relative="$parent" />
+            <A val="{$parent/MathA/@Result}" />
+            <B val="100" />
+            <Operator val="Multiply" />
+         </Frame>
+         <!-- Shields -->
+         <Frame type="TextFormatFrame" name="FormattedShieldsText">
+            <Anchor relative="$parent" />
+            <FormatText val="%0%%" />
+            <Replacement index="0" val="{$parent/MathShieldsResult/@Text}" />
+         </Frame>
+         <Frame type="Label" name="MathShieldsResult">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="{$parent/MathD/@ResultRound}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <Visible val="False" />
+         </Frame>
+         <Frame type="MathFrame" name="MathC">
+            <Anchor relative="$parent" />
+            <A val="{$parent/UnitStats/@CurrentShields}" />
+            <B val="{$parent/UnitStats/@MaxShields}" />
+            <Operator val="Divide" />
+         </Frame>
+         <Frame type="MathFrame" name="MathD">
+            <Anchor relative="$parent" />
+            <A val="{$parent/MathC/@Result}" />
+            <B val="100" />
+            <Operator val="Multiply" />
+         </Frame>
+         <Animation name="BossBarVisibility">
+            <Event event="Hide" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation>
+         <StateGroup name="TitleState">
+            <DefaultState val="Hidden" />
+            <State name="Visible">
+               <When type="Property" Visible="True" />
+               <Action type="SetProperty" frame="$UnitBarTitle" Visible="True" />
+            </State>
+            <State name="Hidden">
+               <When type="Property" Visible="False" />
+               <Action type="SetProperty" frame="$UnitBarTitle" Visible="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+   </Frame>
+</Desc>

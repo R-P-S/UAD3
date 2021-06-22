@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="CombatEngineer" parent="UnitTemplate">
+        <Description value="Button/Tooltip/12BCombatEngineer"/>
+        <EnergyStart value="300"/>
+        <EnergyMax value="300"/>
+        <Speed value="2.8515"/>
+        <AbilArray index="10" Link="Riflebutt"/>
+        <AbilArray index="11" Link="TeamLocation"/>
+        <AbilArray Link="HeroInventoryShotgunNew"/>
+        <AbilArray Link="CombatEngineerResearch"/>
+        <AbilArray Link="CombatEngineerSkillUpgrades"/>
+        <AbilArray Link="ConstructMK17SentryGun"/>
+        <AbilArray Link="ConstructMK18SentryGun"/>
+        <AbilArray Link="ConstructMK19SentryGun"/>
+        <AbilArray Link="ConstructAttackDrone"/>
+        <AbilArray Link="ConstructDisruptorDrone"/>
+        <AbilArray Link="ConstructRepairDrone"/>
+        <AbilArray Link="ConstructBattleBot"/>
+        <AbilArray Link="RepairCE"/>
+        <AbilArray Link="DisarmCE"/>
+        <AbilArray Link="ArcCell"/>
+        <AbilArray Link="ArcCellLevel0"/>
+        <AbilArray Link="ConstructEnergyGenerator"/>
+        <BehaviorArray index="0" Link="NewMechanical"/>
+        <BehaviorArray index="1" Link="NewFitness"/>
+        <BehaviorArray index="2" Link="NewDexterity"/>
+        <BehaviorArray index="3" Link="1Mechanical"/>
+        <BehaviorArray index="4" Link="HeroLevelsMFD"/>
+        <BehaviorArray index="5" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Create" value="CombatEngineerScrapSet"/>
+        <EffectArray index="Birth" value="CombatEngineerSpawnSet"/>
+        <EffectArray index="Revive" value="CombatEngineerSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="5" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons index="8" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+            <LayoutButtons>
+                <Face value="ConstructSentryGun"/>
+                <Type value="Submenu"/>
+                <Requirements value="Security1Use"/>
+                <SubmenuCardId value="0006"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="ConstructDrone"/>
+                <Type value="Submenu"/>
+                <Requirements value="Security1Use"/>
+                <SubmenuCardId value="0007"/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons Face="RepairCE" Type="AbilCmd" AbilCmd="RepairCE,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="ConstructBattleBot" Type="AbilCmd" AbilCmd="ConstructBattleBot,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="ScrapParts" Type="Passive" AbilCmd="ScrapParts,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="ArcCell" Type="AbilCmd" AbilCmd="ArcCell,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="ArcCell" Type="AbilCmd" AbilCmd="ArcCellLevel0,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="ConstructEnergyGenerator" Type="AbilCmd" AbilCmd="ConstructEnergyGenerator,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="Architect" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="Architect" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="Architect" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="Architect" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="Security" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="Security" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="Security" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="Security" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="BattleBot" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="BattleBot" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="BattleBot" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="BattleBot" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="EngineeringSkills" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="EngineeringSkills" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="EngineeringSkills" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research21" Row="0" Column="4"/>
+            <LayoutButtons Face="EngineeringSkills" Type="AbilCmd" AbilCmd="CombatEngineerResearch,Research20" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Disarm" Type="AbilCmd" AbilCmd="DisarmCE,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="ArchitectDurableFrame" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="ConstructSentryGunRapidDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="ConstructDroneRapidDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research9" Row="0" Column="2"/>
+            <LayoutButtons Face="ConstructBattleBotRapidDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research11" Row="0" Column="3"/>
+            <LayoutButtons Face="ArchitectReusableMaterials" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research6" Row="1" Column="0"/>
+            <LayoutButtons Face="ConstructSentryGunSafeDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research8" Row="1" Column="1"/>
+            <LayoutButtons Face="ConstructDroneSafeDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research10" Row="1" Column="2"/>
+            <LayoutButtons Face="ConstructBattleBotSafeDeployment" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research12" Row="1" Column="3"/>
+            <LayoutButtons Face="CapacitorMaximumCapacity" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="CapacitorLightweightModule" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research4" Row="2" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="PreviousPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="ArcCellSignalBoost" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research13" Row="0" Column="0"/>
+            <LayoutButtons Face="RepairEnergyEfficient" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research15" Row="0" Column="1"/>
+            <LayoutButtons Face="EnergyGeneratorSignalBoost" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research17" Row="0" Column="2"/>
+            <LayoutButtons Face="ArcCellOvercharge" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research14" Row="1" Column="0"/>
+            <LayoutButtons Face="RepairQuickFix" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research16" Row="1" Column="1"/>
+            <LayoutButtons Face="EnergyGeneratorSignalReinforce" Type="AbilCmd" AbilCmd="CombatEngineerSkillUpgrades,Research18" Row="1" Column="2"/>
+        </CardLayouts>
+        <CardLayouts CardId="0006">
+            <LayoutButtons Face="ConstructMK17SentryGun" Type="AbilCmd" AbilCmd="ConstructMK17SentryGun,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="ConstructMK18SentryGun" Type="AbilCmd" AbilCmd="ConstructMK18SentryGun,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="ConstructMK19SentryGun" Type="AbilCmd" AbilCmd="ConstructMK19SentryGun,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0007">
+            <LayoutButtons Face="ConstructAttackDrone" Type="AbilCmd" AbilCmd="ConstructAttackDrone,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="ConstructDisruptorDrone" Type="AbilCmd" AbilCmd="ConstructDisruptorDrone,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="ConstructRepairDrone" Type="AbilCmd" AbilCmd="ConstructRepairDrone,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

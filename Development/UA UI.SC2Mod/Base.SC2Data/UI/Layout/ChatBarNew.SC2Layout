@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="ChatBar" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="ChatBar" name="ChatBar">
+         <Anchor side="Top" relative="$parent/TriggerContainer/ChatBarDragButton" pos="Min" offset="-18" />
+         <Anchor side="Left" relative="$parent/TriggerContainer/ChatBarDragButton" pos="Max" offset="1" />
+         <!-- Reset Anchors -->
+         <Anchor side="Bottom" relative="$this" pos="Min" offset="30"/>
+         <Anchor side="Right" relative="$this" pos="Min" offset="0"/>                    
+         <Width val="600"/>
+         <Height val="105"/>
+         <Handle val="ChatBar" />     
+         <RenderPriority val="1000" />
+         <Frame type="Image" name="BackgroundImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Height val="60" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" Layer="0" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="BackgroundImage2">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Height val="60" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" Layer="0" />
+            <Color val="0,255,148" />
+            <RenderPriority val="480" />
+         </Frame>
+         <Frame type="Image" name="RecipientImage">
+            <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="13" />
+            <Anchor side="Left" relative="$parent/EmojiBorderLine" pos="Max" offset="8" />
+            <Width val="32" />
+            <Height val="32" />
+            <TextureType val="Normal" layer="0" />
+            <AcceptsMouse val="true" />
+         </Frame>
+         <Frame type="Image" name="EmojiBorderLine">
+            <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="14" />
+            <Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="58" />
+            <Width val="2" />
+            <Height val="32" />
+            <Texture val="@UI/ChatEmojiBorder" />
+            <ColorAdjustMode val="Colorize" />
+            <AdjustmentColor val="##ChatDividerColor" />
+            <StateGroup name="FadeStates">
+               <DefaultState val="Unfocused" />
+               <State name="Unfocused">
+                  <When type="Property" frame="$parent/ChatEditBox" Focused="false" />
+                  <Action type="SetProperty" frame="$this" Alpha="64" />
+               </State>
+               <State name="Focused">
+                  <When type="Property" frame="$parent/ChatEditBox" Focused="true" />
+                  <Action type="SetProperty" frame="$this" Alpha="255" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="RecipientLabel">
+            <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="9" />
+            <Anchor side="Left" relative="$parent/RecipientImage" pos="Max" offset="5" />
+            <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="-10" />
+            <Color val="0,255,196" />
+         </Frame>
+         <Frame type="Label" name="HelpLabel">
+            <Anchor side="Top" relative="$parent/BackgroundImage" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="10" />
+            <Style val="@@ChatCycle" />
+         </Frame>
+         <Frame type="EditBox" name="ChatEditBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="10" />
+            <Anchor side="Left" relative="$parent/RecipientLabel" pos="Max" offset="-5" />
+            <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="-8" />
+            <Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="-24" />
+            <HighlightOnGainFocus val="false" />
+            <CaretColor val="0,255,0" />
+            <Frame type="Label" name="LabelContainerFrame">
+               <Frame type="Label" name="Label">
+                  <Style val="ChatBar" />
+                  <Color val="255,255,255" />
+               </Frame>
+            </Frame>
+         </Frame>
+         <Frame type="Image" name="IconEmoji">
+            <Anchor side="Top" relative="$parent/RecipientImage" pos="Min" offset="1" />
+            <Anchor side="Right" relative="$parent/EmojiBorderLine" pos="Min" offset="-6" />
+            <Width val="32" />
+            <Height val="32" />
+            <RenderPriority val="600" />
+            <Texture val="@@@UI/ChatEmojiIcon" />
+            <StateGroup name="DesaturationStates">
+               <DefaultState val="Unfocused" />
+               <State name="Unfocused">
+                  <When type="Property" frame="$parent/ChatEditBox" Focused="False" />
+                  <Action type="SetProperty" frame="$this" Desaturated="True" />
+               </State>
+               <State name="Focused">
+                  <When type="Property" frame="$parent/ChatEditBox" Focused="True" />
+                  <Action type="SetProperty" frame="$this" Desaturated="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Button" name="EmoticonButton">
+            <Alpha val="0" />
+         </Frame>
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+         <!-- Fixes Height Issue When Dragging -->
+         <StateGroup name="UpdateAnchor">
+            <State name="Dragging">
+               <When type="Property" frame="$parent/TriggerContainer/ChatBarDragButton" Dragging="True"/>
+               <Action type="SetAnchor" frame="$this" side="Bottom" relative="$this" pos="Max" offset="0"/>
+            </State>
+            <State name="NotDragging">
+               <When type="Property" frame="$parent/TriggerContainer/ChatBarDragButton" Dragging="False"/>
+               <Action type="SetAnchor" frame="$this" side="Bottom" relative="$this" pos="Max" offset="0"/>
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="GameMessageDisplay" name="ChatDisplay">
+          <Anchor side="Bottom" relative="$parent/ChatBar" pos="Min" offset="-10" />
+          <Anchor side="Left" relative="$parent/ChatBar" pos="Min" offset="365" />
+          <Anchor side="Right" relative="$parent/ChatBar" pos="Max" offset="0" />
+          <Height val="310" />
+          <RenderPriority val="850" />
+          <Style val="ChatDisplay" />
+          <LabelsWithHyperlinksAcceptMouseTarget val="True" />
+          <HideClippedMessages val="True" />
+          <MessageArea val="Chat" />
+          <Handle val="ChatArea" />
+          <MaxMessages val="7" />
+      </Frame>
+      <Frame type="Frame" name="TriggerContainer">
+         <Anchor relative="$parent"/>
+         <Frame type="Frame" name="ChatBarAnchorFrame">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="844" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-330" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-330" />
+            <Width val="24" />
+            <Height val="24" />
+            <Visible val="False" />
+            <StateGroup name="DragState">
+               <DefaultState val="Disabled" />
+               <State name="Disabled">
+                  <When type="AnimationState" frame="$this" Drag="Disabled"/>
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" Draggable="False" />
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" AcceptsMouse="False" />
+               </State>
+               <State name="Enabled">
+                  <When type="AnimationState" frame="$this" Drag="Enabled"/>
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" Draggable="True" />
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/ChatBarDragButton" AcceptsMouse="True" />    
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Control" name="ChatBarDragButton">
+            <Anchor side="Top" relative="$parent/ChatBarAnchorFrame" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/ChatBarAnchorFrame" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/ChatBarAnchorFrame" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ChatBarAnchorFrame" pos="Mid" offset="0" />
+            <Width val="24" />
+            <Height val="24" />
+            <Draggable val="False" />
+            <AcceptsMouse val="True" />
+            <DragHoverCursor val="GripOpen_Terr" />
+            <DragCursor val="GripClosed_Terr" />
+            <DragConstraintFrame val="$parent" />
+            <Visible val="False" />
+            <Alpha val="0" />
+            <Handle val="ChatBarDragButton" />
+            <Frame type="Image" name="ChatBarDragButton">
+               <Anchor relative="$parent" />
+               <Texture val="Assets/Textures/cursor-dragframe-nova.dds" />
+            </Frame>
+            <StateGroup name="ShowButton">
+               <DefaultState val="Hidden" />
+               <State name="Show">
+                  <When type="Property" frame="$parent/$parent/ChatBar" Visible="True" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+                  <Action type="SetProperty" frame="$this" RenderPriority="1200" />
+               </State>
+               <State name="Hidden" />
+            </StateGroup>
+            <StateGroup name="FocusedState">
+               <DefaultState val="FocusDisabled" />
+               <State name="Unfocused">
+                  <When type="Property" frame="$parent/$parent/ChatBar/ChatEditBox" Focused="False" />
+                  <When type="StateGroup" frame="$parent/ChatBarAnchorFrame" DragState="Enabled"/>
+                  <Action type="SetProperty" frame="$this" Alpha="100" />
+               </State>
+               <State name="Focused">
+                  <When type="Property" frame="$parent/$parent/ChatBar/ChatEditBox" Focused="True" />
+                  <When type="StateGroup" frame="$parent/ChatBarAnchorFrame" DragState="Enabled"/>
+                  <Action type="SetProperty" frame="$this" Alpha="255" />
+               </State>
+               <State name="FocusDisabled" >
+                  <When type="StateGroup" frame="$parent/ChatBarAnchorFrame" DragState="Disabled"/>
+               </State>
+            </StateGroup>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

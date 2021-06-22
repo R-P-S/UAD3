@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Includes>
+    <Catalog path="GameData/AlliedCommanders/AC-PsiOrb.xml"/>
+    <Catalog path="GameData/Classes/C-Working.xml"/>
+    <Catalog path="GameData/Left2Die/L2D-Choker.xml"/>
+    <Catalog path="GameData/Left2Die/L2D-DKaboomer.xml"/>
+    <Catalog path="GameData/Left2Die/L2D-Hunterling.xml"/>
+    <Catalog path="GameData/Left2Die/L2D-Portrait_Light.xml"/>
+    <Catalog path="GameData/Left2Die/L2D-Spotter.xml"/>
+    <Catalog path="GameData/Items/I-Weapons.xml"/>
+    <Catalog path="GameData/Items/I-Armor.xml"/>
+    <Catalog path="GameData/MOS/M-AutomaticRifleman.xml"/>
+    <Catalog path="GameData/MOS/M-CavalryScout.xml"/>
+    <Catalog path="GameData/MOS/M-CombatEngineer.xml"/>
+    <Catalog path="GameData/MOS/M-CombatMedic.xml"/>
+    <Catalog path="GameData/MOS/M-Cyborg.xml"/>
+    <Catalog path="GameData/MOS/M-Flamethrower.xml"/>
+    <Catalog path="GameData/MOS/M-Ghost.xml"/>
+    <Catalog path="GameData/MOS/M-JavelinGunner.xml"/>
+    <Catalog path="GameData/MOS/M-PlatoonLeader.xml"/>
+    <Catalog path="GameData/MOS/M-Rifleman.xml"/>
+    <Catalog path="GameData/MOS/M-SFAAT.xml"/>
+    <Catalog path="GameData/MOS/M-SquadDesignatedMarksman.xml"/>
+    <Catalog path="GameData/Enemies/E-T3Units.xml"/>
+    <Catalog path="GameData/Enemies/E-T2Units.xml"/>
+    <Catalog path="GameData/Enemies/E-T1Units.xml"/>
+    <Catalog path="Regions.xml"/>
+</Includes>

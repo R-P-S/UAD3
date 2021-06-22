@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CEffectDamage id="BioDischargeDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="10"/>
+        <Death value="Disintegrate"/>
+        <AttributeBonus index="Structure" value="10"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <Visibility value="Visible"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="BioDischargeLaunchMissile">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="BioDischargeDamage"/>
+        <AmmoUnit value="BioDischargeMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="SpawnPuddleOnDeathPuddlePersistent">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="SourcePoint"/>
+        <PeriodCount value="32"/>
+        <PeriodicEffectArray value="SpawnPuddleOnDeathSearchArea"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="SpawnPuddleOnDeathRemoveBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="SpawnPuddleOnDeath"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="SpawnPuddleOnDeathSearchArea">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="SourcePoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.2" Effect="SpewApplyDebuff"/>
+    </CEffectEnumArea>
+    <CEffectSet id="SpawnPuddleOnDeathSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnPuddleOnDeathRemoveBehavior"/>
+        <EffectArray value="SpawnPuddleOnDeathSlimeDropPersistent"/>
+        <EffectArray value="SpawnPuddleOnDeathPuddlePersistent"/>
+        <EffectArray value="Suicide"/>
+    </CEffectSet>
+    <CEffectDamage id="SpawnPuddleOnDeathSlimeDropDummy">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="SpawnPuddleOnDeathSlimeDropPersistent">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="SourcePoint"/>
+        <PeriodCount value="9"/>
+        <PeriodicEffectArray value="SpawnPuddleOnDeathSlimeDropDummy"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="1.5,0,0"/>
+        <PeriodicOffsetArray value="0,1.5,0"/>
+        <PeriodicOffsetArray value="-1.5,0,0"/>
+        <PeriodicOffsetArray value="0,-1.5,0"/>
+        <PeriodicOffsetArray value="1,1,0"/>
+        <PeriodicOffsetArray value="-1,1,0"/>
+        <PeriodicOffsetArray value="-1,-1,0"/>
+        <PeriodicOffsetArray value="1,-1,0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ToxicGoopSearchArea">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.2" Effect="SpewApplyDebuff"/>
+    </CEffectEnumArea>
+    <!--                                                                                         -->
+    <!-- Spotter ............................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Spotter" parent="GenericUnitBase" unitName="Spotter">
+        <DeathArray index="Normal" ModelLink="SpotterDeath" SoundLink="Overseer_Death"/>
+        <PortraitModel value="SpotterPortrait"/>
+        <BarOffset value="70"/>
+        <NameOffset value="70"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-overseer.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-spotter.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-spotter.dds"/>
+        </Wireframe>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level0.dds"/>
+        <On Terms="ActorCreation" Send="TimerSet 5.000000 Ambience"/>
+        <On Terms="TimerExpired; TimerName Ambience; PassChance 50.000000" Send="Create Left2Die_Spotter_Ambience"/>
+        <On Terms="TimerExpired; TimerName Ambience" Send="TimerSet 5.000000 Ambience"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <BarWidth value="90"/>
+    </CActorUnit>
+    <CActorSound id="Left2Die_Spotter_Ambience" parent="SoundOneShot"/>
+    <CWeaponLegacy id="BioDischarge">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level0.dds"/>
+        <DisplayEffect value="BioDischargeDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.5246"/>
+        <DamagePoint value="0"/>
+        <AllowedMovement value="Slowing"/>
+        <Effect value="BioDischargeLaunchMissile"/>
+        <Range value="4"/>
+    </CWeaponLegacy>
+    <CModel id="BioDischargeMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\SpotterMissile\SpotterMissile.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="Spotter" parent="Unit" Race="Zerg">
+        <Occlusion value="Show"/>
+        <Radius value="0.900000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraLow08"/>
+        <UnitGlossaryCamera value="Star2CameraLow08"/>
+        <PlanetPanelCamera value="Star2CameraLow08"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.700000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.050000"/>
+    </CModel>
+    <CModel id="SpotterDeath" parent="UnitDeath" Race="Zerg">
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ZergExplosionTiny"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ZergExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.166600"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ZergExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.833300"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="ZergExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="ZergExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.833300"/>
+        </Events>
+        <LowQualityModel value="ZergLargeUnitDeathLow"/>
+    </CModel>
+    <CModel id="SpotterPortrait" parent="Portrait" Race="Zerg">
+        <Lighting value="OverseerPortrait"/>
+    </CModel>
+    <CModel id="ToxicGoopSpill" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\SpotterDripLaunch\SpotterDripLaunch.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CMoverMissile id="BioDischargeMissile">
+        <HeightMap value="Air"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="12"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+        <MotionPhases YawPitchRoll="MAX"/>
+    </CMoverMissile>
+    <CSound id="Left2Die_Spotter_Ambience">
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="4"/>
+        <Category value="UI"/>
+    </CSound>
+    <CSound id="BioDischargeLaunch" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged5.wav"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-13.980000,-12.040000"/>
+    </CSound>
+    <CSound id="BioDischargeImpact" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged5.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged6.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged7.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged8.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged9.wav"/>
+        <Volume value="-13.980000,-12.040000"/>
+    </CSound>
+    <CUnit id="Spotter">
+        <DeathRevealRadius value="3"/>
+        <Facing value="45"/>
+        <Race value="Zerg"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergAirArmor"/>
+        <Mover value="Fly"/>
+        <Speed value="1.875"/>
+        <Acceleration value="2.125"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="12"/>
+        <Height value="3.75"/>
+        <VisionHeight value="4"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="Corruption"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="Detector11"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="CorruptionAbility" Type="AbilCmd" AbilCmd="Corruption,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="11"/>
+        <MinimapRadius value="1.5"/>
+        <AIEvalFactor value="0"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="120"/>
+        <WeaponArray Link="BioDischarge"/>
+    </CUnit>
+    <CUnit id="BioDischargeMissile" parent="MISSILE_HALFLIFE">
+        <Race value="Zerg"/>
+    </CUnit>
+    <CBehaviorBuff id="SpawnPuddleOnDeath">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <DeathResponse Chance="1" Effect="SpawnPuddleOnDeathSet"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ToxicGoop">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="ToxicGoopSearchArea"/>
+    </CBehaviorBuff>
+</Catalog>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="TextBoxContainer">
+         <Width val="500" />
+         <Height val="500" />
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Visible val="False" />
+         <Frame type="EditBox" name="VoteTextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Width val="250" />
+            <Height val="60" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Visible val="False" />
+            <Handle val="VoteTextBox" />
+         </Frame>
+         <Frame type="EditBox" name="TipTextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Width val="250" />
+            <Height val="60" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Visible val="False" />
+            <Handle val="TipTextBox" />
+            <StateGroup name="TipTextState">
+               <DefaultState val="TipPanelReset" />
+               <State name="TipPanelLocation">
+                  <Action type="SetProperty" frame="$this" Text="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/Tips/CoordinatesResultsTemplate/FormattedText/@Text}" />
+               </State>
+               <State name="TipPanelReset" />
+            </StateGroup>
+         </Frame>
+         <Frame type="EditBox" name="TextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Width val="250" />
+            <Height val="60" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Visible val="False" />
+            <StateGroup name="TextState">
+               <State name="Player1Name">
+                  <When type="AnimationState" Player="1" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player1Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player2Name">
+                  <When type="AnimationState" Player="2" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player2Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player3Name">
+                  <When type="AnimationState" Player="3" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player3Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player4Name">
+                  <When type="AnimationState" Player="4" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player4Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player5Name">
+                  <When type="AnimationState" Player="5" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player5Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player6Name">
+                  <When type="AnimationState" Player="6" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player6Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player7Name">
+                  <When type="AnimationState" Player="7" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player7Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player8Name">
+                  <When type="AnimationState" Player="8" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player8Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player9Name">
+                  <When type="AnimationState" Player="9" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player9Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player10Name">
+                  <When type="AnimationState" Player="10" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player10Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player11Name">
+                  <When type="AnimationState" Player="11" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player11Stat/RefClan/Label/@Text}" />
+               </State>
+               <State name="Player12Name">
+                  <When type="AnimationState" Player="12" />
+                  <Action type="SetProperty" frame="$this" Text="{$DataFrame/Player12Stat/RefClan/Label/@Text}" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!--
+         <Frame type="EditBox" name="WeaponTextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Width val="250" />
+            <Height val="60" />
+            <Anchor side="Top" relative="$parent/TextBox" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/TextBox" pos="Min" offset="0" />
+            <Visible val="True" />
+            <StateGroup name="WeaponState">
+               <DefaultState val="NoData" />
+               <State name="HasWeaponSOFAR">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="HasWeapon" />
+                  <When type="Property" frame="$WeaponSlot/NormalImage" Texture="Buttons\Weapons\MEN7.dds" />
+                  <Action type="SetProperty" frame="$this" Text="WeaponSOFAR" undo="false" />
+               </State>
+               <State name="HasWeaponM5MAR">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="HasWeapon" />
+                  <When type="Property" frame="$WeaponSlot/NormalImage" Texture="Buttons\BTNMAR.dds" />
+                  <Action type="SetProperty" frame="$this" Text="WeaponM5MAR" undo="false" />
+               </State>
+               <State name="HasWeaponStynerBR2">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="HasWeapon" />
+                  <When type="Property" frame="$WeaponSlot/NormalImage" Texture="Buttons\BTNSCAR.dds" />
+                  <Action type="SetProperty" frame="$this" Text="WeaponBR2" undo="false" />
+               </State>
+               <State name="HasWeaponUSMCR">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="HasWeapon" />
+                  <When type="Property" frame="$WeaponSlot/NormalImage" Texture="Buttons\btnusmcr.dds" />
+                  <Action type="SetProperty" frame="$this" Text="WeaponUSMCR" undo="false" />
+               </State>
+               <State name="HasWeaponHK42">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="HasWeapon" />
+                  <When type="Property" frame="$WeaponSlot/NormalImage" Texture="Buttons\BTNVOSS.dds" />
+                  <Action type="SetProperty" frame="$this" Text="WeaponHK42" undo="false" />
+               </State>
+               <State name="NoWeapon">
+                  <When type="StateGroup" frame="$WeaponSlot/NormalImage" WeaponSlot="NoWeapon"/>
+                  <Action type="SetProperty" frame="$this" Text="NoWeapon" undo="false" />
+               </State>
+               <State name="NoData" />
+            </StateGroup>
+         </Frame>
+         <Frame type="EditBox" name="ArmorTextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Width val="250" />
+            <Height val="60" />
+            <Anchor side="Top" relative="$parent/WeaponTextBox" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/WeaponTextBox" pos="Min" offset="0" />
+            <Visible val="True" />
+            <StateGroup name="ArmorState">
+               <DefaultState val="NoData" />
+               <State name="HasArmorKevlar">
+                  <When type="StateGroup" frame="$ArmorSlot/NormalImage" ArmorSlot="HasArmor" />
+                  <When type="Property" frame="$ArmorSlot/NormalImage" Texture="Buttons\BTNKevlar.dds" />
+                  <Action type="SetProperty" frame="$this" Text="ArmorKevlar" undo="false" />
+               </State>
+               <State name="HasArmorSPCS">
+                  <When type="StateGroup" frame="$ArmorSlot/NormalImage" ArmorSlot="HasArmor" />
+                  <When type="Property" frame="$ArmorSlot/NormalImage" Texture="Buttons\BTNIOTV.dds" />
+                  <Action type="SetProperty" frame="$this" Text="ArmorSPCS" undo="false" />
+               </State>
+               <State name="HasArmorOPA">
+                  <When type="StateGroup" frame="$ArmorSlot/NormalImage" ArmorSlot="HasArmor" />
+                  <When type="Property" frame="$ArmorSlot/NormalImage" Texture="Buttons\BTNPlateCarrier.dds" />
+                  <Action type="SetProperty" frame="$this" Text="ArmorOPA" undo="false" />
+               </State>
+               <State name="NoArmor">
+                  <When type="StateGroup" frame="$ArmorSlot/NormalImage" ArmorSlot="NoArmor"/>
+                  <Action type="SetProperty" frame="$this" Text="NoArmor" undo="false" />
+               </State>
+               <State name="NoData" />
+            </StateGroup>
+         </Frame> -->
+         <Frame type="EditBox" name="UnitTagTextBox" template="StandardTemplates/StandardEditBoxTemplate">
+            <Anchor side="Top" relative="$parent/TextBox" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/TextBox" pos="Min" offset="0" />
+            <Width val="250" />
+            <Height val="60" />
+            <Visible val="True" />
+            <Text val="{$UnitTagLabel/@Text}" />
+            <Handle val="TagEditBox" />
+         </Frame>
+         <!--
+         <Frame type="Frame" name="PlayerStatus">
+            <Anchor side="Bottom" relative="$parent/WeaponTextBox" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/WeaponTextBox" pos="Min" offset="0" />
+            <Width val="5" />
+            <Height val="5" />
+            <Visible val="True" />
+            <Handle val="PlayerStatus" />
+            <StateGroup name="PlayerStatus">
+               <DefaultState val="PlayerIsAlive" />
+               <State name="PlayerIsDead" undo="false" />
+               <State name="PlayerIsAlive" />
+            </StateGroup>
+         </Frame> -->
+      </Frame>
+   </Frame>
+</Desc>

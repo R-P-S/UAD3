@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="UnitStatusFrame" name="UnitStatusProgressFrameTemplate">
+      <Width val="173" />
+      <Height val="75" />
+      <Frame type="Frame" name="AttachPointFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="136" />
+         <Height val="0" />
+         <Width val="0" />
+      </Frame>
+      <Frame type="Label" name="NameLabel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="10" />
+         <Style val="GameButtonCharge" />
+         <Text val="Revives In:" />
+         <RenderType val="HDR" />
+      </Frame>
+      <Frame type="Label" name="ValueLabel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+         <Style val="GameButtonCharge" />
+         <Text val="30" />
+         <RenderType val="HDR" />
+      </Frame>
+      <Frame type="Image" name="BorderImage">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="18" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="40" />
+         <Texture val="Assets\Textures\ui_hots_bossbar_progressbar_green.dds" />
+         <TextureType val="NineSlice" />
+         <RenderType val="HDR" />
+      </Frame>
+      <Frame type="Image" name="BarImage">
+         <Anchor side="Top" relative="$parent/BorderImage" pos="Min" offset="16" />
+         <Anchor side="Left" relative="$parent/BorderImage" pos="Min" offset="9" />
+         <Width val="155" />
+         <Height val="11" />
+         <Texture val="Assets\Textures\ui_ingame_lotv_energybar.dds" />
+         <TextureType val="NineSlice" />
+         <RenderType val="HDR" />
+      </Frame>
+   </Frame>
+</Desc>

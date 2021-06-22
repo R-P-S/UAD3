@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CGameUI id="Dflt">
+        <SoundData index="Dialogue">
+            <VolumeRolloffPoints index="0" Distance="50.000000"/>
+            <VolumeRolloffPoints index="1" Distance="1000.000000" Volume="-50.000000"/>
+            <DSPArray value="ReverbForest"/>
+        </SoundData>
+        <SoundData index="Combat">
+            <VolumeRolloffPoints index="0" Distance="15.000000"/>
+            <VolumeRolloffPoints index="1" Distance="70.000000" Volume="-50.000000"/>
+            <VolumeRolloffPoints Distance="130.000000" Volume="-96.000000"/>
+            <DSPArray value="ReverbForest"/>
+        </SoundData>
+        <BehaviorBorderColors index="Neutral" value="255,255,255,255"/>
+        <BehaviorBorderColors index="Positive" value="255,255,255,255"/>
+        <BehaviorBorderColors index="Negative" value="255,255,255,255"/>
+        <InfoColorDebuffed value="255,155,85,170"/>
+        <LoadingBars index="1" Name="LoadingBar/UAD"/>
+        <CooldownDurationPrecision value="1"/>
+        <MinCooldownDisplayDuration value="0"/>
+        <ResourceArray index="Minerals" Icon="Assets\Icon Pack\btn-techupgrade-terran-fullborecanisterammo-color.dds"/>
+        <ResourceArray index="Vespene" Icon="Assets\Custom Icons\icon-mags.dds"/>
+        <ResourceArray index="Terrazine" Icon="Assets\Textures\btn-ability-kerrigan_revive.dds"/>
+        <ResourceArray index="Custom" Icon="Assets\Textures\btn-ability-terran-heal.dds"/>
+        <DisplayTimeInSeconds value="1"/>
+        <BehaviorIconColors index="Positive" value="255,255,255,255"/>
+        <BehaviorIconColors index="Negative" value="255,255,255,255"/>
+    </CGameUI>
+</Catalog>

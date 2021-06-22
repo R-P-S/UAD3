@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="TargetInfoStatFrameTemplate">
+    <Width val="90" />
+    <Height val="20" />
+    <AcceptsMouseTooltip val="true" />
+    <Tooltip val="{TooltipFormatFrame/@Text}" />
+    <TooltipFrame val="UADStandardTooltip" />
+    <Frame type="Image" name="StatIcon">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+      <Anchor relative="$parent" />
+    </Frame>
+  </Frame>
+  <Frame type="Label" name="StatusLabelTemplate">
+    <Anchor relative="$parent" />
+    <Style val="Storm_TargetInfoPanel_Label" />
+    <TooltipFrame val="UADStandardTooltip" />
+    <StateGroup name="BuffDebuffStates">
+      <State name="Buff">
+        <When type="Property" frame="$parent" operator="GreaterThan" CurrentValue="{$parent/@MaxValue}" />
+        <Action type="SetProperty" style="Storm_targetInfoPanel_Label_Buff" />
+      </State>
+      <State name="Debuff">
+        <When type="Property" frame="$parent" operator="LessThan" CurrentValue="{$parent/@MaxValue}" />
+        <Action type="SetProperty" style="Storm_targetInfoPanel_Label_Debuff" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Frame" name="TargetInfoPanelTemplate">
+    <Animation name="Highlight">
+      <Event event="OnMouseEnter" action="DirectionForward,Play"  />
+      <Event event="OnMouseExit" action="DirectionReverse,Play" />
+      <Controller type="Fade" frame="BackgroundFrame" end="Pause">
+          <Key type="Curve" time="0" value="75" out="Fast"/>
+          <Key type="Curve" time=".5" value="255" in="Slow"/>
+      </Controller>
+    </Animation>  
+    <Frame type="Frame" name="TargetPortraitFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="-22" />
+        <Height val="56"/>
+        <Width val="128"/>
+        <AcceptsMouse val="False"/>
+        <RenderPriority val="512"/>
+        <!--
+        <Tooltip val="{$parent/HealthAndEnergyUnitStatusFrame/@Unit}"/> -->
+        <TooltipFrame val="UADStandardTooltip" />
+        <!--
+        <Width val="128" />
+        <Height val="56" /> -->
+        <Frame type="Image" name="TargetPortraitImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="8" />
+            <Height val="49"/>
+            <Width val="112"/>
+            <!--
+            <Width val="112" />
+            <Height val="49" /> -->
+            <LayerCount val="2" />
+            <Texture val="Assets/Textures/Storm_UI_InGame_TargetInfoPanel_Unit_Mask.dds" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+           
+            <Texture val="Assets/Textures/storm_ui_ingame_targetinfopanel_unit_braxis_minion_ranged.dds" layer="1" />
+            <!--
+            <Texture val="{$parent/$parent/$parent/@Texture}" layer="1" /> -->
+            <Visible val="False" />
+        </Frame>
+    </Frame>
+    <Frame type="Image" name="BackgroundFrame">
+        <Anchor relative="$parent" />
+        <Texture val="@@UI/HeroPanelHealthBarBackground" />
+        <TextureType val="Border" />
+        <Alpha val="75" />
+    </Frame>
+    <!--
+    <Frame type="Image" name="BottomBorderImage">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="7" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="-7" />
+        <Anchor side="Bottom" relative="$parent/TopBackground" pos="Max" offset="0" />
+        <Height val="1" />
+        <Color val="73668d" />
+        <Alpha val="76" />
+    </Frame> -->
+    <!--
+    <Frame type="Image" name="BorderFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="3" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="-3" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-3" />
+        <Texture val="Assets/Textures/Storm_UI_TargetInfoPanel_BackgroundBorder.dds" />
+        <TextureType val="Nineslice" />
+    </Frame> -->
+    <!--
+    <Frame type="UnitTargetFrame" name="TargetHeroUnitFrame">
+        <Anchor relative="$parent/HealthAndEnergyUnitStatusFrame" />
+        <AcceptsMouse val="false" />
+        <AllowTargeting val="true" />
+        <AllowSelection val="true" />
+        <AllowCameraCentering val="true" />
+        <AllowSmartCommand val="true" />
+        <RenderPriority val="300" />
+    </Frame> -->
+    <Frame type="UnitStatusFrame" name="HealthAndEnergyUnitStatusFrame" template="TargetInfoPanelUnitStatusTemplate/TargetInfoPanelUnitStatusBarTemplate">
+      <Anchor relative="$parent" />
+      <RenderPriority val="512"/>
+      <UnitTag val="{$parent/UnitTagCache/@Text}"/>
+      <Frame type="Frame" name="TargetStatsPanel">
+        <Anchor side="Top" relative="$parent/$parent/TargetPortraitFrame" pos="Max" offset="-6" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Frame type="Frame" name="AttackDamageFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="9" />
+          <Anchor side="Right" relative="$parent/AttackRangeFrame" pos="Min" offset="0" />
+          <Frame type="Image" name="StatIcon">
+          <!--
+            <Texture val="Assets/Textures/Storm_UI_Attack_Damage_Icon.dds" /> -->
+            <Width val="24" />
+            <Height val="24" />
+            <Texture val="assets\icon pack\btn-weapon-thorshammer.dds" />
+            <!--
+            <Texture val="Buttons\Weapons\MANTEL-75.dds" />
+            <ColorAdjustMode val="Colorize" />
+            <AdjustmentColor val="255,0,0" /> -->
+          </Frame>
+          <Frame type="UnitStatusDamageLabel" name="AttackDamageLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="1" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <FractionDigits val="1" />
+            <RoundMode val="None" />
+            <Height val="20" />
+            <Width val="60" />
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackDamage" />
+            <Replacement index="0" val="{$parent/AttackDamageLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="AttackSpeedFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent/AttackDamageFrame" pos="Max" offset="-2" />
+          <Anchor side="Left" relative="$parent/AttackDamageFrame" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/MoveSpeedFrame" pos="Min" offset="0" />
+          <Frame type="Image" name="StatIcon">
+            <!--
+            <Texture val="Assets/Textures/Storm_UI_Attack_Speed_Icon.dds" /> -->
+            <Width val="24" />
+            <Height val="24" />
+            <Texture val="assets\icon pack\btn-upgrade-terran-gaussrifle.dds" />
+            <TextureCoords top="0" left="1" bottom="1" right="0" />
+          </Frame>
+          <Frame type="UnitStatusAttackSpeedLabel" name="AttackSpeedLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="1" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <RoundMode val="None" />
+            <FractionDigits val="2" />
+            <Height val="20" />
+            <Width val="60" />
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackSpeed" />
+            <Replacement index="0" val="{$parent/AttackSpeedLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="AttackRangeFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="-1" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="76" />
+          <Anchor side="Right" relative="$parent/PhysicalArmorFrame" pos="Min" offset="-38" />
+          <Frame type="Image" name="StatIcon">
+            <Width val="20" />
+            <Height val="20" />
+            <!--
+            <Texture val="Assets/Textures/Storm_UI_Attack_Range_Icon.dds" /> -->
+            <Texture val="assets\textures\cursor-target-enemy.dds" />
+          </Frame>
+          <Frame type="UnitStatusAttackRangeLabel" name="AttackRangeLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="4" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="0" />
+            <RoundMode val="None" />
+            <FractionDigits val="1" />
+            <Height val="20" />
+            <Width val="38" />
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackRange" />
+            <Replacement index="0" val="{$parent/AttackRangeLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="MoveSpeedFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent/AttackRangeFrame" pos="Max" offset="0" />
+          <Anchor side="Left" relative="$parent/AttackRangeFrame" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/PhysicalArmorFrame" pos="Min" offset="-38" />
+          <Frame type="Image" name="StatIcon">
+            <Width val="22" />
+            <Height val="22" />
+            <Texture val="assets\icon pack\btn-ability-tychus-runandgun.dds" />
+            <Visible val="{$parent/MoveSpeedLabel/@Visible}" />
+            <!--
+            <Texture val="Assets/Textures/Storm_UI_Move_Speed_Icon.dds" /> -->
+          </Frame>
+          <Frame type="UnitStatusMoveSpeedLabel" name="MoveSpeedLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="-2" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="3" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Width val="40" />
+            <Height val="20" />
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/MoveSpeed" />
+            <Replacement index="0" val="{$parent/MoveSpeedLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame>
+        <!--
+        <Frame type="Frame" name="AbilityPowerFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="88" />
+          <Anchor side="Right" relative="$parent/PhysicalArmorFrame" pos="Min" offset="0" />
+          <Frame type="Image" name="StatIcon">
+            <Texture val="Assets/Textures/Storm_UI_Move_Speed_Icon.dds" />
+          </Frame>
+          <Frame type="UnitStatusAbilityPowerLabel" name="AbilityPowerLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <RoundMode val="None" />
+            <Height val="20" />
+            <Width val="60" />
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <StateGroup name="BuffDebuffStates">
+                <State name="Buff">
+                  <When type="Property" frame="$parent" operator="GreaterThan" CurrentValue="0" />
+                </State>
+                <State name="Debuff">
+                  <When type="Property" frame="$parent" operator="LessThan" CurrentValue="0" />
+                </State>
+              </StateGroup>
+            </Frame>
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/AbilityPower" />
+            <Replacement index="0" val="{$parent/AbilityPowerLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame> -->
+        <Frame type="Frame" name="PhysicalArmorFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="163" />
+          <Frame type="Image" name="StatIcon">
+            <Texture val="Assets/Textures/Storm_UI_Move_Speed_Icon.dds" />
+          </Frame>
+          <Visible val="False"/>
+        </Frame>
+          <!--
+          <Frame type="UnitStatusLabel" name="PhysicalArmorLabel">
+            <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
+            <Height val="20" />
+            <Width val="60" />
+            <CurrentValue val="{$this/ArmorValue/@CurrentPhysicalArmor}" />
+            <MaxValue val="1000" />
+            <HideMax val="True" />
+            <Frame type="UnitStatusUnitArmor" name="ArmorValue">
+              <Anchor relative="$parent" offset="-5" />
+              <UnitDamageType val="Hero" />
+              <DamageKind val="Basic" />
+            </Frame>
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <StateGroup name="BuffDebuffStates">
+                <State name="Buff">
+                  <When type="Property" frame="$parent" operator="GreaterThan" CurrentValue="0" />
+                  <When type="Property" frame="$parent/ArmorValue" operator="GreaterThan" DurationRemaining="0" />
+                </State>
+                <State name="Debuff">
+                  <When type="Property" frame="$parent" operator="LessThan" CurrentValue="0" />
+                  <When type="Property" frame="$parent/ArmorValue" operator="GreaterThan" DurationRemaining="0" />
+                </State>
+              </StateGroup>
+            </Frame>
+          </Frame>
+          <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+            <FormatText val="@UI/TargetInfoPanel/Tooltip/PhysicalArmor" />
+            <Replacement index="0" val="{$parent/PhysicalArmorLabel/StatusLabel/@Text}" />
+            <ReplacedName index="0" val="amount" />
+          </Frame>
+        </Frame> -->
+        <Frame type="Frame" name="AbilityArmorFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
+          <Anchor side="Top" relative="$parent/PhysicalArmorFrame" pos="Max" offset="-2" />
+          <Anchor side="Left" relative="$parent/PhysicalArmorFrame" pos="Min" offset="0" />
+          <Visible val="False"/>
+        </Frame>
+        <!-- Behavior Panel -->
+        <Frame type="Frame" name="DebuffBehaviorIconContainer" template="TargetInfoPanelBehaviorTemplate/BehaviorIconContainer">
+          <Anchor side="Top" relative="$parent/PhysicalArmorFrame" pos="Max" offset="-23" />
+          <Anchor side="Left" relative="$parent/PhysicalArmorFrame" pos="Min" offset="-22" />
+          <Width val="74" />
+          <Height val="44" />
+          <RenderPriority val="700" /> 
+        </Frame>
+        <Frame type="Frame" name="TooltipAnchorFrame">
+          <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="2" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="-1" />
+          <Anchor side="Bottom" relative="$parent/$parent" pos="Max" offset="-2" />
+          <Width val="10" />
+          <TooltipAnchorPosition val="TopToBottom | LeftToLeft" />
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+</Desc>

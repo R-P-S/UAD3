@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="XPFrame">
+         <Anchor side="Top" relative="$parent/ErrorDisplay" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/ErrorDisplay" pos="Min" offset="0" />
+         <Width val="330" />
+         <Height val="150" />
+         <Visible val="True" />
+         <RenderPriority val="715" />
+         <Handle val="XPFrame" />
+         <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate" />
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate" />
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate" />
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate" />
+         <Frame type="Image" name="Divider2">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="330" />
+            <Height val="50" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+            <Alpha val="185" />
+         </Frame>
+         <Animation name="SlideRightAnim">
+            <Event event="Display" action="Reset,Play" frame="$this" />
+            <Controller type="Anchor" end="Pause" side="Left" relative="true">
+               <Key type="Curve" time="0" value="-350" out="Fast" />
+               <Key type="Curve" time="0.5" value="0" in="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="SlideLeftAnim">
+            <Event event="Close" action="Reset,Play" frame="$this" />
+            <Controller type="Anchor" end="Pause" side="Left" relative="true">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time="0.5" value="-350" in="Slow" />
+            </Controller>
+         </Animation>
+         <Frame type="Label" name="ID">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+            <Height val="55" />
+            <Width val="300" />
+            <Text val="Biometric ID Recognized" />
+            <Style val="BossBarHP" />
+            <Color val="00FF40" />
+         </Frame>
+         <Frame type="Label" name="ID#">
+            <Anchor side="Top" relative="$parent/ID" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+            <Height val="55" />
+            <Width val="330" />
+            <Text val="ID: Unknown" />
+            <Style val="GameButtonCharge" />
+            <Color val="00FF40" />
+            <WriteOutText val="true" />
+            <WriteOutTextDuration val="1000" />
+         </Frame>
+         <Frame type="CountdownLabel" name="XP">
+            <Anchor side="Top" relative="$parent/ID#" pos="Min" offset="35" />
+            <Anchor side="Left" relative="$parent/ID#" pos="Min" offset="0" />
+            <Height val="55" />
+            <Width val="330" />
+            <Text val="XP: Unknown" />
+            <CurrentValue val="0" />
+            <FormatNumber val="true" />
+            <Style val="GameButtonCharge" />
+            <Color val="00FF40" />
+            <WriteOutText val="true" />
+            <WriteOutTextDuration val="1200" />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

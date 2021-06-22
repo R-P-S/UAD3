@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="Cacumen" parent="TemplateT1Zombie">
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="60000"/>
+        <LifeMax value="60000"/>
+        <Mover value="Fly"/>
+        <Speed value="3.3984"/>
+        <BehaviorArray Link="KeenSense"/>
+        <BehaviorArray Link="BloodLustController"/>
+        <WeaponArray Link="CacumenSledge"/>
+        <Radius value="2.5"/>
+        <SeparationRadius value="2.5"/>
+        <MinimapRadius value="2.5"/>
+    </CUnit>
+    <CUnit id="Minerva" parent="TemplateT1Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="16500"/>
+        <LifeMax value="16500"/>
+        <EnergyMax value="12"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="2100"/>
+        <ShieldsMax value="2100"/>
+        <Speed value="3.0742"/>
+        <AbilArray Link="Leap"/>
+        <WeaponArray Link="MinervaFist"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="Leap" Type="AbilCmd" AbilCmd="Leap,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Baron" parent="TemplateT1Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="3960"/>
+        <LifeMax value="3960"/>
+        <EnergyMax value="60"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="970"/>
+        <ShieldsMax value="970"/>
+        <Speed value="3.0195"/>
+        <AbilArray Link="UndeadCharge"/>
+        <BehaviorArray index="1" Link="KeenSense"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="BaronFist"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="UndeadCharge" Type="AbilCmd" AbilCmd="UndeadCharge,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="2"/>
+        <MinimapRadius value="0.75"/>
+    </CUnit>
+    <CUnit id="Scorpio" parent="TemplateT1Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="3665"/>
+        <LifeMax value="3665"/>
+        <ShieldsStart value="800"/>
+        <ShieldsMax value="800"/>
+        <Speed value="3.1992"/>
+        <StationaryTurningRate value="180"/>
+        <TurningRate value="180"/>
+        <BehaviorArray Link="KeenSense"/>
+        <WeaponArray Link="ScorpioClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.9375"/>
+        <SeparationRadius value="0.9375"/>
+        <MinimapRadius value="0.75"/>
+    </CUnit>
+    <CUnit id="Widower" parent="TemplateT1Zombie">
+        <PlaneArray index="Air" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="15120"/>
+        <LifeMax value="15120"/>
+        <EnergyMax value="65"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="1150"/>
+        <ShieldsMax value="1150"/>
+        <Mover value="Arachnathid"/>
+        <Speed value="3.3085"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <AbilArray Link="StasisWeb"/>
+        <AbilArray Link="ConsumeLife"/>
+        <BehaviorArray index="0" Link="KeenSense"/>
+        <BehaviorArray index="1" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="WidowerFangs"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="ConsumeLife" Type="AbilCmd" AbilCmd="ConsumeLife,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="StasisWeb" Type="AbilCmd" AbilCmd="StasisWeb,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.3125"/>
+        <SeparationRadius value="1.33"/>
+        <MinimapRadius value="1.33"/>
+    </CUnit>
+    <CUnit id="Dilophosaur" parent="TemplateT1Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="1760"/>
+        <LifeMax value="1760"/>
+        <ShieldsStart value="630"/>
+        <ShieldsMax value="630"/>
+        <Speed value="2.8515"/>
+        <WeaponArray Link="DilophosaurAcid"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.8125"/>
+        <SeparationRadius value="0.8125"/>
+        <MinimapRadius value="0.75"/>
+    </CUnit>
+    <CUnit id="Metasis" parent="TemplateT1Zombie">
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="12050"/>
+        <LifeMax value="12050"/>
+        <LifeRegenRateCreep value="0"/>
+        <EnergyMax value="75"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="3390"/>
+        <ShieldsMax value="3390"/>
+        <Mover value="Fly"/>
+        <Speed value="3.0507"/>
+        <Height value="3"/>
+        <AbilArray Link="MassMutation"/>
+        <BehaviorArray index="0" Link="AirFrenzy"/>
+        <BehaviorArray index="1" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesFlying"/>
+        <BehaviorArray Link="KeenSenseA"/>
+        <WeaponArray Link="MetasisBite"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="MassMutation" Type="AbilCmd" AbilCmd="MassMutation,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <MinimapRadius value="1.25"/>
+    </CUnit>
+    <CUnit id="Immussilus" parent="TemplateT1Zombie">
+        <PlaneArray index="Ground" value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="4670"/>
+        <LifeMax value="4670"/>
+        <Mover value="Fly"/>
+        <Speed value="2.8906"/>
+        <Height value="3"/>
+        <VisionHeight value="3"/>
+        <BehaviorArray index="0" Link="KeenSenseA"/>
+        <BehaviorArray index="1" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesFlying"/>
+        <WeaponArray Link="ImmussilusClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Gourmand" parent="TemplateT1Zombie">
+        <DeathTime value="8.5"/>
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="7500"/>
+        <LifeMax value="7500"/>
+        <ShieldsStart value="500"/>
+        <ShieldsMax value="500"/>
+        <Speed value="2.4218"/>
+        <StationaryTurningRate value="180"/>
+        <TurningRate value="180"/>
+        <WeaponArray Link="GourmandAttack"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1.75"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Gargantuan" parent="TemplateT1Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="8600"/>
+        <LifeMax value="8600"/>
+        <Speed value="2.9296"/>
+        <WeaponArray Link="GargantuanSledge"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="2"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Darreus" parent="TemplateT1Zombie">
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="20000"/>
+        <LifeMax value="20000"/>
+        <EnergyMax value="60"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="15000"/>
+        <ShieldsMax value="15000"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <Mover value="Fly"/>
+        <Speed value="3.3515"/>
+        <AbilArray Link="EarthTremor"/>
+        <AbilArray Link="SpawnCrabs"/>
+        <BehaviorArray Link="FullShell"/>
+        <BehaviorArray Link="KeenSense"/>
+        <WeaponArray Link="DarreusScythe"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="EarthTremor" Type="AbilCmd" AbilCmd="EarthTremor,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="SpawnCrabs" Type="AbilCmd" AbilCmd="SpawnCrabs,Execute" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <SeparationRadius value="3"/>
+        <MinimapRadius value="3"/>
+    </CUnit>
+    <CUnit id="Raisuli" parent="TemplateT1Zombie">
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="4830"/>
+        <LifeMax value="4830"/>
+        <Speed value="3.0312"/>
+        <WeaponArray Link="RaisuliClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Arachnathid" parent="TemplateT1Zombie">
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="9620"/>
+        <LifeMax value="9620"/>
+        <EnergyMax value="35"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="2790"/>
+        <ShieldsMax value="2790"/>
+        <Mover value="Arachnathid"/>
+        <Speed value="3.2617"/>
+        <StationaryTurningRate value="180"/>
+        <TurningRate value="180"/>
+        <AbilArray Link="ArachnathidCharge"/>
+        <BehaviorArray index="0" Link="KeenSense"/>
+        <BehaviorArray index="1" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="ArachnathidClaws"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="ArachnathidCharge" Type="AbilCmd" AbilCmd="ArachnathidCharge,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <MinimapRadius value="1.5"/>
+    </CUnit>
+    <CUnit id="Ares" parent="TemplateT1Zombie">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="13620"/>
+        <LifeMax value="13620"/>
+        <EnergyMax value="60"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="3775"/>
+        <ShieldsMax value="3775"/>
+        <Speed value="3.1484"/>
+        <AbilArray Link="UndeadCharge"/>
+        <AbilArray Link="RoarAres"/>
+        <BehaviorArray index="0" Link="KeenSense"/>
+        <BehaviorArray index="1" Link="MutationUpgrade"/>
+        <BehaviorArray Link="WeatherEffectZombiesGround"/>
+        <WeaponArray Link="AresFist"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons Face="UndeadCharge" Type="AbilCmd" AbilCmd="UndeadCharge,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RoarAres" Type="AbilCmd" AbilCmd="RoarAres,Execute" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="1.25"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+</Catalog>

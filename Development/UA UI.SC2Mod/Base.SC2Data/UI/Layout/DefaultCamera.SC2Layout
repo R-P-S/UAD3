@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Reset Camera Button -->
+   <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+      <Frame type="Button" name="CameraButton" template="ReplayPanel/ReplayButtonTemplate">
+         <Anchor side="Right" relative="$parent/MinimapPanel" pos="Max" offset="-6" />
+         <Anchor side="Bottom" relative="$parent/MinimapPanel" pos="Max" offset="-64" />
+         <Visible val="false" />
+         <Tooltip val="@DOCSTR_Camera" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <Handle val="CameraButton" />
+         <Frame type="Image" name="NormalImage">
+            <Texture val="Assets/Textures/ui_replay_showcamerabutton_normalpressedtoggled.dds" />
+            <StateCount val="3" />
+            <Color val="0,255,128" />
+         </Frame>
+         <Frame type="Image" name="HoverImage">
+            <Texture val="Assets/Textures/ui_replay_showcamerabutton_normaloverpressedovertoggledover.dds" />
+            <StateCount val="3" />
+            <Color val="0,255,128" />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

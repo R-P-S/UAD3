@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="UnitStatusFrame" name="CircularPBUnitTemplate">
+      <Width val="64" />
+      <Height val="12" />
+      <RenderType val="HDR" />
+      <Frame type="Frame" name="AttachPointFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="-55" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="32" />
+         <Height val="0" />
+         <Width val="0" />
+      </Frame>
+      <Frame type="Image" name="HealthBarBackground">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Width val="64" />
+         <Height val="12" />
+         <Texture val="@@UI/HeroPanelHealthBarBackground" />
+         <TextureType val="Border" />
+         <Tiled val="true" />
+         <RenderPriority val="450" />
+         <Visible val="false" />
+         <StateGroup name="ImageVisibleController">
+            <State name="LeftGame">
+               <When type="AnimationState" Hide="True" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="HealthBar">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Texture val="@@UI/HeroPanelHealthBar" />
+         <TextureType val="Border" />
+         <Tiled val="true" />
+         <SnapToDevicePixels val="true" />
+         <Width val="64" />
+         <Height val="12" />
+         <Visible val="false" />
+      </Frame>
+      <Frame type="Label" name="Percent">
+         <Width val="64" />
+         <Height val="25" />
+         <Anchor side="Top" relative="$parent/HealthBarBackground" pos="Min" offset="22" />
+         <Anchor side="Right" relative="$parent/HealthBarBackground" pos="Max" offset="0" />
+         <Style val="Countdown_Small" />
+         <RenderPriority val="513" />
+         <Anchor side="Bottom" relative="$parent/HealthBarBackground" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/HealthBarBackground" pos="Min" offset="0" />
+         <Text val="30" />
+         <Visible val="false" />
+      </Frame>
+      <Frame type="CountdownLabel" name="Penalty">
+         <Width val="64" />
+         <Height val="64" />
+         <Anchor side="Top" relative="$parent/HealthBarBackground" pos="Min" offset="22" />
+         <Anchor side="Bottom" relative="$parent/HealthBarBackground" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/HealthBarBackground" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/HealthBarBackground" pos="Max" offset="0" />
+         <RenderPriority val="513" />
+         <Text val="" />
+         <Style val="FCT_Status_Crit" />
+         <Visible val="false" />
+         <Animation name="AnimationVertical">
+            <Event event="Animate" action="Reset,Play" />
+            <Controller type="Anchor" side="Top" relative="true" frame="$this" end="Pause">
+               <Key type="Curve" time="0.000" value="0" />
+               <Key type="Curve" time="0.100" value="-10" />
+               <Key type="Curve" time="0.200" value="-20" />
+               <Key type="Curve" time="0.300" value="-30" />
+               <Key type="Curve" time="0.425" value="-40" />
+            </Controller>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0.000" value="15" />
+               <Key type="Curve" time="0.100" value="75" />
+               <Key type="Curve" time="0.400" value="150" />
+               <Key type="Curve" time="0.600" value="255" />
+               <Key type="Curve" time="0.825" value="0" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="StandardTooltip" name="ScoreScreenTooltipTemplate" template="StandardTooltip/StandardTooltip">
+         <Frame type="Image" name="BackgroundImage">
+            <Texture val="Assets/Textures/ui_nova_global_tooltip.dds" />
+            <TextureType val="Nineslice" />
+         </Frame>
+         <Frame type="Label" name="Label">
+            <Style val="@StandardTooltip_Terr" />
+         </Frame>
+      </Frame>
+      <!-- Player Died -->
+      <Frame type="UnitStatusValidatorAnimElement" name="PlayerDied">
+         <Anchor relative="$parent" />
+         <Validator val="RevivePenaltyOn" />
+         <Validator val="RevivePenaltyOff" />
+         <Animation name="Died">
+            <Event event="RevivePenaltyOn" action="DirectionForward, Play" />
+            <Event event="RevivePenaltyOff" action="DirectionReverse, Play" />
+            <Controller type="Property" property="Visible" frame="$parent/Percent" end="Pause">
+               <Key type="Property" time="0.0" value="true" />
+               <Key type="Property" time="0.0" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/HealthBarBackground" end="Pause">
+               <Key type="Property" time="0.0" value="true" />
+               <Key type="Property" time="0.0" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/HealthBar" end="Pause">
+               <Key type="Property" time="0.0" value="true" />
+               <Key type="Property" time="0" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/Penalty" end="Pause">
+               <Key type="Property" time="0.0" value="false" />
+               <Key type="Property" time="0.0" value="true" />
+            </Controller>
+            <!--
+            <Controller type="State" stateGroup="PlayerStatus" frame="$PlayerStatus" end="Pause">
+               <Key type="Identifier" time="0.0" value="PlayerIsAlive"/>
+               <Key type="Identifier" time="0.1" value="PlayerIsDead"/>
+            </Controller> -->
+         </Animation>
+         <Animation name="RemoveCutscenes">
+            <Event event="RevivePenaltyOn" action="Reset, Play"/>
+            <Controller type="Event" end="Stop" frame="$CutsceneContainer/StatusWeb">
+               <Key type="Event" time="0" event="Reset"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <!-- Player Leaves Game -->
+      <Frame type="UnitStatusValidatorAnimElement" name="PlayerLeft">
+         <Anchor relative="$parent" />
+         <Validator val="PlayerLeftGame" />
+         <Animation name="Left">
+            <Event event="PlayerLeftGame" action="DirectionForward, Play" />
+            <Controller type="Property" property="Visible" frame="$parent/Percent" end="Pause">
+               <Key type="Property" time="0.01" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/HealthBarBackground" end="Pause">
+               <Key type="Property" time="0.01" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/HealthBar" end="Pause">
+               <Key type="Property" time="0.01" value="false" />
+            </Controller>
+            <Controller type="Property" property="Visible" frame="$parent/Penalty" end="Pause">
+               <Key type="Property" time="0.01" value="false" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

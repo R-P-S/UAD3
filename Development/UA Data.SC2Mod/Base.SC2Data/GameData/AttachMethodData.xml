@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodPattern id="BattlebotPatternA">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="32mmCannonsLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodFilter id="AttackDroneFilter">
+        <Keys Keyword="Weapon" Index="0"/>
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
+        <Logic value="OR"/>
+        <AttachType value="Point"/>
+    </CAttachMethodFilter>
+    <CAttachMethodFilter id="AMFilterWeaponALT" parent="AMFilterWeapon00">
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="1"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+    <CAttachMethodPattern id="AMPatternMKII">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Multiplier value="0"/>
+        <Driver value="32mmPunisherCannonLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="PatternAttackDrone">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="AttackDroneMGLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="PatternRAJuggernaught">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Multiplier value="0"/>
+        <Driver value="JuggernaughtIncendiaryRoundsLaunch"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="PatternAH42">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="LancerMissilesLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodFilter id="AH42Filter">
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
+        <Keys Keyword="Weapon" Index="4"/>
+        <Logic value="OR"/>
+        <AttachType value="Point"/>
+    </CAttachMethodFilter>
+    <CAttachMethodPattern id="FlakCannonPattern">
+        <Keyword value="Weapon"/>
+        <Driver value="FlakCannonsLMInvisible"/>
+    </CAttachMethodPattern>
+</Catalog>

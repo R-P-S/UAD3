@@ -1,0 +1,266 @@
+string GAx3_StringSpilt(string s,int n,string sl){
+	int i=1;
+	while(i<n){
+		s=StringSub(s,StringFind(s,sl,true)+1,-1);
+		i+=1;
+	}
+	return StringSub(s,1,StringFind(s,sl,true)-1);
+}
+
+string GAx3_StringSpilt2(string s,int n,string sl){
+	return StringReplaceWord(StringWord(StringReplaceWord(StringReplaceWord(s," ","\r",-1,true),sl," ",-1,true),n),"\r"," ",-1,true);
+}
+
+void GAx3_ActorSendAsyn(playergroup players,actor a,string msg){
+	actor agt=ActorCreate(null,"TriggerPerPlayerActorAgent",null,null,null);
+	actor tar=null;
+	playergroup others=PlayerGroupActive();
+	libNtve_gf_RemovePlayerGroupFromPlayerGroup(players,others);
+	ActorRefSet(agt,"::actor.MsgTarget",a);
+	UIFlyerHelperOverride(players,2);
+	UIFlyerHelperOverride(others,0);
+	ActorSend(agt,"Signal SetTargetActual");
+	UIFlyerHelperClearOverride(PlayerGroupAll());
+	tar=ActorFromActor(agt,"::actor.MsgTargetActual");
+	ActorSend(agt,"Destroy");
+	ActorSend(tar,msg);
+}
+
+void GAx3_ActorShowAsyn(playergroup players,actor a,bool inShow){
+	if(inShow){
+		GAx3_ActorSendAsyn(players,a,"SetVisibility 1");
+	}else{
+		GAx3_ActorSendAsyn(players,a,"SetVisibility");
+	}
+}
+
+void GAx3_ActorShowAsyn2(playergroup players,actor a,bool inShow) {
+	GAx3_ActorSendAsyn(players,a,"SetVisibility "+IntToString(BoolToInt(inShow)));
+}
+
+void GAx3_ActorDestroyAsyn(playergroup players,actor a, bool immediate){
+	if(immediate){
+		GAx3_ActorSendAsyn(players,a,"Destroy Immediate");
+	}else{
+		GAx3_ActorSendAsyn(players,a,"Destroy");
+	}
+}
+
+void GAx3_ActorRegionSendAsyn(playergroup players,actor a,int intersect,string msg,string filters,string terms){
+	playergroup others=PlayerGroupActive();terms="FlyerHelper All;"+terms;
+	libNtve_gf_RemovePlayerGroupFromPlayerGroup(players,others);
+	UIFlyerHelperOverride(players,2);UIFlyerHelperOverride(others,0);
+	ActorRegionSend(a,intersect,msg,filters,terms);
+	UIFlyerHelperClearOverride(PlayerGroupAll());
+}
+
+void GAx3_ActorRegionSendSimpleAsyn(playergroup players,actor a,string msg){
+	GAx3_ActorRegionSendAsyn(players,a,c_actorIntersectAgainstRadiusContact,msg,null,null);
+}
+
+void GAx3_ActorSendToGameRegionSimpleAsyn(playergroup players,region r,string msg){
+	actor a=ActorRegionCreate(null,"TriggerRegion",r);
+	GAx3_ActorRegionSendAsyn(players,a,c_actorIntersectAgainstRadiusContact,msg,null,null);
+	ActorSend(a,"Destroy");
+}
+
+void GAx3_ActorSendToGameRegionAsyn(playergroup players,region r,int intersect,string msg,string filters,string terms){
+	actor a=ActorRegionCreate(null,"TriggerRegion",r);
+	GAx3_ActorRegionSendAsyn(players,a,intersect,msg,filters,terms);
+	ActorSend(a,"Destroy");
+}
+
+void GAx3_TriggerAddEventUnitAnyAbility(trigger t,unitref u,int stage,bool includeSharedAbils){
+	TriggerAddEventUnitAbility(t,u,null,stage,includeSharedAbils);
+}
+
+actor GAx3_BeamCreate(string inModelLink,actor from,actor to){
+	actorscope as=ActorScopeFromActor(from);
+	ActorScopeRefSet(as,"::scope.BeamFrom",from);
+	ActorScopeRefSet(as,"::scope.BeamTo",to);
+	return ActorCreate(as,"BeamSimple",inModelLink,"::scope.BeamFrom","::scope.BeamTo");
+}
+
+void GAx3_ActorSetPosition(actor a,actor site){
+	ActorRefSet(a,"::actor.Position",site);
+	ActorSend(a,"SetPositionFrom ::actor.Position");
+}
+
+void GAx3_ActorMove(actor a,fixed s,actor des){
+	actorscope as=ActorScopeFromActor(a);
+	actor m=ActorCreate(as,"TriggerMover",null,null,null);
+	GAx3_ActorSetPosition(m,a);
+	ActorRefSet(a,"::Host",m);
+	ActorSend(ActorFromActor(a,"::actor.Mover"),"Destroy");
+	ActorRefSet(a,"::actor.Mover",m);
+	ActorRefSet(m,"::actor.Des",des);
+	ActorSend(m,"MoverSetDestinationFrom ::actor.Des");
+	ActorSend(m,"MoverSetSpeed "+FixedToString(s,6));
+	ActorSend(m,"MoverMove");
+}
+
+void GAx3_ActorMoveStop(actor a,bool allowDe){
+	if(allowDe){
+		ActorSend(ActorFromActor(a,"::Host"),"MoverStop");
+	}else{
+		ActorSend(ActorFromActor(a,"::Host"),"MoverStopNow");
+}
+
+}void GAx3_ActorSetSpeed(actor a,fixed ac,fixed de,fixed s,fixed ms){
+	actor m=ActorFromActor(a,"::Host");
+	ActorSend(m,"MoverSetSpeedMax "+FixedToString(ms,6));
+	ActorSend(m,"MoverSetSpeed "+FixedToString(s,6));
+	ActorSend(m,"MoverSetAcceleration "+FixedToString(ac,6));
+	ActorSend(m,"MoverSetDeceleration "+FixedToString(de,6));
+}
+
+void GAx3_ActorAttach(actor h,actor a,string inAttachment){
+	ActorRefSet(h,"::actor.Attachment",a);
+	ActorSend(h, "Attach ::actor.Attachment {"+inAttachment+"}");
+}
+
+void GAx3_ActorAttachNewTo(actor h,string inActorLink,string inAttachment){
+	actorscope as=ActorScopeFromActor(h);
+	actor a=ActorCreate(as,inActorLink,null,null,null);
+	GAx3_ActorAttach(h,a,inAttachment);
+}
+
+void GAx3_ActorAttachNewModelTo(actor h,string inModelLink,string inAttachment){
+	actorscope as=ActorScopeFromActor(h);
+	actor a=ActorCreate(as,"Model",inModelLink,null,null);
+	GAx3_ActorAttach(h,a,inAttachment);
+}
+
+void GAx3_ActorDetach(actor a){
+	actor h=ActorFromActor(a,"::Host");
+	ActorSend(a, "RefClear ::Host");
+	ActorSend(h,"Signal Recycle");
+}
+
+void GAx3_ActorForceDetach(actor a){
+	actor site=ActorCreate(null,"TriggerSiteNoHarness",null,null,null);  
+	GAx3_ActorSetPosition(site,a);
+	ActorSend(ActorFromActor(a,"::Host"),"Signal Recycle");
+	ActorRefSet(a,"::Host",site);
+}
+
+void GAx3_BeamSetPosition(actor a,string endpoint,actor site){
+	ActorRefSet(a,endpoint,site);
+}
+
+void GAx3_BeamMove(actor a,string endpoint,fixed s,actor site){
+	GAx3_ActorMove(ActorFromActor(a,endpoint),s,site);
+}
+
+void GAx3_BeamMoveStop(actor a,string endpoint,bool allowDe){
+	GAx3_ActorMoveStop(ActorFromActor(a,endpoint),allowDe);
+}
+
+void GAx3_BeamSetSpeed(actor a,string endpoint,fixed ac,fixed de,fixed s,fixed ms){
+	GAx3_ActorSetSpeed(ActorFromActor(a,endpoint),ac,de,s,ms);
+}
+
+void GAx3_ActorMessageModelSwap(actor a,string inModelLink,int var){
+	ActorSend(a,"ModelSwap "+inModelLink+" "+IntToString(var));
+}
+
+void GAx3_ActorCastShadow(actor a,bool inShow){
+	ActorSend(a,"SetCastShadows "+IntToString(BoolToInt(inShow)));
+}
+
+void GAx3_UnitSpinSet(unit u,bool spin,fixed spinRate){
+	actorscope as=ActorScopeFromUnit(u);
+	actor a=ActorFromScope(as,"::Main");
+	actor sp;ActorScopeSend(as,"Signal RecycleSpin");
+	if(spin){
+		sp=ActorCreate(as,"ModelSpin",null,null,null);
+		ActorSend(sp,"AnimSetTimeScaleGlobal "+FixedToString(spinRate,6)); 
+		GAx3_ActorAttach(sp,a,"Origin");
+	}else{
+		GAx3_ActorDetach(a);
+	}
+}
+
+int GAx3_ModelGlossaryCreate(int offsetX,int offsetY,int anchor,int width,int height,string modelLink,string cameraLink,bool spin,fixed spinRate,string animProps,bool visible,bool waitUntilLoaded){
+	int p=PortraitCreate(offsetX,offsetY,anchor,width,height,"Star2Camera",cameraLink,"Stand",visible,waitUntilLoaded);
+	actorscope as=ActorScopeFromPortrait(p);
+	actor sp=ActorCreate(as,"PortraitSpin",null,null,null);
+	actor a=ActorCreate(as,"GlossaryModel",null,null,null);
+	if(cameraLink=="PlanetPanelCamera"||cameraLink=="TechPurchaseCamera"||cameraLink=="UnitGlossaryCamera"){
+		cameraLink=CatalogFieldValueGet(c_gameCatalogModel,modelLink,cameraLink,-1);
+		PortraitSetCamera(p,cameraLink);
+	}
+	ActorSend(a,"ModelSwap "+modelLink);
+	ActorSend(a,"AnimPlay TriggerPortraitAnim "+StringReplaceWord(animProps," ",",",-1,true));
+	ActorScopeRefSet(as,"::scope.Model",a);
+	ActorScopeRefSet(as,"::scope.Spin",sp);
+	if(spin){
+		ActorSend(sp,"AnimSetTimeScaleGlobal "+FixedToString(spinRate,6)); 
+		ActorRefSet(a,"::Host",sp);
+	}
+	return p;
+}
+
+actor GAx3_ActorFromGlossary(int p){
+	return ActorFromScope(ActorScopeFromPortrait(p),"::scope.Model");
+}
+
+void GAx3_GlossarySpinEnable(int p,bool spin,fixed spinRate){
+	actorscope as=ActorScopeFromPortrait(p);
+	actor a=GAx3_ActorFromGlossary(p);
+	actor sp=ActorFromScope(as,"::scope.Spin");
+	if(spin){
+		ActorSend(sp,"AnimSetTimeScaleGlobal "+FixedToString(spinRate,6)); 
+		ActorRefSet(a,"::Host",sp);
+	}else{
+		ActorRefSet(a,"::Host",null);
+	}
+}
+
+void GAx3_UnitDrop(unit u){
+	UnitSetPosition(u, UnitGetPosition(u), false);
+}
+
+text GAx3_PointToText(point p){
+    string s="("+FixedToString(PointGetX(p),1)+", "+FixedToString(PointGetY(p),1)+")";
+    return StringToText(s);
+}
+
+int GAx3_PlayerGroupRandomPlayer(playergroup inGroup){
+    return PlayerGroupPlayer(inGroup,RandomInt(1,PlayerGroupCount(inGroup)));
+}
+
+text GAx3_PointToText3D(point p){
+    string s="("+FixedToString(PointGetX(p),1)+", "+FixedToString(PointGetY(p),1)+", "+FixedToString(PointGetHeight(p),1)+")";
+    return StringToText(s);
+}
+
+actor GAx3_ActorCodePhasing(playergroup players,actor a,actor tar){
+    actor agt=ActorCreate(null,"TriggerPerPlayerActorAgent",null,null,null);
+    playergroup others=PlayerGroupActive();
+    libNtve_gf_RemovePlayerGroupFromPlayerGroup(players,others);
+    ActorRefSet(agt,"::actor.MsgTarget",a);
+    ActorRefSet(agt,"::actor.MsgTargetActual",tar);
+    UIFlyerHelperOverride(players,2);
+    UIFlyerHelperOverride(others,0);
+    ActorSend(agt,"Signal SetTargetActual");
+    UIFlyerHelperClearOverride(PlayerGroupAll());
+    tar=ActorFromActor(agt,"::actor.MsgTargetActual");
+    ActorSend(agt,"Destroy");
+    return tar;
+}
+actor GAx3_LastPersistPhasing;
+void GAx3_PersistRegionPhasing(playergroup players,region r){
+    actor ar=ActorRegionCreate(null,"TriggerRegion",r);
+    GAx3_LastPersistPhasing=GAx3_ActorCodePhasing(players,ar,null);
+    ActorSend(GAx3_LastPersistPhasing,"QueryPersistent PersistPhasingResponseEnter PersistPhasingResponseLeave AgainstRadiusContact");
+    ar=GAx3_ActorCodePhasing(players,null,ar);
+    ActorSend(ar,"Destroy");
+}
+actor GAx3_LastCreatedPersistPhasing(){
+    return GAx3_LastPersistPhasing;
+}
+
+string GAx3_Fix_SetRotation(fixed lp_forwardX,fixed lp_forwardY,fixed lp_forwardZ,fixed lp_upX,fixed lp_upY,fixed lp_upZ){
+	return libNtve_gf_ActorMsg1("SetRotation",(libNtve_gf_Convert3DVectorToString(lp_forwardX,lp_forwardY,lp_forwardZ)+" "+libNtve_gf_Convert3DVectorToString(lp_upX,lp_upY,lp_upZ)));
+}

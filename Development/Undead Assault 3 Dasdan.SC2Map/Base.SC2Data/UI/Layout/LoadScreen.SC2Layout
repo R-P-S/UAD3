@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+<Constant name="InfoText" val="&#x000a;UAD is a successor to UA3, and in some cases, UAC. Many of the mechanics you know from past undead assault games have changed in some fashion, so make sure to read all tooltips with the expectation that things DO NOT do what they used to do. I'll put a few here for you so you get a little taste of what differences this game has to offer:&#x000a;&#x000a;-Map is totally different. Not only is the layout new, but it was even done from a straight-up blank map - as compared to the typical restructuring of the Thalim AO.&#x000a;&#x000a;-Medics are no longer the only character who can revive. Every character who dies now has a 30 second revive timer, other characters can revive dead characters by targeting the dead character's dead hero indicator with the revive ability and channeling it. Medic reduces the timer by 5 every 1 second, other characters reduce it by 1 every 1 second.&#x000a;&#x000a;-Every MOS does or will have a different skillset than what they previously had.&#x000a;&#x000a;-Armor items behavior significantly different.&#x000a;&#x000a;-Weapons jam mechanic has been completely removed.&#x000a;&#x000a;-Skill Identifers [SI] have been replaced with Skill Upgrades [SU].&#x000a;&#x000a;-Banks from other Undead Assault maps cannot be transferred to UAD.&#x000a;&#x000a;-See the help menu [F12] to learn more." />
+<Constant name="WP1" val="Assets\Wallpaper\UAD_Wallpaper_1.dds" />
+<Constant name="WP2" val="Assets\Wallpaper\UAD_Wallpaper_2.jpg" />
+<Constant name="WP3" val="Assets\Wallpaper\UAD_Wallpaper_3.jpg" />
+<Constant name="WP4" val="Assets\Wallpaper\UAD_Wallpaper_4.jpg" />
+<Constant name="LB1" val="Assets\Textures\Load_Bar_Normal.jpg" />
+<Constant name="LB2" val="Assets\Textures\Load_Bar_Green.jpg" />
+<Constant name="LB3" val="Assets\Textures\Load_Bar_Blue.jpg" />
+
+    <Frame type="Frame" name="LoadscreenContainer">
+        <Anchor relative="$parent" />
+		<Frame type="MathFrame" name="RandomWallpaper">
+            <Anchor relative="$parent" />
+			<Operator val="Random" />
+			<A val="0" />
+			<B val="7" />
+			<StateGroup name="WallpaperState">  <!-- $parent/$parent/$parent/LoadingImage -->
+				<State name="0">
+					<When type="Property" ResultInt="0" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage0" Visible="True" />
+				</State>
+				<State name="1">
+					<When type="Property" ResultInt="1" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage1" Visible="True" />
+				</State>
+				<State name="2">
+					<When type="Property" ResultInt="2" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage2" Visible="True" />
+				</State>
+                <State name="3">
+					<When type="Property" ResultInt="3" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage0" Visible="True" />
+				</State>
+				<State name="4">
+					<When type="Property" ResultInt="4" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage1" Visible="True" />
+				</State>
+				<State name="5">
+					<When type="Property" ResultInt="5" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage2" Visible="True" />
+				</State>
+                <State name="6">
+					<When type="Property" ResultInt="6" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage0" Visible="True" />
+				</State>
+				<State name="7">
+					<When type="Property" ResultInt="7" />
+					<Action type="SetProperty" frame="$parent/BackgroundImage3" Visible="True" />
+					<Action type="SetProperty" frame="$parent/InfoButton" Visible="False" />
+					<Action type="SetProperty" frame="$parent/LoadingFrame" Visible="False" />
+					<Action type="SetProperty" frame="$parent/LoadingBarBackDrop" Visible="False" />
+					<Action type="SetProperty" frame="$parent/LoadingBarContainer" Visible="False" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage0" Alpha="0" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage1" Alpha="0" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage2" Alpha="0" />
+				</State>
+			</StateGroup>
+		</Frame>
+		<Frame type="MathFrame" name="RandomLoadBar">  <!-- $parent/$parent/$parent/LoadingBar_Terr/LoadingBarImage -->
+			<Anchor relative="$parent" />
+			<Operator val="Random" />
+			<A val="0" />
+			<B val="3" />
+			<StateGroup name="LoadBarState">
+				<State name="0">
+					<When type="Property" ResultInt="0" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage0" Visible="True" />
+				</State>
+				<State name="1">
+					<When type="Property" ResultInt="1" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage1" Visible="True" />
+				</State>
+				<State name="2">
+					<When type="Property" ResultInt="2" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage2" Visible="True" />
+				</State>
+                <State name="3">
+					<When type="Property" ResultInt="3" />
+					<Action type="SetProperty" frame="$parent/LoadingBarImage0" Visible="True" />
+				</State>
+			</StateGroup>
+		</Frame>
+		<Frame type="Image" name="BackgroundImage0">
+			<Anchor relative="$parent" />
+			<Texture val="#WP1"  />
+			<Visible val="False" />
+		</Frame>
+		<Frame type="Image" name="BackgroundImage1">
+			<Anchor relative="$parent" />
+			<Texture val="#WP2"  />
+			<Visible val="False" />
+		</Frame>
+		<Frame type="Image" name="BackgroundImage2">
+			<Anchor relative="$parent" />
+			<Texture val="#WP3"  />
+			<Visible val="False" />
+		</Frame>
+		<Frame type="Image" name="BackgroundImage3">
+			<Anchor relative="$parent" />
+			<Texture val="#WP4"  />
+			<Visible val="False" />
+		</Frame>
+		<Frame type="Image" name="LoadingBarImage0">
+			<Anchor relative="$parent/$parent/$parent/LoadingBar_Terr/LoadingBarImage" />
+			<RenderPriority val="1200"/>
+			<Texture val="#LB1"  />
+			<Visible val="False" />
+			<Tiled val="True"/>
+		</Frame>
+		<Frame type="Image" name="LoadingBarImage1">
+			<Anchor relative="$parent/$parent/$parent/LoadingBar_Terr/LoadingBarImage" />
+			<RenderPriority val="1200"/>
+			<Texture val="#LB2"  />
+			<Visible val="False" />
+			<Tiled val="True"/>
+		</Frame>
+		<Frame type="Image" name="LoadingBarImage2">
+			<Anchor relative="$parent/$parent/$parent/LoadingBar_Terr/LoadingBarImage" />
+			<RenderPriority val="1200"/>
+			<Texture val="#LB3"  />
+			<Visible val="False" />
+			<Tiled val="True"/>
+		</Frame>
+		<Frame type="Button" name="InfoButton">
+			<Anchor side="Bottom" relative="$parent/$parent/$parent/LoadingBar" pos="Min" offset="25" />
+			<Anchor side="Left" relative="$parent/$parent/$parent/LoadingBar/LoadingBarFrameImage" pos="Min" offset="-25" />
+			<Width val="200" />
+         	<Height val="92" />
+			<DisplayType val="ImageLayer" />
+			<ClickSound val="@UI_ActionButtonSelect" />
+			<HoverSound val="@UI_HoverTick" />
+			<Toggleable val="True" />
+			<Frame type="Image" name="NormalImage">
+				<Anchor relative="$parent" />
+				<StateCount val="1" />
+				<LayerCount val="3" />
+				<Texture val="Assets\Textures\largebutton_normal.dds" layer="0" />
+				<Texture val="Assets\Textures\largebutton_down.dds" layer="1" />
+				<Texture val="Assets\Textures\largebutton_down.dds" layer="2" />
+				<DesaturateOnDisable val="false" />
+				<ColorAdjustMode val="Colorize" />
+               	<AdjustmentColor val="0,255,148" />
+			</Frame>
+			<Frame type="Image" name="HoverImage">
+				<Anchor relative="$parent" />
+				<StateCount val="1" />
+				<LayerCount val="3" />
+				<Texture val="Assets\Textures\largebutton_over.dds" layer="0" />
+				<Texture val="Assets\Textures\largebutton_down.dds" layer="1" />
+				<Texture val="Assets\Textures\largebutton_down.dds" layer="2" />
+				<DesaturateOnDisable val="false" />
+				<ColorAdjustMode val="Colorize" />
+               	<AdjustmentColor val="0,255,148" />
+			</Frame>
+			<Frame type="Label" name="Label">
+				<Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+				<Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+				<Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+				<Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+				<Color val="255,255,255" />
+				<Style val="BattlenetTopNav" />
+				<Text val="INFO" />
+			</Frame>
+			<StateGroup name="Toggled">
+				<DefaultState val="NotToggled" />
+				<State name="Toggled">
+					<When type="Property" frame="$this" Toggled="True" />
+					<Action type="SetProperty" frame="$parent/FAQPanel" Visible="True"/>
+					<Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+				</State>
+				<State name="NotToggled" />
+			</StateGroup>
+		</Frame>
+        <Frame type="Frame" name="FAQPanel">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-150" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="1150" />
+            <Height val="750" />
+            <Visible val="False" />		
+			<Frame type="Image" name="BackgroundImage">
+				<Anchor relative="$parent" />
+            	<Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            	<TextureType val="Border" />
+            	<Color val="0,255,148" />
+				<RenderPriority val="513"/>
+			</Frame>
+			<Frame type="Image" name="BlackMask">
+				<Anchor relative="$parent" />
+            	<Color val="0,0,0" />
+				<Alpha val="125" />
+			</Frame>
+			<Frame type="Image" name="CornerTopLeft">
+				<Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="-4"/>
+				<Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="-4"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+			</Frame>
+			<Frame type="Image" name="CornerTopRight">
+				<Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="-4"/>
+				<Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="4"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<TextureCoords top="0" left="1" bottom="1" right="0" layer="0"/>
+				<Color val="255,255,255"/>
+			</Frame>
+			<Frame type="Image" name="CornerBottomLeft">
+				<Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="4"/>
+				<Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="-4"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+				<TextureCoords top="1" left="0" bottom="0" right="1" layer="0"/>
+			</Frame>
+			<Frame type="Image" name="CornerBottomRight">
+				<Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="4"/>
+				<Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="4"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+				<TextureCoords top="1" left="1" bottom="0" right="0" layer="0"/>
+			</Frame>
+			<Frame type="Label" name="Body">
+				<Anchor side="Top" relative="$parent" pos="Min" offset="-25" />           	
+            	<Anchor side="Left" relative="$parent" pos="Min" offset="13" />          	
+				<Width val="1100" />
+            	<Height val="750" />
+				<RenderPriority val="650" />
+				<Text val="#InfoText" />
+				<Color val="255,255,255" />
+				<Style val="ChatHelp" />
+				<Options val="ScaleToPreventTrunication|WordWrap" />
+			</Frame>
+			<Animation name="Show">
+                <Event event="OnShown" action="Reset,Play" frame="$this" />
+                 <Controller name="Width_Anim" type="Dimension" end="Pause" dimension="Height" relative="false" unclip="false" percentage="true" frame="$this">
+                    <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                    <Key type="CurveReal" time="0.4" inout="Linear" value="0" />
+                    <Key type="CurveReal" time="0.7" inout="Linear" value="100" />
+                </Controller>
+                <Controller name="Height_Anim" type="Dimension" end="Pause" dimension="Width" relative="false" unclip="false" percentage="true" frame="$this">
+                    <Key type="CurveReal" time="0" inout="Linear" value="0" />
+                    <Key type="CurveReal" time="0.1" inout="Linear" value="0" />
+                    <Key type="CurveReal" time="0.4" inout="Linear" value="100" />
+                </Controller>
+                <Controller name="Fade_0" type="Fade" end="Pause" frame="$this">
+                    <Key type="CurveReal" time="0" inout="Linear,Fast" value="0" />
+                    <Key type="CurveReal" time="0.2" inout="Linear,Fast" value="0" />
+                    <Key type="CurveReal" time="0.4" inout="Slow,Linear" value="255" />
+                </Controller>
+            </Animation>
+        </Frame>	
+		<Frame type="Image" name="LoadingFrame">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-22" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-3" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Width val="1168" />
+            <Height val="75" />
+            <TextureType val="NineSlice" />
+            <Texture val="Assets\Textures\ui_battlenet_glues_pageassets_arcadefeaturedlistitemup.dds" />
+			<Color val="0,255,148" />
+        </Frame>
+		<Frame type="Image" name="LoadingBarBackDrop">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-30" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Width val="1150" />
+            <Height val="59" />
+            <Texture val="Assets\Textures\ui_loadingbar_bar_backdrop_terran.jpg" />	
+        </Frame>
+		<Frame type="Frame" name="LoadingBarContainer">
+			<Anchor relative="$parent/LoadingFrame" />
+			<Frame type="Image" name="CornerTopLeft">
+				<Anchor side="Top" relative="$parent" pos="Min" offset="2"/>
+				<Anchor side="Left" relative="$parent" pos="Min" offset="2"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+			</Frame>
+			<Frame type="Image" name="CornerTopRight">
+				<Anchor side="Top" relative="$parent" pos="Min" offset="2"/>
+				<Anchor side="Right" relative="$parent" pos="Max" offset="-2"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<TextureCoords top="0" left="1" bottom="1" right="0" layer="0"/>
+				<Color val="255,255,255"/>
+			</Frame>
+			<Frame type="Image" name="CornerBottomLeft">
+				<Anchor side="Bottom" relative="$parent" pos="Max" offset="-2"/>
+				<Anchor side="Left" relative="$parent" pos="Min" offset="2"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+				<TextureCoords top="1" left="0" bottom="0" right="1" layer="0"/>
+			</Frame>
+			<Frame type="Image" name="CornerBottomRight">
+				<Anchor side="Bottom" relative="$parent" pos="Max" offset="-2"/>
+				<Anchor side="Right" relative="$parent" pos="Max" offset="-2"/>
+				<Width val="18"/>
+				<Height val="19"/>
+				<RenderPriority val="715" />
+				<Texture val="Assets/Textures/Corner.dds"/>
+				<Color val="255,255,255"/>
+				<TextureCoords top="1" left="1" bottom="0" right="0" layer="0"/>
+			</Frame>
+		</Frame>
+		<StateGroup name="LoadState">
+			<DefaultState val="NotLoading" />
+			<State name="Loading">
+				<When type="Property" frame="$this" Visible="True" />
+		        <Action type="SetProperty" frame="$parent/$parent/LoadingBar_Terr/LoadingBarImage" Texture="#LB1" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingBar_Terr/LoadingBarImage" Alpha="0" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingBar_Terr/LoadingBarFrameImage" Visible="False" />	
+				<Action type="SetProperty" frame="$parent/$parent/$parent/LoadingImage" Alpha="0" />		
+				<Action type="SetProperty" frame="$parent/$parent/LoadingHelpLabel" Visible="False" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingHelpBackgroundImage" Alpha="0" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingLegalLabelKRNGL" Visible="False" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingLegalBackgroundImageKRNGL" Alpha="0" />
+				<Action type="SetProperty" frame="$parent/$parent/LoadingBarLabel" Visible="False" />
+			</State>
+			<State name="NotLoading" />
+		</StateGroup>
+    </Frame>
+</Desc>

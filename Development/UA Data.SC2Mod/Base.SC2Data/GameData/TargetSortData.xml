@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTargetSortPriority id="TSPriorityDescending">
+        <Descending value="1"/>
+    </CTargetSortPriority>
+    <CTargetSortBehaviorCount id="TSShredderMissile">
+        <WhichUnit Value="Target"/>
+        <Behavior value="ShredderMissileTarget"/>
+        <Value value="1"/>
+    </CTargetSortBehaviorCount>
+</Catalog>

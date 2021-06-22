@@ -1,0 +1,92 @@
+//-------------------------------------------------------------------------------
+void SubmenuHotkey (int lp_player, string hotkey) {
+    
+    if ( hotkey  == "Escape") {
+        CatalogFieldValueSet(c_gameCatalogButton, "CancelB", "Hotkey", lp_player, "Button/Hotkey/Escape");
+    }else{
+        CatalogFieldValueSet(c_gameCatalogButton, "CancelB", "Hotkey", lp_player, "Button/Hotkey/CancelB");
+    }
+
+}
+//-------------------------------------------------------------------------------
+void ResetAllAbilityCooldownsForUnit (unit lp_unit) {
+    // Vars
+    string lv_ability;
+    int lv_abilities;
+    int lv_abilitiesmax;
+    int lv_commands;
+    int lv_commandsmax;
+
+    // Variable Declarations
+    lv_abilities = 1;
+    lv_abilitiesmax = UnitAbilityCount(lp_unit);
+    lv_commandsmax = 16;  //Max 32?
+
+    while ((lv_abilities < lv_abilitiesmax)) {
+        lv_ability = UnitAbilityGet(lp_unit, lv_abilities);
+        lv_commands = 0;
+        if ((CatalogFieldExists(CatalogEntryScope(c_gameCatalogAbil, lv_ability), "CmdButtonArray") == true)) {
+            lv_commandsmax = CatalogFieldValueCount(c_gameCatalogAbil, lv_ability, "CmdButtonArray", UnitGetOwner(lp_unit));
+        }
+        else {
+            lv_commandsmax = 1;
+        }
+        while ((lv_commands < lv_commandsmax)) {
+            UnitAbilityReset(lp_unit, AbilityCommand(lv_ability, lv_commands), c_spendLocationAll);
+            lv_commands += 1;
+        }
+        lv_abilities += 1;
+    }
+}
+//-------------------------------------------------------------------------------
+void RefreshUnitGroup (unitgroup lp_group) {
+    // Vars
+    unitgroup temp_g;
+    int index_u;
+    unit unit_var;
+
+    // Implementation
+    temp_g = lp_group;
+    index_u = UnitGroupCount(temp_g, c_unitCountAll);
+    for (;; index_u -= 1) {
+        unit_var = UnitGroupUnitFromEnd(temp_g, index_u);
+        if (unit_var == null) { break; }
+        UnitGroupRemove(lp_group, unit_var);
+    }
+}
+//-------------------------------------------------------------------------------
+void HookupBossBarUAD (unit lp_unit, text lp_title) {
+    //Reset Vars
+    lib90F7C81D_gv_bossBar = c_invalidDialogControlId;
+    lib90F7C81D_gv_bossBarTitle = c_invalidDialogControlId;
+    //Hook Boss Bar
+    DialogControlHookupStandard(c_triggerControlTypeUnitStatus, "UIContainer/FullscreenUpperContainer/UnitBar/UnitStatusBar");
+    lib90F7C81D_gv_bossBar = DialogControlLastCreated();
+    //Set Boss Bar To Unit
+    libNtve_gf_SetDialogItemUnit(lib90F7C81D_gv_bossBar, lp_unit, PlayerGroupAll());
+    //Hook Boss Bar Title
+    DialogControlHookupStandard(c_triggerControlTypeLabel, "UIContainer/FullscreenUpperContainer/UnitBarTitle/Title");
+    lib90F7C81D_gv_bossBarTitle = DialogControlLastCreated();
+    //Set Title Text
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_bossBarTitle, lp_title, PlayerGroupAll());
+}
+//-------------------------------------------------------------------------------
+void BossBarUpdateTitleUAD (text lp_title) {
+    //Update Text
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_bossBarTitle, lp_title, PlayerGroupAll());
+}
+//-------------------------------------------------------------------------------
+void BossBarHideUAD () {
+
+    int lv_bossBarHook = c_invalidDialogControlId;
+
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenUpperContainer/UnitBar");
+    lv_bossBarHook = DialogControlLastCreated();
+    
+    if ((lib90F7C81D_gv_gameOver == true) && (lib90F7C81D_gv_bossBarTitle != c_invalidDialogControlId)) {
+        DialogControlSendAnimationEvent(lv_bossBarHook, PlayerGroupAll(), "Hide");
+    }
+    
+    lv_bossBarHook = c_invalidDialogControlId;
+}
+//-------------------------------------------------------------------------------

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- This uses built in sc2 button template -->
+   <Frame type="Button" name="VoteKickButtonTemplate" template="StandardTemplates/StandardButtonTemplate">
+      <Width val="130" />
+      <Height val="50" />
+      <Frame type="Image" name="NormalImage">
+         <Texture val="Assets\Textures\ui_battlenet_glue_navbuttons_blue_normalpressed.dds" />
+         <Color val="0,255,148" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Texture val="Assets\Textures\ui_battlenet_glue_navbuttons_blue_normaloverpressedover.dds" />
+         <Color val="0,255,148" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <!-- Vote Menu Display -->
+      <Frame type="Frame" name="VoteMenuFrame">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="100" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="-255" />
+         <Width val="400" />
+         <Height val="200" />
+         <Visible val="False" />
+         <Handle val="VMFrame" />
+         <!-- Vote Menu Background Image -->
+         <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+         <!-- Name of Player being kicked -->
+         <Frame type="Label" name="FormattedText">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="35" />
+            <Width val="400" />
+            <Text val="{$this/FormattedText/@Text}" />
+            <Style val="AiurChefCenterSize22Bold" />
+            <AcceptsMouseTooltip val="False" />
+            <!-- Player name will be grabbed from trigger event -->
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/$parent/Title/@Text}" />
+            </Frame>
+         </Frame>
+         <!-- Name of Player being kicked -->
+         <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="35" />
+            <Width val="400" />
+            <Text val="" />
+            <Visible val="False" />
+         </Frame>
+         <!-- Countdown Timer Title -->
+         <Frame type="Label" name="CountdownTimerTitle">
+            <Anchor side="Top" relative="$parent/Title" pos="Max" offset="10" />
+            <Anchor side="Left" relative="$parent/Title" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/Title" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Style val="AiurChefCenterSize14Bold" />
+            <Text val="Time Remaining" />
+         </Frame>
+         <!-- Countdown Timer -->
+         <Frame type="Label" name="CountdownTimer">
+            <Anchor side="Top" relative="$parent/CountdownTimerTitle" pos="Max" offset="5" />
+            <Anchor side="Left" relative="$parent/CountdownTimerTitle" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/CountdownTimerTitle" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Style val="AiurChefCenterSize16Bold" />
+            <Text val="" />
+            <!--			<Frame type="TextFormatFrame" name="FormattedText">
+						<Anchor relative="$parent"/>
+						<FormatText val="%0%"/>
+						<Replacement index="0" val="{$parent/RefValue/@RealValue}"/>
+					</Frame>
+					<Frame type="DataRefFrame" name="RefValue">
+						<Anchor relative="$parent"/>
+						<Argument name="GalaxyVar" val="lib90F7C81D_gv_voteKick.lv_voteTimeRemaining"/>
+					</Frame> -->
+         </Frame>
+         <!-- Alert -->
+         <Frame type="Image" name="Alert">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="50" />
+            <Texture val="@UI/Alert" />
+            <Height val="64" />
+            <Width val="76" />
+            <Animation name="Pulse">
+               <Event event="OnShown" action="Reset,Play" />
+               <Event event="OnHidden" action="Reset,Pause" />
+               <Controller type="Fade" end="Loop">
+                  <Key type="Curve" time="0" value="25" out="Slow" />
+                  <Key type="Curve" time="1" value="255" in="Slow" />
+                  <Key type="Curve" time="1.5" value="25" out="Slow" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Yes Button -->
+         <Frame type="Button" name="ButtonYes" template="VoteMenu/VoteKickButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/FormattedText/@Text}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Yes [%0%]" />
+               <Replacement index="0" val="{$parent/CountLabel/@Text}" />
+            </Frame>
+            <Frame type="Label" name="CountLabel">
+               <Anchor relative="$parent" />
+               <Text val="" />
+               <Visible val="False" />
+            </Frame>
+            <!--			<Frame type="DataRefFrame" name="RefValue">
+						<Anchor relative="$parent"/>
+						<Argument name="GalaxyVar" val="lib90F7C81D_gv_voteKick.lv_voteYes"/>
+					</Frame> -->
+         </Frame>
+         <!-- No Button -->
+         <Frame type="Button" name="ButtonNo" template="VoteMenu/VoteKickButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/FormattedText/@Text}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="No [%0%]" />
+               <Replacement index="0" val="{$parent/CountLabel/@Text}" />
+            </Frame>
+            <Frame type="Label" name="CountLabel">
+               <Anchor relative="$parent" />
+               <Text val="" />
+               <Visible val="False" />
+            </Frame>
+            <!--			<Frame type="DataRefFrame" name="RefValue">
+						<Anchor relative="$parent"/>
+						<Argument name="GalaxyVar" val="lib90F7C81D_gv_voteKick.lv_voteNo"/>
+					</Frame> -->
+         </Frame>
+         <!-- Prevent yes/no buttons being used when panel is hidden
+         <Animation name="InitialHide">
+            <Event event="OnShown" action="Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation> -->
+         <Animation name="VoteStarted">
+            <Event event="Start" action="DirectionForward, Play" />
+            <Event event="End" action="DirectionReverse, Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0.1" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

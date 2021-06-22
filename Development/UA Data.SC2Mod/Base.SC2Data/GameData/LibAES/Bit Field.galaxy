@@ -1,0 +1,198 @@
+// CONSTANTS
+const int BIT_FIELD_SIZE = 32;
+const int BIT_FIELD_INTMIN = 1 << 31;
+typedef int[BIT_FIELD_SIZE] bit_field_array_t;
+int bit_field_transformer_t(int in);
+struct bit_field_t{
+    
+    bit_field_array_t field;
+    int pos;
+ 
+    int len;
+    
+    bool def;
+};
+// PUBLIC FUNCTIONS
+void BitFieldInitialize(structref<bit_field_t> obj, int len, bool logic);
+void BitFieldResize(structref<bit_field_t> obj, int len);
+void BitFieldSetSize(structref<bit_field_t> obj, int len);
+int BitFieldGetSize(structref<bit_field_t> obj);
+void BitFieldSeek(structref<bit_field_t> obj, int pos);
+int BitFieldGetPosition(structref<bit_field_t> obj);
+int BitFieldRemaining(structref<bit_field_t> obj);
+void BitFieldWrite(structref<bit_field_t> obj, int val, int len);
+void BitFieldWriteSafe(structref<bit_field_t> obj, int val, int len);
+void BitFieldSet(structref<bit_field_t> obj, int val, int pos);
+int BitFieldRead(structref<bit_field_t> obj, int len);
+int BitFieldReadSafe(structref<bit_field_t> obj, int len);
+int BitFieldGet(structref<bit_field_t> obj, int pos);
+void BitFieldTransform(structref<bit_field_t> obj, funcref<bit_field_transformer_t> transformer);
+// IMPLEMENTATION
+void BitFieldInitialize(structref<bit_field_t> obj, int len, bool logic){
+    obj.pos = 0;
+    obj.len = 0;
+    obj.def = logic;
+    BitFieldResize(obj, len);
+}
+void BitFieldResize(structref<bit_field_t> obj, int len){
+    int i;
+    int end;
+    int val;
+    if( len > (BIT_FIELD_SIZE * 32) ){ len = BIT_FIELD_SIZE * 32; }
+    else if( len < 0 ){ len = 0; }
+  
+    if( obj.len > len ){
+      
+        obj.len = len;
+    
+        i = len % 32;
+        if( i == 0 ){ return; }
+        
+        end = len / 32;
+        val = obj.field[end] & ((1 << i) - 1);
+       
+        if( obj.def ){
+           
+            val|= (BIT_FIELD_INTMIN >> (31 - i));
+        }
+        obj.field[end] = val;
+    }
+ 
+    else{
+        if( obj.def ){ val = -1; }
+        else{ val = 0; }
+       
+        i = (obj.len + 31) / 32;
+        end = (len + 31) / 32;
+        
+        while( i < end ){
+            obj.field[i] = val;
+            i+= 1;
+        }
+     
+        obj.len = len;
+    }
+}
+void BitFieldSetSize(structref<bit_field_t> obj, int len){
+    obj.len = len;
+}
+int BitFieldGetSize(structref<bit_field_t> obj){
+    return obj.len;
+}
+void BitFieldSeek(structref<bit_field_t> obj, int pos){
+  
+    obj.pos = pos;
+}
+int BitFieldGetPosition(structref<bit_field_t> obj){
+    return obj.pos;
+}
+int BitFieldRemaining(structref<bit_field_t> obj){
+    return obj.len - obj.pos;
+}
+void BitFieldWrite(structref<bit_field_t> obj, int val, int len){
+  
+    int i;
+    int reg;
+    int mask;
+  
+    i = obj.pos % 32;
+    reg = obj.pos / 32;
+    obj.pos+= len;
+   
+    mask = ((2 << (len - 1)) - 1) << i; 
+    obj.field[reg] = (obj.field[reg] & (~mask)) | ((val << i) & mask);
+  
+    i = 32 - i;
+    if( i >= len ){ return; }
+   
+    reg+= 1;
+  
+    mask = (1 << (len - i)) - 1;
+    obj.field[reg] = (obj.field[reg] & (~mask)) | ((val >> i) & mask);
+}
+void BitFieldWriteSafe(structref<bit_field_t> obj, int val, int len){
+    
+    int i;
+  
+    if( obj.pos <= -len || obj.pos >= obj.len ){
+        obj.pos+= len;
+        return;
+    }
+    
+    if( obj.pos < 0 ){
+        val>>= -obj.pos;
+        len+= obj.pos;
+        obj.pos = 0;
+    }
+   
+    i = len + obj.pos - obj.len;
+    if( i < 0 ){ i = 0; }
+   
+    BitFieldWrite(obj, val, len - i);
+    obj.pos+= i;
+}
+void BitFieldSet(structref<bit_field_t> obj, int val, int pos){
+    obj.field[pos] = val;
+}
+int BitFieldRead(structref<bit_field_t> obj, int len){
+    
+    int i;
+    int reg;
+    int val;
+    
+    i = obj.pos % 32;
+    reg = obj.pos / 32;
+    
+    val = obj.field[reg] >> i;
+    
+    i = 32 - i;
+    if( i < len ){ 
+       
+        val&= (1 << i) - 1;
+        
+        reg+= 1;
+        val|= obj.field[reg] << i;
+    }
+    
+    val&= ((2 << (len - 1)) - 1); 
+    obj.pos+= len;
+    return val;
+}
+int BitFieldReadSafe(structref<bit_field_t> obj, int len){
+  
+    int i = 0;
+    int j;
+    int val = 0;
+  
+    if( obj.pos <= -len || obj.pos >= obj.len ){
+        obj.pos+= len;
+        if( obj.pos ){ return (1 << len) - 1; }
+        return 0;
+    }
+ 
+    if( obj.pos < 0 ){
+        if( obj.def ){ val = (1 << (-obj.pos)) - 1; }
+        len+= obj.pos;
+        i = -obj.pos;
+        obj.pos = 0;
+    }
+   
+    j = len + obj.pos - obj.len;
+    if( j <= 0 ){ j = 0; }
+    else if( obj.def ){ val|= ((1 << j) - 1) << (len + i - j); }
+   
+    val|= BitFieldRead(obj, len - j) << i;
+    obj.pos+= j;
+    return val;
+}
+int BitFieldGet(structref<bit_field_t> obj, int pos){
+    return obj.field[pos];
+}
+void BitFieldTransform(structref<bit_field_t> obj, funcref<bit_field_transformer_t> transformer){
+    int i = 0;
+    int end = obj.len / 32;
+    while( i <= end ){
+        obj.field[i] = transformer(obj.field[i]);
+        i+= 1;
+    }
+}

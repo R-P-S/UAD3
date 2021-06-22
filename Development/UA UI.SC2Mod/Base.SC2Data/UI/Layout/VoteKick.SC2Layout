@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="Slide_Anchor_Value" val="-600" />
+   <Constant name="PlayerName_Font" val="Tournament_MapVetoMapName" />
+   <!-- Templates
+	================================================================================= -->
+   <!-- Disables Vote Kick Button -->
+   <Animation name="ButtonControllerTemplate">
+      <Event event="OnClick" action="Reset,Play" />
+      <Controller type="Event" end="Stop" frame="$VKB">
+         <Key type="Event" time="0" event="Off" />
+      </Controller>
+   </Animation>
+   <Animation name="LabelHighlightTemplate">
+      <Event event="Pushed" action="Reset,Play" frame="$this" />
+      <Controller type="Color" end="Pause">
+         <Key type="Curve" time="0" value="0,255,0" out="Fast" />
+         <Key type="Curve" time=".2" value="255,255,255" out="Fast" />
+      </Controller>
+   </Animation>
+   <!--
+	================================================================================= -->
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="VoteKickFrame">
+         <Anchor side="Top" relative="$parent/ErrorDisplay" pos="Min" offset="-500" />
+         <Anchor side="Left" relative="$parent/ErrorDisplay" pos="Min" offset="225" />
+         <Width val="300" />
+         <Height val="600" />
+         <Visible val="false" />
+         <Handle val="VKFrame" />
+         <!-- background -->
+         <Frame type="Image" name="Border">
+            <Texture val="@@UI/HeroPanelHealthBarBackground" />
+            <Anchor relative="$parent" />
+            <TextureType val="Border" />
+            <Visible val="False" />
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player1" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-70" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton1" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player1NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="1" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="1" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player2" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player1" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player1" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton2" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player2NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="2" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="2" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player3" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player2" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player2" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton3" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player3NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="3" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="3" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player4" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player3" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player3" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton4" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player4NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="4" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="4" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player5" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player4" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player4" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton5" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player5NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="5" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="5" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player6" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player5" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player5" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton6" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player6NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="6" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="6" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player7" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player6" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player6" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton7" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player7NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="7" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="7" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player8" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player7" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player7" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton8" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player8NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="8" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="8" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player9" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player8" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player8" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton9" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player9NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="9" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="9" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player10" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player9" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player9" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton10" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player10NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="10" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="10" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player11" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player10" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player10" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton11" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player11NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="11" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="11" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <!-- Votekick Buttons -->
+         <Frame type="Button" name="Player12" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+            <Anchor side="Top" relative="$parent/Player11" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent/Player11" pos="Min" offset="0" />
+            <Toggleable val="false" />
+            <AcceptsMouseTooltip val="true" />
+            <Text val="" />
+            <CollapseLayout val="true" />
+            <Height val="46" />
+            <Width val="175" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Handle val="KickButton12" />
+            <Visible val="False" />
+            <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+               <Text val="{$Player12NameLabel/@Text}" />
+               <Style val="AiurChefCenterSize16Bold" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Kick %0%" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+            </Frame>
+            <Animation name="VoteKick">
+               <Event event="OnClick" action="Restart,Play" />
+               <Controller type="Property" property="Text" frame="$VoteTextBox" end="Pause">
+                  <Key type="Property" time="0" value="" />
+                  <Key type="Property" time="0.1" value="12" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleController">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="State" stateGroup="ToggleReset" frame="$VKB" end="Pause">
+                  <Key type="Identifier" time="0" value="ToggleOn" />
+                  <Key type="Identifier" time="0.1" value="ToggleOff" />
+               </Controller>
+            </Animation>
+            <Animation name="DisableVKB" template="VoteKick/ButtonControllerTemplate" />
+            <Animation name="Highlight" template="VoteKick/LabelHighlightTemplate" />
+            <StateGroup name="ButtonVisibleState">
+               <State name="DevStatus">
+                  <When type="AnimationState" NotDev="12" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Animation name="SlideAnim">
+            <Event event="Display" action="DirectionForward, Play" />
+            <Event event="Close" action="DirectionReverse, Play" />
+            <Controller type="Anchor" end="Pause" side="Top" relative="false">
+               <Key type="Curve" time="0" value="#Slide_Anchor_Value" />
+               <Key type="Curve" time="0.15" value="-500" />
+            </Controller>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" out="Fast" />
+               <Key type="Curve" time="0.15" value="255" in="Slow" />
+            </Controller>
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+               <Key type="Bool" time="0.1" value="True" />
+            </Controller>
+         </Animation>
+         <!-- Initailly hides the panels -->
+         <Animation name="Hidden">
+            <Event event="OnShown" action="Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <!-- Vote Kick Panel Button -->
+      <Frame type="Frame" name="VKButtonContainer">   
+         <Anchor side="Top" relative="$FTC" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$FTC" pos="Min" offset="50" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="554" />
+         <Visible val="false" />
+         <Handle val="VKC" />
+         <!-- Button/VKFrame will display/hide for all players based on HUD button state -->
+         <StateGroup name="VKButtonState">
+            <State name="Show">
+               <When type="Property" frame="$HUDButton" Visible="True" />
+               <Action type="SetProperty" frame="$this" Visible="True" />
+               <Action type="SetProperty" frame="$VKFrame" Visible="True" />
+            </State>
+            <State name="Hide">
+               <When type="Property" frame="$HUDButton" Visible="False" />
+               <Action type="SetProperty" frame="$this" Visible="False" />
+               <Action type="SetProperty" frame="$VKFrame" Visible="False" />
+            </State>
+         </StateGroup>
+         <Frame type="Image" name="VKButtonBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Rotation val="180" />
+            <Color val="0,255,148" />
+            <Handle val="VKBorder" />
+            <Animation name="HighlightOnEvent">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,255,0" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="GlowColor" end="Pause">
+                  <Key type="Property" time="0" value="0,0,0" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="VKIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Texture val="@UI/VoteKickIcon" />
+            <Tooltip val="Player Votekick" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="VKButton" template="Status/StatusButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/VKButtonBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Handle val="VKB" />
+            <Alpha val="0" />
+            <Toggleable val="True" />
+            <AcceptsMouseTooltip val="false" />
+            <Frame type="Image" name="NormalImage">
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Alpha val="0" />
+            </Frame>
+            <Animation name="ToggleOn">
+               <Event event="Toggled" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$VKFrame">
+                  <Key type="Event" time="0" event="Display" />
+               </Controller>
+            </Animation>
+            <Animation name="ToggleOff">
+               <Event event="Normal" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$VKFrame">
+                  <Key type="Event" time="0" event="Close" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$VKBorder">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$VKBorder">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+            <Animation name="ButtonController">
+               <Event event="Off" action="DirectionForward,Play" />
+               <Event event="On" action="DirectionReverse,Play" />
+               <Controller type="Property" property="AcceptsMouse" end="Pause">
+                  <Key type="Property" time="0" value="True" />
+                  <Key type="Property" time="0" value="False" />
+               </Controller>
+            </Animation>
+            <StateGroup name="ToggleReset">
+               <State name="ToggleOn">
+                  <Action type="SetProperty" frame="$this" Toggled="True" />
+               </State>
+               <State name="ToggleOff">
+                  <Action type="SetProperty" frame="$this" Toggled="False" />
+               </State>
+            </StateGroup>
+            <StateGroup name="VoteLock">
+               <State name="Locked">
+                  <When type="AnimationState" Lock="Menu" />
+                  <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+                  <Action type="SetProperty" frame="$parent/VKIcon" Tooltip="Vote Kick not available" />
+               </State>
+            </StateGroup>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

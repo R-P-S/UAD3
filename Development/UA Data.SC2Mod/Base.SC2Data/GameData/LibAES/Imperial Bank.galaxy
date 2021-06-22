@@ -1,0 +1,427 @@
+
+typedef sha1_hasher_hash_t imperial_bank_key_t;
+struct imperial_bank_ownerref_t{
+    int pos; 
+    int len; 
+};
+struct imperial_bank_t{
+    
+    bank file;
+  
+    string owners;
+    imperial_bank_key_t key;
+ 
+    int savenum; 
+  
+    int blocknum; 
+ 
+    int loadowner; 
+  
+    int accountn; 
+    imperial_bank_ownerref_t[16] accounts;
+    bool auth;
+   
+};
+// PUBLIC FUNCTIONS
+bool ImperialBankLoad(structref<imperial_bank_t> obj, bank source);
+bool ImperialBankValid(structref<imperial_bank_t> obj);
+void ImperialBankClear(structref<imperial_bank_t> obj);
+bool ImperialBankSave(structref<imperial_bank_t> obj);
+bool ImperialBankRead(structref<imperial_bank_t> obj, string block, structref<bit_field_t> out);
+bool ImperialBankWrite(structref<imperial_bank_t> obj, string block, structref<bit_field_t> in);
+// PRIVATE FUNCTIONS
+void ImperialBankHeaderKey(structref<imperial_bank_t> obj, arrayref<imperial_bank_key_t> key);
+bool ImperialBankReadHeader(structref<imperial_bank_t> obj, structref<bit_field_t> block);
+void ImperialBankWriteHeader(structref<imperial_bank_t> obj, structref<bit_field_t> block);
+bool ImperialBankReadBlock(structref<imperial_bank_t> obj, string section, string block, arrayref<imperial_bank_key_t> key, structref<bit_field_t> out);
+void ImperialBankWriteBlock(structref<imperial_bank_t> obj, string section, string block, arrayref<imperial_bank_key_t> key, structref<bit_field_t> in);
+void ImperialBankCryptKey(arrayref<imperial_bank_key_t> key, arrayref<imperial_bank_key_t> key1, arrayref<imperial_bank_key_t> key2, arrayref<imperial_bank_key_t> key3);
+void ImperialBankBlockCrypt(arrayref<imperial_bank_key_t> key, structref<bit_field_t> block);
+void ImperialBankBlockHash(arrayref<imperial_bank_key_t> outkey, structref<bit_field_t> block);
+bool ImperialBankBlockValidate(arrayref<imperial_bank_key_t> key, structref<bit_field_t> block);
+bool ImperialBankReadIBH2(bank source, string s);
+// GLOBALS
+// ASCII converter.
+ascii_channel_t ImperialBankASCIIConverter;
+int ImperialBankASCIIConverterRead(){
+    return ASCIIChannelRead(ImperialBankASCIIConverter);
+}
+
+// IMPLEMENTATION
+bool ImperialBankLoad(structref<imperial_bank_t> obj, bank source){
+    string acc;
+    bool acc_2;
+    int i;
+    imperial_bank_key_t key;
+    sha1_hasher_t hasher;
+    bit_field_t header;
+  
+    obj.auth = false;
+    
+    if( source == null ){ return false; }
+    obj.file = source;
+    BankOptionSet(source, c_bankOptionSignature, true);
+    if( BankSectionCount(source) >= 4 ||
+      !BankSectionExists(source, "IBH") ||
+      !BankSectionExists(source, "IBD") || 
+      BankKeyCount(source, "IBH") != 2 ||
+      !BankKeyExists(source, "IBH", "ID") ||
+      !BankValueIsType(source, "IBH", "ID", c_bankTypeString) ||
+      !BankKeyExists(source, "IBH", "HEAD") ||
+      !BankValueIsType(source, "IBH", "HEAD", c_bankTypeString) ){ return false; }
+ 
+    obj.owners = BankValueGetAsString(source, "IBH", "ID");
+    acc = PlayerHandle(BankPlayer(source));
+    if( acc == "" ){ acc = "SC2E-TEST-ACCOUNT"; }
+ 
+    ASCIIChannelSetup(ImperialBankASCIIConverter, obj.owners);
+    SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
+    SHA1HasherHash(hasher, obj.key);
+   
+    ImperialBankHeaderKey(obj, key);
+  
+    if( !ImperialBankReadBlock(obj, "IBH", "HEAD", key, header) ||
+      !ImperialBankReadHeader(obj, header) ){ return false; }
+
+    acc_2 = ImperialBankReadIBH2(obj.file, obj.owners);
+    
+    lib90F7C81D_gv_bankData.lv_regionAccountValidated[BankPlayer(source)] = acc_2;
+    
+    if( StringSub(obj.owners, obj.accounts[obj.loadowner].pos, obj.accounts[obj.loadowner].pos + obj.accounts[obj.loadowner].len - 1) == acc ){
+        obj.auth = BankVerify(source); 
+        if(obj.auth == false) { obj.auth = acc_2; } 
+    
+    } else { 
+        if(acc == BankValueGetAsString(source, "IBH2", "ID")) { obj.auth = acc_2; }         
+    } 
+  
+    return true;
+}
+
+bool ImperialBankValid(structref<imperial_bank_t> obj){
+    return obj.auth;
+}
+
+string SHA1(string s){
+    sha1_hasher_t hasher;
+    imperial_bank_key_t hash;
+    
+    ASCIIChannelSetup(ImperialBankASCIIConverter, s);
+    SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
+    SHA1HasherHash(hasher, hash);
+    return ASCIIUtilIntToHex(hash[0]) + ASCIIUtilIntToHex(hash[1]) + ASCIIUtilIntToHex(hash[2]) + ASCIIUtilIntToHex(hash[3]) + ASCIIUtilIntToHex(hash[4]);;
+}
+
+bool ImperialBankReadIBH2(bank source, string owner){
+    string sig;
+    string key1 = lib90F7C81D_gv_bankData.lv_key1;
+    string key2 = lib90F7C81D_gv_bankData.lv_key2;
+    string bankID = BankValueGetAsString(source, "IBH2", "ID");
+    
+    if(!BankSectionExists(source, "IBH2") || BankKeyCount(source, "IBH2") != 2) { return false; }
+    
+    sig = SHA1(key1 + owner + bankID + key2);
+    
+    if(sig != BankValueGetAsString(source, "IBH2", "HEAD")) { return false; }
+
+    return true;
+}
+
+void ImperialBankClear(structref<imperial_bank_t> obj){
+    sha1_hasher_t hasher;
+   
+    while( BankSectionCount(obj.file) > 0 ){
+        BankSectionRemove(obj.file, BankSectionName(obj.file, 0));
+    }
+    BankOptionSet(obj.file, c_bankOptionSignature, true);
+ 
+    BankSectionCreate(obj.file, "IBD");
+    BankSectionCreate(obj.file, "IBH");
+ 
+    obj.owners = PlayerHandle(BankPlayer(obj.file));
+    
+    if( obj.owners == "" ){ obj.owners = "SC2E-TEST-ACCOUNT"; }
+    BankValueSetFromString(obj.file, "IBH", "ID", obj.owners);
+    obj.accountn = 1;
+    obj.accounts[0].pos = 1;
+    obj.accounts[0].len = StringLength(obj.owners);
+    obj.loadowner = 0;
+    
+    ASCIIChannelSetup(ImperialBankASCIIConverter, obj.owners);
+    SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
+    SHA1HasherHash(hasher, obj.key);
+   
+    obj.savenum = 0;
+    obj.blocknum = 0;
+    obj.auth = true;
+}
+
+bool ImperialBankSave(structref<imperial_bank_t> obj){
+    imperial_bank_key_t key;
+    bit_field_t header;
+   
+    if( !obj.auth ){ return false; }
+   
+    obj.savenum = (obj.savenum + 1) % (1 << 18);
+   
+    ImperialBankWriteHeader(obj, header);
+   
+    ImperialBankHeaderKey(obj, key);
+    
+    ImperialBankWriteBlock(obj, "IBH", "HEAD", key, header);
+   
+    BankSave(obj.file);
+    return true;
+}
+bool ImperialBankRead(structref<imperial_bank_t> obj, string block, structref<bit_field_t> out){
+    sha1_hasher_t hasher;
+    imperial_bank_key_t key;
+  
+    if( !obj.auth ){ return false; }
+ 
+    ASCIIChannelSetup(ImperialBankASCIIConverter, block);
+    SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
+    SHA1HasherHash(hasher, key);
+   
+    return ImperialBankReadBlock(obj, "IBD", block, key, out);
+}
+bool ImperialBankWrite(structref<imperial_bank_t> obj, string block, structref<bit_field_t> in){
+    sha1_hasher_t hasher;
+    imperial_bank_key_t key;
+    
+    if( !obj.auth ){ return false; }
+  
+    if( !BankKeyExists(obj.file, "IBD", block) ){
+        obj.blocknum+= 1;
+    }
+    ASCIIChannelSetup(ImperialBankASCIIConverter, block);
+    SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
+    SHA1HasherHash(hasher, key);
+   
+    ImperialBankWriteBlock(obj, "IBD", block, key, in);
+    return true;
+}
+void ImperialBankHeaderKey(structref<imperial_bank_t> obj, arrayref<imperial_bank_key_t> key){
+  
+    key[0] = 0x12345678 ^ obj.key[3];
+    key[1] = obj.key[0] ^ obj.key[4] ^ 0x7A8B9CAD;
+    key[2] = 0x31415926;
+    key[3] = obj.key[1] ^ obj.key[2] ^ 0x42184218;
+    key[4] = 0x27182818;
+}
+bool ImperialBankReadHeader(structref<imperial_bank_t> obj, structref<bit_field_t> block){
+    int i = 0;
+    int temp = 0;
+   
+    BitFieldSeek(block, 0);
+    
+    i = BitFieldGetSize(block);
+    if( i < 42 ){ return false; }
+    i-= 24;
+  
+    if( BitFieldRead(block, 6) > 0 ){ return false; }
+    
+    obj.savenum = BitFieldRead(block, 18);
+    obj.blocknum = BitFieldRead(block, 10);
+    obj.loadowner = BitFieldRead(block, 4);
+    obj.accountn = BitFieldRead(block, 4);
+  
+    if( i < (obj.accountn * 17) ){ return false; }
+    for( i = 0 ; i < obj.accountn ; i+= 1 ){
+        obj.accounts[i].pos = BitFieldRead(block, 10);
+        obj.accounts[i].len = BitFieldRead(block, 7);
+    }
+    
+    if( BankKeyCount(obj.file, "IBD") != obj.blocknum ||
+      obj.loadowner >= obj.accountn ){ return false; }
+   
+    temp = 1;
+    for( i = 0 ; i < obj.accountn ; i+= 1 ){
+        if( obj.accounts[i].pos != temp ||
+          obj.accounts[i].len == 0 ){ return false; }
+        temp+= obj.accounts[i].len;
+    }
+    if( (temp - 1) != StringLength(obj.owners) ){ return false; }
+    
+    return true;
+}
+void ImperialBankWriteHeader(structref<imperial_bank_t> obj, structref<bit_field_t> block){
+    int i = 0;
+   
+    BitFieldInitialize(block, 42 + (obj.accountn * 17), false);
+    
+    BitFieldWrite(block, 0, 6);
+    
+    BitFieldWrite(block, obj.savenum, 18);
+    BitFieldWrite(block, obj.blocknum, 10);
+    BitFieldWrite(block, obj.loadowner, 4);
+    BitFieldWrite(block, obj.accountn, 4);
+    
+    for( i = 0 ; i < obj.accountn ; i+= 1 ){
+        BitFieldWrite(block, obj.accounts[i].pos, 10);
+        BitFieldWrite(block, obj.accounts[i].len, 7);
+    }
+}
+bool ImperialBankReadBlock(structref<imperial_bank_t> obj, string section, string block, arrayref<imperial_bank_key_t> key, structref<bit_field_t> out){
+    imperial_bank_key_t ekey;
+    imperial_bank_key_t hkey;
+    string s;
+    int i;
+    int end;
+   
+    if( !BankKeyExists(obj.file, section, block) ){ return false; }
+    
+    else if( !BankValueIsType(obj.file, section, block, c_bankTypeString) ){
+        BankKeyRemove(obj.file, section, block);
+        obj.blocknum-= 1;
+        return false;
+    }
+    s = BankValueGetAsString(obj.file, section, block);
+    end = StringLength(s);
+  
+    if( (end * 6) > (BIT_FIELD_SIZE * 32 + 160) ||
+      ((end * 6 - 160) % 128) >= 6 ){ return false; }
+    
+    BitFieldSetSize(out, 162);
+    BitFieldSeek(out, 0);
+    for( i = 1 ; i <= 27 ; i+= 1 ){
+        BitFieldWrite(out, ASCIIUtilBase64ToInt(s, i), 6);
+    }
+    for( i = 0 ; i < 5 ; i+= 1 ){
+        hkey[i] = BitFieldGet(out, i);
+    }
+  
+    BitFieldSet(out, BitFieldGet(out, 5), 0);
+    BitFieldSeek(out, 2);
+    BitFieldSetSize(out, (((end * 6) - 160) / 128) * 128);
+   
+    for( i = 28 ; i < end ; i+= 1 ){
+        BitFieldWrite(out, ASCIIUtilBase64ToInt(s, i), 6);
+    }
+   
+    BitFieldWrite(out, ASCIIUtilBase64ToInt(s, end), BitFieldRemaining(out));
+    
+    ImperialBankCryptKey(ekey, obj.key, key, hkey);
+    ImperialBankBlockCrypt(ekey, out);
+  
+    return ImperialBankBlockValidate(hkey, out);
+}
+void ImperialBankWriteBlock(structref<imperial_bank_t> obj, string section, string block, arrayref<imperial_bank_key_t> key, structref<bit_field_t> in){
+    imperial_bank_key_t ekey;
+    imperial_bank_key_t hkey;
+    string s;
+    string h;
+    int i;
+    int end;
+ 
+    BitFieldResize(in, ((BitFieldGetSize(in) + 127) & ((-1) << 7)));
+ 
+    ImperialBankBlockHash(hkey, in);
+   
+    ImperialBankCryptKey(ekey, obj.key, key, hkey);
+    ImperialBankBlockCrypt(ekey, in);
+  
+    s = "";
+    BitFieldSeek(in, 2);
+    end = BitFieldRemaining(in) / 6;
+    for( i = 0 ; i < end ; i+= 1 ){
+        s+= ASCIIUtilIntToBase64(BitFieldRead(in, 6));
+    }
+    
+    end = BitFieldRemaining(in);
+    if( end > 0 ){ 
+        s+= ASCIIUtilIntToBase64(BitFieldRead(in, end) | ((hkey[2] << end) & 0x3F));
+    }
+   
+    BitFieldSetSize(in, 162);
+    BitFieldSeek(in, 0);
+ 
+    BitFieldSet(in, BitFieldGet(in, 0), 5);
+   
+    for( i = 0 ; i < 5 ; i+= 1 ){
+        BitFieldSet(in, hkey[i], i);
+    }
+    
+    h = "";
+    for( i = 0 ; i < 27 ; i+= 1 ){
+        h+= ASCIIUtilIntToBase64(BitFieldRead(in, 6));
+    }
+    
+    BankValueSetFromString(obj.file, section, block, h + s);
+}
+void ImperialBankCryptKey(arrayref<imperial_bank_key_t> key, arrayref<imperial_bank_key_t> key1, arrayref<imperial_bank_key_t> key2, arrayref<imperial_bank_key_t> key3){
+ 
+    key[0] = key1[1] ^ key2[2] ^ ((key3[3] << 13) | ((key3[3] >> 19) & 0x1FFF));
+    key[1] = key1[3] ^ key2[0] ^ key3[0];
+    key[2] = key1[0] ^ key2[3] ^ key3[2];
+    key[3] = key1[2] ^ key2[1] ^ key3[4];
+    key[4] = key1[4] ^ key2[4] ^ key3[1];
+}
+void ImperialBankBlockCrypt(arrayref<imperial_bank_key_t> key, structref<bit_field_t> block){
+    aes_encryption_t crypt;
+    aes_encryption_block_t eblock;
+    int i;
+    int end;
+    int ckey;
+    
+    ckey = key[0] ^ key[1] ^ key[2] ^ key[3] ^ key[4];
+    AESEncryptionSetup(crypt, key);
+   
+    end = BitFieldGetSize(block) / 32;
+    i = 0;
+    while( i < end ){
+       
+        eblock[0] = i;
+        eblock[1] = ~i;
+        eblock[2] = i ^ ckey;
+        eblock[3] = (-i) ^ ckey;
+        AESEncryptionCipher(crypt, eblock);
+   
+        BitFieldSet(block, BitFieldGet(block, i) ^ eblock[1], i);
+        i+= 1;
+        BitFieldSet(block, BitFieldGet(block, i) ^ eblock[2], i);
+        i+= 1;
+        BitFieldSet(block, BitFieldGet(block, i) ^ eblock[3], i);
+        i+= 1;
+        BitFieldSet(block, BitFieldGet(block, i) ^ eblock[0], i);
+        i+= 1;
+    }
+}
+void ImperialBankBlockHash(arrayref<imperial_bank_key_t> outkey, structref<bit_field_t> block){
+    sha1_hasher_t hasher;
+    sha1_hasher_block_t hashblock;
+    int i;
+    int end;
+    int j;
+    int eob;
+ 
+    SHA1HasherInitalize(hasher);
+    end = BitFieldGetSize(block) / 32;
+  
+    while( i < end ){
+      
+        eob = end - i;
+        if( eob > 16 ){ eob = 16; }
+      
+        for( j = 0 ; j < eob ; j+= 1 ){
+            hashblock[j] = BitFieldGet(block, i);
+            i+= 1;
+        }
+       
+        SHA1HasherProcess(hasher, hashblock);
+    }
+    SHA1HasherProcessFinal(hasher, hashblock, end * 4);
+    SHA1HasherHash(hasher, outkey);
+}
+bool ImperialBankBlockValidate(arrayref<imperial_bank_key_t> key, structref<bit_field_t> block){
+    imperial_bank_key_t hash;
+    int i;
+    bool result;
+    ImperialBankBlockHash(hash, block);
+   
+    result = true;
+    for( i = 0 ; i < 5 ; i+= 1 ){
+        result = result && (key[i] == hash[i]);
+    }
+    return result;
+}

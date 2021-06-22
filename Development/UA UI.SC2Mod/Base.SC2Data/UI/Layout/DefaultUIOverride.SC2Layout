@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Special Forces -->
+   <Constant name="StandardButtonBorder_SpecialForces" val="40,125,75" />
+   <Constant name="StandardButtonIcon_SpecialForces" val="155,255,190" />
+   <Constant name="StandardButtonCounter_SpecialForces" val="60,255,150" />
+   <Constant name="StandardProgressBorder_SpecialForces" val="40,125,75" />
+   <Constant name="StandardProgressFill_SpecialForces" val="155,255,190" />
+   <Constant name="StandardBorder_SpecialForces" val="3dcca3" />
+   <Constant name="StandardBorderHotkey_SpecialForces" val="3dcca3" />
+   <Constant name="StandardEditBoxHighlightColor_SpecialForces" val="3dcca3" />
+   <Constant name="ColorCommandNormal_SpecialForces" val="155,255,190" />
+   <Constant name="ColorCommandNormalBorder_SpecialForces" val="255,255,255" />
+   <Constant name="ColorCommandExecuting_SpecialForces" val="255,255,255" />
+   <Constant name="ColorCommandExecutingBorder_SpecialForces" val="255,255,255" />
+   <Constant name="ColorGroupSelectionBorderNormal_SpecialForces" val="40,125,75" />
+   <Constant name="ColorGroupSelectionBorderSubgroup_SpecialForces" val="70,235,120" />
+   <Constant name="ColorMenuButtonIcon_SpecialForces" val="0,200,120" />
+   <Constant name="ColorHelperButtonIcon_SpecialForces" val="0,200,120" />
+   <Constant name="ColorMinimapButtonIcon_SpecialForces" val="40,125,75" />
+   <Constant name="ColorChatDividerColor_SpecialForces" val="10,255,150" />
+   <Constant name="ColorChatIconColor_SpecialForces" val="10,255,60" />
+   <!-- Miras Marauders -->
+   <Constant name="StandardButtonBorder_MirasMarauders" val="40,125,75" />
+   <Constant name="StandardButtonIcon_MirasMarauders" val="155,255,190" />
+   <Constant name="StandardButtonCounter_MirasMarauders" val="60,255,150" />
+   <Constant name="StandardProgressBorder_MirasMarauders" val="40,125,75" />
+   <Constant name="StandardProgressFill_MirasMarauders" val="155,255,190" />
+   <Constant name="StandardBorder_MirasMarauders" val="3dcca3" />
+   <Constant name="StandardBorderHotkey_MirasMarauders" val="3dcca3" />
+   <Constant name="StandardEditBoxHighlightColor_MirasMarauders" val="3dcca3" />
+   <Constant name="ColorCommandNormal_MirasMarauders" val="155,255,190" />
+   <Constant name="ColorCommandNormalBorder_MirasMarauders" val="255,255,255" />
+   <Constant name="ColorCommandExecuting_MirasMarauders" val="255,255,255" />
+   <Constant name="ColorCommandExecutingBorder_MirasMarauders" val="255,255,255" />
+   <Constant name="ColorGroupSelectionBorderNormal_MirasMarauders" val="40,125,75" />
+   <Constant name="ColorGroupSelectionBorderSubgroup_MirasMarauders" val="70,235,120" />
+   <Constant name="ColorMenuButtonIcon_MirasMarauders" val="0,200,120" />
+   <Constant name="ColorHelperButtonIcon_MirasMarauders" val="0,200,120" />
+   <Constant name="ColorMinimapButtonIcon_MirasMarauders" val="40,125,75" />
+   <Constant name="ColorChatDividerColor_MirasMarauders" val="10,255,150" />
+   <Constant name="ColorChatIconColor_MirasMarauders" val="10,255,60" />
+   <!-- Galactic -->
+   <Constant name="StandardButtonBorder_Galactic" val="40,125,75" />
+   <Constant name="StandardButtonIcon_Galactic" val="155,255,190" />
+   <Constant name="StandardButtonCounter_Galactic" val="60,255,150" />
+   <Constant name="StandardProgressBorder_Galactic" val="40,125,75" />
+   <Constant name="StandardProgressFill_Galactic" val="155,255,190" />
+   <Constant name="StandardBorder_Galactic" val="3dcca3" />
+   <Constant name="StandardBorderHotkey_Galactic" val="3dcca3" />
+   <Constant name="StandardEditBoxHighlightColor_Galactic" val="3dcca3" />
+   <Constant name="ColorCommandNormal_Galactic" val="155,255,190" />
+   <Constant name="ColorCommandNormalBorder_Galactic" val="255,255,255" />
+   <Constant name="ColorCommandExecuting_Galactic" val="255,255,255" />
+   <Constant name="ColorCommandExecutingBorder_Galactic" val="255,255,255" />
+   <Constant name="ColorGroupSelectionBorderNormal_Galactic" val="40,125,75" />
+   <Constant name="ColorGroupSelectionBorderSubgroup_Galactic" val="70,235,120" />
+   <Constant name="ColorMenuButtonIcon_Galactic" val="0,200,120" />
+   <Constant name="ColorHelperButtonIcon_Galactic" val="0,200,120" />
+   <Constant name="ColorMinimapButtonIcon_Galactic" val="40,125,75" />
+   <Constant name="ColorChatDividerColor_Galactic" val="10,255,150" />
+   <Constant name="ColorChatIconColor_Galactic" val="10,255,60" />
+   <!-- Machined -->
+   <Constant name="StandardButtonBorder_Machined" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Machined" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Machined" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Machined" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Machined" val="155,255,190"/>
+   <Constant name="StandardBorder_Machined" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Machined" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Machined" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Machined" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Machined" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Machined" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Machined" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Machined" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Machined" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Machined" val="0,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Machined" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Machined" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Machined" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Machined" val="10,255,60"/>
+   <!-- Purple Arcade -->
+   <Constant name="StandardButtonBorder_ArcadeCabinetPurple" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_ArcadeCabinetPurple" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_ArcadeCabinetPurple" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_ArcadeCabinetPurple" val="40,125,75"/>
+   <Constant name="StandardProgressFill_ArcadeCabinetPurple" val="155,255,190"/>
+   <Constant name="StandardBorder_ArcadeCabinetPurple" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_ArcadeCabinetPurple" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_ArcadeCabinetPurple" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_ArcadeCabinetPurple" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_ArcadeCabinetPurple" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_ArcadeCabinetPurple" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_ArcadeCabinetPurple" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_ArcadeCabinetPurple" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_ArcadeCabinetPurple" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_ArcadeCabinetPurple" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_ArcadeCabinetPurple" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_ArcadeCabinetPurple" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_ArcadeCabinetPurple" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_ArcadeCabinetPurple" val="10,255,60"/>
+   <!-- Imperial -->
+   <Constant name="StandardButtonBorder_Imperial" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Imperial" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Imperial" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Imperial" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Imperial" val="155,255,190"/>
+   <Constant name="StandardBorder_Imperial" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Imperial" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Imperial" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Imperial" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Imperial" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Imperial" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Imperial" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Imperial" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Imperial" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Imperial" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Imperial" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Imperial" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Imperial" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Imperial" val="10,255,60"/>
+   <!-- Alliance -->
+   <Constant name="StandardButtonBorder_Alliance" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Alliance" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Alliance" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Alliance" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Alliance" val="155,255,190"/>
+   <Constant name="StandardBorder_Alliance" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Alliance" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Alliance" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Alliance" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Alliance" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Alliance" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Alliance" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Alliance" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Alliance" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Alliance" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Alliance" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Alliance" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Alliance" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Alliance" val="10,255,60"/>
+   <!-- Sentinels -->
+   <Constant name="StandardButtonBorder_Sentinels" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Sentinels" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Sentinels" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Sentinels" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Sentinels" val="155,255,190"/>
+   <Constant name="StandardBorder_Sentinels" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Sentinels" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Sentinels" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Sentinels" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Sentinels" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Sentinels" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Sentinels" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Sentinels" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Sentinels" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Sentinels" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Sentinels" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Sentinels" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Sentinels" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Sentinels" val="10,255,60"/>
+   <!-- Scourge -->
+   <Constant name="StandardButtonBorder_Scourge" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Scourge" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Scourge" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Scourge" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Scourge" val="155,255,190"/>
+   <Constant name="StandardBorder_Scourge" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Scourge" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Scourge" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Scourge" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Scourge" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Scourge" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Scourge" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Scourge" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Scourge" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Scourge" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Scourge" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Scourge" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Scourge" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Scourge" val="10,255,60"/>
+   <!-- Horde -->
+   <Constant name="StandardButtonBorder_Horde" val="40,125,75"/>
+   <Constant name="StandardButtonIcon_Horde" val="155,255,190"/>
+   <Constant name="StandardButtonCounter_Horde" val="60,255,150"/>
+   <Constant name="StandardProgressBorder_Horde" val="40,125,75"/>
+   <Constant name="StandardProgressFill_Horde" val="155,255,190"/>
+   <Constant name="StandardBorder_Horde" val="3dcca3"/>
+   <Constant name="StandardBorderHotkey_Horde" val="3dcca3"/>
+   <Constant name="StandardEditBoxHighlightColor_Horde" val="3dcca3"/>
+   <Constant name="ColorCommandNormal_Horde" val="155,255,190"/>
+   <Constant name="ColorCommandNormalBorder_Horde" val="255,255,255"/>
+   <Constant name="ColorCommandExecuting_Horde" val="255,255,255"/>
+   <Constant name="ColorCommandExecutingBorder_Horde" val="255,255,255"/>
+   <Constant name="ColorGroupSelectionBorderNormal_Horde" val="40,125,75"/>
+   <Constant name="ColorGroupSelectionBorderSubgroup_Horde" val="70,235,120"/>
+   <Constant name="ColorMenuButtonIcon_Horde" val="20,200,120"/>
+   <Constant name="ColorHelperButtonIcon_Horde" val="0,200,120"/>
+   <Constant name="ColorMinimapButtonIcon_Horde" val="40,125,75"/>
+   <Constant name="ColorChatDividerColor_Horde" val="10,255,150"/>
+   <Constant name="ColorChatIconColor_Horde" val="10,255,60"/>
+
+   <Constant name="ColorUnitWireframeShields_Terr" val="128,128,128"/>
+   
+   <Frame type="GameUI" name="GameUI" file="GameUI">
+      <ConsoleWorldBottomOffset val="0" />
+      <DeactivateChatBarOnClick val="False" />
+      <Stategroup name="APMOFF">
+         <DefaultState val="Dflt" />
+         <State name="Classic_Terr">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Classic" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Galactic">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_XelNaga" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="PurpleArcade">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_ArcadePurple" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Alliance">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Alliance" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Imperial">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Imperial" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Scourge">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Scourge" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Sentinels">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Sentinels" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Horde">
+            <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Horde" />
+            <Action type="SetProperty" frame="$ConsolePanel/APMMeter" Visible="False" />
+         </State>
+         <State name="Dflt" />
+      </Stategroup>
+      <!-- Toggling Detector Icon -->
+      
+      <Frame type="WorldPanel" name="WorldPanel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+         <Frame type="UnitStatusPanel" name="UnitStatusPanel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Batch val="true"/>
+            <!--
+            <Frame type="UnitStatusFrame" name="Detectors" template="BossBar/DetectorTemplate">
+               <Anchor relative="$parent" />
+            </Frame>
+            <StateGroup name="UnitStatusBarIcons">
+               <DefaultState val="ON" />
+               <State name="ON">
+                  <When type="AnimationState" frame="$this" DetectorIcon="On" />
+                  <Action type="SetProperty" frame="$this/Detectors" Alpha="255" />
+               </State>
+               <State name="OFF">
+                  <When type="AnimationState" frame="$this" DetectorIcon="OFF" />
+                  <Action type="SetProperty" frame="$this/Detectors" Alpha="0" />
+               </State>
+            </StateGroup> -->
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="UIContainer">
+         <Frame type="Frame" name="FullscreenLowerContainer">
+            <Frame type="PausePanel" name="PausePanel" template="PausePanel/PausePanelTemplate">
+               <Handle val="PausePanel" />
+               <StateGroup name="PauseState">
+                  <DefaultState val="NotPaused"/>
+                  <State name="Paused">
+                     <When type="Property" Visible="True" />
+                     <Action type="SetProperty" frame="$HUDButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$HUD" Enabled="False" />
+                     <Action type="SetProperty" frame="$FTFrame" Enabled="False" />
+                     <Action type="SetProperty" frame="$FTC" Enabled="False" />
+                     <Action type="SetProperty" frame="$VKFrame" Enabled="False" />
+                     <Action type="SetProperty" frame="$VMFrame" Enabled="False" />
+                     <Action type="SetProperty" frame="$VKC" Enabled="False" />
+                     <Action type="SetProperty" frame="$XPC" Enabled="False" />
+               <!--  <Action type="SetProperty" frame="$GCC" Enabled="False" /> -->
+                     <Action type="SetProperty" frame="$SDMenu" Enabled="False" />
+                     <Action type="SetProperty" frame="$DHC" Enabled="False" />
+                     <Action type="SetProperty" frame="$LSC" Enabled="False" />
+                     <Action type="SetProperty" frame="$SUC" Enabled="False" />
+                     <Action type="SetProperty" frame="$CameraButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$InfestationLevel" Enabled="False" />
+                     <Action type="SetProperty" frame="$Achievements" Enabled="False" />
+                     <Action type="SetProperty" frame="$TipsButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$PRO" Enabled="False" />
+                     <Action type="SetProperty" frame="$UpgradesPanel" Enabled="False" />
+                     <Action type="SetProperty" frame="$UpgradesButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$SpeedLabel1" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel2" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel3" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel4" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel5" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel6" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel7" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel8" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel9" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel10" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel11" Alpha="0" />
+                     <Action type="SetProperty" frame="$SpeedLabel12" Alpha="0" />
+                  </State>
+                  <State name="NotPaused"/>
+               </StateGroup>
+            </Frame>
+         </Frame>
+         <Frame type="ConsolePanel" name="ConsolePanel" template="ConsolePanel/ConsolePanelTemplate">
+            <Alpha val="255" />
+            <UseApm val="False" />
+            <Frame type="Model" name="InfopanelModel">
+               <Alpha val="255" />
+            </Frame>
+            <Frame type="Model" name="MinimapModel">
+               <Alpha val="255" />
+            </Frame>
+            <Frame type="Model" name="CommandPanelModel">
+               <Alpha val="255" />
+            </Frame>
+            <Frame type="PortraitPanel" name="PortraitPanel">
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-2"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-446"/>
+               <!--
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-2" />
+               <Anchor side="Right" relative="$GameUI_CommandPanel" pos="Min" offset="-35" />
+               <RenderPriority val="515" /> -->
+               <Handle val="PortraitPanel" />
+               <Width val="152" />
+               <Height val="240" />
+            </Frame>
+            <Frame type="Frame" name="MinimapStub">
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <!--
+               <Anchor side="Left" relative="$parent/ConsoleMainContainer" pos="Min" offset="-35"/>
+               <Anchor side="Bottom" relative="$parent/ConsoleMainContainer" pos="Max" offset="0"/> -->
+               <Width val="380"/>
+               <Height val="332"/>
+            </Frame>
+            <Frame type="Frame" name="CommandStub">
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+               <!--
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-50"/> -->
+               <Width val="450"/>
+               <Height val="301"/>
+            </Frame>
+         <!--
+         <Frame type ="Frame" name="ConsoleMainContainer">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="100" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-100" />
+            <Height val="255" />
+            <Handle val="ConsoleMain" />
+            <Frame type="Image" name="BackgroundImage">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\Mid_Panel.dds"/>
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,148" />
+               <Alpha val="125" />
+            </Frame>
+                Alternate Texture (not used)
+            <Frame type="Image" name="Scanlines">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="-35" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="5" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="35" />
+               <Texture val="Assets/Textures/ui_nova_armyupgrades_movieframelinesmask.dds"/>
+               <RenderPriority val="511" />
+               <Alpha val="25"/>
+               <BlendMode val="Add"/>
+            </Frame> -->
+            <!-- Probably will remove
+            <Frame type="Image" name="ButtonsContainerBorder">
+               <Anchor side="Top" relative="$Minimap" pos="Min" offset="25"/>
+               <Anchor side="Right" relative="$Minimap" pos="Max" offset="240"/>
+               <Texture val="Assets/Textures/ui_nova_armyupgrades_movieframe.dds"/>
+               <Height val="200" />
+               <Width val="200" />
+            </Frame>
+         </Frame> -->
+         <!--
+         <Frame type="Image" name="BlackMask">
+            <Anchor side="Top" relative="$parent/ConsoleMainContainer" pos="Min" offset="8" />
+            <Anchor side="Left" relative="$parent/ConsoleMainContainer" pos="Min" offset="-35" />
+            <Anchor side="Bottom" relative="$parent/ConsoleMainContainer" pos="Max" offset="-1" />
+            <Anchor side="Right" relative="$parent/ConsoleMainContainer" pos="Max" offset="35" />
+            <Color val="0,0,0" />
+            <Alpha val="185" />
+            <RenderPriority val="400" />
+         </Frame>
+          
+            <Frame type="Image" name="BackgroundGridSmall">
+               <Anchor side="Left" relative="$parent" pos="Min" offset="100" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-100" />
+               <Height val="255" />
+               <LayerCount val="2" />
+               <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="0" />
+               <AlphaChannel val="Alpha" layer="0" />
+               <AlphaLayer val="true" layer="0" />
+               <Tiled val="true" layer="0" />
+               <Texture val="Assets/Textures/white.dds" layer="1" />
+               <LayerAlpha val="20" layer="1" />
+               <LayerColor val="0,255,148" layer="1" />
+            </Frame> -->
+            <!--
+            <Frame type="Image" name="BackgroundGridLargeWave">
+               <Anchor relative="$parent/BackgroundGridSmall" />
+               <LayerCount val="3" />
+               <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+               <AlphaLayer val="true" layer="0" />
+               <AlphaChannel val="Blue" layer="0" />
+               <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+               <WrapUV val="false" layer="0" />
+               <LayerAlpha val="128" layer="0" />
+               <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+               <AlphaChannel val="Green" layer="1" />
+               <AlphaLayer val="true" layer="1" />
+               <Tiled val="true" layer="1" />
+               <Texture val="Assets/Textures/white.dds" layer="2" />
+               <LayerAlpha val="64" layer="2" />
+               <LayerColor val="0,255,148" layer="2" />
+               <BlendMode val="Add" />
+               <Animation name="LargeGridWave">
+                  <Event event="OnShown" action="Play" />
+                  <Event event="OnHidden" action="Stop,Pause" />
+                  <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                     <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                     <Key type="Curve" time="9.167" value="1.75" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+                     <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="5.333" value="-1.5" inOut="Linear" />
+                     <Key type="Curve" time="9.167" value="-1.5" inOut="Linear" />
+                  </Controller>
+               </Animation>
+            </Frame>
+            <Frame type="Image" name="BackgroundGridLargeWave2">
+               <Anchor relative="$parent/BackgroundGridSmall" />
+               <LayerCount val="3" />
+               <Texture val="@UI/SC2_UI_Collection_Announcers_Background_Masks_01" layer="0" />
+               <AlphaLayer val="true" layer="0" />
+               <AlphaChannel val="Blue" layer="0" />
+               <TextureCoords top="-.75" left="1" bottom="0" right="1.5" layer="0" />
+               <WrapUV val="false" layer="0" />
+               <LayerAlpha val="128" layer="0" />
+               <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="1" />
+               <AlphaChannel val="Green" layer="1" />
+               <AlphaLayer val="true" layer="1" />
+               <Tiled val="true" layer="1" />
+               <Texture val="Assets/Textures/white.dds" layer="2" />
+               <LayerAlpha val="64" layer="2" />
+               <LayerColor val="0,255,148" layer="2" />
+               <BlendMode val="Add" />
+               <Animation name="LargeGridWave">
+                  <Event event="OnShown" action="Play" />
+                  <Event event="OnHidden" action="Stop,Pause" />
+                  <Controller type="LayerUV" layer="0" side="Top" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="5.333" value="1.75" inOut="Linear" />
+                     <Key type="Curve" time="9.167" value="-1.75" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Bottom" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="3.333" value="1.75" inOut="Linear" />
+                     <Key type="Curve" time="6.167" value="1.75" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Left" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+                     <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+                  </Controller>
+                  <Controller type="LayerUV" layer="0" side="Right" relative="true" sidelock="false" end="Loop">
+                     <Key type="Curve" time="0" value="0" inOut="Linear" />
+                     <Key type="Curve" time="3.333" value="-1.5" inOut="Linear" />
+                     <Key type="Curve" time="6.167" value="-1.5" inOut="Linear" />
+                  </Controller>
+               </Animation>
+            </Frame> -->
+            <!--
+            <Frame type="Frame" name="RightPanel">
+               <Anchor side="Right" relative="$parent/ConsoleMainContainer" pos="Max" offset="42" />
+               <Anchor side="Bottom" relative="$parent/ConsoleMainContainer" pos="Max" offset="4" />
+               <Width val="42" />
+               <Height val="257" />
+               <Frame type="Image" name="BackgroundImage">
+                  <Anchor relative="$parent" />
+                  <Texture val="Assets\Textures\Right_Panel.dds" />
+                  <ColorAdjustMode val="Colorize" />
+                  <AdjustmentColor val="0,255,148" />
+                  <Alpha val="125" />
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="LeftPanel">
+               <Anchor side="Left" relative="$parent/ConsoleMainContainer" pos="Min" offset="-42" />
+               <Anchor side="Bottom" relative="$parent/ConsoleMainContainer" pos="Max" offset="4" />
+               <Width val="42" />
+               <Height val="257" />
+               <Frame type="Image" name="BackgroundImage">
+                  <Anchor relative="$parent" />
+                  <Texture val="Assets\Textures\Right_Panel.dds" />
+                  <TextureCoords top="0.0" left="1.0" bottom="1.0" right="0.0" />
+                  <ColorAdjustMode val="Colorize" />
+                  <AdjustmentColor val="0,255,148" />
+                  <Alpha val="125" />
+               </Frame>
+            </Frame> -->
+            <!--
+            <Frame type="Image" name="PortraitLeftBorder">
+               <Anchor side="Top" relative="$PortraitPanel" pos="Min" offset="-20" />
+               <Anchor side="Left" relative="$PortraitPanel" pos="Min" offset="-15" />
+               <Height val="184" />
+               <Width val="160" />
+               <RenderPriority val="650" />
+               <Texture val="Assets\Textures\ui_nova_storymode_portraitviewer_portrait_top.dds" /> 
+            </Frame>
+            <Frame type="Image" name="PortraitMidBorder">
+               <Anchor side="Top" relative="$parent/PortraitLeftBorder" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent/PortraitLeftBorder" pos="Min" offset="0" />
+               <Height val="4" />
+               <Width val="160" />
+               <RenderPriority val="650" />
+               <Texture val="Assets\Textures\ui_nova_storymode_portraitviewer_portrait_middle.dds" /> 
+            </Frame> -->
+            <!--
+            <Frame type="Frame" name="PortraitContainer">
+               <Anchor side="Top" relative="$parent/ConsoleMainContainer" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/CommandPanel" pos="Max" offset="0" />
+               <Anchor side="Bottom" relative="$parent/ConsoleMainContainer" pos="Max" offset="0" />
+               <Anchor side="Right" relative="$parent/PortraitPanel" pos="Max" offset="0" />
+               <RenderPriority val="700" />
+               <Frame type="Image" name="BackgroundImage">
+                  <Anchor relative="$parent" />
+                  <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+                  <TextureType val="Border" />
+                  <Color val="0,255,148" />
+                  <Alpha val="0" />
+               </Frame>
+            </Frame> -->
+            
+         </Frame>
+         <Frame type="Frame" name="ConsoleUIContainer">
+            <Frame type="StandardNameTooltip" name="StandardNameTooltip" template="TooltipFrameTemplates/UADStandardNameTooltipTemplate"/>
+            <Frame type="MissionTimePanel" name="MissionTimePanel" template="MissionTimePanel/MissionTimePanelTemplate">
+               <Anchor side="Left" relative="$parent" pos="Min" offset="330" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-285" />
+               <Frame type="Label" name="TimeLabel">
+                  <Color val="0,255,148" />
+                  <Handle val="MissionTimer" />
+                  <Style val="GameButtonCharge" />
+                  <TooltipFrame val="UADStandardTooltip" />
+               </Frame>
+               <Frame type="Image" name="BackgroundImage">
+                  <Color val="0,255,148" />
+               </Frame>
+            </Frame>
+            <Frame type="TriggerWindowPanel" name="TriggerWindowPanel">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="45"/>
+               <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+               <Anchor side="Bottom" relative="$parent/IdleButton" pos="Max" offset="0"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+               <StateGroup name="Anchor">
+                  <DefaultState val="Default" />
+                  <State name="Move">
+                     <When type="Property" frame="$GameUnitBar" Visible="True"/>
+                     <Action type="SetAnchor" frame="$this" side="Top" relative="$parent" pos="Min" offset="-10"/>
+                     <Action type="SetAnchor" frame="$this" side="Right" relative="$parent" pos="Max" offset="-60"/>
+                  </State>
+                  <State name="Default" />
+               </StateGroup>
+            </Frame>
+            <Frame type="MinimapPanel" name="MinimapPanel" template="MinimapPanel/MinimapPanelTemplate">
+
+               <Frame type="MinimapPanelTooltip" name="MinimapPanelTooltip" template="TooltipFrameTemplates/UADMinimapPanelTooltipTemplate"/>
+               <!--
+               <Anchor side="Left" relative="$ConsoleMain" pos="Min" offset="-35"/>
+               <Anchor side="Bottom" relative="$ConsoleMain" pos="Max" offset="0"/> -->
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+               <Width val="395"/>
+               <Height val="327"/>
+               <Handle val="MinimapPanel" />
+               <!-- Need this here to render above movie frame -->
+               <Frame type="Label" name="OfflineLabel">
+                  <Anchor side="Top" relative="$parent/Minimap" pos="Min" offset="20"/>
+                  <Anchor side="Left" relative="$parent/Minimap" pos="Mid" offset="-50"/>
+                  <Text val="OFFLINE"/>
+                  <Style val="VoidReticleTerranMainObjective"/>
+                  <Color val="255,0,0"/>
+                  <Visible val="False"/>
+                  <Animation name="Pulse">
+                     <Event event="OnShown" action="Reset,Play" />
+                     <Event event="OnHidden" action="Reset,Pause" />
+                     <Controller type="Fade" end="Pause">
+                        <Key type="Curve" time="0" value="25" out="Slow" />
+                        <Key type="Curve" time="1" value="255" in="Slow" />
+                        <Key type="Curve" time="2.5" value="25" out="Slow" />
+                        <Key type="Curve" time="2.5" value="25" out="Slow" />
+                        <Key type="Curve" time="3.5" value="255" in="Slow" />
+                        <Key type="Curve" time="4.0" value="25" out="Slow" />
+                        <Key type="Curve" time="4.5" value="25" out="Slow" />
+                        <Key type="Curve" time="5.0" value="255" out="Slow" />
+                     </Controller>
+                  </Animation>
+               </Frame>   
+               <Frame type="Minimap" name="Minimap">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="25"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="31"/>
+                  <Width val="291"/>
+                  <Height val="286"/>
+                  
+                  <Frame type="Frame" name="MovieFrame" template="MovieFrameTemplate/MovieFrame">
+                    <Anchor relative="$parent"/>
+                    <Handle val="Static_Movie"/> 
+                  </Frame>
+                  <StateGroup name="MinmapJammedState">
+                     <DefaultState val="Clear" />
+                     <State name="Jammed">
+                        <When type="AnimationState" Jamming="Jammed" />
+                        <Action type="SetProperty" frame="$this" Alpha="0" />
+                        <Action type="SetProperty" frame="$parent/OfflineLabel" Visible="True" />
+                     </State>
+                     <State name="Clear">
+                        <When type="AnimationState" Jamming="Clear" />
+                     </State>  
+                  </StateGroup>
+                  <RenderBorder val="True" />
+                  <Frame type="MinimapCameraViewFrustumFrame" name="CameraViewFrustumFrame">
+                     <Alpha val="0" />
+                     <AcceptsMouse val="False" />
+                  </Frame>
+                  <Frame type="Image" name="ViewFrustumImage">
+                     <Alpha val="200" />
+                     <Texture val="Assets/Textures/hud_bg_minimap_viewfinder.dds" />
+                     <TextureType val="Nineslice" />
+                  </Frame>
+               </Frame>
+               <Frame type="Button" name="PingButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+               <Frame type="Button" name="TerrainButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+               <Frame type="Button" name="ColorButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+            </Frame>
+            <Frame type="ControlGroupPanel" name="ControlGroupPanel">
+               <Frame type="ControlGroupButton" name="ControlGroupButton4">
+                  <Alpha val="255" />
+               </Frame>
+               <Frame type="ControlGroupButton" name="ControlGroupButton5">
+                  <Alpha val="0" />
+               </Frame>
+               <Frame type="ControlGroupButton" name="ControlGroupButton6">
+                  <Alpha val="0" />
+               </Frame>
+               <Frame type="ControlGroupButton" name="ControlGroupButton7">
+                  <Alpha val="0" />
+               </Frame>
+               <Frame type="ControlGroupButton" name="ControlGroupButton8">
+                  <Alpha val="0" />
+               </Frame>
+               <Frame type="ControlGroupButton" name="ControlGroupButton9">
+                  <Alpha val="0" />
+               </Frame>
+               <StateGroup name="AlignmentRatioCheck">
+                  <State name="CenterAligned">
+                     <Action type="SetAnchor" frame="$this" side="Left" relative="$parent/MinimapPanel" pos="Max" offset="0"/>
+                      <!--
+                      <Action type="SetAnchor" frame="$this" side="Left" relative="$parent/MinimapPanel" pos="Max" offset="-135"/> -->
+                  </State>
+               </StateGroup>
+            </Frame>
+            <!--
+            <Frame type="Image" name="CommandCardBorder">
+               <Anchor side="Top" relative="$GameUI_CommandPanel" pos="Min" offset="-20" />
+               <Anchor side="Left" relative="$GameUI_CommandPanel" pos="Min" offset="-20" />
+               <Width val="425" />
+               <Height val="272" />
+               <RenderPriority val="615" />
+               <Texture val="@@UI/ResearchTierBorderProtoss"/>
+               <TextureType val="Border"/>
+               <Tiled val="true"/>
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,148" />
+               <Alpha val="125" />
+            </Frame> -->
+            <frame type="Frame" name="ArmyButton">
+               <Anchor side="Left" relative="$parent/IdleButton" pos="Min" offset="-100"/>
+               <Anchor side="Bottom" relative="$parent/IdleButton" pos="Max" offset="0"/>
+            </frame>
+         </Frame>
+         <Frame type="Frame" name="FullscreenUpperContainer">
+            <Frame type="TextCrawlPanel" name="TextCrawlPanel">
+               <Anchor side="Left" relative="$parent" pos="Max" offset="20"/>
+               <Anchor side="Right" relative="$parent" pos="Min" offset="20"/>
+               <Anchor side="Bottom" relative="$parent" pos="Min" offset="0"/>
+               <Anchor side="Top" relative="$parent" pos="Min" offset="100"/>
+               <Width val="500"/>
+               <Height val="200"/>
+               <Visible val="false"/>
+               <RenderPriority val="1255" />
+               <Frame type="FlashFrame" name="FlashFrame">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                  <File val="UI/Flash/GameUI/TextCrawl_Green.swf"/>
+                  <FlashInputEnabled val="false"/>
+                  <UseAlternateTime val="true"/>
+               </Frame>
+            </Frame>
+            <Frame type="StandardTooltip" name="UADStandardTooltip" template="TooltipFrameTemplates/UADStandardTooltip"/>
+            <Frame type="MenuBar" name="MenuBar" template="MenuBar/MenuBarTemplate">
+               <Frame type="SystemInfoTooltip" name="SystemInfoTooltip" template="TooltipFrameTemplates/SystemInfoTooltipTemplate"/>
+               <Frame type="Image" name="MenuBarBackgroundImage">
+                  <Color val="0,255,148" />
+               </Frame>
+               <Frame type="Button" name="HelpButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+               <Frame type="Button" name="ChatButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+               <Frame type="SocialButton" name="SocialButton">
+                  <TooltipFrame val="UADStandardTooltip"/>
+               </Frame>
+               <Frame type="Button" name="MenuButton">
+                  <TooltipFrame val="SystemInfoTooltip"/>
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="MenuBarConsoleAnchor">
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-265"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="0"/> 
+               <!--
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-60"/> -->
+               <Width val="241"/>
+               <Height val="65"/>
+            </Frame>
+            <Frame type="Frame" name="LogMessagePanel">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="8"/>
+               <Anchor side="Left" relative="$parent/InfestationLevel" pos="Max" offset="100"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-250"/>
+               <Height val="230"/>
+               <StateGroup name="MessageCount">
+                  <State name="HideDumbUIErrors">
+                     <When type="Property" frame="FilterLogCheckBox0" Checked="True" />
+                     <When type="Property" frame="ShowWarningsCheckBox" Visible="False" />
+                     <When type="Property" frame="ListBox" DataCount="5" />
+                     <Action type="SetProperty" frame="$this" Alpha="0" />
+                  </State>
+                  <State name="WarningMsgChecked">
+                     <When type="Property" frame="ShowWarningsCheckBox" Checked="True" />
+                     <When type="Property" frame="ShowWarningsCheckBox" Visible="True" />
+                     <Action type="SetProperty" frame="FilterLogCheckBox0" Checked="False" />
+                  </State>
+                  <State name="WarningMsgUnChecked">
+                     <When type="Property" frame="ShowWarningsCheckBox" Visible="True" />
+                     <When type="Property" frame="ShowWarningsCheckBox" Checked="False" />
+                     <Action type="SetProperty" frame="FilterLogCheckBox0" Checked="True" />
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Frame" name="DebugMovieFrame" template="MovieFrameTemplate/MovieFrame">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="14"/>
+               <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+               <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+               <Handle val="DebugMovieFrame"/>
+            </Frame>
+            <!--
+            <Frame type="TipAlertPanel" name="TipAlertPanel" template="TipAlertPanel/TipAlertPanelTemplate">
+               <Alpha val="0" />
+            </Frame> -->
+            <Frame type="Label" name="UIicon">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="-500" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+               <Width val="64" />
+               <Height val="64" />
+               <Text val="0" />
+               <Alpha val="0" />
+               <AcceptsMouse val="False" />
+               <Stategroup name="Index">
+                  <DefaultState val="0" />
+                  <State name="0" />
+                  <State name="1">
+                     <When type="AnimationState" Image="1" />
+                     <Action type="SetProperty" Text="1" />
+                  </State>
+                  <State name="2">
+                     <When type="AnimationState" Image="2" />
+                     <Action type="SetProperty" Text="2" />
+                  </State>
+                  <State name="3">
+                     <When type="AnimationState" Image="3" />
+                     <Action type="SetProperty" Text="3" />
+                  </State>
+                  <State name="4">
+                     <When type="AnimationState" Image="4" />
+                     <Action type="SetProperty" Text="4" />
+                  </State>
+                  <State name="5">
+                     <When type="AnimationState" Image="5" />
+                     <Action type="SetProperty" Text="5" />
+                  </State>
+                  <State name="6">
+                     <When type="AnimationState" Image="6" />
+                     <Action type="SetProperty" Text="6" />
+                  </State>
+                  <State name="7">
+                     <When type="AnimationState" Image="7" />
+                     <Action type="SetProperty" Text="7" />
+                  </State>
+                  <State name="8">
+                     <When type="AnimationState" Image="8" />
+                     <Action type="SetProperty" Text="8" />
+                  </State>
+                  <State name="9">
+                     <When type="AnimationState" Image="9" />
+                     <Action type="SetProperty" Text="9" />
+                  </State>
+                  <State name="10">
+                     <When type="AnimationState" Image="10" />
+                     <Action type="SetProperty" Text="10" />
+                  </State>
+                  <State name="11">
+                     <When type="AnimationState" Image="11" />
+                     <Action type="SetProperty" Text="11" />
+                  </State>
+                  <State name="12">
+                     <When type="AnimationState" Image="12" />
+                     <Action type="SetProperty" Text="12" />
+                  </State>
+                  <State name="13">
+                     <When type="AnimationState" Image="13" />
+                     <Action type="SetProperty" Text="13" />
+                  </State>
+                  <State name="14">
+                     <When type="AnimationState" Image="14" />
+                     <Action type="SetProperty" Text="14" />
+                  </State>
+                  <State name="15">
+                     <When type="AnimationState" Image="15" />
+                     <Action type="SetProperty" Text="15" />
+                  </State>
+                  <State name="16">
+                     <When type="AnimationState" Image="16" />
+                     <Action type="SetProperty" Text="16" />
+                  </State>
+                  <State name="17">
+                     <When type="AnimationState" Image="17" />
+                     <Action type="SetProperty" Text="17" />
+                  </State>
+                  <State name="18">
+                     <When type="AnimationState" Image="18" />
+                     <Action type="SetProperty" Text="18" />
+                  </State>
+                  <State name="19">
+                     <When type="AnimationState" Image="19" />
+                     <Action type="SetProperty" Text="19" />
+                  </State>
+                  <State name="20">
+                     <When type="AnimationState" Image="20" />
+                     <Action type="SetProperty" Text="20" />
+                  </State>
+                  <State name="21">
+                     <When type="AnimationState" Image="21" />
+                     <Action type="SetProperty" Text="21" />
+                  </State>
+               </Stategroup>
+            </Frame>
+            <Frame type="Control" name="UnitsDebugPanel" template="DebugTemplate/DebugPanelTemplate" />
+            <Frame type="Button" name="DebugButton" template="StandardUADTemplates/UADLargeButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-300" />
+               <Height val="56" />
+               <Width val="250" />
+               <Alpha val="0" />
+               <Visible val="False" />
+               <Frame type="Label" name="Label">
+                  <Text val="Spawn Debugger" />
+               </Frame>
+               <Animation name="ClickAnim">
+                  <Event event="OnClick" action="Reset,Play" />
+                  <Controller type="Visibility" end="Pause">
+                     <Key type="Bool" time="0" value="False" />
+                  </Controller>
+                  <Controller type="Visibility" frame="$parent/UnitsDebugPanel" end="Pause">
+                     <Key type="Bool" time="0" value="True" />
+                  </Controller>
+               </Animation>
+               <Animation name="ButtonFadeAnim">
+                  <Event event="OnMouseEnter" action="DirectionForward,Play" />
+                  <Event event="OnMouseExit" action="DirectionReverse,Play" />
+                  <Controller type="Fade" end="Pause">
+                     <Controller type="Fade" end="Pause">
+                        <Key type="Curve" time="0.00" value="0" out="Slow" />
+                        <Key type="Curve" time="0.25" value="175" in="Slow" />
+                     </Controller>
+                  </Controller>
+               </Animation>
+               <StateGroup name="DebugState">
+                  <DefaultState val="NotDev" />
+                  <State name="Show">
+                     <When type="AnimationState" DebugPanel="Display" />
+                     <Action type="SetProperty" frame="$this" Visible="True" />
+                     <Action type="SetAnimationProperty" frame="$this" animation="ButtonFadeAnim" enabled="true"/>
+                  </State>
+                  <State name="Hide">
+                     <When type="Property" frame="$HUDButton" Visible="False" />
+                     <Action type="SetProperty" frame="$this" Visible="False" />
+                     <Action type="SetAnimationProperty" frame="$this" animation="ButtonFadeAnim" enabled="false"/>
+                  </State>
+                  <State name="Sandbox">
+                     <When type="AnimationState" DebugPanel="Sandbox" />
+                     <Action type="SetProperty" frame="$this" Visible="True" />
+                     <Action type="SetProperty" frame="$this" Alpha="255" />
+                     <Action type="SetAnimationProperty" frame="$this" animation="ButtonFadeAnim" enabled="false"/>
+                  </State>
+                  <State name="NotDev" />
+               </StateGroup>
+            </Frame>
+            <Frame type="Frame" name="MissionSelection" template="CampaignUADTemplates/MissionSelectionTemplate" />
+            <Frame type="Button" name="CampaignDebugButton" template="StandardUADTemplates/UADLargeButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Right" relative="$parent\DebugButton" pos="Min" offset="0" />
+               <Height val="56" />
+               <Width val="250" />
+               <Alpha val="0" />
+               <Visible val="False" />
+               <Frame type="Label" name="Label">
+                  <Text val="Campaign Debugger" />
+               </Frame>
+               <Animation name="ClickAnim">
+                  <Event event="OnClick" action="Reset,Play" />
+                  <Controller type="Visibility" end="Pause">
+                     <Key type="Bool" time="0" value="False" />
+                  </Controller>
+                  <Controller type="Visibility" frame="$parent/MissionSelection" end="Pause">
+                     <Key type="Bool" time="0" value="True" />
+                  </Controller>
+               </Animation>
+               <Animation name="ButtonFadeAnim">
+                  <Event event="OnMouseEnter" action="DirectionForward,Play" />
+                  <Event event="OnMouseExit" action="DirectionReverse,Play" />
+                  <Controller type="Fade" end="Pause">
+                     <Controller type="Fade" end="Pause">
+                        <Key type="Curve" time="0.00" value="0" out="Slow" />
+                        <Key type="Curve" time="0.25" value="175" in="Slow" />
+                     </Controller>
+                  </Controller>
+               </Animation>
+               <StateGroup name="DebugState">
+                  <DefaultState val="NotDev" />
+                  <State name="Show">
+                     <When type="AnimationState" CampaignPanel="Display" />
+                     <Action type="SetProperty" frame="$this" Visible="True" />
+                     <Action type="SetAnimationProperty" frame="$this" animation="ButtonFadeAnim" enabled="true"/>
+                  </State>
+                  <State name="Hide">
+                     <When type="Property" frame="$HUDButton" Visible="False" />
+                     <Action type="SetProperty" frame="$this" Visible="False" />
+                     <Action type="SetAnimationProperty" frame="$this" animation="ButtonFadeAnim" enabled="false"/>
+                  </State>
+                  <State name="NotDev" />
+               </StateGroup>
+            </Frame>
+            <Frame type="Frame" name="UpgradeConstraint">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="10" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+               <Visible val="False" />
+               <RenderPriority val="1000" />
+               <Handle val="UpgradesPanel" />
+               <Animation name="DisplayAnim">
+                  <Event event="Display" action="DirectionForward,Play" />
+                  <Event event="Close" action="DirectionReverse,Play" />
+                  <Controller type="Visibility" end="Pause">
+                     <Key type="Bool" time="0" value="False" />
+                     <Key type="Bool" time="0.1" value="True" />
+                  </Controller>
+               </Animation>
+               <Animation name="ForceHidden" flags="NoEventsWhileHidden">
+                  <Event event="GameOver" action="Reset,Play" />
+                  <Controller type="Visibility" end="Pause">
+                     <Key type="Bool" time="0" value="False" />
+                  </Controller>
+               </Animation>
+               <Frame type="Control" name="PlayerUpgrades1" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Visible val="False" />
+                  <Handle val="Upgrades1" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="1" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player1Container/Player1Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player1Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player1Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades2" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades1" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades1" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades2" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="2" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player2Container/Player2Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player2Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player2Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades1" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades3" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades2" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades2" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades3" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="3" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player3Container/Player3Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player3Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player3Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades2" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades4" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades3" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades3" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades4" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="4" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player4Container/Player4Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player4Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player4Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades3" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades5" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades4" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades4" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades5" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="5" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player5Container/Player5Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player5Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player5Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades4" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades6" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades5" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades5" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades6" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="6" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player6Container/Player6Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player6Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player6Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades5" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades7" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades6" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades6" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades7" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="7" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player7Container/Player7Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player7Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player7Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades6" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades8" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades7" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades7" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades8" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="8" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player8Container/Player8Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player8Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player8Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades7" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades9" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades8" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades8" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades9" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="9" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player9Container/Player9Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player9Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player9Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades8" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades10" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades9" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades9" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades10" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="10" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player10Container/Player10Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player10Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player10Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades9" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades11" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades10" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades10" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades11" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="11" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player11Container/Player11Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player11Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player11Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades10" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+               <Frame type="Control" name="PlayerUpgrades12" template="PlayerUpgradesTemplate/UpgradesContainerTemplate">
+                  <Anchor side="Top" relative="$parent/PlayerUpgrades11" pos="Min" offset="64" />
+                  <Anchor side="Left" relative="$parent/PlayerUpgrades11" pos="Min" offset="0" />
+                  <Visible val="False" />
+                  <Handle val="Upgrades12" />
+                  <CollapseLayout val="True" />
+                  <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+                     <PlayerId val="12" />
+                     <Frame type="Image" name="MOSImage">
+                        <Texture val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player12Container/Player12Image/@Texture}" />
+                        <Tooltip val="{$ancestor[@name=UIContainer]/FullscreenUpperContainer/HUD/Player12Container/Player/PlayerName/PlayerNameLabel/@Text}" />
+                     </Frame>
+                  </Frame>
+                  <Stategroup name="UpgradesVisible">
+                     <DefaultState val="NotVisible" />
+                     <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/HUD/Player12Container" Visible="True" />
+                        <Action type="SetProperty" Visible="True" />
+                     </State>
+                     <State name="NotVisible" />
+                  </Stategroup>
+                  <Stategroup name="DragState">
+                     <DefaultState val="AllowDrag" />
+                     <State name="DisableDrag">
+                        <When type="Property" frame="$parent/PlayerUpgrades11" Visible="True" />
+                        <Action type="SetProperty" Draggable="False" />
+                     </State>
+                     <State name="AllowDrag" />
+                  </Stategroup>
+               </Frame>
+            </Frame>
+            <Frame type="MenuBar" name="MenuBar" template="MenuBar/MenuBarTemplate">
+               <Handle val="GameUI_MenuBar" />
+               <Frame type="SocialButton" name="SocialButton" template="MenuBar/MenuBarSocialButtonTemplate">
+                  <Anchor side="Left" relative="$parent/MenuBarBackgroundImage" pos="Min" offset="110"/>
+                  <Anchor side="Top" relative="$parent/MenuBarBackgroundImage" pos="Min" offset="-6"/>
+                  <Frame type="Image" name="CountBackground">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="1" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+                     <Width val="28" />
+                     <Height val="25" />
+                     <Texture val="Assets\Textures\ui_battlenet_glue_coop_abilityframe_levelbg.dds" />
+                     <TextureType val="NineSlice" />
+                     <Color val="##StandardButtonBorder" />
+                  </Frame>
+                  <Frame type="Label" name="CountLabel">
+                     <Anchor side="Top" relative="$parent/CountBackground" pos="Mid" offset="1" />
+                     <Anchor side="Bottom" relative="$parent/CountBackground" pos="Mid" offset="1" />
+                     <Anchor side="Left" relative="$parent/CountBackground" pos="Mid" offset="0" />
+                     <Anchor side="Right" relative="$parent/CountBackground" pos="Mid" offset="0" />
+                     <Width val="25" />
+                     <RenderPriority val="520" />
+                     <Style val="IdleButtonCharge" />
+                  </Frame>
+               </Frame>
+            </Frame>
+            <Frame type="Image" name="CursorAnchor">
+               <Anchor side="Top" relative="$MouseCursor" pos="Min" offset="2" />
+               <Anchor side="Left" relative="$MouseCursor" pos="Min" offset="-755" />
+               <Height val="36"/>
+               <Width val="36"/>
+               <LayerCount val="2"/>
+               <TextureType val="Normal" layer="0" />
+               <TextureType val="Normal" layer="1" />
+               <Texture val="{$MouseCursor/@Texture[0]}" layer="0" />
+               <Texture val="{$MouseCursor/@Texture[1]}" layer="1" />
+               <Handle val="CursorAnchor" />  
+               <AcceptsMouse val="False" />
+               <Visible val="False" />
+               <StateGroup name="CursorImage">
+                  <DefaultState val="ResetImage" />
+                  <State name="DefaultImage">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" operator="LessThan" Text="1" />
+                     <Action type="SetProperty" frame="$this" Alpha="0" />
+                     <Action type="SetProperty" frame="$parent/CursorAnchorFix" Visible="True" /> 
+                  </State>
+                  <State name="Fuel">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="1" />
+                     <When type="Property" frame="$MouseCursor" Texture="Assets\Custom Icons\icon-mags.dds" index="1" />        
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" index="1" />     
+                  </State>
+                  <State name="FuelTank">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="1" />
+                     <When type="Property" frame="$MouseCursor" Texture="BTNAmmoCase.dds" index="1" />        
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-highcapacity.dds" index="1" />     
+                  </State>
+                   <State name="FlameOtherItems">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="1" />
+                     <Action type="SetProperty" frame="$this" Alpha="0" />
+                     <Action type="SetProperty" frame="$parent/CursorAnchorFix" Visible="True" />       
+                  </State>
+                  <!-- Plasma Stuff -->
+                  <State name="PlasmaCell">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="2" />
+                     <When type="Property" frame="$MouseCursor" Texture="Assets\Custom Icons\icon-mags.dds" index="1" />        
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Buttons\Plasma_Cells.dds" index="1" />     
+                  </State>
+                  <State name="PlasmaCellPack">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="2" />
+                     <When type="Property" frame="$MouseCursor" Texture="BTNAmmoCase.dds" index="1" />        
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Buttons\Plasma_Cell_Pack.dds" index="1" />     
+                  </State>
+                   <State name="PlasmaOtherItems">
+                     <When type="Property" frame="$this" Visible="True" />
+                     <When type="Property" frame="$UnitIndexLabel" Text="1" />
+                     <Action type="SetProperty" frame="$this" Alpha="0" />
+                     <Action type="SetProperty" frame="$parent/CursorAnchorFix" Visible="True" />       
+                  </State>
+                  <State name="ResetImage">
+                     <When type="Property" frame="$this" Visible="False" />
+                     <Action type="SetProperty" frame="$parent/CursorAnchorFix" Visible="False" /> 
+                  </State> 
+               </StateGroup>    
+            </Frame>
+            <!-- this is here because the stategroup would sometimes display the incorrect image -->
+            <Frame type="Image" name="CursorAnchorFix">
+               <Anchor relative="$parent/CursorAnchor" />
+               <LayerCount val="2"/>
+               <TextureType val="Normal" layer="0" />
+               <TextureType val="Normal" layer="1" />
+               <Texture val="{$MouseCursor/@Texture[0]}" layer="0" />
+               <Texture val="{$MouseCursor/@Texture[1]}" layer="1" />
+               <AcceptsMouse val="False" />
+               <Visible val="False" />
+            </Frame>
+            <!-- Victory|Defeat Panel -->
+            <Frame type="GameResultDialog" name="GameResultDialog" template="GameResultDialog/GameResultDialogTemplate">
+               <Handle val="GameResultDialog"/>
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+               <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+               <Visible val="false"/>
+               <Frame type="Button" name="QuitButton" template="StandardTemplates/StandardButtonTemplate">
+                  <Handle val="GameResultDialog_QuitButton"/>
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                  <Anchor side="Top" relative="$parent" pos="Mid" offset="100"/>
+                  <HoverSound val="@UI_HoverTick"/>
+                  
+                  <!--Text, Shortcut, and Textures dynamically updated in code
+                  Text: UI/GameResultDialog/ScoreScreen or UI/GameResultDialog/Quit
+                  Hotkey: UI/GameResultDialog/ScoreScreen_Hotkey or UI/GameResultDialog/Quit_Hotkey
+                  Normal Image: UI/GameResultButtonNormal
+                  Hover Image: UI/GameResultButtonHover
+                  -->
+               </Frame>
+               <Frame type="ConvertToReplayButton" name="ConvertToReplayButton" template="StandardTemplates/StandardButtonTemplate">
+                  <Anchor side="Top" relative="$parent/QuitButton" pos="Max" offset="0"/>
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                  <Text val="@UI/GameResultDialog/ConvertToReplay"/>
+                  <Shortcut val="@UI/GameResultDialog/ConvertToReplay_Hotkey"/>
+                  <CollapseLayout val="true"/>
+                  <ClickSound val="@UI_PopUpWindowEnters"/>
+                  <WaitForPlayerResult val="false"/>
+                  <HoverSound val="@UI_HoverTick"/>
+                  <Alpha val="0" />
+                  <AcceptsMouse val="False" />
+               </Frame>
+               <Frame type="Button" name="ReturnToGameButton" template="StandardTemplates/StandardButtonTemplate">
+                  <Anchor side="Top" relative="$parent/ConvertToReplayButton" pos="Max" offset="0"/>
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                  <Text val="@UI/GameResultDialog/ReturnToGame"/>
+                  <Shortcut val="@UI/GameResultDialog/ReturnToGame_Hotkey"/>
+                  <HoverSound val="@UI_HoverTick"/>
+                  <Alpha val="0" />
+                  <AcceptsMouse val="False" />
+               </Frame>
+            </Frame>
+         </Frame>
+      </Frame>
+   </Frame>
+   <!-- Timer Window -->
+   <Frame type="TimerWindow" name="TimerWindowTemplate" file="TriggerWindowPanel">
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Height val="76" />
+      <Frame type="Image" name="BackgroundImage">
+         <Anchor relative="$parent/BackgroundColor" />
+         <Texture val="@@UI/HeroPanelHealthBarBackground" />
+         <TextureType val="Border" />
+         <Tiled val="true" />
+         <Alpha val="75" />
+         <Visible val="True" />
+         <AcceptsMouseTooltip val="True" />
+         <TooltipAnchorPosition val="TopLeft" />
+      </Frame>
+      <Frame type="Image" name="BackgroundColor">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="26" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="97" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-32" />
+      </Frame>
+      <Frame type="Label" name="TimerTitle">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="30" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-150" />
+         <Visible val="False" />
+      </Frame>
+      <Frame type="Label" name="TimerText">
+         <Anchor side="Top" relative="$parent/BackgroundColor" pos="Min" offset="3" />
+         <Anchor side="Bottom" relative="$parent/BackgroundColor" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent/BackgroundColor" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/BackgroundColor" pos="Max" offset="0" />
+         <Animation name="StyleSwitch">
+            <Event event="OnShown" action="Reset,Play"/>
+            <Controller type="Style" end="Pause" style1="TimerTextRight" style2="ModCenterSize20Bold">
+               <Key type="Curve" time="0" value="0"/>
+               <Key type="Curve" time="0.1" value="1"/>
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

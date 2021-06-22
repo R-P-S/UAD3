@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CEffectDamage id="SpitDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="15"/>
+        <Death value="Disintegrate"/>
+        <AttributeBonus index="Structure" value="10"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="SpitLaunchMissile">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="SpitDamage"/>
+        <AmmoUnit value="SpitMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="BiteDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Melee"/>
+        <Amount value="25"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="TentacleAttackApplyBehaviors">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TentacleAttackRemoveTentacleEnRouteBehavior"/>
+        <EffectArray value="TentacleAttackApplyCasterBehavior"/>
+        <EffectArray value="TentacleAttackApplyChokeBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="TentacleAttackApplyCasterBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TentaclesActive"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TentacleAttackApplyChokeBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="Choked"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TentacleAttackApplyInitialCasterBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="InitialTentacleChannel"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TentacleAttackApplyTentacleEnRouteBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="TentacleEnRoute"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="TentacleAttackChannelPersistent">
+        <EditorCategories value="Race:Zerg"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="TentacleAttackSearchArea"/>
+        <PeriodicValidator value="HasInitialTentacleBehaviorOrTentaclesActive"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="TentacleAttackInitialSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TentacleAttackApplyInitialCasterBehavior"/>
+        <EffectArray value="TentacleAttackChannelPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="TentacleAttackLaunchTentacleSet">
+        <ValidatorArray value="TargetHasNoTentacleEnRoute"/>
+        <ValidatorArray value="TargetNotBeingChoked"/>
+        <ValidatorArray value="TargetNotSpiderMine"/>
+        <ValidatorArray value="TargetNotSpiderMineBurrowed"/>
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TentacleAttackApplyTentacleEnRouteBehavior"/>
+        <EffectArray value="TentacleAttackLaunchTentacle"/>
+    </CEffectSet>
+    <CEffectSet id="TentacleAttackRemoveBehaviors">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TentacleAttackRemoveCasterBehavior"/>
+        <EffectArray value="TentacleAttackRemoveChokeBehavior"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="TentacleAttackRemoveCasterBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="TentaclesActive"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="TentacleAttackRemoveTentacleEnRouteBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <BehaviorLink value="TentacleEnRoute"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="TentacleAttackTentaclePersistent">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="TentacleAttackApplyBehaviors"/>
+        <FinalEffect value="TentacleAttackRemoveBehaviors"/>
+        <PeriodicValidator value="CasterAndTargetNotDead"/>
+        <PeriodicEffectArray value="TentacleAttackForce"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="TentacleAttackDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Melee"/>
+        <Amount value="4"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectApplyForce id="TentacleAttackForce">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="CasterUnit"/>
+        <Amount value="-1"/>
+        <TimeScaleSource Value="Target"/>
+    </CEffectApplyForce>
+    <CEffectLaunchMissile id="TentacleAttackLaunchTentacle">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="TentacleAttackTentaclePersistent"/>
+        <AmmoUnit value="TentacleMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectRemoveBehavior id="TentacleAttackRemoveChokeBehavior">
+        <EditorCategories value="Race:Zerg"/>
+        <BehaviorLink value="Choked"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="TentacleAttackSearchArea">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray MaxCount="2" Radius="2" Effect="TentacleAttackLaunchTentacleSet"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CAbilEffectTarget id="TentacleAttack">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Cost>
+            <Charge Link=""/>
+            <Cooldown TimeUse="6"/>
+        </Cost>
+        <Range value="13"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TentacleAttack"/>
+        <Effect index="0" value="TentacleAttackInitialSet"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+    </CAbilEffectTarget>
+    <CButton id="TentacleAttack">
+        <Icon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <!--                                                                                         -->
+    <!-- Choker ................................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="Choker" parent="GenericUnitBase" unitName="Choker">
+        <DeathArray index="Normal" ModelLink="ChokerDeath" SoundLink="Infestor_Death"/>
+        <DeathArray index="Fire" ModelLink="ChokerDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <PortraitModel value="ChokerPortrait"/>
+        <WalkAnimMoveSpeed value="1.875"/>
+        <BarOffset value="70"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-choker.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-mod-l2d_zerg-choker.dds"/>
+        </Wireframe>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <On Terms="ActorCreation" Send="TimerSet 5.000000 Ambience"/>
+        <On Terms="TimerExpired; TimerName Ambience; PassChance 50.000000" Send="Create Left2Die_Choker_Ambience"/>
+        <On Terms="TimerExpired; TimerName Ambience" Send="TimerSet 5.000000 Ambience"/>
+        <On Terms="Abil.TentacleAttack.SourceCastStart" Send="AnimPlay TentacleAttack Attack PlayForever"/>
+        <On Terms="Abil.TentacleAttack.SourceChannelStop" Send="AnimClear TentacleAttack"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Spell,A"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <BarWidth value="75"/>
+    </CActorUnit>
+    <CActorSound id="Left2Die_Choker_Ambience" parent="SoundOneShot"/>
+    <!-- Tentacle Attack                                                                         -->
+    <CActorSite id="ChokerTentacleLaunchSite">
+        <Host Subject="::scope.Tentacle"/>
+    </CActorSite>
+    <CActorSite id="ChokerTentacleAttackImpactHoldingSite">
+        <Host Subject="_ImpactGuide" Scope="Target"/>
+        <HostSiteOps Ops="SOp180"/>
+    </CActorSite>
+    <CActorModel id="ChokerTentacle">
+        <Host Subject="_Selectable"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <HostSiteOps Ops="SOpAttachWeapon01Soft"/>
+        <HostedAttaches Name="TentacleAttack">
+            <AttachQuery Methods="Weapon"/>
+        </HostedAttaches>
+        <On Terms="Effect.TentacleAttackLaunchTentacle.Start; At Caster" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Attack Stand Death"/>
+        <On Terms="ActorCreation" Send="RefSet ::scope.Tentacle ::Self"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="SetOpacity 1.000000 0.500000"/>
+        <On Terms="Effect.TentacleAttackLaunchTentacle.Abort; FromEffectTreeDescendant" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.TentacleAttackTentaclePersistent.Start" Send="Create ChokerTentacleAttackImpactHoldingSite"/>
+        <On Terms="Effect.TentacleAttackTentaclePersistent.Start" Send="RefSetFromRequest TentacleAttack ChokerTentacleAttackImpactHoldingSite"/>
+        <On Terms="Effect.TentacleAttackTentaclePersistent.Stop; FromEffectTreeDescendant" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorOrphan" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+    </CActorModel>
+    <CActorMissile id="ChokerTentacleAttackMissile" parent="GenericAttackMissile" unitName="TentacleMissile">
+        <Model value="Invisible"/>
+        <Supporter>
+            <Subject value="ChokerTentacle"/>
+            <Scope value="Caster"/>
+            <Actor value="Find"/>
+            <Effect value="TentacleAttackLaunchTentacle"/>
+        </Supporter>
+        <On Terms="MotionPhaseStart; MotionPhase" Target="::Supporter" Send="RefSet TentacleAttack ::Self"/>
+    </CActorMissile>
+    <CActorAction id="ChokerTentacleAttack" parent="GenericAttack" effectImpact="TentacleAttackTentaclePersistent" effectLaunch="TentacleAttackLaunchTentacle">
+        <LaunchSite value="ChokerTentacleLaunchSite"/>
+        <LaunchAttachQuery Methods="Weapon 1"/>
+        <LaunchSiteOps Ops="SOpAttachHarnessStationary"/>
+        <ImpactAttachQuery Methods="Target 0"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpForwardLaunchGuide"/>
+        <ImpactSiteOpsReaction Ops="SOp2DRotation SOp180" HoldPosition="1" HoldRotation="1"/>
+        <LaunchAssets Sound=""/>
+    </CActorAction>
+    <CActorSound id="ChokerTentacleAttackLaunch" parent="SoundOneShot">
+        <Sound value="Left2Die_Choker_Attack"/>
+        <On Terms="Effect.TentacleAttackInitialSet.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="ChokerTentacleDamage" parent="SoundOneShot">
+        <On Terms="Effect.TentacleAttackDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="ChokerTentacleDamageModel" parent="ModelAnimationStyleOneShot">
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <On Terms="Effect.TentacleAttackDamage.Start; At Target" Send="Create"/>
+    </CActorModel>
+    <CWeaponLegacy id="Bite">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="BiteDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.1"/>
+        <Period value="0.696"/>
+        <Effect value="BiteDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Spit">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="SpitDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Period value="1.5246"/>
+        <DamagePoint value="0"/>
+        <AllowedMovement value="Slowing"/>
+        <Effect value="SpitLaunchMissile"/>
+    </CWeaponLegacy>
+    <CModel id="ChokerDeath" parent="UnitDeath" Race="Zerg">
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+    </CModel>
+    <CModel id="ChokerDeathFire" parent="UnitDeath" Race="Zerg">
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+    </CModel>
+    <CModel id="ChokerPortrait" parent="Portrait" Race="Zerg"/>
+    <CModel id="SpitMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\SpotterMissile\SpotterMissile.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="ChokerTentacle" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\ChokerSiphon\ChokerSiphon.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="ChokerTentacleDamageModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\InfestorSiphonImpact\InfestorSiphonImpact.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="Choker" parent="Unit" Race="Zerg">
+        <Occlusion value="Show"/>
+        <Radius value="0.800000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid09"/>
+        <UnitGlossaryCamera value="Star2CameraMid09"/>
+        <PlanetPanelCamera value="Star2CameraMid09"/>
+        <SelectionRadius value="1.029000"/>
+        <ShadowRadius value="0.800000"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="1.000000"/>
+        <TipabilityWidth value="0.600000"/>
+    </CModel>
+    <CMoverMissile id="SpitMissile">
+        <HeightMap value="Air"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="12"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+        <MotionPhases YawPitchRoll="MAX"/>
+    </CMoverMissile>
+    <CSound id="Left2Die_Choker_Ambience">
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="4"/>
+        <Category value="UI"/>
+    </CSound>
+    <CSound id="SpitImpact" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged5.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged6.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged7.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged8.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackImpactRanged9.wav"/>
+        <Volume value="-13.980000,-12.040000"/>
+    </CSound>
+    <CSound id="SpitLaunch" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged3.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged4.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Roach\Roach_AttackLaunchRanged5.wav"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-13.980000,-12.040000"/>
+    </CSound>
+    <CSound id="BiteAttackImpact" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hydralisk\Hydralisk_AttackImpactRanged0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Hydralisk\Hydralisk_AttackImpactRanged1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Hydralisk\Hydralisk_AttackImpactRanged2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Hydralisk\Hydralisk_AttackImpactRanged3.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="ChokerTentacleAttackImpact" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_NeuralParasiteAttackImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_NeuralParasiteAttackImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_NeuralParasiteAttackImpact2.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="ChokerTentacleDamage" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_PlagueAttackImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_PlagueAttackImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Zerg\Infestor\Infestor_PlagueAttackImpact2.wav" FacialGroup=""/>
+        <Volume value="-4.800000,-4.800000"/>
+    </CSound>
+    <CUnit id="Choker">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="AIHighPrioTarget" value="1"/>
+        <FlagArray index="AICaster" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Speed value="2.5"/>
+        <SpeedMultiplierCreep value="1.3"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <Sight value="10"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="40"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="TentacleAttack"/>
+        <AbilArray Link="attack"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="TentacleAttack" Type="AbilCmd" AbilCmd="TentacleAttack,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="700"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="19"/>
+        <MinimapRadius value="1.5"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="80"/>
+        <KillDisplay value="Always"/>
+        <WeaponArray Link="Spit"/>
+        <LifeArmor value="1"/>
+    </CUnit>
+    <CUnit id="SpitMissile" parent="MISSILE_HALFLIFE">
+        <Race value="Zerg"/>
+    </CUnit>
+    <CUnit id="TentacleMissile" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+        <Mover value="MissileDefault"/>
+    </CUnit>
+	<!--
+    <CBehaviorBuff id="Choked">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+        </Modification>
+        <Period value="0.5"/>
+        <InitialEffect value="TentacleAttackDamage"/>
+        <PeriodicEffect value="TentacleAttackDamage"/>
+    </CBehaviorBuff> -->
+    <CBehaviorBuff id="InitialTentacleChannel">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TentacleEnRoute">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TentaclesActive">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <MaxStackCount value="0"/>
+    </CBehaviorBuff>
+    <CValidatorUnitCompareBehaviorCount id="HasInitialTentacleBehavior">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="InitialTentacleChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HasInitialTentacleBehaviorOrTentaclesActive">
+        <CombineArray value="HasInitialTentacleBehavior"/>
+        <CombineArray value="TentaclesActive"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="TargetHasNoTentacleEnRoute">
+        <Behavior value="TentacleEnRoute"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="TargetNotBeingChoked">
+        <Behavior value="Choked"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="TentaclesActive">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="TentaclesActive"/>
+    </CValidatorUnitCompareBehaviorCount>
+</Catalog>

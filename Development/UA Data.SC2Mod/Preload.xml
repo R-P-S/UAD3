@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="assets\buttons\plasma_reload.dds" Type="Image"/>
+<Asset path="assets\buttons\plasma_cell_pack.dds" Type="Image"/>
+<Asset path="assets\textures\black.dds" Type="Image"/>
+<Asset path="assets\buttons\flamethrower_drop_fuel.dds" Type="Image"/>
+<Asset path="assets\buttons\plasma_drop.dds" Type="Image"/>
+<Asset path="assets\buttons\plasma_cells.dds" Type="Image"/>
+<Asset path="assets\textures\video_static.ogv" Type="Movie"/>
+<Asset path="assets\buttons\flamethrower_reload.dds" Type="Image"/>
+<Asset path="assets\textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" Type="Image"/>
+<Asset path="assets\textures\btn-upgrade-tychus-firebat-highcapacity.dds" Type="Image"/>
+<Abil id="NPCRASprint"/>
+<Abil id="NPCSprint"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="SnowLight"/>
+<Actor id="SnowWind"/>
+<Actor id="RainSprinkle"/>
+<Actor id="Sunrays"/>
+<Behavior id="NoDraw"/>
+<Behavior id="WeaponsHold"/>
+<Behavior id="ArmorInInventory"/>
+<Behavior id="ArmorMain"/>
+<Behavior id="ScrapPartsPickup"/>
+<Behavior id="EnergyCellInInventoryApply"/>
+<Behavior id="EnergyCellInInventory"/>
+<Behavior id="AdvancedAntiVeninInInventory"/>
+<Behavior id="AdvancedAntiVeninInInventoryApply"/>
+<Behavior id="ArmoredVests"/>
+<Behavior id="ItemEmpty"/>
+<Behavior id="PlasmaShield"/>
+<Behavior id="SuperiorEnergyCellInInventoryApply"/>
+<Behavior id="SuperiorEnergyCellInInventory"/>
+<Behavior id="FirstAidInInventory"/>
+<Behavior id="AdvancedFirstAidInInventory"/>
+<Behavior id="AdvancedFirstAidKitInInventoryApply"/>
+<Behavior id="QuikClotInInventory"/>
+<Behavior id="PlayerLeftGame"/>
+<Behavior id="AdvancedQuikClotInInventory"/>
+<Behavior id="AntiVeninInInventory"/>
+<Behavior id="QuikClotInInventoryApply"/>
+<Behavior id="AdvancedQuikClotInInventoryApply"/>
+<Behavior id="FirstAidKitInInventoryApply"/>
+<Behavior id="AntiVeninInInventoryApply"/>
+<Behavior id="ReinforcePositionTimedLife"/>
+<Behavior id="Revived"/>
+<Behavior id="ReviveBase15"/>
+<Behavior id="WeaponInInventory"/>
+<Behavior id="WeaponSwitch"/>
+<Behavior id="MotionSensorTimedLife"/>
+<Button id="LearnSkills"/>
+<Effect id="PingPanelBeaconDefend"/>
+<Effect id="SuccessiveStrikeExpire"/>
+<Effect id="OffensiveRallyBeacon"/>
+<Effect id="SetRallyPointBeacon"/>
+<Effect id="RallyLocalNationalsBeacon"/>
+<Effect id="ReinforcePositionRefund"/>
+<Effect id="ReviveModifyUnit"/>
+<Light id="NODSUpdated"/>
+<Light id="Infrared"/>
+<Model id="PingBoss"/>
+<Model id="PingObjective"/>
+<Model id="PingSimpleSmall"/>
+<Sound id="UI_GenericError" Variations="0"/>
+<Sound id="UI_TransmissionStart"/>
+<Sound id="UI_TipSelect"/>
+<Sound id="PickupItem"/>
+<Sound id="AmmoUse"/>
+<Sound id="EarRinging"/>
+<Sound id="NODOff" Variations="0"/>
+<Sound id="NODOn" Variations="0"/>
+<Sound id="RadioChatter"/>
+<Sound id="AmmoBelt"/>
+<Sound id="diebuzz"/>
+<Soundtrack id="MusicVictory_TerranLoop"/>
+<Soundtrack id="MusicVictory_ZergLoop"/>
+<Unit id="ColonistShipFlying"/>
+<Unit id="TerranDropPod"/>
+<Unit id="MotionSensor"/>
+<Unit id="ScrapPartsPickup"/>
+<Unit id="PathDisplayUnitGround"/>
+<Unit id="PathDisplayUnitAir"/>
+<Unit id="CivilianEngineer"/>
+<Unit id="PoliceOfficer"/>
+<Unit id="DeadHeroIndicator"/>
+<Unit id="PoliceOfficerShotgun"/>
+<Unit id="Magazines"/>
+<User id="Ailments"/>
+<User id="AchievementBadge"/>
+<User id="Camos"/>
+<User id="Decals"/>
+<User id="Items"/>
+<User id="Medals"/>
+<PlayerResponse id="HardenedWill"/>
+<PlayerResponse id="Barrier"/>
+<PlayerResponse id="SpeedFreaks"/>
+<PlayerResponse id="WeMoveUnseen"/>
+</Preload>

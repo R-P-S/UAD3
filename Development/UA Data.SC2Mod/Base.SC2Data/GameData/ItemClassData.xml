@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CItemClass id="Armor"/>
+    <CItemClass id="ArmorPerm"/>
+    <CItemClass id="BandolierSlot2"/>
+    <CItemClass id="BandolierSlot3"/>
+    <CItemClass id="BandolierSlot4"/>
+    <CItemClass id="BandolierSlot5"/>
+    <CItemClass id="BandolierSlot6"/>
+    <CItemClass id="Misc"/>
+    <CItemClass id="BandolierSlot1"/>
+    <CItemClass id="WeaponFlame"/>
+    <CItemClass id="WeaponLaser"/>
+    <CItemClass id="WeaponSDM"/>
+    <CItemClass id="WeaponRifle"/>
+    <CItemClass id="WeaponMG"/>
+    <CItemClass id="WeaponPlasma"/>
+    <CItemClass id="WeaponShotgun"/>
+    <CItemClass id="WeaponSniper"/>
+    <CItemClass id="WeaponMinigun"/>
+</Catalog>

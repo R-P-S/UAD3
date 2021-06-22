@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="PlatoonLeader" parent="UnitTemplate">
+        <Description value="Button/Tooltip/11APlatoonLeader"/>
+        <AbilArray index="3" Link="PlatoonLeaderResearch"/>
+        <AbilArray index="4" Link="PlatoonLeaderSkillUpgrades"/>
+        <AbilArray index="5" Link="HeroInventoryRifleNew"/>
+        <AbilArray index="6" Link="Sprint"/>
+        <AbilArray index="7" Link="ReloadHero"/>
+        <AbilArray index="8" Link="JumpHero"/>
+        <AbilArray index="9" Link="DropMagazine"/>
+        <AbilArray index="10" Link="Prone"/>
+        <AbilArray index="11" Link="PerformSelfAidHero"/>
+        <AbilArray Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="FiremodeBurst"/>
+        <AbilArray Link="BinocularsPL"/>
+        <AbilArray Link="SmokeGrenadePL"/>
+        <AbilArray Link="FragGrenadePL"/>
+        <AbilArray Link="BornToLead"/>
+        <AbilArray Link="Instructor"/>
+        <AbilArray Link="FocusFirePL"/>
+        <AbilArray Link="MortarStrike"/>
+        <AbilArray Link="SuccessiveStrike"/>
+        <BehaviorArray index="0" Link="NewMechanical"/>
+        <BehaviorArray index="2" Link="NewFitness"/>
+        <BehaviorArray index="3" Link="HeroLevelsMDF"/>
+        <BehaviorArray index="4" Link="1Mechanical"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Birth" value="PlatoonLeaderSpawnSet"/>
+        <EffectArray index="Revive" value="PlatoonLeaderSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="4">
+                <Face value="NewAdditionalActions"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0003"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="LearnSkills" Type="Submenu" SubmenuCardId="0002" Row="2" Column="1"/>
+            <LayoutButtons index="6">
+                <Face value="TeamLocation"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="TeamLocation,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="BornToLead"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="BornToLead,On"/>
+                <SubmenuCardId value=""/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="BornToLead"/>
+                <Type value="Passive"/>
+                <Behavior value="BornToLead"/>
+                <Requirements value="BornToLeadShow"/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="FocusFirePL" Type="AbilCmd" AbilCmd="FocusFirePL,On" Row="0" Column="3"/>
+            <LayoutButtons Face="CancelR" Type="AbilCmd" AbilCmd="FocusFirePL,Off" Row="0" Column="3"/>
+            <LayoutButtons Face="BinocularsMOS" Type="AbilCmd" AbilCmd="BinocularsPL,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="NewFragGrenade" Type="AbilCmd" AbilCmd="FragGrenadePL,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="NewSmokeGrenade" Type="AbilCmd" AbilCmd="SmokeGrenadePL,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="Instructor" Type="AbilCmd" AbilCmd="Instructor,On" Row="2" Column="4"/>
+            <LayoutButtons>
+                <Face value="Instructor"/>
+                <Type value="Passive"/>
+                <Behavior value="Instructor"/>
+                <Requirements value="InstructorShow"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="ExpertLeader" Type="Passive" Requirements="ExpertLeaderShow" Row="1" Column="2"/>
+            <LayoutButtons Face="MortarStrike" Type="AbilCmd" AbilCmd="MortarStrike,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="MortarStrike" Type="AbilCmd" AbilCmd="SuccessiveStrike,Execute" Row="0" Column="2"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnBornToLead" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnBornToLead" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnBornToLead" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnBornToLead" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnInstructor" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnInstructor" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnInstructor" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnInstructor" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnMortarStrike" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMortarStrike" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMortarStrike" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research21" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnMortarStrike" Type="AbilCmd" AbilCmd="PlatoonLeaderResearch,Research20" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="FiremodeBurst"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FiremodeBurst,On"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="FiremodeSemi" Type="AbilCmd" AbilCmd="FiremodeBurst,Off" Row="1" Column="1"/>
+            <LayoutButtons index="10" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research6" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipSniper" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research7" Row="1" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research4" Row="2" Column="3"/>
+            <LayoutButtons Face="FragGrenadePlentiful" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research13" Row="0" Column="1"/>
+            <LayoutButtons Face="SmokeGrenadeEfficiency" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="FragGrenadeEfficiency" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research12" Row="1" Column="1"/>
+            <LayoutButtons Face="SmokeGrenadePlentiful" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research11" Row="1" Column="2"/>
+            <LayoutButtons Face="BornToLeadPrecision" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="BornToLeadSprinter" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research15" Row="1" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="PreviousPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="BinocularsPotency" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research8" Row="0" Column="0"/>
+            <LayoutButtons Face="BinocularsTargetPainting" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research9" Row="1" Column="0"/>
+            <LayoutButtons Face="InstructorEnergetic" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research16" Row="0" Column="1"/>
+            <LayoutButtons Face="InstructorResilient" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research17" Row="1" Column="1"/>
+            <LayoutButtons Face="MortarStrikeConcussiveImpact" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research18" Row="0" Column="2"/>
+            <LayoutButtons Face="SuccessiveStrikeExtraCharge" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research19" Row="1" Column="2"/>
+            <LayoutButtons Face="FocusFireEfficiencyPL" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research20" Row="0" Column="3"/>
+            <LayoutButtons Face="FocusFireConcentration" Type="AbilCmd" AbilCmd="PlatoonLeaderSkillUpgrades,Research21" Row="1" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

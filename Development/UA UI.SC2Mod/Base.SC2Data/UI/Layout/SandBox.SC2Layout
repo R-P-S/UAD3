@@ -1,0 +1,2387 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Templates
+============================================================================ -->
+   <Frame type="Frame" name="UnitIconTemplate">
+      <Width val="52" />
+      <Height val="52" />
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Texture val="Assets/Textures/btn-border-research.dds" />
+      </Frame>
+      <Frame type="Image" name="IconBorder1">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="0,255,168" />
+         <Alpha val="0" />
+         <Texture val="Assets/Textures/btn-border-research.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="ButtonTemplate" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="360" />
+      <Height val="70" />
+      <Color val="0,0,0" />
+      <Toggleable val="True" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="80" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Text val="Button" />
+         <Color val="255,255,255" />
+         <Style val="GameButtonCharge" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="ImageBorderFrameTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="9" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+      <Height val="52" />
+      <Width val="52" />
+      <Frame type="Image" name="Icon" template="SandBox/UnitIconTemplate">
+         <Anchor relative="$parent" />
+         <Texture val="Assets\Textures\btn-unit-terran-marine.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="ScrollBar" name="SandBoxScrollBarTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="8" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+      <Orientation val="Vertical" />
+      <Width val="28" />
+      <StepValue val="75" />
+      <Continuous val="True" />
+      <IncrementSound val="@UI_ScrollButtonSelect" />
+      <Frame type="Image" name="Image">
+         <Anchor relative="$parent" />
+         <Texture val="@UI/NovaStory/Global/ScrollBar_Bg" />
+         <TextureType val="Nineslice" />
+         <Alpha val="150" />
+         <Tiled val="True" />
+      </Frame>
+      <Frame type="Button" name="Button">
+         <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent" />
+            <Texture val="@UI/NovaStory/Global/ScrollBar_Button_Normal" />
+            <TextureType val="Nineslice" />
+            <Tiled val="True" />
+         </Frame>
+         <Frame type="Image" name="HoverImage">
+            <Anchor relative="$parent" />
+            <Texture val="@UI/NovaStory/Global/ScrollBar_Button_Over" />
+            <TextureType val="Nineslice" />
+            <Tiled val="True" />
+         </Frame>
+      </Frame>
+   </Frame>
+   <!-- ================================================================================== -->
+   <!-- Sand Box Panel -->
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/TriggerContainer" file="GameUI">
+      <Frame type="TabControl" name="SandBoxPanel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="900" />
+         <Anchor side="Bottom" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="450" />
+         <Anchor side="Right" relative="$parent" pos="Min" offset="0" />
+         <Width val="425" />
+         <Height val="750" />
+         <Visible val="False" />
+         <SelectedIndex val="0" />
+         <TabListItem val="$this/TabButtonsContainer/Button00" />
+         <TabListItem val="$this/TabButtonsContainer/Button01" />
+         <TabListItem val="$this/TabButtonsContainer/Button02" />
+         <TabListItem val="$this/TabButtonsContainer/Button03" />
+         <PanelListItem val="$this/PanelsContainer/Panel00" />
+         <PanelListItem val="$this/PanelsContainer/Panel01" />
+         <PanelListItem val="$this/PanelsContainer/Panel02" />
+         <PanelListItem val="$this/PanelsContainer/Panel03" />
+         <Handle val="SandBoxPanel" />
+         <Frame type="Pulldown" name="ReadablePulldown">
+            <Anchor relative="$parent" />
+            <Visible val="false" />
+            <SelectedIndex val="{$parent/@SelectedIndex}" />
+         </Frame>
+         <Frame type="Image" name="Background">
+            <Anchor relative="$parent" />
+            <!--			
+                <Texture val="Assets\Textures\ui_battlenet_glue_columnframe.dds"/>	
+                <TextureType val="Border" layer="0"/> 
+                <Color val="0,0,0"/> -->
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="CornerTopLeft">
+            <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4"/>
+            <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4"/>
+            <Width val="18"/>
+            <Height val="19"/>
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+            <Color val="255,255,255"/>
+            <Animation name="Show">
+               <Event event="OnShown" action="Reset,Play" frame="$this"/>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.5" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.55" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.60" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.65" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.70" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.8" value="255" out="Linear"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="CornerTopRight">
+            <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4"/>
+            <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4"/>
+            <Width val="18"/>
+            <Height val="19"/>
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+            <TextureCoords top="0" left="1" bottom="1" right="0" layer="0"/>
+            <Color val="255,255,255"/>
+            <Animation name="Show">
+               <Event event="OnShown" action="Reset,Play" frame="$this"/>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.5" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.55" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.60" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.65" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.70" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.8" value="255" out="Linear"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="CornerBottomLeft">
+            <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4"/>
+            <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4"/>
+            <Width val="18"/>
+            <Height val="19"/>
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+            <Color val="255,255,255"/>
+            <TextureCoords top="1" left="0" bottom="0" right="1" layer="0"/>
+            <Animation name="Show">
+               <Event event="OnShown" action="Reset,Play" frame="$this"/>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.5" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.55" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.60" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.65" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.70" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.8" value="255" out="Linear"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="CornerBottomRight">
+            <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4"/>
+            <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4"/>
+            <Width val="18"/>
+            <Height val="19"/>
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds"/>
+            <Color val="255,255,255"/>
+            <TextureCoords top="1" left="1" bottom="0" right="0" layer="0"/>
+            <Animation name="Show">
+               <Event event="OnShown" action="Reset,Play" frame="$this"/>
+               <Controller type="Fade" end="Pause">
+                  <Key type="Curve" time="0" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.5" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.55" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.60" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.65" value="255" out="Linear"/>
+                  <Key type="Curve" time="0.70" value="0" out="Linear"/>
+                  <Key type="Curve" time="0.8" value="255" out="Linear"/>
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Grid Small -->
+         <Frame type="Image" name="BackgroundGridSmall">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="{$parent/@Width}" />
+            <Height val="{$parent/@Height}" />
+            <LayerCount val="2" />
+            <Texture val="@UI/SC2_UI_Collection_Announcers_Background_GridPattern_Mask" layer="0" />
+            <AlphaChannel val="Alpha" layer="0" />
+            <AlphaLayer val="true" layer="0" />
+            <Tiled val="true" layer="0" />
+            <Texture val="Assets/Textures/white.dds" layer="1" />
+            <LayerAlpha val="20" layer="1" />
+            <LayerColor val="0,255,148" layer="1" />
+         </Frame>
+         <Frame type="Frame" name="TabButtonsContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Height val="85" />
+            <Frame type="Button" name="Button00" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+               <Color val="0,0,0" />
+               <Height val="50" />
+               <Width val="125" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Text val="Items" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="Button01" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Left" relative="$parent/Button00" pos="Max" offset="5" />
+               <Color val="0,0,0" />
+               <Height val="50" />
+               <Width val="125" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Text val="Units" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="Button02" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Left" relative="$parent/Button01" pos="Max" offset="5" />
+               <Color val="0,0,0" />
+               <Height val="50" />
+               <Width val="125" />
+               <Toggleable val="True" />
+               <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Text val="Enemies" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="Button03" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+               <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+               <Anchor side="Left" relative="$parent/Button02" pos="Max" offset="50" />
+               <Color val="0,0,0" />
+               <Height val="50" />
+               <Width val="125" />
+               <Toggleable val="True" />
+               <Visible val="False" />
+               <Alpha val="0" />
+            </Frame>
+         </Frame>
+         <StateGroup name="SelectedState">
+            <DefaultState val="LT3" />
+            <State name="LT3">
+               <When type="Property" frame="$this" operator="LessThan" SelectedIndex="3" />
+               <Action type="SetProperty" frame="$SBOptionsIcon" Visible="True" />
+               <Action type="SetProperty" frame="$SBOptionsButton" Visible="True" />
+            </State>
+            <State name="EQ3">
+               <When type="Property" frame="$this" SelectedIndex="3" />
+               <Action type="SetProperty" frame="$SBOptionsIcon" Visible="False" />
+               <Action type="SetProperty" frame="$SBOptionsButton" Visible="False" />
+            </State>
+         </StateGroup>
+         <StateGroup name="ButtonState">
+            <DefaultState val="Item" />
+            <State name="Item">
+               <When type="Property" frame="$this" SelectedIndex="0" />
+               <Action type="SetProperty" frame="$SBCursorButton" Enabled="True" />
+               <Action type="SetProperty" frame="$SBCursorButton" Visible="True" />
+               <Action type="SetProperty" frame="$SBSpawnButton" Enabled="False" />
+               <Action type="SetProperty" frame="$SBSpawnButton" Visible="False" />
+               <Action type="SetProperty" frame="$SBSpawnGroupButton" Enabled="False" />
+               <Action type="SetProperty" frame="$SBSpawnGroupButton" Visible="False" />
+               <Action type="SetProperty" frame="$InfoText" Text="Hold 'Alt' while clicking game world to place item" />
+            </State>
+            <State name="Unit">
+               <When type="Property" frame="$this" SelectedIndex="1" />
+               <Action type="SetProperty" frame="$SBCursorButton" Enabled="True" />
+               <Action type="SetProperty" frame="$SBCursorButton" Visible="True" />
+               <Action type="SetProperty" frame="$SBSpawnButton" Enabled="False" />
+               <Action type="SetProperty" frame="$SBSpawnButton" Visible="False" />
+               <Action type="SetProperty" frame="$SBSpawnGroupButton" Enabled="False" />
+               <Action type="SetProperty" frame="$SBSpawnGroupButton" Visible="False" />
+               <Action type="SetProperty" frame="$InfoText" Text="Hold 'Alt' while clicking game world to place unit" />
+            </State>
+            <State name="Enemy">
+               <When type="Property" frame="$this" SelectedIndex="2" />
+               <Action type="SetProperty" frame="$SBCursorButton" Enabled="False" />
+               <Action type="SetProperty" frame="$SBCursorButton" Visible="False" />
+               <Action type="SetProperty" frame="$InfoText" Visible="False" />
+            </State>
+            <State name="Options">
+               <When type="Property" frame="$this" SelectedIndex="3" />
+               <Action type="SetProperty" frame="$InfoText" Visible="False" />
+               <Action type="SetProperty" frame="$SBSpawnButton" Visible="False" />
+               <Action type="SetProperty" frame="$SBSpawnGroupButton" Visible="False" />
+            </State>
+         </StateGroup>
+         <Animation name="DisplayAnim">
+            <Event event="Display" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+         <Frame type="Frame" name="PanelsContainer">
+            <Anchor side="Top" relative="$parent/TabButtonsContainer" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Frame type="Label" name="Info">
+               <Anchor side="Top" relative="$parent/CloseButton" pos="Min" offset="-40" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+               <Height val="25" />
+               <Width val="425" />
+               <Style val="GameButtonChargeSmall" />
+               <Text val="" />
+               <Handle val="InfoText" />
+            </Frame>
+            <Frame type="Button" name="CloseButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-90" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="10" />
+               <Width val="175" />
+               <Frame type="Label" name="Label">
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Text val="Close" />
+               </Frame>
+               <Animation name="ClickAnim">
+                  <Event event="OnClick" action="Reset,Play" />
+                  <Controller type="Visibility" frame="$SandBoxPanel" end="Pause">
+                     <Key type="Bool" time="0" value="False" />
+                  </Controller>
+                  <Controller type="Event" end="Stop" frame="$SBSpawnMenuButton">
+                     <Key type="Event" time="0" event="Display" />
+                  </Controller>
+               </Animation>
+            </Frame>
+            <Frame type="Button" name="CursorButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-90" />
+               <Anchor side="Left" relative="$parent/CloseButton" pos="Min" offset="230" />
+               <Width val="175" />
+               <Handle val="SBCursorButton" />
+               <Enabled val="True" />
+               <Visible val="True" />
+               <Shortcut val="F3" />
+               <AcceptsMouseTooltip val="True" />
+               <Tooltip val="Clear cursor" />
+               <TooltipFrame val="UADStandardTooltip" />
+               <Frame type="Label" name="Label">
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Text val="Reset [F3]" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="SpawnButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-90" />
+               <Anchor side="Left" relative="$parent/CloseButton" pos="Min" offset="230" />
+               <Width val="175" />
+               <Handle val="SBSpawnButton" />
+               <Enabled val="False" />
+               <Visible val="False" />
+               <Frame type="Label" name="Label">
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Text val="Spawn" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="SpawnGroupButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-90" />
+               <Anchor side="Left" relative="$parent/CloseButton" pos="Min" offset="230" />
+               <Width val="175" />
+               <Handle val="SBSpawnGroupButton" />
+               <Enabled val="False" />
+               <Visible val="False" />
+               <Frame type="Label" name="Label">
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Text val="Spawn" />
+               </Frame>
+            </Frame>
+            <Frame type="Button" name="OptionsButton" template="StandardGreyboxTemplates/StandardTextButtonSmallTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-200" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="342" />
+               <Height val="52" />
+               <Width val="52" />
+               <Alpha val="0" />
+               <AcceptsMouseTooltip val="True" />
+               <Tooltip val="Options" />
+               <TooltipFrame val="UADStandardTooltip" />
+               <RenderPriority val="600" />
+               <Handle val="SBOptionsButton" />
+               <Animation name="ClickAnim">
+                  <Event event="OnClick" action="Reset,Play" />
+                  <Controller type="Property" property="SelectedIndex" frame="$SandBoxPanel" end="Pause">
+                     <Key type="Property" time="0" Value="3" />
+                  </Controller>
+               </Animation>
+               <Animation name="Hover">
+                  <Event event="OnMouseEnter" action="DirectionForward,Play" />
+                  <Event event="OnMouseExit" action="DirectionReverse,Play" />
+                  <Controller type="Fade" frame="$parent/OptionsIcon/Icon/IconBorder1" end="Pause">
+                     <Key type="Curve" time="0" value="0" inout="Linear" />
+                     <Key type="Curve" time=".2" value="255" inout="Slow,Linear" />
+                  </Controller>
+               </Animation>
+            </Frame>
+            <Frame type="Frame" name="OptionsIcon" template="SandBox/ImageBorderFrameTemplate">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-200" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="295" />
+               <Height val="52" />
+               <Width val="52" />
+               <Handle val="SBOptionsIcon" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Assets/Icon Pack/btn-ability-terran-immortalityprotocol-color2.dds" />
+               </Frame>
+            </Frame>
+            <Frame type="TabControl" name="EnemyButtonSwitch">
+               <Anchor side="Top" relative="$parent" pos="Max" offset="-145" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="78" />
+               <Width val="110" />
+               <Height val="60" />
+               <Visible val="False" />
+               <SelectedIndex val="0" />
+               <TabListItem val="$this/TabButtonsContainer/EnemyListButton" />
+               <TabListItem val="$this/TabButtonsContainer/EnemyGroupButton" />
+               <Frame type="Frame" name="TabButtonsContainer">
+                  <Anchor relative="$parent" />
+                  <Handle val="EnemySwitch" />
+                  <Frame type="Button" name="EnemyListButton" template="StandardUADTemplates/OptionsButtonTemplate">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                     <Toggleable val="True" />
+                     <Height val="52" />
+                     <Width val="52" />
+                     <Handle val="SBEnemyListButton" />
+                     <Tooltip val="Enemy List" />
+                     <Frame type="Image" name="Icon">
+                        <Texture val="Assets\Textures\btn-upgrade-zerg-swarmfrenzy.dds" />
+                     </Frame>
+                  </Frame>
+                  <Frame type="Button" name="EnemyGroupButton" template="StandardUADTemplates/OptionsButtonTemplate">
+                     <Anchor side="Top" relative="$parent/EnemyListButton" pos="Min" offset="0" />
+                     <Anchor side="Left" relative="$parent/EnemyListButton" pos="Min" offset="55" />
+                     <Toggleable val="True" />
+                     <Height val="52" />
+                     <Width val="52" />
+                     <Tooltip val="Enemy Spawn Groups" />
+                     <Frame type="Image" name="Icon">
+                        <Texture val="Assets\Textures\btn-progression-zerg-dehaka-10-primalbossupgrades.dds" />
+                     </Frame>
+                  </Frame>
+               </Frame>
+               <StateGroup name="EnemyButtonState">
+                  <DefaultState val="Hidden" />
+                  <State name="Visible">
+                     <When type="Property" frame="$SandBoxPanel" SelectedIndex="2" />
+                     <Action type="SetProperty" frame="$this" Visible="True" />
+                  </State>
+                  <State name="Hidden" />
+               </StateGroup>
+               <StateGroup name="IndexSwitch">
+                  <DefaultState val="EnemyListToggled" />
+                  <State name="EnemyListToggled">
+                     <When type="Property" frame="$this" SelectedIndex="0" />
+                     <Action type="SetProperty" frame="$SBEnemyCount" Enabled="True" />
+                     <Action type="SetProperty" frame="$SBEnemyCountLabel" Alpha="255" />
+                     <Action type="SetProperty" frame="$SBEnemyList" Visible="True" />
+                     <Action type="SetProperty" frame="$SBSpawnButton" Enabled="True" />
+                     <Action type="SetProperty" frame="$SBSpawnButton" Visible="True" />
+                     <Action type="SetProperty" frame="$SBSpawnGroupButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$SBSpawnGroupButton" Visible="False" />
+                     <Action type="SetProperty" frame="$SBEnemyGroupList" Visible="False" />      
+                  </State>
+                  <State name="EnemyGroupToggled">
+                     <When type="Property" frame="$this" SelectedIndex="1" />
+                     <Action type="SetProperty" frame="$SBEnemyCount" Enabled="False" />
+                     <Action type="SetProperty" frame="$SBEnemyCountLabel" Alpha="25" />
+                     <Action type="SetProperty" frame="$SBEnemyList" Visible="False" />
+                     <Action type="SetProperty" frame="$SBSpawnButton" Enabled="False" />
+                     <Action type="SetProperty" frame="$SBSpawnButton" Visible="False" />
+                     <Action type="SetProperty" frame="$SBSpawnGroupButton" Enabled="True" />
+                     <Action type="SetProperty" frame="$SBSpawnGroupButton" Visible="True" />
+                     <Action type="SetProperty" frame="$SBEnemyGroupList" Visible="True" />     
+                  </State>
+               </StateGroup>
+            </Frame>
+            <Frame type="Button" name="EnemyTargetButton" template="StandardUADTemplates/OptionsButtonTemplate">
+               <Anchor side="Top" relative="$EnemySwitch/EnemyGroupButton" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$EnemySwitch/EnemyGroupButton" pos="Min" offset="55" />
+               <Toggleable val="False" />
+               <Height val="52" />
+               <Width val="52" />
+               <Visible val="False" />
+               <Handle val="SBEnemyTargetButton" />
+               <Tooltip val="Set Spawn Location. Hold 'alt' when clicking game world" />
+               <Frame type="Image" name="Icon">
+                  <Texture val="Assets\Icon Pack\btn-ability-terran-land.dds" />
+               </Frame>
+               <StateGroup name="VisibleState">
+                  <DefaultState val="Hidden" />
+                  <State name="Visible">
+                     <When type="Property" frame="$SandBoxPanel" SelectedIndex="2" />
+                     <When type="Property" frame="$EnemySwitch/EnemyGroupButton" Toggled="True" />
+                     <Action type="SetProperty" frame="$this" Visible="True" />
+                  </State>
+                  <State name="Hidden" />
+               </StateGroup>
+               <Animation name="Enabled">
+                  <Event event="OnClick" action="DirectionForward,Play"/>
+                  <Event event="Reset" action="DirectionReverse,Play"/>
+                  <Controller type="Property" property="Enabled" end="Pause">
+                     <Key type="Property" time="0" value="True"/>
+                     <Key type="Property" time="0.1" value="False"/>
+                  </Controller>
+               </Animation>
+            </Frame>
+            <!-- Items Panel List -->
+            <Frame type="Frame" name="Panel00">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-75" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+               <Frame type="Slider" name="Count" template="StandardTemplates/StandardSliderTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="-100" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-70" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="300" />
+                  <Height val="40" />
+                  <StepValue val="1" />
+                  <Value val="0" />
+                  <MaxValue val="5" />
+                  <Handle val="SBItemCount" />
+               </Frame>
+               <Frame type="Label" name="CountLabel" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="75" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-235" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="200" />
+                  <Height val="40" />
+                  <Text val="" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+               </Frame>
+               <StateGroup name="ItemCountState">
+                  <DefaultState val="Count_1" />
+                  <State name="Count_1">
+                     <When type="Property" frame="$SBItemCount" Value="0" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 1" />
+                  </State>
+                  <State name="Count_2">
+                     <When type="Property" frame="$SBItemCount" Value="1" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 2" />
+                  </State>
+                  <State name="Count_3">
+                     <When type="Property" frame="$SBItemCount" Value="2" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 3" />
+                  </State>
+                  <State name="Count_4">
+                     <When type="Property" frame="$SBItemCount" Value="3" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 4" />
+                  </State>
+                  <State name="Count_5">
+                     <When type="Property" frame="$SBItemCount" Value="4" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 5" />
+                  </State>
+                  <State name="Count_6">
+                     <When type="Property" frame="$SBItemCount" Value="5" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 6" />
+                  </State>
+               </StateGroup>
+               <!-- Item List -->
+               <Frame type="TabControl" name="List">
+                  <Anchor relative="$parent" />
+                  <SelectedIndex val="0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/DummyButton" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button2" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button3" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button4" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button5" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button6" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button7" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button8" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button9" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button10" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button11" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button12" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button13" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button14" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button15" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button16" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button17" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button18" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button19" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button20" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button21" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button22" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button23" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button24" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button25" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button26" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button27" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button28" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button29" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button30" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button31" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button32" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button33" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button34" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button35" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button36" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button37" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button38" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button39" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button40" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button41" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button42" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button43" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button44" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button45" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button46" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button47" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button48" />
+                  <Frame type="Pulldown" name="ReadablePulldown">
+                     <Anchor relative="$parent" />
+                     <Visible val="False" />
+                     <SelectedIndex val="{$parent/@SelectedIndex}" />
+                  </Frame>
+                  <StateGroup name="SelectionState">
+                     <State name="Reset">
+                        <When type="AnimationState" Reset="True" />
+                        <Action type="SetProperty" frame="$this" SelectedIndex="0" undo="false" />
+                        <Action type="SetProperty" frame="$SBUnitList" SelectedIndex="0" undo="false" />
+                     </State>
+                     <State name="ResetOff">
+                        <When type="AnimationState" Reset="False" />
+                        <Action type="SetProperty" frame="$this/ReadablePulldown" Alpha="0" />
+                     </State>
+                  </StateGroup>
+                  <Frame type="ScrollableFrame" name="ScrollableList">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="-149" />
+                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="{$SandBoxPanel/@Width}" />
+                     <Height val="465" />
+                     <AcceptsMouse val="True" />
+                     <Frame type="ScrollBar" name="ScrollBar" template="SandBox/SandBoxScrollBarTemplate" />
+                     <Frame type="Frame" name="ContainerFrame">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Bottom" relative="$this/Button48" pos="Max" offset="20" />
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+                        <!-- Tile Buttons -->
+                        <Frame type="Button" name="DummyButton" template="SandBox/ButtonTemplate">
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <Frame type="Button" name="Button0" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/DummyButton" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button1" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button2" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button3" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button4" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button5" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button6" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button7" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button8" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button9" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button10" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button11" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button12" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button13" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button14" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button15" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button16" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button17" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button18" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button19" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button20" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button21" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button22" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button23" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button24" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button25" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button26" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button27" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button26" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button28" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button27" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button29" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button28" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button30" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button29" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button31" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button30" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button32" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button31" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button33" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button32" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button34" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button33" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button35" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button34" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button36" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button35" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button37" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button36" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button38" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button37" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button39" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button38" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button40" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button39" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button41" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button40" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button42" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button41" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button43" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button42" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button44" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button43" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button45" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button44" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button46" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button45" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button47" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button46" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button48" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button47" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <!-- Tile Image Icons -->
+                        <Frame type="Frame" name="ImageFrame0" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button0" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame1" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame2" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button2" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame3" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button3" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame4" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button4" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame5" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button5" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame6" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button6" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame7" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button7" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame8" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button8" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame9" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button9" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame10" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button10" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame11" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button11" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame12" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button12" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame13" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button13" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame14" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button14" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame15" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button15" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame16" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button16" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame17" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button17" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame18" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button18" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame19" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button19" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame20" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button20" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame21" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button21" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame22" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button22" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame23" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button23" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame24" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button24" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame25" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button25" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame26" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button26" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button26" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame27" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button27" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button27" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame28" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button28" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button28" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame29" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button29" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button29" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame30" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button30" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button30" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame31" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button31" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button31" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame32" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button32" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button32" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame33" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button33" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button33" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame34" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button34" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button34" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame35" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button35" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button35" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame36" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button36" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button36" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame37" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button37" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button37" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame38" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button38" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button38" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame39" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button39" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button39" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame40" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button40" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button40" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame41" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button41" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button41" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame42" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button42" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button42" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame43" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button43" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button43" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame44" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button44" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button44" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame45" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button45" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button45" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame46" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button46" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button46" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame47" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button47" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button47" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame48" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button48" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button48" pos="Min" offset="15" />
+                        </Frame>
+                     </Frame>
+                  </Frame>
+               </Frame>
+            </Frame>
+            <!-- Units List -->
+            <Frame type="Frame" name="Panel01">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-75" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+               <Frame type="Slider" name="Count" template="StandardTemplates/StandardSliderTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="-100" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-70" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="300" />
+                  <Height val="40" />
+                  <StepValue val="1" />
+                  <Value val="0" />
+                  <MaxValue val="5" />
+                  <Handle val="SBUnitCount" />
+               </Frame>
+               <Frame type="Label" name="CountLabel" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="75" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-235" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="200" />
+                  <Height val="40" />
+                  <Text val="" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+               </Frame>
+               <StateGroup name="ItemCountState">
+                  <DefaultState val="Count_1" />
+                  <State name="Count_1">
+                     <When type="Property" frame="$SBUnitCount" Value="0" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 1" />
+                  </State>
+                  <State name="Count_2">
+                     <When type="Property" frame="$SBUnitCount" Value="1" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 2" />
+                  </State>
+                  <State name="Count_3">
+                     <When type="Property" frame="$SBUnitCount" Value="2" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 3" />
+                  </State>
+                  <State name="Count_4">
+                     <When type="Property" frame="$SBUnitCount" Value="3" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 4" />
+                  </State>
+                  <State name="Count_5">
+                     <When type="Property" frame="$SBUnitCount" Value="4" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 5" />
+                  </State>
+                  <State name="Count_6">
+                     <When type="Property" frame="$SBUnitCount" Value="5" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 6" />
+                  </State>
+               </StateGroup>
+               <Frame type="TabControl" name="List">
+                  <Anchor relative="$parent" />
+                  <Handle val="SBUnitList" />
+                  <Enabled val="True" />
+                  <SelectedIndex val="0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/DummyButton" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button2" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button3" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button4" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button5" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button6" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button7" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button8" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button9" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button10" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button11" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button12" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button13" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button14" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button15" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button16" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button17" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button18" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button19" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button20" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button21" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button22" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button23" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button24" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button25" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button26" />
+                  <Frame type="Pulldown" name="ReadablePulldown">
+                     <Anchor relative="$parent" />
+                     <Visible val="False" />
+                     <SelectedIndex val="{$parent/@SelectedIndex}" />
+                  </Frame>
+                  <StateGroup name="EnabledState">
+                     <State name="Enabled">
+                        <When type="AnimationState" Enabled="True" />
+                        <Action type="SetProperty" frame="$this" Enabled="True" />
+                     </State>
+                     <State name="Disabled">
+                        <When type="AnimationState" Enabled="False" />
+                        <Action type="SetProperty" frame="$this" Enabled="False" />
+                     </State>
+                  </StateGroup>
+                  <Frame type="ScrollableFrame" name="ScrollableList">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="-149" />
+                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="{$SandBoxPanel/@Width}" />
+                     <Height val="465" />
+                     <AcceptsMouse val="True" />
+                     <Frame type="ScrollBar" name="ScrollBar" template="SandBox/SandBoxScrollBarTemplate" />
+                     <Frame type="Frame" name="ContainerFrame">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Bottom" relative="$this/Button26" pos="Max" offset="20" />
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+                        <!-- Tile Buttons -->
+                        <Frame type="Button" name="DummyButton" template="SandBox/ButtonTemplate">
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <!-- Rifleman -->
+                        <Frame type="Button" name="Button0" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/DummyButton" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Combat Medic -->
+                        <Frame type="Button" name="Button1" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Automatic Rifleman -->
+                        <Frame type="Button" name="Button2" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Cavalry Scout -->
+                        <Frame type="Button" name="Button3" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- SFAAT -->
+                        <Frame type="Button" name="Button4" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Javelin Gunner -->
+                        <Frame type="Button" name="Button5" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Squad Desiganted Marksman -->
+                        <Frame type="Button" name="Button6" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Platoon Leader -->
+                        <Frame type="Button" name="Button7" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Flamethrower -->
+                        <Frame type="Button" name="Button8" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Combat Engineer -->
+                        <Frame type="Button" name="Button9" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Cyborg -->
+                        <Frame type="Button" name="Button10" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <!-- Ghost-->
+                        <Frame type="Button" name="Button11" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                        </Frame>
+                        <Frame type="Button" name="Button12" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button13" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button14" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button15" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button16" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button17" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button18" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button19" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button20" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button21" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button22" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button23" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button24" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button25" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button26" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="75" /> 
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />           
+                        </Frame>
+                        <!-- Tile Image Icons -->
+                        <Frame type="Frame" name="ImageFrame0" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button0" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame1" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame2" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button2" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame3" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button3" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame4" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button4" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame5" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button5" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame6" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button6" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame7" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button7" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame8" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button8" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame9" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button9" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame10" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button10" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame11" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button11" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame12" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button12" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame13" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button13" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame14" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button14" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame15" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button15" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame16" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button16" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame17" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button17" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame18" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button18" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame19" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button19" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame20" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button20" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame21" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button21" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame22" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button22" pos="Min" offset="15" />              
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame23" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button23" pos="Min" offset="15" />              
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame24" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button24" pos="Min" offset="15" />              
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame25" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button25" pos="Min" offset="15" />              
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame26" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button25" pos="Min" offset="15" />
+                           <Visible val="False" />    
+                        </Frame> 
+                     </Frame>
+                  </Frame>
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="Panel02">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+               <Frame type="Slider" name="Count" template="StandardTemplates/StandardSliderTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="-170" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-70" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="300" />
+                  <Height val="40" />
+                  <StepValue val="1" />
+                  <Value val="0" />
+                  <MaxValue val="11" />
+                  <Handle val="SBEnemyCount" />
+               </Frame>
+               <Frame type="Label" name="CountLabel" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Max" offset="-30" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="-235" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Width val="200" />
+                  <Height val="40" />
+                  <Text val="" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+                  <Handle val="SBEnemyCountLabel" />
+               </Frame>
+               <StateGroup name="ItemCountState">
+                  <DefaultState val="Count_1" />
+                  <State name="Count_1">
+                     <When type="Property" frame="$SBEnemyCount" Value="0" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 1" />
+                  </State>
+                  <State name="Count_2">
+                     <When type="Property" frame="$SBEnemyCount" Value="1" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 2" />
+                  </State>
+                  <State name="Count_3">
+                     <When type="Property" frame="$SBEnemyCount" Value="2" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 3" />
+                  </State>
+                  <State name="Count_4">
+                     <When type="Property" frame="$SBEnemyCount" Value="3" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 4" />
+                  </State>
+                  <State name="Count_5">
+                     <When type="Property" frame="$SBEnemyCount" Value="4" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 5" />
+                  </State>
+                  <State name="Count_6">
+                     <When type="Property" frame="$SBEnemyCount" Value="5" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 6" />
+                  </State>
+                  <State name="Count_7">
+                     <When type="Property" frame="$SBEnemyCount" Value="6" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 7" />
+                  </State>
+                  <State name="Count_8">
+                     <When type="Property" frame="$SBEnemyCount" Value="7" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 8" />
+                  </State>
+                  <State name="Count_9">
+                     <When type="Property" frame="$SBEnemyCount" Value="8" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 9" />
+                  </State>
+                  <State name="Count_10">
+                     <When type="Property" frame="$SBEnemyCount" Value="9" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 10" />
+                  </State>
+                  <State name="Count_11">
+                     <When type="Property" frame="$SBEnemyCount" Value="10" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 11" />
+                  </State>
+                  <State name="Count_12">
+                     <When type="Property" frame="$SBEnemyCount" Value="11" />
+                     <Action type="SetProperty" frame="$this/CountLabel" text="Amount: 12" />
+                  </State>
+               </StateGroup>
+               <Frame type="TabControl" name="List">
+                  <Anchor relative="$parent" />
+                  <Handle val="SBEnemyList" />
+                  <SelectedIndex val="1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/DummyButton" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button2" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button3" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button4" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button5" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button6" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button7" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button8" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button9" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button10" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button11" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button12" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button13" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button14" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button15" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button16" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button17" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button18" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button19" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button20" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button21" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button22" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button23" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button24" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button25" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button26" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button27" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button28" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button29" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button30" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button31" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button32" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button33" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button34" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button35" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button36" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button37" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button38" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button39" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button40" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button41" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button42" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button43" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button44" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button45" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button46" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button47" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button48" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button49" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button50" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button51" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button52" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button53" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button54" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button55" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button56" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button57" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button58" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button59" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button60" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button61" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button62" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button63" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button64" />
+                  <Frame type="Pulldown" name="ReadablePulldown">
+                     <Anchor relative="$parent" />
+                     <Visible val="False" />
+                     <SelectedIndex val="{$parent/@SelectedIndex}" />
+                  </Frame>
+                  <Frame type="ScrollableFrame" name="ScrollableList">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="-219" />
+                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="{$SandBoxPanel/@Width}" />
+                     <Height val="465" />
+                     <AcceptsMouse val="True" />
+                     <Frame type="ScrollBar" name="ScrollBar" template="SandBox/SandBoxScrollBarTemplate" />
+                     <Frame type="Frame" name="ContainerFrame">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Bottom" relative="$this/Button63" pos="Max" offset="20" />
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+                        <!-- Tile Buttons -->
+                        <Frame type="Button" name="DummyButton" template="SandBox/ButtonTemplate">
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <Frame type="Button" name="Button0" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/DummyButton" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button1" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button2" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button3" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button4" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button5" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button6" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button7" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button8" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button9" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button10" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button11" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button12" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button13" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button14" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button15" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button16" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button17" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button18" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button19" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button20" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button21" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button22" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button23" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button24" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button25" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button26" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button27" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button26" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button28" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button27" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button29" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button28" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button30" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button29" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button31" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button30" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button32" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button31" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button33" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button32" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button34" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button33" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button35" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button34" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button36" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button35" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button37" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button36" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button38" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button37" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button39" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button38" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button40" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button39" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button41" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button40" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button42" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button41" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button43" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button42" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button44" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button43" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button45" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button44" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button46" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button45" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button47" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button46" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button48" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button47" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button49" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button48" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button50" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button49" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button51" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button50" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button52" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button51" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button53" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button52" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button54" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button53" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button55" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button54" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button56" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button55" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button57" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button56" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button58" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button57" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button59" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button58" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button60" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button59" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button61" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button60" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button62" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button61" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button63" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button62" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button64" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button63" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <!-- Tile Image Icons -->
+                        <Frame type="Frame" name="ImageFrame0" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button0" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame1" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame2" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button2" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame3" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button3" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame4" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button4" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame5" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button5" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame6" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button6" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame7" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button7" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame8" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button8" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame9" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button9" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame10" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button10" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame11" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button11" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame12" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button12" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame13" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button13" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame14" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button14" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame15" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button15" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame16" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button16" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button16" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame17" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button17" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button17" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame18" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button18" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button18" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame19" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button19" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button19" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame20" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button20" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button20" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame21" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button21" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button21" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame22" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button22" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button22" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame23" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button23" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button23" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame24" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button24" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button24" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame25" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button25" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button25" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame26" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button26" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button26" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame27" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button27" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button27" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame28" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button28" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button28" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame29" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button29" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button29" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame30" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button30" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button30" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame31" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button31" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button31" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame32" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button32" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button32" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame33" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button33" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button33" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame34" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button34" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button34" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame35" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button35" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button35" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame36" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button36" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button36" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame37" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button37" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button37" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame38" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button38" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button38" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame39" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button39" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button39" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame40" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button40" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button40" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame41" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button41" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button41" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame42" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button42" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button42" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame43" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button43" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button43" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame44" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button44" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button44" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame45" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button45" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button45" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame46" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button46" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button46" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame47" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button47" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button47" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame48" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button48" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button48" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame49" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button49" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button49" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame50" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button50" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button50" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame51" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button51" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button51" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame52" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button52" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button52" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame53" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button53" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button53" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame54" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button54" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button54" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame55" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button55" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button55" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame56" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button56" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button56" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame57" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button57" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button57" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame58" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button58" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button58" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame59" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button59" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button59" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame60" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button60" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button60" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame61" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button61" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button61" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame62" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button62" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button62" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame63" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button63" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button63" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame64" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button64" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button64" pos="Min" offset="15" />
+                           <Visible val="False" />
+                        </Frame>
+                     </Frame>
+                  </Frame>
+               </Frame>
+               <Frame type="TabControl" name="SpawnGroupList">
+                  <Anchor relative="$parent" />
+                  <Handle val="SBEnemyGroupList" />
+                  <Visible val="False" />
+                  <SelectedIndex val="1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/DummyButton" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button0" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button1" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button2" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button3" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button4" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button5" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button6" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button7" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button8" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button9" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button10" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button11" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button12" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button13" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button14" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button15" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button16" />
+                  <Frame type="Pulldown" name="ReadablePulldown">
+                     <Anchor relative="$parent" />
+                     <Visible val="False" />
+                     <SelectedIndex val="{$parent/@SelectedIndex}" />
+                  </Frame>
+                  <Frame type="ScrollableFrame" name="ScrollableList">
+                     <Anchor side="Top" relative="$parent" pos="Min" offset="-219" />
+                     <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                     <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+                     <Width val="{$SandBoxPanel/@Width}" />
+                     <Height val="465" />
+                     <AcceptsMouse val="True" />
+                     <Frame type="ScrollBar" name="ScrollBar" template="SandBox/SandBoxScrollBarTemplate" />
+                     <Frame type="Frame" name="ContainerFrame">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Bottom" relative="$this/Button16" pos="Max" offset="20" />
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+                        <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+                        <!-- Tile Buttons -->
+                        <Frame type="Button" name="DummyButton" template="SandBox/ButtonTemplate">
+                           <CollapseLayout val="True" />
+                           <Visible val="False" />
+                        </Frame>
+                        <Frame type="Button" name="Button0" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/DummyButton" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button1" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button2" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button3" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button4" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button5" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button6" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button7" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button8" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button9" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button10" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button11" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button12" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button13" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button14" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button15" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button16" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="75" />
+                           <CollapseLayout val="True" />
+                           <Visible val="False" /> 
+                        </Frame>
+                        <!-- Tile Image Icons -->
+                        <Frame type="Frame" name="ImageFrame0" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button0" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button0" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame1" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button1" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button1" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame2" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button2" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button2" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame3" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button3" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button3" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame4" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button4" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button4" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame5" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button5" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button5" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame6" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button6" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button6" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame7" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button7" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button7" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame8" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button8" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button8" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame9" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button9" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button9" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame10" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button10" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button10" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame11" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button11" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button11" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame12" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button12" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button12" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame13" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button13" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button13" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame14" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button14" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button14" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame15" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button15" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button15" pos="Min" offset="15" />
+                        </Frame>
+                     </Frame>
+                  </Frame>
+               </Frame>
+            </Frame>
+            <!-- Options Panel -->
+            <Frame type="Frame" name="Panel03">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+               <Frame type="Label" name="Title">
+                  <Anchor side="Top" relative="$parent" pos="Mid" offset="-600" />
+                  <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+                  <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+                  <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                  <Height val="40" />
+                  <Width val="150" />
+                  <Color val="255,255,255" />
+                  <Style val="BattlenetTopNavSmall" />
+                  <Text val="Options" />
+               </Frame>
+               <Frame type="CheckBox" name="Option0" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+                  <Checked val="True" />
+               </Frame>
+               <Frame type="CheckBox" name="Option1" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option0" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option0" pos="Min" offset="0" />
+                  <Tooltip val="Hero invunerable." />
+                  <TooltipFrame val="UADStandardTooltip" />
+               </Frame>
+               <Frame type="CheckBox" name="Option2" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option1" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option1" pos="Min" offset="0" />
+               </Frame>
+               <Frame type="CheckBox" name="Option3" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option2" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option2" pos="Min" offset="0" />
+                  <Checked val="False" />
+               </Frame>
+               <Frame type="CheckBox" name="Option4" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option3" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option3" pos="Min" offset="0" />
+                  <Checked val="False" />
+               </Frame>
+               <Frame type="CheckBox" name="Option5" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option4" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option4" pos="Min" offset="0" />
+                  <Checked val="False" />
+               </Frame>
+               <Frame type="CheckBox" name="Option6" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option5" pos="Min" offset="50" />
+                  <Anchor side="Left" relative="$parent/Option5" pos="Min" offset="0" />
+                  <Checked val="False" />
+               </Frame>
+               <Frame type="CheckBox" name="Option7" template="StandardUADTemplates/StandardCheckBoxTemplate1">
+                  <Anchor side="Top" relative="$parent/Option0" pos="Min" offset="0" />
+                  <Anchor side="Left" relative="$parent/Option0" pos="Min" offset="225" />
+                  <Checked val="False" />
+               </Frame>
+               <Frame type="Pulldown" name="WeatherPulldown" template="StandardUADTemplates/UADPulldownTemplate">
+                  <Anchor side="Top" relative="$parent/Option6" pos="Min" offset="60" />
+                  <Anchor side="Left" relative="$parent/Option6" pos="Min" offset="0" />
+                  <Width val="350" />
+               </Frame>
+               <Frame type="Label" name="Label0">
+                  <Anchor side="Top" relative="$parent/Option0" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option0" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Fog Of War" />
+               </Frame>
+               <Frame type="Label" name="Label1">
+                  <Anchor side="Top" relative="$parent/Option1" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option1" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="God Mode" />
+               </Frame>
+               <Frame type="Label" name="Label2">
+                  <Anchor side="Top" relative="$parent/Option2" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option2" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Max Skill Upgrades" />
+               </Frame>
+               <Frame type="Label" name="Label3">
+                  <Anchor side="Top" relative="$parent/Option3" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option3" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Created NPC Units AI Controlled" />
+               </Frame>
+               <Frame type="Label" name="Label4">
+                  <Anchor side="Top" relative="$parent/Option4" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option4" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Clear Cursor After Placing Item" />
+               </Frame>
+               <Frame type="Label" name="Label5">
+                  <Anchor side="Top" relative="$parent/Option5" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option5" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Disable Infestation Level Mutations" />
+               </Frame>
+               <Frame type="Label" name="Label6">
+                  <Anchor side="Top" relative="$parent/Option6" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option6" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Enable Global Nighttime Lighting" />
+               </Frame>
+               <Frame type="Label" name="Label7">
+                  <Anchor side="Top" relative="$parent/Option7" pos="Min" offset="5" />
+                  <Anchor side="Left" relative="$parent/Option7" pos="Min" offset="50" />
+                  <Style val="GameButtonCharge" />
+                  <Text val="Usain Bolt" />
+               </Frame>
+               <Frame type="Button" name="LevelButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="375" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                  <!--<Anchor side="Right" relative="$parent" pos="Max" offset="0" />-->
+                  <Width val="200" />
+                  <AcceptsMouseTooltip val="True" />
+                  <Tooltip val="Increase hero level by 1 up to a max of 21." />
+                  <TooltipFrame val="UADStandardTooltip" />
+                  <TooltipAnchorPosition val="BottomCenter" />
+                  <Frame type="Label" name="Label">
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                     <Text val="Level Up" />
+                  </Frame>
+               </Frame>
+               <Frame type="Button" name="RecoverButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="375" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                  <!--<Anchor side="Left" relative="$parent" pos="Min" offset="0" />-->
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+                  <Width val="200" />
+                  <AcceptsMouseTooltip val="True" />
+                  <Tooltip val="Heals the player selected units and resets cooldowns." />
+                  <TooltipFrame val="UADStandardTooltip" />
+                  <TooltipAnchorPosition val="BottomCenter" />
+                  <Frame type="Label" name="Label">
+                     <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                     <Text val="Recover" />
+                  </Frame>
+               </Frame>
+            </Frame>
+         </Frame>
+      </Frame>
+      <Frame type="Button" name="SpawnMenuButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="90" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+         <Width val="225" />
+         <Handle val="SBSpawnMenuButton" />
+         <Visible val="False" />
+         <Frame type="Label" name="Label">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+            <Text val="Spawn Menu" />
+         </Frame>
+         <Animation name="ClickAnim">
+            <Event event="OnClick" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+            <Controller type="Event" end="Stop" frame="$SandBoxPanel">
+               <Key type="Event" time="0" event="Display" />
+            </Controller>
+         </Animation>
+         <Animation name="DisplayAnim">
+            <Event event="Display" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Button" name="AutoReviveButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="250" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="325" />
+         <Width val="225" />
+         <Visible val="False" />
+         <Enabled val="True" />
+         <Text val="Auto Revive" />
+         <Animation name="DisplayAnim">
+            <Event event="Show" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+         <Animation name="HideAnim">
+            <Event event="Hide" action="Reset,Play" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation>
+         <Animation name="ClickAnim">
+            <Event event="OnClick" action="Reset,Play" />
+            <Controller type="Property" property="Enabled" end="Pause">
+               <Key type="Property" time="0" value="False" />
+               <Key type="Property" time="3.0" value="True" />
+            </Controller>
+         </Animation>
+         <Animation name="Show">
+            <Event event="OnShown" action="Reset,Play" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="55" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+               <Key type="Curve" time="1" value="55" out="Slow" />
+               <Key type="Curve" time="1.5" value="255" out="Slow" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

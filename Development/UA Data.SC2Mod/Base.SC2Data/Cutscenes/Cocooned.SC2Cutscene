@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CutsceneState cutsceneVersion="1.300000">
+    <CCutsceneNodeDirector guid="10900231967661161465" name="Director">
+        <CCutsceneNodeActiveCamera guid="11222823132897327273" name="Active Camera">
+            <CCutsceneElementActiveCamera guid="6293562224785568543" cameraIndex="0" objectGuid="11454700774278366329"/>
+        </CCutsceneNodeActiveCamera>
+        <CCutsceneNodeBookmark guid="13341648760817705545" name="Bookmarks">
+            <CCutsceneElementBookmark guid="9033865235621565864" bookmarkName="Birth"/>
+            <CCutsceneElementBookmark guid="8570996171585217097" start="504" bookmarkName="Stand"/>
+            <CCutsceneElementBookmark guid="8516691293163638865" start="5501" bookmarkName="Stand End" jumpToBookmarkWhenHit="Stand"/>
+            <CCutsceneElementBookmark guid="6314157305192056033" start="5502" bookmarkName="Death"/>
+        </CCutsceneNodeBookmark>
+    </CCutsceneNodeDirector>
+    <CCutsceneNodeCamera guid="11454700774278366329" name="Game Camera" position="-60.706688,-59.936523,9.983017" fov="27.799999" nearClip="0.100000" farClip="62.000000" shadowClip="62.000000" depthOfField="0.000000" focalDepth="8.000000" falloffStart="0.000300" falloffEnd="8.000000" falloffStartNear="0.000000" falloffEndNear="0.000000" fstop="32.000000" doftype="0.000000" roll="0.000000" distance="16.419058" pitch="90.000000" yaw="-179.986008" heightOffset="0.000000">
+        <CCutsceneElementObject guid="6160756782814790777" duration="6258" lockedToEnd="1"/>
+    </CCutsceneNodeCamera>
+    <CCutsceneNodeActor guid="12151710038021539011" name="storm_overlay_anubarak_base_cocoon" position="-60.626469,-60.256897,9.961937" modelPath="Assets\Models\storm_overlay_anubarak_base_cocoon.m3" shadowBox="0" teamColorDiffuse="1.000000,0.000000,0.000000,0.000000" teamColorEmissive="0.545100,0.062700,0.086100,0.000000">
+        <CCutsceneElementObject guid="6631220943449883972" duration="6258" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="10738628370548262212" name="Animation Layer">
+            <CCutsceneElementAnim guid="5653387042659104690" duration="294" anim="Birth" priority="7" originalDuration="500"/>
+            <CCutsceneElementAnim guid="4649009281914538955" start="294" duration="5208" anim="Stand" priority="3" originalDuration="5000" looping="1"/>
+            <CCutsceneElementAnim guid="8859630171967587652" start="5502" duration="756" lockedToEnd="1" anim="Death" priority="11" originalDuration="333"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+</CutsceneState>

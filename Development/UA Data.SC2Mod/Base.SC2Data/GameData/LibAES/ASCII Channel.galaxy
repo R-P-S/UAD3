@@ -1,0 +1,38 @@
+// TYPES
+//include "TriggerLibs/ASCIIUtil.galaxy"
+struct ascii_channel_t{
+  
+    string buffer;
+   
+    int pos;
+};
+// PUBLIC FUNCTIONS
+void ASCIIChannelSetup(structref<ascii_channel_t> obj, string s);
+int ASCIIChannelLength(structref<ascii_channel_t> obj);
+int ASCIIChannelRead(structref<ascii_channel_t> obj);
+//
+// IMPLEMENTATION
+void ASCIIChannelSetup(structref<ascii_channel_t> obj, string s){
+    obj.buffer = s;
+    obj.pos = 0;
+}
+int ASCIIChannelLength(structref<ascii_channel_t> obj){
+    return StringLength(obj.buffer) - obj.pos;
+}
+int ASCIIChannelRead(structref<ascii_channel_t> obj){
+    int end;
+    int shift;
+    int val;
+    end = obj.pos + 4;
+    if( end > StringLength(obj.buffer) ){ end = StringLength(obj.buffer); }
+    
+    shift = 0;
+    val = 0;
+    obj.pos+= 1;
+    for( ; obj.pos <= end ; obj.pos+= 1 ){
+        val|= ASCIIUtilStringToInt(obj.buffer, obj.pos) << shift;
+        shift+= 8;
+    }
+    obj.pos-= 1;
+    return val;
+}

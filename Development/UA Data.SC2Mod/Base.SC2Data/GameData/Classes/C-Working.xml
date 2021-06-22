@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareVital id="Shell67">
+        <WhichUnit Value="Source"/>
+        <Compare value="GE"/>
+        <Type value="Fraction"/>
+        <Value value="0.67"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Shell33">
+        <WhichUnit Value="Source"/>
+        <Compare value="GE"/>
+        <Type value="Fraction"/>
+        <Value value="0.33"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="Shell0">
+        <WhichUnit Value="Source"/>
+        <Compare value="GT"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CEffectSet id="LMTVAntiStuck">
+        <EditorCategories value=""/>
+    </CEffectSet>
+    <CEffectSet id="BulwarkAntiStuck">
+        <EditorCategories value=""/>
+    </CEffectSet>
+    <CBehaviorBuff id="LMTVAntiStuck">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="NotMoving"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="LMTVAntiStuck"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BulwarkAntiStuck">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="NotMoving"/>
+        <Period value="5"/>
+        <PeriodicEffect value="BulwarkAntiStuck"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BrokenShell" parent="TemplateBuff">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
+        <RemoveValidatorArray value="Shell0"/>
+        <Modification MoveSpeedBonus="-0.5507"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FullShell" parent="TemplateBuff">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
+        <RemoveValidatorArray value="Shell67"/>
+        <FinalEffect value="CrackedShellAB"/>
+        <Modification MoveSpeedBonus="-1.3515"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CrackedShell" parent="TemplateBuff">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
+        <RemoveValidatorArray value="Shell33"/>
+        <FinalEffect value="BrokenShellAB"/>
+        <Modification MoveSpeedBonus="-0.9492"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+</Catalog>

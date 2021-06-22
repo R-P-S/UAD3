@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+    <!-- Undead Unit -->
+    <wizard id = "UndeadUnit">
+        <name>Undead Unit</name>
+        <description>
+            Creates undead unit
+        </description>
+        <objecttypes create = "Actor;Unit;Model;Weapon" load="Unit;Actor;Weapon" view="Unit" />
+		<category>Units</category>
+		<instructions page="1">
+            -Page 1: Unit stats/info
+            -Page 2: Unit model
+            -Page 3: Unit actor
+            -Page 4: Unit weapon
+        </instructions>
+        <macro id="Id" replaceSrc=" ">^Name^</macro>
+        <macro id="WeaponId" replaceSrc=" ">^WeaponName^</macro>
+        <input id = "Name" type = "CString">
+			<name>Name</name>
+			<tooltip>Name of the undead unit</tooltip>
+            <layout page = "1"/>
+		</input>
+        <!--
+		<input id = "Identification" type = "CString">
+			<name>ID</name>
+			<tooltip>ID of the Unit.</tooltip>
+            <layout page = "1"/>
+		</input> -->
+        <!--
+        <input id = "EditorPrefix" type = "WizardMenu">
+			<name>Editor Prefix</name>
+            <item text = "T3 -" value = "T3 -" />
+			<item text = "T2 -" value = "T2 -" />
+            <item text = "T1 -" value = "T1 -" />
+             Default to T3 so error conditions aren't needed
+            <default value = "T3 -"/>
+            <layout page = "1"/>
+		</input> -->
+        <input id = "EditorSuffix" type = "CString">
+			<name>Editor Suffix</name>
+			<tooltip>Suffix - Usually left blank</tooltip>
+            <layout page = "1"/>
+		</input>
+        <input id = "Type" type = "WizardRadio">
+			<name>Unit Template Type</name>
+			<tooltip>Select the type of enemy class</tooltip>
+			<item text = "T3" value = "TemplateT3Zombie" />
+			<item text = "T2" value = "TemplateT2Zombie" />
+            <item text = "T1" value = "TemplateT1Zombie" />
+            <!-- Default to T3 so error conditions aren't needed -->
+            <default value = "TemplateT3Zombie"/>
+            <layout page = "1"/>
+		</input>
+         <input id = "Description" type = "CString">
+			<name>Description</name> 
+			<tooltip>Tooltip text description of the unit</tooltip>
+            <layout page = "1" column = "1"/>
+		</input>
+
+        <input id = "LifeStart" type = "CFixed">
+			<name>Life Start</name> 
+            <default value = "1"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Starting life amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "2"/>
+		</input>
+        <input id = "LifeMax" type = "CFixed">
+			<name>Life Max</name> 
+            <default value = "1"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Max life amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "3"/>
+		</input>
+        <input id = "ShieldsStart" type = "CFixed">
+			<name>Shields Start</name> 
+            <default value = "0"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Starting shield amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "2"/>
+		</input>
+        <input id = "ShieldsMax" type = "CFixed">
+			<name>Shields Max</name> 
+            <default value = "0"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Max shield amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "3"/>
+		</input>
+        <input id = "EnergyStart" type = "CFixed">
+			<name>Energy Start</name> 
+            <default value = "0"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Starting energy amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "2"/>
+		</input>
+        <input id = "EnergyMax" type = "CFixed">
+			<name>Energy Max</name> 
+            <default value = "0"/>
+			<maximum value = "500000"/>
+			<minimum value = "0" />
+			<tooltip>Max energy amount range: 0-500,000</tooltip>
+            <layout page = "1" column = "3"/>
+		</input>
+        <input id = "EnergyRegenerationRate" type = "real32">
+            <condition id = "HasEnergy"/>
+			<name>Energy Regeneration Rate</name> 
+            <default value = "1"/>
+			<maximum value = "10"/>
+			<minimum value = "0" />
+			<tooltip>Energy regeneration rate</tooltip>
+            <layout page = "1" column = "3"/>
+		</input>
+        <input id = "Speed" type = "real32">
+			<name>Movement Speed</name> 
+            <default value = "0.0"/>
+			<maximum value = "160.0"/>
+			<minimum value = "0.0" />
+			<tooltip>Maximum speed for the unit</tooltip>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "Radius" type = "real32">
+			<name>Radius</name> 
+            <default value = "1.0"/>
+			<maximum value = "7.75"/>
+			<minimum value = "0.0" />
+			<tooltip>Radius at which the unit can interact with other units</tooltip>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "MinimapRadius" type = "real32">
+			<name>Minimap Radius</name> 
+            <default value = "1.0"/>
+			<maximum value = "7.75"/>
+			<minimum value = "0.0" />
+			<tooltip>Size of the unit on the minimap</tooltip>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "SeparationRadius" type = "real32">
+			<name>Separation Radius</name> 
+            <default value = "1.0"/>
+			<maximum value = "7.75"/>
+			<minimum value = "0.0" />
+			<tooltip>Distance between Air units in a squadron</tooltip>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "AttributeText" type = "WizardText">
+            <name>Attributes</name>
+            <color value="255,128,0,0"/>
+            <tooltip>How armor and weapons affect the unit</tooltip>
+        </input>
+        <input id = "LightAtt" type = "WizardCheckbox">
+			<name>Light</name>
+            <default value = "0"/>
+            <layout page = "1"/>
+		</input>
+        <input id = "ArmoredAtt" type = "WizardCheckbox">
+			<name>Armored</name>
+            <default value = "0"/>
+            <layout page = "1"/>
+		</input>
+        <input id = "BioAtt" type = "WizardCheckbox">
+			<name>Biological</name>
+            <default value = "1"/>
+            <layout page = "1"/>
+		</input>
+        <input id = "MassiveAtt" type = "WizardCheckbox">
+			<name>Massive</name>
+            <default value = "0"/>
+            <layout page = "1"/>
+		</input>
+        <input id = "PlaneArrayText" type = "WizardText">
+            <name>Plane Array</name>
+            <color value="255,128,0,0"/>
+            <tooltip>Plane on which the unit can be attacked.</tooltip>
+            <layout page = "1" column = "1"/>
+        </input>
+        <input id = "PlaneArrayAir" type = "WizardCheckbox">
+			<name>Air</name>
+            <default value = "0"/>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "PlaneArrayGround" type = "WizardCheckbox">
+			<name>Ground</name>
+            <default value = "1"/>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "Collide" type = "WizardText">
+            <name>Collide</name>
+            <color value="255,128,0,0"/>
+            <tooltip>Type of units with which can collide.</tooltip>
+            <layout page = "1" column = "1"/>
+        </input>
+        <input id = "CollideFlying" type = "WizardCheckbox">
+			<name>Flying</name>
+            <default value = "0"/>
+            <layout page = "1" column = "1"/>
+		</input>
+        <input id = "CollideGround" type = "WizardCheckbox">
+			<name>Ground</name>
+            <default value = "1"/>
+            <layout page = "1" column = "1"/>
+		</input>
+        <!-- Page 2 -->
+		<!-- Model Fields -->
+		<input id = "Model" type = "WizardText">
+			<name>Model Fields</name>
+			<color value="255,128,0,0"/>
+            <layout page = "2" />
+		</input>
+        <input id = "ModelParent" type = "CString">
+			<name>Model Parent</name>
+            <default value ="Unit"/>
+            <tooltip>Default parent is `Unit` If existing model already has a parent model then use that. E.g. Brakk</tooltip>
+            <layout page = "2" />
+		</input>
+        <input id="ModelPath" type="CModelPath">
+			<name>Model</name>
+            <layout page = "2" />
+		</input>
+        <!-- Page 3 -->
+		<!-- Unit Actor -->
+        <input id = "ActorTitle" type = "WizardText">
+			<name>Unit Actor</name>
+			<color value="255,128,0,0"/>
+            <layout page = "3" />
+		</input>
+        <input id = "ActorType" type = "WizardRadio">
+			<name>Unit Actor Template Type</name>
+			<tooltip>Select enemy template</tooltip>
+			<item text = "T3" value = "TemplateT3Zombie" />
+			<item text = "T2" value = "TemplateT2Zombie" />
+            <item text = "T1" value = "TemplateT1Zombie" />
+            <item text = "T1 Miniboss" value = "TemplateT1MinibossZombie" />
+            <item text = "T1 Boss" value = "TemplateT1BossZombie" />
+            <!-- Default to T3 so error conditions aren't needed -->
+            <default value = "TemplateT3Zombie"/>
+            <layout page = "3"/>
+		</input>
+        <input id = "UnitIcon" type = "CImagePath">
+            <name>Unit Icon</name>
+            <layout page = "3"/>
+        </input>
+        <input id = "Wireframe" type = "CImagePath">
+            <name>Wireframe Icon</name>
+            <layout page = "3"/>
+        </input>
+        <input id = "Portrait" type = "CModelPath">
+            <name>Portrait</name>
+            <layout page = "3"/>
+        </input>
+        <!-- Page 4 -->
+		<!-- Weapon -->
+        <input id = "WeaponTitle" type = "WizardText">
+			<name>Weapon</name>
+			<color value="255,128,0,0"/>
+            <layout page = "4" />
+		</input>
+        <input id = "WeaponName" type = "CString">
+			<name>Weapon Name</name>
+			<tooltip>Name of the weapon</tooltip>
+            <layout page = "4"/>
+		</input>
+        <input id = "WeaponType" type = "WizardMenu">
+			<name>Attack Type</name>
+            <item text = "Blunt" value = "&lt;c val=&quot;FFFF8A&quot;&gt;attack type: Blunt&lt;/c&gt;" />
+			<item text = "Pierce" value = "&lt;c val=&quot;FFFF8A&quot;&gt;attack type: Piercing&lt;/c&gt;" />
+            <item text = "Slash" value = "&lt;c val=&quot;FFFF8A&quot;&gt;attack type: Slashing&lt;/c&gt;" />
+            <default value = "&lt;c val=&quot;FFFF8A&quot;&gt;attack type: Blunt&lt;/c&gt;"/>
+            <layout page = "4"/>
+		</input>
+        <input id = "Targets" type = "CTargetFilters">
+			<name>Target Filters</name>
+            <default value = "Visible;-" />
+			<layout page = "4" column = "2"/>
+		</input>
+        <input id = "WeaponIcon" type = "CImagePath">
+            <name>Weapon Icon</name>
+            <layout page = "4" column = "1"/>
+        </input>
+        <input id = "WeaponSpeedPerSecond" type = "real32">
+			<name>Attack Speed</name>
+            <default value = "0.0"/>
+			<tooltip>Specifies the time between attacks</tooltip>
+			<layout page = "4" column = "3"/>
+		</input>
+        <input id = "WeaponRange" type = "CFixed">
+			<name>Weapon Range</name>
+			<layout column = "3"/>
+			<default value = "0"/>
+			<maximum value = "500"/>
+			<minimum value = "0" />
+            <layout page = "4" column = "3"/>
+		</input>
+        <input id = "CriticalChance" type = "CFixed">
+			<name>Critical Chance</name>
+			<tooltip>Crit %</tooltip>
+            <default value = "0"/>
+			<maximum value = "1"/>
+			<minimum value = "0" />
+            <increment value = "0.125" />
+			<layout page = "4" column = "3"/>
+		</input>
+        <input id = "Options" type = "WizardText">
+			<name>Option Flags</name>
+            <layout page = "4" />
+		</input>
+        <input id = "MeleeOption" type = "WizardCheckbox">
+			<name>Melee</name>
+            <default value = "0"/>
+            <layout page = "4"/>
+		</input>
+        
+        <!-- Conditions -->
+        <!-- Class Conditions -->
+		<condition id = "IsT1" input = "Type" value = "TemplateT1Zombie"/>
+		<condition id = "IsT2" input = "Type" value = "TemplateT2Zombie"/>
+		<condition id = "IsT3" input = "Type" value = "TemplateT3Zombie"/>
+        
+        <!-- Absolute Conditions (Certain fields must be filled)
+		<condition id = "NoSpacesForID">
+			<condition logic = "not">
+				<condition input = "Name" value = " " match = "contain"/>
+			</condition>	
+		</condition>
+        <validate type = "Error">
+			<condition id = "NoSpacesForID"/>
+			<text>The ID can not contain any spaces</text>
+		</validate> -->
+		
+		<validate type = "Error">
+			<condition input = "Name" empty = "0"/>
+			<text>The ID can not be empty</text>
+		</validate>
+        <validate type = "Error">
+			<condition input = "ModelPath" empty = "0"/>
+			<text>The model must be selected</text>
+		</validate>
+        <!-- Vital Conditions -->
+        <condition id = "HasEnergy" input = "EnergyMax" operator = "greater" value = "0"/>
+		<!-- Model Selected
+        <validate type = "Error">
+			<condition input = "ModelPathExist" empty = "0"/>
+			<text>The model field can't not be empty</text>
+		</validate> -->
+		
+        <!-- Class Data Entries -->
+
+        <!-- Page 1 -->
+        <!-- T1/T2/T3 Class Templates -->
+		<entry catalog = "Unit" type = "CUnit">
+            <id>^Id^</id>
+            <parentid>^Type^</parentid>
+			<field id = "Name">
+				<value>^Name^</value>
+			</field>
+            <!--
+            <field id = "EditorPrefix">
+				<value>^EditorPrefix^</value>
+			</field> -->
+            <field id = "EditorSuffix">
+                <value>^EditorSuffix^</value>
+            </field>
+            <field id = "Description">
+                <value>^Description^</value>
+            </field>
+            <field id = "LifeStart">
+                <value>^LifeStart^</value>
+            </field>
+            <field id = "LifeMax">
+                <value>^LifeStart^</value>
+            </field>
+            <field id = "ShieldsStart">
+                <value>^ShieldsStart^</value>
+            </field>
+            <field id = "ShieldsMax">
+                <value>^ShieldsMax^</value>
+            </field>
+            <field id = "EnergyStart">
+                <value>^EnergyStart^</value>
+            </field>
+            <field id = "EnergyMax">
+                <value>^EnergyMax^</value>
+            </field>
+            <field id = "EnergyRegenRate">
+                <condition id = "HasEnergy"/>
+                <value>^EnergyRegenerationRate^</value>
+            </field>
+            <field id = "Speed">
+                <value>^Speed^</value>
+            </field>
+            <field id = "Radius">
+                <value>^Radius^</value>
+            </field>
+            <field id = "MinimapRadius">
+                <value>^MinimapRadius^</value>
+            </field>
+            <field id = "SeparationRadius">
+                <value>^SeparationRadius^</value>
+            </field>
+            <field id = "Attributes">
+                <index>Light</index>
+				<value>^LightAtt^</value>
+            </field>
+            <field id = "Attributes">
+                <index>Biological</index>
+				<value>^BioAtt^</value>
+            </field>
+            <field id = "Attributes">
+                <index>Armored</index>
+				<value>^ArmoredAtt^</value>
+            </field>
+            <field id = "Attributes">
+                <index>Massive</index>
+				<value>^MassiveAtt^</value>
+            </field>
+            <field id = "PlaneArray">
+                <index>Air</index>
+				<value>^PlaneArrayAir^</value>
+            </field>
+            <field id = "PlaneArray">
+                <index>Ground</index>
+				<value>^PlaneArrayGround^</value>
+            </field>
+            <!-- Ground Index -->
+            <field id = "Collide">
+                <count>32</count>
+                <index>1</index>
+				<value>^CollideGround^</value>
+            </field>
+            <!-- Flying Index -->
+             <field id = "Collide">
+                <count>32</count>
+                <index>16</index>
+				<value>^CollideFlying^</value>
+            </field>
+            <!--
+            <field id = "WeaponArray">
+				<link>^WeaponId^</link>
+            </field> -->
+        </entry>
+        <!-- Page 2 -->
+        <!-- Unit Model -->
+        <entry catalog="Model" type="CModel" >
+			<id>^Id^Model</id>
+            <parentid>^ModelParent^</parentid>
+			<field id="Name">
+				<value>^Name^</value>
+			</field>
+			<field id="Model">
+				<value>^ModelPath^</value>
+			</field>
+            <field id="EditorCategories">
+				<value>Race:Undead</value>
+			</field>
+            <layout page = "2" />
+		</entry>
+        <!-- Page 3 -->
+        <!-- Unit Actor -->
+        <entry catalog="Actor" type="CActorUnit" >
+			<id>^Id^Actor</id>
+            <unitName>^Id^</unitName>
+            <parentid>^ActorType^</parentid>
+			<field id="Name">
+				<value>^Name^ Actor</value>
+			</field>
+            <token id="unitName">
+				<value>^Id^</value>
+			</token>
+            <field id="Model">
+				<value>^Id^Model</value>
+			</field>
+            <field id="PlacementModel">
+				<value>^Id^Model</value>
+			</field>
+            <field id="BuildModel">
+				<value>^Id^Model</value>
+			</field>
+            <field id="UnitIcon">
+				<value>^UnitIcon^</value>
+			</field>
+            <field id="GroupIcon">
+				<value>^UnitIcon^</value>
+			</field>
+            <field id="Wireframe">
+				<value>^Wireframe^</value>
+			</field>
+            <field id="PortraitModel">
+				<value>^Portrait^</value>
+			</field>
+		</entry>
+        <!-- Page 4 Weapon -->
+        <entry catalog = "Weapon" type = "CWeaponLegacy">
+            <field id = "Name">
+				<value>^WeaponName^</value>
+			</field>
+			<id>^WeaponId^</id>
+            <parentid>UndeadWeaponTemplate</parentid>
+            <field id="Tip">
+				<value>^WeaponType^</value>
+			</field>
+            <field id="Icon">
+				<value>^WeaponIcon^</value>
+			</field>
+            <field id="Range">
+                <value>^WeaponRange^</value>
+            </field>
+            <field id="Period">
+                <value>^WeaponSpeedPerSecond^</value>
+            </field>
+            <field id="CriticalChance">
+                <value>^CriticalChance^</value>
+            </field>
+            <field id="TargetFilters">
+                <value>^Targets^</value>
+            </field>
+            <field id = "Options">
+                <index>Melee</index>
+				<value>^MeleeOption^</value>
+            </field>
+        </entry>
+    </wizard>
+</wizardfile>

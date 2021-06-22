@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Constants -->
+   <Constant name="Button_Offset" val="48" />
+   <!-- Command Button Template -->
+   <Frame type="CommandButton" name="SelfCastButtonTemplate" template="CommandButton/CommandButtonTemplate">
+      <Width val="48" />
+      <Height val="48" />
+      <TooltipFrame val="TerranCommandTooltip" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <AcceptsMouse val="True" />
+      <AcceptsMouseDropTarget val="False" />
+      <CollapseLayout val="False" />
+      <Frame type="CommandHotkeyFrame" name="HotkeyFrame" template="StandardTemplates/HotkeyFrameTemplate">
+         <Frame type="Label" name="HotkeyLabel">
+            <Alpha val="0" />
+         </Frame>
+         <Frame type="Image" name="HotkeyLabelBackground">
+            <Alpha val="0" />
+         </Frame>
+      </Frame>
+   </Frame>
+   <!-- Command Panel Template -->
+   <Frame type="CommandPanel" name="SelfCastCommandPanelTemplate" template="CommandPanel/CommandPanelTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="250" />
+      <Height val="250" />
+      <HideUnusedButtons val="True" />
+      <DisplayCancelCommandCard val="False" />
+      <UseGridHotkeys val="False" />
+      <Frame type="CommandTooltip" name="TerranCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-270" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <MaxWidth val="1200" />
+         <MinWidth val="450" />
+         <Width val="450" />
+         <Height val="450" />
+      </Frame>
+      <Frame type="Image" name="CommandTargetImage">
+         <Visible val="False" />
+      </Frame>
+      <Frame type="Label" name="CommandTargetName">
+         <Visible val="False" />
+      </Frame>
+      <Frame type="Label" name="CommandTargetPrompt">
+         <Visible val="False" />
+      </Frame>
+      <Frame type="Frame" name="UncontrollableUnitFrame">
+         <Frame type="Label" name="UncontrollableUnitTitleLabel">
+            <Visible val="False" />
+         </Frame>
+         <Frame type="Label" name="UncontrollableUnitPromptLabel">
+            <Visible val="False" />
+         </Frame>
+      </Frame>
+      <!-- Command Buttons -->
+      <Frame type="CommandButton" name="CommandButton00" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton01" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="#Button_Offset" />
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton02" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton01" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton01" pos="Min" offset="#Button_Offset" />
+      </Frame>
+   </Frame>
+   <!-- Drag Frame Template -->
+   <Frame type="Control" name="SelfCastFrameTemplate">
+      <!-- Default Location -->
+      <Anchor side="Top" relative="$SprintBar" pos="Min" offset="-85" />
+      <Anchor side="Left" relative="$SprintBar" pos="Min" offset="-10" />
+      <Height val="52" />
+      <Width val="180" />
+      <Visible val="False" />
+      <Draggable val="True" />
+      <DragConstraintFrame val="$parent" />
+      <DragCursor val="GripClosed_Terr" />
+      <DragHoverCursor val="GripOpen_Terr" />
+      <Frame type="Image" name="DragBox">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="13" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="8" />
+         <Height val="24" />
+         <Width val="24" />
+         <Texture val="Assets/Textures/cursor-dragframe-nova.dds" />
+      </Frame>
+      <Frame type="CommandPanel" name="CommandButtons" template="SelfCast/SelfCastCommandPanelTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="34" />
+      </Frame>
+      <Frame type="Frame" name="CoordinatesTemplate" template="CoordinatesReporter/CoordinatesTemplate" />
+      <StateGroup name="SelfCastPanelState">
+         <DefaultState val="Off" />
+         <State name="On">
+            <When type="AnimationState" State="On" />
+            <Action type="SetProperty" Visible="True" />
+         </State>
+         <State name="Off">
+            <When type="AnimationState" State="Off" />
+            <Action type="SetProperty" Visible="False" />
+            <Action type="SetProperty" Draggable="False" />
+         </State>
+      </StateGroup>
+      <StateGroup name="DragDisabled">
+         <State name="GamePaused">
+            <When type="Property" frame="$PausePanel" Visible="True" />
+            <Action type="SetProperty" Enabled="False" />
+            <Action type="SetProperty" Draggable="False" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <!-- Constraint Panel Template -->
+   <Frame type="Frame" name="SelfCastConstraintTemplate">
+      <Anchor relative="$parent" />
+      <RenderPriority val="750" />
+      <Frame type="Control" name="SelfCastFrame" template="SelfCast/SelfCastFrameTemplate" />
+      <Frame type="Frame" name="CoordinatesResultsTemplate" template="CoordinatesReporter/CoordinatesResultsTemplate" />
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="SelfCastConstraintFrame1" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame2" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame3" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame4" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame5" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame6" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame7" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame8" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame9" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame10" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame11" template="SelfCast/SelfCastConstraintTemplate" />
+      <Frame type="Frame" name="SelfCastConstraintFrame12" template="SelfCast/SelfCastConstraintTemplate" />
+   </Frame>
+</Desc>

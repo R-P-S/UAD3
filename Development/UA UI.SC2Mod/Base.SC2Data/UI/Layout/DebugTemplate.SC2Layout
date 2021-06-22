@@ -1,0 +1,1355 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- UnitCount DataRef Template -->
+   <Frame type="DataRefFrame" name="DataRefUnitCountTemplate">
+      <Anchor relative="$parent" />
+      <PlayerId val="14" />
+      <Argument name="UnitCount" val="" />
+   </Frame>
+   <!-- PMC UnitCount DataRef Template -->
+   <Frame type="DataRefFrame" name="PMCDataRefUnitCountTemplate">
+      <Anchor relative="$parent" />
+      <PlayerId val="15" />
+      <Argument name="UnitCount" val="" />
+   </Frame>
+   <!-- Tier 3 Units Templates -->
+   <Frame type="Frame" name="Tier3UnitsTemplate">
+      <Frame type="DataRefFrame" name="Bee" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Bee" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Bloated" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Bloated" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Boomer" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Boomer" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Corrupted" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Corrupted" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Creeper" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Creeper" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Drake" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Drake" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Eel" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Eel" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Hellhound" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Hellhound" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Hopper" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Hopper" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Infected" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Infected" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Krill" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Krill" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Leaper" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Leaper" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Licker" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Licker" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Mutant" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Mutant" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Pooch" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Pooch" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Risen" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Risen" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Rotten" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Rotten" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Shredder" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Shredder" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Swarmer" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Swarmer" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Swollen" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Swollen" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Tarantula" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Tarantula" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Unburied" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Unburied" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Unclean" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Unclean" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Unwilling" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Unwilling" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Vore" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Vore" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Widow" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Widow" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Wraith" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="T3Wraith" />
+      </Frame>
+   </Frame>
+   <!-- Tier 2 Units Templates -->
+   <Frame type="Frame" name="Tier2UnitsTemplate">
+      <Frame type="DataRefFrame" name="Abomination" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Abomination" />
+      </Frame>
+      <Frame type="DataRefFrame" name="AdultWidow" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="AdultWidow" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Apiary" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Apiary" />
+      </Frame>
+      <Frame type="DataRefFrame" name="ArachnidMother" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="ArachnidMother" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Bruchus" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Bruchus" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Carrier" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="T2Carrier" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Charger" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Charger" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Cicadis" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Cicadis" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Cursed" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Cursed" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Gargoyle" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Gargoyle" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Glutton" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Glutton" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Hunter" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Hunter" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Impaler" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="T2Impaler" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Morbus" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Morbus" />
+      </Frame>
+      <Frame type="DataRefFrame" name="PlagueFiend" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="PlagueFiend" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Reaper" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="T2Reaper" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Smasher" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Smasher" />
+      </Frame>
+      <Frame type="DataRefFrame" name="SpittingSpider" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="SpittingSpider" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Vulcad" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Vulcad" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Weaver" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Weaver" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Wicked" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Wicked" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Yeti" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="T2Yeti" />
+      </Frame>
+   </Frame>
+   <!-- Tier 1 Units Templates -->
+   <Frame type="Frame" name="Tier1UnitsTemplate">
+      <Frame type="DataRefFrame" name="Arachnathid" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Arachnathid" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Ares" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Ares" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Baron" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Baron" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Darreus" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Darreus" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Dilophosaur" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Dilophosaur" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Gargantuan" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Gargantuan" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Gourmand" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Gourmand" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Immussilus" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Immussilus" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Metasis" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Metasis" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Minerva" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Minerva" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Raisuli" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Raisuli" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Scorpio" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Scorpio" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Widower" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Widower" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Vesania" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Vesania" />
+      </Frame>
+      <Frame type="DataRefFrame" name="Cacumen" template="DebugTemplate/DataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="Cacumen" />
+      </Frame>
+   </Frame>
+   <!-- PMC Units Templates -->
+   <Frame type="Frame" name="PMCUnitsTemplate">
+      
+      <Frame type="DataRefFrame" name="InfantryRifleman" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryRifleman" />
+      </Frame>
+      <Frame type="DataRefFrame" name="InfantryAutomaticRifleman" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryAutomaticRifleman" />
+      </Frame>
+      <Frame type="DataRefFrame" name="InfantryMedic" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryMedic" />
+      </Frame>
+      <Frame type="DataRefFrame" name="InfantryShotgunner" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryShotgunner" />
+      </Frame>   
+      <Frame type="DataRefFrame" name="InfantryMarksman" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryMarksman" />
+      </Frame>
+      <Frame type="DataRefFrame" name="InfantryForwardObserver" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantryForwardObserver" />
+      </Frame>
+      <Frame type="DataRefFrame" name="InfantrySniper" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="InfantrySniper" />
+      </Frame>
+   </Frame>
+   <StateGroup name="UnitDataTemplate">
+      <DefaultState val="NoData" />
+      <State name="HasData">
+         <When type="Property" frame="Label" operator="GreaterThanOrEqual" Text="1" />
+         <Action type="SetProperty" frame="$this" Visible="True" />
+      </State>
+      <State name="NoData" />
+   </StateGroup>
+   <Frame type="Label" name="UnitLabelTemplate">
+      <Height val="35" />
+      <Width val="275" />
+      <Text val="{FormattedText/@Text}" />
+      <Style val="StandardListItemTitle_Small_Equipped_Selected" />
+      <CollapseLayout val="True" />
+      <Visible val="False" />
+      <Frame type="Label" name="Label">
+         <Anchor relative="$parent" />
+         <Alpha val="0" />
+         <Text val="0" />
+      </Frame>
+      <Frame type="TextFormatFrame" name="FormattedText">
+         <Anchor relative="$parent" />
+         <FormatText val="" />
+         <Replacement index="0" val="" />
+      </Frame>
+      <StateGroup name="UnitData" template="DebugTemplate/UnitDataTemplate" />
+   </Frame>
+   <Frame type="Control" name="DebugPanelTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-350" />
+      <Width val="1105" />
+      <Height val="675" />
+      <Visible val="False" />
+      <Draggable val="True" />
+      <DragConstraintFrame val="$GameUI" />
+      <DragCursor val="GripClosed_Terr" />
+      <DragHoverCursor val="GripOpen_Terr" />
+      <RenderPriority val="1000" />
+      <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+      <Frame type="Frame" name="TitleImageContainer">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Height val="50" />
+         <Width val="{$parent/@Width}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+      </Frame>
+      <Frame type="Button" name="CloseButton" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="8" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-7" />
+         <Width val="24" />
+         <Height val="24" />
+         <Tooltip val="Close" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+         <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1">
+            <Texture val="Assets\Textures\ui_glues_bluebuttons_extendedxpcloseicon.dds" />
+         </Frame>
+         <Animation name="ClickAnim">
+            <Event event="OnClick" action="Reset,Play" />
+            <Controller type="Visibility" frame="$parent" end="Pause">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+            <Controller type="Visibility" frame="$parent/$parent/DebugButton" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Frame" name="Tier3Container">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Width val="276" />
+         <Height val="{$parent/@Height}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+         <Frame type="Label" name="Title" template="AchievementTemplates/CDLabelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="276" />
+            <Height val="50" />
+            <Text val="Tier 3" />
+            <Color val="0,255,0" />
+         </Frame>
+         <Frame type="Label" name="Bee" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Title" pos="Max" offset="35" />
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="5" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Bee/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Bee : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Bee'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Bloated" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Bee" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Bee" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Bloated/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Bloated : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Bloated'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Boomer" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Bloated" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Bloated" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Boomer/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Boomer : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Boomer'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Corrupted" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Boomer" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Boomer" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Corrupted/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Corrupted : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Corrupted'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Creeper" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Corrupted" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Corrupted" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Creeper/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Creeper : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Creeper'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Drake" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Creeper" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Creeper" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Drake/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Drake : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Drake'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Eel" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Drake" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Drake" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Drake/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Eel : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Eel'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Hellhound" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Eel" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Eel" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Hellhound/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Hell Hound : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Hellhound'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Hopper" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Hellhound" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Hellhound" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Hopper/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Hopper : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Hopper'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Infected" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Hopper" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Hopper" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Infected/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Infected : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Infected'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Krill" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Infected" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Infected" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Krill/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Krill : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Krill'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Leaper" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Krill" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Krill" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Leaper/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Leaper : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Leaper'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Licker" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Leaper" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Leaper" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Licker/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Licker : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Licker'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Mutant" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Licker" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Licker" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Mutant/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Mutant : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Mutant'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Pooch" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Mutant" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Mutant" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Pooch/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Pooch : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Pooch'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Risen" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Pooch" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Pooch" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Risen/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Risen : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Risen'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Rotten" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Risen" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Risen" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Rotten/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Rotten : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Rotten'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Shredder" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Rotten" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Rotten" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Shredder/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Shredder : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Shredder'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Swarmer" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Shredder" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Shredder" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Swarmer/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Swarmer : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Swarmer'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Swollen" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Swarmer" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Swarmer" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Swollen/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Swollen : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Swollen'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Tarantula" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Swollen" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Swollen" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Tarantula/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Tarantula : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Tarantula'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Unburied" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Tarantula" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Tarantula" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Unburied/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Unburied : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Unburied'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Unclean" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Unburied" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Unburied" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Unclean/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Unclean : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Unclean'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Unwilling" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Unclean" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Unclean" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Unwilling/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Unwilling : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Unwilling'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Vore" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Unwilling" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Unwilling" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Vore/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Vore : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Vore'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Widow" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Vore" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Vore" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Widow/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Widow : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Widow'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Wraith" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Widow" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Widow" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier3Data/Wraith/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Wraith : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='T3Wraith'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Wraith" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/Wraith" pos="Min" offset="0" />
+            <Text val="-----------------------------------------------------------" />
+            <Visible val="True" />
+            <Color val="0,102,0" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame type="Label" name="T3Total" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Split" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Split" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 3 Unit Total : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Bee'/] + [d player='14' UnitCount='Bloated'/] + [d player='14' UnitCount='Boomer'/] + [d player='14' UnitCount='Corrupted'/] + [d player='14' UnitCount='Creeper'/] + [d player='14' UnitCount='Drake'/] + [d player='14' UnitCount='Eel'/] + [d player='14' UnitCount='Hellhound'/] + [d player='14' UnitCount='Hopper'/] + [d player='14' UnitCount='Krill'/] + [d player='14' UnitCount='Leaper'/] + [d player='14' UnitCount='Licker'/] + [d player='14' UnitCount='Mutant'/] + [d player='14' UnitCount='Pooch'/] + [d player='14' UnitCount='Risen'/] + [d player='14' UnitCount='Rotten'/] + [d player='14' UnitCount='Shredder'/] + [d player='14' UnitCount='Swarmer'/] + [d player='14' UnitCount='Swollen'/] + [d player='14' UnitCount='Tarantula'/] + [d player='14' UnitCount='Unburied'/] + [d player='14' UnitCount='Unclean'/] + [d player='14' UnitCount='Unwilling'/] + [d player='14' UnitCount='Widow'/] + [d player='14' UnitCount='T3Wraith'/] + [d player='14' UnitCount='Infected'/] + [d player='14' UnitCount='Vore'/]&quot;/&gt;&lt;/c&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="T3Percent" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/T3Total" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/T3Total" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 3 : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;00FF00&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Bee'/] + [d player='14' UnitCount='Bloated'/] + [d player='14' UnitCount='Boomer'/] + [d player='14' UnitCount='Corrupted'/] + [d player='14' UnitCount='Creeper'/] + [d player='14' UnitCount='Drake'/] + [d player='14' UnitCount='Eel'/] + [d player='14' UnitCount='Hellhound'/] + [d player='14' UnitCount='Hopper'/] + [d player='14' UnitCount='Krill'/] + [d player='14' UnitCount='Leaper'/] + [d player='14' UnitCount='Licker'/] + [d player='14' UnitCount='Mutant'/] + [d player='14' UnitCount='Pooch'/] + [d player='14' UnitCount='Risen'/] + [d player='14' UnitCount='Rotten'/] + [d player='14' UnitCount='Shredder'/] + [d player='14' UnitCount='Swarmer'/] + [d player='14' UnitCount='Swollen'/] + [d player='14' UnitCount='Tarantula'/] + [d player='14' UnitCount='Unburied'/] + [d player='14' UnitCount='Unclean'/] + [d player='14' UnitCount='Unwilling'/] + [d player='14' UnitCount='Widow'/] + [d player='14' UnitCount='T3Wraith'/] + [d player='14' UnitCount='Infected'/] + [d player='14' UnitCount='Vore'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="Split2" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/T3Percent" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/T3Percent" pos="Min" offset="0" />
+            <Text val="-----------------------------------------------------------" />
+            <Visible val="True" />
+            <Color val="0,102,0" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame type="Label" name="UnitsTotal" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Split2" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Split2" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Total Enemy Count : %0%" />
+               <Replacement index="0" val="&lt;d Score=&quot;UnitsActiveCount&quot; Player=&quot;14&quot;/&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="TotalSupply" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/UnitsTotal" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/UnitsTotal" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Current Infestation : %0%" />
+               <Replacement index="0" val="{$P14Food/@RealValue}" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Frame" name="Tier3Data" template="DebugTemplate/Tier3UnitsTemplate" />
+      </Frame>
+      <Frame type="Frame" name="Tier2Container">
+         <Anchor side="Top" relative="$parent/Tier3Container" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Tier3Container" pos="Min" offset="274" />
+         <Width val="276" />
+         <Height val="{$parent/@Height}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+         <Frame type="Label" name="Title" template="AchievementTemplates/CDLabelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="275" />
+            <Height val="50" />
+            <Text val="Tier 2" />
+            <Color val="0,0,255" />
+         </Frame>
+         <Frame type="Label" name="Abomination" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Title" pos="Max" offset="35" />
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="5" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Abomination/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Abomination  : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Abomination'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="AdultWidow" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Abomination" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Abomination" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/AdultWidow/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Adult Widow  : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='AdultWidow'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Apiary" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/AdultWidow" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/AdultWidow" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Apiary/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Apiary  : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Apiary'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="ArachnidMother" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Apiary" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Apiary" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/ArachnidMother/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Arachnid Mother  : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='ArachnidMother'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Bruchus" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/ArachnidMother" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/ArachnidMother" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Bruchus/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Bruchus : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Bruchus'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Carrier" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Bruchus" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Bruchus" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Carrier/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Carrier : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='T2Carrier'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Charger" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Carrier" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Carrier" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Charger/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Charger : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Charger'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Cicadis" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Charger" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Charger" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Cicadis/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Cicadis : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Cicadis'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Cursed" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Cicadis" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Cicadis" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Cursed/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Cursed : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Cursed'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Gargoyle" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Cursed" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Cursed" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Gargoyle/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Gargoyle : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Gargoyle'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Glutton" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Gargoyle" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Gargoyle" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Glutton/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Glutton : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Glutton'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Hunter" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Glutton" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Glutton" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Hunter/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Hunter : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Hunter'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Impaler" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Hunter" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Hunter" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Impaler/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Impaler : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='T2Impaler'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Morbus" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Impaler" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Impaler" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Morbus/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Morbus : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Morbus'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="PlagueFiend" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Morbus" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Morbus" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/PlagueFiend/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Plague Fiend : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='PlagueFiend'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Reaper" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/PlagueFiend" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/PlagueFiend" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Reaper/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Reaper : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='T2Reaper'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Smasher" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Reaper" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Reaper" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Smasher/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Smasher : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Smasher'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="SpittingSpider" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Smasher" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Smasher" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/SpittingSpider/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Spitting Spider : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='SpittingSpider'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Vulcad" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/SpittingSpider" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/SpittingSpider" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Vulcad/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Vulcad : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Vulcad'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Weaver" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Vulcad" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Vulcad" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Weaver/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Weaver : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Weaver'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Wicked" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Weaver" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Weaver" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Wicked/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Wicked : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Wicked'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Yeti" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Wicked" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Wicked" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier2Data/Yeti/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Yeti : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='T2Yeti'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Yeti" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/Yeti" pos="Min" offset="0" />
+            <Text val="-----------------------------------------------------------" />
+            <Visible val="True" />
+            <Color val="0,102,0" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame type="Label" name="T2Total" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Split" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Split" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 2 Unit Total : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Abomination'/] + [d player='14' UnitCount='AdultWidow'/] + [d player='14' UnitCount='Apiary'/] + [d player='14' UnitCount='ArachnidMother'/] + [d player='14' UnitCount='Bruchus'/] + [d player='14' UnitCount='T2Carrier'/] + [d player='14' UnitCount='Charger'/] + [d player='14' UnitCount='Cicadis'/] + [d player='14' UnitCount='Cursed'/] + [d player='14' UnitCount='Gargoyle'/] + [d player='14' UnitCount='Glutton'/] + [d player='14' UnitCount='Hunter'/] + [d player='14' UnitCount='T2Impaler'/] + [d player='14' UnitCount='Morbus'/] + [d player='14' UnitCount='PlagueFiend'/] + [d player='14' UnitCount='T2Reaper'/] + [d player='14' UnitCount='Smasher'/] + [d player='14' UnitCount='SpittingSpider'/] + [d player='14' UnitCount='Vulcad'/] + [d player='14' UnitCount='Weaver'/] + [d player='14' UnitCount='T2Yeti'/] + [d player='14' UnitCount='Wicked'/]&quot;/&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="T2Percent" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/T2Total" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/T2Total" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 2 : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;0000FF&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Abomination'/] + [d player='14' UnitCount='AdultWidow'/] + [d player='14' UnitCount='Apiary'/] + [d player='14' UnitCount='ArachnidMother'/] + [d player='14' UnitCount='Bruchus'/] + [d player='14' UnitCount='T2Carrier'/] + [d player='14' UnitCount='Charger'/] + [d player='14' UnitCount='Cicadis'/] + [d player='14' UnitCount='Cursed'/] + [d player='14' UnitCount='Gargoyle'/] + [d player='14' UnitCount='Glutton'/] + [d player='14' UnitCount='Hunter'/] + [d player='14' UnitCount='T2Impaler'/] + [d player='14' UnitCount='Morbus'/] + [d player='14' UnitCount='PlagueFiend'/] + [d player='14' UnitCount='T2Reaper'/] + [d player='14' UnitCount='Smasher'/] + [d player='14' UnitCount='SpittingSpider'/] + [d player='14' UnitCount='Vulcad'/] + [d player='14' UnitCount='Weaver'/] + [d player='14' UnitCount='T2Yeti'/] + [d player='14' UnitCount='Wicked'/]  / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Frame" name="Tier2Data" template="DebugTemplate/Tier2UnitsTemplate" />
+      </Frame>
+      <Frame type="Frame" name="Tier1Container">
+         <Anchor side="Top" relative="$parent/Tier2Container" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Tier2Container" pos="Min" offset="273" />
+         <Width val="278" />
+         <Height val="{$parent/@Height}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+         <Frame type="Label" name="Title" template="AchievementTemplates/CDLabelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="275" />
+            <Height val="50" />
+            <Text val="Tier 1" />
+            <Color val="255,0,0" />
+         </Frame>
+         <Frame type="Label" name="Arachnathid" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Title" pos="Max" offset="35" />
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="5" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Arachnathid/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Arachnathid : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Arachnathid'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Ares" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Arachnathid" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Arachnathid" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Ares/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Ares : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Ares'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Baron" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Ares" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Ares" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Baron/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Baron : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Baron'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Darreus" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Baron" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Baron" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Darreus/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Darreus : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Darreus'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Dilophosaur" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Darreus" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Darreus" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Dilophosaur/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Dilophosaur : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Dilophosaur'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Gargantuan" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Dilophosaur" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Dilophosaur" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Gargantuan/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Gargantuan : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Gargantuan'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Gourmand" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Gargantuan" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Gargantuan" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Gourmand/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Gourmand : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Gourmand'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Immussilus" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Gourmand" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Gourmand" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Immussilus/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Immussilus : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Immussilus'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Metasis" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Immussilus" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Immussilus" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Metasis/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Metasis : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Metasis'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Minerva" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Metasis" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Metasis" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Minerva/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Minerva : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Minerva'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Raisuli" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Minerva" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Minerva" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Raisuli/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Raisuli : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Raisuli'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Scorpio" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Raisuli" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Raisuli" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Scorpio/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Scorpio : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Scorpio'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Vesania" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Scorpio" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Scorpio" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Vesania/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Vesania : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Vesania'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Widower" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Vesania" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Vesania" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Widower/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Widower : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Widower'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Cacumen" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Widower" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Widower" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/Tier1Data/Cacumen/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Cacumen : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d Player='14' UnitCount='Cacumen'/] / [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Cacumen" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/Cacumen" pos="Min" offset="0" />
+            <Text val="-----------------------------------------------------------" />
+            <Visible val="True" />
+            <Color val="0,102,0" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame type="Label" name="T1Total" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Split" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Split" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 1 Unit Total : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Arachnathid'/] + [d player='14' UnitCount='Ares'/] + [d player='14' UnitCount='Baron'/] + [d player='14' UnitCount='Darreus'/] + [d player='14' UnitCount='Dilophosaur'/] + [d player='14' UnitCount='Gargantuan'/] + [d player='14' UnitCount='Gourmand'/] + [d player='14' UnitCount='Immussilus'/] + [d player='14' UnitCount='Metasis'/] + [d player='14' UnitCount='Minerva'/] + [d player='14' UnitCount='Raisuli'/] + [d player='14' UnitCount='Scorpio'/] + [d player='14' UnitCount='Widower'/] + [d player='14' UnitCount='Vesania'/] + [d player='14' UnitCount='Cacumen'/]&quot;/&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="T1Percent" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/T1Total" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/T1Total" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" Tier 1 : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;FF0000&quot;&gt;&lt;d ref=&quot;[d player='14' UnitCount='Arachnathid'/] + [d player='14' UnitCount='Ares'/] + [d player='14' UnitCount='Baron'/] + [d player='14' UnitCount='Darreus'/] + [d player='14' UnitCount='Dilophosaur'/] + [d player='14' UnitCount='Gargantuan'/] + [d player='14' UnitCount='Gourmand'/] + [d player='14' UnitCount='Immussilus'/] + [d player='14' UnitCount='Metasis'/] + [d player='14' UnitCount='Minerva'/] + [d player='14' UnitCount='Raisuli'/] + [d player='14' UnitCount='Scorpio'/] + [d player='14' UnitCount='Widower'/] + [d player='14' UnitCount='Vesania'/] + [d player='14' UnitCount='Cacumen'/]/ [d Score='UnitsActiveCount' player='14'/] *100&quot;  precision=&quot;1&quot;/&gt;%" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Frame" name="Tier1Data" template="DebugTemplate/Tier1UnitsTemplate" />
+      </Frame>
+      <Frame type="Frame" name="PMCContainer">
+         <Anchor side="Top" relative="$parent/Tier1Container" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/Tier1Container" pos="Min" offset="275" />
+         <Width val="282" />
+         <Height val="{$parent/@Height}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
+         <Frame type="Label" name="Title" template="AchievementTemplates/CDLabelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Width val="275" />
+            <Height val="50" />
+            <Text val="PMC" />
+            <Color val="255,255,0" />
+         </Frame>
+         <Frame type="Label" name="InfantryRifleman" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Title" pos="Max" offset="35" />
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="5" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryRifleman/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Rifleman : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryRifleman'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantryAutomaticRifleman" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryRifleman" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryRifleman" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryAutomaticRifleman/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Automatic Rifleman : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryAutomaticRifleman'/] / [d Score='UnitsActiveCount' Player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantryMedic" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryAutomaticRifleman" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryAutomaticRifleman" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryMedic/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Medic : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryMedic'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantryShotgunner" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryMedic" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryMedic" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryShotgunner/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Shotgunner : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryShotgunner'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantryMarksman" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryShotgunner" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryShotgunner" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryMarksman/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Marksman : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryMarksman'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantryForwardObserver" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryMarksman" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryMarksman" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantryForwardObserver/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Foward Observer : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantryForwardObserver'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfantrySniper" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantryForwardObserver" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/InfantryForwardObserver" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/InfantrySniper/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="Sniper : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantrySniper'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantrySniper" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/InfantrySniper" pos="Min" offset="0" />
+            <Text val="-----------------------------------------------------------" />
+            <Visible val="True" />
+            <Color val="0,102,0" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame type="Label" name="PMCTotal" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/Split" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/Split" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" PMC Unit Total : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/]&quot;/&gt;" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Label" name="PMCPercent" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/PMCTotal" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/PMCTotal" pos="Min" offset="0" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val=" PMC : %0%" />
+               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%" />
+            </Frame>
+            <Visible val="True" />
+         </Frame>
+         <Frame type="Frame" name="PMCData" template="DebugTemplate/PMCUnitsTemplate" />
+      </Frame>
+   </Frame>
+</Desc>

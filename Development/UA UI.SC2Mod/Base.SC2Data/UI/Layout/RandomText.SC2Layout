@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Baloney Numbers Template 1 -->
+   <Frame type="Label" name="BaloneyNumbers1Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Stop">
+            <Key type="Text" time="0" text="" />
+            <Key type="Text" time="0.1" text="ENAME 9869448" />
+            <Key type="Text" time="0.2001" text="AYIGY 0745379" />
+            <Key type="Text" time="0.3002" text="RDORK 5373416" />
+            <Key type="Text" time="0.4003" text="HJVYF 3284521" />
+            <Key type="Text" time="0.5004" text="DJCLH 2450577" />
+            <Key type="Text" time="0.6005" text="LTBGL 3217410" />
+            <Key type="Text" time="0.7006" text="HZRYQ 7819001" />
+            <Key type="Text" time="0.8007" text="FMEPA 3809171" />
+            <Key type="Text" time="0.901" text="OAZPX 0332815" />
+            <Key type="Text" time="1.001" text="ATXAK 1066065" />
+            <Key type="Text" time="1.101" text="XAPJO 6053154" />
+            <Key type="Text" time="1.2011" text="AAAZU 9366342" />
+            <Key type="Text" time="1.3012" text="ZGLCD 8006858" />
+            <Key type="Text" time="1.4013" text="QMGFA 6384234" />
+            <Key type="Text" time="1.5014" text="GBUVP 2167534" />
+            <Key type="Text" time="1.6015" text="YDWTU 3771408" />
+            <Key type="Text" time="1.7016" text="YUQHC 4187277" />
+            <Key type="Text" time="1.8017" text="IAKEK 8973179" />
+            <Key type="Text" time="1.9018" text="YBORG 1616322" />
+            <Key type="Text" time="2.002" text="NVNOY 1751045" />
+            <Key type="Text" time="2.102" text="DNYVF 3263024" />
+            <Key type="Text" time="2.2021" text="UJOHE 8593929" />
+            <Key type="Text" time="2.3022" text="CHING 4912435" />
+            <Key type="Text" time="2.4023" text="HFNQX 8593555" />
+            <Key type="Text" time="2.5024" text="PUVGX 2419298" />
+            <Key type="Text" time="2.6025" text="IJQQW 7537730" />
+            <Key type="Text" time="2.7026" text="MNIBE 8360561" />
+            <Key type="Text" time="2.8027" text="BKNUW 8849280" />
+            <Key type="Text" time="2.9028" text="RQHZI 4979226" />
+            <Key type="Text" time="3.003" text="NPPEE 3737805" />
+            <Key type="Text" time="3.103" text="QELOT 0005635" />
+            <Key type="Text" time="3.2031" text="FJQND 7966867" />
+            <Key type="Text" time="3.3032" text="CNQQY 3217863" />
+            <Key type="Text" time="3.4033" text="NAATK 5562931" />
+            <Key type="Text" time="3.5034" text="QXICK 6622945" />
+            <Key type="Text" time="3.6035" text="DLPWQ 9804812" />
+            <Key type="Text" time="3.7036" text="THRCH 0257007" />
+            <Key type="Text" time="3.8037" text="KEYKG 5512766" />
+            <Key type="Text" time="3.9038" text="DCUBJ 3844161" />
+            <Key type="Text" time="4.004" text="ARSDR 3105290" />
+            <Key type="Text" time="4.104" text="XTHJX 7669515" />
+            <Key type="Text" time="4.204" text="YITNV 1282488" />
+            <Key type="Text" time="4.3041" text="AXDNN 0095813" />
+            <Key type="Text" time="4.4042" text="IYSSP 0590120" />
+            <Key type="Text" time="4.5043" text="XJRRD 4092781" />
+            <Key type="Text" time="4.6044" text="RDSRA 1616922" />
+            <Key type="Text" time="4.7045" text="SXXOL 7980654" />
+            <Key type="Text" time="4.8046" text="PHQXP 7196895" />
+            <Key type="Text" time="4.9047" text="CLVHO 6026620" />
+            <Key type="Text" time="5.0001" text="DPPIG 2442232" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 2 -->
+   <Frame type="Label" name="BaloneyNumbers2Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="OZA Z 34139" />
+            <Key type="Text" time="0.1" text="IBC Q 69672" />
+            <Key type="Text" time="0.2001" text="KRD H 01336" />
+            <Key type="Text" time="0.3002" text="UDE M 23428" />
+            <Key type="Text" time="0.4003" text="NKE P 84156" />
+            <Key type="Text" time="0.5004" text="BBA O 25808" />
+            <Key type="Text" time="0.6005" text="PBA O 95427" />
+            <Key type="Text" time="0.7006" text="BHZ G 70094" />
+            <Key type="Text" time="0.8007" text="BJK K 46496" />
+            <Key type="Text" time="0.901" text="LFV U 04876" />
+            <Key type="Text" time="1.001" text="BFC E 79546" />
+            <Key type="Text" time="1.101" text="ELO M 67630" />
+            <Key type="Text" time="1.2011" text="HOX B 85379" />
+            <Key type="Text" time="1.3012" text="AHA Z 21636" />
+            <Key type="Text" time="1.4013" text="JMR S 38013" />
+            <Key type="Text" time="1.5014" text="HFI F 98413" />
+            <Key type="Text" time="1.6015" text="SAY N 68809" />
+            <Key type="Text" time="1.7016" text="HOA P 68132" />
+            <Key type="Text" time="1.8017" text="MJR A 25083" />
+            <Key type="Text" time="1.9018" text="FTJ Q 16347" />
+            <Key type="Text" time="2.002" text="FZZ O 95869" />
+            <Key type="Text" time="2.102" text="NAV T 80338" />
+            <Key type="Text" time="2.2021" text="SRY N 70520" />
+            <Key type="Text" time="2.3022" text="ILJ I 40706" />
+            <Key type="Text" time="2.4023" text="EIX A 00388" />
+            <Key type="Text" time="2.5024" text="WZW K 57531" />
+            <Key type="Text" time="2.6025" text="GCP A 81337" />
+            <Key type="Text" time="2.7026" text="YNS I 44966" />
+            <Key type="Text" time="2.8027" text="NPQ B 79169" />
+            <Key type="Text" time="2.9028" text="NSK S 75110" />
+            <Key type="Text" time="3.003" text="EBZ K 83517" />
+            <Key type="Text" time="3.103" text="OKR S 62174" />
+            <Key type="Text" time="3.2031" text="AXH H 25436" />
+            <Key type="Text" time="3.3032" text="LNA X 43385" />
+            <Key type="Text" time="3.4033" text="MNO G 03493" />
+            <Key type="Text" time="3.5034" text="BQZ Q 61732" />
+            <Key type="Text" time="3.6035" text="XSS P 61518" />
+            <Key type="Text" time="3.7036" text="GQS Q 81455" />
+            <Key type="Text" time="3.8037" text="HZG C 88566" />
+            <Key type="Text" time="3.9038" text="ZUB Q 34327" />
+            <Key type="Text" time="4.004" text="XXA E 98797" />
+            <Key type="Text" time="4.104" text="BLO S 72535" />
+            <Key type="Text" time="4.204" text="MGK Z 98709" />
+            <Key type="Text" time="4.3041" text="ERT P 26986" />
+            <Key type="Text" time="4.4042" text="TIF M 51320" />
+            <Key type="Text" time="4.5043" text="MWY E 70626" />
+            <Key type="Text" time="4.6044" text="XLN U 67233" />
+            <Key type="Text" time="4.7045" text="ZJK V 07551" />
+            <Key type="Text" time="4.8046" text="NZC J 45922" />
+            <Key type="Text" time="4.9047" text="VXM I 78883" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 3 -->
+   <Frame type="Label" name="BaloneyNumbers3Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="I ZLYXX 7" />
+            <Key type="Text" time="0.1" text="M AKXPK 4" />
+            <Key type="Text" time="0.2001" text="Q STMDR 8" />
+            <Key type="Text" time="0.3002" text="F XHVCI 1" />
+            <Key type="Text" time="0.4003" text="W IYGTZ 8" />
+            <Key type="Text" time="0.5004" text="X UPFOW 2" />
+            <Key type="Text" time="0.6005" text="Y EUXUO 0" />
+            <Key type="Text" time="0.7006" text="H RSQCR 6" />
+            <Key type="Text" time="0.8007" text="N KKKTK 7" />
+            <Key type="Text" time="0.901" text="D VLDMH 2" />
+            <Key type="Text" time="1.001" text="B YGSGY 4" />
+            <Key type="Text" time="1.101" text="X DOKCE 7" />
+            <Key type="Text" time="1.2011" text="O BVMDO 6" />
+            <Key type="Text" time="1.3012" text="W HLJMM 0" />
+            <Key type="Text" time="1.4013" text="R DVBNJ 4" />
+            <Key type="Text" time="1.5014" text="D EJOCE 2" />
+            <Key type="Text" time="1.6015" text="G LLRUF 0" />
+            <Key type="Text" time="1.7016" text="D XUYRI 4" />
+            <Key type="Text" time="1.8017" text="S RWTEN 5" />
+            <Key type="Text" time="1.9018" text="G HHHFF 3" />
+            <Key type="Text" time="2.002" text="H JZVTL 6" />
+            <Key type="Text" time="2.102" text="A MSOFG 8" />
+            <Key type="Text" time="2.2021" text="I JLVMG 7" />
+            <Key type="Text" time="2.3022" text="O VXDXN 7" />
+            <Key type="Text" time="2.4023" text="W NXABV 7" />
+            <Key type="Text" time="2.5024" text="G SCXFG 9" />
+            <Key type="Text" time="2.6025" text="E INFGY 3" />
+            <Key type="Text" time="2.7026" text="B LHXHH 9" />
+            <Key type="Text" time="2.8027" text="S CIJNE 9" />
+            <Key type="Text" time="2.9028" text="V EUIUZ 0" />
+            <Key type="Text" time="3.003" text="J SOMTU 9" />
+            <Key type="Text" time="3.103" text="F AZMHC 8" />
+            <Key type="Text" time="3.2031" text="Y MFGGX 7" />
+            <Key type="Text" time="3.3032" text="A GOUAD 2" />
+            <Key type="Text" time="3.4033" text="H EWCOA 8" />
+            <Key type="Text" time="3.5034" text="F DMEZE 3" />
+            <Key type="Text" time="3.6035" text="T KYLDA 9" />
+            <Key type="Text" time="3.7036" text="R TCJNB 6" />
+            <Key type="Text" time="3.8037" text="P MXDIT 4" />
+            <Key type="Text" time="3.9038" text="I YNDMI 0" />
+            <Key type="Text" time="4.004" text="A TMERI 2" />
+            <Key type="Text" time="4.104" text="I PZSIT 6" />
+            <Key type="Text" time="4.204" text="C FGTVV 5" />
+            <Key type="Text" time="4.3041" text="I WZNSW 2" />
+            <Key type="Text" time="4.4042" text="N NAMFM 8" />
+            <Key type="Text" time="4.5043" text="A KHKDU 2" />
+            <Key type="Text" time="4.6044" text="N TKBXU 9" />
+            <Key type="Text" time="4.7045" text="E BAOTJ 9" />
+            <Key type="Text" time="4.8046" text="I NNYCJ 8" />
+            <Key type="Text" time="4.9047" text="G TOBAY 7" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 4 -->
+   <Frame type="Label" name="BaloneyNumbers4Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="PHIW   67817" />
+            <Key type="Text" time="0.1" text="JKEQ   64393" />
+            <Key type="Text" time="0.2001" text="WMXP   72845" />
+            <Key type="Text" time="0.3002" text="SKZJ   50018" />
+            <Key type="Text" time="0.4003" text="SGPM   82151" />
+            <Key type="Text" time="0.5004" text="OIFT   51184" />
+            <Key type="Text" time="0.6005" text="GXDI   80538" />
+            <Key type="Text" time="0.7006" text="WLJH   27470" />
+            <Key type="Text" time="0.8007" text="FLWY   27578" />
+            <Key type="Text" time="0.901" text="QNCZ   94742" />
+            <Key type="Text" time="1.001" text="DXEP   71153" />
+            <Key type="Text" time="1.101" text="AKOQ   17422" />
+            <Key type="Text" time="1.2011" text="EQDT   45114" />
+            <Key type="Text" time="1.3012" text="ALPL   07014" />
+            <Key type="Text" time="1.4013" text="DKIB   59178" />
+            <Key type="Text" time="1.5014" text="APEJ   19940" />
+            <Key type="Text" time="1.6015" text="JULB   54734" />
+            <Key type="Text" time="1.7016" text="FSDL   57343" />
+            <Key type="Text" time="1.8017" text="DPWB   66405" />
+            <Key type="Text" time="1.9018" text="CKFW   80716" />
+            <Key type="Text" time="2.002" text="XZCQ   96407" />
+            <Key type="Text" time="2.102" text="MIJK   93424" />
+            <Key type="Text" time="2.2021" text="ZJLM   86262" />
+            <Key type="Text" time="2.3022" text="INVA   03441" />
+            <Key type="Text" time="2.4023" text="KMXW   83234" />
+            <Key type="Text" time="2.5024" text="XXTD   44854" />
+            <Key type="Text" time="2.6025" text="PKEF   45205" />
+            <Key type="Text" time="2.7026" text="EEKX   46837" />
+            <Key type="Text" time="2.8027" text="ECWL   15985" />
+            <Key type="Text" time="2.9028" text="QLJI   59518" />
+            <Key type="Text" time="3.003" text="MSUG   71528" />
+            <Key type="Text" time="3.103" text="LUTY   67691" />
+            <Key type="Text" time="3.2031" text="HGUS   42229" />
+            <Key type="Text" time="3.3032" text="TWNW   57341" />
+            <Key type="Text" time="3.4033" text="UFMM   68007" />
+            <Key type="Text" time="3.5034" text="HTZU   76964" />
+            <Key type="Text" time="3.6035" text="HWBU   90870" />
+            <Key type="Text" time="3.7036" text="GIEW   08856" />
+            <Key type="Text" time="3.8037" text="AZSH   20263" />
+            <Key type="Text" time="3.9038" text="MZVM   41686" />
+            <Key type="Text" time="4.004" text="DSIY   07927" />
+            <Key type="Text" time="4.104" text="BEXW   85832" />
+            <Key type="Text" time="4.204" text="LEBU   06044" />
+            <Key type="Text" time="4.3041" text="PFHR   66377" />
+            <Key type="Text" time="4.4042" text="LBCM   18967" />
+            <Key type="Text" time="4.5043" text="CKEY   99261" />
+            <Key type="Text" time="4.6044" text="JGHB   70547" />
+            <Key type="Text" time="4.7045" text="MVWP   18958" />
+            <Key type="Text" time="4.8046" text="MXEU   76655" />
+            <Key type="Text" time="4.9047" text="TUDA   85584" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 5 -->
+   <Frame type="Label" name="BaloneyNumbers5Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="9869K79E  59093  lolhlzmrcw     66679785" />
+            <Key type="Text" time="0.25" text="IHM2I11C  87788  usikwnzaph     01951944" />
+            <Key type="Text" time="0.5" text="7KD08648  98093  nwxghuadjj     09766685" />
+            <Key type="Text" time="0.75" text="26JX32XQ  87900  xdglbrylhp     51158307" />
+            <Key type="Text" time="1" text="S8O3679M  27045  bueljcgvan     76875506" />
+            <Key type="Text" time="1.25" text="7P3T2R00  75617  upolazauuo     55521398" />
+            <Key type="Text" time="1.5" text="9XUS683Y  93757  kworzdxcbt     11995777" />
+            <Key type="Text" time="1.75" text="6Z4MVNFR  62194  dooggbbjrl     45310865" />
+            <Key type="Text" time="2" text="WS3IMTGI  81752  ohjeqfvydl     83839568" />
+            <Key type="Text" time="2.25" text="651S4IWW  46130  nnuwpsqlxs     21642875" />
+            <Key type="Text" time="2.5" text="3A0AEJ8D  09220  zasjwkapjv     02569674" />
+            <Key type="Text" time="2.75" text="981I9784  37507  qjaqdhrapr     62967940" />
+            <Key type="Text" time="3" text="95I5M05Z  67149  bbluresrru     71465515" />
+            <Key type="Text" time="3.25" text="LG77U5K8  93904  aqikzeglbl     06773663" />
+            <Key type="Text" time="3.5" text="G3BN732E  71714  drfdwybkno     96711621" />
+            <Key type="Text" time="3.75" text="XW559V1P  84543  yjwwsvqmke     46828650" />
+            <Key type="Text" time="4" text="ZD8B8802  69561  uyssfrbifb     86921672" />
+            <Key type="Text" time="4.25" text="2PW66PY9  22884  jzphzgabtx     92647211" />
+            <Key type="Text" time="4.5" text="29D5SSB4  54871  mxcpgpaxqh     65756308" />
+            <Key type="Text" time="4.75" text="38GDT21F  86267  nmkbizcxmk     40295980" />
+            <Key type="Text" time="5" text="1BZTE005  08624  wmcbzvbaso     01062654" />
+            <Key type="Text" time="5.25" text="02ZHCODG  74779  fzagjnsojg     56986958" />
+            <Key type="Text" time="5.5" text="7D1C0W3P  29305  cmgtxsiunm     37940956" />
+            <Key type="Text" time="5.75" text="18B1T969  67566  cyluxaqrew     30997812" />
+            <Key type="Text" time="6" text="ZEL14G11  14339  wugrobpxhd     44851800" />
+            <Key type="Text" time="6.25" text="W7319255  90944  hzkcojwcdl     24541699" />
+            <Key type="Text" time="6.5" text="YP771H3X  25265  ffvrggesuu     59835037" />
+            <Key type="Text" time="6.75" text="J6T3419O  62006  tsbolwsnhf     47052868" />
+            <Key type="Text" time="7" text="0Y139GKO  47910  oaqnmaoxiy     27667813" />
+            <Key type="Text" time="7.25" text="E0OJFLKY  86546  jglnzsmcmj     24670562" />
+            <Key type="Text" time="7.5" text="73L1204E  87596  gjaiggaglp     81315464" />
+            <Key type="Text" time="7.75" text="838EAMW5  32650  ojxfkjxpqt     08791283" />
+            <Key type="Text" time="8" text="41V60VY4  05784  iqaxyuyvwn     35076514" />
+            <Key type="Text" time="8.25" text="CXBXY479  24535  kaegjrfmwg     81022682" />
+            <Key type="Text" time="8.5" text="EU2V6I93  84631  bufamxbabm     69488313" />
+            <Key type="Text" time="8.75" text="ZC42ZLWC  72164  fcjlktpunb     02442395" />
+            <Key type="Text" time="9" text="82J4MOT7  32407  nhyckrnywf     66433751" />
+            <Key type="Text" time="9.25" text="S6U75O7Q  81616  hqmdhlshhm     04253239" />
+            <Key type="Text" time="9.5" text="0508WNJ7  43258  itfkhkwwhu     04122104" />
+            <Key type="Text" time="9.75" text="7S782TU8  75924  iejhmxgglx     90134752" />
+            <Key type="Text" time="10" text="H5ITKBX5  07394  upunrgybzn     21471013" />
+            <Key type="Text" time="10.25" text="401YFB82  38627  wtsiucuulg     91159795" />
+            <Key type="Text" time="10.5" text="2NXB908D  50039  jboisxcacz     71073504" />
+            <Key type="Text" time="10.75" text="966TFJY2  56006  qyigmclpcx     22829589" />
+            <Key type="Text" time="11" text="HF9A6BLV  52801  hqdguewrza     31133068" />
+            <Key type="Text" time="11.25" text="C84QK0UH  86506  ljgksyftbg     02245610" />
+            <Key type="Text" time="11.5" text="70JH9WA7  80265  qwxxvtzuqu     18857509" />
+            <Key type="Text" time="11.75" text="90A0P97M  54429  zykdkrwxga     29364843" />
+            <Key type="Text" time="12" text="34G6WPSM  02582  cuwavjrvbu     26720842" />
+            <Key type="Text" time="12.25" text="RM25WLR1  36480  kbdvtuxfjj     11778510" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 6 -->
+   <!-- Random 2 Digit Letters -->
+   <Frame type="Label" name="BaloneyNumbers6Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="WC" />
+            <Key type="Text" time="0.1" text="ZI" />
+            <Key type="Text" time="0.2001" text="JJ" />
+            <Key type="Text" time="0.3002" text="EI" />
+            <Key type="Text" time="0.4003" text="OT" />
+            <Key type="Text" time="0.5004" text="KP" />
+            <Key type="Text" time="0.6005" text="UP" />
+            <Key type="Text" time="0.7006" text="YV" />
+            <Key type="Text" time="0.8007" text="VB" />
+            <Key type="Text" time="0.901" text="OV" />
+            <Key type="Text" time="1.001" text="IB" />
+            <Key type="Text" time="1.101" text="KL" />
+            <Key type="Text" time="1.2011" text="IN" />
+            <Key type="Text" time="1.3012" text="DC" />
+            <Key type="Text" time="1.4013" text="EO" />
+            <Key type="Text" time="1.5014" text="JN" />
+            <Key type="Text" time="1.6015" text="CM" />
+            <Key type="Text" time="1.7016" text="AH" />
+            <Key type="Text" time="1.8017" text="HI" />
+            <Key type="Text" time="1.9018" text="CK" />
+            <Key type="Text" time="2.002" text="RY" />
+            <Key type="Text" time="2.102" text="PT" />
+            <Key type="Text" time="2.2021" text="RM" />
+            <Key type="Text" time="2.3022" text="DQ" />
+            <Key type="Text" time="2.4023" text="QW" />
+            <Key type="Text" time="2.5024" text="RD" />
+            <Key type="Text" time="2.6025" text="AD" />
+            <Key type="Text" time="2.7026" text="BI" />
+            <Key type="Text" time="2.8027" text="OW" />
+            <Key type="Text" time="2.9028" text="AK" />
+            <Key type="Text" time="3.003" text="JQ" />
+            <Key type="Text" time="3.103" text="UX" />
+            <Key type="Text" time="3.2031" text="JP" />
+            <Key type="Text" time="3.3032" text="MJ" />
+            <Key type="Text" time="3.4033" text="KY" />
+            <Key type="Text" time="3.5034" text="SO" />
+            <Key type="Text" time="3.6035" text="BK" />
+            <Key type="Text" time="3.7036" text="NP" />
+            <Key type="Text" time="3.8037" text="PZ" />
+            <Key type="Text" time="3.9038" text="DH" />
+            <Key type="Text" time="4.004" text="IK" />
+            <Key type="Text" time="4.104" text="SG" />
+            <Key type="Text" time="4.204" text="RX" />
+            <Key type="Text" time="4.3041" text="BD" />
+            <Key type="Text" time="4.4042" text="DV" />
+            <Key type="Text" time="4.5043" text="FJ" />
+            <Key type="Text" time="4.6044" text="ZQ" />
+            <Key type="Text" time="4.7045" text="RE" />
+            <Key type="Text" time="4.8046" text="NM" />
+            <Key type="Text" time="4.9047" text="KP" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 7 -->
+   <!-- Random 3 Digit Uppercase Numbers -->
+   <Frame type="Label" name="BaloneyNumbers7Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="453" />
+            <Key type="Text" time="0.1" text="669" />
+            <Key type="Text" time="0.2001" text="860" />
+            <Key type="Text" time="0.3002" text="102" />
+            <Key type="Text" time="0.4003" text="117" />
+            <Key type="Text" time="0.5004" text="123" />
+            <Key type="Text" time="0.6005" text="477" />
+            <Key type="Text" time="0.7006" text="836" />
+            <Key type="Text" time="0.8007" text="839" />
+            <Key type="Text" time="0.901" text="652" />
+            <Key type="Text" time="1.001" text="602" />
+            <Key type="Text" time="1.101" text="007" />
+            <Key type="Text" time="1.2011" text="146" />
+            <Key type="Text" time="1.3012" text="928" />
+            <Key type="Text" time="1.4013" text="066" />
+            <Key type="Text" time="1.5014" text="305" />
+            <Key type="Text" time="1.6015" text="478" />
+            <Key type="Text" time="1.7016" text="472" />
+            <Key type="Text" time="1.8017" text="828" />
+            <Key type="Text" time="1.9018" text="189" />
+            <Key type="Text" time="2.002" text="157" />
+            <Key type="Text" time="2.102" text="583" />
+            <Key type="Text" time="2.2021" text="297" />
+            <Key type="Text" time="2.3022" text="947" />
+            <Key type="Text" time="2.4023" text="107" />
+            <Key type="Text" time="2.5024" text="334" />
+            <Key type="Text" time="2.6025" text="656" />
+            <Key type="Text" time="2.7026" text="275" />
+            <Key type="Text" time="2.8027" text="669" />
+            <Key type="Text" time="2.9028" text="470" />
+            <Key type="Text" time="3.003" text="988" />
+            <Key type="Text" time="3.103" text="191" />
+            <Key type="Text" time="3.2031" text="996" />
+            <Key type="Text" time="3.3032" text="035" />
+            <Key type="Text" time="3.4033" text="726" />
+            <Key type="Text" time="3.5034" text="151" />
+            <Key type="Text" time="3.6035" text="903" />
+            <Key type="Text" time="3.7036" text="699" />
+            <Key type="Text" time="3.8037" text="180" />
+            <Key type="Text" time="3.9038" text="939" />
+            <Key type="Text" time="4.004" text="986" />
+            <Key type="Text" time="4.104" text="724" />
+            <Key type="Text" time="4.204" text="435" />
+            <Key type="Text" time="4.3041" text="109" />
+            <Key type="Text" time="4.4042" text="090" />
+            <Key type="Text" time="4.5043" text="698" />
+            <Key type="Text" time="4.6044" text="688" />
+            <Key type="Text" time="4.7045" text="789" />
+            <Key type="Text" time="4.8046" text="035" />
+            <Key type="Text" time="4.9047" text="916" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 8 -->
+   <Frame type="Label" name="BaloneyNumbers8Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="RYMQ EUHOY 5241   807892" />
+            <Key type="Text" time="0.17" text="LTXQ MLXKA 3915   952246" />
+            <Key type="Text" time="0.3398" text="ZUVR YQZKH 2297   361163" />
+            <Key type="Text" time="0.5097" text="OMFI HTDIR 0151   751964" />
+            <Key type="Text" time="0.6796" text="DACT GCPEB 9959   428979" />
+            <Key type="Text" time="0.8496" text="VJGO ZQFCY 8128   036497" />
+            <Key type="Text" time="1.0195" text="NEEK VTAZG 0863   808860" />
+            <Key type="Text" time="1.1894" text="AEYE IQFCE 8872   377372" />
+            <Key type="Text" time="1.3593" text="LARS ENCVO 3252   341852" />
+            <Key type="Text" time="1.5292" text="KXFM QUMMT 3947   920466" />
+            <Key type="Text" time="1.6992" text="EFDI QCEOH 9882   142090" />
+            <Key type="Text" time="1.8691" text="EPXW EQIUT 8026   639711" />
+            <Key type="Text" time="2.039" text="TVHC PUBFF 8925   474325" />
+            <Key type="Text" time="2.209" text="KWEV TXGTC 4293   747876" />
+            <Key type="Text" time="2.379" text="XVSZ CCJXO 1272   119376" />
+            <Key type="Text" time="2.5488" text="ZXVW CDEWU 5135   794998" />
+            <Key type="Text" time="2.7187" text="IUMH ANZEA 8799   412595" />
+            <Key type="Text" time="2.8886" text="XVUP KYSIK 4892   284985" />
+            <Key type="Text" time="3.0585" text="IIKJ ANIET 1594   636631" />
+            <Key type="Text" time="3.2285" text="ORIJ IYLOV 0720   393382" />
+            <Key type="Text" time="3.3984" text="TBCA OIYOX 9199   437549" />
+            <Key type="Text" time="3.5683" text="CGKC KSHTF 7579   323409" />
+            <Key type="Text" time="3.7382" text="PZAA KUVMT 3359   874190" />
+            <Key type="Text" time="3.9082" text="CXCW STEKM 8604   971696" />
+            <Key type="Text" time="4.0781" text="XNMV AMWMO 9283   614280" />
+            <Key type="Text" time="4.248" text="QPBD DLFSC 1442   514361" />
+            <Key type="Text" time="4.418" text="OVKE IOZSJ 9264   697177" />
+            <Key type="Text" time="4.588" text="LRFJ WUWQY 9014   111137" />
+            <Key type="Text" time="4.7578" text="QQQQ IDVNN 0421   146960" />
+            <Key type="Text" time="4.9277" text="BDSA GYVOE 4595   688197" />
+            <Key type="Text" time="5.0976" text="DOAE RGXVJ 1224   410979" />
+            <Key type="Text" time="5.2675" text="YJLD ARMFH 3395   662511" />
+            <Key type="Text" time="5.4375" text="QNPQ BLVAJ 8216   321102" />
+            <Key type="Text" time="5.6074" text="KLIL VFKHH 7655   912575" />
+            <Key type="Text" time="5.7773" text="PKGW UUFNM 8958   957211" />
+            <Key type="Text" time="5.9472" text="GPLP KDKQI 8198   885023" />
+            <Key type="Text" time="6.1171" text="RDXM BSSJW 0323   412580" />
+            <Key type="Text" time="6.287" text="PRTE BVHRD 1784   041135" />
+            <Key type="Text" time="6.457" text="QLNG KIXRK 5511   892054" />
+            <Key type="Text" time="6.627" text="RUVC ZLFGS 7316   467758" />
+            <Key type="Text" time="6.7968" text="VDKY TFTFC 2129   733391" />
+            <Key type="Text" time="6.9667" text="WOON KFHVY 7195   278784" />
+            <Key type="Text" time="7.1367" text="GAOH BSCMB 8808   796056" />
+            <Key type="Text" time="7.3066" text="FRHH AFUOL 3005   612513" />
+            <Key type="Text" time="7.4765" text="DPJP IYSNG 7074   933148" />
+            <Key type="Text" time="7.6464" text="RJKK YXWNA 1383   823951" />
+            <Key type="Text" time="7.8164" text="XDUZ ZZUUX 0755   620679" />
+            <Key type="Text" time="7.9863" text="JKQJ JAOCX 7718   285885" />
+            <Key type="Text" time="8.1562" text="LVDO LMRRX 7962   989403" />
+            <Key type="Text" time="8.3261" text="LVYR MAHWB 9026   457664" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 9 -->
+   <Frame type="Label" name="BaloneyNumbers9Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="MSTH LP   21323" />
+            <Key type="Text" time="0.17" text="SYRI ZK   34476" />
+            <Key type="Text" time="0.3398" text="BIFN RX   96519" />
+            <Key type="Text" time="0.5097" text="WUFA GG   55000" />
+            <Key type="Text" time="0.6796" text="OBCU BX   65093" />
+            <Key type="Text" time="0.8496" text="PGKJ DK   47218" />
+            <Key type="Text" time="1.0195" text="PMLH MW   67269" />
+            <Key type="Text" time="1.1894" text="GPKP BU   51828" />
+            <Key type="Text" time="1.3593" text="GCQV XD   18196" />
+            <Key type="Text" time="1.5292" text="UAYT NW   58010" />
+            <Key type="Text" time="1.6992" text="DAIR JC   49726" />
+            <Key type="Text" time="1.8691" text="VJRP SE   82353" />
+            <Key type="Text" time="2.039" text="DXNA PT   82415" />
+            <Key type="Text" time="2.209" text="VBCL PT   65234" />
+            <Key type="Text" time="2.379" text="PESZ VS   87288" />
+            <Key type="Text" time="2.5488" text="UQOM JO   90069" />
+            <Key type="Text" time="2.7187" text="FVOY IH   84467" />
+            <Key type="Text" time="2.8886" text="RRPZ YC   71902" />
+            <Key type="Text" time="3.0585" text="FQAB CM   97341" />
+            <Key type="Text" time="3.2285" text="LFHH IW   46784" />
+            <Key type="Text" time="3.3984" text="IIEZ QI   61087" />
+            <Key type="Text" time="3.5683" text="VWIP PI   96532" />
+            <Key type="Text" time="3.7382" text="EHKN AS   24919" />
+            <Key type="Text" time="3.9082" text="TWRQ ES   40638" />
+            <Key type="Text" time="4.0781" text="BWKP GP   71616" />
+            <Key type="Text" time="4.248" text="BGYY NT   12289" />
+            <Key type="Text" time="4.418" text="VAVJ UC   71446" />
+            <Key type="Text" time="4.588" text="INKY SF   00279" />
+            <Key type="Text" time="4.7578" text="RPSY ER   43662" />
+            <Key type="Text" time="4.9277" text="ZPUX QJ   97626" />
+            <Key type="Text" time="5.0976" text="JOGC ZZ   10018" />
+            <Key type="Text" time="5.2675" text="VOVX ZH   19463" />
+            <Key type="Text" time="5.4375" text="KFFH DW   81297" />
+            <Key type="Text" time="5.6074" text="LTVM XX   69225" />
+            <Key type="Text" time="5.7773" text="QPZP PK   82858" />
+            <Key type="Text" time="5.9472" text="UIOC WU   80592" />
+            <Key type="Text" time="6.1171" text="TYDA AY   01120" />
+            <Key type="Text" time="6.287" text="PVEL AS   31547" />
+            <Key type="Text" time="6.457" text="WPNY ID   60829" />
+            <Key type="Text" time="6.627" text="IRFO AZ   80327" />
+            <Key type="Text" time="6.7968" text="IBZT GF   81913" />
+            <Key type="Text" time="6.9667" text="BQPF UO   52838" />
+            <Key type="Text" time="7.1367" text="RFNS GC   76136" />
+            <Key type="Text" time="7.3066" text="FDFI CR   15807" />
+            <Key type="Text" time="7.4765" text="FJZD VL   49637" />
+            <Key type="Text" time="7.6464" text="WETA KT   70037" />
+            <Key type="Text" time="7.8164" text="YYIR RC   68616" />
+            <Key type="Text" time="7.9863" text="JJVA MQ   90233" />
+            <Key type="Text" time="8.1562" text="HFQY UI   13441" />
+            <Key type="Text" time="8.3261" text="TGIS BS   84574" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 10 -->
+   <Frame type="Label" name="BaloneyNumbers10Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="8U89XD199 533663" />
+            <Key type="Text" time="0.17" text="4L0O068CA 391276" />
+            <Key type="Text" time="0.3398" text="H3F6R800I 592897" />
+            <Key type="Text" time="0.5097" text="52YJC1296 627908" />
+            <Key type="Text" time="0.6796" text="67MF29C1T 199640" />
+            <Key type="Text" time="0.8496" text="F38FM74S7 023737" />
+            <Key type="Text" time="1.0195" text="1T84903P3 653361" />
+            <Key type="Text" time="1.1894" text="UQ8V65I5U 309424" />
+            <Key type="Text" time="1.3593" text="F7B0RG4TH 221958" />
+            <Key type="Text" time="1.5292" text="XN8MPL08K 238362" />
+            <Key type="Text" time="1.6992" text="I70JC6LB1 950060" />
+            <Key type="Text" time="1.8691" text="34GUTDO7N 202524" />
+            <Key type="Text" time="2.039" text="2ENXXK08J 055953" />
+            <Key type="Text" time="2.209" text="8Q4K13XQ5 243928" />
+            <Key type="Text" time="2.379" text="ADU5GSL4J 921218" />
+            <Key type="Text" time="2.5488" text="MCG7765PD 456596" />
+            <Key type="Text" time="2.7187" text="IA1O31Y1W 124335" />
+            <Key type="Text" time="2.8886" text="O8E649250 645448" />
+            <Key type="Text" time="3.0585" text="4U2931360 744530" />
+            <Key type="Text" time="3.2285" text="Q2G2X527W 224645" />
+            <Key type="Text" time="3.3984" text="GRKTWYXLC 500812" />
+            <Key type="Text" time="3.5683" text="8Q96Q51AS 824749" />
+            <Key type="Text" time="3.7382" text="6R947RYM3 291455" />
+            <Key type="Text" time="3.9082" text="E1VAU87P9 886208" />
+            <Key type="Text" time="4.0781" text="D549VCGVE 472137" />
+            <Key type="Text" time="4.248" text="03G3PW474 727711" />
+            <Key type="Text" time="4.418" text="642V36L50 799547" />
+            <Key type="Text" time="4.588" text="LO7570XU3 570821" />
+            <Key type="Text" time="4.7578" text="OYJZA24OT 626626" />
+            <Key type="Text" time="4.9277" text="AV41ONPTM 975554" />
+            <Key type="Text" time="5.0976" text="231J2D5IY 579701" />
+            <Key type="Text" time="5.2675" text="R8YQI45KD 391387" />
+            <Key type="Text" time="5.4375" text="1J9LFYV29 133932" />
+            <Key type="Text" time="5.6074" text="21F51Q90M 251323" />
+            <Key type="Text" time="5.7773" text="709D1COXL 979426" />
+            <Key type="Text" time="5.9472" text="CYF807A43 584429" />
+            <Key type="Text" time="6.1171" text="5O490Z705 595490" />
+            <Key type="Text" time="6.287" text="678M88B37 858794" />
+            <Key type="Text" time="6.457" text="8R15M9GS8 028109" />
+            <Key type="Text" time="6.627" text="HI9SZ502I 674845" />
+            <Key type="Text" time="6.7968" text="3140D5XB9 423476" />
+            <Key type="Text" time="6.9667" text="GH870G5A4 545430" />
+            <Key type="Text" time="7.1367" text="OKXLMI463 041887" />
+            <Key type="Text" time="7.3066" text="E13849309 873194" />
+            <Key type="Text" time="7.4765" text="6A6P8L00G 983668" />
+            <Key type="Text" time="7.6464" text="P22OG623Z 804103" />
+            <Key type="Text" time="7.8164" text="9O9285UKG 656655" />
+            <Key type="Text" time="7.9863" text="IUDS4788N 525647" />
+            <Key type="Text" time="8.1562" text="0C11Q15O9 959474" />
+            <Key type="Text" time="8.3261" text="1RAK42TG7 763649" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 11 -->
+   <Frame type="Label" name="BaloneyNumbers11Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="HLZX JLOSC 1169   201993" />
+            <Key type="Text" time="0.17" text="OUNF BHEJS 3754   860623" />
+            <Key type="Text" time="0.3398" text="PGXM NFLAR 4121   392209" />
+            <Key type="Text" time="0.5097" text="CYIL DBJNT 6137   258203" />
+            <Key type="Text" time="0.6796" text="WFMA SSWJE 9716   818505" />
+            <Key type="Text" time="0.8496" text="XJAV DUPZW 0044   827381" />
+            <Key type="Text" time="1.0195" text="USGN OYZWJ 3736   371947" />
+            <Key type="Text" time="1.1894" text="YNYX FYQAQ 4130   022142" />
+            <Key type="Text" time="1.3593" text="RRDW SQOGD 8467   555700" />
+            <Key type="Text" time="1.5292" text="EDAS UTSPU 5870   570982" />
+            <Key type="Text" time="1.6992" text="GNIO SCTWM 6625   456526" />
+            <Key type="Text" time="1.8691" text="NITB HZJNX 3664   654728" />
+            <Key type="Text" time="2.039" text="BEIY YKEJC 3761   950549" />
+            <Key type="Text" time="2.209" text="ASGR JMKGV 3734   082961" />
+            <Key type="Text" time="2.379" text="SWBU SMVBM 1065   532044" />
+            <Key type="Text" time="2.5488" text="TIUC QUHYM 5058   053285" />
+            <Key type="Text" time="2.7187" text="VNLW IPUUJ 2197   892565" />
+            <Key type="Text" time="2.8886" text="JGYN TAILL 0916   533487" />
+            <Key type="Text" time="3.0585" text="YNKE TRPZQ 3208   997301" />
+            <Key type="Text" time="3.2285" text="TQQO QTLAG 7749   890633" />
+            <Key type="Text" time="3.3984" text="XZTX OCVHV 8698   367647" />
+            <Key type="Text" time="3.5683" text="RMOK JHMUB 5365   892806" />
+            <Key type="Text" time="3.7382" text="YNHU VOJPJ 9763   406643" />
+            <Key type="Text" time="3.9082" text="LWRJ FYUBG 4657   965858" />
+            <Key type="Text" time="4.0781" text="JFQA NJGJT 5157   900592" />
+            <Key type="Text" time="4.248" text="KGAM DZZEL 7615   911507" />
+            <Key type="Text" time="4.418" text="FTPS XFPNM 4562   260511" />
+            <Key type="Text" time="4.588" text="ZMWQ UMANY 7723   639341" />
+            <Key type="Text" time="4.7578" text="EIGN YDTQO 8010   425824" />
+            <Key type="Text" time="4.9277" text="NAKK EAWGW 1754   523531" />
+            <Key type="Text" time="5.0976" text="CATQ YNLQN 2327   526429" />
+            <Key type="Text" time="5.2675" text="TKBA EEFSY 7708   887032" />
+            <Key type="Text" time="5.4375" text="DWNT PXQPH 2420   259200" />
+            <Key type="Text" time="5.6074" text="ZYLI IBUAK 8271   895040" />
+            <Key type="Text" time="5.7773" text="XOYJ JHIDV 5154   929285" />
+            <Key type="Text" time="5.9472" text="ZHAW VEGSS 6684   966414" />
+            <Key type="Text" time="6.1171" text="JUFX IVACD 4880   507203" />
+            <Key type="Text" time="6.287" text="OFHK JOAIT 4377   405468" />
+            <Key type="Text" time="6.457" text="YDUP JHDRS 3419   856320" />
+            <Key type="Text" time="6.627" text="WONL FYDDB 2678   227343" />
+            <Key type="Text" time="6.7968" text="ZCZQ RBSUV 1037   293407" />
+            <Key type="Text" time="6.9667" text="BQWH LKPOZ 3306   463904" />
+            <Key type="Text" time="7.1367" text="IMNG BOLFI 6984   532309" />
+            <Key type="Text" time="7.3066" text="VLIR KLXNQ 4073   532834" />
+            <Key type="Text" time="7.4765" text="PVKP WBKVF 2437   872510" />
+            <Key type="Text" time="7.6464" text="JVFV NITBU 2549   799990" />
+            <Key type="Text" time="7.8164" text="WBUH WJHLP 6530   948433" />
+            <Key type="Text" time="7.9863" text="CFKV ICIVU 1012   716978" />
+            <Key type="Text" time="8.1562" text="PRVQ PJDWX 4314   193850" />
+            <Key type="Text" time="8.3261" text="YQBZ WJWDQ 5577   816044" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 12 -->
+   <Frame type="Label" name="BaloneyNumbers12Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="JGED VM   33309" />
+            <Key type="Text" time="0.17" text="EDSN MG   49126" />
+            <Key type="Text" time="0.3398" text="FUVB GX   58163" />
+            <Key type="Text" time="0.5097" text="XGDA RD   67894" />
+            <Key type="Text" time="0.6796" text="PAMS YO   76552" />
+            <Key type="Text" time="0.8496" text="OKVX WR   93871" />
+            <Key type="Text" time="1.0195" text="VMZC HO   66195" />
+            <Key type="Text" time="1.1894" text="QRGV DE   20150" />
+            <Key type="Text" time="1.3593" text="GOXN DL   66609" />
+            <Key type="Text" time="1.5292" text="ETKD MY   31789" />
+            <Key type="Text" time="1.6992" text="PTHR XY   94113" />
+            <Key type="Text" time="1.8691" text="WJLB RN   11949" />
+            <Key type="Text" time="2.039" text="RROR BF   66967" />
+            <Key type="Text" time="2.209" text="BSPJ TY   44452" />
+            <Key type="Text" time="2.379" text="EUGZ FE   75945" />
+            <Key type="Text" time="2.5488" text="MZRD CL   09644" />
+            <Key type="Text" time="2.7187" text="RVFT WM   18847" />
+            <Key type="Text" time="2.8886" text="ISEB XH   16800" />
+            <Key type="Text" time="3.0585" text="EOHM KJ   07617" />
+            <Key type="Text" time="3.2285" text="QRDR TQ   00763" />
+            <Key type="Text" time="3.3984" text="ZRTG TY   47999" />
+            <Key type="Text" time="3.5683" text="USRA VB   51008" />
+            <Key type="Text" time="3.7382" text="LMZL FX   56400" />
+            <Key type="Text" time="3.9082" text="VYSM EX   79753" />
+            <Key type="Text" time="4.0781" text="PGAT GJ   54873" />
+            <Key type="Text" time="4.248" text="WNHO LX   10239" />
+            <Key type="Text" time="4.418" text="YEMQ QJ   58770" />
+            <Key type="Text" time="4.588" text="MMVM CV   67979" />
+            <Key type="Text" time="4.7578" text="AQXX BS   16939" />
+            <Key type="Text" time="4.9277" text="MWVF VE   69953" />
+            <Key type="Text" time="5.0976" text="QGEL ZS   34781" />
+            <Key type="Text" time="5.2675" text="PQFD KQ   95786" />
+            <Key type="Text" time="5.4375" text="LHUP BT   84792" />
+            <Key type="Text" time="5.6074" text="KTCI TP   26628" />
+            <Key type="Text" time="5.7773" text="BCDV SJ   35077" />
+            <Key type="Text" time="5.9472" text="DTTF OC   59308" />
+            <Key type="Text" time="6.1171" text="XRRU QC   88682" />
+            <Key type="Text" time="6.287" text="VKRU WR   49461" />
+            <Key type="Text" time="6.457" text="HZMU EX   40061" />
+            <Key type="Text" time="6.627" text="HVFV VP   96931" />
+            <Key type="Text" time="6.7968" text="EBLQ NN   84994" />
+            <Key type="Text" time="6.9667" text="OQVT IX   04718" />
+            <Key type="Text" time="7.1367" text="KONS PF   38436" />
+            <Key type="Text" time="7.3066" text="OCDU KF   84297" />
+            <Key type="Text" time="7.4765" text="GKTE JV   92748" />
+            <Key type="Text" time="7.6464" text="ABJR RO   22189" />
+            <Key type="Text" time="7.8164" text="QFPW OM   63627" />
+            <Key type="Text" time="7.9863" text="FLCI YC   10763" />
+            <Key type="Text" time="8.1562" text="AXCM WH   34918" />
+            <Key type="Text" time="8.3261" text="LNWM ZK   59627" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 13 -->
+   <Frame type="Label" name="BaloneyNumbers13Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="H5D95WRVF 370055" />
+            <Key type="Text" time="0.17" text="C8ZOA2MP0 566805" />
+            <Key type="Text" time="0.3398" text="J5ED52N6G 204378" />
+            <Key type="Text" time="0.5097" text="02062QS13 008038" />
+            <Key type="Text" time="0.6796" text="52WEHO05F 868598" />
+            <Key type="Text" time="0.8496" text="1YL6DY0C8 632151" />
+            <Key type="Text" time="1.0195" text="1C8652UOV 075546" />
+            <Key type="Text" time="1.1894" text="3WST5Z5E4 927904" />
+            <Key type="Text" time="1.3593" text="47YDEVVNJ 368171" />
+            <Key type="Text" time="1.5292" text="86KKW23C0 980642" />
+            <Key type="Text" time="1.6992" text="ISRR38SEW 525665" />
+            <Key type="Text" time="1.8691" text="N8DKZP569 382698" />
+            <Key type="Text" time="2.039" text="3IEPGSI6B 245275" />
+            <Key type="Text" time="2.209" text="W4K081SK5 043880" />
+            <Key type="Text" time="2.379" text="84I715PO1 091999" />
+            <Key type="Text" time="2.5488" text="CW2S405UM 336022" />
+            <Key type="Text" time="2.7187" text="D56W187QJ 569493" />
+            <Key type="Text" time="2.8886" text="M65X2SN1R 715036" />
+            <Key type="Text" time="3.0585" text="P8FR34R41 215144" />
+            <Key type="Text" time="3.2285" text="TRRA2489L 841960" />
+            <Key type="Text" time="3.3984" text="4TD2C6QQT 422825" />
+            <Key type="Text" time="3.5683" text="GI7Z7X3GA 600874" />
+            <Key type="Text" time="3.7382" text="LWKMM8F5H 545054" />
+            <Key type="Text" time="3.9082" text="9PZ9SO65Q 859978" />
+            <Key type="Text" time="4.0781" text="55MYK199C 868300" />
+            <Key type="Text" time="4.248" text="FLR6FEDR8 388168" />
+            <Key type="Text" time="4.418" text="BT84LV2BN 509895" />
+            <Key type="Text" time="4.588" text="456X0892H 718284" />
+            <Key type="Text" time="4.7578" text="THE5341UA 249625" />
+            <Key type="Text" time="4.9277" text="0TK3J9FUV 740582" />
+            <Key type="Text" time="5.0976" text="G430A3D43 325130" />
+            <Key type="Text" time="5.2675" text="IFZ1L6EFU 700976" />
+            <Key type="Text" time="5.4375" text="WZP3L7H5Q 302596" />
+            <Key type="Text" time="5.6074" text="GK8E7YR17 357384" />
+            <Key type="Text" time="5.7773" text="64GI78F7E 257225" />
+            <Key type="Text" time="5.9472" text="263M1B10Z 986205" />
+            <Key type="Text" time="6.1171" text="09UG40Q8E 409485" />
+            <Key type="Text" time="6.287" text="9M116SMH3 500298" />
+            <Key type="Text" time="6.457" text="58E65QFCO 134636" />
+            <Key type="Text" time="6.627" text="DHIK4R515 162661" />
+            <Key type="Text" time="6.7968" text="Z164HG2KW 452605" />
+            <Key type="Text" time="6.9667" text="7MK7E3P5K 208609" />
+            <Key type="Text" time="7.1367" text="8R5H0317B 467924" />
+            <Key type="Text" time="7.3066" text="76207EJ72 790402" />
+            <Key type="Text" time="7.4765" text="67J11W1C1 448386" />
+            <Key type="Text" time="7.6464" text="VCTZSQIK3 159490" />
+            <Key type="Text" time="7.8164" text="XNRJ5X429 379687" />
+            <Key type="Text" time="7.9863" text="69ATGEHI0 399059" />
+            <Key type="Text" time="8.1562" text="R15AC2G07 748189" />
+            <Key type="Text" time="8.3261" text="549784M1S 236805" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 14 -->
+   <Frame type="Label" name="BaloneyNumbers14Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="5E1W93H B 01" />
+            <Key type="Text" time="0.1" text="3W76DS4 E 32" />
+            <Key type="Text" time="0.2001" text="BY8697Y K 18" />
+            <Key type="Text" time="0.3002" text="1A7MR17 E 64" />
+            <Key type="Text" time="0.4003" text="HXCK552 M 52" />
+            <Key type="Text" time="0.5004" text="8K7TW7B D 95" />
+            <Key type="Text" time="0.6005" text="K07WX54 V 65" />
+            <Key type="Text" time="0.7006" text="G28TE3W L 31" />
+            <Key type="Text" time="0.8007" text="AZ3EVTD S 94" />
+            <Key type="Text" time="0.901" text="B5B6U3H E 84" />
+            <Key type="Text" time="1.001" text="FCZ4J37 P 19" />
+            <Key type="Text" time="1.101" text="B432P73 I 83" />
+            <Key type="Text" time="1.2011" text="4M7H242 O 69" />
+            <Key type="Text" time="1.3012" text="Q260FQ3 F 07" />
+            <Key type="Text" time="1.4013" text="HR8Q7UJ P 60" />
+            <Key type="Text" time="1.5014" text="244BM5H X 11" />
+            <Key type="Text" time="1.6015" text="IO96ESE D 68" />
+            <Key type="Text" time="1.7016" text="3QP06C5 S 86" />
+            <Key type="Text" time="1.8017" text="22JDUL0 O 46" />
+            <Key type="Text" time="1.9018" text="7HGPHNU F 06" />
+            <Key type="Text" time="2.002" text="QS3UAX3 K 15" />
+            <Key type="Text" time="2.102" text="TG47MTX U 24" />
+            <Key type="Text" time="2.2021" text="3J8L1UP R 79" />
+            <Key type="Text" time="2.3022" text="JX5GC6P Z 82" />
+            <Key type="Text" time="2.4023" text="BVDY532 S 66" />
+            <Key type="Text" time="2.5024" text="7036ZG1 W 03" />
+            <Key type="Text" time="2.6025" text="Q44J0R4 C 24" />
+            <Key type="Text" time="2.7026" text="LRJ5N08 S 72" />
+            <Key type="Text" time="2.8027" text="5N0C8R5 I 06" />
+            <Key type="Text" time="2.9028" text="I4HFR67 E 75" />
+            <Key type="Text" time="3.003" text="1N5MB5O S 50" />
+            <Key type="Text" time="3.103" text="7L495WN F 20" />
+            <Key type="Text" time="3.2031" text="68K6LFG S 84" />
+            <Key type="Text" time="3.3032" text="DC18O9I L 59" />
+            <Key type="Text" time="3.4033" text="3E2QH51 B 08" />
+            <Key type="Text" time="3.5034" text="Q8BKMVP N 47" />
+            <Key type="Text" time="3.6035" text="DA4KJ2L W 49" />
+            <Key type="Text" time="3.7036" text="905ZG2R E 02" />
+            <Key type="Text" time="3.8037" text="2WWGH3Y M 20" />
+            <Key type="Text" time="3.9038" text="6764820 V 76" />
+            <Key type="Text" time="4.004" text="08B6FLE Z 56" />
+            <Key type="Text" time="4.104" text="3P7AT5R H 48" />
+            <Key type="Text" time="4.204" text="29G7B68 P 79" />
+            <Key type="Text" time="4.3041" text="1POK726 E 07" />
+            <Key type="Text" time="4.4042" text="887J0GJ E 15" />
+            <Key type="Text" time="4.5043" text="BG56H56 I 11" />
+            <Key type="Text" time="4.6044" text="0JX410X G 02" />
+            <Key type="Text" time="4.7045" text="V41877V L 69" />
+            <Key type="Text" time="4.8046" text="G6V7HY3 U 52" />
+            <Key type="Text" time="4.9047" text="OYZ2HZ7 R 59" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Template 15 -->
+   <Frame type="Label" name="BaloneyNumbers15Template">
+      <Style val="@NovaMissionBaloneyText" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Play" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0" text="882I415ZH 227902" />
+            <Key type="Text" time="0.1" text="483JIP2MN 593391" />
+            <Key type="Text" time="0.2001" text="4K1T2SU44 384527" />
+            <Key type="Text" time="0.3002" text="2156K2K80 505189" />
+            <Key type="Text" time="0.4003" text="QMQ44WJ3C 865111" />
+            <Key type="Text" time="0.5004" text="F319CH21D 171836" />
+            <Key type="Text" time="0.6005" text="Y5TS4D761 335551" />
+            <Key type="Text" time="0.7006" text="72Q6MWS53 538848" />
+            <Key type="Text" time="0.8007" text="N0HPBJNC1 757084" />
+            <Key type="Text" time="0.901" text="0E4I62G19 687302" />
+            <Key type="Text" time="1.001" text="3YU7F6BDS 382185" />
+            <Key type="Text" time="1.101" text="61Y5UG9Z7 463451" />
+            <Key type="Text" time="1.2011" text="CAH5VI735 680731" />
+            <Key type="Text" time="1.3012" text="O41E0X0FV 956592" />
+            <Key type="Text" time="1.4013" text="6JLUV2R72 009190" />
+            <Key type="Text" time="1.5014" text="S9628A17L 238799" />
+            <Key type="Text" time="1.6015" text="N3426I01E 668947" />
+            <Key type="Text" time="1.7016" text="9D77BUAC7 027933" />
+            <Key type="Text" time="1.8017" text="QR8RK14N8 516602" />
+            <Key type="Text" time="1.9018" text="4QNL00846 624451" />
+            <Key type="Text" time="2.002" text="4E7A82JR1 833643" />
+            <Key type="Text" time="2.102" text="ZP3570794 727054" />
+            <Key type="Text" time="2.2021" text="I2DEEPXAN 205030" />
+            <Key type="Text" time="2.3022" text="ZH6V98QL7 903358" />
+            <Key type="Text" time="2.4023" text="3D43ES9K1 353686" />
+            <Key type="Text" time="2.5024" text="61054Z585 467027" />
+            <Key type="Text" time="2.6025" text="69M38M7F2 909555" />
+            <Key type="Text" time="2.7026" text="0LAV3OF8I 909841" />
+            <Key type="Text" time="2.8027" text="C64DDN886 688303" />
+            <Key type="Text" time="2.9028" text="469EO4945 448162" />
+            <Key type="Text" time="3.003" text="E13776W0D 876978" />
+            <Key type="Text" time="3.103" text="4CF8191DB 079531" />
+            <Key type="Text" time="3.2031" text="6RR04D4NP 175892" />
+            <Key type="Text" time="3.3032" text="D4260J965 072452" />
+            <Key type="Text" time="3.4033" text="7R7R59QSU 461216" />
+            <Key type="Text" time="3.5034" text="WX1W9MVKA 481442" />
+            <Key type="Text" time="3.6035" text="9R7170686 250827" />
+            <Key type="Text" time="3.7036" text="SG8YW7OFW 384756" />
+            <Key type="Text" time="3.8037" text="9F3B7C44O 244839" />
+            <Key type="Text" time="3.9038" text="84ATGU4SN 968434" />
+            <Key type="Text" time="4.004" text="IK1HD9393 112443" />
+            <Key type="Text" time="4.104" text="KQ45N8440 845230" />
+            <Key type="Text" time="4.204" text="5865KF8H1 038354" />
+            <Key type="Text" time="4.3041" text="TI4VE9C27 631079" />
+            <Key type="Text" time="4.4042" text="OF1T6L94C 147720" />
+            <Key type="Text" time="4.5043" text="Z5YJE8MH2 092518" />
+            <Key type="Text" time="4.6044" text="GJ2L2D93S 508622" />
+            <Key type="Text" time="4.7045" text="03YHN9051 997609" />
+            <Key type="Text" time="4.8046" text="0I0EI9VP3 903518" />
+            <Key type="Text" time="4.9047" text="DXKFRZLR1 803693" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Milliseconds Template -->
+   <Frame type="Label" name="BaloneyNumbersMillisecondsTemplate">
+      <Style val="GameButtonCharge" />
+      <UseAlternateTime val="True" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="ToggleDirection,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="Text" end="Loop">
+            <Key type="Text" time="0.00" text="00" />
+            <Key type="Text" time="0.01" text="01" />
+            <Key type="Text" time="0.02" text="02" />
+            <Key type="Text" time="0.03" text="03" />
+            <Key type="Text" time="0.04" text="04" />
+            <Key type="Text" time="0.05" text="05" />
+            <Key type="Text" time="0.06" text="06" />
+            <Key type="Text" time="0.07" text="07" />
+            <Key type="Text" time="0.08" text="08" />
+            <Key type="Text" time="0.09" text="09" />
+            <Key type="Text" time="0.10" text="10" />
+            <Key type="Text" time="0.11" text="11" />
+            <Key type="Text" time="0.12" text="12" />
+            <Key type="Text" time="0.13" text="13" />
+            <Key type="Text" time="0.14" text="14" />
+            <Key type="Text" time="0.15" text="15" />
+            <Key type="Text" time="0.16" text="16" />
+            <Key type="Text" time="0.17" text="17" />
+            <Key type="Text" time="0.18" text="18" />
+            <Key type="Text" time="0.19" text="19" />
+            <Key type="Text" time="0.20" text="20" />
+            <Key type="Text" time="0.21" text="21" />
+            <Key type="Text" time="0.22" text="22" />
+            <Key type="Text" time="0.23" text="23" />
+            <Key type="Text" time="0.24" text="24" />
+            <Key type="Text" time="0.25" text="25" />
+            <Key type="Text" time="0.26" text="26" />
+            <Key type="Text" time="0.27" text="27" />
+            <Key type="Text" time="0.28" text="28" />
+            <Key type="Text" time="0.29" text="29" />
+            <Key type="Text" time="0.30" text="30" />
+            <Key type="Text" time="0.31" text="31" />
+            <Key type="Text" time="0.32" text="32" />
+            <Key type="Text" time="0.33" text="33" />
+            <Key type="Text" time="0.34" text="34" />
+            <Key type="Text" time="0.35" text="35" />
+            <Key type="Text" time="0.36" text="36" />
+            <Key type="Text" time="0.37" text="37" />
+            <Key type="Text" time="0.38" text="38" />
+            <Key type="Text" time="0.39" text="39" />
+            <Key type="Text" time="0.40" text="40" />
+            <Key type="Text" time="0.41" text="41" />
+            <Key type="Text" time="0.42" text="42" />
+            <Key type="Text" time="0.43" text="43" />
+            <Key type="Text" time="0.44" text="44" />
+            <Key type="Text" time="0.45" text="45" />
+            <Key type="Text" time="0.46" text="46" />
+            <Key type="Text" time="0.47" text="47" />
+            <Key type="Text" time="0.48" text="48" />
+            <Key type="Text" time="0.49" text="49" />
+            <Key type="Text" time="0.50" text="50" />
+            <Key type="Text" time="0.51" text="51" />
+            <Key type="Text" time="0.52" text="52" />
+            <Key type="Text" time="0.53" text="53" />
+            <Key type="Text" time="0.54" text="54" />
+            <Key type="Text" time="0.55" text="55" />
+            <Key type="Text" time="0.56" text="56" />
+            <Key type="Text" time="0.57" text="57" />
+            <Key type="Text" time="0.58" text="58" />
+            <Key type="Text" time="0.59" text="59" />
+            <Key type="Text" time="0.60" text="60" />
+            <Key type="Text" time="0.61" text="61" />
+            <Key type="Text" time="0.62" text="62" />
+            <Key type="Text" time="0.63" text="63" />
+            <Key type="Text" time="0.64" text="64" />
+            <Key type="Text" time="0.65" text="65" />
+            <Key type="Text" time="0.66" text="66" />
+            <Key type="Text" time="0.67" text="67" />
+            <Key type="Text" time="0.68" text="68" />
+            <Key type="Text" time="0.69" text="69" />
+            <Key type="Text" time="0.70" text="70" />
+            <Key type="Text" time="0.71" text="71" />
+            <Key type="Text" time="0.72" text="72" />
+            <Key type="Text" time="0.73" text="73" />
+            <Key type="Text" time="0.74" text="74" />
+            <Key type="Text" time="0.75" text="75" />
+            <Key type="Text" time="0.76" text="76" />
+            <Key type="Text" time="0.77" text="77" />
+            <Key type="Text" time="0.78" text="78" />
+            <Key type="Text" time="0.79" text="79" />
+            <Key type="Text" time="0.80" text="80" />
+            <Key type="Text" time="0.81" text="81" />
+            <Key type="Text" time="0.82" text="82" />
+            <Key type="Text" time="0.83" text="83" />
+            <Key type="Text" time="0.84" text="84" />
+            <Key type="Text" time="0.85" text="85" />
+            <Key type="Text" time="0.86" text="86" />
+            <Key type="Text" time="0.87" text="87" />
+            <Key type="Text" time="0.88" text="88" />
+            <Key type="Text" time="0.89" text="89" />
+            <Key type="Text" time="0.90" text="90" />
+            <Key type="Text" time="0.91" text="91" />
+            <Key type="Text" time="0.92" text="92" />
+            <Key type="Text" time="0.93" text="93" />
+            <Key type="Text" time="0.94" text="94" />
+            <Key type="Text" time="0.95" text="95" />
+            <Key type="Text" time="0.96" text="96" />
+            <Key type="Text" time="0.97" text="97" />
+            <Key type="Text" time="0.98" text="98" />
+            <Key type="Text" time="0.99" text="99" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Baloney Numbers Seconds Template -->
+   <Frame type="Label" name="BaloneyNumbersSecondsTemplate">
+      <Style val="GameButtonCharge" />
+      <UseAlternateTime val="True" />
+      <Animation name="RandomTextAnimation">
+         <Event event="OnShown" action="Reset,Play" />
+         <Event event="OnHidden" action="Reset,Stop" />
+         <Controller type="Text" end="Pause">
+            <Key type="Text" time="0" text="00:29" />
+            <Key type="Text" time="1" text="00:28" />
+            <Key type="Text" time="2" text="00:27" />
+            <Key type="Text" time="3" text="00:26" />
+            <Key type="Text" time="4" text="00:25" />
+            <Key type="Text" time="5" text="00:24" />
+            <Key type="Text" time="6" text="00:23" />
+            <Key type="Text" time="7" text="00:22" />
+            <Key type="Text" time="8" text="00:21" />
+            <Key type="Text" time="9" text="00:20" />
+            <Key type="Text" time="10" text="00:19" />
+            <Key type="Text" time="11" text="00:18" />
+            <Key type="Text" time="12" text="00:17" />
+            <Key type="Text" time="13" text="00:16" />
+            <Key type="Text" time="14" text="00:15" />
+            <Key type="Text" time="15" text="00:14" />
+            <Key type="Text" time="16" text="00:13" />
+            <Key type="Text" time="17" text="00:12" />
+            <Key type="Text" time="18" text="00:11" />
+            <Key type="Text" time="19" text="00:10" />
+            <Key type="Text" time="20" text="00:09" />
+            <Key type="Text" time="21" text="00:08" />
+            <Key type="Text" time="22" text="00:07" />
+            <Key type="Text" time="23" text="00:06" />
+            <Key type="Text" time="24" text="00:05" />
+            <Key type="Text" time="25" text="00:04" />
+            <Key type="Text" time="26" text="00:03" />
+            <Key type="Text" time="27" text="00:02" />
+            <Key type="Text" time="28" text="00:01" />
+            <Key type="Text" time="29" text="00:00" />
+            <!-->	
+                <Key type="Text" time="0" text="00:45"/>
+				<Key type="Text" time="1" text="00:44"/>
+				<Key type="Text" time="2" text="00:43"/>
+				<Key type="Text" time="3" text="00:42"/>
+				<Key type="Text" time="4" text="00:41"/>
+				<Key type="Text" time="5" text="00:40"/>
+				<Key type="Text" time="6" text="00:39"/>
+				<Key type="Text" time="7" text="00:38"/>
+				<Key type="Text" time="8" text="00:37"/>
+				<Key type="Text" time="9" text="00:36"/>
+				<Key type="Text" time="10" text="00:35"/>
+				<Key type="Text" time="11" text="00:34"/>
+				<Key type="Text" time="12" text="00:33"/>
+				<Key type="Text" time="13" text="00:32"/>
+				<Key type="Text" time="14" text="00:31"/>
+				<Key type="Text" time="15" text="00:30"/>
+				<Key type="Text" time="16" text="00:29"/>
+				<Key type="Text" time="17" text="00:28"/>
+				<Key type="Text" time="18" text="00:27"/>
+				<Key type="Text" time="19" text="00:26"/>
+				<Key type="Text" time="20" text="00:25"/>
+				<Key type="Text" time="21" text="00:24"/>
+				<Key type="Text" time="22" text="00:23"/>
+				<Key type="Text" time="23" text="00:22"/>
+				<Key type="Text" time="24" text="00:21"/>
+				<Key type="Text" time="25" text="00:20"/>
+				<Key type="Text" time="26" text="00:19"/>
+				<Key type="Text" time="27" text="00:18"/>
+				<Key type="Text" time="28" text="00:17"/>
+				<Key type="Text" time="29" text="00:16"/>
+				<Key type="Text" time="30" text="00:15"/>
+			    <Key type="Text" time="31" text="00:14"/>
+				<Key type="Text" time="32" text="00:13"/>
+				<Key type="Text" time="33" text="00:12"/>
+				<Key type="Text" time="34" text="00:11"/>
+				<Key type="Text" time="35" text="00:10"/>
+				<Key type="Text" time="36" text="00:09"/>
+				<Key type="Text" time="37" text="00:08"/>
+				<Key type="Text" time="38" text="00:07"/>
+				<Key type="Text" time="39" text="00:06"/>
+				<Key type="Text" time="40" text="00:05"/>
+				<Key type="Text" time="41" text="00:04"/>
+				<Key type="Text" time="42" text="00:03"/>
+				<Key type="Text" time="43" text="00:02"/>
+				<Key type="Text" time="44" text="00:01"/>
+				<Key type="Text" time="45" text="00:00"/> -->
+            <!--            <Key type="Text" time="00" text="00:00"/>
+                <Key type="Text" time="01" text="00:01"/>
+                <Key type="Text" time="02" text="00:02"/>
+                <Key type="Text" time="03" text="00:03"/>
+                <Key type="Text" time="04" text="00:04"/>
+                <Key type="Text" time="05" text="00:05"/>
+                <Key type="Text" time="06" text="00:06"/>
+                <Key type="Text" time="07" text="00:07"/>
+                <Key type="Text" time="08" text="00:08"/>
+                <Key type="Text" time="09" text="00:09"/>
+                <Key type="Text" time="10" text="00:10"/>
+                <Key type="Text" time="11" text="00:11"/>
+                <Key type="Text" time="12" text="00:12"/>
+                <Key type="Text" time="13" text="00:13"/>
+                <Key type="Text" time="14" text="00:14"/>
+                <Key type="Text" time="15" text="00:15"/>
+                <Key type="Text" time="16" text="00:16"/>
+                <Key type="Text" time="17" text="00:17"/>
+                <Key type="Text" time="18" text="00:18"/>
+                <Key type="Text" time="19" text="00:19"/>
+                <Key type="Text" time="20" text="00:20"/>
+                <Key type="Text" time="21" text="00:21"/>
+                <Key type="Text" time="22" text="00:22"/>
+                <Key type="Text" time="23" text="00:23"/>
+                <Key type="Text" time="24" text="00:24"/>
+                <Key type="Text" time="25" text="00:25"/>
+                <Key type="Text" time="26" text="00:26"/>
+                <Key type="Text" time="27" text="00:27"/>
+                <Key type="Text" time="28" text="00:28"/>
+                <Key type="Text" time="29" text="00:29"/>
+                <Key type="Text" time="30" text="00:30"/>
+                <Key type="Text" time="31" text="00:31"/>
+                <Key type="Text" time="32" text="00:32"/>
+                <Key type="Text" time="33" text="00:33"/>
+                <Key type="Text" time="34" text="00:34"/>
+                <Key type="Text" time="35" text="00:35"/>
+                <Key type="Text" time="36" text="00:36"/>
+                <Key type="Text" time="37" text="00:37"/>
+                <Key type="Text" time="38" text="00:38"/>
+                <Key type="Text" time="39" text="00:39"/>
+                <Key type="Text" time="40" text="00:40"/>
+                <Key type="Text" time="41" text="00:41"/>
+                <Key type="Text" time="42" text="00:42"/>
+                <Key type="Text" time="43" text="00:43"/>
+                <Key type="Text" time="44" text="00:44"/>
+                <Key type="Text" time="45" text="00:45"/> -->
+            <!--           <Key type="Text" time="46" text="00:46"/>
+                <Key type="Text" time="47" text="00:47"/>
+                <Key type="Text" time="48" text="00:48"/>
+                <Key type="Text" time="49" text="00:49"/>
+                <Key type="Text" time="50" text="00:50"/>
+                <Key type="Text" time="51" text="00:51"/>
+                <Key type="Text" time="52" text="00:52"/>
+                <Key type="Text" time="53" text="00:53"/>
+                <Key type="Text" time="54" text="00:54"/>
+                <Key type="Text" time="55" text="00:55"/>
+                <Key type="Text" time="56" text="00:56"/>
+                <Key type="Text" time="57" text="00:57"/>
+                <Key type="Text" time="58" text="00:58"/>
+                <Key type="Text" time="59" text="00:59"/>
+				<Key type="Text" time="60" text="01:00"/>
+				<Key type="Text" time="61" text="01:01"/>
+				<Key type="Text" time="62" text="01:02"/>
+				<Key type="Text" time="63" text="01:03"/>
+				<Key type="Text" time="64" text="01:04"/>
+				<Key type="Text" time="65" text="01:05"/>
+				<Key type="Text" time="66" text="01:06"/>
+				<Key type="Text" time="67" text="01:07"/>
+				<Key type="Text" time="68" text="01:08"/>
+				<Key type="Text" time="69" text="01:09"/>
+				<Key type="Text" time="70" text="01:10"/>
+				<Key type="Text" time="71" text="01:11"/>
+				<Key type="Text" time="72" text="01:12"/>
+				<Key type="Text" time="73" text="01:13"/>
+				<Key type="Text" time="74" text="01:14"/>
+				<Key type="Text" time="75" text="01:15"/>
+				<Key type="Text" time="76" text="01:16"/>
+				<Key type="Text" time="77" text="01:17"/>
+				<Key type="Text" time="78" text="01:18"/>
+				<Key type="Text" time="79" text="01:19"/>
+				<Key type="Text" time="80" text="01:20"/>
+				<Key type="Text" time="81" text="01:21"/>
+				<Key type="Text" time="82" text="01:22"/>
+				<Key type="Text" time="83" text="01:23"/>
+				<Key type="Text" time="84" text="01:24"/>
+				<Key type="Text" time="85" text="01:25"/>      -->
+         </Controller>
+      </Animation>
+   </Frame>
+</Desc>

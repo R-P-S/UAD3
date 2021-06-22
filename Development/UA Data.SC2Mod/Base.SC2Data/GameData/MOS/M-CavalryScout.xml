@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="CavalryScout" parent="UnitTemplate">
+        <Speed value="2.9218"/>
+        <BehaviorArray index="1" Link="NewMechanical"/>
+        <BehaviorArray index="2" Link="NewDexterity"/>
+        <BehaviorArray index="3" Link="HeroLevelsFMD"/>
+        <BehaviorArray index="4" Link="1Fitness"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="LightFilter"/>
+        <BehaviorArray Link="HeartbeatSensor"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="2" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="3" Face="NewAdditionalActions" Type="Submenu" SubmenuCardId="0003" Row="2" Column="0"/>
+            <LayoutButtons index="4">
+                <Face value="LearnSkills"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0002"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+            <LayoutButtons index="6">
+                <Face value="NewFragGrenade"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FragGrenadeCav,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="PlaceClaymore"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="PlaceClaymore,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="LightFilterCC" Type="Passive" Requirements="LightFilterShowCC" Row="0" Column="0"/>
+            <LayoutButtons Face="HeatSensorCC" Type="Passive" Requirements="HeatSensorShowCC" Row="0" Column="0"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="LaserDesignatorCAV" Type="AbilCmd" AbilCmd="LaserDesignatorCAV,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="MotionSensor" Type="AbilCmd" AbilCmd="MotionSensorCav,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="BinocularsMOS" Type="AbilCmd" AbilCmd="BinocularsCav,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="GroundFlare" Type="AbilCmd" AbilCmd="GroundFlareCav,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="NewMGL" Type="AbilCmd" AbilCmd="NewMGL,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="FlareGunItem" Type="AbilCmd" AbilCmd="RiflemanFlareGun,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="ExplosivesExpert" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="ExplosivesExpert" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="ExplosivesExpert" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="ExplosivesExpert" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="Reconnaissance" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="Reconnaissance" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="Reconnaissance" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="Reconnaissance" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="Bandolier" Type="AbilCmd" AbilCmd="CavalryScoutResearch,Research18" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="Disarm"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Disarm,Execute"/>
+                <Requirements value=""/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="9">
+                <Face value="HeartbeatSensor"/>
+                <Type value="Passive"/>
+                <Behavior value="HeartbeatSensor"/>
+                <Requirements value="HeartbeatSensorUse"/>
+                <Row value="1"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="10">
+                <Face value="FiremodeBurst"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FiremodeBurst,On"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="11" Face="FiremodeSemi" Type="AbilCmd" AbilCmd="FiremodeBurst,Off" Row="1" Column="1"/>
+            <LayoutButtons Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="HeatSensor" Type="AbilCmd" AbilCmd="ToggleHeatSensor,On" Row="0" Column="1"/>
+            <LayoutButtons Face="LightFilter" Type="AbilCmd" AbilCmd="ToggleHeatSensor,Off" Row="0" Column="1"/>
+            <LayoutButtons Face="LightFilterCC" Type="Passive" Requirements="LightFilterShowCC2" Row="0" Column="0"/>
+            <LayoutButtons Face="HeatSensorCC" Type="Passive" Requirements="HeatSensorShowCC2" Row="0" Column="0"/>
+            <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research6" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research5" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipSniper" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research7" Row="1" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsHawkeye" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidSelfSufficient" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research4" Row="2" Column="3"/>
+            <LayoutButtons Face="FragGrenadeMGLDelivery" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="PlaceClaymoreBountiful" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="GroundFlareMGLDelivery" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research12" Row="0" Column="3"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="FragGrenadeEfficiency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research9" Row="1" Column="1"/>
+            <LayoutButtons Face="DetonateClaymorePotency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research11" Row="1" Column="2"/>
+            <LayoutButtons Face="GroundFlarePotency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research13" Row="1" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="PreviousPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="BinocularsPotency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research14" Row="0" Column="0"/>
+            <LayoutButtons Face="BinocularsTargetPainting" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research15" Row="1" Column="0"/>
+            <LayoutButtons Face="LaserDesignatorWeakPointTargeting" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research16" Row="0" Column="1"/>
+            <LayoutButtons Face="LaserDesignatorLongevity" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research17" Row="1" Column="1"/>
+            <LayoutButtons Face="LightFilterPotency" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research18" Row="0" Column="2"/>
+            <LayoutButtons Face="LightFilterHeatSensor" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research19" Row="1" Column="2"/>
+            <LayoutButtons Face="MotionSensorEarlyDetection" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research20" Row="0" Column="3"/>
+            <LayoutButtons Face="MotionSensorCloakDetection" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research21" Row="1" Column="3"/>
+            <LayoutButtons Face="HeartbeatSensorEarlyDetection" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research22" Row="2" Column="0"/>
+            <LayoutButtons Face="HeartbeatSensorISR" Type="AbilCmd" AbilCmd="CavalryScoutSkillUpgrades,Research23" Row="2" Column="1"/>
+        </CardLayouts>
+        <AbilArray index="3" Link="CavalryScoutResearch"/>
+        <AbilArray index="4" Link="CavalryScoutSkillUpgrades"/>
+        <AbilArray index="5" Link="Sprint"/>
+        <AbilArray index="6" Link="ReloadHero"/>
+        <AbilArray index="7" Link="JumpHero"/>
+        <AbilArray index="8" Link="DropMagazine"/>
+        <AbilArray index="9" Link="Prone"/>
+        <AbilArray index="10" Link="PerformSelfAidHero"/>
+        <AbilArray index="11" Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="FragGrenadeCav"/>
+        <AbilArray Link="PlaceClaymore"/>
+        <AbilArray Link="Disarm"/>
+        <AbilArray Link="BinocularsCav"/>
+        <AbilArray Link="GroundFlareCav"/>
+        <AbilArray Link="LaserDesignatorCAV"/>
+        <AbilArray Link="MotionSensorCav"/>
+        <AbilArray Link="NewMGL"/>
+        <AbilArray Link="RiflemanFlareGun"/>
+        <AbilArray Link="FiremodeBurst"/>
+        <AbilArray Link="ToggleHeatSensor"/>
+        <AbilArray Link="HeroInventoryCS"/>
+        <EffectArray index="Birth" value="CavalryScoutSpawnSet"/>
+        <EffectArray index="Revive" value="CavalryScoutSpawnSet"/>
+    </CUnit>
+</Catalog>

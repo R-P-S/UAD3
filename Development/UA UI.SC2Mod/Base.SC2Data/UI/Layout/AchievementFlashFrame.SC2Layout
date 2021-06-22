@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="FlashFrameContainer">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="75" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Width val="600" />
+         <Height val="600" />
+         <Visible val="False" />
+         <RenderPriority val="1200" />
+         <AcceptsMouse val="False" />
+         <Frame type="Frame" name="AchievementBadge" template="AchievementTemplates/AchievementBadgeTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Frame type="Image" name="BackgroundFrameShimmer">
+               <Anchor relative="$parent/IconImage" />
+               <LayerCount val="2"/>
+               <Texture val="@UI/Glues_Battlenet_Toast_BorderMask" layer="0"/>
+               <AlphaLayer val="true" layer="0"/>
+               <LayerColor val="0,255,168" layer="1"/>
+               <TextureType val="Nineslice"/>
+               <Texture val="@UI/Glues_Battlenet_Toast_BorderShimmer" layer="1"/>
+               <TextureCoords top="1" left="1" bottom="0" right="0" layer="1"/>
+               <Animation name="ShimmerAnim">
+                  <Event event="OnShown" action="Reset,Play" />
+                  <Controller type="Fade" end="Loop">
+                     <Key type="Curve" time="0" value="0" out="Linear"/>
+                     <Key type="Curve" time="1" value="255" out="Linear"/>
+                     <Key type="Curve" time="4" value="255" out="Linear"/>
+                     <Key type="Curve" time="5" value="0" out="Linear"/>
+                  </Controller>
+                  <Controller type="LayerUV" layer="1" side="Left" relative="false" sidelock="true" end="Loop">
+                     <Key type="Curve" time="0" value="0" out="Linear"/>
+                     <Key type="Curve" time="5" value="2" out="Linear"/>
+                  </Controller>
+               </Animation>
+            </Frame>
+         </Frame>
+         <Animation name="DisplayAnim">
+            <Event event="Display" action="Reset,Play" />
+            <Controller type="Sound" end="Stop">
+               <Key type="Sound" time="0.0" sound="@UI_BNet_Achievement" />
+            </Controller>
+            <Controller type="State" frame="AchievementBadge" stateGroup="AchievementBadgeState" end="Pause">
+               <Key type="Identifier" time="0.0" value="Disabled" />
+               <Key type="Identifier" time="0.60" value="Flash" />
+            </Controller>
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0.0" value="0" out="Slow" />
+               <Key type="Curve" time="0.25" value="0" out="Slow" />
+               <Key type="Curve" time="0.50" value="255" in="Slow" />
+               <Key type="Curve" time="2.50" value="255" in="Slow" />
+               <Key type="Curve" time="4.5" value="0" in="Slow" />
+            </Controller>
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0.0" value="False" />
+               <Key type="Bool" time="0.1" value="True" />
+               <Key type="Bool" time="4.6" value="False" />
+            </Controller>
+         </Animation>
+      </Frame>
+   </Frame>
+</Desc>

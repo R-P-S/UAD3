@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Button" name="DeadHeroButtonTemplate">
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <HighlightOnHover val="true" />
+      <HighlightOnFocus val="true" />
+      <ClickSound val="@UI_ReplayButtonSelect" />
+      <Width val="35" />
+      <Height val="35" />
+      <Frame type="Image" name="NormalImage">
+         <DescFlags val="Internal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <DescFlags val="Internal" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="DeadHeroContainer">
+         <Anchor side="Top" relative="$parent/MenuBar" pos="Mid" offset="-26" />
+         <Anchor side="Left" relative="$parent/MenuBar" pos="Mid" offset="-283" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="552" />
+         <Visible val="false" />
+         <Handle val="DHC" />
+         <Frame type="Image" name="DeadHeroBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Visible val="true" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="DeadHeroIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Texture val="Assets\Textures\btn-tips-fallenheroes.dds" />
+            <Tooltip val="@DOCSTR_Dead_Hotkey" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="DeadHeroButton" template="DeadCount/DeadHeroButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/DeadHeroBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Shortcut val="Y" />
+            <AcceptsMouseTooltip val="false" />
+            <Frame type="Image" name="NormalImage">
+               <Texture val="Assets\Textures\btn-tips-fallenheroes.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Texture val="Assets\Textures\btn-tips-fallenheroes.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+            </Frame>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/DeadHeroSkillsLabel">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/DeadHeroSkillsLabel">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+            <Animation name="ClickAnim">
+               <Event event="OnClick" action="Reset,Play" />
+               <Controller type="Property" property="AcceptsMouse" end="Pause">
+                  <Key type="Property" time="0" value="False" />
+                  <Key type="Property" time="2.5" value="True" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="DeadHeroLabelContainer">
+            <Width val="23" />
+            <Height val="23" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+            <Texture val="Assets\Textures\ui_battlenet_glue_coop_abilityframe_levelbg.dds" />
+            <TextureType val="NineSlice" />
+            <RenderPriority val="520" />
+            <Visible val="true" />
+            <Color val="##StandardButtonBorder" />
+         </Frame>
+         <Frame type="Label" name="DeadHeroSkillsLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="0" />
+            <RenderPriority val="521" />
+            <Animation name="HighlightOnEvent">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

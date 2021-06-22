@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CGame id="Dflt">
+        <CallForHelpRadius value="15"/>
+        <CameraMarginAspectAdjust index="2" AspectWidth="18" AspectHeight="13"/>
+        <CameraMarginAspectAdjust index="3" AspectWidth="16" AspectHeight="9" Margin="5,0,5,0"/>
+        <CameraMarginAspectAdjust AspectWidth="5" AspectHeight="4"/>
+        <UnitSightRangeDead value="1"/>
+        <VeterancySearchRadius value="25"/>
+        <VeterancySearchFilters value="-;Enemy,Missile,Dead,Hidden"/>
+        <TriggerLibs index="0" Id="" IncludePath=""/>
+        <DamageMinimum value="0.05"/>
+        <FoodCappedMax value="350"/>
+        <PlayerLeaveFlags index="FinalizeScore" value="0"/>
+        <PlayerLeaveFlags index="ForcedAlliance" value="0"/>
+        <PlayerLeaveFlags index="FulfillResourceRequests" value="0"/>
+        <PlayerLeaveFlags index="ReportScore" value="0"/>
+        <PlayerLeaveFlags index="SplitResources" value="0"/>
+        <EnforcedGameResultScoreResult value="ScoreSummary"/>
+    </CGame>
+</Catalog>

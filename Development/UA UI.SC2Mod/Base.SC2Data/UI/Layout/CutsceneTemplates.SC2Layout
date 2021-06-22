@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>  
+    <Frame type="CutsceneFrame" name="StatusWebTemplate">
+        <Anchor relative="$parent" />
+        <RenderType val="HDR" />
+        <AutoPlay val="False" />
+        <File val="Cutscenes/Cocooned.SC2Cutscene" />
+        <Animation name="BirthAnimation">
+            <Event event="PlayBirth" action="Reset, Play" frame="$this" />
+            <Controller type="Visibility" end="Pause" frame="$parent">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+            <Controller type="Cutscene" end="Stop">
+                <Key type="Cutscene" time="0" action="Bookmark" bookmark="Birth" />
+                <Key type="Cutscene" time="0.25" action="Play"/>
+            </Controller>
+        </Animation>
+        <Animation name="DeathAnimation">
+            <Event event="PlayDeath" action="Reset, Play" frame="$this" />
+            <Controller type="Cutscene" end="Stop">
+                <Key type="Cutscene" time="0" action="Bookmark" bookmark="Death" />
+                <Key type="Cutscene" time="0" action="Play" />
+            </Controller>
+            <Controller type="Visibility" end="Pause" frame="$parent">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0.25" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ResetAnimation" flags="NoEventsWhileHidden">
+            <Event event="Reset" action="Reset, Play" frame="$this" />
+            <Controller type="Cutscene" end="Stop">
+                <Key type="Cutscene" time="0" action="Bookmark" bookmark="Death" />
+                <Key type="Cutscene" time="0" action="Play" />
+            </Controller>
+            <Controller type="Visibility" end="Pause" frame="$parent">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0.25" value="False"/>
+            </Controller>
+        </Animation>
+    </Frame>
+</Desc>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="BSOD">
+         <Anchor relative="$parent" />
+         <RenderPriority val="1000" />
+         <!-- Blocks In Game Tooltips-->
+         <AcceptsMouse val="True" />
+         <Visible val="False" />
+         <Frame type="Image" name="Background">
+            <Anchor relative="$parent" />
+            <Texture val="Assets/Buttons/BSOD.dds" />
+         </Frame>
+         <Frame type="Label" name="LoadingPercent">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="285" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-110" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="500" />
+            <Height val="150" />
+            <Style val="BlueScreen" />
+            <Text val="KOMMANDER" />
+            <Color val="247,251,255" />
+            <Animation name="Display">
+               <Event event="OnShown" action="Reset,Play"/>
+               <Controller type="Text" end="Pause">
+                  <Key type="Text" time="0.0" text="20% Complete" />
+                  <Key type="Text" time="1.5" text="34% Complete" />
+                  <Key type="Text" time="3.0" text="57% Complete" />
+                  <Key type="Text" time="5.0" text="69% Complete" />
+                  <Key type="Text" time="7.5" text="87% Complete" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Remove BSOD After 8 Seconds -->
+         <Animation name="DisplayController">
+            <Event event="BO4" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0.0" value="True"/>
+               <Key type="Bool" time="8.0" value="False"/>
+            </Controller>
+         </Animation>    
+      </Frame>
+   </Frame>
+</Desc>

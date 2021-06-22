@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="FloatingTextFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Height val="400" />
+      <Width val="400" />
+      <UseAlternateTime val="True" />
+      <RenderPriority val="1000" />
+      <Frame type="Frame" name="TextAnchor">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="170" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="100" />
+         <Height val="75" />
+         <Width val="200" />
+      </Frame>
+      <Frame type="Image" name="TextIcon">
+         <Anchor side="Top" relative="$parent/TextAnchor" pos="Mid" offset="-2" />
+         <Anchor side="Left" relative="$parent/TextAnchor" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/TextAnchor" pos="Mid" offset="-2" />
+         <Anchor side="Right" relative="$parent/TextAnchor" pos="Mid" offset="0" />
+         <UseAlternateTime val="True" />
+         <RenderPriority val="500" />
+         <Height val="68" />
+         <Width val="58" />
+         <Alpha val="129" />
+         <Animation name="PopAnimation" template="PiratedFloatingTextTemplates/PopAnimation" />
+         <Animation name="PopAnimationFast" template="PiratedFloatingTextTemplates/PopAnimationFast" />
+         <Animation name="PopAnimationSlow" template="PiratedFloatingTextTemplates/PopAnimationSlow" />
+         <StateGroup name="TextIconState">
+            <DefaultState val="IconNone" />
+            <State name="IconBasic">
+               <When type="AnimationState" frame="$parent/Text" TextIconState="IconBasic" />
+               <Action type="SetProperty" Texture="@UI/IconCritBasic" />
+            </State>
+            <State name="IconAbility">
+               <When type="AnimationState" frame="$parent/Text" TextIconState="IconAbility" />
+               <Action type="SetProperty" Texture="@UI/IconCritSpell" />
+            </State>
+            <State name="IconNone">
+               <Action type="SetProperty" visible="false" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Label" name="Text">
+         <Anchor side="Top" relative="$parent/TextAnchor" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/TextAnchor" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent/TextAnchor" pos="Max" offset="0" />
+         <Anchor side="Bottom" relative="$parent/TextAnchor" pos="Max" offset="0" />
+         <SubpixelRendering val="True" />
+         <ScaleText val="True" />
+         <RenderPriority val="600" />
+         <UseAlternateTime val="True" />
+         <Unclipped val="false" />
+         <Animation name="PopAnimation" template="PiratedFloatingTextTemplates/PopAnimation" />
+         <Animation name="PopAnimationFast" template="PiratedFloatingTextTemplates/PopAnimationFast" />
+         <Animation name="PopAnimationSlow" template="PiratedFloatingTextTemplates/PopAnimationSlow" />
+      </Frame>
+   </Frame>
+</Desc>

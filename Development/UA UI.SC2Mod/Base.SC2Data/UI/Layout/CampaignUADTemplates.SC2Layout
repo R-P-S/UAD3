@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="ProgressBarUITemplate00">
+        <Anchor side="Top" relative="$parent" pos="Mid" offset="-1025" />
+        <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+        <Width val="325" />
+        <Height val="125" />
+        <Visible val="False" />
+        <Frame type="Image" name="Background">
+            <Anchor relative="$parent" />
+            <Alpha val="125" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" layer="0" />
+            <Color val="0,255,148" /> 
+        </Frame>
+        <Frame type="Image" name="IconBorder" template="CharSelection/RankIconBorderTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="35" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+            <Width val="75" />
+            <Height val="75" />
+            <Texture val="Assets\Textures\Black.dds" />
+        </Frame>
+        <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-10" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="250" />
+            <Height val="75" />
+            <Text val="Title" />
+            <Color val="255,255,255" />
+            <Style val="BattlenetTopNavSmall" />
+        </Frame>
+        <Frame type="ProgressBar" name="ProgressBar">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="20" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="70" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <UseFillContainer val="True" />
+            <Height val="30" />
+            <Width val="193" />
+            <MinValue val="0" />
+            <MaxValue val="25" />
+            <Value val="0" />
+            <AcceptsMouseTooltip val="False" />
+            <Frame type="Image" name="BorderImage">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\Infestation_Border.dds" />
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,192" />
+            </Frame>
+            <Frame type="Frame" name="FillImageContainer">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="-6" />
+               <Frame type="Image" name="FillImage">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="1" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="-1" />
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="-12" />
+                  <Color val="0,255,168" />
+               </Frame>
+               <Frame type="Image" name="ShadowImage">
+                  <Anchor relative="$parent/FillImage" />
+                  <Texture val="@UI/Battlenet_Glue_Multiplayer_Score_BarShadow" />
+                  <TextureType val="Normal" />
+               </Frame>
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="ProgressLabel">
+            <Anchor side="Top" relative="$parent/ProgressBar" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent/ProgressBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/ProgressBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/ProgressBar" pos="Max" offset="0" />
+            <Text val="{$parent/FormattedText/@Text}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <RenderPriority val="650" />
+            <Visible val="True" />
+         </Frame>
+         <!-- Bar % -->
+         <Frame type="TextFormatFrame" name="FormattedText">
+            <Anchor relative="$parent" />
+            <FormatText val="%0%%" />
+            <Replacement index="0" val="{$parent/MathResult/@Text}" />
+         </Frame>
+         <Frame type="Label" name="MathResult">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="{$parent/MathB/@ResultRound}" />
+            <Style val="ScoreScreenProgressLabel" />
+            <Color val="255,255,255" />
+            <Visible val="False" />
+         </Frame>
+         <Frame type="MathFrame" name="MathA">
+            <Anchor relative="$parent" />
+            <A val="{$parent/ProgressBar/@Value}" />
+            <B val="{$parent/ProgressBar/@MaxValue}" />
+            <Operator val="Divide" />
+         </Frame>
+         <Frame type="MathFrame" name="MathB">
+            <Anchor relative="$parent" />
+            <A val="{$parent/MathA/@Result}" />
+            <B val="100" />
+            <Operator val="Multiply" />
+         </Frame>
+        <Frame type="Image" name="CornerTopLeft">
+            <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4" />
+            <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4" />
+            <Width val="18" />
+            <Height val="19" />
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds" />
+            <Color val="255,255,255" />
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset,Play" frame="$this" />
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear" />
+                    <Key type="Curve" time="0.5" value="0" out="Linear" />
+                    <Key type="Curve" time="0.55" value="255" out="Linear" />
+                    <Key type="Curve" time="0.60" value="0" out="Linear" />
+                    <Key type="Curve" time="0.65" value="255" out="Linear" />
+                    <Key type="Curve" time="0.70" value="0" out="Linear" />
+                    <Key type="Curve" time="0.8" value="255" out="Linear" />
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="CornerTopRight">
+            <Anchor side="Top" relative="$parent/Background" pos="Min" offset="-4" />
+            <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4" />
+            <Width val="18" />
+            <Height val="19" />
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds" />
+            <TextureCoords top="0" left="1" bottom="1" right="0" layer="0" />
+            <Color val="255,255,255" />
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset,Play" frame="$this" />
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear" />
+                    <Key type="Curve" time="0.5" value="0" out="Linear" />
+                    <Key type="Curve" time="0.55" value="255" out="Linear" />
+                    <Key type="Curve" time="0.60" value="0" out="Linear" />
+                    <Key type="Curve" time="0.65" value="255" out="Linear" />
+                    <Key type="Curve" time="0.70" value="0" out="Linear" />
+                    <Key type="Curve" time="0.8" value="255" out="Linear" />
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="CornerBottomLeft">
+            <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-4" />
+            <Width val="18" />
+            <Height val="19" />
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds" />
+            <Color val="255,255,255" />
+            <TextureCoords top="1" left="0" bottom="0" right="1" layer="0" />
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset,Play" frame="$this" />
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear" />
+                    <Key type="Curve" time="0.5" value="0" out="Linear" />
+                    <Key type="Curve" time="0.55" value="255" out="Linear" />
+                    <Key type="Curve" time="0.60" value="0" out="Linear" />
+                    <Key type="Curve" time="0.65" value="255" out="Linear" />
+                    <Key type="Curve" time="0.70" value="0" out="Linear" />
+                    <Key type="Curve" time="0.8" value="255" out="Linear" />
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="CornerBottomRight">
+            <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="4" />
+            <Anchor side="Right" relative="$parent/Background" pos="Max" offset="4" />
+            <Width val="18" />
+            <Height val="19" />
+            <Texture val="Assets/Textures/ui_nova_equipmentupgrades_Paperdollwindow_flair_cornerbracket.dds" />
+            <Color val="255,255,255" />
+            <TextureCoords top="1" left="1" bottom="0" right="0" layer="0" />
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset,Play" frame="$this" />
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear" />
+                    <Key type="Curve" time="0.5" value="0" out="Linear" />
+                    <Key type="Curve" time="0.55" value="255" out="Linear" />
+                    <Key type="Curve" time="0.60" value="0" out="Linear" />
+                    <Key type="Curve" time="0.65" value="255" out="Linear" />
+                    <Key type="Curve" time="0.70" value="0" out="Linear" />
+                    <Key type="Curve" time="0.8" value="255" out="Linear" />
+                </Controller>
+            </Animation>
+        </Frame>
+    </Frame>
+    <Frame type="Button" name="ButtonTemplate" template="StandardTemplates/StandardButtonTemplate">
+      <Width val="130" />
+      <Height val="50" />
+      <Frame type="Image" name="NormalImage">
+         <Texture val="Assets\Textures\ui_battlenet_glue_navbuttons_blue_normalpressed.dds" />
+         <Color val="0,255,148" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Texture val="Assets\Textures\ui_battlenet_glue_navbuttons_blue_normaloverpressedover.dds" />
+         <Color val="0,255,148" />
+      </Frame>
+   </Frame>
+    <!-- Prologue Vote Template -->
+    <Frame type="Frame" name="PrologueVoteTemplate">
+        <Visible val="False" />
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+        </Frame>
+        <Frame type="Image" name="Vignette">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets/Textures/ui_nova_archives_backgroundframe_scanlines.dds" />
+            <Height val= "65" />
+            <Width val="400" />
+        </Frame>
+        <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Text val="Skip Prologue" />
+            <Style val="BattlenetTopNav" />
+            <Color val="255,255,255" />         
+        </Frame>
+         <!-- Countdown Timer Title -->
+         <Frame type="Label" name="CountdownTimerTitle">
+            <Anchor side="Top" relative="$parent/Title" pos="Max" offset="10" />
+            <Anchor side="Left" relative="$parent/Title" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/Title" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Style val="BattlenetTopNavSmall" />
+            <Color val="255,255,255" /> 
+            <Text val="Time Remaining" />
+         </Frame>
+         <!-- Countdown Timer -->
+         <Frame type="Label" name="CountdownTimer">
+            <Anchor side="Top" relative="$parent/CountdownTimerTitle" pos="Max" offset="5" />
+            <Anchor side="Left" relative="$parent/CountdownTimerTitle" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/CountdownTimerTitle" pos="Mid" offset="0" />
+            <Height val="25" />
+            <Style val="BattlenetTopNavSmall" />
+            <Color val="255,0,0" /> 
+            <Text val="10" />
+            <StateGroup name="TimerState">
+                <DefaultState val="GT5" />
+                <State name="GT5" />
+                <State name="LT5">
+                    <When type="AnimationState" frame="$this" operator="LessThan" Text="5" />
+                    <Action type="SetProperty" frame="$this" Color="255,0,0" />
+                </State>
+            </StateGroup>
+         </Frame>
+         <!-- Alert -->
+         <Frame type="Image" name="Alert">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="50" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+            <Texture val="@UI/Alert" />
+            <Height val="64" />
+            <Width val="76" />
+            <Animation name="Pulse">
+               <Event event="OnShown" action="Reset,Play" />
+               <Event event="OnHidden" action="Reset,Pause" />
+               <Controller type="Fade" end="Loop">
+                  <Key type="Curve" time="0" value="25" out="Slow" />
+                  <Key type="Curve" time="1" value="255" in="Slow" />
+                  <Key type="Curve" time="1.5" value="25" out="Slow" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <!-- Yes Button -->
+        <Frame type="Button" name="ButtonYes" template="StandardUADTemplates/UADAlternateButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+            <Width val="150" />
+            <Frame type="Label" name="Label">
+                <Text val="{$parent/FormattedText/@Text}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+                <Anchor relative="$parent" />
+                <FormatText val="Yes [%0%]" />
+                <Replacement index="0" val="{$parent/CountLabel/@Text}" />
+            </Frame>
+            <Frame type="Label" name="CountLabel">
+                <Anchor relative="$parent" />
+                <Text val="0" />
+                <Visible val="False" />
+            </Frame>
+        </Frame>
+        <!-- No Button -->
+        <Frame type="Button" name="ButtonNo" template="StandardUADTemplates/UADAlternateButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25" />
+            <Width val="150" />
+            <Frame type="Label" name="Label">
+                <Text val="{$parent/FormattedText/@Text}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+                <Anchor relative="$parent" />
+                <FormatText val="No [%0%]" />
+                <Replacement index="0" val="{$parent/CountLabel/@Text}" />
+            </Frame>
+            <Frame type="Label" name="CountLabel">
+                <Anchor relative="$parent" />
+                <Text val="0" />
+                <Visible val="False" />
+            </Frame>
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+        <Animation name="DisplayAnim">
+            <Event event="Start" action="DirectionForward, Play" />
+            <Event event="End" action="DirectionReverse, Play" />
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="False" />
+                <Key type="Bool" time="0.1" value="True" />
+            </Controller>
+        </Animation>
+    </Frame>
+    <Frame type="Frame" name="MissionSelectionTemplate">
+        <Visible val="False" />
+        <Animation name="DisplayAnim">
+            <Event event="Display" action="Reset, Play" />
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="False" />
+                <Key type="Bool" time="0.1" value="True" />
+            </Controller>
+        </Animation>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+        </Frame>
+        <Frame type="Image" name="Vignette">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets/Textures/ui_nova_archives_backgroundframe_scanlines.dds" />
+            <Height val= "75" />
+            <Width val="600" />
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+        <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="25" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Style val="BattlenetTopNav" />
+            <Text val="Mission Selection" />
+            <Color val="255,255,255" />
+        </Frame>
+        <Frame type="Button" name="StartButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="-65" />
+            <Anchor side="Left" relative="$parent/ListContainer" pos="Min" offset="0" />
+            <Width val="175" />
+            <Frame type="Label" name="Label">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                <Text val="Start" />
+            </Frame>
+            <Animation name="ClickAnim">
+                <Event event="OnClick" action="Reset,Play" />
+                <Controller type="Visibility" frame="$parent" end="Pause">
+                    <Key type="Bool" time="0" value="False" />
+                </Controller>
+                <Controller type="Visibility" frame="$parent/$parent/CampaignDebugButton" end="Pause">
+                    <Key type="Bool" time="0" value="True" />
+                 </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="CheckBox" name="SingleMissionRun" template="StandardTemplates/StandardCheckBoxTemplate">
+            <Anchor side="Top" relative="$parent/StartButton" pos="Min" offset="10" />
+            <Anchor side="Left" relative="$parent/StartButton" pos="Max" offset="30" />
+        </Frame>
+
+        <Frame type="Label" name="SingleMissionRunLabel">
+            <Anchor side="Bottom" relative="$parent/SingleMissionRun" pos="Max" offset="-2" />
+            <Anchor side="Left" relative="$parent/SingleMissionRun" pos="Max" offset="5" />
+            <Style val="GameButtonCharge" />
+            <Text val="Single Mission" />
+            <Color val="255,255,255" />
+        </Frame>
+
+        <Frame type="Button" name="CloseButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+            <Anchor side="Top" relative="$parent/StartButton" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/ListContainer" pos="Max" offset="0" />
+            <Width val="175" />
+            <Frame type="Label" name="Label">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                <Text val="Close" />
+            </Frame>
+            <Animation name="ClickAnim">
+                <Event event="OnClick" action="Reset,Play" />
+                <Controller type="Visibility" frame="$parent" end="Pause">
+                    <Key type="Bool" time="0" value="False" />
+                </Controller>
+                <Controller type="Visibility" frame="$parent/$parent/CampaignDebugButton" end="Pause">
+                    <Key type="Bool" time="0" value="True" />
+                 </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Frame" name="ListContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Width val="575" />
+            <Height val="309" />
+            <RenderPriority val="575" />
+            <Frame type="ListBox" name="MissionList" template="StandardUADTemplates/MissionListTemplate" />
+        </Frame>
+    </Frame>
+</Desc>

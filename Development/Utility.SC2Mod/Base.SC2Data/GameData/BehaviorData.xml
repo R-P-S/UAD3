@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="PsiShadow">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
+        <DisableValidatorArray value="TargetIsMoving"/>
+    </CBehaviorBuff>
+</Catalog>

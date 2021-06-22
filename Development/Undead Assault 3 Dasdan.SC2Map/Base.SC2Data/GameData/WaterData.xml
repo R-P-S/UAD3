@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWater default="1" id="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.450000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.160000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.399502,-0.019958,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.100000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+        <BeachShoreline value="BelShirBeachShoreline"/>
+        <CliffShoreline value="BelShirCliffShoreline"/>
+    </CWater>
+    <CWater id="Agria">
+        <State index="0">
+            <Height value="7.000000"/>
+            <Color value="0.094118,0.349020,0.494118,0.300000"/>
+            <ColorFallOff value="0.283000"/>
+            <Specularity value="1000.000000"/>
+            <SpecularScaler value="0.300000"/>
+            <UvRate value="-0.047803,-0.056488,0.000000,0.000000"/>
+            <MeshRoughness value="0.069000"/>
+            <TextureRoughness value="0.996000"/>
+            <ReflectionDistortion value="0.014000"/>
+            <RefractionDistortion value="0.020000"/>
+            <MinReflection value="0.103000"/>
+            <ReflectivityPower value="1.030000"/>
+        </State>
+    </CWater>
+    <CWater id="EastConvergence" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.341311,-0.208582,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="EastToWest" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.399502,-0.019958,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="Pond" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.250000"/>
+            <Color value="0.247059,0.403922,0.603922,0.350000"/>
+            <ColorFallOff value="0.100000"/>
+            <CausticsFallOff value="3.000000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.049938,-0.002495,0.000000,0.000000"/>
+            <MeshRoughness value="0.025000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="South" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.000000,-0.400000,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="NorthEastToSouthWest" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.353963,-0.186308,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="NorthConvergence" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.000000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.208583,-0.341311,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+    <CWater id="TotalConvergence" parent="Default2">
+        <State index="0">
+            <Name value="[Default]"/>
+            <Height value="7.010000"/>
+            <Color value="0.247059,0.403922,0.603922,0.250000"/>
+            <ColorFallOff value="0.010000"/>
+            <CausticsFallOff value="0.250000"/>
+            <Specularity value="750.000000"/>
+            <SpecularScaler value="0.500000"/>
+            <UvRate value="-0.282843,-0.282843,0.000000,0.000000"/>
+            <MeshRoughness value="0.072000"/>
+            <TextureRoughness value="0.137000"/>
+            <ReflectionDistortion value="0.200000"/>
+            <RefractionDistortion value="0.015000"/>
+            <MinReflection value="0.250000"/>
+            <ReflectivityPower value="10.000000"/>
+        </State>
+    </CWater>
+</Catalog>

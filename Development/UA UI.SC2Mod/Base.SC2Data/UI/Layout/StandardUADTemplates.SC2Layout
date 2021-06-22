@@ -1,0 +1,1449 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Constants -->
+   <Constant name="Greybox_Color_Background" val="0,0,0" />
+   <Constant name="Greybox_Color_ButtonStandard_Normal" val="0,0,0" />
+   <Constant name="Greybox_Color_ButtonStandard_Down" val="15,15,15" />
+   <Constant name="Greybox_Color_ButtonStandard_Hover" val="0,0,0" />
+   <Constant name="Greybox_Color_ButtonStandard_Toggled" val="0,0,0" />
+   <Constant name="Greybox_Color_ButtonStandard_Disabled" val="21,21,21" />
+   <Constant name="Greybox_Color_ButtonStandardBorder_Normal" val="0,52,0" />
+   <Constant name="Greybox_Color_ButtonStandardBorder_Down" val="210,210,210" />
+   <!--
+   <Constant name="Greybox_Color_ButtonStandardBorder_Hover" val="0,255,0" />
+   <Constant name="Greybox_Color_ButtonStandardBorder_Toggled" val="0,255,0" /> -->
+
+   <Constant name="Greybox_Color_ButtonStandardBorder_Hover" val="0,145,0" />
+   <Constant name="Greybox_Color_ButtonStandardBorder_Toggled" val="0,145,0" />
+   <!--
+   <Constant name="Greybox_Color_ButtonStandardBorder_Disabled" val="17,17,17" /> -->
+   <Constant name="Greybox_Color_ButtonStandardBorder_Disabled" val="0,25,0" /> 
+   <Constant name="Greybox_Color_ButtonAlternate_Normal" val="54,36,23" />
+   <Constant name="Greybox_Color_ButtonAlternate_Down" val="40,20,0" />
+   <Constant name="Greybox_Color_ButtonAlternate_Hover" val="100,40,0" />
+   <Constant name="Greybox_Color_ButtonAlternate_Toggled" val="150,75,0" />
+   <Constant name="Greybox_Color_ButtonAlternate_Disabled" val="25,20,15" />
+   <Constant name="Greybox_Color_ButtonAlternateBorder_Normal" val="100,60,20" />
+   <Constant name="Greybox_Color_ButtonAlternateBorder_Down" val="210,210,210" />
+   <Constant name="Greybox_Color_ButtonAlternateBorder_Hover" val="0,255,128" />
+   <Constant name="Greybox_Color_ButtonAlternateBorder_Toggled" val="0,255,0" />
+   <Constant name="Greybox_Color_ButtonAlternateBorder_Disabled" val="30,25,20" />
+   <Constant name="Greybox_Color_ContainerStandardBorder_ExtraLarge" val="55,55,55" />
+   <Constant name="Greybox_Color_ContainerStandardBorder_Large" val="70,70,70" />
+   <Constant name="Greybox_Color_ContainerStandardBorder_Medium" val="50,50,50" />
+   <Constant name="Greybox_Color_ContainerStandardBorder_Small" val="28,28,28" />
+   <Constant name="Greybox_Color_ContainerStandardBackground_ExtraLarge" val="0,0,0" />
+   <Constant name="Greybox_Color_ContainerStandardBackground_Large" val="0,0,0" />
+   <Constant name="Greybox_Color_ContainerStandardBackground_Medium" val="0,0,0" />
+   <Constant name="Greybox_Color_ContainerStandardBackground_Small" val="0,0,0" />
+   <Constant name="Greybox_Size_Border_ExtraLarge" val="8" />
+   <Constant name="Greybox_Size_Border_Large" val="5" />
+   <Constant name="Greybox_Size_Border_Medium" val="3" />
+   <Constant name="Greybox_Size_Border_Small" val="2" />
+   <Constant name="LightGreen" val="0,255,168" />
+   <Constant name="Red" val="255,0,0" />
+
+   <!-- Generic Component Templates -->
+   <!-- Standard Button NormalImage -->
+   <Frame type="Image" name="StandardButtonNormalImageTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <DesaturateOnDisable val="false" />
+      <StateCount val="1" />
+      <LayerCount val="4" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Normal" layer="0" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Down" layer="1" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Toggled" layer="2" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Disabled" layer="3" />
+   </Frame>
+   <!-- Standard Button HoverImage -->
+   <Frame type="Image" name="StandardButtonHoverImageTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <DesaturateOnDisable val="false" />
+      <StateCount val="1" />
+      <LayerCount val="4" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Hover" layer="0" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Down" layer="1" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Toggled" layer="2" />
+      <LayerColor val="#Greybox_Color_ButtonStandard_Disabled" layer="3" />
+   </Frame>
+   <!-- Standard Button Icon -->
+   <Frame type="Image" name="StandardButtonIconTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <DesaturateOnDisable val="True" />
+      <Texture val="Buttons\BTNAutoRifle.dds" />
+      <StateGroup name="IconState">
+         <State name="Normal">
+            <When type="Property" frame="$parent" toggled="False" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <When type="Property" frame="$parent/NormalImage" visible="True" />
+            <Action type="SetProperty" frame="$this" alpha="200" />
+         </State>
+         <State name="Hover">
+            <When type="Property" frame="$parent" toggled="False" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <When type="Property" frame="$parent/HoverImage" visible="True" />
+            <Action type="SetProperty" frame="$this" alpha="255" />
+         </State>
+         <State name="Toggled">
+            <When type="Property" frame="$parent" toggled="True" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <Action type="SetProperty" frame="$this" alpha="255" />
+         </State>
+         <State name="Disabled">
+            <When type="Property" frame="$parent" enabled="False" />
+            <Action type="SetProperty" frame="$this" alpha="90" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <!-- Alternate Button NormalImage -->
+   <Frame type="Image" name="AlternateButtonNormalImageTemplate1" template="StandardUADTemplates/StandardButtonNormalImageTemplate1">
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Normal" layer="0" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Down" layer="1" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Toggled" layer="2" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Disabled" layer="3" />
+   </Frame>
+   <!-- Alternate Button HoverImage -->
+   <Frame type="Image" name="AlternateButtonHoverImageTemplate1" template="StandardUADTemplates/StandardButtonHoverImageTemplate1">
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Hover" layer="0" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Down" layer="1" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Toggled" layer="2" />
+      <LayerColor val="#Greybox_Color_ButtonAlternate_Disabled" layer="3" />
+   </Frame>
+   <!-- Generic Button Label -->
+   <Frame type="Label" name="GenericButtonLabelTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+   </Frame>
+   <!-- Borders -->
+   <Frame type="Frame" name="ButtonStandardBorderExtraLargeTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Frame type="Image" name="BorderTop">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="#Greybox_Size_Border_ExtraLarge" />
+         <DesaturateOnDisable val="False" />
+         <!--
+         <Animation name="BackgroundGlowPulse">
+            <Event event="PulseOn" action="Reset,Play" frame="$this" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="55" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+               <Key type="Curve" time="1" value="55" out="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="BackgroundGlowStatic">
+            <Event event="PulseOff" action="Reset,Play" frame="$this" />
+            <Controller type="Animation" end="Stop" frame="$this" animation="BackgroundGlowPulse">
+               <Key type="Animation" time="0" action="Reset" />
+               <Key type="Animation" time="0.5" action="Pause" />
+            </Controller>
+         </Animation> -->
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="#Greybox_Size_Border_ExtraLarge" />
+         <DesaturateOnDisable val="False" />
+         <!--
+         <Animation name="BackgroundGlowPulse">
+            <Event event="PulseOn" action="Reset,Play" frame="$this" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="55" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+               <Key type="Curve" time="1" value="55" out="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="BackgroundGlowStatic">
+            <Event event="PulseOff" action="Reset,Play" frame="$this" />
+            <Controller type="Animation" end="Stop" frame="$this" animation="BackgroundGlowPulse">
+               <Key type="Animation" time="0" action="Reset" />
+               <Key type="Animation" time="0.5" action="Pause" />
+            </Controller>
+         </Animation> -->
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Width val="#Greybox_Size_Border_ExtraLarge" />
+         <DesaturateOnDisable val="False" />
+         <!--
+         <Animation name="BackgroundGlowPulse">
+            <Event event="PulseOn" action="Reset,Play" frame="$this" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="55" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+               <Key type="Curve" time="1" value="55" out="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="BackgroundGlowStatic">
+            <Event event="PulseOff" action="Reset,Play" frame="$this" />
+            <Controller type="Animation" end="Stop" frame="$this" animation="BackgroundGlowPulse">
+               <Key type="Animation" time="0" action="Reset" />
+               <Key type="Animation" time="0.5" action="Pause" />
+            </Controller>
+         </Animation> -->
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Width val="#Greybox_Size_Border_ExtraLarge" />
+         <DesaturateOnDisable val="False" />
+         <!--
+         <Animation name="BackgroundGlowPulse">
+            <Event event="PulseOn" action="Reset,Play" frame="$this" />
+            <Controller type="Fade" end="Loop">
+               <Key type="Curve" time="0" value="55" out="Slow" />
+               <Key type="Curve" time="0.5" value="255" in="Slow" />
+               <Key type="Curve" time="1" value="55" out="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="BackgroundGlowStatic">
+            <Event event="PulseOff" action="Reset,Play" frame="$this" />
+            <Controller type="Animation" end="Stop" frame="$this" animation="BackgroundGlowPulse">
+               <Key type="Animation" time="0" action="Reset" />
+               <Key type="Animation" time="0.5" action="Pause" />
+            </Controller>
+         </Animation> -->
+      </Frame>
+      <StateGroup name="BorderState">
+         <State name="Normal">
+            <When type="Property" frame="$parent" toggled="False" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <When type="Property" frame="$parent/NormalImage" visible="True" />
+            <Action type="SetProperty" frame="$this/BorderTop" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderBottom" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderLeft" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderRight" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <!--
+            <Action type="SendEvent" frame="$this/BorderTop" event="PulseOff" />
+            <Action type="SendEvent" frame="$this/BorderBottom" event="PulseOff" />
+            <Action type="SendEvent" frame="$this/BorderLeft" event="PulseOff" />
+            <Action type="SendEvent" frame="$this/BorderRight" event="PulseOff" /> -->
+         </State>
+         <State name="Hover">
+            <When type="Property" frame="$parent" toggled="False" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <When type="Property" frame="$parent/HoverImage" visible="True" />
+            <Action type="SetProperty" frame="$this/BorderTop" color="#Greybox_Color_ButtonStandardBorder_Hover" />
+            <Action type="SetProperty" frame="$this/BorderBottom" color="#Greybox_Color_ButtonStandardBorder_Hover" />
+            <Action type="SetProperty" frame="$this/BorderLeft" color="#Greybox_Color_ButtonStandardBorder_Hover" />
+            <Action type="SetProperty" frame="$this/BorderRight" color="#Greybox_Color_ButtonStandardBorder_Hover" />
+         </State>
+         
+         <State name="Toggled">
+            <When type="Property" frame="$parent" toggled="True" />
+            <When type="Property" frame="$parent" enabled="True" />
+            <!--
+            <Action type="SetProperty" frame="$this/BorderTop" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderBottom" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderLeft" color="#Greybox_Color_ButtonStandardBorder_Normal" />
+            <Action type="SetProperty" frame="$this/BorderRight" color="#Greybox_Color_ButtonStandardBorder_Normal" /> -->
+      
+            <Action type="SetProperty" frame="$this/BorderTop" color="#Greybox_Color_ButtonStandardBorder_Toggled" />
+            <Action type="SetProperty" frame="$this/BorderBottom" color="#Greybox_Color_ButtonStandardBorder_Toggled" />
+            <Action type="SetProperty" frame="$this/BorderLeft" color="#Greybox_Color_ButtonStandardBorder_Toggled" />
+            <Action type="SetProperty" frame="$this/BorderRight" color="#Greybox_Color_ButtonStandardBorder_Toggled" />
+            <!--
+            <Action type="SendEvent" frame="$this/BorderTop" event="PulseOn" />
+            <Action type="SendEvent" frame="$this/BorderBottom" event="PulseOn" />
+            <Action type="SendEvent" frame="$this/BorderLeft" event="PulseOn" />
+            <Action type="SendEvent" frame="$this/BorderRight" event="PulseOn" /> -->
+         </State> 
+         <State name="Disabled">
+            <When type="Property" frame="$parent" enabled="False" />
+            <Action type="SetProperty" frame="$this/BorderTop" color="#Greybox_Color_ButtonStandardBorder_Disabled" />
+            <Action type="SetProperty" frame="$this/BorderBottom" color="#Greybox_Color_ButtonStandardBorder_Disabled" />
+            <Action type="SetProperty" frame="$this/BorderLeft" color="#Greybox_Color_ButtonStandardBorder_Disabled" />
+            <Action type="SetProperty" frame="$this/BorderRight" color="#Greybox_Color_ButtonStandardBorder_Disabled" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Frame" name="ButtonStandardBorderLargeTemplate1" template="StandardUADTemplates/ButtonStandardBorderExtraLargeTemplate1">
+      <Frame type="Image" name="BorderTop">
+         <Height val="#Greybox_Size_Border_Large" />
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Height val="#Greybox_Size_Border_Large" />
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Width val="#Greybox_Size_Border_Large" />
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Width val="#Greybox_Size_Border_Large" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="ButtonStandardBorderMediumTemplate1" template="StandardUADTemplates/ButtonStandardBorderExtraLargeTemplate1">
+      <Frame type="Image" name="BorderTop">
+         <Height val="#Greybox_Size_Border_Medium" />
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Height val="#Greybox_Size_Border_Medium" />
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Width val="#Greybox_Size_Border_Medium" />
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Width val="#Greybox_Size_Border_Medium" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="ButtonStandardBorderSmallTemplate1" template="StandardUADTemplates/ButtonStandardBorderExtraLargeTemplate1">
+      <Frame type="Image" name="BorderTop">
+         <Height val="#Greybox_Size_Border_Small" />
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Height val="3" />
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Width val="#Greybox_Size_Border_Small" />
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Width val="#Greybox_Size_Border_Small" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="StandardBorderExtraLargeTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Frame type="Image" name="BorderTop">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="#Greybox_Size_Border_ExtraLarge" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_ExtraLarge" />
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Height val="#Greybox_Size_Border_ExtraLarge" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_ExtraLarge" />
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Width val="#Greybox_Size_Border_ExtraLarge" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_ExtraLarge" />
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Width val="#Greybox_Size_Border_ExtraLarge" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_ExtraLarge" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="StandardBorderSmallTemplate1" template="StandardUADTemplates/StandardBorderExtraLargeTemplate1">
+      <Frame type="Image" name="BorderTop">
+         <Height val="#Greybox_Size_Border_Small" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_Small" />
+      </Frame>
+      <Frame type="Image" name="BorderBottom">
+         <Height val="#Greybox_Size_Border_Small" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_Small" />
+      </Frame>
+      <Frame type="Image" name="BorderLeft">
+         <Width val="#Greybox_Size_Border_Small" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_Small" />
+      </Frame>
+      <Frame type="Image" name="BorderRight">
+         <Width val="#Greybox_Size_Border_Small" />
+         <Color val="#Greybox_Color_ContainerStandardBorder_Small" />
+      </Frame>
+   </Frame>
+   <Frame type="Image" name="StandardContainerBackgroundTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Color val="#Greybox_Color_ContainerStandardBackground_ExtraLarge" />
+   </Frame>
+   <Frame type="Image" name="StandardBackgroundTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <AcceptsMouse val="True" />
+      <Color val="#Greybox_Color_Background" />
+      <Alpha val="255" />
+   </Frame>
+   <!-- Containers -->
+   <Frame type="Frame" name="StandardContainerOuterTemplate1">
+      <Frame type="Image" name="Background" template="StandardUADTemplates/StandardContainerBackgroundTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/StandardBorderExtraLargeTemplate1" />
+   </Frame>
+   <Frame type="Frame" name="StandardContainerInnerTemplate1">
+      <Frame type="Image" name="Background" template="StandardUADTemplates/StandardContainerBackgroundTemplate1">
+         <Color val="#Greybox_Color_ContainerStandardBackground_Small" />
+      </Frame>
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/StandardBorderSmallTemplate1" />
+   </Frame>
+   <!-- Text Buttons -->
+   <Frame type="Button" name="StandardTextButtonLargeTemplate1">
+      <Width val="288" />
+      <Height val="76" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_StandardTextButtonLarge" />
+      <Text val="Text" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderLargeTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <Frame type="Button" name="StandardTextButtonMediumTemplate1">
+      <Width val="204" />
+      <Height val="62" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_StandardTextButtonMedium" />
+      <Text val="Text" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderMediumTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <Frame type="Button" name="StandardTextButtonSmallTemplate1">
+      <Width val="142" />
+      <Height val="48" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_StandardTextButtonSmall" />
+      <Text val="" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <Frame type="Button" name="AlternateTextButtonLargeTemplate1">
+      <Width val="288" />
+      <Height val="76" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_AlternateTextButtonLarge" />
+      <Text val="Text" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/AlternateButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/AlternateButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderLargeTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <Frame type="Button" name="AlternateTextButtonMediumTemplate1">
+      <Width val="204" />
+      <Height val="62" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_AlternateTextButtonMedium" />
+      <Text val="Text" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/AlternateButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/AlternateButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderMediumTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <Frame type="Button" name="AlternateTextButtonSmallTemplate1">
+      <Width val="142" />
+      <Height val="48" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Style val="@Greybox_AlternateTextButtonSmall" />
+      <Text val="Text" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/AlternateButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/AlternateButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+      <Frame type="Label" name="Label" template="StandardUADTemplates/GenericButtonLabelTemplate1" />
+   </Frame>
+   <!-- Icon Buttons -->
+   <Frame type="Button" name="StandardIconButtonLargeTemplate1">
+      <Width val="76" />
+      <Height val="76" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderExtraLargeTemplate1" />
+   </Frame>
+   <Frame type="Button" name="StandardIconButtonMediumTemplate1">
+      <Width val="60" />
+      <Height val="60" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderLargeTemplate1" />
+   </Frame>
+   <Frame type="Button" name="StandardIconButtonSmallTemplate1">
+      <Width val="45" />
+      <Height val="45" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderMediumTemplate1" />
+   </Frame>
+   <Frame type="Button" name="StandardIconButtonTinyTemplate1">
+      <Width val="30" />
+      <Height val="30" />
+      <DisplayType val="ImageLayer" />
+      <ClickSound val="@UI_ActionButtonSelect" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+   </Frame>
+   <!-- Scroll Bar -->
+   <Frame type="Image" name="StandardScrollBarBackgroundImage">
+      <Color val="0,0,0" />
+   </Frame>
+   <Frame type="Button" name="StandardScrollBarButtonTemplate1">
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <Frame type="Image" name="NormalImage">
+         <Color val="40,40,40" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Color val="60,60,60" />
+      </Frame>
+   </Frame>
+   <Frame type="ScrollBar" name="StandardScrollBarTemplate">
+      <Image val="$root/StandardUADTemplates/StandardScrollBarBackgroundImage" />
+      <Button val="$root/StandardUADTemplates/StandardScrollBarButtonTemplate1" />
+      <Orientation val="Vertical" />
+      <Width val="24" />
+   </Frame>
+   <!-- Pulldown Templates -->
+   <!-- Pulldown -->
+   <Frame type="Image" name="StandardPulldownBackground">
+      <Color val="#Greybox_Color_ButtonStandard_Normal" />
+   </Frame>
+   <Frame type="Image" name="StandardPulldownBackgroundHover">
+      <Color val="#Greybox_Color_ButtonStandard_Hover" />
+   </Frame>
+   <Frame type="Image" name="StandardPulldownArrow">
+      <Color val="#Greybox_Color_ButtonStandard_Normal" />
+      <Frame type="Image" name="Left">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-4" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="-4" />
+         <Width val="15" />
+         <Height val="4" />
+         <Rotation val="45" />
+         <Color val="150,150,150" />
+      </Frame>
+      <Frame type="Image" name="Right">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="4" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="4" />
+         <Width val="15" />
+         <Height val="4" />
+         <Rotation val="315" />
+         <Color val="150,150,150" />
+      </Frame>
+   </Frame>
+   <Frame type="Image" name="StandardPulldownArrowHover">
+      <Color val="#Greybox_Color_ButtonStandard_Hover" />
+      <Frame type="Image" name="Left">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-4" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="-4" />
+         <Width val="15" />
+         <Height val="4" />
+         <Rotation val="45" />
+         <Color val="255,255,255" />
+      </Frame>
+      <Frame type="Image" name="Right">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="4" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="4" />
+         <Width val="15" />
+         <Height val="4" />
+         <Rotation val="315" />
+         <Color val="255,255,255" />
+      </Frame>
+   </Frame>
+   <Frame type="Image" name="StandardPulldownMenuBackground">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Color val="50,50,50" />
+      <RenderPriority val="508" />
+      <Alpha val="255" />
+   </Frame>
+   <Frame type="Image" name="StandardPulldownMenuSelected">
+      <Color val="65,65,65" />
+      <RenderPriority val="509" />
+      <Tiled val="true" />
+   </Frame>
+   <Frame type="Image" name="StandardPulldownMenuHover">
+      <Color val="75,75,75" />
+      <RenderPriority val="509" />
+      <Alpha val="255" />
+      <Tiled val="true" />
+   </Frame>
+   <Frame type="TextListBoxItem" name="StandardPulldownListItem">
+      <RenderPriority val="600" />
+      <Frame type="Label" name="ItemLabel">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="10" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+         <RenderPriority val="600" />
+         <Style val="@@StandardPulldownMenu" />
+      </Frame>
+   </Frame>
+   <Frame type="ListBox" name="StandardPulldownMenuTemplate">
+      <ItemHeight val="30" />
+      <ItemGap val="1" />
+      <Insets top="10" left="0" bottom="10" right="0" />
+      <HighlightInsets top="0" left="0" bottom="0" right="0" />
+      <Style val="@Greybox_StandardTextPulldownMedium" />
+      <HighlightOnHover val="true" />
+      <ItemDesc val="StandardUADTemplates/StandardPulldownListItem" />
+      <Frame type="Image" name="BackgroundImage" template="StandardUADTemplates/StandardPulldownMenuBackground" />
+      <Frame type="Image" name="SelectedImage" template="StandardUADTemplates/StandardPulldownMenuSelected" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardPulldownMenuHover" />
+      <Frame type="ScrollBar" name="ScrollBar" template="StandardUADTemplates/StandardScrollBarTemplate" />
+   </Frame>
+   <Frame type="Pulldown" name="StandardPulldownTemplate">
+      <Style val="@Greybox_StandardTextPulldownMedium" />
+      <HighlightOnHover val="true" />
+      <Height val="54" />
+      <Width val="260" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardPulldownBackground">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <DesaturateOnDisable val="false" />
+         <DisabledAlpha val="64" />
+         <RenderPriority val="510" />
+      </Frame>
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardPulldownBackgroundHover">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <DesaturateOnDisable val="false" />
+         <DisabledAlpha val="64" />
+         <RenderPriority val="510" />
+      </Frame>
+      <Frame type="Image" name="ArrowImage" template="StandardUADTemplates/StandardPulldownArrow">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-25" />
+         <Height val="19" />
+         <Width val="25" />
+         <DesaturateOnDisable val="false" />
+         <DisabledAlpha val="64" />
+         <RenderPriority val="510" />
+      </Frame>
+      <Frame type="Image" name="ArrowHoverImage" template="StandardUADTemplates/StandardPulldownArrowHover">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-25" />
+         <Height val="19" />
+         <Width val="25" />
+         <DesaturateOnDisable val="false" />
+         <DisabledAlpha val="64" />
+         <RenderPriority val="510" />
+      </Frame>
+      <Frame type="Frame" name="ItemContainer">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-40" />
+      </Frame>
+      <Frame type="ListBox" name="Menu" template="StandardUADTemplates/StandardPulldownMenuTemplate" />
+   </Frame>
+   <!-- CheckBox -->
+   <Frame type="Button" name="StandardCheckBoxButtonTemplate1">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="34" />
+      <Height val="34" />
+      <DisplayType val="ImageLayer" />
+      <Enabled val="{$parent/@Enabled}" />
+      <Frame type="Image" name="NormalImage" template="StandardUADTemplates/StandardButtonNormalImageTemplate1" />
+      <Frame type="Image" name="HoverImage" template="StandardUADTemplates/StandardButtonHoverImageTemplate1" />
+      <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderLargeTemplate1" />
+   </Frame>
+   <Frame type="CheckBox" name="StandardCheckBoxTemplate1">
+      <Width val="34" />
+      <Height val="34" />
+      <Frame type="Button" name="Button" template="StandardUADTemplates/StandardCheckBoxButtonTemplate1" />
+      <Frame type="Image" name="CheckImage">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Texture val="@UI/Glues_Battlenet_PageAssets_CheckMark" />
+         <DesaturateOnDisable val="false" />
+         <RenderPriority val="514" />
+         <Alpha val="0" />
+         <Frame type="Image" name="Left">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-4" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-4" />
+            <Width val="15" />
+            <Height val="5" />
+            <Rotation val="45" />
+            <IgnoreParentAlpha val="True" />
+            <Color val="255,255,255" />
+         </Frame>
+         <Frame type="Image" name="Right">
+            <Anchor side="Bottom" relative="$parent/Left" pos="Max" offset="-5" />
+            <Anchor side="Left" relative="$parent/Left" pos="Max" offset="-8" />
+            <Width val="25" />
+            <Height val="5" />
+            <Rotation val="315" />
+            <IgnoreParentAlpha val="True" />
+            <Color val="255,255,255" />
+         </Frame>
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="UADLargeButtonTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="334" />
+      <Height val="112" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <LayerCount val="4" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Normal" layer="0" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Down" layer="1" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Down" layer="2" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Disabled" layer="3" />
+         <DesaturateOnDisable val="false" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <LayerCount val="4" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Over" layer="0" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Down" layer="1" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Down" layer="2" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Disabled" layer="3" />
+         <DesaturateOnDisable val="false" />
+      </Frame>
+      <Frame type="Label" name="Label">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Color val="255,255,255" />
+         <Style val="ScoreScreenProgressLabel" />
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="DiscordButtonTemplate" template="StandardUADTemplates/UADLargeButtonTemplate">
+      <Width val="175" />
+      <Height val="100" />
+      <Frame type="Image" name="NormalImage">
+         <ColorAdjustMode val="Colorize" />
+         <AdjustmentColor val="115,136,217" />
+         <Texture val="@UI/NovaStory/Global/LargeButton_Disabled" layer="0" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <ColorAdjustMode val="Colorize" />
+         <AdjustmentColor val="115,136,217" />
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="UADAlternateButtonTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="250" />
+      <Height val="58" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <LayerCount val="4" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Normal" layer="0" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Down" layer="1" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Down" layer="2" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Disabled" layer="3" />
+         <TextureType val="EndCap" layer="0" />
+         <TextureType val="EndCap" layer="1" />
+         <TextureType val="EndCap" layer="2" />
+         <TextureType val="EndCap" layer="3" />
+         <DesaturateOnDisable val="false" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <LayerCount val="4" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Over" layer="0" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Down" layer="1" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Down" layer="2" />
+         <Texture val="@UI/NovaStory/Global/GreenMediumButton_Disabled" layer="3" />
+         <TextureType val="EndCap" layer="0" />
+         <TextureType val="EndCap" layer="1" />
+         <TextureType val="EndCap" layer="2" />
+         <TextureType val="EndCap" layer="3" />
+         <DesaturateOnDisable val="false" />
+      </Frame>
+      <Frame type="Label" name="Label">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Color val="255,255,255" />
+         <Style val="BattlenetTopNavSmall" />
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="ListButtonTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="250" />
+      <Height val="64" />
+      <Toggleable val="True" />
+      <CollapseLayout val="True" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\list_button_hover.dds" />
+         <DesaturateOnDisable val="false" />
+         <TextureType val="NineSlice" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\list_button_selected.dds" />
+         <DesaturateOnDisable val="false" />
+         <TextureType val="NineSlice" />
+      </Frame>
+      <Frame type="Label" name="Label">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+         <Color val="255,255,255" />
+         <Style val="GameButtonCharge" />
+      </Frame>
+      <StateGroup name="ToggleState">
+         <DefaultState val="NotToggled" />
+         <State name="NotToggled">
+            <When type="Property" frame="$this" Toggled="False" />
+         </State>
+         <State name="Toggled">
+            <When type="Property" frame="$this" Toggled="True" />
+            <Action type="SetProperty" frame="$this/NormalImage" Texture="Assets\Textures\list_button_selected.dds" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Button" name="MOSAchievementButtonTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="82" />
+      <Height val="80" />
+      <Toggleable val="True" />
+      <CollapseLayout val="True" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\ui_nova_archives_achievementframeunearned.dds" />
+         <TextureType val="Normal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\ui_nova_archives_achievementframe.dds" />
+         <TextureType val="Normal" />
+      </Frame>
+      <Frame type="Image" name="Icon">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <RenderPriority val="500" />
+         <Height val="64" />
+         <Width val="64" />
+      </Frame>
+      <StateGroup name="ToggleState">
+         <State name="NotToggled">
+            <When type="Property" frame="$this" Toggled="False" />
+         </State>
+         <State name="Toggled">
+            <When type="Property" frame="$this" Toggled="True" />
+            <Action type="SetProperty" frame="$this/NormalImage" Texture="Assets\Textures\ui_nova_archives_achievementframe.dds" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Button" name="ScoreScreenIconTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="82" />
+      <Height val="80" />
+      <Toggleable val="True" />
+      <CollapseLayout val="True" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\ui_nova_archives_achievementframe.dds" />
+         <TextureType val="Normal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Textures\ui_nova_archives_achievementframe.dds" />
+         <TextureType val="Normal" />
+      </Frame>
+      <Frame type="Image" name="Icon">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <RenderPriority val="500" />
+         <Height val="64" />
+         <Width val="64" />
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="PageButtonTemplate">
+      <DisplayType val="ImageLayer" />
+      <Width val="55" />
+      <Height val="72" />
+      <Toggleable val="False" />
+      <CollapseLayout val="False" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Accessory Textures\page_arrow_normal.dds" />
+         <DesaturateOnDisable val="True" />
+         <TextureType val="Normal" />
+         <Rotation val="90" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent" />
+         <StateCount val="1" />
+         <Texture val="Assets\Accessory Textures\page_arrow_highlight.dds" />
+         <DesaturateOnDisable val="True" />
+         <TextureType val="Normal" />
+         <Rotation val="90" />
+         <Alpha val="175" />
+         <Animation name="ClickAnim">
+            <Event event="OnClick" action="Reset,Play" frame="$parent" />
+            <Controller type="Texture" end="Pause">
+               <Key type="Image" time="0" image="Assets\Accessory Textures\page_arrow_highlight.dds" />
+               <Key type="Image" time="0.1" image="Assets\Accessory Textures\page_arrow_normal.dds" />
+               <Key type="Image" time="0.2" image="Assets\Accessory Textures\page_arrow_highlight.dds" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <Animation name="FadeIn">
+         <Event event="OnShown" action="Reset,Play" />
+         <Controller name="FadeIn" type="Fade" end="Pause">
+            <Key type="Curve" time="0.0" value="0" in="Auto" />
+            <Key type="Curve" time="0.15" value="0" in="Auto" />
+            <Key type="Curve" time="0.35" value="255" out="Auto" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <!-- Scroll Bar -->
+   <Frame type="Image" name="StandardUADScrollBarBackgroundImage">
+      <Texture val="@UI/NovaStory/Global/ScrollBar_Bg" />
+      <TextureType val="Nineslice" />
+      <Alpha val="150" />
+      <Tiled val="True" />
+      <DescFlags val="Internal" />
+   </Frame>
+   <Frame type="Button" name="StandardUADScrollBarButtonTemplate">
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <DescFlags val="Internal" />
+      <Frame type="Image" name="NormalImage">
+         <Texture val="@UI/NovaStory/Global/ScrollBar_Button_Normal" />
+         <TextureType val="Nineslice" />
+         <Tiled val="true" />
+         <DescFlags val="Internal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Texture val="@UI/NovaStory/Global/ScrollBar_Button_Over" />
+         <TextureType val="Nineslice" />
+         <Tiled val="true" />
+         <DescFlags val="Internal" />
+      </Frame>
+   </Frame>
+   <Frame type="ScrollBar" name="StandardUADScrollBarTemplate">
+      <Image val="$root/StandardUADTemplates/StandardUADScrollBarBackgroundImage" />
+      <Button val="$root/StandardUADTemplates/StandardUADScrollBarButtonTemplate" />
+      <Orientation val="Vertical" />
+      <Width val="32" />
+      <StepValue val="25" />
+      <Continuous val="True" />
+      <IncrementSound val="@UI_ScrollButtonSelect" />
+      <DescFlags val="Internal" />
+   </Frame>
+   <Frame type="ScrollBar" name="MissionScrollBarTemplate">
+      <Image val="$root/StandardTemplates/StandardScrollBarBackgroundImage"/>
+      <Button val="$root/StandardTemplates/StandardScrollBarButtonTemplate"/>
+      <Orientation val="Vertical"/>
+      <Width val="24"/>
+      <IncrementSound val="@UI_ScrollButtonSelect"/>
+      <Continuous val="True"/>
+   </Frame>
+   <!-- Pulldown + -->
+    <Frame type="Image" name="NovaPulldownBackground">
+        <Texture val="@UI/NovaStory/Global/DropdownButton_Normal"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+        <StateCount val="2"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownBackgroundHover">
+        <Texture val="@UI/NovaStory/Global/DropdownButton_Over"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+        <StateCount val="2"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownArrow">
+        <Texture val="@UI/NovaStory/Global/DropdownArrow_Up"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+        <StateCount val="2"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownArrowHover">
+        <Texture val="@UI/NovaStory/Global/DropdownArrow_Over"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+        <StateCount val="2"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownMenuBackground">
+        <Texture val="@UI/NovaStory/Global/DropdownMenuBg"/>
+        <TextureType val="Nineslice"/>
+        <Tiled val="true"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownMenuSelected">
+        <Texture val="@UI/NovaStory/Global/DropdownButton_MenuItem"/>
+        <TextureType val="Nineslice"/>
+        <Tiled val="true"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="Image" name="NovaPulldownMenuHover">
+        <Texture val="@UI/NovaStory/Global/DropdownButton_MenuItem"/>
+        <TextureType val="Nineslice"/>
+        <Alpha val="175"/>
+        <Tiled val="true"/>
+        <DescFlags val="Internal"/>
+    </Frame>
+    <Frame type="TextListBoxItem" name="NovaPulldownListItem">
+        <Frame type="Label" name="ItemLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10"/>
+            <Style val="GameButtonCharge"/>
+        </Frame>
+    </Frame>
+    <Frame type="ListBox" name="NovaPulldownMenuTemplate">
+        <ItemHeight val="28"/>
+        <ItemGap val="1"/>
+        <Insets top="10" left="10" bottom="12" right="10"/>
+        <HighlightInsets top="0" left="0" bottom="0" right="0"/>
+        <Style val="GameButtonCharge"/>
+        <BackgroundImage val="PulldownMenuBackground"/>
+        <SelectedImage val="PulldownMenuSelected"/>
+        <HoverImage val="PulldownMenuHover"/>
+        <ScrollBar val="PulldownMenuScrollBar"/>
+        <HighlightOnHover val="true"/>
+        <ItemClickSound val="@UI_DropdownListSelect"/>
+        <ItemDesc val="StandardUADTemplates/NovaPulldownListItem"/>
+        <DescFlags val="Internal"/>
+        <Frame type="Image" name="PulldownMenuBackground" template="StandardUADTemplates/NovaPulldownMenuBackground"/>
+        <Frame type="Image" name="PulldownMenuSelected" template="StandardUADTemplates/NovaPulldownMenuSelected"/>
+        <Frame type="Image" name="PulldownMenuHover" template="StandardUADTemplates/NovaPulldownMenuHover"/>
+        <Frame type="ScrollBar" name="PulldownMenuScrollBar" >
+            <Alpha val="0"/>
+        </Frame>
+    </Frame>
+   <Frame type="Pulldown" name="UADPulldownTemplate">
+        <NormalImage val="PulldownBackground"/>
+        <HoverImage val="PulldownBackgroundHover"/>
+        <ArrowImage val="PulldownArrow"/>
+        <ArrowHoverImage val="PulldownArrowHover"/>
+        <ItemContainer val="ItemContainer"/>
+        <Menu val="PulldownMenu"/>
+        <Style val="GameButtonCharge"/>
+        <HighlightOnHover val="true"/>
+        <Height val="57"/>
+        <Width val="284"/>
+        <MenuShownSound val="@UI_DropdownSelect"/>
+        <MenuHiddenSound val="@UI_DropdownClose"/>
+        <Frame type="Image" name="PulldownBackground" template="StandardUADTemplates/NovaPulldownBackground">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <DesaturateOnDisable val="false"/>
+            <DisabledAlpha val="64"/>
+            <RenderPriority val="510"/>
+        </Frame>
+        <Frame type="Image" name="PulldownBackgroundHover" template="StandardUADTemplates/NovaPulldownBackgroundHover">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <DesaturateOnDisable val="false"/>
+            <DisabledAlpha val="64"/>
+            <RenderPriority val="510"/>
+        </Frame>
+        <Frame type="Image" name="PulldownArrow" template="StandardUADTemplates/NovaPulldownArrow">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-12"/>
+            <Height val="26"/>
+            <Width val="32"/>
+            <DesaturateOnDisable val="false"/>
+            <DisabledAlpha val="64"/>
+            <RenderPriority val="510"/>
+        </Frame>
+        <Frame type="Image" name="PulldownArrowHover" template="StandardUADTemplates/NovaPulldownArrowHover">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-12"/>
+            <Height val="26"/>
+            <Width val="32"/>
+            <DesaturateOnDisable val="false"/>
+            <DisabledAlpha val="64"/>
+            <RenderPriority val="510"/>
+        </Frame>
+        <Frame type="Frame" name="ItemContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="30"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-40"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+        <Frame type="ListBox" name="PulldownMenu" template="StandardUADTemplates/NovaPulldownMenuTemplate"/>
+   </Frame>
+   <Frame type="Button" name="OptionsButtonTemplate">
+        <Width val="75"/>
+        <Height val="75"/>
+        <DisplayType val="ImageLayer"/>
+        <ClickSound val="@UI_ActionButtonSelect"/>
+        <Toggleable val="False" />
+        <TooltipFrame val="UADStandardTooltip" />
+        <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent" />
+            <RenderPriority val="600" />
+            <TextureType val="Normal" />
+            <LayerCount val="3" />
+            <LayerColor val="##StandardButtonBorder" layer="0" />
+            <LayerColor val="0,255,168" layer="1" />
+            <LayerColor val="0,255,168" layer="2" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="0" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="1" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="2" />
+            <DesaturateOnDisable val="True" />
+        </Frame>
+        <Frame type="Image" name="HoverImage">
+            <Anchor relative="$parent" />
+            <TextureType val="Normal" />
+            <RenderPriority val="601" />
+            <LayerCount val="3" />
+            <LayerColor val="0,255,168" layer="0" />
+            <LayerColor val="0,255,168" layer="1" />
+            <LayerColor val="0,255,168" layer="2" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="0" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="1" />
+            <Texture val="Assets/Textures/btn-border-research.dds" layer="2" />
+            <DesaturateOnDisable val="True" />
+        </Frame>
+        <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Color val="255,255,255" />
+            <Style val="ScoreScreenProgressLabel" />
+         </Frame>
+         <Frame type="Image" name="Icon">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <DesaturateOnDisable val="True" />
+            <Texture val="" />
+         </Frame>
+    </Frame>
+   <Frame type="TextListBoxItem" name="CampaignMissionListItem">
+      <Frame type="Image" name="CheckMark">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Width val="24" />
+         <Height val="24" />
+         <Texture val="Assets/Textures/storm_ui_glues_checkboxmark_hover.dds" layer="0" />
+         <Visible val="False"/>
+         <ColorAdjustMode val="Colorize" />
+         <AdjustmentColor val="0,255,168" />
+         <RenderPriority val="550" />
+      </Frame>
+      <Frame type="Label" name="ItemLabel">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/CheckMark" pos="Max" offset="5" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-8" />
+         <Options val="NoWrapping | Ellipsis" />
+         <Style val="GameButtonCharge"/>
+         <RenderPriority val="545" />
+      </Frame>
+      <Frame type="Image" name="BackgroundFrame">
+         <Anchor relative="$parent" />
+         <Texture val="@@UI/HeroPanelHealthBarBackground" />
+         <TextureType val="Border" />
+         <Alpha val="75" />
+      </Frame>
+      <StateGroup name="Selected">
+         <DefaultState val="NotSelected" />
+         <State name="NotSelected" />
+         <State name="Selected">
+            <When type="AnimationState" frame="$this" SelectedState="Selected" />
+            <Action type="SetProperty" frame="CheckMark" visible="true" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="ListBox" name="MissionListTemplate">
+      <Anchor relative="$parent"/>
+      <PreventSelection val="False"/>
+      <ItemGap val="1"/>
+      <ItemHeight val="29"/>
+      <SaveScrollHeightOnClear val="True"/>
+      <UseScrollBar val="True"/>
+      <Insets top="4" left="10" bottom="5" right="4"/>
+      <ItemDesc val="StandardUADTemplates/CampaignMissionListItem" />
+      <BackgroundImage val="PulldownMenuBackground" />
+      <SelectedImage val="PulldownMenuSelected" />
+      <HoverImage val="PulldownMenuHover" />
+      <ScrollBar val="ScrollBar" />
+      <Frame type="Image" name="PulldownMenuBackground" template="StandardUADTemplates/NovaPulldownMenuBackground" />
+      <Frame type="Image" name="PulldownMenuSelected" template="StandardUADTemplates/NovaPulldownMenuSelected" />
+      <Frame type="Image" name="PulldownMenuHover" template="StandardUADTemplates/NovaPulldownMenuHover" />
+      <Frame type="ScrollBar" name="ScrollBar" template="StandardUADTemplates/MissionScrollBarTemplate" />
+      <HighlightOnHover val="true"/>
+      <DisabledAlpha val="60"/>
+   </Frame>
+   <Frame type="ProgressBar" name="ProgressBarAnimTemplate">
+      <Width val="200" />
+      <Height val="39" />
+      <UseFillContainer val="True" />
+      <TooltipAnchorPosition val="TopCenter" />
+      <Frame type="Frame" name="FillImageContainer">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+         <Frame type="Image" name="FillImage">
+            <Anchor relative="$parent/$parent"/>
+            <Alpha val="200" />
+            <LayerCount val="2"/>
+            <Texture val="Assets\Textures\ui_glues_ladder_score_progressaccentmask.dds" layer="0"/>
+            <AlphaLayer val="True" layer="0"/>
+            <TextureType val="Normal" layer="0"/>
+            <DesaturateOnDisable val="False" />
+            <ColorAdjustMode val="Colorize" layer="1" />
+            <AdjustmentColor val="#LightGreen" layer="1" />
+            <Blur val="True"/>
+            <BlurAmount val="0.25"/> 
+            <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_MasterEffect" layer="1"/>
+            <BlendMode val="Normal" layer="1"/> 
+            <WrapUV val="True" layer="1"/>
+           <!--
+            <TextureCoords top="0.5" left="1.5" bottom="1" right="0.5" layer="1"/> -->
+            <WrapUV val="True" layer="1"/>
+            <Animation name="BarAnim">
+               <Event event="OnShown" action="DirectionForward" frame="$parent"/>
+               <Event event="OnShown" action="Play" frame="$parent"/>
+               <Controller type="LayerUV" layer="1" side="Left" relative="True" sidelock="True" end="Loop" >
+                  <Key type="Curve" time="0" value="1" out="linear"/>
+                  <Key type="Curve" time="30" value="-1" in="linear"/>
+               </Controller>
+            </Animation>
+         </Frame>        
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="BankEditBoxContainerTemplate">
+      <Width val="250" />
+      <Height val="60" />
+      <AcceptsMouse val="False" />
+      <Frame type="EditBox" name="TextBox" template="StandardTemplates/StandardEditBoxTemplate">
+         <Anchor relative="$parent" />
+         <Insets top="0" left="15" bottom="0" right="0"/>
+         <CaretColor val="0,255,0" />
+         <AcceptsMouse val="False" />
+         <Text val="" />
+         <Frame type="Image" name="Image">
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" layer="0"/>
+            <TextureType val="Border" layer="0"/>
+            <StateCount val="1" layer="0"/>
+            <Tiled val="False" layer="0"/>
+            <Alpha val="175" />
+            <Color val="0,255,168"/>
+         </Frame>
+         <Frame type="Frame" name="LabelContainerFrame">
+            <Frame type="Label" name="Label">
+               <Style val="GameButtonCharge"/>
+            </Frame>
+         </Frame>
+      </Frame>
+   </Frame>
+   <Frame type="Button" name="LinkButtonTemplate">
+		<DisplayType val="ImageLayer"/>
+		<HoverSound val="@UI_HoverTick"/>
+		<ClickSound val="@UI_ActionButtonSelect"/>
+		<Width val="84"/>
+		<Height val="68"/>
+		<TooltipAnchorPosition val="TopCenter"/>
+		<Frame type="Image" name="NormalImage">
+			<Anchor relative="$parent"/>
+			<StateCount val="1"/>
+			<LayerCount val="4"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Normal" layer="0"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Down" layer="1"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Down" layer="2"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Disabled" layer="3"/>
+			<Tiled val="false"/>
+			<DesaturateOnDisable val="false"/>
+         <ColorAdjustMode val="Colorize" layer="0" />
+         <ColorAdjustMode val="Colorize" layer="1" />
+         <ColorAdjustMode val="Colorize" layer="2" />
+         <AdjustmentColor val="0,255,192" layer="0" />
+         <AdjustmentColor val="0,255,192" layer="1" />
+         <AdjustmentColor val="0,255,192" layer="2" />
+		</Frame>
+		<Frame type="Image" name="HoverImage">
+			<Anchor relative="$parent"/>
+			<StateCount val="1"/>
+			<LayerCount val="4"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Hover" layer="0"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Down" layer="1"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Down" layer="2"/>
+			<Texture val="@UI/Glues_Battlenet_LargeIconButton_Disabled" layer="3"/>
+			<Tiled val="false"/>
+			<DesaturateOnDisable val="false"/>
+         <ColorAdjustMode val="Colorize" layer="0" />
+         <ColorAdjustMode val="Colorize" layer="1" />
+         <ColorAdjustMode val="Colorize" layer="2" />
+         <AdjustmentColor val="0,255,192" layer="0" />
+         <AdjustmentColor val="0,255,192" layer="1" />
+         <AdjustmentColor val="0,255,192" layer="2" />
+		</Frame>
+		<Frame type="Frame" name="HitTestFrame">
+			<Anchor relative="$parent"/>
+		</Frame>
+		<Frame type="Image" name="Icon">
+			<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+			<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+		</Frame>
+		<Frame type="Frame" name="FlashContainer">
+			<Anchor side="Top" relative="$parent" pos="Min" offset="11"/>
+			<Anchor side="Bottom" relative="$parent" pos="Max" offset="-11"/>
+			<Anchor side="Left" relative="$parent" pos="Min" offset="11"/>
+			<Anchor side="Right" relative="$parent" pos="Max" offset="-11"/>
+			<Frame type="Image" name="Flash">
+				<Anchor side="Bottom" relative="$parent" pos="Min" offset="-20"/>
+				<Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+				<Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+				<Texture val="Assets/Textures/buttonswipesmall.dds"/>
+				<RenderPriority val="530"/>
+				<Alpha val="0"/>
+				<BlendMode val="Add"/>
+				<Animation name="Wipe">
+					<Event event="OnMouseEnter" action="DirectionForward,Play" frame="$parent/$parent"/>
+               <Event event="OnMouseExit" action="DirectionReverse,Play" frame="$parent/$parent"/>
+					<Controller type="Anchor" end="Pause" side="Bottom" relative="True">
+						<Key type="Curve" time="0" value="0" out="Fast"/>
+						<Key type="Curve" time="1" value="320" in="Fast"/>
+					</Controller>
+					<Controller type="Fade" end="Pause">
+						<Key type="Curve" time="0" value="0" out="Fast"/>
+						<Key type="Curve" time="0.3" value="100" out="Fast"/>
+						<Key type="Curve" time="0.55" value="240" out="Fast"/>
+						<Key type="Curve" time="1" value="0" out="Fast"/>
+					</Controller>
+				</Animation>
+			</Frame>
+		</Frame>
+	</Frame>
+   <Frame type="Frame" name="ModifierIconTemplate">
+      <Width val="64" />
+      <Height val="64" />
+      <TooltipFrame val="UADStandardTooltip" />
+      <TooltipAnchorPosition val="BottomCenter" />
+      <AcceptsMouse val="True"/>
+      <CollapseLayout val="True"/>
+      <Frame type="Image" name="IconImage">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Width val="60"/>
+         <Height val="60"/>
+      </Frame>
+      <Frame type="Image" name="BorderOuter">
+         <Anchor relative="$parent"/>
+         <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer"/>
+         <TextureType val="NineSlice"/>
+         <Color val="0,0,0"/>
+      </Frame>
+      <Frame type="Image" name="BorderInner">
+         <Anchor relative="$parent"/>
+         <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner"/>
+         <TextureType val="NineSlice"/>
+         <Color val="0,255,168"/>
+      </Frame>
+      <Animation name="FadeIn">
+         <Event event="OnShown" action="Reset,Play" />
+         <Controller name="FadeIn" type="Fade" end="Pause">
+            <Key type="Curve" time="0.0" value="0" in="Auto" />
+            <Key type="Curve" time="0.3" value="0" in="Auto" />
+            <Key type="Curve" time="0.45" value="255" out="Auto" />
+         </Controller>
+         <Controller type="Anchor" end="Pause" side="Left" relative="true">
+            <Key type="Curve" time="0" value="-40" out="Linear" />
+            <Key type="Curve" time="0.3" value="-40" out="Linear" />
+            <Key type="Curve" time="0.45" value="0" out="Linear" />
+         </Controller>
+      </Animation>
+      <StateGroup name="VisibleState">
+         <DefaultState val="Visible" />
+         <State name="Hidden">
+            <When type="Property" frame="$this/IconImage" Texture="" />
+            <Action type="SetProperty" frame="$this" Visible="False" />
+         </State>
+         <State name="Visible" />
+      </StateGroup>
+   </Frame>
+</Desc>

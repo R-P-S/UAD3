@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <!-- Clan Template -->
+   <StateGroup name="PlayersClanTemplate">
+      <DefaultState val="NoClan" />
+      <State name="NoClan" />
+      <State name="D4Skin">
+         <When type="Property" frame="$this/Label" Text="&lt;D4Skin&gt;" />
+      </State>
+      <State name="SP3CTR">
+         <When type="Property" frame="$this/Label" Text="&lt;SP3CTR&gt;" />
+      </State>
+      <State name="IAmMe">
+         <When type="Property" frame="$this/Label" Text="&lt;IAmMe&gt;" />
+      </State>
+      <State name="AUC">
+         <When type="Property" frame="$this/Label" Text="&lt;AUC&gt;" />
+      </State>
+   </StateGroup>
+   <!-- Data Ref Clan Template -->
+   <Frame type="DataRefFrame" name="RefClanTemplate">
+      <Anchor relative="$parent" />
+      <PlayerId val="{$parent/@PlayerId}" />
+      <Argument name="GameValue" val="PlayerClanTag" />
+      <Frame type="CountdownLabel" name="Label">
+         <Anchor relative="$parent" />
+         <Text val="{$parent/@StringValue}" />
+      </Frame>
+      <StateGroup name="PlayersClan" template="PlayerScoreTemplates/PlayersClanTemplate" />
+   </Frame>
+   <!-- Player Score Links
+	================================================================================= -->
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="DataFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-25" />
+         <Width val="630" />
+         <Height val="600" />
+         <!-- Must Stay Visible Or Scores Break -->
+         <Visible val="True" />
+         <Alpha val="0" />
+         <Handle val="DataFrame" />
+         <Frame type="PlayerScoreValueFrame" name="Player1Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="1" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU1" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player2Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="2" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU2" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player3Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="3" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU3" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player4Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="4" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU4" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player5Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="5" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU5" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player6Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="6" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU6" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player7Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="7" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU7" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player8Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="8" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU8" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player9Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="9" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU9" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player10Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="10" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU10" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player11Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="11" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU11" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="PlayerScoreValueFrame" name="Player12Stat">
+            <Anchor relative="$parent" />
+            <PlayerId val="12" />
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="UnitsKilledCount" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatKills12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame1">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="TotalDamageDone" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDD12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame2">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeDamageTakenTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatDT12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame3">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LifeHealedTotal" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLH12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame4">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="LearnSkillsCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatLS12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame5">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="SkillUpgradesCurrent" />
+               <AddCommas val="False" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatSU12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame6">
+               <Anchor relative="$parent" />
+               <ScoreValueLink val="MineralsSpent" />
+               <AddCommas val="True" />
+               <MaxFractionDigits val="0" />
+               <HideZero val="False" />
+               <Handle val="StatRU12" />
+               <Frame type="Label" name="Label">
+                  <Anchor relative="$parent" />
+               </Frame>
+            </Frame>
+            <Frame type="DataRefFrame" name="RefClan" template="PlayerScoreTemplates/RefClanTemplate" />
+         </Frame>
+         <Frame type="Label" name="PlayerID">
+            <Anchor relative="$parent" />
+            <Alpha val="0" />
+            <Text val="" />
+            <Handle val="PlayerID" />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="SpeedFast" val="1.25" />
+   <Constant name="SpeedSlow" val="0.95" />
+   <Animation name="PopAnimationBase">
+      <Controller type="Dimension" dimension="Height" percentage="true" end="Pause">
+         <Key type="Curve" time="0.000" value="2" />
+         <Key type="Curve" time="0.100" value="2" />
+         <Key type="Curve" time="0.500" value="120" inout="fast" />
+         <Key type="Curve" time="0.650" value="90" inout="slow" />
+         <Key type="Curve" time="1.000" value="90" inout="slow" />
+         <Key type="Curve" time="1.250" value="2" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" percentage="true" end="Pause">
+         <Key type="Curve" time="0.000" value="2" />
+         <Key type="Curve" time="0.100" value="2" />
+         <Key type="Curve" time="0.500" value="120" inout="fast" />
+         <Key type="Curve" time="0.650" value="90" inout="slow" />
+         <Key type="Curve" time="1.000" value="90" inout="slow" />
+         <Key type="Curve" time="1.250" value="2" />
+      </Controller>
+      <Controller type="Fade" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.200" value="255" />
+         <Key type="Curve" time="1.000" value="255" />
+         <Key type="Curve" time="1.250" value="0" />
+      </Controller>
+   </Animation>
+   <Animation name="PopAnimation" template="PiratedFloatingTextTemplates/PopAnimationBase">
+      <Event event="EventAnimate" action="Play" frame="$parent/Text" />
+      <!-- <Event event="EventAnimateSlow" action="Play" frame="$parent/Text"/> -->
+   </Animation>
+   <Animation name="PopAnimationFast" template="PiratedFloatingTextTemplates/PopAnimationBase" speed="#SpeedFast">
+      <Event event="EventAnimateFast" action="Play" frame="$parent/Text" />
+   </Animation>
+   <Animation name="PopAnimationSlow" template="PiratedFloatingTextTemplates/PopAnimationBase" speed="#SpeedSlow">
+      <Event event="EventAnimateSlow" action="Play" frame="$parent/Text" />
+   </Animation>
+   <Frame type="Frame" name="Translator">
+      <Anchor relative="$parent" />
+      <UseAlternateTime val="true" />
+      <Animation name="TranslateHorizontal">
+         <Event event="EventAnimate" frame="$parent/Text" action="Play" />
+         <Event event="EventAnimateFast" frame="$parent/Text" action="Play" />
+         <Event event="EventAnimateSlow" frame="$parent/Text" action="Play" />
+      </Animation>
+      <Animation name="TranslateVertical">
+         <Event event="EventAnimate" frame="$parent/Text" action="Play" />
+      </Animation>
+      <Animation name="TranslateVerticalFast" speed="#SpeedFast">
+         <Event event="EventAnimateFast" frame="$parent/Text" action="Play" />
+      </Animation>
+      <Animation name="TranslateVerticalSlow" speed="#SpeedSlow">
+         <Event event="EventAnimateSlow" frame="$parent/Text" action="Play" />
+      </Animation>
+   </Frame>
+   <!-- HORIZONTAL POSITIVE TRANSLATIONS -->
+   <Animation name="AnimationH00">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="43" />
+         <Key type="Curve" time="0.800" value="50" />
+         <Key type="Curve" time="0.950" value="55" />
+         <Key type="Curve" time="2.000" value="70" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH01">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="48" />
+         <Key type="Curve" time="0.800" value="55" />
+         <Key type="Curve" time="0.950" value="60" />
+         <Key type="Curve" time="2.000" value="75" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH02">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="53" />
+         <Key type="Curve" time="0.800" value="60" />
+         <Key type="Curve" time="0.950" value="65" />
+         <Key type="Curve" time="2.000" value="80" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH03">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="58" />
+         <Key type="Curve" time="0.800" value="65" />
+         <Key type="Curve" time="0.950" value="70" />
+         <Key type="Curve" time="2.000" value="85" />
+      </Controller>
+   </Animation>
+   <!-- HORIZONTAL NEGATIVE TRANSLATIONS -->
+   <Animation name="AnimationH04">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="-43" />
+         <Key type="Curve" time="0.800" value="-50" />
+         <Key type="Curve" time="0.950" value="-55" />
+         <Key type="Curve" time="2.000" value="-70" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH05">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="-48" />
+         <Key type="Curve" time="0.800" value="-55" />
+         <Key type="Curve" time="0.950" value="-60" />
+         <Key type="Curve" time="2.000" value="-75" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH06">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="-53" />
+         <Key type="Curve" time="0.800" value="-60" />
+         <Key type="Curve" time="0.950" value="-65" />
+         <Key type="Curve" time="2.000" value="-80" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH07">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.650" value="-58" />
+         <Key type="Curve" time="0.800" value="-65" />
+         <Key type="Curve" time="0.950" value="-70" />
+         <Key type="Curve" time="2.000" value="-85" />
+      </Controller>
+   </Animation>
+   <!-- HORIZONTAL NETURAL TRANSLATIONS -->
+   <Animation name="AnimationH08">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.800" value="-15" />
+         <Key type="Curve" time="0.950" value="-20" />
+         <Key type="Curve" time="2.000" value="-23" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH09">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.800" value="15" />
+         <Key type="Curve" time="0.950" value="20" />
+         <Key type="Curve" time="2.000" value="23" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH10">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.800" value="-20" />
+         <Key type="Curve" time="0.950" value="-25" />
+         <Key type="Curve" time="2.000" value="-28" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationH11">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.800" value="20" />
+         <Key type="Curve" time="0.950" value="25" />
+         <Key type="Curve" time="2.000" value="28" />
+      </Controller>
+   </Animation>
+   <!-- HORIZONTAL NULL TRANSLATION -->
+   <Animation name="AnimationH12">
+      <Controller type="Anchor" side="Left" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+      </Controller>
+   </Animation>
+   <!-- VERTICAL TRANSLATIONS -->
+   <Animation name="AnimationV00">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="1.000" value="-80" />
+         <!--		<Key type="Curve" time="0.400" value="-34"/>
+			<Key type="Curve" time="0.500" value="-40"/>
+			<Key type="Curve" time="0.750" value="-34"/>
+			<Key type="Curve" time="2.000" value="110"/> -->
+      </Controller>
+   </Animation>
+   <Animation name="AnimationV01">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-44" />
+         <Key type="Curve" time="0.500" value="-50" />
+         <Key type="Curve" time="0.750" value="-44" />
+         <Key type="Curve" time="2.000" value="120" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationV02">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-54" />
+         <Key type="Curve" time="0.500" value="-60" />
+         <Key type="Curve" time="0.750" value="-54" />
+         <Key type="Curve" time="2.000" value="130" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationV03">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-64" />
+         <Key type="Curve" time="0.500" value="-70" />
+         <Key type="Curve" time="0.750" value="-64" />
+         <Key type="Curve" time="2.000" value="140" />
+      </Controller>
+   </Animation>
+   <!-- VERTICAL STATUS -->
+   <Animation name="AnimationV04">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.425" value="-35" />
+         <Key type="Curve" time="1.500" value="-35" />
+         <Key type="Curve" time="2.250" value="-28" />
+      </Controller>
+   </Animation>
+   <!-- VERTICAL TRANSLATIONS SLOW -->
+   <Animation name="AnimationSlowV00">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-34" />
+         <Key type="Curve" time="0.500" value="-40" />
+         <Key type="Curve" time="0.650" value="-40" />
+         <Key type="Curve" time="0.850" value="-34" />
+         <Key type="Curve" time="2.250" value="110" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationSlowV01">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-44" />
+         <Key type="Curve" time="0.500" value="-50" />
+         <Key type="Curve" time="0.650" value="-50" />
+         <Key type="Curve" time="0.850" value="-44" />
+         <Key type="Curve" time="2.250" value="120" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationSlowV02">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-54" />
+         <Key type="Curve" time="0.500" value="-60" />
+         <Key type="Curve" time="0.650" value="-60" />
+         <Key type="Curve" time="0.850" value="-54" />
+         <Key type="Curve" time="2.250" value="130" />
+      </Controller>
+   </Animation>
+   <Animation name="AnimationSlowV03">
+      <Controller type="Anchor" side="Top" relative="true" frame="$parent/TextAnchor" end="Pause">
+         <Key type="Curve" time="0.000" value="0" />
+         <Key type="Curve" time="0.400" value="-64" />
+         <Key type="Curve" time="0.500" value="-70" />
+         <Key type="Curve" time="0.650" value="-70" />
+         <Key type="Curve" time="0.850" value="-64" />
+         <Key type="Curve" time="2.250" value="140" />
+      </Controller>
+   </Animation>
+   <!-- HORIZONTAL POSITIVE TRANSLATIONS -->
+   <Frame type="Frame" name="H00" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH00" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH00" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH00" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H01" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH01" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH01" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH01" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H02" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH02" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH02" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH02" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H03" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH03" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH03" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH03" speed="#SpeedSlow" />
+   </Frame>
+   <!-- HORIZONTAL NEGATIVE TRANSLATIONS -->
+   <Frame type="Frame" name="H04" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH04" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH04" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH04" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H05" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH05" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH05" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH05" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H06" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH06" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH06" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH06" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H07" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH07" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH07" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH07" speed="#SpeedSlow" />
+   </Frame>
+   <!-- HORIZONTAL NETURAL TRANSLATIONS -->
+   <Frame type="Frame" name="H08" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH08" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH08" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH08" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H09" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH09" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH09" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH09" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H10" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH10" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH10" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH10" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="H11" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH11" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH11" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH11" speed="#SpeedSlow" />
+   </Frame>
+   <!-- HORIZONTAL NULL TRANSLATION -->
+   <Frame type="Frame" name="H12" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateHorizontal" template="PiratedFloatingTextTemplates/AnimationH12" />
+      <Animation name="TranslateHorizontalFast" template="PiratedFloatingTextTemplates/AnimationH12" speed="#SpeedFast" />
+      <Animation name="TranslateHorizontalSlow" template="PiratedFloatingTextTemplates/AnimationH12" speed="#SpeedSlow" />
+   </Frame>
+   <!-- VERTICAL TRANSLATIONS -->
+   <Frame type="Frame" name="V00" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateVertical" template="PiratedFloatingTextTemplates/AnimationV00" />
+      <Animation name="TranslateVerticalFast" template="PiratedFloatingTextTemplates/AnimationV00" speed="#SpeedFast" />
+      <Animation name="TranslateVerticalSlow" template="PiratedFloatingTextTemplates/AnimationSlowV00" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="V01" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateVertical" template="PiratedFloatingTextTemplates/AnimationV01" />
+      <Animation name="TranslateVerticalFast" template="PiratedFloatingTextTemplates/AnimationV01" speed="#SpeedFast" />
+      <Animation name="TranslateVerticalSlow" template="PiratedFloatingTextTemplates/AnimationSlowV01" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="V02" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateVertical" template="PiratedFloatingTextTemplates/AnimationV02" />
+      <Animation name="TranslateVerticalFast" template="PiratedFloatingTextTemplates/AnimationV02" speed="#SpeedFast" />
+      <Animation name="TranslateVerticalSlow" template="PiratedFloatingTextTemplates/AnimationSlowV02" speed="#SpeedSlow" />
+   </Frame>
+   <Frame type="Frame" name="V03" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateVertical" template="PiratedFloatingTextTemplates/AnimationV03" />
+      <Animation name="TranslateVerticalFast" template="PiratedFloatingTextTemplates/AnimationV03" speed="#SpeedFast" />
+      <Animation name="TranslateVerticalSlow" template="PiratedFloatingTextTemplates/AnimationSlowV03" speed="#SpeedSlow" />
+   </Frame>
+   <!-- VERTICAL STATUS -->
+   <Frame type="Frame" name="V04" template="PiratedFloatingTextTemplates/Translator">
+      <Animation name="TranslateVertical" template="PiratedFloatingTextTemplates/AnimationV04" />
+      <Animation name="TranslateVerticalFast" template="PiratedFloatingTextTemplates/AnimationV04" speed="#SpeedFast" />
+      <Animation name="TranslateVerticalSlow" template="PiratedFloatingTextTemplates/AnimationV04" speed="#SpeedSlow" />
+   </Frame>
+</Desc>

@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Tooltip" name="UADTooltip" template="StandardTemplates/StandardGameTooltip">
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets/Textures/UAD_Tooltip_Background.dds"/>
+            <TextureType val="Border"/>
+            <Tiled val="False"/>
+        </Frame>
+        <Frame type="Image" name="Tint">
+            <Anchor relative="$parent/BackgroundImage"/>
+            <Color val="0,0,0" />
+            <Alpha val="110" />
+            <RenderPriority val="500" />
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+    </Frame>
+    <Frame type="Tooltip" name="InventoryUADTooltip" template="StandardTemplates/StandardGameTooltip">
+        <FadeTime val="350" />
+        <Animation name="SlideIn">
+            <Event event="Slide" action="Reset,Play" frame="$this" />
+            <Controller type="Anchor" end="Pause" side="Right" relative="false">
+                <Key type="CurveReal" time="0"  value="350" />
+                <Key type="CurveReal" time="0.15"  value="0" />  
+            </Controller>
+            <Controller type="Fade" end="Pause">
+                <Key type="Curve" time="0" value="0" out="Fast" />
+                <Key type="Curve" time="0.25" value="255" in="Slow" />
+            </Controller>
+        </Animation>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" /> 
+    </Frame>
+    <Frame type="StandardTooltip" name="UADStandardTooltip">
+        <MaxWidth val="480"/>
+        <Insets top="15" left="15" bottom="15" right="15"/>
+        <Frame type="Label" name="Label">
+            <Style val="@@@StandardTooltip"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Width val="450"/>
+            <RenderPriority val="615" />
+        </Frame>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets/Textures/UAD_Tooltip_Background.dds"/>
+            <TextureType val="Border"/>
+            <Tiled val="False"/>
+        </Frame>
+        <Frame type="Image" name="Tint">
+            <Anchor relative="$parent/BackgroundImage"/>
+            <Color val="0,0,0" />
+            <Alpha val="135" />
+            <RenderPriority val="500" />
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+        <StateGroup name="TooltipState">
+            <DefaultState val="DefaultSetting"/>
+            <State name="HideTooltip">
+                <When type="Property" frame="$this/Label" Text="" />
+                <Action type="SetProperty" frame="$this" MaxWidth="0" />
+            </State>
+            <State name="DefaultSetting" />
+        </StateGroup>
+    </Frame>
+    <Frame type="StandardNameTooltip" name="UADStandardNameTooltipTemplate">
+        <MaxWidth val="480"/>
+        <Insets top="15" left="15" bottom="15" right="15"/>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets/Textures/UAD_Tooltip_Background.dds"/>
+            <TextureType val="Border"/>
+            <Tiled val="False"/>
+        </Frame>
+        <Frame type="Label" name="NameLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Width val="450"/>
+            <CollapseLayout val="true"/>
+            <Style val="@@@StandardTooltipHeader"/>
+            <Options val="NoWrapping | ScaleToPreventTruncation"/>
+        </Frame>
+        <Frame type="Label" name="DescriptionLabel">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="8"/>
+            <Anchor side="Left" relative="$parent/NameLabel" pos="Min" offset="0"/>
+            <Width val="450"/>
+            <CollapseLayout val="true"/>
+            <Style val="@@@StandardTooltip"/>
+        </Frame>
+        <Frame type="Frame" name="BottomFrame">
+            <Anchor side="Top" relative="$parent/DescriptionLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/NameLabel" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/NameLabel" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="AnchorFrame">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/BottomFrame" pos="Max" offset="25"/>
+            <Anchor side="Left" relative="$parent/NameLabel" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/NameLabel" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Image" name="Tint">
+            <Anchor relative="$parent/BackgroundImage"/>
+            <Color val="0,0,0" />
+            <Alpha val="135" />
+            <RenderPriority val="500" />
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+    </Frame>
+    <Frame type="CommandTooltip" name="CommandTooltipTemplate" template="TooltipFrameTemplates/UADTooltip" file="CommandButton" />
+    <Frame type="Tooltip" name="UADStandardGameTooltip">
+        <Insets top="15" left="15" bottom="15" right="15"/>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets/Textures/UAD_Tooltip_Background.dds"/>
+            <TextureType val="Border"/>
+            <Tiled val="False"/>
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+    </Frame>
+    <Frame type="MinimapPanelTooltip" name="UADMinimapPanelTooltipTemplate" template="TooltipFrameTemplates/UADStandardGameTooltip">
+        <MaxWidth val="350"/>
+        <Frame type="Label" name="TipLabel">
+            <Style val="@@@StandardTooltip"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Width val="320"/>
+        </Frame>
+    </Frame>
+    <Frame type="SystemInfoTooltip" name="SystemInfoTooltipTemplate" file="SystemInfoPanel">
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets/Textures/UAD_Tooltip_Background.dds"/>
+            <TextureType val="Border"/>
+            <Tiled val="False"/>
+        </Frame>
+        <Frame type="SystemInfoPanel" name="SystemInfoPanel" template="SystemInfoPanel/SystemInfoPanelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$this/BottomAnchorFrame" pos="Max" offset="0"/>
+            <Width val="350"/>
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+    </Frame>
+    <Frame type="CommandTooltip" name="InventoryTooltipTemplate" template="TooltipFrameTemplates/InventoryUADTooltip">
+        <BatchText val="True"/>
+        <MaxWidth val="1200"/>
+        <MinWidth val="450"/>
+        <Width val="450"/>
+        <Height val="450"/>
+        <Frame type="Image" name="TipImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <TextureType val="Normal"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="NameLabel">
+            <Anchor side="Top" relative="$parent/TipImage" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Style val="@@@StandardTooltipHeader"/>
+            <Options val="Ellipsis | NoWrapping"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="HotkeyLabel">
+            <Anchor side="Top" relative="$parent/TipImage" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/NameLabel" pos="Max" offset="0"/>
+            <Style val="@@@StandardTooltipHeader"/>
+            <Options val="Ellipsis | NoWrapping"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Frame" name="ResourceAnchorFrame">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Height val="32"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Image" name="ResourceIcon0" template="CommandButton/ResourceIconTemplate">
+            <Anchor side="Top" relative="$parent/ResourceAnchorFrame" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceAnchorFrame" pos="Min" offset="0"/>
+        </Frame>
+        <Frame type="Label" name="ResourceLabel0" template="CommandButton/ResourceLabelTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon0" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ResourceIcon0" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceIcon0" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="ResourceIcon1" template="CommandButton/ResourceIconTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon0" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceLabel0" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Label" name="ResourceLabel1" template="CommandButton/ResourceLabelTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon1" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ResourceIcon1" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceIcon1" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="ResourceIcon2" template="CommandButton/ResourceIconTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceLabel1" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Label" name="ResourceLabel2" template="CommandButton/ResourceLabelTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon2" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ResourceIcon2" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceIcon2" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="ResourceIcon3" template="CommandButton/ResourceIconTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon2" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceLabel2" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Label" name="ResourceLabel3" template="CommandButton/ResourceLabelTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon3" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ResourceIcon3" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceIcon3" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="SupplyIcon" template="CommandButton/ResourceIconTemplate">
+            <Anchor side="Top" relative="$parent/ResourceIcon3" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/ResourceLabel3" pos="Max" offset="5"/>
+            <Texture val="@@UI/ResourceFrameSupplyIcon"/>
+        </Frame>
+        <Frame type="Label" name="SupplyLabel" template="CommandButton/ResourceLabelTemplate">
+            <Anchor side="Top" relative="$parent/SupplyIcon" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/SupplyIcon" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/SupplyIcon" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Frame" name="VitalAnchorFrame">
+            <Anchor side="Top" relative="$parent/ResourceAnchorFrame" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Height val="32"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Image" name="VitalIcon0" template="CommandButton/VitalIconTemplate">
+            <Anchor side="Top" relative="$parent/VitalAnchorFrame" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalAnchorFrame" pos="Min" offset="0"/>
+            <Texture val="@@UI/ResourceIconLife"/>
+        </Frame>
+        <Frame type="Label" name="VitalLabel0" template="CommandButton/VitalLabelTemplate">
+            <Anchor side="Top" relative="$parent/VitalIcon0" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/VitalIcon0" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalIcon0" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="VitalIcon1" template="CommandButton/VitalIconTemplate">
+            <Anchor side="Top" relative="$parent/VitalIcon0" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalLabel0" pos="Max" offset="5"/>
+            <Texture val="@@UI/ResourceIconShields"/>
+        </Frame>
+        <Frame type="Label" name="VitalLabel1" template="CommandButton/VitalLabelTemplate">
+            <Anchor side="Top" relative="$parent/VitalIcon1" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/VitalIcon1" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalIcon1" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="VitalIcon2" template="CommandButton/VitalIconTemplate">
+            <Anchor side="Top" relative="$parent/VitalIcon1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalLabel1" pos="Max" offset="5"/>
+            <Texture val="@@UI/ResourceIconEnergy"/>
+        </Frame>
+        <Frame type="Label" name="VitalLabel2" template="CommandButton/VitalLabelTemplate">
+            <Anchor side="Top" relative="$parent/VitalIcon2" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/VitalIcon2" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/VitalIcon2" pos="Max" offset="5"/>
+        </Frame>
+        <Frame type="Image" name="TimeIcon" template="CommandButton/VitalIconTemplate">
+            <Anchor side="Top" relative="$parent/VitalAnchorFrame" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+            <Texture val="@@UI/ResourceIconTime"/>
+        </Frame>
+        <Frame type="Label" name="TimeLabel">
+            <Anchor side="Top" relative="$parent/TimeIcon" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/TimeIcon" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/TimeIcon" pos="Max" offset="5"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="DurationLabel">
+            <Anchor side="Top" relative="$parent/TimeIcon" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+            <PreserveAnchorOffset val="true"/>
+        </Frame>
+        <Frame type="Label" name="CooldownLabel">
+            <Anchor side="Top" relative="$parent/DurationLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="RangeLabel">
+            <Anchor side="Top" relative="$parent/CooldownLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="RadiusLabel">
+            <Anchor side="Top" relative="$parent/RangeLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="RequirementsLabel">
+            <Anchor side="Top" relative="$parent/RadiusLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@CommandTooltipRequirements"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="TipLabel">
+            <Anchor side="Top" relative="$parent/RequirementsLabel" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="@@@StandardTooltip"/>
+            <CollapseLayout val="true"/>
+            <PreserveAnchorOffset val="true"/>
+        </Frame>
+        <Frame type="Label" name="AutocastLabel">
+            <Anchor side="Top" relative="$parent/TipLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="CommandTooltipAutocast"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Label" name="InventoryLabel">
+            <Anchor side="Top" relative="$parent/AutocastLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+            <Style val="CommandTooltipInventory"/>
+            <CollapseLayout val="true"/>
+        </Frame>
+        <Frame type="Frame" name="AnchorFrame">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/InventoryLabel" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/HotkeyLabel" pos="Max" offset="15"/>
+            <PreserveAnchorOffset val="true"/>
+        </Frame>
+    </Frame>
+    <Frame type="CommandButton" name="InventoryButtonTemplate" template="GameButton/GameButtonTemplate">
+        <Width val="76"/>
+        <Height val="76"/>
+        <TooltipFrame val="InventoryTooltip"/>
+        <ClickSound val="@UI_GenericButton"/>
+    </Frame>
+    <Frame type="CommandPanel" name="InventoryCommandPanelTemplate">
+        <Batch val="true"/>
+
+        <Frame type="CommandTooltip" name="InventoryTooltip" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-270"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton00" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="#CommandButtonGap"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton01" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton00" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton02" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton01" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton01" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton03" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton02" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton02" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton04" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton03" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton03" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton05" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Max" offset="#CommandButtonGap"/>
+            <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton06" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton05" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton05" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton07" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton06" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton06" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton08" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton07" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton07" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton09" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton08" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton08" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton10" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton05" pos="Max" offset="#CommandButtonGap"/>
+            <Anchor side="Left" relative="$parent/CommandButton05" pos="Min" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton11" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton10" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton10" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton12" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton11" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton11" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton13" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton12" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton12" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton14" template="TooltipFrameTemplates/InventoryTooltipTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton13" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandButton13" pos="Max" offset="#CommandButtonGap"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText0">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/CommandButton00" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="@@@CommandRow"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText1">
+            <Anchor side="Top" relative="$parent/CommandButton05" pos="Min" offset="-1"/>
+            <Anchor side="Bottom" relative="$parent/CommandButton05" pos="Max" offset="2"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="@@@CommandRow"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText2">
+            <Anchor side="Top" relative="$parent/CommandButton10" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/CommandButton10" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="@@@CommandRow"/>
+        </Frame>
+
+        <Frame type="Image" name="CommandTargetImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Width val="76"/>
+            <Height val="76"/>
+        </Frame>
+
+        <Frame type="Label" name="CommandTargetName">
+            <Anchor side="Top" relative="$parent/CommandTargetImage" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/CommandTargetImage" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/CommandTargetImage" pos="Max" offset="5"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Style val="@@@CommandTargetName"/>
+            <Options val="ScaleToPreventTruncation"/>
+        </Frame>
+
+        <Frame type="Label" name="CommandTargetPrompt">
+            <Anchor side="Top" relative="$parent/CommandTargetImage" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+            <Style val="@@@CommandTargetPrompt"/>
+        </Frame>
+
+        <Frame type="Frame" name="UncontrollableUnitFrame">
+            <Anchor relative="$parent"/>
+
+            <Frame type="Label" name="UncontrollableUnitTitleLabel">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+                <Style val="@@CommandPanelEnemyUnitTitle"/>
+            </Frame>
+
+            <Frame type="Label" name="UncontrollableUnitPromptLabel">
+                <Anchor side="Top" relative="$parent/UncontrollableUnitTitleLabel" pos="Max" offset="10"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="-5"/>
+                <Style val="@@CommandPanelEnemyUnitPrompt"/>
+                <Text val="@UI/CommandPanelEnemyUnitPrompt"/>
+            </Frame>
+        </Frame>
+    </Frame>
+    <!--
+    <Frame type="MessageLogDialog" name="MessageLogDialog" template="MessageLogDialog/MessageLogDialogTemplate"> -->
+
+    
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        <Frame type="MessageLogDialog" name="MessageLogDialog" template="MessageLogDialog/MessageLogDialogTemplate">
+            <Anchor relative="$parent"/>
+            
+           
+        <Frame type="StandardTooltip" name="MessageLogTooltip" template="StandardTooltip/StandardTooltip"/>
+
+        <Frame type="Image" name="FullscreenBlackoutImage">
+            <Anchor relative="$parent"/>
+            <Color val="0, 0, 0"/>
+            <Alpha val="140"/>
+        </Frame>
+
+        <Frame type="Frame" name="BackgroundFrame" template="StandardTemplates/StandardLargePanelTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Height val="1200"/>
+            <Width val="1050"/>
+            
+            <Frame type="Image" name="TitleBorderImage">
+                <Anchor side="Top" relative="$parent/BorderImage" pos="Min" offset="25"/>
+                <Anchor side="Left" relative="$parent/BorderImage" pos="Min" offset="60"/>
+                <Anchor side="Right" relative="$parent/BorderImage" pos="Max" offset="-60"/>
+                <Height val="75"/>
+                <Texture val="@@UI/MessageLogDialogTitleBorder"/>
+                <TextureType val="HorizontalBorder"/>
+                <LayerColor val="##StandardBorder"/>
+                <Tiled val="true"/>
+            </Frame>
+
+            <Frame type="Label" name="TitleLabel">
+                <Anchor side="Top" relative="$parent\TitleBorderImage" pos="Min" offset="5"/>
+                <Anchor side="Bottom" relative="$parent\TitleBorderImage" pos="Max" offset="-5"/>
+                <Anchor side="Left" relative="$parent\TitleBorderImage" pos="Min" offset="5"/>
+                <Anchor side="Right" relative="$parent\TitleBorderImage" pos="Max" offset="-5"/>
+                <Style val="@@HelpMenuDialogTitle"/>
+                <Text val="@UI/MessageLogDialogTitle"/>
+            </Frame>
+
+            <Frame type="HelpPanel" name="MessageLogPanel" template="HelpPanel/HelpPanelTemplate">
+                <Anchor side="Top" relative="$parent/TitleBorderImage" pos="Max" offset="10"/>
+                <Anchor side="Bottom" relative="$parent/SocialManagementPanel" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/BorderImage" pos="Min" offset="60"/>
+                <Anchor side="Right" relative="$parent/BorderImage" pos="Max" offset="-60"/>
+
+                <Frame type="ListBox" name="HelpItemListBox" template="StandardTemplates/StandardListBoxTemplate">
+                    <Handle val="MessageTracker" />
+                </Frame>
+            </Frame>
+
+            <Frame type="Button" name="CloseButton" template="StandardTemplates/StandardLargePanelRightButtonTemplate">
+                <Anchor side="Bottom" relative="$parent/BorderImage" pos="Max" offset="10"/>
+                <Anchor side="Right" relative="$parent/BorderImage" pos="Max" offset="0"/>
+                <RenderPriority val="530"/>
+                <Shortcut val="@UI/Close_Hotkey"/>
+                <Text val="@UI/Close_Control"/>
+            </Frame> 
+        </Frame>
+    </Frame>
+</Frame>	
+</Desc>

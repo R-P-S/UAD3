@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <!-- Graph Line Item Template -->
+    <Frame type="GraphLineItemFrame" name="GraphLineItemFrame">
+        <Frame type="Image" name="Image">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Height val="5"/>
+            <Width val="2"/>
+            <Texture val="@UI/Battlenet_Glue_Ladder_Score_Graphs_Line_01"/>
+            <!-- Graph Line Colors -->
+            <StateGroup name="LineColorState">
+                <State name="Green">
+                    <When type="Property" frame="$parent" ItemSetIndex="0"/>
+                    <Action type="SetProperty" frame="$this" Color="0,255,0"/>
+                </State>
+                <State name="Blue">
+                    <When type="Property" frame="$parent" ItemSetIndex="1"/>
+                    <Action type="SetProperty" frame="$this" Color="0,0,255"/>
+                </State>
+                <State name="Red">
+                    <When type="Property" frame="$parent" ItemSetIndex="2"/>
+                    <Action type="SetProperty" frame="$this" Color="255,0,0"/>
+                </State>
+                <!-- Hide Line For Data Set 4 -->
+                <State name="Hidden">
+                    <When type="Property" frame="$parent" ItemSetIndex="3"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+            </StateGroup>
+            <!-- Check Mark - Hide/Display Graph Line -->
+            <StateGroup name="LineAlphaState">
+                <DefaultState val="Default"/>
+                <State name="Index0">
+                    <When type="Property" frame="$parent" ItemSetIndex="0"/>
+                    <When type="Property" frame="$Line0" Checked="False"/>
+                    <Action type="SetProperty" frame="$this" Alpha="0"/>
+                </State>
+                <State name="Index1">
+                    <When type="Property" frame="$parent" ItemSetIndex="1"/>
+                    <When type="Property" frame="$Line1" Checked="False"/>
+                    <Action type="SetProperty" frame="$this" Alpha="0"/>
+                </State>
+                <State name="Index2">
+                    <When type="Property" frame="$parent" ItemSetIndex="2"/>
+                    <When type="Property" frame="$Line2" Checked="False"/>
+                    <Action type="SetProperty" frame="$this" Alpha="0"/>
+                </State>
+                <State name="Default"/>
+            </StateGroup>
+        </Frame>
+    </Frame>
+    <!-- Graph Point Item Template -->
+    <Frame type="GraphItemFrame" name="GraphPointItemFrame">
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Width val="20" />
+        <Height val="20" />
+        <Frame type="Image" name="PointImage">
+            <Anchor relative="$parent" />
+            <ColorAdjustMode val="Colorize" />
+            <Texture val="Assets/Graph/graph_point.dds" />
+        </Frame>
+        <StateGroup name="PointColorState">
+            <State name="Green">
+                <When type="Property" frame="$this" ItemSetIndex="0" /> 
+                <Action type="SetProperty" frame="$this/PointImage" AdjustmentColor=" 153,255,153" />
+            </State>
+            <State name="Blue">
+                <When type="Property" frame="$this" ItemSetIndex="1" /> 
+                <Action type="SetProperty" frame="$this/PointImage" AdjustmentColor="65,105,225" />
+            </State>
+            <State name="Red">
+                <When type="Property" frame="$this" ItemSetIndex="2" />
+                <Action type="SetProperty" frame="$this/PointImage" AdjustmentColor="178,34,34" />
+            </State>
+            <!-- Hide Point Image Data Set 4 -->
+            <State name="Hidden">
+                <When type="Property" frame="$this" ItemSetIndex="3" />
+                <Action type="SetProperty" frame="$this" Alpha="0" />
+            </State>
+        </StateGroup>
+        <!-- Check Mark - Hide/Display Graph Point -->
+        <StateGroup name="AlphaState">
+            <DefaultState val="Default"/>
+            <State name="Index0">
+                <When type="Property" frame="$this" ItemSetIndex="0"/>
+                <When type="Property" frame="$Line0" Checked="False"/>
+                <Action type="SetProperty" frame="$this" Alpha="0"/>
+            </State>
+            <State name="Index1">
+                <When type="Property" frame="$this" ItemSetIndex="1"/>
+                <When type="Property" frame="$Line1" Checked="False"/>
+                <Action type="SetProperty" frame="$this" Alpha="0"/>
+            </State>
+            <State name="Index2">
+                <When type="Property" frame="$this" ItemSetIndex="2"/>
+                <When type="Property" frame="$Line2" Checked="False"/>
+                <Action type="SetProperty" frame="$this" Alpha="0"/>
+            </State>
+            <State name="Default"/>
+        </StateGroup>
+    </Frame>
+    <!-- Graph Bar Item Template -->
+    <Frame type="GraphItemFrame" name="GraphBarItemFrame">
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Width val="15" />
+        <Alpha val="0" />
+        <Frame type="Image" name="PointImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets/Graph/graph_bar.dds" />
+        </Frame>
+        <StateGroup name="BarState">
+            <!-- Only Visible For Data Set 4 -->
+            <State name="Visible">
+                <When type="Property" frame="$this" ItemSetIndex="3" />
+                <When type="Property" frame="$Line3" Checked="True"/>
+                <Action type="SetProperty" frame="$this" Alpha="255" />
+            </State>
+        </StateGroup>
+    </Frame>
+    <!-- Game Time -->
+    <Frame type="GraphTextTickFrame" name="HorizontalTickFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Width val="125"/>
+        <MinFractionDigits val="0"/>
+        <MaxFractionDigits val="0"/>
+        <ValueFormat val="%value%"/>
+        <FormatTime val="True"/>
+        <Unclipped val="True"/>
+        <Frame type="Image" name="TickImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Label" pos="Min" offset="-5"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Width val="3"/>
+            <Color val="128,128,128"/>
+        </Frame>
+        <Frame type="Label" name="Label">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-66"/>
+            <Style val="ScoreScreenGraphTickLabel"/>
+            <Color val="255,255,255"/>
+        </Frame>
+    </Frame>
+    <!-- Unit Count Values -->
+    <Frame type="GraphTextTickFrame" name="VerticalTickFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Height val="25"/>
+        <MinFractionDigits val="0"/>
+        <MaxFractionDigits val="0"/>
+        <AbsoluteValue val="True"/>
+        <Unclipped val="True"/>
+        <Frame type="Image" name="TickImage">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-2"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Width val="10"/>
+            <Height val="3"/>
+            <Color val="128,128,128"/>
+        </Frame>
+        <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/TickImage" pos="Min" offset="-5"/>
+            <Style val="ScoreScreenGraphTickLabel"/>
+            <Color val="255,255,255"/>
+        </Frame>
+    </Frame>
+    <!-- Unit Count Values -->
+    <Frame type="GraphTextTickFrame" name="VerticalLongTickFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Height val="20"/>
+        <MinFractionDigits val="0"/>
+        <MaxFractionDigits val="0"/>
+        <Alpha val="50"/>
+        <Frame type="Image" name="TickImage">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Height val="2"/>
+            <Color val="128,128,128"/>
+        </Frame>
+        <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Style val="ScoreScreenGraphTickLabel"/>
+            <Color val="255,255,255"/>
+        </Frame>
+        <!-- Hide First Tick -->
+        <StateGroup name="TickPosition">
+            <DefaultState val="Default"/>    
+            <State name="First">
+                <When type="AnimationState" TickPosition="First"/>
+                <Action type="SetProperty" Frame="TickImage" Visible="false"/>
+                <Action type="SetProperty" Frame="Label" Visible="false"/>
+            </State>
+            <State name="Default">
+                <Action type="SetProperty" Frame="TickImage" Visible="true"/>
+                <Action type="SetProperty" Frame="Label" Visible="true"/>
+            </State>
+        </StateGroup>
+    </Frame>
+    <Frame type="GraphFrame" name="GraphFrameTemplate">
+        <Insets top="15" left="0" bottom="-1" right="15"/>
+        <Frame type="Image" name="Background">
+            <Anchor relative="$parent/LineGraph"/>
+            <Color val="96,96,96"/>
+        </Frame>
+        <Frame type="Image" name="BackgroundInnerImage">
+            <Anchor relative="$parent/LineGraph" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+        </Frame>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor relative="$parent" />
+            <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+            <TextureType val="Border" />
+            <Color val="0,255,148" />
+        </Frame>
+        <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate" />
+        <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate" />
+        <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate" />
+        <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate" />
+        <Frame type="GraphIntervalAxisFrame" name="GraphAxisX">
+            <Height val="100"/>
+            <Anchor side="Left" relative="$parent/GraphAxisY" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <TickDesc val="GraphFrame/HorizontalTickFrame"/>
+            <Vertical val="False"/>
+            <TickInterval val="300"/> <!-- every 5 min print to X-Axis -->
+            <RenderPriority val="513" />
+        </Frame>
+        <Frame type="GraphDistributedAxisFrame" name="GraphAxisY">
+            <Width val="100"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/GraphAxisX" pos="Min" offset="0"/>
+            <TickDesc val="GraphFrame/VerticalTickFrame"/>
+            <TickDistribution val="6"/>
+            <Vertical val="true"/>
+            <RenderPriority val="513" />
+        </Frame>
+        
+        <Frame type="GraphIntervalAxisFrame" name="GraphLongAxisY">
+            <Anchor side="Left" relative="$parent/LineGraph" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/GraphAxisX" pos="Min" offset="0"/>
+            <TickDesc val="GraphFrame/VerticalLongTickFrame"/>
+            <TickInterval val="10"/>
+            <Vertical val="true"/>
+        </Frame>
+        <!-- Line Graph Frame -->
+        <Frame type="GraphLinePlotFrame" name="LineGraph">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/GraphAxisY" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/GraphAxisX" pos="Min" offset="0"/>
+            <ItemDesc val="GraphFrame/GraphLineItemFrame"/>
+            <StartOffset val="-1"/>
+            <EndOffset val="1"/>
+            <ItemCount val="540"/>
+            <RenderPriority val="513" />
+        </Frame>
+        <!-- Point Graph Frame -->
+        <Frame type="GraphPointPlotFrame" name="PointPlotGraph">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/GraphAxisY" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent/GraphAxisX" pos="Min" offset="0" />
+            <ItemDesc val="GraphFrame/GraphPointItemFrame" />
+            <ItemCount val="540" />
+            <RenderPriority val="514" />
+        </Frame>
+        <!-- Bar Graph Frame -->
+        <Frame type="GraphBarPlotFrame" name="BarPlotGraph">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/GraphAxisY" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent/GraphAxisX" pos="Min" offset="0" />
+            <ItemDesc val="GraphFrame/GraphBarItemFrame" />
+            <ItemCount val="540" />
+        </Frame>
+    </Frame>
+</Desc>

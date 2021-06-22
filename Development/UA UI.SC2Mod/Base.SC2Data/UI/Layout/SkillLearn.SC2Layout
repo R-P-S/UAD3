@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Button" name="LearnSkillsButtonTemplate">
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <HighlightOnHover val="true" />
+      <HighlightOnFocus val="true" />
+      <ClickSound val="@UI_ReplayButtonSelect" />
+      <Width val="35" />
+      <Height val="35" />
+      <Frame type="Image" name="NormalImage">
+         <DescFlags val="Internal" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <DescFlags val="Internal" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="LearnSkillsContainer">
+         <Anchor side="Top" relative="$parent/MenuBar" pos="Mid" offset="-26" />
+         <Anchor side="Left" relative="$parent/MenuBar" pos="Mid" offset="-232" />
+         <Width val="75" />
+         <Height val="60" />
+         <RenderPriority val="551" />
+         <Visible val="false" />
+         <Handle val="LSC" />
+         <Frame type="Image" name="LearnSkillsBorder">
+            <Width val="54" />
+            <Height val="58" />
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\ui_battlemic_terran.dds" />
+            <Visible val="true" />
+            <Color val="0,255,148" />
+         </Frame>
+         <Frame type="Image" name="LearnSkillsIcon">
+            <Width val="42" />
+            <Height val="42" />
+            <Anchor side="Top" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Texture val="Assets\Textures\btn-ability-terran-heal.dds" />
+            <Visible val="true" />
+            <Tooltip val="Learn Skills Available" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <AcceptsMouseTooltip val="true" />
+            <RenderPriority val="513" />
+         </Frame>
+         <Frame type="Button" name="LearnSkillsButton" template="SkillLearn/LearnSkillsButtonTemplate">
+            <Width val="35" />
+            <Height val="35" />
+            <Anchor side="Top" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/LearnSkillsBorder" pos="Mid" offset="0" />
+            <Visible val="true" />
+            <Frame type="Image" name="NormalImage">
+               <Texture val="Assets\Textures\btn-ability-terran-heal.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+               <Alpha val="0" />
+            </Frame>
+            <Frame type="Image" name="HoverImage">
+               <Texture val="Assets\Textures\btn-ability-terran-heal.dds" />
+               <TextureType val="Normal" />
+               <StateCount val="3" />
+               <Alpha val="0" />
+            </Frame>
+            <Animation name="HighlightOn">
+               <Event event="OnMouseEnter" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel1">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel2">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel3">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel4">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel5">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel6">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel7">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel8">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel9">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel10">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel11">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel12">
+                  <Key type="Event" time="0" event="ON" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOff">
+               <Event event="OnMouseExit" action="Reset,Play" />
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel1">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel2">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel3">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel4">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel5">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel6">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel7">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel8">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel9">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel10">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel11">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+               <Controller type="Event" end="Pause" frame="$parent/LearnSkillsLabel12">
+                  <Key type="Event" time="0" event="OFF" />
+               </Controller>
+            </Animation>
+         </Frame>
+         <Frame type="Image" name="LearnSkillsLabelContainer">
+            <Width val="23" />
+            <Height val="23" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+            <Texture val="Assets\Textures\ui_battlenet_glue_coop_abilityframe_levelbg.dds" />
+            <TextureType val="NineSlice" />
+            <RenderPriority val="520" />
+            <Visible val="true" />
+            <Color val="##StandardButtonBorder" />
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel1">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS1/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <DefaultState val="2" />
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="1" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="1" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel2">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS2/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="2" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="2" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel3">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS3/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="3" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="3" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel4">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS4/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="4" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="4" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel5">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS5/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="5" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="5" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel6">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS6/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="6" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="6" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel7">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS7/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="7" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="7" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel8">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS8/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="8" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="8" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel9">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS9/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="9" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="9" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel10">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS10/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="10" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="10" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel11">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS11/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="11" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="11" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="LearnSkillsLabel12">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+            <Width val="37" />
+            <Style val="IdleButtonCharge" />
+            <Text val="{$StatLS12/Label/@Text}" />
+            <RenderPriority val="521" />
+            <Visible val="False" />
+            <Animation name="HighlightOnEvent" flags="NoEventsWhileHidden">
+               <Event event="ON" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="0,255,128" />
+               </Controller>
+            </Animation>
+            <Animation name="HighlightOffEvent" flags="NoEventsWhileHidden">
+               <Event event="OFF" action="Reset,Play" />
+               <Controller type="Property" property="Color" end="Pause">
+                  <Key type="Property" time="0" value="255,255,255" />
+               </Controller>
+            </Animation>
+            <StateGroup name="SkillCount">
+               <State name="0">
+                  <When type="Property" frame="$this" Text="0" />
+                  <When type="Property" frame="$PlayerID" Text="12" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="0" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+               <State name="1">
+                  <When type="Property" frame="$this" operator="GreaterThanOrEqual" Text="1" />
+                  <When type="Property" frame="$PlayerID" Text="12" />
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SetProperty" frame="$ChargeLabel11" Alpha="255" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="Active" />
+               </State>
+               <State name="2">
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton11/NormalImage" operator="NotEqual" Texture="Assets\Textures\btn-ability-terran-heal.dds" />
+                  <Action type="SendEvent" frame="$LSActiveIndicator" event="NotActive" />
+               </State>
+            </StateGroup>
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

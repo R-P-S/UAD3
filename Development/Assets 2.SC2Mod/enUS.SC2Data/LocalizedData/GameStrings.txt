@@ -1,0 +1,3 @@
+﻿DocInfo/DescLong=Mod contains a variety of assets.
+DocInfo/DescShort=Any
+DocInfo/Name=Dasdan_2

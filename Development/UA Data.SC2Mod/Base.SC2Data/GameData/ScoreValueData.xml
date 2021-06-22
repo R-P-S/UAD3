@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CScoreValueCustom id="Security" parent="BaseScoreValue">
+        <UniqueTag value="SEC"/>
+    </CScoreValueCustom>
+    <CScoreValueStandard id="SkillUpgradesCurrent">
+        <Value value="TerrazineCurrent"/>
+    </CScoreValueStandard>
+    <CScoreValueStandard id="MassiveKills">
+        <Value value="UnitsKilledValue"/>
+    </CScoreValueStandard>
+    <CScoreValueStandard id="LearnSkillsCurrent">
+        <Value value="CustomCurrent"/>
+    </CScoreValueStandard>
+    <CScoreValueCustom id="TCP1" parent="BaseScoreValue">
+        <UniqueTag value="TCP1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="LN" parent="BaseScoreValue">
+        <UniqueTag value="LN"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="TCP2" parent="BaseScoreValue">
+        <UniqueTag value="TCP2"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="TCP3" parent="BaseScoreValue">
+        <UniqueTag value="TCP3"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCombine id="TotalDamageDone">
+        <Collapse value="Latest"/>
+        <ValueTable value="LifeDamageDealtTotal"/>
+        <ValueTable value="ShieldsDamageDealtTotal"/>
+    </CScoreValueCombine>
+</Catalog>

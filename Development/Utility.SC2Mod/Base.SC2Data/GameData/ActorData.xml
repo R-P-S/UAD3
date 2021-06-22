@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorQueryResponse default="1" id="PersistPhasingResponse">
+        <Subject Filters="Model,Sound,Splat,BeamSimple,BeamStandard,Doodad,DoodadPreserver,Selection,Shadow,Shield,Snapshot,Unit,Missile"/>
+    </CActorQueryResponse>
+    <CActorUnit id="CameraUnitActor" parent="GenericUnitStandardNoAutoSoundLinks" unitName="CameraUnit">
+        <Model value="Invisible"/>
+        <EditorModel value="Sphere"/>
+        <WalkAnimMoveSpeed value="0"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <Macros value="RemoveFlyerHelperMacro"/>
+    </CActorUnit>
+    <CActorSiteOpAttach id="SOpAttachOriginSoft"/>
+    <CActorSimple id="SceneHalo_Color_Blue">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 0,0,255"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Color_Grey">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 128,128,128"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Color_Black">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 0,0,0"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Color_Red">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 255,0,0"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Color_Green">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 0,255,0"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Emission_000">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetEmission 0.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Color_White">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetColor 255,255,255"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_RasterMode_AlphaBlend">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetRastermode AlphaBlend"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_RasterMode_Multiply">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetRastermode Multiply"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Type_Legacy">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetMode"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Type_Linear">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetMode Linear"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Type_Quadratic">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetMode Quadratic"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Type_Sharp">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetMode Sharp"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Type_Gaussian">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetMode Gaussian"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_RasterMode_Add">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetRastermode"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_00">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 0.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Emission_025">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetEmission 0.250000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Emission_050">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetEmission 0.500000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Emission_075">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetEmission 0.750000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Emission_100">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetEmission 1.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_01">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 1.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_02">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 2.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_03">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 2.500000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_04">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 4.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_08">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 8.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_16">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 16.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_24">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 24.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_32">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 32.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="SceneHalo_Width_64">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SceneHaloSetWidth 64.000000"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
+    </CActorSimple>
+    <CActorDoodad id="TempleWall90">
+        <ModelFlags index="OutlineOccluder" value="1"/>
+    </CActorDoodad>
+    <CActorSimple id="EmptyScope"/>
+    <CActorModel id="ModelSpin" parent="ModelAddition">
+        <On index="0" Terms="Signal.*.Recycle" Send="Destroy"/>
+        <On index="1" Terms="Signal.*.RecycleSpin" Send="Destroy"/>
+        <On index="2" Terms="ActorCreation" Send="AnimPlay A Stand PlayForever"/>
+        <Host Subject=""/>
+    </CActorModel>
+    <CActorPortrait id="GlossaryModel">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="LocalTintColor" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <HostForProps Subject="::Main"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft"/>
+        <Model value="Invisible"/>
+    </CActorPortrait>
+    <CActorUnit id="OneWayLOSBlocker1x1" parent="PathingBlocker" unitName="OneWayLOSBlocker1x1">
+        <EditorModel value="PathingandSightBlocker1x1Doodad"/>
+    </CActorUnit>
+    <CActorUnit id="PickupPsiStorm">
+        <Model value="ShapeHand"/>
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorUnit>
+    <CActorModel id="PsiShadowModel" parent="ModelAnimationStyleOneShotUNIT">
+        <CopySource value="_Selectable"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <AcceptedTransfers index="Animator" value="1"/>
+        <AcceptedTransfers index="AnimProps" value="1"/>
+        <AcceptedTransfers index="FOWColor" value="1"/>
+        <AcceptedTransfers index="FOWShader" value="1"/>
+        <AcceptedTransfers index="Model" value="1"/>
+        <AcceptedTransfers index="Textures" value="1"/>
+        <AcceptedTransfers index="Status" value="1"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.800000 ShadowFade"/>
+        <On Terms="ActorCreation" Send="SetTintColor 128,128,255 0.400000"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000 0.400000"/>
+        <On Terms="TimerExpired; TimerName ShadowFade" Send="SetOpacity 0.000000 0.800000"/>
+        <On Terms="ActorCreation" Send="AnimSetPausedAll"/>
+        <On Terms="ActorCreation" Send="SetCastShadows"/>
+        <On Terms="ActorCreation" Send="DestroyParticles"/>
+        <On Terms="ActorCreation" Send="TimerSet 2.000000 Die"/>
+        <On Terms="TimerExpired; TimerName Die" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary SOp2DRotation"/>
+        <Model value=""/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSimple id="PsiShadow">
+        <On Terms="Behavior.PsiShadow.On" Send="Create"/>
+        <On Terms="Behavior.PsiShadow.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.250000 Shadow"/>
+        <On Terms="TimerExpired; TimerName Shadow" Send="Create PsiShadowModel"/>
+        <On Terms="TimerExpired; TimerName Shadow" Send="TimerSet 0.250000 Shadow"/>
+    </CActorSimple>
+    <CActorSiteMover id="TriggerMover">
+        <On Terms="MoverArrived" Send="Destroy"/>
+        <Deceleration value="1.000000"/>
+    </CActorSiteMover>
+    <CActorSimple id="TriggerPerPlayerActorAgent">
+        <On Terms="Signal.*.SetTargetActual; FlyerHelper All" Send="RefSet ::actor.MsgTargetActual ::actor.MsgTarget"/>
+    </CActorSimple>
+    <CActorSiteOpEffect id="SOpOriginPointSationary" parent="SOpSourcePointSationary">
+        <Location value="OriginPoint"/>
+    </CActorSiteOpEffect>
+    <CActorSite id="TriggerSite" parent="SiteHosted">
+        <On Terms="Signal.*.Recycle" Send="Destroy"/>
+        <Host Subject="::scope.TriggerSiteHost"/>
+        <HostSiteOps Ops="SOpAttachHarnessSoft"/>
+    </CActorSite>
+    <CActorSite id="TriggerSiteNoHarness" parent="TriggerSite">
+        <HostSiteOps Ops=""/>
+    </CActorSite>
+    <CActorPortrait id="PortraitSpin">
+        <Model value="ModelSpin"/>
+    </CActorPortrait>
+    <CActorQueryResponse id="PersistPhasingResponseEnter" parent="PersistPhasingResponse">
+        <OnResponse Send="SetVisibility"/>
+        <OnResponse Send="SoundSetMuted 1 0"/>
+    </CActorQueryResponse>
+    <CActorQueryResponse id="PersistPhasingResponseLeave" parent="PersistPhasingResponse">
+        <OnResponse Send="SetVisibility 1"/>
+        <OnResponse Send="SoundSetMuted"/>
+    </CActorQueryResponse>
+</Catalog>

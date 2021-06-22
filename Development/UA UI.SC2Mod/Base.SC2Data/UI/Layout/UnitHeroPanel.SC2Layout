@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Frame" name="AttributeIconTemplate">
+      <Width val="64" />
+      <Height val="64" />
+      <TooltipFrame val="UADStandardTooltip"/>
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Texture val="Assets\Textures\ui_battlenet_glues_achievement_fanfare_achievementcontainer_terr.dds" /> 
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="GroupIconTemplate">
+      <TooltipFrame val="UADStandardTooltip" />
+      <Frame type="Image" name="IconBorder">
+         <RenderPriority val="600" />
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <LayerColor val="##StandardButtonBorder" />
+         <Visible val="True" />
+         <Texture val="Assets/Textures/btn-border-research.dds" />
+      </Frame>
+   </Frame>
+   <Animation name="Attribute1Template">
+      <Event event="Dexterity" action="Reset,Play" frame="$this" />
+      <Controller type="Property" property="Texture" end="Pause">
+         <Key type="Property" time="0" value="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
+      </Controller>
+      <Controller type="Property" property="Tooltip" end="Pause">
+         <Key type="Property" time="0" value="@@Behavior/Tooltip/NewDexterity" />
+      </Controller>
+   </Animation>
+   <Animation name="Attribute2Template">
+      <Event event="Mechanical" action="Reset,Play" frame="$this" />
+      <Controller type="Property" property="Texture" end="Pause">
+         <Key type="Property" time="0" value="Assets\Textures\btn-upgrade-zerg-stukov-regenrate.dds" />
+      </Controller>
+      <Controller type="Property" property="Tooltip" end="Pause">
+         <Key type="Property" time="0" value="@@Behavior/Tooltip/NewMechanical" />
+      </Controller>
+   </Animation>
+   <Animation name="Attribute3Template">
+      <Event event="Fitness" action="Reset,Play" frame="$this" />
+      <Controller type="Property" property="Texture" end="Pause">
+         <Key type="Property" time="0" value="Assets\Textures\btn-upgrade-nova-novarespawn.dds" />
+      </Controller>
+      <Controller type="Property" property="Tooltip" end="Pause">
+         <Key type="Property" time="0" value="@@Behavior/Tooltip/NewFitness" />
+      </Controller>
+   </Animation>
+
+
+   <!-- Increase Panel Size To Fit Attribute Text -->
+   <Frame type="InfoPanel" name="GameUI/UIContainer/ConsoleUIContainer/InfoPanel" file="GameUI">
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-275" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="130" />
+      <Width val="730" />
+      <RenderPriority val="513" />
+      <Frame type="Frame" name="UnitPanel">
+         <Frame type="UnitWireframe" name="UnitWireframe" template="UnitWireframe/UnitWireframeTemplate">
+            <Anchor side="Top" relative="$parent/BehaviorBar" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/BehaviorBar" pos="Max" offset="0" />
+            <Width val="160" />
+            <Height val="140" />
+            <TooltipFrame val="UADStandardTooltip"/>
+            <Frame type="Image" name="Image3">
+               <Anchor relative="$parent/Image0" />
+               <Texture val="" />
+               <RenderPriority val="510" />
+               <Desaturated val="True" />
+               <DesaturationColor val="0,255,15" />
+               <Alpha val="0" />
+               <AcceptsMouseTooltip val="False" />
+               <Tooltip val="" />
+               <Handle val="FlamethrowerWireImages" />
+               <StateGroup name="WireImageState">
+                  <State name="FuelTank">
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" />
+                     <Action type="SetProperty" frame="$this" Alpha="255" />
+                     <Action type="SetProperty" frame="$this" AcceptsMouseTooltip="True" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_FuelTanks" />
+                     <Action type="SetProperty" frame="$this" RenderPriority="800" />
+                  </State>
+                  <State name="FuelCrate">
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-firebat-highcapacity.dds" />
+                     <Action type="SetProperty" frame="$this" Alpha="255" />
+                     <Action type="SetProperty" frame="$this" AcceptsMouseTooltip="True" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_FuelCrate" />
+                     <Action type="SetProperty" frame="$this" RenderPriority="800" />
+                  </State>
+                  <State name="PlasmaCell">
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Buttons\Plasma_Cells.dds" />
+                     <Action type="SetProperty" frame="$this" Alpha="255" />
+                     <Action type="SetProperty" frame="$this" AcceptsMouseTooltip="True" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_PlasmaCells" />
+                     <Action type="SetProperty" frame="$this" RenderPriority="800" />
+                  </State>
+                  <State name="PlasmaCellPack">
+                     <Action type="SetProperty" frame="$this" Texture="Assets\Buttons\Plasma_Cell_Pack.dds" />
+                     <Action type="SetProperty" frame="$this" Alpha="255" />
+                     <Action type="SetProperty" frame="$this" AcceptsMouseTooltip="True" />
+                     <Action type="SetProperty" frame="$this" Tooltip="@DOCSTR_PlasmaCellPack" />
+                     <Action type="SetProperty" frame="$this" RenderPriority="800" />
+                  </State>
+                  <State name="Hidden" />
+               </StateGroup>
+            </Frame> 
+               <!-- Vitals 
+            <Frame type="UnitFrame" name="UnitVitals">
+               <Anchor relative="$parent" />
+               <UnitTag val="{$parent/@UnitTag}" />
+               <Frame type="MathFrame" name="MathA">
+                  <Anchor relative="$parent" />
+                  <A val="{$parent/@CurrentHealth}" />
+                  <B val="{$parent/@MaxHealth}" />
+                  <Operator val="Divide" />
+               </Frame>
+               <Frame type="MathFrame" name="MathB">
+                  <Anchor relative="$parent" />
+                  <A val="{$parent/MathA/@Result}" />
+                  <B val="100" />
+                  <Operator val="Multiply" />
+               </Frame>
+               <StateGroup name="HealthState">
+                  <DefaultState val="HighHealth" />
+                  <State name="LowHealth">
+                     <When type="Property" frame="$NameLabel" Text="Rifleman" />
+                     <When type="Property" frame="$this/MathB" operator="LessThanOrEqual" ResultRound="35" />
+                     <Action type="SetProperty" frame="$parent/Image1" Texture="Assets\WireFrames\Gargoyle_Wireframe.dds" />
+                  </State>
+                  <State name="HighHealth" />
+               </StateGroup>
+            </Frame> -->
+            
+            <Frame type="Label" name="DebugUnitTagLabel">
+               <Anchor relative="$parent" />
+               <Text val="{$parent/@UnitTag}" />
+               <Style val="GameButtonCharge" />
+               <Handle val="UnitTagLabel" />
+               <Alpha val="0" />
+               <StateGroup name="UnitTagState">
+                  <DefaultState val="NoData" />
+                  <State name="Player1">
+                     <When type="Property" frame="$this" Text="{$UnitTag1/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel1" Visible="True" />
+                  </State>
+                  <State name="Player2">
+                     <When type="Property" frame="$this" Text="{$UnitTag2/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel2" Visible="True" />
+                  </State>
+                  <State name="Player3">
+                     <When type="Property" frame="$this" Text="{$UnitTag3/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel3" Visible="True" />
+                  </State>
+                  <State name="Player4">
+                     <When type="Property" frame="$this" Text="{$UnitTag4/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel4" Visible="True" />
+                  </State>
+                  <State name="Player5">
+                     <When type="Property" frame="$this" Text="{$UnitTag5/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel5" Visible="True" />
+                  </State>
+                  <State name="Player6">
+                     <When type="Property" frame="$this" Text="{$UnitTag6/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel6" Visible="True" />
+                  </State>
+                  <State name="Player7">
+                     <When type="Property" frame="$this" Text="{$UnitTag7/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel7" Visible="True" />
+                  </State>
+                  <State name="Player8">
+                     <When type="Property" frame="$this" Text="{$UnitTag8/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel8" Visible="True" />
+                  </State>
+                  <State name="Player9">
+                     <When type="Property" frame="$this" Text="{$UnitTag9/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel9" Visible="True" />
+                  </State>
+                  <State name="Player10">
+                     <When type="Property" frame="$this" Text="{$UnitTag10/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel10" Visible="True" />
+                  </State>
+                  <State name="Player11">
+                     <When type="Property" frame="$this" Text="{$UnitTag11/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel11" Visible="True" />
+                  </State>
+                  <State name="Player12">
+                     <When type="Property" frame="$this" Text="{$UnitTag12/@Text}" />
+                     <Action type="SetProperty" frame="$SpeedLabel12" Visible="True" />
+                  </State>
+                  <State name="NoData" />
+               </StateGroup>
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="ShieldLabel">
+            <Style val="UnitWireframeVital 2" />
+            <Anchor side="Top" relative="$parent/UnitWireframe" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/UnitWireframe" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/UnitWireframe" pos="Max" offset="0" />
+         </Frame>
+         <Frame type="Label" name="LifeLabel">
+            <Style val="UnitWireframeVital 2" />
+            <Anchor side="Top" relative="$parent/ShieldLabel" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/UnitWireframe" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/UnitWireframe" pos="Max" offset="0" />
+         </Frame>
+         <Frame type="Label" name="EnergyLabel">
+            <Style val="UnitWireframeVital 2" />
+            <Anchor side="Top" relative="$parent/LifeLabel" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/UnitWireframe" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/UnitWireframe" pos="Max" offset="0" />
+         </Frame>
+         <Frame type="BehaviorBar" name="BehaviorBar">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="6" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="40" />
+            <UseAlignmentColors val="False" />
+            <AlignmentFilter val="Neutral" />
+            <IconSortMethod val="DurationRemaining" />
+            <Stategroup name="BorderTexture">
+               <DefaultState val="Default"/>
+               <State name="NewTexture">
+                  <When type="Property" Visible="True" />
+                  <Action type="SetProperty" frame="BehaviorIcon0/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon1/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon2/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon3/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon4/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon5/IconImage" Texture="Assets\Accessory Textures\ui_sd_inventory.dds" />
+               </State>
+               <State name="Default"/>
+            </Stategroup>
+         </Frame>
+         <Frame type="BehaviorBar" name="BehaviorBarDebuff" template="BehaviorBar/BehaviorBarTemplate">
+            <Anchor side="Top" relative="$parent/BehaviorBar" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/BehaviorBar" pos="Min" offset="-32" />
+            <UseAlignmentColors val="False" />
+            <AlignmentFilter val="Negative" />
+            <RenderPriority val="520" />
+            <Handle val="BehaviorDebuffBar" />
+            <Stategroup name="BorderTexture">
+               <DefaultState val="Default"/>
+               <State name="NewTexture">
+                  <When type="Property" Visible="True" />
+                  <Action type="SetProperty" frame="BehaviorIcon0/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon1/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon2/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon3/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon4/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+                  <Action type="SetProperty" frame="BehaviorIcon5/IconImage" Texture="Assets\Textures\ui_kerrigan_healthbar_damage.dds" />
+               </State>
+               <State name="Default"/>
+            </Stategroup>
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="InfoPaneHero">
+         <Anchor side="Left" relative="$parent" pos="Min" offset="250" />
+         <Width val="600" />
+         <Handle val="HeroPane" />
+         <Frame type="Frame" name="Debug">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Width val="50" />
+            <Height val="50" />
+            <StateGroup name="TagDebug">
+               <State name="NoData">
+                  <When type="StateGroup" frame="$UnitTagLabel" UnitTagState="NoData"/>
+               </State>
+               <State name="Player1">
+                  <When type="StateGroup" frame="$UnitTagLabel" UnitTagState="Player1"/>
+               </State>
+            </StateGroup> 
+         </Frame>
+         <Frame type="Image" name="XPBorderImage">
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Min" offset="-2" />
+            <Anchor side="Bottom" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/ExperienceBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Height val="45" />
+            <Width val="298" />
+            <Texture val="Assets\Textures\ui_hots_bossbar_progressbar_green.dds" />
+            <Alpha val="{$parent/ExperienceBar/@Alpha}"/>
+         </Frame>
+         <Frame type="ProgressBar" name="ExperienceBar">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="1" />
+            <Anchor side="Left" relative="$parent/NameLabel" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/NameLabel" pos="Mid" offset="0" />
+            <Height val="23" />
+            <Width val="288" />
+            <Texture val="Assets\Textures\ui_ingame_lotv_healthbar.dds" />
+            <MinValue val="0" />
+            <MaxValue val="1" />
+            <Color val="0,0,0" />
+            <ColorStep val="##StandardProgressFill" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="Label" name="ExperienceLabel">
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/ExperienceBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Height val="25" />
+            <Style val="BossBarHP" />
+            <Options val="" />
+            <RenderPriority val="520" />
+            <Alpha val="{$parent/ExperienceBar/@Alpha}"/>
+         </Frame>
+         <Frame type="ProgressBar" name="ProgressBar">
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/ExperienceBar" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ExperienceBar" pos="Mid" offset="0" />
+            <Texture val="@@UI/ProgressQueue" />
+            <MinValue val="0.0" />
+            <MaxValue val="0.0" />
+            <Value val="0.0" />
+            <Color val="##StandardProgressBorder" />
+            <ColorStep val="##StandardProgressFill" />
+            <Width val="128" />
+            <Height val="16" />
+            <AcceptsMouseTooltip val="False" />
+            <AcceptsMouse val="False" />
+         </Frame>
+         <Frame type="ProgressBar" name="ProgressBarDummy">
+            <Texture val="@@UI/ProgressQueue" />
+            <MinValue val="0.0" />
+            <MaxValue val="0.0" />
+            <Value val="0.0" />
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/ExperienceBar" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/ExperienceBar" pos="Mid" offset="0" />
+            <Color val="##StandardProgressBorder" />
+            <ColorStep val="##StandardProgressFill" />
+            <Width val="128" />
+            <Height val="16" />
+            <Alpha val="0" />
+            <AcceptsMouseTooltip val="True" />
+            <AcceptsMouse val="True" />
+            <RenderPriority val="625" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Frame type="MathFrame" name="DurationTimeCur">
+               <Anchor relative="$parent" />
+               <A val="{$parent/$parent/ProgressBar/@Value}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+            <Frame type="MathFrame" name="DurationTimeMax">
+               <Anchor relative="$parent" />
+               <A val="{$parent/$parent/ProgressBar/@MaxValue}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Duration Time: %1%&#xA;Time Remaining: %0%" />
+               <Replacement index="0" val="{$parent/DurationTimeCur/@Result}" />
+               <Replacement index="1" val="{$parent/DurationTimeMax/@Result}" />
+            </Frame>
+            <StateGroup name="DurationTime">
+               <DefaultState val="Hidden" />
+               <State name="Hidden">
+                  <When type="Property" frame="$parent/ProgressBar" Visible="False" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+               <State name="Visible">
+                  <When type="Property" frame="$parent/ProgressBar" Visible="True" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="ProgressBar" name="PlasmaShieldIndicator">
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Min" offset="-2" />
+            <Anchor side="Bottom" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent/ExperienceBar" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent/ExperienceBar" pos="Max" offset="0" />
+            <Height val="45" />
+            <Width val="298" />
+            <MinValue val="0" />
+            <MaxValue val="0" />
+            <Value val="0" />
+            <Tooltip val="Plasma Shield"/>
+            <TooltipAnchorPosition val="TopCenter"/>
+            <UseFillContainer val="True" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Visible val="False" />
+            <Handle val="PlasmaShieldIndicator" />
+            <Frame type="Image" name="BorderImage">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\ui_hots_bossbar_progressbar_green.dds" />
+               <DesaturateOnDisable val="True" />
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,191,255" />
+            </Frame>
+            <Frame type="Frame" name="FillImageContainer">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+               <Frame type="Image" name="FillImage">
+                  <Anchor side="Top" relative="$parent" pos="Min" offset="14" />
+                  <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+                  <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10" />
+                  <Anchor side="Right" relative="$parent" pos="Max" offset="-6" />
+                  <Texture val="Assets\Textures\ui_ingame_lotv_healthbar.dds"/>
+                  <DesaturateOnDisable val="True" />
+                  <ColorAdjustMode val="Colorize" />
+                  <AdjustmentColor val="0,55,255" />
+               </Frame>
+            </Frame>
+            <Frame type="Label" name="Label">
+               <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+               <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+               <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+               <Style val="ScoreScreenProgressLabel" />
+               <Color val="255,255,255" />
+               <Text val="{Math/@ResultInt}"/>
+               <Frame type="MathFrame" name="Math">
+                  <Anchor relative="$parent" />
+                  <A val="{$parent/$parent/@Value}" />
+                  <B val="0" />
+                  <Operator val="Add" />
+               </Frame>
+            </Frame>
+            <StateGroup name="DisplayState">
+               <DefaultState val="Hidden" />
+               <State name="Hidden">
+                  <When type="AnimationState" Display="False" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+                  <Action type="SetProperty" frame="$parent/ExperienceBar" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/ExperienceBar" AcceptsMouseTooltip="True" />
+               </State>
+               <State name="Visible">
+                  <When type="AnimationState" Display="True" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+                  <Action type="SetProperty" frame="$parent/ExperienceBar" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/ExperienceBar" AcceptsMouseTooltip="False" />
+               </State>
+            </StateGroup>            
+         </Frame>
+         <Frame type="Label" name="ArmorLabel">
+            <Anchor side="Top" relative="$parent/ArmorIcon" pos="Min" offset="3" />
+            <Anchor side="Left" relative="$parent/ArmorIcon" pos="Max" offset="3" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+            <StateGroup name="Region">
+               <DefaultState val="enUS" />
+               <State name="koKR">
+                  <When type="Option" localeiddata="koKR" />
+                  <Action type="SetProperty" Style="@@InfoPaneHeroArmor" />
+               </State>
+               <State name="enUS" />
+            </StateGroup>
+            <Alpha val="0" />
+            <AcceptsMouse val="False" />
+         </Frame>
+         <Frame type="Label" name="WeaponLabel">
+            <Anchor side="Top" relative="$parent/WeaponIcon" pos="Min" offset="3" />
+            <Anchor side="Left" relative="$parent/WeaponIcon" pos="Max" offset="3" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+            <StateGroup name="Region">
+               <DefaultState val="enUS" />
+               <State name="koKR">
+                  <When type="Option" localeiddata="koKR" />
+                  <Action type="SetProperty" Style="@@InfoPaneHeroWeapon" />
+               </State>
+               <State name="enUS" />
+            </StateGroup>
+         </Frame>
+         <Frame type="Image" name="KillIcon" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <Texture val="Assets\Textures\cursor-target-enemy.dds" />
+            <Anchor side="Top" relative="$parent/ArmorIcon" pos="Max" offset="5" />
+            <Anchor side="Left" relative="$parent/ArmorIcon" pos="Mid" offset="-16" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="InfoLabel">
+            <Anchor side="Top" relative="$parent/ArmorIcon" pos="Max" offset="-14" />
+            <Anchor side="Left" relative="$parent/ArmorIcon" pos="Min" offset="36" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+            <StateGroup name="Region">
+               <DefaultState val="enUS" />
+               <State name="koKR">
+                  <When type="Option" localeiddata="koKR" />
+                  <Action type="SetProperty" Style="@@InfoPaneHeroInfo" />
+               </State>
+               <State name="enUS" />
+            </StateGroup>
+         </Frame>
+         <Frame type="EquipmentIcon" name="ArmorIcon" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/WeaponIcon" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/WeaponIcon" pos="Min" offset="0" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+            <Alpha val="0" />
+            <AcceptsMouse val="False" />
+         </Frame>
+         <!-- ms icon replaces armor since its not used -->
+         <Frame type="Image" name="MSIcon" template="UnitHeroPanel/AttributeIconTemplate">
+            <Anchor relative="$parent/ArmorIcon" />
+            <Width val="32" />
+            <Height val="32" />
+            <Texture val="Assets\Icon Pack\btn-ability-tychus-runandgun.dds" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="SpeedLabelContainer">
+            <Anchor side="Top" relative="$parent/ArmorLabel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/ArmorLabel" pos="Min" offset="0" />
+            <Height val="32" />
+            <Width val="150" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+            <Text val="Speed: " />
+         </Frame>
+         <!-- Speed Label Display Labels -->
+         <Frame type="Label" name="SpeedLabel1" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent1/FormattedText/@Text}" />
+            <Handle val="SpeedLabel1" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel2" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent2/FormattedText/@Text}" />
+            <Handle val="SpeedLabel2" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel3" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent3/FormattedText/@Text}" />
+            <Handle val="SpeedLabel3" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel4" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent4/FormattedText/@Text}" />
+            <Handle val="SpeedLabel4" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel5" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent5/FormattedText/@Text}" />
+            <Handle val="SpeedLabel5" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel6" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent6/FormattedText/@Text}" />
+            <Handle val="SpeedLabel6" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel7" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent7/FormattedText/@Text}" />
+            <Handle val="SpeedLabel7" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel8" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent8/FormattedText/@Text}" />
+            <Handle val="SpeedLabel8" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel9" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent9/FormattedText/@Text}" />
+            <Handle val="SpeedLabel9" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel10" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent10/FormattedText/@Text}" />
+            <Handle val="SpeedLabel10" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel11" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent11/FormattedText/@Text}" />
+            <Handle val="SpeedLabel11" />
+         </Frame>
+         <Frame type="Label" name="SpeedLabel12" template="SpecialFrameTemplates/SpeedLabelTemplate">
+            <Text val="{$parent/SpeedCurrent12/FormattedText/@Text}" />
+            <Handle val="SpeedLabel12" />
+         </Frame>
+         <!-- MOS Speed Current Labels -->
+         <Frame type="Label" name="SpeedCurrent1" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent2" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent3" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent4" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent5" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent6" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent7" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent8" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent9" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent10" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent11" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <Frame type="Label" name="SpeedCurrent12" template="SpecialFrameTemplates/SpeedCurrentTemplate" />
+         <!--Unit Tag Labels -->
+         <Frame type="Label" name="UnitTag1" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag1" />
+         </Frame>
+         <Frame type="Label" name="UnitTag2" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag2" />
+         </Frame>
+         <Frame type="Label" name="UnitTag3" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag3" />
+         </Frame>
+         <Frame type="Label" name="UnitTag4" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag4" />
+         </Frame>
+         <Frame type="Label" name="UnitTag5" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag5" />
+         </Frame>
+         <Frame type="Label" name="UnitTag6" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag6" />
+         </Frame>
+         <Frame type="Label" name="UnitTag7" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag7" />
+         </Frame>
+         <Frame type="Label" name="UnitTag8" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag8" />
+         </Frame>
+         <Frame type="Label" name="UnitTag9" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag9" />
+         </Frame>
+         <Frame type="Label" name="UnitTag10" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag10" />
+         </Frame>
+         <Frame type="Label" name="UnitTag11" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag11" />
+         </Frame>
+         <Frame type="Label" name="UnitTag12" Template="SpecialFrameTemplates/UnitTagTemplate">
+            <Handle val="UnitTag12" />
+         </Frame>
+
+         <Frame type="Label" name="IndexLabel">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="75" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Style val="BossBarHP" />
+            <Handle val="IndexLabel" />
+            <Text val="0" />
+            <Visible val="false" />
+         </Frame>
+         <Frame type="Label" name="OwnerLabel">
+            <Width val="150" />
+            <Height val="75" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="75" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Style val="BossBarHP" />
+            <Handle val="OwnerLabel" />
+            <Text val="" />
+            <Visible val="False" />
+         </Frame>
+         <Frame type="Label" name="NameLabel">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-120" />
+            <Anchor side="Top" relative="$parent" pos="Min" offset="3" />
+            <Style val="BossBarHP" />
+            <Handle val="NameLabel" />
+            <StateGroup name="NameState">
+               <State name="Rifleman">
+                  <When type="Property" frame="$this" Text="Rifleman" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Fitness" />
+               </State>
+               <State name="CombatMedic">
+                  <When type="Property" frame="$this" Text="Combat Medic" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+               <State name="AutomaticRifleman">
+                  <When type="Property" frame="$this" Text="Automatic Rifleman" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Mechanical" />
+               </State>
+               <State name="CavalryScout">
+                  <When type="Property" frame="$this" Text="Cavalry Scout" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+               <State name="SFAAT">
+                  <When type="Property" frame="$this" Text="SFAAT" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Mechanical" />
+               </State>
+               <State name="JavelinGunner">
+                  <When type="Property" frame="$this" Text="Javelin Gunner" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+               <State name="SquadDesignatedMarksman">
+                  <When type="Property" frame="$this" Text="Squad Designated Marksman" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Mechanical" />
+               </State>
+               <State name="PlatoonLeader">
+                  <When type="Property" frame="$this" Text="Platoon Leader" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Fitness" />
+               </State>
+               <State name="Flamethrower">
+                  <When type="Property" frame="$this" Text="Flamethrower" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Dexterity" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Fitness" />
+               </State>
+               <State name="CombatEngineer">
+                  <When type="Property" frame="$this" Text="Combat Engineer" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+               <State name="Cyborg">
+                  <When type="Property" frame="$this" Text="Cyborg" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+               <State name="Ghost">
+                  <When type="Property" frame="$this" Text="Ghost" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon1" event="Mechanical" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon2" event="Fitness" />
+                  <Action type="SendEvent" frame="$parent/AttributeIcon3" event="Dexterity" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Label" name="TypeLabel">
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="125" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-120" />
+            <Visible val="true" />
+         </Frame>
+         <Frame type="EquipmentIcon" name="WeaponIcon" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <LayerCount val="3" />
+            <LayerVisible val="false" Layer="2" />
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="35" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+         </Frame>
+         <Frame type="Image" name="AttributeIcon1" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/ExperienceBar" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/WeaponIcon" pos="Min" offset="318" />
+            <AcceptsMouseTooltip val="true" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+            <Animation name="Dexterity" template="UnitHeroPanel/Attribute1Template"/>
+            <Animation name="Mechanical" template="UnitHeroPanel/Attribute2Template"/>
+            <Animation name="Fitness" template="UnitHeroPanel/Attribute3Template"/>
+         </Frame>
+         <Frame type="Image" name="AttributeIcon2" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/AttributeIcon1" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/AttributeIcon1" pos="Min" offset="0" />
+            <AcceptsMouseTooltip val="true" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+            <Animation name="Dexterity" template="UnitHeroPanel/Attribute1Template"/>
+            <Animation name="Mechanical" template="UnitHeroPanel/Attribute2Template"/>
+            <Animation name="Fitness" template="UnitHeroPanel/Attribute3Template"/>
+         </Frame>
+         <Frame type="Image" name="AttributeIcon3" template="UnitHeroPanel/AttributeIconTemplate">
+            <Width val="32" />
+            <Height val="32" />
+            <Anchor side="Top" relative="$parent/AttributeIcon2" pos="Max" offset="4" />
+            <Anchor side="Left" relative="$parent/AttributeIcon2" pos="Min" offset="0" />
+            <AcceptsMouseTooltip val="true" />
+            <Frame type="Image" name="IconBorder">
+               <Visible val="true" />
+            </Frame>
+            <Animation name="Dexterity" template="UnitHeroPanel/Attribute1Template"/>
+            <Animation name="Mechanical" template="UnitHeroPanel/Attribute2Template"/>
+            <Animation name="Fitness" template="UnitHeroPanel/Attribute3Template"/>
+         </Frame>
+         <Frame type="Label" name="AttributeLabel1">
+            <Anchor side="Top" relative="$parent/AttributeIcon1" pos="Min" offset="3" />
+            <Anchor side="Left" relative="$parent/AttributeIcon1" pos="Max" offset="3" />
+            <AcceptsMouse val="false" />
+            <AcceptsMouseTooltip val="false" />
+            <UseTooltip val="false" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+         </Frame>
+         <Frame type="Label" name="AttributeLabel2">
+            <Anchor side="Top" relative="$parent/AttributeIcon2" pos="Min" offset="3" />
+            <Anchor side="Left" relative="$parent/AttributeIcon2" pos="Max" offset="3" />
+            <AcceptsMouse val="false" />
+            <AcceptsMouseTooltip val="false" />
+            <UseTooltip val="false" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+         </Frame>
+         <Frame type="Label" name="AttributeLabel3">
+            <Anchor side="Top" relative="$parent/AttributeIcon3" pos="Min" offset="3" />
+            <Anchor side="Left" relative="$parent/AttributeIcon3" pos="Max" offset="3" />
+            <AcceptsMouse val="false" />
+            <AcceptsMouseTooltip val="false" />
+            <UseTooltip val="false" />
+            <Style val="@@InfoPaneHeroAttribute 2" />
+         </Frame>    
+         <!-- When unit is clicked on inventory will auto open -->
+         <Animation name="HeroClickedAnim">
+            <Event event="OnShown" action="Reset,Play"/>        
+            <Controller type="Property" frame="$InvButton00" property="Toggled" end="Pause">
+               <Key type="Property" time="0" value="False"/>
+               <Key type="Property" time="0.1" value="True"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Frame" name="InfoPaneUnit">
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-80" />
+         <Frame type="Label" name="UnitIndexLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Alpha val="0" />
+            <Text val="0" />
+            <Handle val="UnitIndexLabel" />
+         </Frame>
+         <Frame type="Label" name="DummyNameLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Style val="BossBarHP" />
+            <Alpha val="0" />
+         </Frame>
+         <Frame type="Image" name="EquipmentIconImage" template="UnitHeroPanel/AttributeIconTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="108" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Alpha val="0" />
+            <Texture val="" />
+            <RenderPriority val="800" />
+         </Frame>
+         <Frame type="Label" name="NameLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Style val="BossBarHP" />
+            <Handle val="NonHero" />
+            <StateGroup name="IconState">
+               <DefaultState val="Default" />
+               <State name="Default">
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="Hidden" />
+               </State>
+               <State name="Flamethrower">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="1" />
+                  <When type="Property" frame="$HeroPane" Visible="True" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="Hidden" />
+               </State>
+               <State name="FuelTank">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="1" />
+                  <When type="Property" frame="$this" Text="Magazines" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Text="Fuel Tanks" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Texture="Assets\Textures\btn-upgrade-tychus-firebat-wildflamefuel.dds" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="FuelTank" />
+               </State>
+               <State name="FuelCrate">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="1" />
+                  <When type="Property" frame="$this" Text="Ammo Case" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Text="Fuel Crate" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Texture="Assets\Textures\btn-upgrade-tychus-firebat-highcapacity.dds" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="FuelCrate" />
+               </State>
+               <State name="Ghost">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="2" />
+                  <When type="Property" frame="$HeroPane" Visible="True" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="Hidden" />
+               </State>
+               <State name="PlasmaCell">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="2" />
+                  <When type="Property" frame="$this" Text="Magazines" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Text="Plasma Cell" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Texture="Assets\Buttons\Plasma_Cells.dds" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="PlasmaCell" />
+               </State>
+               <State name="PlasmaCellPack">
+                  <When type="Property" frame="$parent/UnitIndexLabel" Text="2" />
+                  <When type="Property" frame="$this" Text="Ammo Case" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Text="Plasma Crate" />
+                  <Action type="SetProperty" frame="$parent/DummyNameLabel" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Alpha="255" />
+                  <Action type="SetProperty" frame="$parent/EquipmentIconImage" Texture="Assets\Buttons\Plasma_Cell_Pack.dds" />
+                  <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="PlasmaCellPack" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <Frame type="Frame" name="EquipmentPanel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="108" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Height val="64" />
+         </Frame>
+         <!--
+         <Frame type="Image" name="EquipmentIcon0" template="EquipmentIcon/EquipmentIconTemplate" >
+            <Anchor side="Top" relative="$parent/EquipmentPanel" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/EquipmentPanel" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent/EquipmentPanel" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent/EquipmentIconTemplate" pos="Min" offset="64" />
+            <Texture val="$parent/EquipmentIconTemplate/@Texture" />
+            <RenderPriority val="510" />
+         </Frame> -->
+         <Frame type="ProgressBar" name="ProgressBar">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Texture val="@@UI/ProgressQueue" />
+            <MinValue val="0.000000" />
+            <Color val="##StandardProgressBorder" />
+            <ColorStep val="##StandardProgressFill" />
+            <Width val="128" />
+            <Height val="16" />
+            <AcceptsMouse val="False" />
+            <AcceptsMouseTooltip val="False" />
+         </Frame>
+         <Frame type="ProgressBar" name="ProgressBarDummy">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Texture val="@@UI/ProgressQueue" />
+            <MinValue val="0.000000" />
+            <Color val="##StandardProgressBorder" />
+            <ColorStep val="##StandardProgressFill" />
+            <Width val="128" />
+            <Height val="16" />
+            <Alpha val="0" />
+            <AcceptsMouseTooltip val="True" />
+            <AcceptsMouse val="True" />
+            <RenderPriority val="625" />
+            <Tooltip val="{$this/FormattedText/@Text}" />
+            <TooltipFrame val="UADStandardTooltip" />
+            <Frame type="MathFrame" name="DurationTimeCur">
+               <Anchor relative="$parent" />
+               <A val="{$parent/$parent/ProgressBar/@Value}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+            <Frame type="MathFrame" name="DurationTimeMax">
+               <Anchor relative="$parent" />
+               <A val="{$parent/$parent/ProgressBar/@MaxValue}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="Duration Time: %1%&#xA;Time Remaining: %0%" />
+               <Replacement index="0" val="{$parent/DurationTimeCur/@Result}" />
+               <Replacement index="1" val="{$parent/DurationTimeMax/@Result}" />
+            </Frame>
+            <StateGroup name="DurationTime">
+               <DefaultState val="Hidden" />
+               <State name="Hidden">
+                  <When type="Property" frame="$parent/ProgressBar" Visible="False" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+               <State name="Visible">
+                  <When type="Property" frame="$parent/ProgressBar" Visible="True" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="LNInventory">
+            <DefaultState val="NotLN" />
+            <State name="NotLN" />
+            <State name="LNRifleman">
+               <When type="Property" frame="$this/NameLabel" Text="LN Rifleman" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+            <State name="LNAR">
+               <When type="Property" frame="$this/NameLabel" Text="LN Automatic Rifleman" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+            <State name="LNMarksman">
+               <When type="Property" frame="$this/NameLabel" Text="LN Marksman" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+            <State name="LNShotgunner">
+               <When type="Property" frame="$this/NameLabel" Text="LN Shotgunner" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+            <State name="LNJav">
+               <When type="Property" frame="$this/NameLabel" Text="LN Javelin Gunner" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+            <State name="LNRanger">
+               <When type="Property" frame="$this/NameLabel" Text="LN Ranger" />
+               <Action type="SendEvent" frame="$this" Event="LNInventory" />
+            </State>
+         </StateGroup>
+         <Animation name="LNClickedAnim">
+            <Event event="LNInventory" action="Reset,Play"/>        
+            <Controller type="Property" frame="$InvButton00" property="Toggled" end="Pause">
+               <Key type="Property" time="0" value="False"/>
+               <Key type="Property" time="0.1" value="True"/>
+            </Controller>
+         </Animation>
+      </Frame>
+      <Frame type="Frame" name="InfoPaneProgress">
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-80" />
+         <Frame type="Label" name="NameLabel">
+            <Alpha val="0" />
+         </Frame>
+         <Frame type="Frame" name="ProgressContainer">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Width val="250" />
+            <Height val="64" />
+            <Frame type="Label" name="CastTimeLabel">
+               <Anchor side="Bottom" relative="$parent/ProgressButton" pos="Max" offset="-35" />
+               <Anchor side="Left" relative="$parent/ProgressButton" pos="Max" offset="4" />
+               <Text val="Cast Time:" />
+               <Style val="@@InfoPaneHeroAttribute 2" />
+            </Frame>
+            <Frame type="Label" name="ElapsedTimeLabel">
+               <Anchor side="Top" relative="$parent/CastTimeLabel" pos="Min" offset="20" />
+               <Anchor side="Left" relative="$parent/CastTimeLabel" pos="Min" offset="0" />
+               <Text val="Time Elapsed:" />
+               <Style val="@@InfoPaneHeroAttribute 2" />
+            </Frame>
+            <Frame type="CountdownLabel" name="CastTimeLabelMax">
+               <Anchor side="Bottom" relative="$parent/ProgressButton" pos="Max" offset="-35" />
+               <Anchor side="Left" relative="$parent/ProgressButton" pos="Max" offset="90" />
+               <Text val="{$parent/CastTimeMax/@Result}" />
+               <Style val="@@InfoPaneHeroAttribute 2" />
+               <IntegerBias val="Trunc" />
+               <Color val="255,255,255" />
+            </Frame>
+            <Frame type="CountdownLabel" name="ElapsedTimeLabelCur">
+               <Anchor side="Top" relative="$parent/CastTimeLabel" pos="Min" offset="20" />
+               <Anchor side="Left" relative="$parent/CastTimeLabel" pos="Min" offset="110" />
+               <Text val="{$parent/CastTimeCur/@Result}" />
+               <Style val="@@InfoPaneHeroAttribute 2" />
+               <IntegerBias val="Trunc" />
+               <Color val="255,255,255" />
+            </Frame>
+            <Frame type="ProgressBar" name="ProgressBar">
+               <Anchor side="Bottom" relative="$parent/ProgressButton" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$parent/ProgressButton" pos="Max" offset="4" />
+               <MinValue val="0.000000" />
+               <FillInset val="0.03125" />
+               <Color val="##StandardProgressBorder" />
+               <ColorStep val="##StandardProgressFill" />
+               <Width val="150" />
+               <Height val="16" />
+               <AcceptsMouse val="False" />
+               <AcceptsMouseTooltip val="False" />
+            </Frame>
+            <Frame type="MathFrame" name="CastTimeCur">
+               <Anchor relative="$parent" />
+               <A val="{$parent/ProgressBar/@Value}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+            <Frame type="MathFrame" name="CastTimeMax">
+               <Anchor relative="$parent" />
+               <A val="{$parent/ProgressBar/@MaxValue}" />
+               <B val="16" />
+               <Operator val="Divide" />
+            </Frame>
+         </Frame>
+      </Frame>
+      <Frame type="Frame" name="InfoPaneCargo">
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-80" />
+      </Frame>
+      <Frame type="Frame" name="InfoPaneQueue">
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-80" />
+      </Frame>
+      <Frame type="InfoPaneGroup" name="InfoPaneGroup">
+         <Anchor relative="$parent" />
+         <Handle val="InfoPaneGroup" />
+         <StateGroup name="InfoPaneState">
+            <DefaultState val="DefaultView" />
+            <State name="SFAATView">
+               <When type="AnimationState" InfoPaneGroup="SFAAT"/>
+               <Action type="SetProperty" frame="PageFrame0" Visible="True" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton0" Width="1" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton0" Height="1" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton1" Width="1" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton1" Height="1" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton1" side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton1" side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton2" Width="1" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton2" Height="1" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton2" side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton2" side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton3" Width="1" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton3" Height="1" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton3" side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton3" side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton4" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton4" Height="32" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton4" side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton4" side="Left" relative="$sibling-1" pos="Max" offset="455"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton5" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton5" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton6" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton6" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton7" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton7" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton8" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton8" Height="32" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton8" side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton8" side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton9" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton9" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton10" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton10" Height="32" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton10" side="Top" relative="$sibling-6" pos="Max" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton10" side="Left" relative="$sibling-6" pos="Max" offset="-32"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton11" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton11" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton12" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton12" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton13" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton13" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton14" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton14" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton15" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton15" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton16" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton16" Height="32" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton16" side="Top" relative="$sibling-6" pos="Max" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton16" side="Left" relative="$sibling-6" pos="Max" offset="-32"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton17" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton17" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton18" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton18" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton19" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton19" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton20" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton20" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton21" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton21" Height="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton22" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton22" Height="32" />
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton22" side="Top" relative="$sibling-6" pos="Max" offset="0"/>
+               <Action type="SetAnchor" frame="PageFrame0/GroupUnitButton22" side="Left" relative="$sibling-6" pos="Max" offset="-32"/>
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton23" Width="32" />
+               <Action type="SetProperty" frame="PageFrame0/GroupUnitButton23" Height="32" />
+            </State>
+            <State name="DefaultView">
+               <When type="AnimationState" InfoPaneGroup="Reset"/>
+            </State>
+         </StateGroup>
+         <Frame type="Frame" name="PageFrame0">
+            <Frame type="Frame" name="TargetInfoFrame0" template="UnitPanel/TargetInfoFrameTemplate">
+               <Anchor side="Top" relative="$parent/GroupUnitButton0" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$parent/GroupUnitButton0" pos="Min" offset="2" />
+               <Visible val="False" />
+               <Handle val="TargetInfoFrame0" />
+               <Frame type="Label" name="UnitTagCache">
+                  <Anchor relative="$parent" />
+                  <Visible val="False" />
+                  <Text val="{$parent/$parent/GroupUnitButton0/@UnitTag}" />
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="TargetInfoFrame1" template="UnitPanel/TargetInfoFrameTemplate">
+               <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0" />
+               <Visible val="False" />
+               <Handle val="TargetInfoFrame1" />
+               <Frame type="Label" name="UnitTagCache">
+                  <Anchor relative="$parent" />
+                  <Visible val="False" />
+                  <Text val="{$parent/$parent/GroupUnitButton1/@UnitTag}" />
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="TargetInfoFrame2" template="UnitPanel/TargetInfoFrameTemplate">
+               <Anchor side="Top" relative="$sibling-2" pos="Max" offset="0" />
+               <Anchor side="Left" relative="$sibling-2" pos="Min" offset="0" />
+               <Visible val="False" />
+               <Handle val="TargetInfoFrame2" />
+               <Frame type="Label" name="UnitTagCache">
+                  <Anchor relative="$parent" />
+                  <Visible val="False" />
+                  <Text val="{$parent/$parent/GroupUnitButton2/@UnitTag}" />
+               </Frame>
+            </Frame>
+            <Frame type="Frame" name="TargetInfoFrame3" template="UnitPanel/TargetInfoFrameTemplate">
+               <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+               <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0" />
+               <Visible val="False" />
+               <Handle val="TargetInfoFrame3" />
+               <Frame type="Label" name="UnitTagCache">
+                  <Anchor relative="$parent" />
+                  <Visible val="False" />
+                  <Text val="{$parent/$parent/GroupUnitButton3/@UnitTag}" />
+               </Frame>
+            </Frame>   
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

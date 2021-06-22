@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BankList>
+    <Bank Name="UAD" Player="1"/>
+    <Bank Name="UAD" Player="2"/>
+    <Bank Name="UAD" Player="3"/>
+    <Bank Name="UAD" Player="4"/>
+    <Bank Name="UAD" Player="5"/>
+    <Bank Name="UAD" Player="6"/>
+    <Bank Name="UAD" Player="7"/>
+    <Bank Name="UAD" Player="8"/>
+    <Bank Name="UAD" Player="9"/>
+    <Bank Name="UAD" Player="10"/>
+    <Bank Name="UAD" Player="11"/>
+    <Bank Name="UAD" Player="12"/>
+    <Bank Name="UAD3" Player="1"/>
+    <Bank Name="UAD3" Player="2"/>
+    <Bank Name="UAD3" Player="3"/>
+    <Bank Name="UAD3" Player="4"/>
+    <Bank Name="UAD3" Player="5"/>
+    <Bank Name="UAD3" Player="6"/>
+    <Bank Name="UAD3" Player="7"/>
+    <Bank Name="UAD3" Player="8"/>
+    <Bank Name="UAD3" Player="9"/>
+    <Bank Name="UAD3" Player="10"/>
+    <Bank Name="UAD3" Player="11"/>
+    <Bank Name="UAD3" Player="12"/>
+</BankList>

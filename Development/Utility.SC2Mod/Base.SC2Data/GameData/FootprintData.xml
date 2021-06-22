@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CFootprint id="Footprint1x1OneWayLOS">
+        <Layers index="Place">
+            <Sets index="0">
+                <Positive index="ShrubVision" value="1"/>
+            </Sets>
+        </Layers>
+    </CFootprint>
+</Catalog>

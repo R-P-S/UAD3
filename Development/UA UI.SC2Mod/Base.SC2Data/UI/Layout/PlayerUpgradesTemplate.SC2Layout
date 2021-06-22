@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="UpgradeOffset" val="0" />
+   <Constant name="UpgradePadding" val="4" />
+   <Frame type="UpgradeCountFrame" name="UpgradeCountFrameTemplate">
+      <Height val="68" />
+      <Width val="60" />
+      <AcceptsMouse val="False" />
+      <AcceptsMouseTooltip val="False" />
+      <Visible val="False" />
+      <CollapseLayout val="True" />
+      <PreserveAnchorOffset val="True" />
+      <Frame name="BackgroundButton" type="Button">
+         <Anchor offset="0" pos="Min" relative="$parent" side="Top" />
+         <Anchor offset="0" pos="Min" relative="$parent" side="Left" />
+         <Anchor offset="-8" pos="Max" relative="$parent" side="Bottom" />
+         <Anchor offset="0" pos="Max" relative="$parent" side="Right" />
+         <Tooltip val="{FormattedText/@Text}" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <Frame name="NormalImage" type="Image">
+            <Anchor offset="3" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="3" pos="Min" relative="$parent" side="Left" />
+            <Anchor offset="-3" pos="Max" relative="$parent" side="Bottom" />
+            <Anchor offset="-3" pos="Max" relative="$parent" side="Right" />
+            <Texture val="Assets/Textures/ui_production_border.dds" />
+            <TextureType val="NineSlice" />
+            <IgnoreParentColor val="True" />
+            <Color val="0,255,168" />
+            <Alpha val="175" />
+         </Frame>
+         <Frame name="HoverImage" type="Image">
+            <Anchor relative="$parent/NormalImage" />
+            <Texture val="Assets/Textures/ui_production_border.dds" />
+            <TextureType val="NineSlice" />
+            <Color val="0,255,168" />
+            <Alpha val="255" />
+         </Frame>
+         <Frame type="TextFormatFrame" name="FormattedText">
+            <Anchor relative="$parent" />
+            <FormatText val="&lt;s val=&quot;StandardTooltipHeader_Terr&quot;&gt;%0%&lt;/s&gt;&#xA;&#xA;%1%" />
+            <Replacement index="0" val="{$parent/$parent/@Tooltip}" />
+            <Replacement index="1" val="{$parent/Label/@Tooltip}" />
+         </Frame>
+         <Frame type="Label" name="Label">
+            <Anchor relative="$parent" />
+            <Alpha val="0" />
+            <AcceptsMouse val="False" />
+         </Frame>
+      </Frame>
+      <Frame name="IconImage" type="Image">
+         <Anchor offset="0" pos="8%" relative="$parent/BackgroundButton" side="Top" />
+         <Anchor offset="0" pos="8%" relative="$parent/BackgroundButton" side="Left" />
+         <Anchor offset="0" pos="92%" relative="$parent/BackgroundButton" side="Bottom" />
+         <Anchor offset="0" pos="92%" relative="$parent/BackgroundButton" side="Right" />
+         <Texture val="@@UI/LeaderPanelUnitBackground" />
+         <IgnoreParentColor val="true" />
+         <RenderPriority val="500" />
+      </Frame>
+      <Frame type="Label" name="NumberLabel">
+         <Anchor offset="-6" pos="Max" relative="$parent/BackgroundButton" side="Bottom" />
+         <Anchor offset="-6" pos="Max" relative="$parent/BackgroundButton" side="Right" />
+         <IgnoreParentColor val="true" />
+         <Style val="GameButtonCharge" />
+      </Frame>
+      <Stategroup name="TooltipAppender">
+         <DefaultState val="NoAdditionalData" />
+         <State name="NoAdditionalData" />
+         <State name="SoldierSkills1">
+            <When type="Property" Tooltip="Soldier Skills Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkills" />
+         </State>
+         <State name="SoldierSkills2">
+            <When type="Property" Tooltip="Soldier Skills Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkills" />
+         </State>
+         <State name="SoldierSkills3">
+            <When type="Property" Tooltip="Soldier Skills Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkills" />
+         </State>
+         <State name="SoldierSkills4">
+            <When type="Property" Tooltip="Soldier Skills Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkills" />
+         </State>
+         <State name="SoldierSkills5">
+            <When type="Property" Tooltip="Soldier Skills Level 5" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkills" />
+         </State>
+         <State name="RiflemanMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="RiflemanMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="RiflemanMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="RiflemanMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="ARMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunMarksmanship" />
+         </State>
+         <State name="ARMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunMarksmanship" />
+         </State>
+         <State name="ARMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunMarksmanship" />
+         </State>
+         <State name="ARMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunMarksmanship" />
+         </State>
+         <State name="CSMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="CSMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="CSMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="CSMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="SFAATMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="5" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShotgunMarksmanship" />
+         </State>
+         <State name="SFAATMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="5" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShotgunMarksmanship" />
+         </State>
+         <State name="SFAATMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="5" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShotgunMarksmanship" />
+         </State>
+         <State name="SFAATMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="5" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShotgunMarksmanship" />
+         </State>
+         <State name="SDMMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="7" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DMRMarksmanship" />
+         </State>
+         <State name="SDMMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="7" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DMRMarksmanship" />
+         </State>
+         <State name="SDMMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="7" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DMRMarksmanship" />
+         </State>
+         <State name="SDMMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="7" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DMRMarksmanship" />
+         </State>
+         <State name="PLMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="8" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="PLMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="8" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="PLMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="8" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="PLMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="8" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RifleMarksmanship" />
+         </State>
+         <State name="CYMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="11" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MinigunMarksmanship" />
+         </State>
+         <State name="CYMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="11" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MinigunMarksmanship" />
+         </State>
+         <State name="CYMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="11" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MinigunMarksmanship" />
+         </State>
+         <State name="CYMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="11" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MinigunMarksmanship" />
+         </State>
+         <State name="GYMarksmanship1">
+            <When type="Property" Tooltip="Marksmanship Level 1" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="12" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaRifleMarksmanship" />
+         </State>
+         <State name="GYMarksmanship2">
+            <When type="Property" Tooltip="Marksmanship Level 2" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="12" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaRifleMarksmanship" />
+         </State>
+         <State name="GYMarksmanship3">
+            <When type="Property" Tooltip="Marksmanship Level 3" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="12" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaRifleMarksmanship" />
+         </State>
+         <State name="GYMarksmanship4">
+            <When type="Property" Tooltip="Marksmanship Level 4" />
+            <When type="Property" frame="$ancestor[@name=UIContainer]/FullscreenUpperContainer/UIicon" Text="12" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaRifleMarksmanship" />
+         </State>
+         <State name="RiflemanFragGrenade1">
+            <When type="Property" Tooltip="Frag Grenade Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFragGrenade" />
+         </State>
+         <State name="RiflemanFragGrenade2">
+            <When type="Property" Tooltip="Frag Grenade Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFragGrenade" />
+         </State>
+         <State name="RiflemanFragGrenad3">
+            <When type="Property" Tooltip="Frag Grenade Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFragGrenade" />
+         </State>
+         <State name="RiflemanFragGrenad4">
+            <When type="Property" Tooltip="Frag Grenade Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFragGrenade" />
+         </State>
+         <State name="SupportGrenades1">
+            <When type="Property" Tooltip="Support Grenades Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnSupportGrenades" />
+         </State>
+         <State name="SupportGrenades2">
+            <When type="Property" Tooltip="Support Grenades Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnSupportGrenades" />
+         </State>
+         <State name="SupportGrenades3">
+            <When type="Property" Tooltip="Support Grenades Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnSupportGrenades" />
+         </State>
+         <State name="SupportGrenades4">
+            <When type="Property" Tooltip="Support Grenades Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnSupportGrenades" />
+         </State>
+         <State name="FocusFire1">
+            <When type="Property" Tooltip="Focus Fire Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFocusFire" />
+         </State>
+         <State name="FocusFire2">
+            <When type="Property" Tooltip="Focus Fire Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFocusFire" />
+         </State>
+         <State name="FocusFire3">
+            <When type="Property" Tooltip="Focus Fire Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFocusFire" />
+         </State>
+         <State name="FocusFire4">
+            <When type="Property" Tooltip="Focus Fire Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFocusFire" />
+         </State>
+         <State name="HealingKit1">
+            <When type="Property" Tooltip="Healing Kit Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HealingKit" />
+         </State>
+         <State name="HealingKit2">
+            <When type="Property" Tooltip="Healing Kit Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HealingKit" />
+         </State>
+         <State name="HealingKit3">
+            <When type="Property" Tooltip="Healing Kit Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HealingKit" />
+         </State>
+         <State name="HealingKit4">
+            <When type="Property" Tooltip="Healing Kit Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HealingKit" />
+         </State>
+         <State name="CuringKit1">
+            <When type="Property" Tooltip="Curing Kit Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CuringKit" />
+         </State>
+         <State name="CuringKit2">
+            <When type="Property" Tooltip="Curing Kit Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CuringKit" />
+         </State>
+         <State name="CuringKit3">
+            <When type="Property" Tooltip="Curing Kit Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CuringKit" />
+         </State>
+         <State name="CuringKit4">
+            <When type="Property" Tooltip="Curing Kit Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CuringKit" />
+         </State>
+         <State name="EnhancementKit1">
+            <When type="Property" Tooltip="Enhancement Kit Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnhancementKit" />
+         </State>
+         <State name="EnhancementKit2">
+            <When type="Property" Tooltip="Enhancement Kit Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnhancementKit" />
+         </State>
+         <State name="EnhancementKit3">
+            <When type="Property" Tooltip="Enhancement Kit Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnhancementKit" />
+         </State>
+         <State name="EnhancementKit4">
+            <When type="Property" Tooltip="Enhancement Kit Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnhancementKit" />
+         </State>
+         <State name="AugmentationKit1">
+            <When type="Property" Tooltip="Augmentation Kit Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AugmentationKit" />
+         </State>
+         <State name="AugmentationKit2">
+            <When type="Property" Tooltip="Augmentation Kit Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AugmentationKit" />
+         </State>
+         <State name="AugmentationKit3">
+            <When type="Property" Tooltip="Augmentation Kit Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AugmentationKit" />
+         </State>
+         <State name="AugmentationKit4">
+            <When type="Property" Tooltip="Augmentation Kit Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AugmentationKit" />
+         </State>
+         <State name="MGUpgrades1">
+            <When type="Property" Tooltip="Machine Gun Upgrades Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunUpgrades" />
+         </State>
+         <State name="MGUpgrades2">
+            <When type="Property" Tooltip="Machine Gun Upgrades Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunUpgrades" />
+         </State>
+         <State name="MGUpgrades3">
+            <When type="Property" Tooltip="Machine Gun Upgrades Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunUpgrades" />
+         </State>
+         <State name="MGUpgrades4">
+            <When type="Property" Tooltip="Machine Gun Upgrades Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MachineGunUpgrades" />
+         </State>
+         <State name="FullAuto1">
+            <When type="Property" Tooltip="Full Auto Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFullAuto" />
+         </State>
+         <State name="FullAuto2">
+            <When type="Property" Tooltip="Full Auto Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFullAuto" />
+         </State>
+         <State name="FullAuto3">
+            <When type="Property" Tooltip="Full Auto Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFullAuto" />
+         </State>
+         <State name="FullAuto4">
+            <When type="Property" Tooltip="Full Auto Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnFullAuto" />
+         </State>
+         <State name="IncendiaryRounds1">
+            <When type="Property" Tooltip="Incendiary Rounds Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnIncendiaryRounds" />
+         </State>
+         <State name="IncendiaryRounds2">
+            <When type="Property" Tooltip="Incendiary Rounds Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnIncendiaryRounds" />
+         </State>
+         <State name="IncendiaryRounds3">
+            <When type="Property" Tooltip="Incendiary Rounds Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnIncendiaryRounds" />
+         </State>
+         <State name="IncendiaryRounds4">
+            <When type="Property" Tooltip="Incendiary Rounds Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnIncendiaryRounds" />
+         </State>
+         <State name="ExplosivesExpert1">
+            <When type="Property" Tooltip="Explosives Expert Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ExplosivesExpert" />
+         </State>
+         <State name="ExplosivesExpert2">
+            <When type="Property" Tooltip="Explosives Expert Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ExplosivesExpert" />
+         </State>
+         <State name="ExplosivesExpert3">
+            <When type="Property" Tooltip="Explosives Expert Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ExplosivesExpert" />
+         </State>
+         <State name="ExplosivesExpert4">
+            <When type="Property" Tooltip="Explosives Expert Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ExplosivesExpert" />
+         </State>
+         <State name="Reconnaissance1">
+            <When type="Property" Tooltip="Reconnaissance Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Reconnaissance" />
+         </State>
+         <State name="Reconnaissance2">
+            <When type="Property" Tooltip="Reconnaissance Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Reconnaissance" />
+         </State>
+         <State name="Reconnaissance3">
+            <When type="Property" Tooltip="Reconnaissance Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Reconnaissance" />
+         </State>
+         <State name="Reconnaissance4">
+            <When type="Property" Tooltip="Reconnaissance Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Reconnaissance" />
+         </State>
+         <State name="Bandolier1">
+            <When type="Property" Tooltip="Bandolier Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Bandolier" />
+         </State>
+         <State name="Bandolier2">
+            <When type="Property" Tooltip="Bandolier Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Bandolier" />
+         </State>
+         <State name="Bandolier3">
+            <When type="Property" Tooltip="Bandolier Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Bandolier" />
+         </State>
+         <State name="Bandolier4">
+            <When type="Property" Tooltip="Bandolier Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Bandolier" />
+         </State>
+         <State name="Training1">
+            <When type="Property" Tooltip="Training Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Training" />
+         </State>
+         <State name="Training2">
+            <When type="Property" Tooltip="Training Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Training" />
+         </State>
+         <State name="Training3">
+            <When type="Property" Tooltip="Training Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Training" />
+         </State>
+         <State name="Training4">
+            <When type="Property" Tooltip="Training Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Training" />
+         </State>
+         <State name="LeaderShip1">
+            <When type="Property" Tooltip="Leadership Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Leadership" />
+         </State>
+         <State name="LeaderShip2">
+            <When type="Property" Tooltip="Leadership Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Leadership" />
+         </State>
+         <State name="LeaderShip3">
+            <When type="Property" Tooltip="Leadership Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Leadership" />
+         </State>
+         <State name="LeaderShip4">
+            <When type="Property" Tooltip="Leadership Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Leadership" />
+         </State>
+         <State name="Tactics1">
+            <When type="Property" Tooltip="Tactics Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Tactics" />
+         </State>
+         <State name="Tactics2">
+            <When type="Property" Tooltip="Tactics Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Tactics" />
+         </State>
+         <State name="Tactics3">
+            <When type="Property" Tooltip="Tactics Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Tactics" />
+         </State>
+         <State name="Tactics4">
+            <When type="Property" Tooltip="Tactics Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Tactics" />
+         </State>
+         <State name="HERocket1">
+            <When type="Property" Tooltip="HE Rocket Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHERocket" />
+         </State>
+         <State name="HERocket2">
+            <When type="Property" Tooltip="HE Rocket Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHERocket" />
+         </State>
+         <State name="HERocket3">
+            <When type="Property" Tooltip="HE Rocket Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHERocket" />
+         </State>
+         <State name="HERocket4">
+            <When type="Property" Tooltip="HE Rocket Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHERocket" />
+         </State>
+         <State name="ATRocket1">
+            <When type="Property" Tooltip="AT Rocket Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnATRocket" />
+         </State>
+         <State name="ATRocket2">
+            <When type="Property" Tooltip="AT Rocket Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnATRocket" />
+         </State>
+         <State name="ATRocket3">
+            <When type="Property" Tooltip="AT Rocket Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnATRocket" />
+         </State>
+         <State name="ATRocket4">
+            <When type="Property" Tooltip="AT Rocket Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnATRocket" />
+         </State>
+         <State name="StingerMissile1">
+            <When type="Property" Tooltip="Stinger Missile Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStingerMissile" />
+         </State>
+         <State name="StingerMissile2">
+            <When type="Property" Tooltip="Stinger Missile Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStingerMissile" />
+         </State>
+         <State name="StingerMissile3">
+            <When type="Property" Tooltip="Stinger Missile Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStingerMissile" />
+         </State>
+         <State name="StingerMissile4">
+            <When type="Property" Tooltip="Stinger Missile Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStingerMissile" />
+         </State>
+         <State name="JavelinMissile1">
+            <When type="Property" Tooltip="Javelin Missile Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnJavelinMissile" />
+         </State>
+         <State name="JavelinMissile2">
+            <When type="Property" Tooltip="Javelin Missile Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnJavelinMissile" />
+         </State>
+         <State name="JavelinMissile3">
+            <When type="Property" Tooltip="Javelin Missile Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnJavelinMissile" />
+         </State>
+         <State name="JavelinMissile4">
+            <When type="Property" Tooltip="Javelin Missile Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnJavelinMissile" />
+         </State>
+         <State name="MarksmanSkills1">
+            <When type="Property" Tooltip="Marksman Skills Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanSkills" />
+         </State>
+         <State name="MarksmanSkills2">
+            <When type="Property" Tooltip="Marksman Skills Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanSkills" />
+         </State>
+         <State name="MarksmanSkills3">
+            <When type="Property" Tooltip="Marksman Skills Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanSkills" />
+         </State>
+         <State name="MarksmanSkills4">
+            <When type="Property" Tooltip="Marksman Skills Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanSkills" />
+         </State>
+         <State name="RapidFire1">
+            <When type="Property" Tooltip="Rapid Fire Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnRapidFire" />
+         </State>
+         <State name="RapidFire2">
+            <When type="Property" Tooltip="Rapid Fire Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnRapidFire" />
+         </State>
+         <State name="RapidFire3">
+            <When type="Property" Tooltip="Rapid Fire Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnRapidFire" />
+         </State>
+         <State name="RapidFire4">
+            <When type="Property" Tooltip="Rapid Fire Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnRapidFire" />
+         </State>
+         <State name="MonoWire1">
+            <When type="Property" Tooltip="Monomolecular Wire Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMonomolecularWire" />
+         </State>
+         <State name="MonoWire2">
+            <When type="Property" Tooltip="Monomolecular Wire Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMonomolecularWire" />
+         </State>
+         <State name="MonoWire3">
+            <When type="Property" Tooltip="Monomolecular Wire Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMonomolecularWire" />
+         </State>
+         <State name="MonoWire4">
+            <When type="Property" Tooltip="Monomolecular Wire Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMonomolecularWire" />
+         </State>
+         <State name="BornToLead1">
+            <When type="Property" Tooltip="Born To Lead Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnBornToLead" />
+         </State>
+         <State name="BornToLead2">
+            <When type="Property" Tooltip="Born To Lead Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnBornToLead" />
+         </State>
+         <State name="BornToLead3">
+            <When type="Property" Tooltip="Born To Lead Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnBornToLead" />
+         </State>
+         <State name="BornToLead4">
+            <When type="Property" Tooltip="Born To Lead Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnBornToLead" />
+         </State>
+         <State name="Instructor1">
+            <When type="Property" Tooltip="Instructor Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInstructor" />
+         </State>
+         <State name="Instructor2">
+            <When type="Property" Tooltip="Instructor Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInstructor" />
+         </State>
+         <State name="Instructor3">
+            <When type="Property" Tooltip="Instructor Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInstructor" />
+         </State>
+         <State name="Instructor4">
+            <When type="Property" Tooltip="Instructor Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInstructor" />
+         </State>
+         <State name="MortarStrike1">
+            <When type="Property" Tooltip="Mortar Strike Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMortarStrike" />
+         </State>
+         <State name="MortarStrike2">
+            <When type="Property" Tooltip="Mortar Strike Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMortarStrike" />
+         </State>
+         <State name="MortarStrike3">
+            <When type="Property" Tooltip="Mortar Strike Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMortarStrike" />
+         </State>
+         <State name="MortarStrike4">
+            <When type="Property" Tooltip="Mortar Strike Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnMortarStrike" />
+         </State>
+         <State name="Burning1">
+            <When type="Property" Tooltip="Mortar Strike Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Burning" />
+         </State>
+         <State name="Burning2">
+            <When type="Property" Tooltip="Burning Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Burning" />
+         </State>
+         <State name="Burning3">
+            <When type="Property" Tooltip="Burning Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Burning" />
+         </State>
+         <State name="Burning4">
+            <When type="Property" Tooltip="Burning Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Burning" />
+         </State>
+         <State name="Pyrotechnician1">
+            <When type="Property" Tooltip="Pyrotechnician Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Pyrotechnician" />
+         </State>
+         <State name="Pyrotechnician2">
+            <When type="Property" Tooltip="Pyrotechnician Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Pyrotechnician" />
+         </State>
+         <State name="Pyrotechnician3">
+            <When type="Property" Tooltip="Pyrotechnician Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Pyrotechnician" />
+         </State>
+         <State name="Pyrotechnician4">
+            <When type="Property" Tooltip="Pyrotechnician Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Pyrotechnician" />
+         </State>
+         <State name="OilDouse1">
+            <When type="Property" Tooltip="Oil Douse Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnOilDouse" />
+         </State>
+         <State name="OilDouse2">
+            <When type="Property" Tooltip="Oil Douse Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnOilDouse" />
+         </State>
+         <State name="OilDouse3">
+            <When type="Property" Tooltip="Oil Douse Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnOilDouse" />
+         </State>
+         <State name="OilDouse4">
+            <When type="Property" Tooltip="Oil Douse Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnOilDouse" />
+         </State>
+         <State name="WildfireEquipment1">
+            <When type="Property" Tooltip="Wildfire Equipment Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireEquipment" />
+         </State>
+         <State name="WildfireEquipment2">
+            <When type="Property" Tooltip="Wildfire Equipment Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireEquipment" />
+         </State>
+         <State name="WildfireEquipment3">
+            <When type="Property" Tooltip="Wildfire Equipment Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireEquipment" />
+         </State>
+         <State name="WildfireEquipment4">
+            <When type="Property" Tooltip="Wildfire Equipment Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireEquipment" />
+         </State>
+         <State name="Architect1">
+            <When type="Property" Tooltip="Architect Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Architect" />
+         </State>
+         <State name="Architect2">
+            <When type="Property" Tooltip="Architect Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Architect" />
+         </State>
+         <State name="Architect3">
+            <When type="Property" Tooltip="Architect Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Architect" />
+         </State>
+         <State name="Architect4">
+            <When type="Property" Tooltip="Architect Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Architect" />
+         </State>
+         <State name="Security1">
+            <When type="Property" Tooltip="Security Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Security" />
+         </State>
+         <State name="Security2">
+            <When type="Property" Tooltip="Security Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Security" />
+         </State>
+         <State name="Security3">
+            <When type="Property" Tooltip="Security Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Security" />
+         </State>
+         <State name="Security4">
+            <When type="Property" Tooltip="Security Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/Security" />
+         </State>
+         <State name="BattleBot1">
+            <When type="Property" Tooltip="Battle Bot Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BattleBot" />
+         </State>
+         <State name="BattleBot2">
+            <When type="Property" Tooltip="Battle Bot Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BattleBot" />
+         </State>
+         <State name="BattleBot3">
+            <When type="Property" Tooltip="Battle Bot Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BattleBot" />
+         </State>
+         <State name="BattleBot4">
+            <When type="Property" Tooltip="Battle Bot Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BattleBot" />
+         </State>
+         <State name="EngineeringSkills1">
+            <When type="Property" Tooltip="Engineering Skills Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EngineeringSkills" />
+         </State>
+         <State name="EngineeringSkills2">
+            <When type="Property" Tooltip="Engineering Skills Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EngineeringSkills" />
+         </State>
+         <State name="EngineeringSkills3">
+            <When type="Property" Tooltip="Engineering Skills Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EngineeringSkills" />
+         </State>
+         <State name="EngineeringSkills4">
+            <When type="Property" Tooltip="Engineering Skills Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EngineeringSkills" />
+         </State>
+         <State name="StrengthMode1">
+            <When type="Property" Tooltip="Strength Mode Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStrengthMode" />
+         </State>
+         <State name="StrengthMode2">
+            <When type="Property" Tooltip="Strength Mode Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStrengthMode" />
+         </State>
+         <State name="StrengthMode3">
+            <When type="Property" Tooltip="Strength Mode Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStrengthMode" />
+         </State>
+         <State name="StrengthMode4">
+            <When type="Property" Tooltip="Strength Mode Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnStrengthMode" />
+         </State>
+         <State name="GunnerMode1">
+            <When type="Property" Tooltip="Gunner Mode Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnGunnerMode" />
+         </State>
+         <State name="GunnerMode2">
+            <When type="Property" Tooltip="Gunner Mode Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnGunnerMode" />
+         </State>
+         <State name="GunnerMode3">
+            <When type="Property" Tooltip="Gunner Mode Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnGunnerMode" />
+         </State>
+         <State name="GunnerMode4">
+            <When type="Property" Tooltip="Gunner Mode Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnGunnerMode" />
+         </State>
+         <State name="HunterMode1">
+            <When type="Property" Tooltip="Hunter Mode Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHunterMode" />
+         </State>
+         <State name="HunterMode2">
+            <When type="Property" Tooltip="Hunter Mode Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHunterMode" />
+         </State>
+         <State name="HunterMode3">
+            <When type="Property" Tooltip="Hunter Mode Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHunterMode" />
+         </State>
+         <State name="HunterMode4">
+            <When type="Property" Tooltip="Hunter Mode Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnHunterMode" />
+         </State>
+         <State name="Infiltrator1">
+            <When type="Property" Tooltip="Infiltrator Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInfiltrator" />
+         </State>
+         <State name="Infiltrator2">
+            <When type="Property" Tooltip="Infiltrator Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInfiltrator" />
+         </State>
+         <State name="Infiltrator3">
+            <When type="Property" Tooltip="Infiltrator Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInfiltrator" />
+         </State>
+         <State name="Infiltrator4">
+            <When type="Property" Tooltip="Infiltrator Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnInfiltrator" />
+         </State>
+         <State name="CombatEnhancements1">
+            <When type="Property" Tooltip="Combat Enhancements Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCombatEnhancements" />
+         </State>
+         <State name="CombatEnhancements2">
+            <When type="Property" Tooltip="Combat Enhancements Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCombatEnhancements" />
+         </State>
+         <State name="CombatEnhancements3">
+            <When type="Property" Tooltip="Combat Enhancements Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCombatEnhancements" />
+         </State>
+         <State name="CombatEnhancements4">
+            <When type="Property" Tooltip="Combat Enhancements Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCombatEnhancements" />
+         </State>
+         <State name="CryoEquipment1">
+            <When type="Property" Tooltip="Cryo Equipment Level 1" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCryoEquipment" />
+         </State>
+         <State name="CryoEquipment2">
+            <When type="Property" Tooltip="Cryo Equipment Level 2" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCryoEquipment" />
+         </State>
+         <State name="CryoEquipment3">
+            <When type="Property" Tooltip="Cryo Equipment Level 3" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCryoEquipment" />
+         </State>
+         <State name="CryoEquipment4">
+            <When type="Property" Tooltip="Cryo Equipment Level 4" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LearnCryoEquipment" />
+         </State>
+         <State name="1">
+            <When type="Property" Tooltip="Advanced Medical Training" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AdvancedMedicalTraining" />
+         </State>
+         <State name="2">
+            <When type="Property" Tooltip="Anabolic Performance Enhancement: Dexterity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AnabolicPerformanceEnhancementDexterity" />
+         </State>
+         <State name="3">
+            <When type="Property" Tooltip="Anabolic Performance Enhancement: Sprinter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AnabolicPerformanceEnhancementSprinter" />
+         </State>
+         <State name="4">
+            <When type="Property" Tooltip="Anti-Venin: Prioritization" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AntiVeninPrioritization" />
+         </State>
+         <State name="5">
+            <When type="Property" Tooltip="Anti-Venin: Swift" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/AntiVeninSwift" />
+         </State>
+         <State name="6">
+            <When type="Property" Tooltip="AT Rocket: Armor Melt" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ATRocketArmorMelt" />
+         </State>
+         <State name="7">
+            <When type="Property" Tooltip="AT Rocket: Pinpoint" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ATRocketPinpoint" />
+         </State>
+         <State name="8">
+            <When type="Property" Tooltip="Binoculars: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BinocularsPotency" />
+         </State>
+         <State name="0">
+            <When type="Property" Tooltip="Binoculars: Target Painting" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BinocularsTargetPainting" />
+         </State>
+         <State name="9">
+            <When type="Property" Tooltip="Blood Transfusion: Extra Syringe" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BloodTransfusionExtraSyringe" />
+         </State>
+         <State name="00">
+            <When type="Property" Tooltip="Blood Transfusion: Healing Aura" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BloodTransfusionHealingAura" />
+         </State>
+         <State name="10">
+            <When type="Property" Tooltip="Born To Lead: Precision" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BornToLeadPrecision" />
+         </State>
+         <State name="11">
+            <When type="Property" Tooltip="Born To Lead: Sprinter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BornToLeadSprinter" />
+         </State>
+         <State name="12">
+            <When type="Property" Tooltip="Burning: Debilitating Flames" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BurningDebilitatingFlames" />
+         </State>
+         <State name="13">
+            <When type="Property" Tooltip="Burning: Rapid Roast" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/BurningRapidRoast" />
+         </State>
+         <State name="14">
+            <When type="Property" Tooltip="Cognitive Enhancement: Extrasensory" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CognitiveEnhancementExtrasensory" />
+         </State>
+         <State name="15">
+            <When type="Property" Tooltip="Cognitive Enhancement: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CognitiveEnhancementPotency" />
+         </State>
+         <State name="16">
+            <When type="Property" Tooltip="Detonate Claymore: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DetonateClaymorePotency" />
+         </State>
+         <State name="17">
+            <When type="Property" Tooltip="Detonate Wildfire Mine: Blaze" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DetonateWildfireMineBlaze" />
+         </State>
+         <State name="18">
+            <When type="Property" Tooltip="Fire Shield: Resistance" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FireShieldResistance" />
+         </State>
+         <State name="19">
+            <When type="Property" Tooltip="Fire Shield: Retribution" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FireShieldRetribution" />
+         </State>
+         <State name="20">
+            <When type="Property" Tooltip="First Aid: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FirstAidEfficiency" />
+         </State>
+         <State name="21">
+            <When type="Property" Tooltip="First Aid: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FirstAidPotency" />
+         </State>
+         <State name="22">
+            <When type="Property" Tooltip="Focus Fire: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FocusFireEfficiency" />
+         </State>
+         <State name="23">
+            <When type="Property" Tooltip="Focus Fire: Marksmanship" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FocusFireMarksmanship" />
+         </State>
+         <State name="24">
+            <When type="Property" Tooltip="Frag Grenade: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FragGrenadeEfficiency" />
+         </State>
+         <State name="25">
+            <When type="Property" Tooltip="Frag Grenade: MGL Delivery" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FragGrenadeMGLDelivery" />
+         </State>
+         <State name="26">
+            <When type="Property" Tooltip="Frag Grenade: Plentiful" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FragGrenadePlentiful" />
+         </State>
+         <State name="27">
+            <When type="Property" Tooltip="Full Auto: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FullAutoEfficiency" />
+         </State>
+         <State name="28">
+            <When type="Property" Tooltip="Full Auto: Steel Barrel" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FullAutoSteelBarrel" />
+         </State>
+         <State name="29">
+            <When type="Property" Tooltip="Ground Flare: MGL Delivery" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GroundFlareMGLDelivery" />
+         </State>
+         <State name="30">
+            <When type="Property" Tooltip="Ground Flare: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GroundFlarePotency" />
+         </State>
+         <State name="31">
+            <When type="Property" Tooltip="HE Rocket: Annihilation" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HERocketAnnihilation" />
+         </State>
+         <State name="32">
+            <When type="Property" Tooltip="HE Rocket: Concussive Impact" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HERocketConcussiveImpact" />
+         </State>
+         <State name="001">
+            <When type="Property" Tooltip="Heartbeat Sensor: Early Detection" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HeartbeatSensorEarlyDetection" />
+         </State>
+         <State name="33">
+            <When type="Property" Tooltip="Heartbeat Sensor: ISR" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HeartbeatSensorISR" />
+         </State>
+         <State name="34">
+            <When type="Property" Tooltip="Immunization: Longevity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ImmunizationLongevity" />
+         </State>
+         <State name="35">
+            <When type="Property" Tooltip="Immunization: Restoration" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ImmunizationRestoration" />
+         </State>
+         <State name="36">
+            <When type="Property" Tooltip="Incendiary Rounds: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/IncendiaryRoundsEfficiency" />
+         </State>
+         <State name="37">
+            <When type="Property" Tooltip="Incendiary Rounds: Infernal Impact" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/IncendiaryRoundsInfernalImpact" />
+         </State>
+         <State name="38">
+            <When type="Property" Tooltip="Instructor: Energetic" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/InstructorEnergetic" />
+         </State>
+         <State name="39">
+            <When type="Property" Tooltip="Instructor: Resilient" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/InstructorResilient" />
+         </State>
+         <State name="40">
+            <When type="Property" Tooltip="Javelin Missile: Cluster Bombs" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/JavelinMissileClusterBombs" />
+         </State>
+         <State name="41A">
+            <When type="Property" Tooltip="Javelin Missile: Laser Guidance" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/JavelinMissileLaserGuidance" />
+         </State>
+         <State name="41">
+            <When type="Property" Tooltip="Javelin Skills: Safe Emissions" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/JavelinSkillsSafeEmissions" />
+         </State>
+         <State name="42">
+            <When type="Property" Tooltip="Javelin Skills: Swift Launch" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/JavelinSkillsSwiftLaunch" />
+         </State>
+         <State name="43">
+            <When type="Property" Tooltip="Laser Designator: Longevity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LaserDesignatorLongevity" />
+         </State>
+         <State name="44">
+            <When type="Property" Tooltip="Laser Designator: Weak Point Targeting" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LaserDesignatorWeakPointTargeting" />
+         </State>
+         <State name="45">
+            <When type="Property" Tooltip="Light Filter: Heat Sensor" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LightFilterHeatSensor" />
+         </State>
+         <State name="46">
+            <When type="Property" Tooltip="Light Filter: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/LightFilterPotency" />
+         </State>
+         <State name="47">
+            <When type="Property" Tooltip="Marksmanship: Sniper" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanshipSniper" />
+         </State>
+         <State name="47A">
+            <When type="Property" Tooltip="Marksmanship: Sniper - DMR" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanshipSniperDMR" />
+         </State>
+         <State name="48">
+            <When type="Property" Tooltip="Marksmanship: Spread" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanshipSpread" />
+         </State>
+         <State name="49">
+            <When type="Property" Tooltip="Marksmanship: Weapon Proficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MarksmanshipWeaponProficiency" />
+         </State>
+         <State name="50">
+            <When type="Property" Tooltip="Medical Scan Visor" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MedicalScanVisor" />
+         </State>
+         <State name="51">
+            <When type="Property" Tooltip="Monomolecular Wire: Stunning Blow" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MonomolecularWireStunningBlow" />
+         </State>
+         <State name="52">
+            <When type="Property" Tooltip="Monomolecular Wire: Volatility" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MonomolecularWireVolatility" />
+         </State>
+         <State name="53">
+            <When type="Property" Tooltip="Motion Sensor: Cloak Detection" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MotionSensorCloakDetection" />
+         </State>
+         <State name="54">
+            <When type="Property" Tooltip="Motion Sensor: Early Detection" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MotionSensorEarlyDetection" />
+         </State>
+         <State name="55">
+            <When type="Property" Tooltip="Nano-Injection: Energetic" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/NanoInjectionEnergetic" />
+         </State>
+         <State name="56">
+            <When type="Property" Tooltip="Nano-Injection: Extra Syringe" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/NanoInjectionExtraSyringe" />
+         </State>
+         <State name="57">
+            <When type="Property" Tooltip="Oil Douse: Concentration" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/OilDouseConcentration" />
+         </State>
+         <State name="58">
+            <When type="Property" Tooltip="Oil Douse: Longevity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/OilDouseLongevity" />
+         </State>
+         <State name="59">
+            <When type="Property" Tooltip="Painkiller: Longevity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PainkillerLongevity" />
+         </State>
+         <State name="60">
+            <When type="Property" Tooltip="Painkiller: Resilience" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PainkillerResilience" />
+         </State>
+         <State name="61">
+            <When type="Property" Tooltip="Perform Self-Aid: Effectiveness" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PerformSelfAidEffectiveness" />
+         </State>
+         <State name="62">
+            <When type="Property" Tooltip="Perform Self-Aid: Second Nature" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PerformSelfAidSecondNature" />
+         </State>
+         <State name="63">
+            <When type="Property" Tooltip="Perform Self-Aid: Self-Sufficient" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PerformSelfAidSelfSufficient" />
+         </State>
+         <State name="64">
+            <When type="Property" Tooltip="Place Claymore: Bountiful" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlaceClaymoreBountiful" />
+         </State>
+         <State name="65">
+            <When type="Property" Tooltip="Place Wildfire Mine: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlaceWildfireMineEfficiency" />
+         </State>
+         <State name="66">
+            <When type="Property" Tooltip="Plasma Shield: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaShieldEfficiency" />
+         </State>
+         <State name="67">
+            <When type="Property" Tooltip="Plasma Shield: Bulwark" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PlasmaShieldBulwark" />
+         </State>
+         <State name="68">
+            <When type="Property" Tooltip="Rapid Fire: Intensity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RapidFireIntensity" />
+         </State>
+         <State name="69">
+            <When type="Property" Tooltip="Rapid Fire: Sleight of Hand" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RapidFireSleightofHand" />
+         </State>
+         <State name="70">
+            <When type="Property" Tooltip="Recon Drone: Deploy Smoke" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ReconDroneDeploySmoke" />
+         </State>
+         <State name="71">
+            <When type="Property" Tooltip="Recon Drone: Enhanced Sensors" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ReconDroneEnhancedSensors" />
+         </State>
+         <State name="72">
+            <When type="Property" Tooltip="Reinforce Position: Armored Vests" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ReinforcePositionArmoredVests" />
+         </State>
+         <State name="73">
+            <When type="Property" Tooltip="Reinforce Position: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ReinforcePositionEfficiency" />
+         </State>
+         <State name="74">
+            <When type="Property" Tooltip="Smoke Grenade: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SmokeGrenadeEfficiency" />
+         </State>
+         <State name="75">
+            <When type="Property" Tooltip="Smoke Grenade: MGL Delivery" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SmokeGrenadeMGLDelivery" />
+         </State>
+         <State name="76">
+            <When type="Property" Tooltip="Smoke Grenade: Plentiful" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SmokeGrenadePlentiful" />
+         </State>
+         <State name="77">
+            <When type="Property" Tooltip="Soldier Skills: Barbaric" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkillsBarbaric" />
+         </State>
+         <State name="78">
+            <When type="Property" Tooltip="Soldier Skills: Ocular Implants" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkillsOcularImplants" />
+         </State>
+         <State name="79">
+            <When type="Property" Tooltip="Soldier Skills: Hawkeye" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkillsHawkeye" />
+         </State>
+         <State name="80">
+            <When type="Property" Tooltip="Stinger Missile: Annihilation" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StingerMissileAnnihilation" />
+         </State>
+         <State name="81">
+            <When type="Property" Tooltip="Stinger Missile: Enhanced Tracking" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StingerMissileEnhancedTracking" />
+         </State>
+         <State name="82">
+            <When type="Property" Tooltip="Suppressive Fire: Area Denial" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SuppressiveFireAreaDenial" />
+         </State>
+         <State name="83">
+            <When type="Property" Tooltip="Suppressive Fire: Target Suppression" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SuppressiveFireTargetSuppression" />
+         </State>
+         <State name="84">
+            <When type="Property" Tooltip="Tactics: Advanced Tactics" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TacticsAdvancedTactics" />
+         </State>
+         <State name="85">
+            <When type="Property" Tooltip="Tactics: Barbaric" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TacticsBarbaric" />
+         </State>
+         <State name="86">
+            <When type="Property" Tooltip="Tactics: Skill 3" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TacticsSkill3" />
+         </State>
+         <State name="87">
+            <When type="Property" Tooltip="Tactics: Skill 4" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TacticsSkill4" />
+         </State>
+         <State name="88">
+            <When type="Property" Tooltip="Wildfire Grenade: Extra Charge" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireGrenadeExtraCharge" />
+         </State>
+         <State name="89">
+            <When type="Property" Tooltip="Wildfire Grenade: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/WildfireGrenadePotency" />
+         </State>
+         <State name="90">
+            <When type="Property" Tooltip="Capacitor: Maximum Capacity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CapacitorMaximumCapacity" />
+         </State>
+         <State name="91">
+            <When type="Property" Tooltip="Capacitor: Lightweight Module" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CapacitorLightweightModule" />
+         </State>
+         <State name="92">
+            <When type="Property" Tooltip="Architect: Durable Frame" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ArchitectDurableFrame" />
+         </State>
+         <State name="93">
+            <When type="Property" Tooltip="Architect: Reusable Materials" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ArchitectReusableMaterials" />
+         </State>
+         <State name="94">
+            <When type="Property" Tooltip="Construct Sentry Gun: Rapid Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructSentryGunRapidDeployment" />
+         </State>
+         <State name="95">
+            <When type="Property" Tooltip="Construct Sentry Gun: Safe Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructSentryGunSafeDeployment" />
+         </State>
+         <State name="96">
+            <When type="Property" Tooltip="Construct Drone: Rapid Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructDroneRapidDeployment" />
+         </State>
+         <State name="97">
+            <When type="Property" Tooltip="Construct Drone: Safe Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructDroneSafeDeployment" />
+         </State>
+         <State name="98">
+            <When type="Property" Tooltip="Construct Battle Bot: Rapid Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructBattleBotRapidDeployment" />
+         </State>
+         <State name="99">
+            <When type="Property" Tooltip="Construct Battle Bot: Safe Deployment" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ConstructBattleBotSafeDeployment" />
+         </State>
+         <State name="100">
+            <When type="Property" Tooltip="Arc Cell: Signal Boost" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ArcCellSignalBoost" />
+         </State>
+         <State name="101">
+            <When type="Property" Tooltip="Arc Cell: Overcharge" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ArcCellOvercharge" />
+         </State>
+         <State name="102">
+            <When type="Property" Tooltip="Repair: Energy Efficient" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RepairEnergyEfficient" />
+         </State>
+         <State name="103">
+            <When type="Property" Tooltip="Repair: Quick Fix" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/RepairQuickFix" />
+         </State>
+         <State name="104">
+            <When type="Property" Tooltip="Energy Generator: Signal Boost" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnergyGeneratorSignalBoost" />
+         </State>
+         <State name="105">
+            <When type="Property" Tooltip="Energy Generator: Signal Reinforce" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EnergyGeneratorSignalReinforce" />
+         </State>
+         <State name="106">
+            <When type="Property" Tooltip="Emergency Protocols" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/EmergencyProtocols" />
+         </State>
+         <State name="107">
+            <When type="Property" Tooltip="Mortar Strike: Concussive Impact" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MortarStrikeConcussiveImpact" />
+         </State>
+         <State name="108">
+            <When type="Property" Tooltip="Successive Strike: Extra Charge" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SuccessiveStrikeExtraCharge" />
+         </State>
+         <State name="109">
+            <When type="Property" Tooltip="Focus Fire: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FocusFireEfficiencyPL" />
+         </State>
+         <State name="110">
+            <When type="Property" Tooltip="Focus Fire: Concentration" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FocusFireConcentration" />
+         </State>
+         <State name="111">
+            <When type="Property" Tooltip="Nanotech Armor: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/NanotechArmorEfficiency" />
+         </State>
+         <State name="112">
+            <When type="Property" Tooltip="Nanotech Armor: Rapid Restoration" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/NanotechArmorRapidRestoration" />
+         </State>
+         <State name="113">
+            <When type="Property" Tooltip="Grapple Hook: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GrappleHookEfficiency" />
+         </State>
+         <State name="114">
+            <When type="Property" Tooltip="Grapple Hook: Heavy Impact" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GrappleHookHeavyImpact" />
+         </State>
+         <State name="115">
+            <When type="Property" Tooltip="Strength Mode: Hard Armor" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StrengthModeHardArmor" />
+         </State>
+         <State name="116">
+            <When type="Property" Tooltip="Strength Mode: Powerhouse" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StrengthModePowerhouse" />
+         </State>
+         <State name="117">
+            <When type="Property" Tooltip="Charge: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ChargeEfficiency" />
+         </State>
+         <State name="118">
+            <When type="Property" Tooltip="Charge: Speed" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ChargeSpeed" />
+         </State>
+         <State name="119">
+            <When type="Property" Tooltip="Transmute: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TransmuteEfficiency" />
+         </State>
+         <State name="120">
+            <When type="Property" Tooltip="Transmute: Repurpose" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TransmuteRepurpose" />
+         </State>
+         <State name="121">
+            <When type="Property" Tooltip="Stonewall Protocol: Rock Solid" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StonewallProtocolRockSolid" />
+         </State>
+         <State name="122">
+            <When type="Property" Tooltip="Stonewall Protocol: Leftovers" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/StonewallProtocolLeftovers" />
+         </State>
+         <State name="123">
+            <When type="Property" Tooltip="Gunner Mode: Sharpshooter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GunnerModeSharpshooter" />
+         </State>
+         <State name="124">
+            <When type="Property" Tooltip="Gunner Mode: Dexterity" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GunnerModeDexterity" />
+         </State>
+         <State name="125">
+            <When type="Property" Tooltip="Full Auto: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FullAutoEfficiency" />
+         </State>
+         <State name="126">
+            <When type="Property" Tooltip="Full Auto: Overclock" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/FullAutoOverclock" />
+         </State>
+         <State name="127">
+            <When type="Property" Tooltip="Titanium Barrel Fitting: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TitaniumBarrelFittingEfficiency" />
+         </State>
+         <State name="128">
+            <When type="Property" Tooltip="Titanium Barrel Fitting: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/TitaniumBarrelFittingPotency" />
+         </State>
+         <State name="129">
+            <When type="Property" Tooltip="Hunter Mode: The Hunt" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HunterModeTheHunt" />
+         </State>
+         <State name="130">
+            <When type="Property" Tooltip="Hunter Mode: Stealth" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HunterModeStealth" />
+         </State>
+         <State name="131">
+            <When type="Property" Tooltip="Shredder Missiles: Tsunami" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShredderMissilesTsunami" />
+         </State>
+         <State name="132">
+            <When type="Property" Tooltip="Shredder Missiles: Stagger" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/ShredderMissilesStagger" />
+         </State>
+         <State name="133">
+            <When type="Property" Tooltip="Mini EMP: Lights Out" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MiniEMPLightsOut" />
+         </State>
+         <State name="134">
+            <When type="Property" Tooltip="Mini EMP: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/MiniEMPPotency" />
+         </State>
+         <State name="135">
+            <When type="Property" Tooltip="Supersonic Pulse: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SupersonicPulseEfficiency" />
+         </State>
+         <State name="136">
+            <When type="Property" Tooltip="Supersonic Pulse: Hypersonic" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SupersonicPulseHypersonic" />
+         </State>
+         <State name="137">
+            <When type="Property" Tooltip="Soldier Skills: Cybernetic Enhancements" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/SoldierSkillsCyberneticEnhancements" />
+         </State>
+         <State name="138">
+            <When type="Property" Tooltip="Perform Self-Aid: Reconstruction" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/PerformSelfAidReconstruction" />
+         </State>
+         <State name="139">
+            <When type="Property" Tooltip="Heat Sensor: Light Filter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HeatSensorLightFilter" />
+         </State>
+         <State name="140">
+            <When type="Property" Tooltip="Heat Sensor: Potency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HeatSensorPotency" />
+         </State>
+      </Stategroup>
+   </Frame>
+   <Frame type="Control" name="UpgradesContainerTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="10" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="550" />
+      <Anchor side="Right" relative="PlayerUpgradesFrame/UpgradeCountFrame15" pos="Max" offset="6" />
+      <CollapseLayout val="True" />
+      <PreserveAnchorOffset val="True" />
+      <Visible val="False" />
+      <Height val="68" />
+      <Animation name="AnchorReset">
+         <Event event="OnDoubleClick" action="Reset,Play" />
+         <Controller name="AnchorTop" type="Anchor" end="Pause" side="Top" relative="True">
+            <Key type="Curve" time="0.00" value="0" />
+         </Controller>
+         <Controller name="AnchorLeft" type="Anchor" end="Pause" side="Left" relative="True">
+            <Key type="Curve" time="0.00" value="0" />
+         </Controller>
+      </Animation>
+      <Draggable val="True" />
+      <DragConstraintFrame val="$ancestor[@name=UpgradeConstraint]" />
+      <DragCursor val="GripClosed_Terr" />
+      <DragHoverCursor val="GripOpen_Terr" />
+      <Frame type="PlayerUpgradesFrame" name="PlayerUpgradesFrame">
+         <Anchor relative="$parent" />
+         <CollapseLayout val="True" />
+         <PreserveAnchorOffset val="True" />
+         <IgnoreUpgradesWithoutLevel val="True" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <Frame type="Image" name="BackGroundImage" template="LeaderPanel/LeaderPanelBackgroundImageTemplate">
+            <Anchor relative="$parent" />
+         </Frame>
+         <Frame type="Image" name="PlayerImage" template="LeaderPanel/LeaderPanelPlayerImageTemplate">
+            <Color val="0,255,148" />
+            <CollapseLayout val="True" />
+            <PreserveAnchorOffset val="True" />
+            <AcceptsMouse val="False" />
+            <Width val="56" />
+         </Frame>
+         <Frame type="Image" name="MOSImage" template="LeaderPanel/LeaderPanelRaceImageTemplate">
+            <IgnoreParentColor val="True" />
+            <Width val="52" />
+            <Height val="52" />
+            <AcceptsMouse val="True" />
+            <TooltipFrame val="UADStandardTooltip" />
+         </Frame>
+         <Frame type="Control" name="CursorInterceptor">
+            <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/PlayerImage" pos="Max" offset="6" />
+            <Anchor side="Bottom" relative="$parent/$parent" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent/$parent" pos="Max" offset="0" />
+            <AcceptsMouse val="True" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame0" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradePadding" pos="Max" relative="$parent/PlayerImage" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame1" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame0" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame2" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame1" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame3" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame2" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame4" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame3" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame5" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame4" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame6" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame5" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame7" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame6" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame8" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame7" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame9" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame8" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame10" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame9" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame11" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame10" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame12" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame11" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame13" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame12" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame14" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame13" side="Left" />
+         </Frame>
+         <Frame type="UpgradeCountFrame" name="UpgradeCountFrame15" template="PlayerUpgradesTemplate/UpgradeCountFrameTemplate">
+            <Anchor offset="#UpgradePadding" pos="Min" relative="$parent" side="Top" />
+            <Anchor offset="#UpgradeOffset" pos="Max" relative="$parent/UpgradeCountFrame14" side="Left" />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>

@@ -1,0 +1,2813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Attributes>
+    <Attribute>
+        <Id Value="2"/>
+        <Type Value="Player"/>
+        <Name Value="Attribute002/Name"/>
+        <Description Value="Attribute002/Desc"/>
+        <Availability Value="All"/>
+        <Visibility Value="All"/>
+        <Access Value="Self"/>
+        <Value>
+            <Id Value="1"/>
+            <Name Value="Attribute002/Value001/Name"/>
+            <Description Value="Attribute002/Value001/Desc"/>
+            <Icon Value="Assets\Textures\ui_tip_questionmark.dds"/>
+        </Value>
+        <Value>
+            <Id Value="2"/>
+            <Name Value="Attribute002/Value002/Name"/>
+            <Description Value="Attribute002/Value002/Desc"/>
+            <Icon Value="Buttons\BTNSoldier.dds"/>
+        </Value>
+        <Value>
+            <Id Value="3"/>
+            <Name Value="Attribute002/Value003/Name"/>
+            <Description Value="Attribute002/Value003/Desc"/>
+            <Icon Value="Buttons\Portraits\BTN_Combat_Medic_Portrait.dds"/>
+        </Value>
+        <Value>
+            <Id Value="4"/>
+            <Name Value="Attribute002/Value004/Name"/>
+            <Description Value="Attribute002/Value004/Desc"/>
+            <Icon Value="Buttons\BTNAutoRifle.dds"/>
+        </Value>
+        <Value>
+            <Id Value="6"/>
+            <Name Value="Attribute002/Value006/Name"/>
+            <Description Value="Attribute002/Value006/Desc"/>
+            <Icon Value="Buttons\Portraits\BTNCavalryScout.dds"/>
+        </Value>
+        <Value>
+            <Id Value="5"/>
+            <Name Value="Attribute002/Value005/Name"/>
+            <Description Value="Attribute002/Value005/Desc"/>
+            <Icon Value="Buttons\Portraits\BTNSFAAT.dds"/>
+        </Value>
+        <Value>
+            <Id Value="7"/>
+            <Name Value="Attribute002/Value007/Name"/>
+            <Description Value="Attribute002/Value007/Desc"/>
+            <Icon Value="Buttons\Portraits\BTN_Jav_Portrait.dds"/>
+        </Value>
+        <Value>
+            <Id Value="8"/>
+            <Name Value="Attribute002/Value008/Name"/>
+            <Description Value="Attribute002/Value008/Desc"/>
+            <Icon Value="Buttons\Portraits\BTNMarksman.dds"/>
+        </Value>
+        <Value>
+            <Id Value="9"/>
+            <Name Value="Attribute002/Value009/Name"/>
+            <Description Value="Attribute002/Value009/Desc"/>
+            <Icon Value="Assets\Buttons\BTN_PL.dds"/>
+        </Value>
+        <Value>
+            <Id Value="10"/>
+            <Name Value="Attribute002/Value010/Name"/>
+            <Description Value="Attribute002/Value010/Desc"/>
+            <Icon Value="firebat.dds"/>
+        </Value>
+        <Value>
+            <Id Value="12"/>
+            <Name Value="Attribute002/Value012/Name"/>
+            <Description Value="Attribute002/Value012/Desc"/>
+            <Icon Value="Buttons\Portraits\BTN_Combat_Engineer_Portrait.dds"/>
+        </Value>
+        <Value>
+            <Id Value="11"/>
+            <Name Value="Attribute002/Value011/Name"/>
+            <Description Value="Attribute002/Value011/Desc"/>
+            <Icon Value="Buttons\Portraits\BTN_Cyborg_Portrait.dds"/>
+        </Value>
+        <Default>
+            <Slot Id="0"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="1"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="2"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="3"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="4"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="5"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="6"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="7"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="8"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="9"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="10"/>
+            <Value Id="1"/>
+        </Default>
+        <Default>
+            <Slot Id="11"/>
+            <Value Id="1"/>
+        </Default>
+    </Attribute>
+    <Attribute>
+        <Id Value="3"/>
+        <Type Value="Global"/>
+        <Name Value="Attribute003/Name"/>
+        <Description Value="Attribute003/Desc"/>
+        <Availability Value="All"/>
+        <Visibility Value="All"/>
+        <Access Value="None"/>
+        <PublicLocked/>
+        <Value>
+            <Id Value="2"/>
+            <Name Value="Attribute003/Value002/Name"/>
+            <Description Value="Attribute003/Value002/Desc"/>
+            <Icon Value="Assets\Textures\btn-progression-protoss-fenix-10-acceleratedtech.dds"/>
+        </Value>
+        <Value>
+            <Id Value="1"/>
+            <Name Value="Attribute003/Value001/Name"/>
+            <Description Value="Attribute003/Value001/Desc"/>
+            <Icon Value="Assets\Textures\btn-ability-mengsk-trooper-buildcombatstructure.dds"/>
+        </Value>
+        <Value>
+            <Id Value="3"/>
+            <Name Value="Attribute003/Value003/Name"/>
+            <Description Value="Attribute003/Value003/Desc"/>
+            <Icon Value="Assets\Textures\fearex3_coop.dds"/>
+        </Value>
+        <Default>
+            <Slot Id="Global"/>
+            <Value Id="2"/>
+        </Default>
+    </Attribute>
+    <Attribute>
+        <Id Value="1"/>
+        <Type Value="Global"/>
+        <Name Value="Attribute001/Name"/>
+        <Availability Value="All"/>
+        <Visibility Value="None"/>
+        <Access Value="None"/>
+        <Hidden/>
+        <Value>
+            <Id Value="1"/>
+            <Name Value="Attribute001/Value001/Name"/>
+        </Value>
+        <Value>
+            <Id Value="2"/>
+            <Name Value="Attribute001/Value002/Name"/>
+        </Value>
+        <Value>
+            <Id Value="3"/>
+            <Name Value="Attribute001/Value003/Name"/>
+        </Value>
+        <Value>
+            <Id Value="4"/>
+            <Name Value="Attribute001/Value004/Name"/>
+        </Value>
+        <Value>
+            <Id Value="5"/>
+            <Name Value="Attribute001/Value005/Name"/>
+        </Value>
+        <Value>
+            <Id Value="6"/>
+            <Name Value="Attribute001/Value006/Name"/>
+        </Value>
+        <Value>
+            <Id Value="7"/>
+            <Name Value="Attribute001/Value007/Name"/>
+        </Value>
+        <Value>
+            <Id Value="8"/>
+            <Name Value="Attribute001/Value008/Name"/>
+        </Value>
+        <Value>
+            <Id Value="9"/>
+            <Name Value="Attribute001/Value009/Name"/>
+        </Value>
+        <Value>
+            <Id Value="10"/>
+            <Name Value="Attribute001/Value010/Name"/>
+        </Value>
+        <Value>
+            <Id Value="11"/>
+            <Name Value="Attribute001/Value011/Name"/>
+        </Value>
+        <Value>
+            <Id Value="12"/>
+            <Name Value="Attribute001/Value012/Name"/>
+        </Value>
+        <Value>
+            <Id Value="13"/>
+            <Name Value="Attribute001/Value013/Name"/>
+        </Value>
+        <Value>
+            <Id Value="14"/>
+            <Name Value="Attribute001/Value014/Name"/>
+        </Value>
+        <Value>
+            <Id Value="15"/>
+            <Name Value="Attribute001/Value015/Name"/>
+        </Value>
+        <Value>
+            <Id Value="16"/>
+            <Name Value="Attribute001/Value016/Name"/>
+        </Value>
+        <Value>
+            <Id Value="17"/>
+            <Name Value="Attribute001/Value017/Name"/>
+        </Value>
+        <Value>
+            <Id Value="18"/>
+            <Name Value="Attribute001/Value018/Name"/>
+        </Value>
+        <Value>
+            <Id Value="19"/>
+            <Name Value="Attribute001/Value019/Name"/>
+        </Value>
+        <Value>
+            <Id Value="20"/>
+            <Name Value="Attribute001/Value020/Name"/>
+        </Value>
+        <Value>
+            <Id Value="21"/>
+            <Name Value="Attribute001/Value021/Name"/>
+        </Value>
+        <Value>
+            <Id Value="22"/>
+            <Name Value="Attribute001/Value022/Name"/>
+        </Value>
+        <Value>
+            <Id Value="23"/>
+            <Name Value="Attribute001/Value023/Name"/>
+        </Value>
+        <Value>
+            <Id Value="24"/>
+            <Name Value="Attribute001/Value024/Name"/>
+        </Value>
+        <Value>
+            <Id Value="25"/>
+            <Name Value="Attribute001/Value025/Name"/>
+        </Value>
+        <Value>
+            <Id Value="26"/>
+            <Name Value="Attribute001/Value026/Name"/>
+        </Value>
+        <Value>
+            <Id Value="27"/>
+            <Name Value="Attribute001/Value027/Name"/>
+        </Value>
+        <Value>
+            <Id Value="28"/>
+            <Name Value="Attribute001/Value028/Name"/>
+        </Value>
+        <Value>
+            <Id Value="29"/>
+            <Name Value="Attribute001/Value029/Name"/>
+        </Value>
+        <Value>
+            <Id Value="30"/>
+            <Name Value="Attribute001/Value030/Name"/>
+        </Value>
+        <Value>
+            <Id Value="31"/>
+            <Name Value="Attribute001/Value031/Name"/>
+        </Value>
+        <Value>
+            <Id Value="32"/>
+            <Name Value="Attribute001/Value032/Name"/>
+        </Value>
+        <Value>
+            <Id Value="33"/>
+            <Name Value="Attribute001/Value033/Name"/>
+        </Value>
+        <Value>
+            <Id Value="34"/>
+            <Name Value="Attribute001/Value034/Name"/>
+        </Value>
+        <Value>
+            <Id Value="35"/>
+            <Name Value="Attribute001/Value035/Name"/>
+        </Value>
+        <Value>
+            <Id Value="36"/>
+            <Name Value="Attribute001/Value036/Name"/>
+        </Value>
+        <Value>
+            <Id Value="37"/>
+            <Name Value="Attribute001/Value037/Name"/>
+        </Value>
+        <Value>
+            <Id Value="38"/>
+            <Name Value="Attribute001/Value038/Name"/>
+        </Value>
+        <Value>
+            <Id Value="39"/>
+            <Name Value="Attribute001/Value039/Name"/>
+        </Value>
+        <Value>
+            <Id Value="40"/>
+            <Name Value="Attribute001/Value040/Name"/>
+        </Value>
+        <Value>
+            <Id Value="41"/>
+            <Name Value="Attribute001/Value041/Name"/>
+        </Value>
+        <Value>
+            <Id Value="42"/>
+            <Name Value="Attribute001/Value042/Name"/>
+        </Value>
+        <Value>
+            <Id Value="43"/>
+            <Name Value="Attribute001/Value043/Name"/>
+        </Value>
+        <Value>
+            <Id Value="44"/>
+            <Name Value="Attribute001/Value044/Name"/>
+        </Value>
+        <Value>
+            <Id Value="45"/>
+            <Name Value="Attribute001/Value045/Name"/>
+        </Value>
+        <Value>
+            <Id Value="46"/>
+            <Name Value="Attribute001/Value046/Name"/>
+        </Value>
+        <Value>
+            <Id Value="47"/>
+            <Name Value="Attribute001/Value047/Name"/>
+        </Value>
+        <Value>
+            <Id Value="48"/>
+            <Name Value="Attribute001/Value048/Name"/>
+        </Value>
+        <Value>
+            <Id Value="49"/>
+            <Name Value="Attribute001/Value049/Name"/>
+        </Value>
+        <Value>
+            <Id Value="50"/>
+            <Name Value="Attribute001/Value050/Name"/>
+        </Value>
+        <Value>
+            <Id Value="51"/>
+            <Name Value="Attribute001/Value051/Name"/>
+        </Value>
+        <Value>
+            <Id Value="52"/>
+            <Name Value="Attribute001/Value052/Name"/>
+        </Value>
+        <Value>
+            <Id Value="53"/>
+            <Name Value="Attribute001/Value053/Name"/>
+        </Value>
+        <Value>
+            <Id Value="54"/>
+            <Name Value="Attribute001/Value054/Name"/>
+        </Value>
+        <Value>
+            <Id Value="55"/>
+            <Name Value="Attribute001/Value055/Name"/>
+        </Value>
+        <Value>
+            <Id Value="56"/>
+            <Name Value="Attribute001/Value056/Name"/>
+        </Value>
+        <Value>
+            <Id Value="57"/>
+            <Name Value="Attribute001/Value057/Name"/>
+        </Value>
+        <Value>
+            <Id Value="58"/>
+            <Name Value="Attribute001/Value058/Name"/>
+        </Value>
+        <Value>
+            <Id Value="59"/>
+            <Name Value="Attribute001/Value059/Name"/>
+        </Value>
+        <Value>
+            <Id Value="60"/>
+            <Name Value="Attribute001/Value060/Name"/>
+        </Value>
+        <Value>
+            <Id Value="61"/>
+            <Name Value="Attribute001/Value061/Name"/>
+        </Value>
+        <Value>
+            <Id Value="62"/>
+            <Name Value="Attribute001/Value062/Name"/>
+        </Value>
+        <Value>
+            <Id Value="63"/>
+            <Name Value="Attribute001/Value063/Name"/>
+        </Value>
+        <Value>
+            <Id Value="64"/>
+            <Name Value="Attribute001/Value064/Name"/>
+        </Value>
+        <Value>
+            <Id Value="65"/>
+            <Name Value="Attribute001/Value065/Name"/>
+        </Value>
+        <Value>
+            <Id Value="66"/>
+            <Name Value="Attribute001/Value066/Name"/>
+        </Value>
+        <Value>
+            <Id Value="67"/>
+            <Name Value="Attribute001/Value067/Name"/>
+        </Value>
+        <Value>
+            <Id Value="68"/>
+            <Name Value="Attribute001/Value068/Name"/>
+        </Value>
+        <Value>
+            <Id Value="69"/>
+            <Name Value="Attribute001/Value069/Name"/>
+        </Value>
+        <Value>
+            <Id Value="70"/>
+            <Name Value="Attribute001/Value070/Name"/>
+        </Value>
+        <Value>
+            <Id Value="71"/>
+            <Name Value="Attribute001/Value071/Name"/>
+        </Value>
+        <Value>
+            <Id Value="72"/>
+            <Name Value="Attribute001/Value072/Name"/>
+        </Value>
+        <Value>
+            <Id Value="73"/>
+            <Name Value="Attribute001/Value073/Name"/>
+        </Value>
+        <Value>
+            <Id Value="74"/>
+            <Name Value="Attribute001/Value074/Name"/>
+        </Value>
+        <Value>
+            <Id Value="75"/>
+            <Name Value="Attribute001/Value075/Name"/>
+        </Value>
+        <Value>
+            <Id Value="76"/>
+            <Name Value="Attribute001/Value076/Name"/>
+        </Value>
+        <Value>
+            <Id Value="77"/>
+            <Name Value="Attribute001/Value077/Name"/>
+        </Value>
+        <Value>
+            <Id Value="78"/>
+            <Name Value="Attribute001/Value078/Name"/>
+        </Value>
+        <Value>
+            <Id Value="79"/>
+            <Name Value="Attribute001/Value079/Name"/>
+        </Value>
+        <Value>
+            <Id Value="80"/>
+            <Name Value="Attribute001/Value080/Name"/>
+        </Value>
+        <Value>
+            <Id Value="81"/>
+            <Name Value="Attribute001/Value081/Name"/>
+        </Value>
+        <Value>
+            <Id Value="82"/>
+            <Name Value="Attribute001/Value082/Name"/>
+        </Value>
+        <Value>
+            <Id Value="83"/>
+            <Name Value="Attribute001/Value083/Name"/>
+        </Value>
+        <Value>
+            <Id Value="84"/>
+            <Name Value="Attribute001/Value084/Name"/>
+        </Value>
+        <Value>
+            <Id Value="85"/>
+            <Name Value="Attribute001/Value085/Name"/>
+        </Value>
+        <Value>
+            <Id Value="86"/>
+            <Name Value="Attribute001/Value086/Name"/>
+        </Value>
+        <Value>
+            <Id Value="87"/>
+            <Name Value="Attribute001/Value087/Name"/>
+        </Value>
+        <Value>
+            <Id Value="88"/>
+            <Name Value="Attribute001/Value088/Name"/>
+        </Value>
+        <Value>
+            <Id Value="89"/>
+            <Name Value="Attribute001/Value089/Name"/>
+        </Value>
+        <Value>
+            <Id Value="90"/>
+            <Name Value="Attribute001/Value090/Name"/>
+        </Value>
+        <Value>
+            <Id Value="91"/>
+            <Name Value="Attribute001/Value091/Name"/>
+        </Value>
+        <Value>
+            <Id Value="92"/>
+            <Name Value="Attribute001/Value092/Name"/>
+        </Value>
+        <Value>
+            <Id Value="93"/>
+            <Name Value="Attribute001/Value093/Name"/>
+        </Value>
+        <Value>
+            <Id Value="94"/>
+            <Name Value="Attribute001/Value094/Name"/>
+        </Value>
+        <Value>
+            <Id Value="95"/>
+            <Name Value="Attribute001/Value095/Name"/>
+        </Value>
+        <Value>
+            <Id Value="96"/>
+            <Name Value="Attribute001/Value096/Name"/>
+        </Value>
+        <Value>
+            <Id Value="97"/>
+            <Name Value="Attribute001/Value097/Name"/>
+        </Value>
+        <Value>
+            <Id Value="98"/>
+            <Name Value="Attribute001/Value098/Name"/>
+        </Value>
+        <Value>
+            <Id Value="99"/>
+            <Name Value="Attribute001/Value099/Name"/>
+        </Value>
+        <Value>
+            <Id Value="100"/>
+            <Name Value="Attribute001/Value100/Name"/>
+        </Value>
+        <Value>
+            <Id Value="101"/>
+            <Name Value="Attribute001/Value101/Name"/>
+        </Value>
+        <Value>
+            <Id Value="102"/>
+            <Name Value="Attribute001/Value102/Name"/>
+        </Value>
+        <Value>
+            <Id Value="103"/>
+            <Name Value="Attribute001/Value103/Name"/>
+        </Value>
+        <Value>
+            <Id Value="104"/>
+            <Name Value="Attribute001/Value104/Name"/>
+        </Value>
+        <Value>
+            <Id Value="105"/>
+            <Name Value="Attribute001/Value105/Name"/>
+        </Value>
+        <Value>
+            <Id Value="106"/>
+            <Name Value="Attribute001/Value106/Name"/>
+        </Value>
+        <Value>
+            <Id Value="107"/>
+            <Name Value="Attribute001/Value107/Name"/>
+        </Value>
+        <Value>
+            <Id Value="108"/>
+            <Name Value="Attribute001/Value108/Name"/>
+        </Value>
+        <Value>
+            <Id Value="109"/>
+            <Name Value="Attribute001/Value109/Name"/>
+        </Value>
+        <Value>
+            <Id Value="110"/>
+            <Name Value="Attribute001/Value110/Name"/>
+        </Value>
+        <Value>
+            <Id Value="111"/>
+            <Name Value="Attribute001/Value111/Name"/>
+        </Value>
+        <Value>
+            <Id Value="112"/>
+            <Name Value="Attribute001/Value112/Name"/>
+        </Value>
+        <Value>
+            <Id Value="113"/>
+            <Name Value="Attribute001/Value113/Name"/>
+        </Value>
+        <Value>
+            <Id Value="114"/>
+            <Name Value="Attribute001/Value114/Name"/>
+        </Value>
+        <Value>
+            <Id Value="115"/>
+            <Name Value="Attribute001/Value115/Name"/>
+        </Value>
+        <Value>
+            <Id Value="116"/>
+            <Name Value="Attribute001/Value116/Name"/>
+        </Value>
+        <Value>
+            <Id Value="117"/>
+            <Name Value="Attribute001/Value117/Name"/>
+        </Value>
+        <Value>
+            <Id Value="118"/>
+            <Name Value="Attribute001/Value118/Name"/>
+        </Value>
+        <Value>
+            <Id Value="119"/>
+            <Name Value="Attribute001/Value119/Name"/>
+        </Value>
+        <Value>
+            <Id Value="120"/>
+            <Name Value="Attribute001/Value120/Name"/>
+        </Value>
+        <Value>
+            <Id Value="121"/>
+            <Name Value="Attribute001/Value121/Name"/>
+        </Value>
+        <Value>
+            <Id Value="122"/>
+            <Name Value="Attribute001/Value122/Name"/>
+        </Value>
+        <Value>
+            <Id Value="123"/>
+            <Name Value="Attribute001/Value123/Name"/>
+        </Value>
+        <Value>
+            <Id Value="124"/>
+            <Name Value="Attribute001/Value124/Name"/>
+        </Value>
+        <Value>
+            <Id Value="125"/>
+            <Name Value="Attribute001/Value125/Name"/>
+        </Value>
+        <Value>
+            <Id Value="126"/>
+            <Name Value="Attribute001/Value126/Name"/>
+        </Value>
+        <Value>
+            <Id Value="127"/>
+            <Name Value="Attribute001/Value127/Name"/>
+        </Value>
+        <Value>
+            <Id Value="128"/>
+            <Name Value="Attribute001/Value128/Name"/>
+        </Value>
+        <Value>
+            <Id Value="129"/>
+            <Name Value="Attribute001/Value129/Name"/>
+        </Value>
+        <Value>
+            <Id Value="130"/>
+            <Name Value="Attribute001/Value130/Name"/>
+        </Value>
+        <Value>
+            <Id Value="131"/>
+            <Name Value="Attribute001/Value131/Name"/>
+        </Value>
+        <Value>
+            <Id Value="132"/>
+            <Name Value="Attribute001/Value132/Name"/>
+        </Value>
+        <Value>
+            <Id Value="133"/>
+            <Name Value="Attribute001/Value133/Name"/>
+        </Value>
+        <Value>
+            <Id Value="134"/>
+            <Name Value="Attribute001/Value134/Name"/>
+        </Value>
+        <Value>
+            <Id Value="135"/>
+            <Name Value="Attribute001/Value135/Name"/>
+        </Value>
+        <Value>
+            <Id Value="136"/>
+            <Name Value="Attribute001/Value136/Name"/>
+        </Value>
+        <Value>
+            <Id Value="137"/>
+            <Name Value="Attribute001/Value137/Name"/>
+        </Value>
+        <Value>
+            <Id Value="138"/>
+            <Name Value="Attribute001/Value138/Name"/>
+        </Value>
+        <Value>
+            <Id Value="139"/>
+            <Name Value="Attribute001/Value139/Name"/>
+        </Value>
+        <Value>
+            <Id Value="140"/>
+            <Name Value="Attribute001/Value140/Name"/>
+        </Value>
+        <Value>
+            <Id Value="141"/>
+            <Name Value="Attribute001/Value141/Name"/>
+        </Value>
+        <Value>
+            <Id Value="142"/>
+            <Name Value="Attribute001/Value142/Name"/>
+        </Value>
+        <Value>
+            <Id Value="143"/>
+            <Name Value="Attribute001/Value143/Name"/>
+        </Value>
+        <Value>
+            <Id Value="144"/>
+            <Name Value="Attribute001/Value144/Name"/>
+        </Value>
+        <Value>
+            <Id Value="145"/>
+            <Name Value="Attribute001/Value145/Name"/>
+        </Value>
+        <Value>
+            <Id Value="146"/>
+            <Name Value="Attribute001/Value146/Name"/>
+        </Value>
+        <Value>
+            <Id Value="147"/>
+            <Name Value="Attribute001/Value147/Name"/>
+        </Value>
+        <Value>
+            <Id Value="148"/>
+            <Name Value="Attribute001/Value148/Name"/>
+        </Value>
+        <Value>
+            <Id Value="149"/>
+            <Name Value="Attribute001/Value149/Name"/>
+        </Value>
+        <Value>
+            <Id Value="150"/>
+            <Name Value="Attribute001/Value150/Name"/>
+        </Value>
+        <Default>
+            <Slot Id="Global"/>
+            <Value Id="88"/>
+        </Default>
+    </Attribute>
+    <Attribute>
+        <Id Value="4"/>
+        <Type Value="Global"/>
+        <Name Value="Attribute004/Name"/>
+        <Availability Value="All"/>
+        <Visibility Value="None"/>
+        <Access Value="None"/>
+        <Hidden/>
+        <Value>
+            <Id Value="1"/>
+            <Name Value="Attribute004/Value001/Name"/>
+        </Value>
+        <Value>
+            <Id Value="2"/>
+            <Name Value="Attribute004/Value002/Name"/>
+        </Value>
+        <Value>
+            <Id Value="3"/>
+            <Name Value="Attribute004/Value003/Name"/>
+        </Value>
+        <Value>
+            <Id Value="4"/>
+            <Name Value="Attribute004/Value004/Name"/>
+        </Value>
+        <Value>
+            <Id Value="5"/>
+            <Name Value="Attribute004/Value005/Name"/>
+        </Value>
+        <Value>
+            <Id Value="6"/>
+            <Name Value="Attribute004/Value006/Name"/>
+        </Value>
+        <Value>
+            <Id Value="7"/>
+            <Name Value="Attribute004/Value007/Name"/>
+        </Value>
+        <Value>
+            <Id Value="8"/>
+            <Name Value="Attribute004/Value008/Name"/>
+        </Value>
+        <Value>
+            <Id Value="9"/>
+            <Name Value="Attribute004/Value009/Name"/>
+        </Value>
+        <Value>
+            <Id Value="10"/>
+            <Name Value="Attribute004/Value010/Name"/>
+        </Value>
+        <Value>
+            <Id Value="11"/>
+            <Name Value="Attribute004/Value011/Name"/>
+        </Value>
+        <Value>
+            <Id Value="12"/>
+            <Name Value="Attribute004/Value012/Name"/>
+        </Value>
+        <Value>
+            <Id Value="13"/>
+            <Name Value="Attribute004/Value013/Name"/>
+        </Value>
+        <Value>
+            <Id Value="14"/>
+            <Name Value="Attribute004/Value014/Name"/>
+        </Value>
+        <Value>
+            <Id Value="15"/>
+            <Name Value="Attribute004/Value015/Name"/>
+        </Value>
+        <Value>
+            <Id Value="16"/>
+            <Name Value="Attribute004/Value016/Name"/>
+        </Value>
+        <Value>
+            <Id Value="17"/>
+            <Name Value="Attribute004/Value017/Name"/>
+        </Value>
+        <Value>
+            <Id Value="18"/>
+            <Name Value="Attribute004/Value018/Name"/>
+        </Value>
+        <Value>
+            <Id Value="19"/>
+            <Name Value="Attribute004/Value019/Name"/>
+        </Value>
+        <Value>
+            <Id Value="20"/>
+            <Name Value="Attribute004/Value020/Name"/>
+        </Value>
+        <Value>
+            <Id Value="21"/>
+            <Name Value="Attribute004/Value021/Name"/>
+        </Value>
+        <Value>
+            <Id Value="22"/>
+            <Name Value="Attribute004/Value022/Name"/>
+        </Value>
+        <Value>
+            <Id Value="23"/>
+            <Name Value="Attribute004/Value023/Name"/>
+        </Value>
+        <Value>
+            <Id Value="24"/>
+            <Name Value="Attribute004/Value024/Name"/>
+        </Value>
+        <Value>
+            <Id Value="25"/>
+            <Name Value="Attribute004/Value025/Name"/>
+        </Value>
+        <Value>
+            <Id Value="26"/>
+            <Name Value="Attribute004/Value026/Name"/>
+        </Value>
+        <Value>
+            <Id Value="27"/>
+            <Name Value="Attribute004/Value027/Name"/>
+        </Value>
+        <Value>
+            <Id Value="28"/>
+            <Name Value="Attribute004/Value028/Name"/>
+        </Value>
+        <Value>
+            <Id Value="29"/>
+            <Name Value="Attribute004/Value029/Name"/>
+        </Value>
+        <Value>
+            <Id Value="30"/>
+            <Name Value="Attribute004/Value030/Name"/>
+        </Value>
+        <Value>
+            <Id Value="31"/>
+            <Name Value="Attribute004/Value031/Name"/>
+        </Value>
+        <Value>
+            <Id Value="32"/>
+            <Name Value="Attribute004/Value032/Name"/>
+        </Value>
+        <Value>
+            <Id Value="33"/>
+            <Name Value="Attribute004/Value033/Name"/>
+        </Value>
+        <Value>
+            <Id Value="34"/>
+            <Name Value="Attribute004/Value034/Name"/>
+        </Value>
+        <Value>
+            <Id Value="35"/>
+            <Name Value="Attribute004/Value035/Name"/>
+        </Value>
+        <Value>
+            <Id Value="36"/>
+            <Name Value="Attribute004/Value036/Name"/>
+        </Value>
+        <Value>
+            <Id Value="37"/>
+            <Name Value="Attribute004/Value037/Name"/>
+        </Value>
+        <Value>
+            <Id Value="38"/>
+            <Name Value="Attribute004/Value038/Name"/>
+        </Value>
+        <Value>
+            <Id Value="39"/>
+            <Name Value="Attribute004/Value039/Name"/>
+        </Value>
+        <Value>
+            <Id Value="40"/>
+            <Name Value="Attribute004/Value040/Name"/>
+        </Value>
+        <Value>
+            <Id Value="41"/>
+            <Name Value="Attribute004/Value041/Name"/>
+        </Value>
+        <Value>
+            <Id Value="42"/>
+            <Name Value="Attribute004/Value042/Name"/>
+        </Value>
+        <Value>
+            <Id Value="43"/>
+            <Name Value="Attribute004/Value043/Name"/>
+        </Value>
+        <Value>
+            <Id Value="44"/>
+            <Name Value="Attribute004/Value044/Name"/>
+        </Value>
+        <Value>
+            <Id Value="45"/>
+            <Name Value="Attribute004/Value045/Name"/>
+        </Value>
+        <Value>
+            <Id Value="46"/>
+            <Name Value="Attribute004/Value046/Name"/>
+        </Value>
+        <Value>
+            <Id Value="47"/>
+            <Name Value="Attribute004/Value047/Name"/>
+        </Value>
+        <Value>
+            <Id Value="48"/>
+            <Name Value="Attribute004/Value048/Name"/>
+        </Value>
+        <Value>
+            <Id Value="49"/>
+            <Name Value="Attribute004/Value049/Name"/>
+        </Value>
+        <Value>
+            <Id Value="50"/>
+            <Name Value="Attribute004/Value050/Name"/>
+        </Value>
+        <Value>
+            <Id Value="51"/>
+            <Name Value="Attribute004/Value051/Name"/>
+        </Value>
+        <Value>
+            <Id Value="52"/>
+            <Name Value="Attribute004/Value052/Name"/>
+        </Value>
+        <Value>
+            <Id Value="53"/>
+            <Name Value="Attribute004/Value053/Name"/>
+        </Value>
+        <Value>
+            <Id Value="54"/>
+            <Name Value="Attribute004/Value054/Name"/>
+        </Value>
+        <Value>
+            <Id Value="55"/>
+            <Name Value="Attribute004/Value055/Name"/>
+        </Value>
+        <Value>
+            <Id Value="56"/>
+            <Name Value="Attribute004/Value056/Name"/>
+        </Value>
+        <Value>
+            <Id Value="57"/>
+            <Name Value="Attribute004/Value057/Name"/>
+        </Value>
+        <Value>
+            <Id Value="58"/>
+            <Name Value="Attribute004/Value058/Name"/>
+        </Value>
+        <Value>
+            <Id Value="59"/>
+            <Name Value="Attribute004/Value059/Name"/>
+        </Value>
+        <Value>
+            <Id Value="60"/>
+            <Name Value="Attribute004/Value060/Name"/>
+        </Value>
+        <Value>
+            <Id Value="61"/>
+            <Name Value="Attribute004/Value061/Name"/>
+        </Value>
+        <Value>
+            <Id Value="62"/>
+            <Name Value="Attribute004/Value062/Name"/>
+        </Value>
+        <Value>
+            <Id Value="63"/>
+            <Name Value="Attribute004/Value063/Name"/>
+        </Value>
+        <Value>
+            <Id Value="64"/>
+            <Name Value="Attribute004/Value064/Name"/>
+        </Value>
+        <Value>
+            <Id Value="65"/>
+            <Name Value="Attribute004/Value065/Name"/>
+        </Value>
+        <Value>
+            <Id Value="66"/>
+            <Name Value="Attribute004/Value066/Name"/>
+        </Value>
+        <Value>
+            <Id Value="67"/>
+            <Name Value="Attribute004/Value067/Name"/>
+        </Value>
+        <Value>
+            <Id Value="68"/>
+            <Name Value="Attribute004/Value068/Name"/>
+        </Value>
+        <Value>
+            <Id Value="69"/>
+            <Name Value="Attribute004/Value069/Name"/>
+        </Value>
+        <Value>
+            <Id Value="70"/>
+            <Name Value="Attribute004/Value070/Name"/>
+        </Value>
+        <Value>
+            <Id Value="71"/>
+            <Name Value="Attribute004/Value071/Name"/>
+        </Value>
+        <Value>
+            <Id Value="72"/>
+            <Name Value="Attribute004/Value072/Name"/>
+        </Value>
+        <Value>
+            <Id Value="73"/>
+            <Name Value="Attribute004/Value073/Name"/>
+        </Value>
+        <Value>
+            <Id Value="74"/>
+            <Name Value="Attribute004/Value074/Name"/>
+        </Value>
+        <Value>
+            <Id Value="75"/>
+            <Name Value="Attribute004/Value075/Name"/>
+        </Value>
+        <Value>
+            <Id Value="76"/>
+            <Name Value="Attribute004/Value076/Name"/>
+        </Value>
+        <Value>
+            <Id Value="77"/>
+            <Name Value="Attribute004/Value077/Name"/>
+        </Value>
+        <Value>
+            <Id Value="78"/>
+            <Name Value="Attribute004/Value078/Name"/>
+        </Value>
+        <Value>
+            <Id Value="79"/>
+            <Name Value="Attribute004/Value079/Name"/>
+        </Value>
+        <Value>
+            <Id Value="80"/>
+            <Name Value="Attribute004/Value080/Name"/>
+        </Value>
+        <Value>
+            <Id Value="81"/>
+            <Name Value="Attribute004/Value081/Name"/>
+        </Value>
+        <Value>
+            <Id Value="82"/>
+            <Name Value="Attribute004/Value082/Name"/>
+        </Value>
+        <Value>
+            <Id Value="83"/>
+            <Name Value="Attribute004/Value083/Name"/>
+        </Value>
+        <Value>
+            <Id Value="84"/>
+            <Name Value="Attribute004/Value084/Name"/>
+        </Value>
+        <Value>
+            <Id Value="85"/>
+            <Name Value="Attribute004/Value085/Name"/>
+        </Value>
+        <Value>
+            <Id Value="86"/>
+            <Name Value="Attribute004/Value086/Name"/>
+        </Value>
+        <Value>
+            <Id Value="87"/>
+            <Name Value="Attribute004/Value087/Name"/>
+        </Value>
+        <Value>
+            <Id Value="88"/>
+            <Name Value="Attribute004/Value088/Name"/>
+        </Value>
+        <Value>
+            <Id Value="89"/>
+            <Name Value="Attribute004/Value089/Name"/>
+        </Value>
+        <Value>
+            <Id Value="90"/>
+            <Name Value="Attribute004/Value090/Name"/>
+        </Value>
+        <Value>
+            <Id Value="91"/>
+            <Name Value="Attribute004/Value091/Name"/>
+        </Value>
+        <Value>
+            <Id Value="92"/>
+            <Name Value="Attribute004/Value092/Name"/>
+        </Value>
+        <Value>
+            <Id Value="93"/>
+            <Name Value="Attribute004/Value093/Name"/>
+        </Value>
+        <Value>
+            <Id Value="94"/>
+            <Name Value="Attribute004/Value094/Name"/>
+        </Value>
+        <Value>
+            <Id Value="95"/>
+            <Name Value="Attribute004/Value095/Name"/>
+        </Value>
+        <Value>
+            <Id Value="96"/>
+            <Name Value="Attribute004/Value096/Name"/>
+        </Value>
+        <Value>
+            <Id Value="97"/>
+            <Name Value="Attribute004/Value097/Name"/>
+        </Value>
+        <Value>
+            <Id Value="98"/>
+            <Name Value="Attribute004/Value098/Name"/>
+        </Value>
+        <Value>
+            <Id Value="99"/>
+            <Name Value="Attribute004/Value099/Name"/>
+        </Value>
+        <Value>
+            <Id Value="100"/>
+            <Name Value="Attribute004/Value100/Name"/>
+        </Value>
+        <Value>
+            <Id Value="101"/>
+            <Name Value="Attribute004/Value101/Name"/>
+        </Value>
+        <Value>
+            <Id Value="102"/>
+            <Name Value="Attribute004/Value102/Name"/>
+        </Value>
+        <Value>
+            <Id Value="103"/>
+            <Name Value="Attribute004/Value103/Name"/>
+        </Value>
+        <Value>
+            <Id Value="104"/>
+            <Name Value="Attribute004/Value104/Name"/>
+        </Value>
+        <Value>
+            <Id Value="105"/>
+            <Name Value="Attribute004/Value105/Name"/>
+        </Value>
+        <Value>
+            <Id Value="106"/>
+            <Name Value="Attribute004/Value106/Name"/>
+        </Value>
+        <Value>
+            <Id Value="107"/>
+            <Name Value="Attribute004/Value107/Name"/>
+        </Value>
+        <Value>
+            <Id Value="108"/>
+            <Name Value="Attribute004/Value108/Name"/>
+        </Value>
+        <Value>
+            <Id Value="109"/>
+            <Name Value="Attribute004/Value109/Name"/>
+        </Value>
+        <Value>
+            <Id Value="110"/>
+            <Name Value="Attribute004/Value110/Name"/>
+        </Value>
+        <Value>
+            <Id Value="111"/>
+            <Name Value="Attribute004/Value111/Name"/>
+        </Value>
+        <Value>
+            <Id Value="112"/>
+            <Name Value="Attribute004/Value112/Name"/>
+        </Value>
+        <Value>
+            <Id Value="113"/>
+            <Name Value="Attribute004/Value113/Name"/>
+        </Value>
+        <Value>
+            <Id Value="114"/>
+            <Name Value="Attribute004/Value114/Name"/>
+        </Value>
+        <Value>
+            <Id Value="115"/>
+            <Name Value="Attribute004/Value115/Name"/>
+        </Value>
+        <Value>
+            <Id Value="116"/>
+            <Name Value="Attribute004/Value116/Name"/>
+        </Value>
+        <Value>
+            <Id Value="117"/>
+            <Name Value="Attribute004/Value117/Name"/>
+        </Value>
+        <Value>
+            <Id Value="118"/>
+            <Name Value="Attribute004/Value118/Name"/>
+        </Value>
+        <Value>
+            <Id Value="119"/>
+            <Name Value="Attribute004/Value119/Name"/>
+        </Value>
+        <Value>
+            <Id Value="120"/>
+            <Name Value="Attribute004/Value120/Name"/>
+        </Value>
+        <Value>
+            <Id Value="121"/>
+            <Name Value="Attribute004/Value121/Name"/>
+        </Value>
+        <Value>
+            <Id Value="122"/>
+            <Name Value="Attribute004/Value122/Name"/>
+        </Value>
+        <Value>
+            <Id Value="123"/>
+            <Name Value="Attribute004/Value123/Name"/>
+        </Value>
+        <Value>
+            <Id Value="124"/>
+            <Name Value="Attribute004/Value124/Name"/>
+        </Value>
+        <Value>
+            <Id Value="125"/>
+            <Name Value="Attribute004/Value125/Name"/>
+        </Value>
+        <Value>
+            <Id Value="126"/>
+            <Name Value="Attribute004/Value126/Name"/>
+        </Value>
+        <Value>
+            <Id Value="127"/>
+            <Name Value="Attribute004/Value127/Name"/>
+        </Value>
+        <Value>
+            <Id Value="128"/>
+            <Name Value="Attribute004/Value128/Name"/>
+        </Value>
+        <Value>
+            <Id Value="129"/>
+            <Name Value="Attribute004/Value129/Name"/>
+        </Value>
+        <Value>
+            <Id Value="130"/>
+            <Name Value="Attribute004/Value130/Name"/>
+        </Value>
+        <Value>
+            <Id Value="131"/>
+            <Name Value="Attribute004/Value131/Name"/>
+        </Value>
+        <Value>
+            <Id Value="132"/>
+            <Name Value="Attribute004/Value132/Name"/>
+        </Value>
+        <Value>
+            <Id Value="133"/>
+            <Name Value="Attribute004/Value133/Name"/>
+        </Value>
+        <Value>
+            <Id Value="134"/>
+            <Name Value="Attribute004/Value134/Name"/>
+        </Value>
+        <Value>
+            <Id Value="135"/>
+            <Name Value="Attribute004/Value135/Name"/>
+        </Value>
+        <Value>
+            <Id Value="136"/>
+            <Name Value="Attribute004/Value136/Name"/>
+        </Value>
+        <Value>
+            <Id Value="137"/>
+            <Name Value="Attribute004/Value137/Name"/>
+        </Value>
+        <Value>
+            <Id Value="138"/>
+            <Name Value="Attribute004/Value138/Name"/>
+        </Value>
+        <Value>
+            <Id Value="139"/>
+            <Name Value="Attribute004/Value139/Name"/>
+        </Value>
+        <Value>
+            <Id Value="140"/>
+            <Name Value="Attribute004/Value140/Name"/>
+        </Value>
+        <Value>
+            <Id Value="141"/>
+            <Name Value="Attribute004/Value141/Name"/>
+        </Value>
+        <Value>
+            <Id Value="142"/>
+            <Name Value="Attribute004/Value142/Name"/>
+        </Value>
+        <Value>
+            <Id Value="143"/>
+            <Name Value="Attribute004/Value143/Name"/>
+        </Value>
+        <Value>
+            <Id Value="144"/>
+            <Name Value="Attribute004/Value144/Name"/>
+        </Value>
+        <Value>
+            <Id Value="145"/>
+            <Name Value="Attribute004/Value145/Name"/>
+        </Value>
+        <Value>
+            <Id Value="146"/>
+            <Name Value="Attribute004/Value146/Name"/>
+        </Value>
+        <Value>
+            <Id Value="147"/>
+            <Name Value="Attribute004/Value147/Name"/>
+        </Value>
+        <Value>
+            <Id Value="148"/>
+            <Name Value="Attribute004/Value148/Name"/>
+        </Value>
+        <Value>
+            <Id Value="149"/>
+            <Name Value="Attribute004/Value149/Name"/>
+        </Value>
+        <Value>
+            <Id Value="150"/>
+            <Name Value="Attribute004/Value150/Name"/>
+        </Value>
+        <Default>
+            <Slot Id="Global"/>
+            <Value Id="16"/>
+        </Default>
+    </Attribute>
+    <Attribute>
+        <Id Value="5"/>
+        <Type Value="Global"/>
+        <Name Value="Attribute005/Name"/>
+        <Availability Value="All"/>
+        <Visibility Value="None"/>
+        <Access Value="None"/>
+        <Hidden/>
+        <Value>
+            <Id Value="1"/>
+            <Name Value="Attribute005/Value001/Name"/>
+        </Value>
+        <Value>
+            <Id Value="2"/>
+            <Name Value="Attribute005/Value002/Name"/>
+        </Value>
+        <Value>
+            <Id Value="3"/>
+            <Name Value="Attribute005/Value003/Name"/>
+        </Value>
+        <Value>
+            <Id Value="4"/>
+            <Name Value="Attribute005/Value004/Name"/>
+        </Value>
+        <Value>
+            <Id Value="5"/>
+            <Name Value="Attribute005/Value005/Name"/>
+        </Value>
+        <Value>
+            <Id Value="6"/>
+            <Name Value="Attribute005/Value006/Name"/>
+        </Value>
+        <Value>
+            <Id Value="7"/>
+            <Name Value="Attribute005/Value007/Name"/>
+        </Value>
+        <Value>
+            <Id Value="8"/>
+            <Name Value="Attribute005/Value008/Name"/>
+        </Value>
+        <Value>
+            <Id Value="9"/>
+            <Name Value="Attribute005/Value009/Name"/>
+        </Value>
+        <Value>
+            <Id Value="10"/>
+            <Name Value="Attribute005/Value010/Name"/>
+        </Value>
+        <Value>
+            <Id Value="11"/>
+            <Name Value="Attribute005/Value011/Name"/>
+        </Value>
+        <Value>
+            <Id Value="12"/>
+            <Name Value="Attribute005/Value012/Name"/>
+        </Value>
+        <Value>
+            <Id Value="13"/>
+            <Name Value="Attribute005/Value013/Name"/>
+        </Value>
+        <Value>
+            <Id Value="14"/>
+            <Name Value="Attribute005/Value014/Name"/>
+        </Value>
+        <Value>
+            <Id Value="15"/>
+            <Name Value="Attribute005/Value015/Name"/>
+        </Value>
+        <Value>
+            <Id Value="16"/>
+            <Name Value="Attribute005/Value016/Name"/>
+        </Value>
+        <Value>
+            <Id Value="17"/>
+            <Name Value="Attribute005/Value017/Name"/>
+        </Value>
+        <Value>
+            <Id Value="18"/>
+            <Name Value="Attribute005/Value018/Name"/>
+        </Value>
+        <Value>
+            <Id Value="19"/>
+            <Name Value="Attribute005/Value019/Name"/>
+        </Value>
+        <Value>
+            <Id Value="20"/>
+            <Name Value="Attribute005/Value020/Name"/>
+        </Value>
+        <Value>
+            <Id Value="21"/>
+            <Name Value="Attribute005/Value021/Name"/>
+        </Value>
+        <Value>
+            <Id Value="22"/>
+            <Name Value="Attribute005/Value022/Name"/>
+        </Value>
+        <Value>
+            <Id Value="23"/>
+            <Name Value="Attribute005/Value023/Name"/>
+        </Value>
+        <Value>
+            <Id Value="24"/>
+            <Name Value="Attribute005/Value024/Name"/>
+        </Value>
+        <Value>
+            <Id Value="25"/>
+            <Name Value="Attribute005/Value025/Name"/>
+        </Value>
+        <Value>
+            <Id Value="26"/>
+            <Name Value="Attribute005/Value026/Name"/>
+        </Value>
+        <Value>
+            <Id Value="27"/>
+            <Name Value="Attribute005/Value027/Name"/>
+        </Value>
+        <Value>
+            <Id Value="28"/>
+            <Name Value="Attribute005/Value028/Name"/>
+        </Value>
+        <Value>
+            <Id Value="29"/>
+            <Name Value="Attribute005/Value029/Name"/>
+        </Value>
+        <Value>
+            <Id Value="30"/>
+            <Name Value="Attribute005/Value030/Name"/>
+        </Value>
+        <Value>
+            <Id Value="31"/>
+            <Name Value="Attribute005/Value031/Name"/>
+        </Value>
+        <Value>
+            <Id Value="32"/>
+            <Name Value="Attribute005/Value032/Name"/>
+        </Value>
+        <Value>
+            <Id Value="33"/>
+            <Name Value="Attribute005/Value033/Name"/>
+        </Value>
+        <Value>
+            <Id Value="34"/>
+            <Name Value="Attribute005/Value034/Name"/>
+        </Value>
+        <Value>
+            <Id Value="35"/>
+            <Name Value="Attribute005/Value035/Name"/>
+        </Value>
+        <Value>
+            <Id Value="36"/>
+            <Name Value="Attribute005/Value036/Name"/>
+        </Value>
+        <Value>
+            <Id Value="37"/>
+            <Name Value="Attribute005/Value037/Name"/>
+        </Value>
+        <Value>
+            <Id Value="38"/>
+            <Name Value="Attribute005/Value038/Name"/>
+        </Value>
+        <Value>
+            <Id Value="39"/>
+            <Name Value="Attribute005/Value039/Name"/>
+        </Value>
+        <Value>
+            <Id Value="40"/>
+            <Name Value="Attribute005/Value040/Name"/>
+        </Value>
+        <Value>
+            <Id Value="41"/>
+            <Name Value="Attribute005/Value041/Name"/>
+        </Value>
+        <Value>
+            <Id Value="42"/>
+            <Name Value="Attribute005/Value042/Name"/>
+        </Value>
+        <Value>
+            <Id Value="43"/>
+            <Name Value="Attribute005/Value043/Name"/>
+        </Value>
+        <Value>
+            <Id Value="44"/>
+            <Name Value="Attribute005/Value044/Name"/>
+        </Value>
+        <Value>
+            <Id Value="45"/>
+            <Name Value="Attribute005/Value045/Name"/>
+        </Value>
+        <Value>
+            <Id Value="46"/>
+            <Name Value="Attribute005/Value046/Name"/>
+        </Value>
+        <Value>
+            <Id Value="47"/>
+            <Name Value="Attribute005/Value047/Name"/>
+        </Value>
+        <Value>
+            <Id Value="48"/>
+            <Name Value="Attribute005/Value048/Name"/>
+        </Value>
+        <Value>
+            <Id Value="49"/>
+            <Name Value="Attribute005/Value049/Name"/>
+        </Value>
+        <Value>
+            <Id Value="50"/>
+            <Name Value="Attribute005/Value050/Name"/>
+        </Value>
+        <Value>
+            <Id Value="51"/>
+            <Name Value="Attribute005/Value051/Name"/>
+        </Value>
+        <Value>
+            <Id Value="52"/>
+            <Name Value="Attribute005/Value052/Name"/>
+        </Value>
+        <Value>
+            <Id Value="53"/>
+            <Name Value="Attribute005/Value053/Name"/>
+        </Value>
+        <Value>
+            <Id Value="54"/>
+            <Name Value="Attribute005/Value054/Name"/>
+        </Value>
+        <Value>
+            <Id Value="55"/>
+            <Name Value="Attribute005/Value055/Name"/>
+        </Value>
+        <Value>
+            <Id Value="56"/>
+            <Name Value="Attribute005/Value056/Name"/>
+        </Value>
+        <Value>
+            <Id Value="57"/>
+            <Name Value="Attribute005/Value057/Name"/>
+        </Value>
+        <Value>
+            <Id Value="58"/>
+            <Name Value="Attribute005/Value058/Name"/>
+        </Value>
+        <Value>
+            <Id Value="59"/>
+            <Name Value="Attribute005/Value059/Name"/>
+        </Value>
+        <Value>
+            <Id Value="60"/>
+            <Name Value="Attribute005/Value060/Name"/>
+        </Value>
+        <Value>
+            <Id Value="61"/>
+            <Name Value="Attribute005/Value061/Name"/>
+        </Value>
+        <Value>
+            <Id Value="62"/>
+            <Name Value="Attribute005/Value062/Name"/>
+        </Value>
+        <Value>
+            <Id Value="63"/>
+            <Name Value="Attribute005/Value063/Name"/>
+        </Value>
+        <Value>
+            <Id Value="64"/>
+            <Name Value="Attribute005/Value064/Name"/>
+        </Value>
+        <Value>
+            <Id Value="65"/>
+            <Name Value="Attribute005/Value065/Name"/>
+        </Value>
+        <Value>
+            <Id Value="66"/>
+            <Name Value="Attribute005/Value066/Name"/>
+        </Value>
+        <Value>
+            <Id Value="67"/>
+            <Name Value="Attribute005/Value067/Name"/>
+        </Value>
+        <Value>
+            <Id Value="68"/>
+            <Name Value="Attribute005/Value068/Name"/>
+        </Value>
+        <Value>
+            <Id Value="69"/>
+            <Name Value="Attribute005/Value069/Name"/>
+        </Value>
+        <Value>
+            <Id Value="70"/>
+            <Name Value="Attribute005/Value070/Name"/>
+        </Value>
+        <Value>
+            <Id Value="71"/>
+            <Name Value="Attribute005/Value071/Name"/>
+        </Value>
+        <Value>
+            <Id Value="72"/>
+            <Name Value="Attribute005/Value072/Name"/>
+        </Value>
+        <Value>
+            <Id Value="73"/>
+            <Name Value="Attribute005/Value073/Name"/>
+        </Value>
+        <Value>
+            <Id Value="74"/>
+            <Name Value="Attribute005/Value074/Name"/>
+        </Value>
+        <Value>
+            <Id Value="75"/>
+            <Name Value="Attribute005/Value075/Name"/>
+        </Value>
+        <Value>
+            <Id Value="76"/>
+            <Name Value="Attribute005/Value076/Name"/>
+        </Value>
+        <Value>
+            <Id Value="77"/>
+            <Name Value="Attribute005/Value077/Name"/>
+        </Value>
+        <Value>
+            <Id Value="78"/>
+            <Name Value="Attribute005/Value078/Name"/>
+        </Value>
+        <Value>
+            <Id Value="79"/>
+            <Name Value="Attribute005/Value079/Name"/>
+        </Value>
+        <Value>
+            <Id Value="80"/>
+            <Name Value="Attribute005/Value080/Name"/>
+        </Value>
+        <Value>
+            <Id Value="81"/>
+            <Name Value="Attribute005/Value081/Name"/>
+        </Value>
+        <Value>
+            <Id Value="82"/>
+            <Name Value="Attribute005/Value082/Name"/>
+        </Value>
+        <Value>
+            <Id Value="83"/>
+            <Name Value="Attribute005/Value083/Name"/>
+        </Value>
+        <Value>
+            <Id Value="84"/>
+            <Name Value="Attribute005/Value084/Name"/>
+        </Value>
+        <Value>
+            <Id Value="85"/>
+            <Name Value="Attribute005/Value085/Name"/>
+        </Value>
+        <Value>
+            <Id Value="86"/>
+            <Name Value="Attribute005/Value086/Name"/>
+        </Value>
+        <Value>
+            <Id Value="87"/>
+            <Name Value="Attribute005/Value087/Name"/>
+        </Value>
+        <Value>
+            <Id Value="88"/>
+            <Name Value="Attribute005/Value088/Name"/>
+        </Value>
+        <Value>
+            <Id Value="89"/>
+            <Name Value="Attribute005/Value089/Name"/>
+        </Value>
+        <Value>
+            <Id Value="90"/>
+            <Name Value="Attribute005/Value090/Name"/>
+        </Value>
+        <Value>
+            <Id Value="91"/>
+            <Name Value="Attribute005/Value091/Name"/>
+        </Value>
+        <Value>
+            <Id Value="92"/>
+            <Name Value="Attribute005/Value092/Name"/>
+        </Value>
+        <Value>
+            <Id Value="93"/>
+            <Name Value="Attribute005/Value093/Name"/>
+        </Value>
+        <Value>
+            <Id Value="94"/>
+            <Name Value="Attribute005/Value094/Name"/>
+        </Value>
+        <Value>
+            <Id Value="95"/>
+            <Name Value="Attribute005/Value095/Name"/>
+        </Value>
+        <Value>
+            <Id Value="96"/>
+            <Name Value="Attribute005/Value096/Name"/>
+        </Value>
+        <Value>
+            <Id Value="97"/>
+            <Name Value="Attribute005/Value097/Name"/>
+        </Value>
+        <Value>
+            <Id Value="98"/>
+            <Name Value="Attribute005/Value098/Name"/>
+        </Value>
+        <Value>
+            <Id Value="99"/>
+            <Name Value="Attribute005/Value099/Name"/>
+        </Value>
+        <Value>
+            <Id Value="100"/>
+            <Name Value="Attribute005/Value100/Name"/>
+        </Value>
+        <Value>
+            <Id Value="101"/>
+            <Name Value="Attribute005/Value101/Name"/>
+        </Value>
+        <Value>
+            <Id Value="102"/>
+            <Name Value="Attribute005/Value102/Name"/>
+        </Value>
+        <Value>
+            <Id Value="103"/>
+            <Name Value="Attribute005/Value103/Name"/>
+        </Value>
+        <Value>
+            <Id Value="104"/>
+            <Name Value="Attribute005/Value104/Name"/>
+        </Value>
+        <Value>
+            <Id Value="105"/>
+            <Name Value="Attribute005/Value105/Name"/>
+        </Value>
+        <Value>
+            <Id Value="106"/>
+            <Name Value="Attribute005/Value106/Name"/>
+        </Value>
+        <Value>
+            <Id Value="107"/>
+            <Name Value="Attribute005/Value107/Name"/>
+        </Value>
+        <Value>
+            <Id Value="108"/>
+            <Name Value="Attribute005/Value108/Name"/>
+        </Value>
+        <Value>
+            <Id Value="109"/>
+            <Name Value="Attribute005/Value109/Name"/>
+        </Value>
+        <Value>
+            <Id Value="110"/>
+            <Name Value="Attribute005/Value110/Name"/>
+        </Value>
+        <Value>
+            <Id Value="111"/>
+            <Name Value="Attribute005/Value111/Name"/>
+        </Value>
+        <Value>
+            <Id Value="112"/>
+            <Name Value="Attribute005/Value112/Name"/>
+        </Value>
+        <Value>
+            <Id Value="113"/>
+            <Name Value="Attribute005/Value113/Name"/>
+        </Value>
+        <Value>
+            <Id Value="114"/>
+            <Name Value="Attribute005/Value114/Name"/>
+        </Value>
+        <Value>
+            <Id Value="115"/>
+            <Name Value="Attribute005/Value115/Name"/>
+        </Value>
+        <Value>
+            <Id Value="116"/>
+            <Name Value="Attribute005/Value116/Name"/>
+        </Value>
+        <Value>
+            <Id Value="117"/>
+            <Name Value="Attribute005/Value117/Name"/>
+        </Value>
+        <Value>
+            <Id Value="118"/>
+            <Name Value="Attribute005/Value118/Name"/>
+        </Value>
+        <Value>
+            <Id Value="119"/>
+            <Name Value="Attribute005/Value119/Name"/>
+        </Value>
+        <Value>
+            <Id Value="120"/>
+            <Name Value="Attribute005/Value120/Name"/>
+        </Value>
+        <Value>
+            <Id Value="121"/>
+            <Name Value="Attribute005/Value121/Name"/>
+        </Value>
+        <Value>
+            <Id Value="122"/>
+            <Name Value="Attribute005/Value122/Name"/>
+        </Value>
+        <Value>
+            <Id Value="123"/>
+            <Name Value="Attribute005/Value123/Name"/>
+        </Value>
+        <Value>
+            <Id Value="124"/>
+            <Name Value="Attribute005/Value124/Name"/>
+        </Value>
+        <Value>
+            <Id Value="125"/>
+            <Name Value="Attribute005/Value125/Name"/>
+        </Value>
+        <Value>
+            <Id Value="126"/>
+            <Name Value="Attribute005/Value126/Name"/>
+        </Value>
+        <Value>
+            <Id Value="127"/>
+            <Name Value="Attribute005/Value127/Name"/>
+        </Value>
+        <Value>
+            <Id Value="128"/>
+            <Name Value="Attribute005/Value128/Name"/>
+        </Value>
+        <Value>
+            <Id Value="129"/>
+            <Name Value="Attribute005/Value129/Name"/>
+        </Value>
+        <Value>
+            <Id Value="130"/>
+            <Name Value="Attribute005/Value130/Name"/>
+        </Value>
+        <Value>
+            <Id Value="131"/>
+            <Name Value="Attribute005/Value131/Name"/>
+        </Value>
+        <Value>
+            <Id Value="132"/>
+            <Name Value="Attribute005/Value132/Name"/>
+        </Value>
+        <Value>
+            <Id Value="133"/>
+            <Name Value="Attribute005/Value133/Name"/>
+        </Value>
+        <Value>
+            <Id Value="134"/>
+            <Name Value="Attribute005/Value134/Name"/>
+        </Value>
+        <Value>
+            <Id Value="135"/>
+            <Name Value="Attribute005/Value135/Name"/>
+        </Value>
+        <Value>
+            <Id Value="136"/>
+            <Name Value="Attribute005/Value136/Name"/>
+        </Value>
+        <Value>
+            <Id Value="137"/>
+            <Name Value="Attribute005/Value137/Name"/>
+        </Value>
+        <Value>
+            <Id Value="138"/>
+            <Name Value="Attribute005/Value138/Name"/>
+        </Value>
+        <Value>
+            <Id Value="139"/>
+            <Name Value="Attribute005/Value139/Name"/>
+        </Value>
+        <Value>
+            <Id Value="140"/>
+            <Name Value="Attribute005/Value140/Name"/>
+        </Value>
+        <Value>
+            <Id Value="141"/>
+            <Name Value="Attribute005/Value141/Name"/>
+        </Value>
+        <Value>
+            <Id Value="142"/>
+            <Name Value="Attribute005/Value142/Name"/>
+        </Value>
+        <Value>
+            <Id Value="143"/>
+            <Name Value="Attribute005/Value143/Name"/>
+        </Value>
+        <Value>
+            <Id Value="144"/>
+            <Name Value="Attribute005/Value144/Name"/>
+        </Value>
+        <Value>
+            <Id Value="145"/>
+            <Name Value="Attribute005/Value145/Name"/>
+        </Value>
+        <Value>
+            <Id Value="146"/>
+            <Name Value="Attribute005/Value146/Name"/>
+        </Value>
+        <Value>
+            <Id Value="147"/>
+            <Name Value="Attribute005/Value147/Name"/>
+        </Value>
+        <Value>
+            <Id Value="148"/>
+            <Name Value="Attribute005/Value148/Name"/>
+        </Value>
+        <Value>
+            <Id Value="149"/>
+            <Name Value="Attribute005/Value149/Name"/>
+        </Value>
+        <Value>
+            <Id Value="150"/>
+            <Name Value="Attribute005/Value150/Name"/>
+        </Value>
+        <Default>
+            <Slot Id="Global"/>
+            <Value Id="141"/>
+        </Default>
+    </Attribute>
+    <DefaultVariants Value="0"/>
+    <Variant>
+        <Id Value="1"/>
+        <CategoryId Value="16"/>
+        <ModeId Value="1"/>
+        <ModeName Value="Variant001/ModeName"/>
+        <ModeDesc Value="Variant001/ModeDesc"/>
+        <MaxTeamSize Value="12"/>
+        <TeamName Value="Variant001/Team/00"/>
+        <AttributeHidden Namespace="999" Id="3006"/>
+        <AttributeHidden Namespace="999" Id="3004"/>
+        <AttributeHidden Namespace="999" Id="3003"/>
+        <AttributeHidden Namespace="999" Id="3001"/>
+        <AttributeHidden Namespace="999" Id="3000"/>
+        <AttributeHidden Namespace="999" Id="3010"/>
+        <AttributeHidden Namespace="999" Id="3015"/>
+        <AttributeHidden Namespace="999" Id="3134"/>
+        <AttributeHidden Namespace="999" Id="3135"/>
+        <AttributeHidden Namespace="999" Id="3136"/>
+        <AttributeHidden Namespace="999" Id="3137"/>
+        <AttributeHidden Namespace="999" Id="3138"/>
+        <AttributeHidden Namespace="999" Id="3139"/>
+        <AttributeHidden Namespace="999" Id="3140"/>
+        <AttributeHidden Namespace="999" Id="3141"/>
+        <AttributeHidden Namespace="999" Id="3142"/>
+        <AttributeHidden Namespace="999" Id="3143"/>
+        <AttributeHidden Namespace="999" Id="3198"/>
+        <AttributeHidden Namespace="999" Id="3199"/>
+        <AttributeHidden Namespace="999" Id="3200"/>
+        <AttributeHidden Namespace="999" Id="3201"/>
+        <AttributeHidden Namespace="999" Id="3202"/>
+        <AttributeHidden Namespace="999" Id="3203"/>
+        <AttributeHidden Namespace="999" Id="3204"/>
+        <AttributeHidden Namespace="999" Id="3205"/>
+        <AttributeHidden Namespace="999" Id="3206"/>
+        <AttributeHidden Namespace="999" Id="3207"/>
+        <AttributeHidden Namespace="999" Id="3166"/>
+        <AttributeHidden Namespace="999" Id="3167"/>
+        <AttributeHidden Namespace="999" Id="3168"/>
+        <AttributeHidden Namespace="999" Id="3169"/>
+        <AttributeHidden Namespace="999" Id="3170"/>
+        <AttributeHidden Namespace="999" Id="3171"/>
+        <AttributeHidden Namespace="999" Id="3172"/>
+        <AttributeHidden Namespace="999" Id="3173"/>
+        <AttributeHidden Namespace="999" Id="3174"/>
+        <AttributeHidden Namespace="999" Id="3175"/>
+        <AttributeHidden Namespace="999" Id="3102"/>
+        <AttributeHidden Namespace="999" Id="3103"/>
+        <AttributeHidden Namespace="999" Id="3104"/>
+        <AttributeHidden Namespace="999" Id="3105"/>
+        <AttributeHidden Namespace="999" Id="3106"/>
+        <AttributeHidden Namespace="999" Id="3107"/>
+        <AttributeHidden Namespace="999" Id="3108"/>
+        <AttributeHidden Namespace="999" Id="3109"/>
+        <AttributeHidden Namespace="999" Id="3110"/>
+        <AttributeHidden Namespace="999" Id="3111"/>
+        <AttributeHidden Namespace="999" Id="4000"/>
+        <AttributeHidden Namespace="0" Id="1"/>
+        <AttributeHidden Namespace="0" Id="4"/>
+        <AttributeHidden Namespace="0" Id="5"/>
+        <Attribute Namespace="999" Id="1001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="28271"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1131770740"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="500">
+            <Default>
+                <Slot Id="12"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="13"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="14"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <ValueHidden Id="1131375984" Slot="0"/>
+            <ValueHidden Id="1131375984" Slot="1"/>
+            <ValueHidden Id="1131375984" Slot="2"/>
+            <ValueHidden Id="1131375984" Slot="3"/>
+            <ValueHidden Id="1131375984" Slot="4"/>
+            <ValueHidden Id="1131375984" Slot="5"/>
+            <ValueHidden Id="1131375984" Slot="6"/>
+            <ValueHidden Id="1131375984" Slot="7"/>
+            <ValueHidden Id="1131375984" Slot="8"/>
+            <ValueHidden Id="1131375984" Slot="9"/>
+            <ValueHidden Id="1131375984" Slot="10"/>
+            <ValueHidden Id="1131375984" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3002">
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="1952657717"/>
+            </Default>
+            <ValueHidden Id="1952657715" Slot="0"/>
+            <ValueHidden Id="1952657715" Slot="1"/>
+            <ValueHidden Id="1952657715" Slot="2"/>
+            <ValueHidden Id="1952657715" Slot="3"/>
+            <ValueHidden Id="1952657715" Slot="4"/>
+            <ValueHidden Id="1952657715" Slot="5"/>
+            <ValueHidden Id="1952657715" Slot="6"/>
+            <ValueHidden Id="1952657715" Slot="7"/>
+            <ValueHidden Id="1952657715" Slot="8"/>
+            <ValueHidden Id="1952657715" Slot="9"/>
+            <ValueHidden Id="1952657715" Slot="10"/>
+            <ValueHidden Id="1952657715" Slot="11"/>
+            <ValueHidden Id="1952657715" Slot="14"/>
+            <ValueHidden Id="1952657716" Slot="0"/>
+            <ValueHidden Id="1952657716" Slot="1"/>
+            <ValueHidden Id="1952657716" Slot="2"/>
+            <ValueHidden Id="1952657716" Slot="3"/>
+            <ValueHidden Id="1952657716" Slot="4"/>
+            <ValueHidden Id="1952657716" Slot="5"/>
+            <ValueHidden Id="1952657716" Slot="6"/>
+            <ValueHidden Id="1952657716" Slot="7"/>
+            <ValueHidden Id="1952657716" Slot="8"/>
+            <ValueHidden Id="1952657716" Slot="9"/>
+            <ValueHidden Id="1952657716" Slot="10"/>
+            <ValueHidden Id="1952657716" Slot="11"/>
+            <ValueHidden Id="1952657716" Slot="14"/>
+            <ValueHidden Id="1952657714" Slot="0"/>
+            <ValueHidden Id="1952657714" Slot="1"/>
+            <ValueHidden Id="1952657714" Slot="2"/>
+            <ValueHidden Id="1952657714" Slot="3"/>
+            <ValueHidden Id="1952657714" Slot="4"/>
+            <ValueHidden Id="1952657714" Slot="5"/>
+            <ValueHidden Id="1952657714" Slot="6"/>
+            <ValueHidden Id="1952657714" Slot="7"/>
+            <ValueHidden Id="1952657714" Slot="8"/>
+            <ValueHidden Id="1952657714" Slot="9"/>
+            <ValueHidden Id="1952657714" Slot="10"/>
+            <ValueHidden Id="1952657714" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1315926637"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3006">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="12592"/>
+            </Default>
+        </Attribute>
+        <Attribute Id="3">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="2"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2018">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="21553"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="21553" Index="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="21553" Index="2"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="21553" Index="3"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="21553" Index="4"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="21553" Index="5"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="21553" Index="6"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="21553" Index="7"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="8"/>
+                <Value Id="21553" Index="8"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="9"/>
+                <Value Id="21553" Index="9"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="10"/>
+                <Value Id="21553" Index="10"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="21553" Index="11"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3013">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="8"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="9"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="10"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="0"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+    </Variant>
+    <Variant>
+        <Id Value="2"/>
+        <CategoryId Value="16"/>
+        <ModeId Value="1"/>
+        <ModeName Value="Variant002/ModeName"/>
+        <ModeDesc Value="Variant002/ModeDesc"/>
+        <MaxTeamSize Value="12"/>
+        <TeamName Value="Variant002/Team/00"/>
+        <AttributeHidden Namespace="999" Id="3006"/>
+        <AttributeHidden Namespace="999" Id="3004"/>
+        <AttributeHidden Namespace="999" Id="3003"/>
+        <AttributeHidden Namespace="999" Id="3001"/>
+        <AttributeHidden Namespace="999" Id="3000"/>
+        <AttributeHidden Namespace="999" Id="3010"/>
+        <AttributeHidden Namespace="999" Id="3015"/>
+        <AttributeHidden Namespace="999" Id="3134"/>
+        <AttributeHidden Namespace="999" Id="3135"/>
+        <AttributeHidden Namespace="999" Id="3136"/>
+        <AttributeHidden Namespace="999" Id="3137"/>
+        <AttributeHidden Namespace="999" Id="3138"/>
+        <AttributeHidden Namespace="999" Id="3139"/>
+        <AttributeHidden Namespace="999" Id="3140"/>
+        <AttributeHidden Namespace="999" Id="3141"/>
+        <AttributeHidden Namespace="999" Id="3142"/>
+        <AttributeHidden Namespace="999" Id="3143"/>
+        <AttributeHidden Namespace="999" Id="3198"/>
+        <AttributeHidden Namespace="999" Id="3199"/>
+        <AttributeHidden Namespace="999" Id="3200"/>
+        <AttributeHidden Namespace="999" Id="3201"/>
+        <AttributeHidden Namespace="999" Id="3202"/>
+        <AttributeHidden Namespace="999" Id="3203"/>
+        <AttributeHidden Namespace="999" Id="3204"/>
+        <AttributeHidden Namespace="999" Id="3205"/>
+        <AttributeHidden Namespace="999" Id="3206"/>
+        <AttributeHidden Namespace="999" Id="3207"/>
+        <AttributeHidden Namespace="999" Id="3166"/>
+        <AttributeHidden Namespace="999" Id="3167"/>
+        <AttributeHidden Namespace="999" Id="3168"/>
+        <AttributeHidden Namespace="999" Id="3169"/>
+        <AttributeHidden Namespace="999" Id="3170"/>
+        <AttributeHidden Namespace="999" Id="3171"/>
+        <AttributeHidden Namespace="999" Id="3172"/>
+        <AttributeHidden Namespace="999" Id="3173"/>
+        <AttributeHidden Namespace="999" Id="3174"/>
+        <AttributeHidden Namespace="999" Id="3175"/>
+        <AttributeHidden Namespace="999" Id="3102"/>
+        <AttributeHidden Namespace="999" Id="3103"/>
+        <AttributeHidden Namespace="999" Id="3104"/>
+        <AttributeHidden Namespace="999" Id="3105"/>
+        <AttributeHidden Namespace="999" Id="3106"/>
+        <AttributeHidden Namespace="999" Id="3107"/>
+        <AttributeHidden Namespace="999" Id="3108"/>
+        <AttributeHidden Namespace="999" Id="3109"/>
+        <AttributeHidden Namespace="999" Id="3110"/>
+        <AttributeHidden Namespace="999" Id="3111"/>
+        <AttributeHidden Namespace="999" Id="4000"/>
+        <AttributeHidden Namespace="0" Id="1"/>
+        <AttributeHidden Namespace="0" Id="4"/>
+        <AttributeHidden Namespace="0" Id="5"/>
+        <Attribute Namespace="999" Id="1001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="28271"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1131770740"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="500">
+            <Default>
+                <Slot Id="12"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="13"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="14"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <ValueHidden Id="1131375984" Slot="0"/>
+            <ValueHidden Id="1131375984" Slot="1"/>
+            <ValueHidden Id="1131375984" Slot="2"/>
+            <ValueHidden Id="1131375984" Slot="3"/>
+            <ValueHidden Id="1131375984" Slot="4"/>
+            <ValueHidden Id="1131375984" Slot="5"/>
+            <ValueHidden Id="1131375984" Slot="6"/>
+            <ValueHidden Id="1131375984" Slot="7"/>
+            <ValueHidden Id="1131375984" Slot="8"/>
+            <ValueHidden Id="1131375984" Slot="9"/>
+            <ValueHidden Id="1131375984" Slot="10"/>
+            <ValueHidden Id="1131375984" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3002">
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="1952657717"/>
+            </Default>
+            <ValueHidden Id="1952657715" Slot="0"/>
+            <ValueHidden Id="1952657715" Slot="1"/>
+            <ValueHidden Id="1952657715" Slot="2"/>
+            <ValueHidden Id="1952657715" Slot="3"/>
+            <ValueHidden Id="1952657715" Slot="4"/>
+            <ValueHidden Id="1952657715" Slot="5"/>
+            <ValueHidden Id="1952657715" Slot="6"/>
+            <ValueHidden Id="1952657715" Slot="7"/>
+            <ValueHidden Id="1952657715" Slot="8"/>
+            <ValueHidden Id="1952657715" Slot="9"/>
+            <ValueHidden Id="1952657715" Slot="10"/>
+            <ValueHidden Id="1952657715" Slot="11"/>
+            <ValueHidden Id="1952657715" Slot="14"/>
+            <ValueHidden Id="1952657716" Slot="0"/>
+            <ValueHidden Id="1952657716" Slot="1"/>
+            <ValueHidden Id="1952657716" Slot="2"/>
+            <ValueHidden Id="1952657716" Slot="3"/>
+            <ValueHidden Id="1952657716" Slot="4"/>
+            <ValueHidden Id="1952657716" Slot="5"/>
+            <ValueHidden Id="1952657716" Slot="6"/>
+            <ValueHidden Id="1952657716" Slot="7"/>
+            <ValueHidden Id="1952657716" Slot="8"/>
+            <ValueHidden Id="1952657716" Slot="9"/>
+            <ValueHidden Id="1952657716" Slot="10"/>
+            <ValueHidden Id="1952657716" Slot="11"/>
+            <ValueHidden Id="1952657716" Slot="14"/>
+            <ValueHidden Id="1952657714" Slot="0"/>
+            <ValueHidden Id="1952657714" Slot="1"/>
+            <ValueHidden Id="1952657714" Slot="2"/>
+            <ValueHidden Id="1952657714" Slot="3"/>
+            <ValueHidden Id="1952657714" Slot="4"/>
+            <ValueHidden Id="1952657714" Slot="5"/>
+            <ValueHidden Id="1952657714" Slot="6"/>
+            <ValueHidden Id="1952657714" Slot="7"/>
+            <ValueHidden Id="1952657714" Slot="8"/>
+            <ValueHidden Id="1952657714" Slot="9"/>
+            <ValueHidden Id="1952657714" Slot="10"/>
+            <ValueHidden Id="1952657714" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1315926637"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3006">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="12592"/>
+            </Default>
+        </Attribute>
+        <Attribute Id="3">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2018">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="21553"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="21553" Index="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="21553" Index="2"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="21553" Index="3"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="21553" Index="4"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="21553" Index="5"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="21553" Index="6"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="21553" Index="7"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="8"/>
+                <Value Id="21553" Index="8"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="9"/>
+                <Value Id="21553" Index="9"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="10"/>
+                <Value Id="21553" Index="10"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="21553" Index="11"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+    </Variant>
+    <Variant>
+        <Id Value="3"/>
+        <CategoryId Value="16"/>
+        <ModeId Value="1"/>
+        <ModeName Value="Variant003/ModeName"/>
+        <ModeDesc Value="Variant003/ModeDesc"/>
+        <MaxTeamSize Value="12"/>
+        <TeamName Value="Variant003/Team/00"/>
+        <TeamName Value="Variant003/Team/01"/>
+        <AttributeHidden Namespace="999" Id="3006"/>
+        <AttributeHidden Namespace="999" Id="3004"/>
+        <AttributeHidden Namespace="999" Id="3003"/>
+        <AttributeHidden Namespace="999" Id="3001"/>
+        <AttributeHidden Namespace="999" Id="3000"/>
+        <AttributeHidden Namespace="999" Id="3010"/>
+        <AttributeHidden Namespace="999" Id="3015"/>
+        <AttributeHidden Namespace="999" Id="3134"/>
+        <AttributeHidden Namespace="999" Id="3135"/>
+        <AttributeHidden Namespace="999" Id="3136"/>
+        <AttributeHidden Namespace="999" Id="3137"/>
+        <AttributeHidden Namespace="999" Id="3138"/>
+        <AttributeHidden Namespace="999" Id="3139"/>
+        <AttributeHidden Namespace="999" Id="3140"/>
+        <AttributeHidden Namespace="999" Id="3141"/>
+        <AttributeHidden Namespace="999" Id="3142"/>
+        <AttributeHidden Namespace="999" Id="3143"/>
+        <AttributeHidden Namespace="999" Id="3198"/>
+        <AttributeHidden Namespace="999" Id="3199"/>
+        <AttributeHidden Namespace="999" Id="3200"/>
+        <AttributeHidden Namespace="999" Id="3201"/>
+        <AttributeHidden Namespace="999" Id="3202"/>
+        <AttributeHidden Namespace="999" Id="3203"/>
+        <AttributeHidden Namespace="999" Id="3204"/>
+        <AttributeHidden Namespace="999" Id="3205"/>
+        <AttributeHidden Namespace="999" Id="3206"/>
+        <AttributeHidden Namespace="999" Id="3207"/>
+        <AttributeHidden Namespace="999" Id="3166"/>
+        <AttributeHidden Namespace="999" Id="3167"/>
+        <AttributeHidden Namespace="999" Id="3168"/>
+        <AttributeHidden Namespace="999" Id="3169"/>
+        <AttributeHidden Namespace="999" Id="3170"/>
+        <AttributeHidden Namespace="999" Id="3171"/>
+        <AttributeHidden Namespace="999" Id="3172"/>
+        <AttributeHidden Namespace="999" Id="3173"/>
+        <AttributeHidden Namespace="999" Id="3174"/>
+        <AttributeHidden Namespace="999" Id="3175"/>
+        <AttributeHidden Namespace="999" Id="3102"/>
+        <AttributeHidden Namespace="999" Id="3103"/>
+        <AttributeHidden Namespace="999" Id="3104"/>
+        <AttributeHidden Namespace="999" Id="3105"/>
+        <AttributeHidden Namespace="999" Id="3106"/>
+        <AttributeHidden Namespace="999" Id="3107"/>
+        <AttributeHidden Namespace="999" Id="3108"/>
+        <AttributeHidden Namespace="999" Id="3109"/>
+        <AttributeHidden Namespace="999" Id="3110"/>
+        <AttributeHidden Namespace="999" Id="3111"/>
+        <AttributeHidden Namespace="999" Id="4000"/>
+        <AttributeHidden Namespace="0" Id="1"/>
+        <AttributeHidden Namespace="0" Id="4"/>
+        <AttributeHidden Namespace="0" Id="5"/>
+        <Attribute Namespace="999" Id="1001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="28271"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1131770740"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="500">
+            <Default>
+                <Slot Id="12"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="13"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="14"/>
+                <Value Id="1131375984"/>
+                <Locked/>
+            </Default>
+            <ValueHidden Id="1131375984" Slot="0"/>
+            <ValueHidden Id="1131375984" Slot="1"/>
+            <ValueHidden Id="1131375984" Slot="2"/>
+            <ValueHidden Id="1131375984" Slot="3"/>
+            <ValueHidden Id="1131375984" Slot="4"/>
+            <ValueHidden Id="1131375984" Slot="5"/>
+            <ValueHidden Id="1131375984" Slot="6"/>
+            <ValueHidden Id="1131375984" Slot="7"/>
+            <ValueHidden Id="1131375984" Slot="8"/>
+            <ValueHidden Id="1131375984" Slot="9"/>
+            <ValueHidden Id="1131375984" Slot="10"/>
+            <ValueHidden Id="1131375984" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3002">
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="1952657717"/>
+            </Default>
+            <ValueHidden Id="1952657715" Slot="0"/>
+            <ValueHidden Id="1952657715" Slot="1"/>
+            <ValueHidden Id="1952657715" Slot="2"/>
+            <ValueHidden Id="1952657715" Slot="3"/>
+            <ValueHidden Id="1952657715" Slot="4"/>
+            <ValueHidden Id="1952657715" Slot="5"/>
+            <ValueHidden Id="1952657715" Slot="6"/>
+            <ValueHidden Id="1952657715" Slot="7"/>
+            <ValueHidden Id="1952657715" Slot="8"/>
+            <ValueHidden Id="1952657715" Slot="9"/>
+            <ValueHidden Id="1952657715" Slot="10"/>
+            <ValueHidden Id="1952657715" Slot="11"/>
+            <ValueHidden Id="1952657715" Slot="14"/>
+            <ValueHidden Id="1952657716" Slot="0"/>
+            <ValueHidden Id="1952657716" Slot="1"/>
+            <ValueHidden Id="1952657716" Slot="2"/>
+            <ValueHidden Id="1952657716" Slot="3"/>
+            <ValueHidden Id="1952657716" Slot="4"/>
+            <ValueHidden Id="1952657716" Slot="5"/>
+            <ValueHidden Id="1952657716" Slot="6"/>
+            <ValueHidden Id="1952657716" Slot="7"/>
+            <ValueHidden Id="1952657716" Slot="8"/>
+            <ValueHidden Id="1952657716" Slot="9"/>
+            <ValueHidden Id="1952657716" Slot="10"/>
+            <ValueHidden Id="1952657716" Slot="11"/>
+            <ValueHidden Id="1952657716" Slot="14"/>
+            <ValueHidden Id="1952657714" Slot="0"/>
+            <ValueHidden Id="1952657714" Slot="1"/>
+            <ValueHidden Id="1952657714" Slot="2"/>
+            <ValueHidden Id="1952657714" Slot="3"/>
+            <ValueHidden Id="1952657714" Slot="4"/>
+            <ValueHidden Id="1952657714" Slot="5"/>
+            <ValueHidden Id="1952657714" Slot="6"/>
+            <ValueHidden Id="1952657714" Slot="7"/>
+            <ValueHidden Id="1952657714" Slot="8"/>
+            <ValueHidden Id="1952657714" Slot="9"/>
+            <ValueHidden Id="1952657714" Slot="10"/>
+            <ValueHidden Id="1952657714" Slot="11"/>
+        </Attribute>
+        <Attribute Namespace="999" Id="3000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1315926637"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3006">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="12592"/>
+            </Default>
+        </Attribute>
+        <Attribute Id="3">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2018">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="21553"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="21553" Index="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="21553" Index="2"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="21553" Index="3"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="21553" Index="4"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="21553" Index="5"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="21554"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="21554" Index="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="8"/>
+                <Value Id="21554" Index="2"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="9"/>
+                <Value Id="21554" Index="3"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="10"/>
+                <Value Id="21554" Index="4"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="21554" Index="5"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Id="2">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="8"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="9"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="10"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+            <Default>
+                <Slot Id="11"/>
+                <Value Id="1"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+    </Variant>
+</Attributes>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+<!-- **Deprecated** Still a good template for any CC in the future -->
+   <!-- Command Button Label Template -->
+   <Frame type="Label" name="BackPackChargeTemplate">
+      <Width val="32" />
+      <Height val="32" />
+      <Anchor side="Top" relative="$parent" pos="Min" offset="32" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="30" />
+      <Style val="ScoreScreenProgressLabel" />
+      <Color val="0,255,128" />
+      <RenderPriority val="655" />
+      <Text val="0" />
+   </Frame>
+   <!-- Command Button Template -->
+   <Frame type="CommandButton" name="BackPackButtonTemplate" template="CommandButton/CommandButtonTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="64" />
+      <Height val="64" />
+      <TooltipFrame val="BackPackTooltip" />
+      <ClickSound val="*@UI_SoA_SpellClick" />
+      <AcceptsMouse val="False" />
+      <AcceptsMouseDropTarget val="False" />
+      <CollapseLayout val="True" />
+      <Frame type="Image" name="GameButtonBorderImage">
+         <Alpha val="0" />
+      </Frame>
+   </Frame>
+   <!-- Command Panel Template -->
+   <Frame type="CommandPanel" name="BackPackCommandPanelTemplate" template="CommandPanel/CommandPanelTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="135" />
+      <Height val="200" />
+      <HideUnusedButtons val="False" />
+      <DisplayCancelCommandCard val="False" />
+      <UseGridHotkeys val="False" />
+      <Frame type="CommandTooltip" name="BackPackTooltip" template="CommandButton/CommandTooltipTemplate">
+         <MinWidth val="300" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-230" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-1340" />
+         <Width val="300" />
+      </Frame>
+      <Frame type="Image" name="CommandTargetImage">
+         <Visible val="false" />
+      </Frame>
+      <Frame type="Label" name="CommandTargetName">
+         <Visible val="false" />
+      </Frame>
+      <Frame type="Label" name="CommandTargetPrompt">
+         <Visible val="false" />
+      </Frame>
+      <Frame type="Frame" name="UncontrollableUnitFrame">
+         <Frame type="Label" name="UncontrollableUnitTitleLabel">
+            <Visible val="false" />
+         </Frame>
+         <Frame type="Label" name="UncontrollableUnitPromptLabel">
+            <Visible val="false" />
+         </Frame>
+      </Frame>
+      <!-- Command Buttons -->
+      <Frame type="CommandButton" name="CommandButton00" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Frame type="Label" name="BackPackLabel1" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton01" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="65" />
+         <Frame type="Label" name="BackPackLabel2" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton02" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="65" />
+         <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="0" />
+         <Frame type="Label" name="BackPackLabel3" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton03" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton02" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton02" pos="Min" offset="65" />
+         <Frame type="Label" name="BackPackLabel4" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton04" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton02" pos="Min" offset="65" />
+         <Anchor side="Left" relative="$parent/CommandButton02" pos="Min" offset="0" />
+         <Frame type="Label" name="BackPackLabel5" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton05" template="BackPack/BackPackButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton04" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton04" pos="Min" offset="65" />
+         <Frame type="Label" name="BackPackLabel6" template="BackPack/BackPackChargeTemplate">
+            <StateGroup name="ChargeState">
+               <State name="Visible">
+                  <When type="Property" frame="$this" operator="GreaterThan" Text="0" />
+                  <Action type="SetProperty" frame="$this" Visible="True" />
+               </State>
+               <State name="NotVisible">
+                  <When type="Property" frame="$this" operator="LessThan" Text="1" />
+                  <Action type="SetProperty" frame="$this" Visible="False" />
+               </State>
+            </StateGroup>
+         </Frame>
+         <StateGroup name="BackPackSlot">
+            <DefaultState val="Locked" />
+            <State name="Unlocked">
+               <When type="AnimationState" BackPackSlot="Unlocked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="255" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="True" />
+            </State>
+            <State name="Locked">
+               <When type="AnimationState" BackPackSlot="Locked" />
+               <Action type="SetProperty" frame="$this/GameButtonBorderImage" Alpha="0" />
+               <Action type="SetProperty" frame="$this" AcceptsMouse="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+   </Frame>
+   <!-- Back Pack Template -->
+   <Frame type="Frame" name="BackPackTemplate">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-16" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-1000" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="135" />
+      <Height val="200" />
+      <Visible val="False" />
+      <RenderPriority val="510" />
+      <Frame type="CommandPanel" name="CommandButtons" template="BackPack/BackPackCommandPanelTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      </Frame>
+      <Animation name="BackPackAnimDisplay">
+         <Event event="DisplayBackPack" action="Reset,Play" />
+         <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0" value="True" />
+         </Controller>
+      </Animation>
+      <Animation name="BackPackAnimHide">
+         <Event event="HideBackPack" action="Reset,Play" />
+         <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0" value="False" />
+         </Controller>
+      </Animation>
+      <StateGroup name="Resolution">
+         <DefaultState val="DefaultSettings" />
+         <State name="1280X800">
+            <When type="Option" Width="1280" />
+            <When type="Option" Height="800" />
+            <Action type="SetAnchor" side="Left" relative="$parent" pos="Mid" offset="-565" />
+         </State>
+         <State name="1440X900">
+            <When type="Option" Width="1440" />
+            <When type="Option" Height="900" />
+            <Action type="SetAnchor" side="Left" relative="$parent" pos="Mid" offset="-565" />
+         </State>
+         <State name="DefaultSettings" />
+      </StateGroup>
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+      <Frame type="Frame" name="BackPack1" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack2" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack3" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack4" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack5" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack6" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack7" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack8" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack9" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack10" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack11" template="BackPack/BackPackTemplate" />
+      <Frame type="Frame" name="BackPack12" template="BackPack/BackPackTemplate" />
+   </Frame>
+</Desc>

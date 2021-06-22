@@ -1,0 +1,166 @@
+// Refresh Attack Order (prevents idle units)
+bool RefreshAttackOrder (bool testConds, bool runActions) {
+     // Conditions
+    if (testConds) {
+        if (!((UnitGroupCount(lib90F7C81D_gv_heroesGroup, c_unitCountAlive) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+        //Add unit to unit group if it isn't. 
+    if ((UnitGroupHasUnit(lib90F7C81D_gv_undeadGroup, EventPlayerEffectUsedUnit(c_effectUnitSource)) == false)) {
+        UnitGroupAdd(lib90F7C81D_gv_undeadGroup, EventPlayerEffectUsedUnit(c_effectUnitSource));
+    }
+
+    UnitIssueOrder(EventPlayerEffectUsedUnit(c_effectUnitSource), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(UnitGroupRandomUnit(lib90F7C81D_gv_undeadTargetGroup, c_unitCountAlive))), c_orderQueueReplace);
+    return true;
+}
+// PMC Refresh Attack Order (prevents idle units)
+bool PMCRefreshAttackOrder (bool testConds, bool runActions) {
+    //unit lv_target;
+
+     // Conditions
+    if (testConds) {
+        if (!((UnitGroupCount(lib90F7C81D_gv_heroesGroup, c_unitCountAlive) >= 1))) {
+            return false;
+        }
+        if (!((lib90F7C81D_gv_pMC.lv_idleAttackOrder == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+        //Add unit to RA unit group if it isn't. 
+    if ((UnitGroupHasUnit(lib90F7C81D_gv_rAGroup, EventPlayerEffectUsedUnit(c_effectUnitSource)) == false)) {
+        UnitGroupAdd(lib90F7C81D_gv_rAGroup, EventPlayerEffectUsedUnit(c_effectUnitSource));
+    }
+    // Attack enemy position  Add random roll for random point ??
+    //lv_target = UnitGroupRandomUnit(lib90F7C81D_gv_undeadTargetGroup, c_unitCountAlive);
+    //if ((UnitTestState(lv_target, c_unitStateCloaked) == true) && (RandomInt(0, 3) == 1)) {
+    //    UnitIssueOrder(EventPlayerEffectUsedUnit(c_effectUnitSource), OrderTargetingPoint(AbilityCommand("attack", 0), RegionRandomPoint(RegionPlayableMap())), c_orderQueueReplace);
+    //}
+    //else {
+    //    UnitIssueOrder(EventPlayerEffectUsedUnit(c_effectUnitSource), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(lv_target)), c_orderQueueReplace);
+    //}
+    //lv_target = null;
+    UnitIssueOrder(EventPlayerEffectUsedUnit(c_effectUnitSource), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(UnitGroupRandomUnit(lib90F7C81D_gv_undeadTargetGroup, c_unitCountAlive))), c_orderQueueReplace);
+    return true;
+}
+//--------------------------------------------------------------------------------------------------
+// Enable/Disable PMC Refresh Attack Order
+void PMCIdleOrder (bool option) {
+
+    if ((option == true)) {
+        lib90F7C81D_gv_pMC.lv_idleAttackOrder = true;
+    }
+    else {
+        lib90F7C81D_gv_pMC.lv_idleAttackOrder = false;
+    }
+}
+//--------------------------------------------------------------------------------------------------
+// Prevents scorp idling after charge abil
+bool ScorpCharge (bool testConds, bool runActions) {
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "Arachnathid"))) {
+            return false;
+        }
+
+        if (!((UnitGetOwner(EventUnit()) == 14))) {
+            return false;
+        }
+
+        if (!((UnitGroupCount(lib90F7C81D_gv_heroesGroup, c_unitCountAlive) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(3.0, c_timeGame);
+    libNtve_gf_MakeUnitUncommandable(EventUnit(), false);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(UnitGroupRandomUnit(lib90F7C81D_gv_undeadTargetGroup, c_unitCountAlive))), c_orderQueueReplace);
+    return true;
+}
+//--------------------------------------------------------------------------------------------------
+// Police Tactical AI
+bool PoliceAI(bool testConds, bool runActions) {
+
+    // Variable Declarations
+    fixed lv_angleOfAttacker;
+    region lv_area;
+    int lv_units;
+    bool lv_danger;
+    unit lv_damagingUnit;
+    unit lv_unitAttacked;
+    fixed lv_offset;
+    fixed lv_point;
+
+    // Automatic Variable Declarations
+    unitgroup auto6FD9DA29_g;
+    int auto6FD9DA29_u;
+    unit auto6FD9DA29_var;
+
+    // Variable Initialization
+    lv_damagingUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_unitAttacked = EventPlayerEffectUsedUnit(c_effectUnitSource);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+   
+    lv_angleOfAttacker = UnitGetFacing(lv_damagingUnit);
+    lv_offset = lv_angleOfAttacker;
+    lv_area = RegionEmpty();
+    lv_point = DistanceBetweenPoints(UnitGetPosition(lv_unitAttacked), UnitGetPosition(lv_damagingUnit));
+    if ((lv_point != DistanceBetweenPoints(UnitGetPosition(lv_unitAttacked), UnitGetPosition(lv_damagingUnit)))) {
+        return true;
+    }
+    else {
+        if ((lv_point <= 2.0)) {
+            RegionAddCircle(lv_area, true, UnitGetPosition(lv_unitAttacked), 3.0);
+            auto6FD9DA29_g = UnitGroupAlliance(0, c_unitAllianceEnemy, lv_area, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto6FD9DA29_u = UnitGroupCount(auto6FD9DA29_g, c_unitCountAll);
+            for (;; auto6FD9DA29_u -= 1) {
+                auto6FD9DA29_var = UnitGroupUnitFromEnd(auto6FD9DA29_g, auto6FD9DA29_u);
+                if (auto6FD9DA29_var == null) { break; }
+                if ((libNtve_gf_UnitInRegion(auto6FD9DA29_var, lv_area) == true)) {
+                    lv_units += 1;
+                    if (((lv_units >= 3) || (UnitTestState(auto6FD9DA29_var, c_unitStateCloaked) == true) || (UnitTypeTestAttribute(UnitGetType(auto6FD9DA29_var), c_unitAttributeMassive) == true))) {
+                        lv_danger = true;
+                        break;
+                    }
+
+                }
+
+            }
+            if ((UnitIsAlive(lv_unitAttacked) == true) && (lv_danger == true)) {
+                if ((UnitIsAlive(lv_unitAttacked) == true) && (UnitGetPropertyFixed(lv_unitAttacked, c_unitPropLifePercent, c_unitPropCurrent) >= 5.0) && (UnitAbilityGetCooldown(lv_unitAttacked, "NPCJump", "Abil/NPCJump") == 0.0)) {
+                    UnitIssueOrder(lv_unitAttacked, OrderTargetingPoint(AbilityCommand("NPCJump", 0), PointWithOffsetPolar(UnitGetPosition(lv_unitAttacked), 3.0, lv_offset)), c_orderQueueReplace);
+                }
+                else {
+                    if ((UnitIsAlive(lv_unitAttacked) == true) && (UnitGetPropertyFixed(lv_unitAttacked, c_unitPropLifePercent, c_unitPropCurrent) >= 5.0)) {
+                        UnitIssueOrder(lv_unitAttacked, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_unitAttacked), 3.0, lv_offset)), c_orderQueueReplace);
+                    }
+
+                }
+            }
+
+        }
+
+    }
+    
+    return true;
+}
+//--------------------------------------------------------------------------------------------------

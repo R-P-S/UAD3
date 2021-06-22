@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="FPS_Label_Padding" val="25" />
+    <!-- Discord Browser Link -->
+    <Frame type="Frame" name="Discord" template="ScreenCustomFeatured/CTABannerTemplate">
+        <Anchor side="Top" relative="$this" pos="Min" offset="0" />
+        <Anchor side="Left" relative="$this" pos="Min" offset="0" />
+        <Frame type="LaunchURLButton" name="WebsiteButton" template="StandardUADTemplates/LinkButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Width val="0" />
+            <Height val="0" />           
+            <Frame type="Image" name="DiscordLogo">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+                <Height val="48" />
+                <Width val="48" />
+                <RenderPriority val="600" />
+                <Texture val="Assets/Buttons/Discord.dds" />
+            </Frame>
+        </Frame>
+        <Frame type="Frame" name="BannerImage">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="BorderInner">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="BorderOuter">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="BannerVignette">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="DescriptionLabel">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="HeaderLabel">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+        <Frame type="Frame" name="MoreInfoLabel">
+            <DescFlags val="CreationDeferred" />
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="Wiki" template="SpecialFrameTemplates/Discord">
+        <Frame type="LaunchURLButton" name="WebsiteButton">         
+            <Frame type="Image" name="DiscordLogo">>
+                <Texture val="Assets/Textures/Wiki_Logo.dds" />
+            </Frame>
+        </Frame>
+    </Frame>
+    <!-- Movement Speed UI Templates-->
+    <Frame type="Label" name="SpeedLabelTemplate">
+        <Anchor side="Top" relative="$parent/ArmorLabel" pos="Min" offset="0" />
+        <Anchor side="Left" relative="$parent/ArmorLabel" pos="Min" offset="24" />
+        <Height val="32" />
+        <Width val="150" />
+        <Style val="@@InfoPaneHeroAttribute 2" />
+        <Color val="255,255,255" />
+        <Visible val="False" />
+        <Text val="" />
+        <!--
+        <StateGroup name="Region">
+            <DefaultState val="enUS" />
+            <State name="koKR">
+                <When type="Option" localeiddata="koKR" />
+                <Action type="SetProperty" Style="@@InfoPaneHeroInfo" />
+            </State>
+            <State name="enUS" />
+        </StateGroup> --> 
+    </Frame>
+    <Frame type="Label" name="SpeedCurrentTemplate">
+        <Anchor relative="$parent/SpeedLabelContainer" />
+        <Text val="0.00" />
+        <Visible val="False" />
+        <Frame type="TextFormatFrame" name="FormattedText">
+            <Anchor relative="$parent" />
+            <FormatText val="       %0%" />
+            <Replacement index="0" val="{$parent/@Text}" />
+        </Frame>
+    </Frame>
+    <Frame type="Label" name="UnitTagTemplate">
+        <Anchor relative="$parent/SpeedLabelContainer" />
+        <Text val="" />
+        <Alpha val="0" />
+        <AcceptsMouse val="False" />
+    </Frame>
+    <Frame type="Frame" name="SystemInfoTooltipTemplate" template="SystemInfoPanel/SystemInfoTooltipTemplate">
+        <Frame type="SystemInfoPanel" name="SystemInfoPanel" template="SystemInfoPanel/SystemInfoPanelTemplate">
+            <Frame type="Label" name="TitleLabel">
+                <Visible val="False"/>
+                <CollapseLayout val="True"/>
+            </Frame>
+            <Frame type="SystemInfoLocalTimeFrame" name="LocalTimeFrame">
+                <Frame type="Label" name="TimeLabel"/>
+            </Frame>
+            <Frame type="SystemInfoBatteryFrame" name="BatteryFrame">
+                <Frame type="Label" name="ChargingLabel"/>
+            </Frame>
+            <Frame type="SystemInfoWifiFrame" name="WifiFrame">
+                <Frame type="Label" name="SignalStrengthLabel"/>
+            </Frame>
+            <Frame type="SystemInfoResourceFrame" name="ResourceFrame">
+                <Frame type="Label" name="StallLabel"/>
+            </Frame>
+            <Frame type="SystemInfoFramerateFrame" name="FramerateFrame">
+                <Frame type="Label" name="FramerateLabel"/>
+            </Frame>
+            <Frame type="SystemInfoShaderFrame" name="ShaderFrame">
+                <Frame type="Label" name="StallLabel"/>
+            </Frame>  
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="SystemInfoOutputTemplate" template="SpecialFrameTemplates/SystemInfoTooltipTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="-500"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Height val="250"/>
+        <Width val="250"/>
+        <Alpha val="0"/>
+    </Frame>
+    <Frame type="Label" name="FrameRateLabelTemplate">
+        <Height val="25"/>
+        <Width val="{$parent/@Width}"/>
+        <Style val="ScoreScreenProgressLabelSmall" />
+    </Frame>
+    <Frame type="Label" name="PlayerFrameRateLabelTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="-500"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Alpha val="0"/>
+        <Text val="No Player"/>
+    </Frame>
+    <Frame type="EditBox" name="FrameRateTextBoxTemplate" template="StandardTemplates/StandardEditBoxTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Width val="250" />
+        <Height val="60" />
+        <StateGroup name="UpdateFrame">
+            <State name="Update">
+                <When type="AnimationState" frame="$this" Update="True" />
+                <Action type="SetProperty" frame="$this" Text="{$parent/SystemInfoOutput/SystemInfoPanel/FramerateFrame/FramerateLabel/@Text}" />
+            </State>
+            <State name="Stop">
+                <When type="AnimationState" frame="$this" Update="False" />
+                <Action type="SetProperty" frame="$this" Text="0" undo="False" />
+            </State>
+        </StateGroup>
+    </Frame>
+    <Frame type="SelectionUnitStatusPanel" name="GhostHeatSignatureButtonFrame">
+        <Anchor relative="$parent" />
+        <SpecificUnit val="GhostMOS" />
+        <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+            <Anchor relative="$parent" />
+            <AcceptsMouse val="False" />
+            <Frame type="Frame" name="HeatSignatureChargeFrame">
+                <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+                <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                <Height val="76" />
+                <Width val="76" />
+                <Visible val="False" />
+                <AcceptsMouse val="False" />
+                <StateGroup name="CommandButton03State">
+                    <DefaultState val="Hidden"/>
+                    <State name="Visible">
+                        <When type="Property" frame="$parent/$parent/$parent/NormalImage" Texture="Assets\Accessory Textures\Button_Invisible.dds" />
+                        <Action type="SetProperty" frame="$parent/$parent/$parent" RenderPriority="550" />
+                        <Action type="SetProperty" frame="$this" Visible="True" />
+                    </State>
+                    <State name="Hidden"/>
+                </StateGroup>
+                <Frame type="Image" name="BackgroundImage">
+                    <Anchor relative="$parent" />
+                    <Texture val="Assets/Textures/BG_Bar_1.dds" />
+                </Frame>
+                <Frame type="ProgressBar" name="FillProgress">
+                    <Anchor relative="$parent" />
+                    <AcceptsMouse val="False" />
+                    <RenderPriority val="512" />
+                    <FillInset val="0.0" />
+                    <Circular val="True" />
+                    <CircularStart val="0" />
+                    <CircularEndOffset val="360" />
+                    <MinValue val="0" />
+                    <MaxValue val="100" />
+                    <Value val="{$parent/HeatSignatureBehavior/@RealValue}" />
+                    <Frame type="Frame" name="FillImageContainer">
+                        <Anchor relative="$parent" />
+                        <Frame type="Image" name="FillImage">
+                            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+                            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+                            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+                            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+                            <Height val="76" />
+                            <Width val="68" />
+                            <Texture val="Assets/Textures/Circular_Image_Fill.dds" />
+                            <TextureType layer="0" val="Circular" />
+                            <Color val="255,0,0" />
+                        </Frame>
+                    </Frame>
+                    <StateGroup name="HeatState">
+                        <DefaultState val="Low"/>
+                        <State name="High">
+                            <When type="Property" frame="$this" operator="GreaterThan" Value="40.0" />
+                            <Action type="SendEvent" frame="$this" event="Play"/>
+                        </State>
+                        <State name="Low">
+                            <When type="Property" frame="$this" operator="LessThanOrEqual" Value="40.0" />
+                            <Action type="SendEvent" frame="$this" event="Stop"/>
+                        </State>
+                    </StateGroup>
+                    <Animation name="PulseAnim">
+                        <Event event="Play" action="Play" />
+                        <Event event="Stop" action="Stop" />
+                        <Controller type="Fade" end="Loop">
+                            <Key type="Curve" time="0" value="100" out="Slow" />
+                            <Key type="Curve" time="1.5" value="255" in="Slow" />
+                            <Key type="Curve" time="2.0" value="100" out="Slow" />
+                        </Controller>
+                    </Animation>
+                </Frame>
+                <Frame type="Label" name="HeatLabel">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+                    <Text val="{$parent/MathB/@ResultRound}" />
+                    <Style val="MultiplayerLoadingPanelLevelText" />
+                </Frame>
+                <Frame type="DataRefFrame" name="HeatSignatureBehavior">
+                    <Anchor relative="$parent" />
+                    <Argument name="Ref" val="$BehaviorStackCount:HeatSignature$" />
+                </Frame>
+                <Frame type="MathFrame" name="MathA">
+                    <Anchor relative="$parent" />
+                    <A val="{$parent/FillProgress/@Value}" />
+                    <B val="{$parent/FillProgress/@MaxValue}" />
+                    <Operator val="Divide" />
+                </Frame>
+                <Frame type="MathFrame" name="MathB">
+                    <Anchor relative="$parent" />
+                    <A val="{$parent/MathA/@Result}" />
+                    <B val="100" />
+                    <Operator val="Multiply" />
+                </Frame>
+            </Frame>   
+        </Frame>
+    </Frame>
+</Desc>

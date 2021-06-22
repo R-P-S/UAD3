@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        <Frame type="Frame" name="AkmasRevengeUI" template="CampaignUADTemplates/ProgressBarUITemplate00">
+            <Frame type="Image" name="IconBorder">
+                <Texture val="Assets\Icon Pack\btn-custom-terran-terrazine-gray.dds" />
+            </Frame>
+            <Frame type="Label" name="Title">
+                <Text val="Collecting Food Sample" />
+            </Frame>
+            <Animation name="DisplayAnim">
+                <Event event="Display" action="DirectionForward, Play" />
+                <Event event="Hide" action="DirectionReverse, Play" />
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="False" />
+                    <Key type="Bool" time="0.1" value="True" />
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Frame" name="PrologueVote" template="CampaignUADTemplates/PrologueVoteTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Width val="400" />
+            <Height val="200" />
+            <Handle val="PrologueVote" />
+        </Frame>
+        <Frame type="Frame" name="MissionSelection" template="CampaignUADTemplates/MissionSelectionTemplate">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Width val="600" />
+            <Height val="450" />
+            <Handle val="MissionSelection" />
+        </Frame>
+        <Frame type="Frame" name="ChapterTransition">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <RenderPriority val="1250" />
+            <Handle val="ChapterTransition" />
+            <UseAlternateTime val="True" />
+            <VisibilityOnFade val="True" />
+            <Visible val="False" />
+            <AcceptsMouse val="False" />
+            <Frame type="Image" name="BlackMask">
+                <Anchor relative="$parent" />
+                <Color val="0,0,0" />
+            </Frame>
+            <Animation name="Show">
+                <Event event="Display" action="DirectionForward,Play"/>
+                <Event event="Hide" action="DirectionReverse,Play"/>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="4" value="255" in="Slow"/>
+                </Controller>
+            </Animation>
+        </Frame>
+    </Frame>
+</Desc>

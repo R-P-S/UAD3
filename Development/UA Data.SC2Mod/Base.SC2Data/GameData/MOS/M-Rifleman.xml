@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="NewRifleman" parent="UnitTemplate">
+        <AbilArray index="3" Link="RiflemanResearch"/>
+        <AbilArray index="4" Link="RiflemanSkillUpgrades"/>
+        <AbilArray index="5" Link="HeroInventoryRifleNew"/>
+        <AbilArray index="6" Link="Sprint"/>
+        <AbilArray index="7" Link="ReloadHero"/>
+        <AbilArray index="8" Link="JumpHero"/>
+        <AbilArray index="9" Link="DropMagazine"/>
+        <AbilArray index="10" Link="Prone"/>
+        <AbilArray index="11" Link="PerformSelfAidHero"/>
+        <AbilArray Link="ReviveNew"/>
+        <AbilArray Link="Riflebutt"/>
+        <AbilArray Link="NewFragGrenade"/>
+        <AbilArray Link="NewSmokeGrenade"/>
+        <AbilArray Link="GroundFlare"/>
+        <AbilArray Link="FocusFireNew"/>
+        <AbilArray Link="SmokeScreen"/>
+        <AbilArray Link="RiflemanFlareGun"/>
+        <AbilArray Link="NewMGL"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="FiremodeBurst"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="0"/>
+            <LayoutButtons index="1" Face="CommandCardRequirement" Type="Passive" Requirements="HasClassicCommandCard" Row="0" Column="4"/>
+            <LayoutButtons index="2">
+                <Face value="LearnSkills"/>
+                <Type value="Submenu"/>
+                <Requirements value=""/>
+                <SubmenuCardId value="0002"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="3" Face="NewAdditionalActions" Type="Submenu" SubmenuCardId="0003" Row="2" Column="0"/>
+            <LayoutButtons index="4">
+                <Face value="GroundFlare"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="GroundFlare,Execute"/>
+                <Requirements value=""/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="5" Face="NewFragGrenade" Type="AbilCmd" AbilCmd="NewFragGrenade,Execute" Row="2" Column="2"/>
+            <LayoutButtons index="6">
+                <Face value="Attack"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="attack,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="1"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="Jump"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="JumpHero,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="0"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons Face="NewSmokeGrenade" Type="AbilCmd" AbilCmd="NewSmokeGrenade,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="FocusFireNew" Type="AbilCmd" AbilCmd="FocusFireNew,On" Row="0" Column="3"/>
+            <LayoutButtons Face="CancelR" Type="AbilCmd" AbilCmd="FocusFireNew,Off" Row="0" Column="3"/>
+            <LayoutButtons Face="NewMGL" Type="AbilCmd" AbilCmd="NewMGL,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="SmokeScreen" Type="AbilCmd" AbilCmd="SmokeScreen,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="FlareGunItem" Type="AbilCmd" AbilCmd="RiflemanFlareGun,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons index="0" Face="LearnFragGrenade" Type="AbilCmd" AbilCmd="RiflemanResearch,Research1" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="LearnFragGrenade" Type="AbilCmd" AbilCmd="RiflemanResearch,Research2" Row="0" Column="2"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="LearnSupportGrenades" Type="AbilCmd" AbilCmd="RiflemanResearch,Research3" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnSupportGrenades" Type="AbilCmd" AbilCmd="RiflemanResearch,Research4" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnSupportGrenades" Type="AbilCmd" AbilCmd="RiflemanResearch,Research5" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnSupportGrenades" Type="AbilCmd" AbilCmd="RiflemanResearch,Research6" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnFocusFire" Type="AbilCmd" AbilCmd="RiflemanResearch,Research7" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnFocusFire" Type="AbilCmd" AbilCmd="RiflemanResearch,Research8" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnFocusFire" Type="AbilCmd" AbilCmd="RiflemanResearch,Research9" Row="0" Column="4"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="RiflemanResearch,Research10" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="RiflemanResearch,Research11" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="RiflemanResearch,Research12" Row="0" Column="1"/>
+            <LayoutButtons Face="RifleMarksmanship" Type="AbilCmd" AbilCmd="RiflemanResearch,Research13" Row="0" Column="1"/>
+            <LayoutButtons Face="SoldierSkills" Type="Passive" Row="0" Column="0"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="1" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="2" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons index="5">
+                <Face value="ReviveNew"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="ReviveNew,Execute"/>
+                <SubmenuCardId value=""/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="6" Face="SkillUpgrades" Type="Submenu" SubmenuCardId="0004" Row="2" Column="3"/>
+            <LayoutButtons index="7">
+                <Face value="FiremodeBurst"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FiremodeBurst,On"/>
+                <Behavior value=""/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="8">
+                <Face value="FiremodeSemi"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="FiremodeBurst,Off"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons index="9">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="10" Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="CommandCardRequirement" Type="Passive" Requirements="HasCustomCommandCard" Row="0" Column="4"/>
+            <LayoutButtons Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research8" Row="0" Column="0"/>
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research15" Row="0" Column="0"/>
+            <LayoutButtons Face="FragGrenadeMGLDelivery" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research4" Row="0" Column="1"/>
+            <LayoutButtons Face="SmokeGrenadeMGLDelivery" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="GroundFlareMGLDelivery" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research5" Row="0" Column="3"/>
+            <LayoutButtons Face="FocusFireEfficiency" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research1" Row="0" Column="4"/>
+            <LayoutButtons Face="MarksmanshipSniper" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research7" Row="1" Column="0"/>
+            <LayoutButtons Face="FragGrenadeEfficiency" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research3" Row="1" Column="1"/>
+            <LayoutButtons Face="SmokeGrenadePlentiful" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research12" Row="1" Column="2"/>
+            <LayoutButtons Face="GroundFlarePotency" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research6" Row="1" Column="3"/>
+            <LayoutButtons Face="FocusFireMarksmanship" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research2" Row="1" Column="4"/>
+            <LayoutButtons Face="SoldierSkillsOcularImplants" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research14" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research13" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research9" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="RiflemanSkillUpgrades,Research10" Row="2" Column="3"/>
+        </CardLayouts>
+        <BehaviorArray index="0" Link="NewDexterity"/>
+        <BehaviorArray index="1" Link="NewMechanical"/>
+        <BehaviorArray index="2" Link="NewFitness"/>
+        <BehaviorArray index="3" Link="HeroLevelsDMF"/>
+        <BehaviorArray index="4" Link="1Dexterity"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <Description value="Button/Tooltip/Rifleman"/>
+        <EffectArray index="Birth" value="RiflemanSpawnSet"/>
+        <EffectArray index="Revive" value="RiflemanSpawnSet"/>
+    </CUnit>
+</Catalog>

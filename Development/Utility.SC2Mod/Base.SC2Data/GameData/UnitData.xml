@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="CameraUnit">
+        <DeathRevealRadius value="3"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncursorable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <LifeStart value="125"/>
+        <LifeMax value="125"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <Mover value="Fly"/>
+        <Speed value="2.75"/>
+        <Acceleration value="2.625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Height value="3.75"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <SubgroupPriority value="12"/>
+        <MinimapRadius value="0"/>
+        <PlaneArray index="Air" value="1"/>
+        <VisionHeight value="4"/>
+        <Sight value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="OneWayLOSBlocker1x1" parent="PATHINGBLOCKER">
+        <BoostedCliffLevel value="3"/>
+        <Footprint value="Footprint1x1OneWayLOS"/>
+    </CUnit>
+</Catalog>

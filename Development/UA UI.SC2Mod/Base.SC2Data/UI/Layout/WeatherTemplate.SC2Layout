@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Portrait" name="WeatherTemplate">
+        <Anchor relative="$parent" />
+        <RenderType val="HDR" />
+        <AcceptsMouse val="False" />
+        <BorderImage val="PortraitBorderImage" />
+        <BackgroundImage val="PortraitBackgroundImage" />
+        <UseTransition val="False" />
+        <Visible val="False" />
+        <Frame type="Image" name="PortraitBorderImage">
+            <Visible val="False" />
+            <DescFlags val="Internal" />
+        </Frame>
+        <Frame type="Image" name="PortraitBackgroundImage">
+            <Visible val="False" />
+            <DescFlags val="Internal" />
+        </Frame>
+    </Frame>
+    <Frame type="Portrait" name="RainTemplate" template="WeatherTemplate/WeatherTemplate">
+        <ActorLink val="WeatherRain" />
+    </Frame>
+    <Frame type="Portrait" name="SnowTemplate" template="WeatherTemplate/WeatherTemplate">
+        <ActorLink val="WeatherSnow" />
+    </Frame>
+</Desc>

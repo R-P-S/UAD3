@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="BehaviorIcon" name="DebuffIconTemplate">
+        <Anchor relative="$parent" />
+        <TooltipFrame val="StandardNameTooltip"/>
+        <MinStackCountDisplayed val="1" />
+		<Frame type="Image" name="IconImage">
+            <Anchor relative="$parent" />
+            <LayerCount val="2"/>
+            <TextureType val="Normal" layer="0" />
+            <Texture val="Assets\Textures\ui_kerrigan_healthbar_damage.dds" layer="0" />
+            <TextureType val="Normal" layer="1" />
+		</Frame>
+    </Frame>
+    <Frame type="BehaviorIcon" name="BuffIconTemplate">
+        <Anchor relative="$parent" />
+        <TooltipFrame val="StandardNameTooltip"/>
+        <MinStackCountDisplayed val="1" />
+		<Frame type="Image" name="IconImage">
+            <Anchor relative="$parent" />
+            <LayerCount val="2"/>
+            <TextureType val="Normal" layer="0" />
+            <Texture val="Assets\Accessory Textures\ui_sd_inventory.dds" layer="0" />
+            <TextureType val="Normal" layer="1" />
+		</Frame>
+    </Frame>
+    <Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIconTemplate">
+		<Width val="18"/>
+		<Height val="18"/>
+        <CollapseLayout val="True"/>
+        <AcceptsMouse val="True" />
+	</Frame>
+    <Frame type="UnitStatusBehaviorIcon" name="DebuffTemplate" template="TargetInfoPanelBehaviorTemplate/UnitStatusBehaviorIconTemplate">
+		<Frame type="BehaviorIcon" name="BehaviorIcon" template="TargetInfoPanelBehaviorTemplate/DebuffIconTemplate"/>
+	</Frame>
+    <Frame type="UnitStatusBehaviorIcon" name="BuffTemplate" template="TargetInfoPanelBehaviorTemplate/UnitStatusBehaviorIconTemplate">
+		<Frame type="BehaviorIcon" name="BehaviorIcon" template="TargetInfoPanelBehaviorTemplate/BuffIconTemplate"/>
+	</Frame>
+    <Frame type="Frame" name="BehaviorIconContainer">
+        <Frame type="UnitStatusBehaviorIcon" name="Icon0*" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Behavior val="CombatInexperience" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon0" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon0*" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon0*" pos="Min" offset="19" />
+            <Behavior val="BenignInfection" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon1" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="BrokenArm" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon2" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="BrokenLeg" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon3" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="BrokenRibCage" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon4" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="BruisedHead" />   
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon5" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="BruisedTorso" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon6" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ClassIIHemorrhaging" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon7" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ClassIIIHemorrhaging" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon8" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ClassIVHemorrhaging" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon9" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="Concussion" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon10" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="DebilitatingInfection" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon11" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="FracturedArm" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon12" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="FracturedLeg" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon13" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="FracturedRibCage" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon14" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="JumpInjury" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon15" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="MalignantInfection" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon16" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="MinorLacerations" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon17" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ParasiteEggs" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon18" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ParasiticInfection" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon19" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="SevereLacerations" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon20" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="SprainedAnkle" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon21" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="SprainedWrist" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon22" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="TraumaticBrainInjury" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon23" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="Venom" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon24" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="GreaterVenom" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon25" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="WidownVenom" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon26" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="GreaterWidowVenom" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon27" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="NeurotoxicVenomI" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon28" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="NeurotoxicVenomII" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon29" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="CorrosiveVenom" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon30" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="ModerateLacerations" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon31" template="TargetInfoPanelBehaviorTemplate/DebuffTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$sibling-1" pos="Min" offset="19" />
+            <Behavior val="WidowersKiss" />
+        </Frame>
+        <!-- Buff Anchor -->
+        <Frame type="Frame" name="BuffAnchor">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="19" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Height val="18" />
+            <Width val="18" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon32" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/BuffAnchor" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/BuffAnchor" pos="Min" offset="0" />
+            <Behavior val="Sprint" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon33" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon32" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon32" pos="Min" offset="19" />
+            <Behavior val="NPCSprint" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon34" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon33" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon33" pos="Min" offset="19" />
+            <Behavior val="WeaponsHold" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon35" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon34" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon34" pos="Min" offset="19" />
+            <Behavior val="FiremodeBurst" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon36" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon35" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon35" pos="Min" offset="19" />
+            <Behavior val="BornToLeadTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon37" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon36" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon36" pos="Min" offset="19" />
+            <Behavior val="InstructorTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon38" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon37" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon37" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersAttackSpeedTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon39" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon38" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon38" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersDamageResistTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon40" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon39" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon39" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersExplosiveDamageTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon41" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon40" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon40" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersMovementSpeedTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon42" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon41" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon41" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersRangeTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon43" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon42" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon42" pos="Min" offset="19" />
+            <Behavior val="CombatOrdersWeaponsDamageTarget" />
+        </Frame>
+        <Frame type="UnitStatusBehaviorIcon" name="Icon44" template="TargetInfoPanelBehaviorTemplate/BuffTemplate">
+            <Anchor side="Top" relative="$parent/Icon43" pos="Min" offset="0" />
+            <Anchor side="Left" relative="$parent/Icon43" pos="Min" offset="19" />
+            <Behavior val="AimAssistant" />
+        </Frame>
+    </Frame>  
+ </Desc>

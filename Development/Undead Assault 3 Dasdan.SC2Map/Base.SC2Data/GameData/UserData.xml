@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="CampaignMissions">
+        <Fields Id="Mission" Type="String" EditorColumn="1"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Mission00">
+            <String String="Prologue: Mission00 - Conduct KLE">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission01">
+            <String String="Prologue: Mission01 - Setup Sentries">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission02">
+            <String String="Prologue: Mission02 - TCP Containment">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission03">
+            <String String="Prologue: Mission03 - Reservists">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission04">
+            <String String="Prologue: Mission04 - Open Borders">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission05">
+            <String String="Chapter 1: Mission05 - Exit Strategy">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission06">
+            <String String="Chapter 1: Mission06 - Akma&apos;s Revenge">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission07">
+            <String String="Chapter 1: Mission07 - Mass Recall">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission08">
+            <String String="Chapter 1: Mission08 - Them">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission09">
+            <String String="Chapter 1: Mission09 - The Spider King">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission10">
+            <String String="Chapter 2: Mission10 - Escalation">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission11">
+            <String String="Chapter 2: Mission11 - Bulwark">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission12">
+            <String String="Chapter 2: Mission12 - Pest Control">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission13">
+            <String String="Chapter 2: Mission13 - Abdul the Alive Terrorist">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission14">
+            <String String="Chapter 2: Mission14 - The Great Escape">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission15">
+            <String String="Chapter 2: Mission15 - Parting Gift">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission16">
+            <String String="Chapter 2: Mission16 - Plague">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission17">
+            <String String="Chapter 3: Mission17 - The Old Crew">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission18">
+            <String String="Chapter 3: Mission18 - For The Rebellion">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission19">
+            <String String="Chapter 3: Mission19 - What&apos;s the Plan">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission20">
+            <String String="Chapter 3: Mission20 - Wartime Production">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission21">
+            <String String="Chapter 3: Mission21 - Tanks A Lot">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission22">
+            <String String="Chapter 3: Mission22 - Jam It">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+        <Instances Id="Mission23">
+            <String String="Chapter 3: Mission23 - Finale">
+                <Field Id="Mission"/>
+            </String>
+        </Instances>
+    </CUser>
+</Catalog>

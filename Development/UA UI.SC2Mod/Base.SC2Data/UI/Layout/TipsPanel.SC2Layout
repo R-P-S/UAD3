@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Constant name="TipsMax" val="10" />
+   <Frame type="Frame" name="TipIconTemplate">
+      <RenderPriority val="600" />
+      <Width val="64" />
+      <Height val="64" />
+      <Frame type="Image" name="IconBorder">
+         <Anchor relative="$parent" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <Texture val="Assets\Textures\tip_image_border.dds" />
+      </Frame>
+   </Frame>
+   <Frame type="Frame" name="TipsPanelTemplate">
+      <Anchor relative="$parent" />
+      <Frame type="Image" name="BackgroundImage">
+         <Anchor relative="$parent" />
+         <Texture val="Assets\Textures\ui_ingame_leaderboard_frame.dds" />
+         <TextureType val="Border" />
+         <Color val="0,255,148" />
+    <!-- <Texture val="Assets\Textures\ui_mission_characterhealthstatus_frame_green.dds" />
+         <Anchor relative="$parent" />
+         <TextureType val="Border" />
+         <Alpha val="175" /> -->
+      </Frame>
+      <Frame type="Image" name="CornerTopLeft" template="AchievementTemplates/CornerTopLeftTemplate" />
+      <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightTemplate" />
+      <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftTemplate" />
+      <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightTemplate" />
+      <Frame type="Label" name="TipFrameTitle">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-15" />
+         <Height val="25" />
+         <Width val="150" />
+         <Style val="BattlenetTopNavSmall" />
+         <Color val="0,255,168" />
+         <Text val="Tips" />
+      </Frame>
+      <Frame type="Image" name="TipIconBorder">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="60" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
+         <Width val="60" />
+         <Height val="60" />
+         <LayerCount val="1" />
+         <TextureType val="Normal" />
+         <Texture val="Assets\Textures\tip_image_border.dds" />
+         <RenderPriority val="600" />
+         <Handle val="TipImageBorder" />
+      </Frame>
+      <Frame type="Image" name="TipImage">
+         <Anchor side="Top" relative="$parent/TipIconBorder" pos="Mid" offset="0" />
+         <Anchor side="Left" relative="$parent/TipIconBorder" pos="Mid" offset="0" />
+         <Anchor side="Bottom" relative="$parent/TipIconBorder" pos="Mid" offset="0" />
+         <Anchor side="Right" relative="$parent/TipIconBorder" pos="Mid" offset="0" />
+         <Width val="52" />
+         <Height val="52" />
+         <Handle val="TipImage" />
+      </Frame>
+      <Frame type="Label" name="TipDescription">
+         <Anchor side="Top" relative="$parent/TipIconBorder" pos="Min" offset="70" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+         <Handle val="TipDescription" />
+         <Width val="450" />
+         <Height val="375" />
+         <Style val="Descript_Left" />
+         <Color val="235,235,235" />
+         <Text val="" />
+         <Options val="Ellipsis" />
+      </Frame>
+      <Frame type="Button" name="PreviousButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+         <Height val="50" />
+         <Width val="150" />
+         <Handle val="BackButton" />
+         <Frame type="Label" name="PreviousButtonText" template="StandardUADTemplates/GenericButtonLabelTemplate1">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="Previous" />
+            <Style val="BattlenetTopNavSmall" />
+            <Color val="255,255,255" />
+         </Frame>
+      </Frame>
+      <Frame type="Button" name="NextButton" template="StandardUADTemplates/UADAlternateButtonTemplate">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-15" />
+         <Height val="50" />
+         <Width val="150" />
+         <Handle val="NextButton" />
+         <Frame type="Label" name="NextButtonText" template="StandardUADTemplates/GenericButtonLabelTemplate1">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Text val="Next" />
+            <Style val="BattlenetTopNavSmall" />
+            <Color val="255,255,255" />
+         </Frame>
+      </Frame>
+      <!-- Hidden frame that stores current tip -->
+      <Frame type="Label" name="TipCurrent">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Visible val="False" />
+         <Handle val="TipCurrent" />
+         <Text val="1" />
+         <StateGroup name="TipState">
+            <DefaultState val="Tip1" />
+            <State name="Tip1">
+               <When type="Property" frame="$this" Text="1" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip1" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage1" />
+               <Action type="SetProperty" frame="$BackButton" Enabled="False" />
+            </State>
+            <State name="Tip2">
+               <When type="Property" frame="$this" Text="2" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip2" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage2" />
+            </State>
+            <State name="Tip3">
+               <When type="Property" frame="$this" Text="3" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip3" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage3" />
+            </State>
+            <State name="Tip4">
+               <When type="Property" frame="$this" Text="4" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip4" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage4" />
+            </State>
+            <State name="Tip5">
+               <When type="Property" frame="$this" Text="5" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip5" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage5" />
+            </State>
+            <State name="Tip6">
+               <When type="Property" frame="$this" Text="6" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip6" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage6" />
+               <Action type="SetProperty" frame="$TipImage" Height="53" />
+               <Action type="SetProperty" frame="$TipImage" Width="166" />
+               <Action type="SetProperty" frame="$TipImageBorder" Visible="False" />
+               <Action type="SetAnchor" frame="$TipImageBorder" side="Left" relative="$parent" pos="Min" offset="80" />
+            </State>
+            <State name="Tip7">
+               <When type="Property" frame="$this" Text="7" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip7" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage7" />
+            </State>
+            <State name="Tip8">
+               <When type="Property" frame="$this" Text="8" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip8" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage8" />
+               <Action type="SetProperty" frame="$TipImage" Height="43" />
+               <Action type="SetProperty" frame="$TipImage" Width="343" />
+               <Action type="SetProperty" frame="$TipImageBorder" Visible="False" />
+               <Action type="SetAnchor" frame="$TipImageBorder" side="Left" relative="$parent" pos="Min" offset="170" />
+            </State>
+            <State name="Tip9">
+               <When type="Property" frame="$this" Text="9" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip9" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage9" />
+               <Action type="SetProperty" frame="$TipImage" Height="53" />
+               <Action type="SetProperty" frame="$TipImage" Width="190" />
+               <Action type="SetProperty" frame="$TipImageBorder" Visible="False" />
+               <Action type="SetAnchor" frame="$TipImageBorder" side="Left" relative="$parent" pos="Min" offset="90" />
+            </State>
+            <State name="Tip10">
+               <When type="Property" frame="$this" Text="10" />
+               <Action type="SetProperty" frame="$TipDescription" Text="@DOCSTR_Tip10" />
+               <Action type="SetProperty" frame="$TipImage" Texture="@UI/TipImage10" />
+               <Action type="SetProperty" frame="$TipImage" Height="52" />
+               <Action type="SetProperty" frame="$TipImage" Width="273" />
+               <Action type="SetProperty" frame="$TipImageBorder" Visible="False" />
+               <Action type="SetAnchor" frame="$TipImageBorder" side="Left" relative="$parent" pos="Min" offset="160" />
+               <Action type="SetProperty" frame="$NextButton" Enabled="False" />
+            </State>
+         </StateGroup>
+      </Frame>
+      <Frame type="Frame" name="TipsCount">
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="-46" />
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-30" />
+         <Height val="25" />
+         <Width val="100" />
+         <Frame type="Label" name="TipsLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+            <Height val="25" />
+            <Width val="100" />
+            <Style val="Coop_VsAI_PlacementSubtitle" />
+            <Color val="255,255,255" />
+            <Text val="{FormattedText/@Text}" />
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <Anchor relative="$parent" />
+               <FormatText val="%0%/%1%" />
+               <Replacement index="0" val="{$TipCurrent/@Text}" />
+               <Replacement index="1" val="#TipsMax" />
+            </Frame>
+         </Frame>
+      </Frame>
+      <!--
+        <Frame type="Label" name="DebugLabel">
+            <Anchor side="Top" relative="$parent/TipsCount" pos="Min" offset="25"/>
+            <Anchor side="Left" relative="$parent/TipsCount" pos="Min" offset="0"/>
+            <Visible val="True"/>
+            <Color val="255,165,0"/>
+            <Text val="{$CoordDebug/@Text}"/>
+        </Frame> -->
+      <Frame type="Button" name="TipCloseButton" template="StandardUADTemplates/StandardTextButtonSmallTemplate1">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="8" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-7" />
+         <Width val="24" />
+         <Height val="24" />
+         <Tooltip val="Close Tip Panel" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <Handle val="TipCloseButton" />
+         <Frame type="Frame" name="Border" template="StandardUADTemplates/ButtonStandardBorderSmallTemplate1" />
+         <Frame type="Image" name="Icon" template="StandardUADTemplates/StandardButtonIconTemplate1">
+            <Texture val="Assets\Textures\ui_glues_bluebuttons_extendedxpcloseicon.dds" />
+         </Frame>
+         <Animation name="ClickAnim">
+            <Event event="OnClick" action="Reset,Play" />
+            <Controller type="State" stateGroup="TipTextState" frame="$TipTextBox" end="Pause">
+               <Key type="Identifier" time="0" value="TipPanelLocation" />
+               <Key type="Identifier" time="0.1" value="TipPanelReset" />
+            </Controller>
+            <Controller type="Event" end="Pause" frame="$parent/$parent">
+               <Key type="Event" time="0" event="Hide" />
+            </Controller>
+            <Controller type="Event" end="Pause" frame="$TipsButtonReset">
+               <Key type="Event" time="0" event="Reset" />
+            </Controller>
+         </Animation>
+      </Frame>
+      <StateGroup name="DragDisabled">
+         <State name="GamePaused">
+            <When type="Property" frame="$PausePanel" Visible="True" />
+            <Action type="SetProperty" frame="$parent" Enabled="False" />
+            <Action type="SetProperty" frame="$parent" Draggable="False" />
+         </State>
+         <State name="Hidden">
+            <When type="Property" frame="$this" Visible="False" />
+            <Action type="SetProperty" frame="$parent" Enabled="False" />
+            <Action type="SetProperty" frame="$parent" Draggable="False" />
+            <Action type="SetProperty" frame="$parent" RenderPriority="350" />
+            <Action type="SetProperty" frame="$parent" AcceptsMouse="False" />
+         </State>
+         <State name="Visible">
+            <When type="Property" frame="$this" Visible="True" />
+            <Action type="SetProperty" frame="$parent" Enabled="True" />
+            <Action type="SetProperty" frame="$parent" Draggable="True" />
+            <Action type="SetProperty" frame="$parent" RenderPriority="900" />
+            <Action type="SetProperty" frame="$parent" AcceptsMouse="True" />
+         </State>
+      </StateGroup>
+   </Frame>
+   <Frame type="Control" name="TipDragFrameTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Height val="525" />
+      <Width val="500" />
+      <Visible val="False" />
+      <Draggable val="True" />
+      <DragConstraintFrame val="$parent" />
+      <DragCursor val="GripClosed_Terr" />
+      <DragHoverCursor val="GripOpen_Terr" />
+      <DragMoveSlop val="10" />
+      <Frame type="Frame" name="TipsPanel" template="TipsPanel/TipsPanelTemplate" />
+      <Frame type="Frame" name="CoordinatesTemplate" template="CoordinatesReporter/CoordinatesTemplate" />
+      <Animation name="DisplayAnim">
+         <Event event="Display" action="DirectionForward,Play" />
+         <Event event="Hide" action="DirectionReverse,Play" />
+         <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0" value="False" />
+            <Key type="Bool" time="0.1" value="True" />
+         </Controller>
+      </Animation>
+      <Animation name="ForceHidden" flags="NoEventsWhileHidden">
+         <Event event="GameOver" action="Reset,Play" />
+         <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0" value="False" />
+         </Controller>
+      </Animation>
+   </Frame>
+   <Frame type="Frame" name="TipPanelConstraintTemplate">
+      <Anchor relative="$parent" />
+      <RenderPriority val="900" />
+      <Frame type="Control" name="TipDragFrame" template="TipsPanel/TipDragFrameTemplate" />
+      <Frame type="Frame" name="CoordinatesResultsTemplate" template="CoordinatesReporter/CoordinatesResultsTipTemplate" />
+   </Frame>
+   <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="Tips" template="TipsPanel/TipPanelConstraintTemplate" />
+   </Frame>
+</Desc>

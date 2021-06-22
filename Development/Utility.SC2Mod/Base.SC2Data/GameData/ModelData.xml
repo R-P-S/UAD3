@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="Star2Camera">
+        <Model value="Assets\UI\TechPurchase\TechPurchasePortraitCamera\TechPurchasePortraitCamera.m3"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+    </CModel>
+    <CModel id="ModelSpin">
+        <Model value="Assets\UI\TechPurchase\TechPurchasePortraitTurn\TechPurchasePortraitTurn.m3"/>
+    </CModel>
+</Catalog>

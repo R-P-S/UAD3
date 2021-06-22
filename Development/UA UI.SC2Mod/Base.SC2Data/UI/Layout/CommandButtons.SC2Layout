@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Animation name="HotKeyHighlightTemplate">
+      <Event event="OnMouseEnter" action="DirectionForward,Play"  />
+		<Event event="OnMouseExit" action="DirectionReverse,Play" />
+      <Controller type="Property" property="Color" frame="HotkeyFrame/HotkeyLabel" end="Pause" >
+         <Key type="Property" time="0" value="255,255,255" />
+         <Key type="Property" time="0.01" value="0,255,128" />
+      </Controller>
+   </Animation>
+
+   <Animation name="SlideEventTemplate">
+      <Event event="Slide" action="Reset,Play" frame="$this" />
+      <Event event="Reset" action="Stop" frame="$this" />
+      <Controller type="Anchor" end="Pause" side="Right" relative="false">
+         <Key type="CurveReal" time="0"  value="350" />
+         <Key type="CurveReal" time="0.15"  value="0" />  
+      </Controller>
+      <Controller type="Fade" end="Pause">
+         <Key type="Curve" time="0" value="0" out="Fast" />
+         <Key type="Curve" time="0.25" value="255" in="Slow" />
+      </Controller>
+   </Animation>
+
+   <Frame type="CommandButton" name="UADCommandButton" template="CommandButton/CommandButtonTemplate">
+      <ShowCooldownText val="True"/>
+      <Frame type="Image" name="GameButtonBorderImage">
+			<RenderPriority val="504" />
+		</Frame>
+		<Frame type="Image" name="GameButtonDefaultHoverBorder">
+			<Anchor relative="$parent/GameButtonBorderImage" />
+			<Texture val="@UI/ButtonBorderNormalActive_Terr" />
+			<RenderPriority val="505" />
+			<Alpha val="0" />
+			<Animation name="Hover">
+				<Event event="OnMouseEnter" action="DirectionForward,Play" frame="$parent" />
+				<Event event="OnMouseExit" action="DirectionReverse,Play" frame="$parent" />
+            <Event event="Reset" action="Stop" frame="$parent" />
+				<Controller type="Fade" end="Pause">
+					<Key type="Curve" time="0" value="0" inout="Linear" />
+					<Key type="Curve" time=".2" value="255" inout="Slow,Linear" />
+				</Controller>
+			</Animation>
+		</Frame>
+      <Animation name="HighlightOnSend" template="CommandButtons/HotKeyHighlightTemplate" />
+      <Frame type="Image" name="AutoCastImage">
+         <Color val="0,255,0" />
+      </Frame>
+      <Frame type="Image" name="CooldownFinishedImage">
+         <Color val="0,255,168" />
+      </Frame>
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent"/>
+         <DescFlags val=""/>
+         <StateGroup name="HoverState">
+            <DefaultState val="Enabled"/>
+            <State name="DisabledButton">
+               <When type="Property" frame="$this" Enabled="False" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Hidden">
+               <When type="Property" frame="$this" Texture="Assets\Accessory Textures\Button_Invisible.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive0">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-ability-protoss-heavilyarmored.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive2">
+               <When type="Property" frame="$this" Texture="assets\buttons\btn_custom_uac_soldierskils.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive3">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-ability-protoss-preordain.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive4">
+               <When type="Property" frame="$this" Texture="btnammocase.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive5">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-upgrade-terran-infantryweaponslevel2.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive6">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-ability-terran-psidisruption.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive7">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-ability-terran-domination.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive8">
+               <When type="Property" frame="$this" Texture="buttons\abilities\btnleadership.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive9">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-upgrade-tychus-firebat-combatsuit.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive10">
+               <When type="Property" frame="$this" Texture="assets\custom icons\btn-gasmask.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive11">
+               <When type="Property" frame="$this" Texture="assets\textures\btn-ability-stetmann-scrapdrop.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive12">
+               <When type="Property" frame="$NonHero" Text="LN Marksman" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive13">
+               <When type="Property" frame="$NonHero" Text="LN Javelin Gunner" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-ability-terran-armnuke.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive14">
+               <When type="Property" frame="$NonHero" Text="LN Automatic Rifleman" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive15">
+               <When type="Property" frame="$NonHero" Text="LN Automatic Rifleman" />
+               <When type="Property" frame="$this" Texture="BTNAmmoCase.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+             <State name="Passive16">
+               <When type="Property" frame="$NonHero" Text="LN Shotgunner" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive17">
+               <When type="Property" frame="$NonHero" Text="LN Ranger" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive18">
+               <When type="Property" frame="$NonHero" Text="LN Rifleman" />
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-tips-terran-penetrator.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive19">
+               <When type="Property" frame="$this" Texture="Assets\Textures\btn-upgrade-tychus-detection.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive20">
+               <When type="Property" frame="$CCButton00/NormalImage" Texture="Assets\Textures\btn-upgrade-terran-nova-detector.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Passive21">
+               <When type="Property" frame="$CCButton00/NormalImage" Texture="Assets\Textures\btn-techupgrade-terran-ocularimplants.dds" />
+               <Action type="SetProperty" frame="$parent/GameButtonDefaultHoverBorder" Texture="Assets\Accessory Textures\Button_Invisible.dds"/>
+            </State>
+            <State name="Enabled"/>
+         </StateGroup>
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+         <Anchor relative="$parent"/>
+         <DescFlags val=""/>
+      </Frame>
+      <Frame type="Label" name="CooldownLabel">
+         <Anchor side="Top" relative="$this" pos="Max" offset="0"/>
+         <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-3"/>
+         <Anchor side="Left" relative="$parent" pos="Max" offset="-66"/>
+         <Style val="GameButtonCharge"/>
+         <RenderPriority val="520"/>
+         <Visible val="False"/>
+      </Frame>
+      <Frame type="Image" name="ChargeBackground">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-4" />
+         <Anchor side="Right" relative="$parent" pos="Max" offset="-1" />
+         <Texture val="Assets/Textures/Storm_UI_InGame_ChargeBackground.dds" />
+         <Visible val="False" />     
+      </Frame>
+      <!--
+      <Frame type="Image" name="ChargeCompleteImage">
+         <Anchor relative="$parent/ChargeBackground" />
+         <Texture val="Assets/Textures/Storm_UI_InGame_ChargeBackground.dds" />
+         <BlendMode val="Add" />
+         <Alpha val="0" />
+         <Visible val="False" />
+         <Animation name="StateChange">
+            <Event event="Finished" action="Restart,Play" frame="$parent/ChargeCooldown" />
+            <Controller type="Fade" end="Pause">
+               <Key type="Curve" time="0" value="0" inout="Fast" />
+               <Key type="Curve" time=".05" value="255" inout="Fast" />
+               <Key type="Curve" time=".4" value="0" inout="Slow" />
+            </Controller>
+         </Animation>
+         <Animation name="FirstCooldownStarted">
+            <Event event="Cooldown" action="Restart,Play" frame="$parent/ChargeCooldown" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation>
+      </Frame>-->
+      <Frame type="ProgressBar" name="ChargeCooldown">
+         <Anchor side="Top" relative="$parent/ChargeBackground" pos="Mid" offset="-2" />
+         <Anchor side="Bottom" relative="$parent/ChargeBackground" pos="Mid" offset="-2" />
+         <Anchor side="Left" relative="$parent/ChargeBackground" pos="Mid" offset="-1" />
+         <Anchor side="Right" relative="$parent/ChargeBackground" pos="Mid" offset="-1" />
+         <Width val="48" />
+         <Height val="48" />
+         <Visible val="True" />
+         <Circular val="True" />
+         <CircularStart val="0" />
+         <CircularEndOffset val="360" />
+         <AcceptsMouse val="False" />
+         <Visible val="True" />
+         <Animation name="StateChange">
+            <Event event="Cooldown" action="Stop" />
+            <Event event="Finished" action="Restart,Play" />
+            <Controller type="Visibility" end="Pause" frame="FillImageContainer">
+               <Key type="Bool" time="0" value="False" />
+            </Controller>
+         </Animation>
+         <Frame type="Frame" name="FillImageContainer">
+            <Anchor relative="$parent" />
+            <Frame type="Image" name="FillImage">
+               <Anchor relative="$parent" />
+               <LayerCount val="1" />
+               <BlendMode val="Add" />
+               <Texture val="Assets/Textures/Storm_UI_Ingame_Charge_Cooldown.dds" layer="0" />
+               <TextureType layer="0" val="Circular" />
+               <ColorAdjustMode val="Colorize" />
+               <AdjustmentColor val="0,255,168"/>
+            </Frame>
+         </Frame>
+      </Frame>
+      <StateGroup name="CooldownText">
+         <DefaultState val="Display" />
+         <State name="Hidden">
+            <When type="Property" frame="ChargeLabel" Visible="True" />
+            <Action type="SetProperty" frame="$this" ShowCooldownText="False" />
+            <!--
+            <Action type="SetProperty" frame="$parent/NormalImage" index="1" LayerAlpha="0" />
+            <Action type="SetProperty" frame="$parent/HoverImage" index="1" LayerAlpha="0" /> -->
+         </State>
+         <State name="Display" />
+      </StateGroup>
+   </Frame>
+   <!-- Command Panel + Buttons -->
+   <Frame type="CommandPanel" name="GameUI/UIContainer/ConsoleUIContainer/CommandPanel" file="GameUI">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-18"/>
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-21"/>
+      <Width val="400"/>
+      <Height val="242"/>
+      <HideUnusedButtons val="True" />
+      <Frame type="CommandTooltip" name="CommandTooltip" template="CommandButton/CommandTooltipTemplate">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="-270"/>
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+         <Frame type="Label" name="NameLabel">
+            <Stategroup name="Tooltip">
+               <DefaultState val="Reset" />
+               <State name="NoData">
+                  <When type="Property" Visible="False" />
+                  <When type="StateGroup" frame="$parent" Visibility="Visible" />
+                  <Action type="SetProperty" frame="$parent" Alpha="0" />
+               </State>
+               <State name="HasData">
+                  <When type="Property" Visible="True" />
+                  <When type="StateGroup" frame="$parent" Visibility="Visible" />
+                  <Action type="SetProperty" frame="$parent" Alpha="255" />
+               </State>
+               <State name="Reset">
+                  <When type="StateGroup" frame="$parent" Visibility="Hidden" />
+               </State>
+            </Stategroup>
+         </Frame>
+         <!--
+         <Frame type="Label" name="TipLabel">
+            <Stategroup name="InventoryLabel">
+               <DefaultState val="Hidden" />
+               <State name="Visible">
+                  <When type="Property" frame="$this" Text="A light, simple, accurate assault rifle.&lt;n/&gt;&lt;n/&gt;Damage: &lt;d ref=&quot;Effect,HK42Damage,Amount&quot;/&gt;&lt;n/&gt;Attack Speed: &lt;d ref=&quot;Weapon,HK42,Period&quot; precision=&quot;3&quot;/&gt;&lt;n/&gt;Range: &lt;d ref=&quot;Weapon,HK42,Range&quot;/&gt;&lt;n/&gt;Movement Speed Delta:&lt;c val=&quot;00FF94&quot;&gt; &lt;d ref=&quot;Behavior,HK42,Modification.MoveSpeedBonus + %speedcurrent%&quot; precision=&quot;2&quot;/&gt;&lt;n/&gt;&lt;/c&gt;Reload Speed: &lt;c val=&quot;FF0000&quot;&gt;+2%&lt;/c&gt;" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+                  <Action type="SetProperty" frame="$parent/WeaponLabel" Visible="True" />
+               </State>
+               <State name="Hidden" />
+            </Stategroup>
+         </Frame>
+         <Frame type="Label" name="WeaponLabel">
+            <Anchor relative="$parent/TipLabel"/>
+            <Style val="{$parent/TipLabel/@Style}"/>
+            <Visible val="False"/>
+            <Text val="{TooltipFormatFrame/@Text}"/>
+            <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+               <Anchor relative="$parent" />
+               <FormatText val="@Button/Tooltip/HK42" />
+               <ReplacedName index="0" val="speedcurrent" />
+               <Replacement index="0" val="$SpeedLabel1/@Text" />
+            </Frame>
+         </Frame> -->
+         <Stategroup name="Visibility">
+            <DefaultState val="Hidden" />
+            <State name="Visible">
+               <When type="Property" Visible="True" />
+            </State>
+            <State name="Hidden">
+               <When type="Property" Visible="False" />
+            </State>
+         </Stategroup>
+         <!--
+         <StateGroup name ="ItemState">
+            <DefaultState val="Reset" />
+            <State name="NoItem">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$this/InventoryLabel" Visible="True" />
+               <When type="Property" frame="$this/InventoryLabel" operator="NotEqual" Text="Left-click to use.&lt;n/&gt;Right-click to pick up item and then left-click on an inventory slot or nearby location to move or drop the item." />
+            </State>
+            <State name="IsItem">
+               <When type="Property" frame="$this" Visible="True" />
+               <When type="Property" frame="$this/InventoryLabel" Visible="True" />
+               <When type="Property" frame="$this/InventoryLabel"  Text="Left-click to use.&lt;n/&gt;Right-click to pick up item and then left-click on an inventory slot or nearby location to move or drop the item." />
+               <Action type="SendEvent" frame="$this" event="Slide" />
+            </State>
+            <State name="Reset">
+               <When type="Property" frame="$this" Visible="False" />
+               <Action type="SetProperty" frame="$this/InventoryLabel" Visible="False" />
+            </State>
+         </StateGroup> 
+        <Animation name="SlideEvent" template="CommandButtons/SlideEventTemplate" /> -->
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton00" template="CommandButtons/UADCommandButton">
+         <Handle val="CCButton00" />  
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton01" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton02" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton03" template="CommandButtons/UADCommandButton">
+         <Frame type="SelectionUnitStatusPanel" name="GhostHeatSignatureButtonFrame" template="SpecialFrameTemplates/GhostHeatSignatureButtonFrame"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton04" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton05" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton06" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton07" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton08" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton09" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton10" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton11" template="CommandButtons/UADCommandButton">
+         <Frame type="Label" name="ChargeLabel">
+            <Handle val="ChargeLabel11"/>
+         </Frame>
+         <Frame type="Image" name="ActiveIndicator">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="8" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-5" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-5" />
+            <Width val="66" />
+            <Height val="66" />
+            <LayerCount val="2" />
+            <Alpha val="0" />
+            <Handle val="LSActiveIndicator" />
+            <Texture val="Assets/Textures/ui_ingame_coop_topbar_stetmann_slider_activeindicator_mask.dds" layer="0" />
+            <AlphaLayer val="True" layer="0"/>
+            <Texture val="Assets/Textures/sc2_ui_global_genericeffect_mirroredanglegradient_256x256.dds" layer="1" />
+            <LayerColor val="255,255,255" layer="1"/> 
+            <Animation name="Rotate">
+               <Event event="Active" action="Reset,Play" frame="$this" />
+               <Event event="NotActive" action="Reset,Stop" frame="$this" />
+               <Controller type="Property" property="TextureCoordRotation" curve="True" index="1"  end="Loop" frame="$this">
+                  <Key type="Property" time="0.000" value="0" inOut="Linear" />
+                  <Key type="Property" time="1.500" value="-360" inOut="Linear" />
+               </Controller>
+               <Controller type="Fade" end="Pause" frame="$this">
+                  <Key type="Curve" time="0" value="0" out="Fast"/>
+                  <Key type="Curve" time="0.1" value="255" in="Slow"/>
+               </Controller>
+            </Animation>
+        </Frame>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton12" template="CommandButtons/UADCommandButton"/>
+      <Frame type="CommandButton" name="CommandButton13" template="CommandButtons/UADCommandButton">
+         <Stategroup name="ButtonBorderColor">
+            <DefaultState val="Default" />
+            <State name="SkillUpgradeButton">
+               <When type="Property" frame="NormalImage" Texture="Assets\Textures\btn-ability-kerrigan_revive.dds" />
+               <When type="Property" frame="NormalImage" Enabled="True" />
+               <When type="Property" frame="$PausePanel" Visible="False" />
+               <Action type="SetProperty" frame="GameButtonBorderImage" ColorAdjustMode="Colorize" />
+               <Action type="SetProperty" frame="GameButtonBorderImage" AdjustmentColor="0,191,255" />
+               <Action type="SetProperty" frame="GameButtonDefaultHoverBorder" ColorAdjustMode="Colorize" />
+               <Action type="SetProperty" frame="GameButtonDefaultHoverBorder" AdjustmentColor="0,191,255" />
+            </State>
+            <State name="Default" />
+         </Stategroup>
+         <Frame type="Image" name="ActiveIndicator">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="8" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-5" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="5" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-5" />
+            <Width val="66" />
+            <Height val="66" />
+            <LayerCount val="2" />
+            <Alpha val="0" />
+            <Handle val="SUActiveIndicator" />
+            <Texture val="Assets/Textures/ui_ingame_coop_topbar_stetmann_slider_activeindicator_mask.dds" layer="0" />
+            <AlphaLayer val="True" layer="0"/>
+            <Texture val="Assets/Textures/sc2_ui_global_genericeffect_mirroredanglegradient_256x256.dds" layer="1" />
+            <LayerColor val="0,191,255" layer="1"/>
+            <Animation name="Rotate">
+               <Event event="Active" action="Reset,Play" frame="$this" />
+               <Event event="NotActive" action="Reset,Stop" frame="$this" />
+               <Controller type="Property" property="TextureCoordRotation" curve="True" index="1"  end="Loop" frame="$this">
+                  <Key type="Property" time="0.000" value="0" inOut="Linear" />
+                  <Key type="Property" time="1.500" value="-360" inOut="Linear" />
+               </Controller>
+               <Controller type="Fade" end="Pause" frame="$this">
+                  <Key type="Curve" time="0" value="0" out="Fast"/>
+                  <Key type="Curve" time="0.1" value="255" in="Slow"/>
+               </Controller>
+            </Animation>
+         </Frame>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton14" template="CommandButtons/UADCommandButton"/>
+   </Frame>
+</Desc>
+      <!--
+         <Animation name="FirstCooldownStarted">
+            <Event event="Cooldown" action="Restart,Play" frame="$parent/ChargeCooldown" />
+            <Controller type="Visibility" end="Pause">
+               <Key type="Bool" time="0" value="True" />
+            </Controller>
+         </Animation> -->

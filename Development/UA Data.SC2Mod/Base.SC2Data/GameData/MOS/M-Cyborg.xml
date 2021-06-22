@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="Cyborg" parent="UnitTemplate">
+        <Description value="Button/Tooltip/18OCyborg"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <AbilArray index="3" Link="HeroInventoryMinigunNew"/>
+        <AbilArray index="4" Link="Sprint"/>
+        <AbilArray index="5" Link="ReloadHero"/>
+        <AbilArray index="6" Link="JumpHero"/>
+        <AbilArray index="7" Link="DropMagazine"/>
+        <AbilArray index="8" Link="Prone"/>
+        <AbilArray index="9" Link="PerformSelfAidHero"/>
+        <AbilArray index="10" Link="ReviveNew"/>
+        <AbilArray Link="TeamLocation"/>
+        <AbilArray Link="CyborgResearch"/>
+        <AbilArray Link="GrappleHook"/>
+        <AbilArray Link="StrengthMode"/>
+        <AbilArray Link="GunnerMode"/>
+        <AbilArray Link="HunterMode"/>
+        <AbilArray Link="CyborgCharge"/>
+        <AbilArray Link="Transmute"/>
+        <AbilArray Link="StonewallProtocol"/>
+        <AbilArray Link="ImprovedTimingMotor"/>
+        <AbilArray Link="FullAutoCyborg"/>
+        <AbilArray Link="TitaniumBarrelFitting"/>
+        <AbilArray Link="ShredderMissiles"/>
+        <AbilArray Link="MiniEMP"/>
+        <AbilArray Link="SupersonicPulse"/>
+        <AbilArray Link="CyborgSkillUpgrades"/>
+        <AbilArray Link="CyborgSkillUpgrades2ElectricBoogaloo"/>
+        <BehaviorArray index="1" Link="NewMechanical"/>
+        <BehaviorArray index="2" Link="NewDexterity"/>
+        <BehaviorArray index="3" Link="HeroLevelsFMD"/>
+        <BehaviorArray index="4" Link="1Fitness"/>
+        <BehaviorArray index="5" Link="SoldierSkillsBonus"/>
+        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray Link="FirerateBuildupControllerMinigun"/>
+        <BehaviorArray Link="NanotechArmor"/>
+        <BehaviorArray Link="SpectrumAmplifier"/>
+        <BehaviorArray Link="HardArmor"/>
+        <BehaviorArray Link="AllyReveal"/>
+        <EffectArray index="Birth" value="CyborgSpawnSet"/>
+        <EffectArray index="Revive" value="CyborgSpawnSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="5" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons index="8" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="GrappleHook" Type="AbilCmd" AbilCmd="GrappleHook,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="StrengthMode" Type="AbilCmd" AbilCmd="StrengthMode,On" Row="2" Column="2"/>
+            <LayoutButtons>
+                <Face value="StrengthMode"/>
+                <Type value="Passive"/>
+                <Behavior value="StrengthMode"/>
+                <Requirements value="StrengthShow"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons Face="GunnerMode" Type="AbilCmd" AbilCmd="GunnerMode,On" Row="2" Column="3"/>
+            <LayoutButtons>
+                <Face value="GunnerMode"/>
+                <Type value="Passive"/>
+                <Behavior value="GunnerMode"/>
+                <Requirements value="GunnerShow"/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons Face="HunterMode" Type="AbilCmd" AbilCmd="HunterMode,On" Row="2" Column="4"/>
+            <LayoutButtons>
+                <Face value="HunterMode"/>
+                <Type value="Passive"/>
+                <Behavior value="HunterMode"/>
+                <Requirements value="HunterShow"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="CyborgCharge" Type="AbilCmd" AbilCmd="CyborgCharge,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="ShredderMissiles" Type="AbilCmd" AbilCmd="ShredderMissiles,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="ImprovedTimingMotor" Type="AbilCmd" AbilCmd="ImprovedTimingMotor,On" Row="1" Column="2"/>
+            <LayoutButtons Face="CancelD" Type="AbilCmd" AbilCmd="ImprovedTimingMotor,Off" Row="1" Column="2"/>
+            <LayoutButtons Face="Transmute" Type="AbilCmd" AbilCmd="Transmute,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="MiniEMP" Type="AbilCmd" AbilCmd="MiniEMP,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="FullAutoCyborg" Type="AbilCmd" AbilCmd="FullAutoCyborg,On" Row="1" Column="3"/>
+            <LayoutButtons Face="CancelF" Type="AbilCmd" AbilCmd="FullAutoCyborg,Off" Row="1" Column="3"/>
+            <LayoutButtons Face="StonewallProtocol" Type="AbilCmd" AbilCmd="StonewallProtocol,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="SupersonicPulse" Type="AbilCmd" AbilCmd="SupersonicPulse,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="TitaniumBarrelFitting" Type="AbilCmd" AbilCmd="TitaniumBarrelFitting,On" Row="1" Column="4"/>
+            <LayoutButtons Face="CancelG" Type="AbilCmd" AbilCmd="TitaniumBarrelFitting,Off" Row="1" Column="4"/>
+            <LayoutButtons>
+                <Face value="SpectrumAmplifier"/>
+                <Type value="Passive"/>
+                <Behavior value="SpectrumAmplifier"/>
+                <Requirements value="SpectrumAmplifierUse"/>
+                <Row value="0"/>
+                <Column value="3"/>
+            </LayoutButtons>
+        </CardLayouts>
+        <CardLayouts index="1" CardId="0002">
+            <LayoutButtons Face="MinigunMarksmanship" Type="AbilCmd" AbilCmd="CyborgResearch,Research8" Row="0" Column="1"/>
+            <LayoutButtons Face="MinigunMarksmanship" Type="AbilCmd" AbilCmd="CyborgResearch,Research7" Row="0" Column="1"/>
+            <LayoutButtons Face="MinigunMarksmanship" Type="AbilCmd" AbilCmd="CyborgResearch,Research6" Row="0" Column="1"/>
+            <LayoutButtons Face="MinigunMarksmanship" Type="AbilCmd" AbilCmd="CyborgResearch,Research9" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnStrengthMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research12" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnStrengthMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research11" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnStrengthMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research10" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnStrengthMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research13" Row="0" Column="2"/>
+            <LayoutButtons Face="LearnGunnerMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research17" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnGunnerMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research16" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnGunnerMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research15" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnGunnerMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="LearnHunterMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research20" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnHunterMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research19" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnHunterMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research18" Row="0" Column="4"/>
+            <LayoutButtons Face="LearnHunterMode" Type="AbilCmd" AbilCmd="CyborgResearch,Research21" Row="0" Column="4"/>
+        </CardLayouts>
+        <CardLayouts index="2" CardId="0003">
+            <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="1" Face="Reload" Type="AbilCmd" AbilCmd="ReloadHero,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="2" Face="DropMagazine" Type="AbilCmd" AbilCmd="DropMagazine,Execute" Row="1" Column="2"/>
+            <LayoutButtons index="3" Face="PerformSelfAidNew" Type="AbilCmd" AbilCmd="PerformSelfAidHero,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="ReviveNew" Type="AbilCmd" AbilCmd="ReviveNew,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="7">
+                <Face value="RifleButt"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="Riflebutt,Execute"/>
+                <Behavior value="Sprint"/>
+                <Requirements value="NewRiflebuttRequirement"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons index="9" Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="11" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="NanotechArmor" Type="Passive" Behavior="NanotechArmor" Row="0" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="3" CardId="0004">
+            <LayoutButtons Face="MarksmanshipWeaponProficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research9" Row="0" Column="0"/>
+            <LayoutButtons Face="StrengthModeHardArmor" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research11" Row="0" Column="1"/>
+            <LayoutButtons Face="GunnerModeSharpshooter" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research19" Row="0" Column="2"/>
+            <LayoutButtons Face="HunterModeTheHunt" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research25" Row="0" Column="3"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="MarksmanshipSpread" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research10" Row="1" Column="0"/>
+            <LayoutButtons Face="StrengthModePowerhouse" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research12" Row="1" Column="1"/>
+            <LayoutButtons Face="GunnerModeDexterity" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research20" Row="1" Column="2"/>
+            <LayoutButtons Face="HunterModeStealth" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research26" Row="1" Column="3"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0006" Row="1" Column="4"/>
+            <LayoutButtons Face="SoldierSkillsCyberneticEnhancements" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SoldierSkillsBarbaric" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="PerformSelfAidEffectiveness" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research3" Row="2" Column="2"/>
+            <LayoutButtons Face="PerformSelfAidReconstruction" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research4" Row="2" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="ChargeEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research13" Row="0" Column="0"/>
+            <LayoutButtons Face="TransmuteEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research15" Row="0" Column="1"/>
+            <LayoutButtons Face="StonewallProtocolRockSolid" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research17" Row="0" Column="2"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0006" Row="0" Column="4"/>
+            <LayoutButtons Face="ChargeSpeed" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research14" Row="1" Column="0"/>
+            <LayoutButtons Face="TransmuteRepurpose" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research16" Row="1" Column="1"/>
+            <LayoutButtons Face="StonewallProtocolLeftovers" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research18" Row="1" Column="2"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0004" Row="1" Column="4"/>
+            <LayoutButtons Face="NanotechArmorEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research5" Row="2" Column="0"/>
+            <LayoutButtons Face="NanotechArmorRapidRestoration" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research6" Row="2" Column="1"/>
+            <LayoutButtons Face="GrappleHookEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research7" Row="2" Column="2"/>
+            <LayoutButtons Face="GrappleHookHeavyImpact" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research8" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0006">
+            <LayoutButtons Face="ShredderMissilesTsunami" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research27" Row="0" Column="0"/>
+            <LayoutButtons Face="MiniEMPLightsOut" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research29" Row="0" Column="1"/>
+            <LayoutButtons Face="FullAutoEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research21" Row="0" Column="2"/>
+            <LayoutButtons Face="TitaniumBarrelFittingEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research23" Row="0" Column="3"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="ShredderMissilesStagger" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research28" Row="1" Column="0"/>
+            <LayoutButtons Face="MiniEMPPotency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research30" Row="1" Column="1"/>
+            <LayoutButtons Face="FullAutoOverclock" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research22" Row="1" Column="2"/>
+            <LayoutButtons Face="TitaniumBarrelFittingPotency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades,Research24" Row="1" Column="3"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0005" Row="1" Column="4"/>
+            <LayoutButtons Face="SupersonicPulseEfficiency" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades2ElectricBoogaloo,Research1" Row="2" Column="0"/>
+            <LayoutButtons Face="SupersonicPulseHypersonic" Type="AbilCmd" AbilCmd="CyborgSkillUpgrades2ElectricBoogaloo,Research2" Row="2" Column="1"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <Speed value="2.8203"/>
+    </CUnit>
+</Catalog>

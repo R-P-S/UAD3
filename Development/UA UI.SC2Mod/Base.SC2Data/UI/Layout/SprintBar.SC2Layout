@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Frame type="Image" name="SprintSegmentTemplate">
+      <Width val="2" />
+      <Height val="18" />
+      <Texture val="Assets\Textures\ui_aiurchef_frame_line01.dds" />
+      <TextureType val="Normal" />
+      <Color val="0,0,0" />
+      <Alpha val="255" />
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <RenderPriority val="600" />
+   </Frame>
+   
+   <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+      <!-- Sprint Bar Toggler -->
+      <Frame type="SelectionUnitStatusPanel" name="UnitSelection">
+         <Anchor relative="$parent" />
+         <StateGroup name="UnitSelected">
+            <DefaultState val="NoSelectionOrInvalidUnit" />
+            <State name="NoSelectionOrInvalidUnit" />
+            <State name="Rifleman">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="NewRifleman" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="CombatMedic">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="CombatMedic" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="AutomaticRifleman">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="AutomaticRifleman" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="CavalryScout">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="CavalryScout" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="SFAAT">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="SFAAT" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="JavelinGunner">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="JavelinGunner" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="SDM">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="SquadDesignatedMarksman" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="PlatoonLeader">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="PlatoonLeader" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="Flamethrower">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="Flamethrower" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="CombatEngineer">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="CombatEngineer" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="Cyborg">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="Cyborg" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+            <State name="GhostMOS">																									
+               <When type="Property" frame="$this/UnitStatusFrame0" Unit="GhostMOS" />
+               <Action type="SetProperty" frame="$SprintBar" Visible="True" />
+            </State>
+         </StateGroup>
+         <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+            <Anchor relative="$parent"/>
+         </Frame>
+      </Frame>
+      <!-- Sprint Bar Frames  -->
+      <Frame type="Label" name="PercentageDisplay">
+         <Anchor side="Top" relative="$parent/SprintBarBorder" pos="Min" offset="-23" />
+         <Anchor side="Left" relative="$parent/SprintBarBorder" pos="Min" offset="2" />
+         <Width val="200" />
+         <Height val="35" />
+         <Text val="{$parent/GetSprintLabel/FormattedText/@Text}" />
+         <Style val="@@InfoPaneHeroAttribute 2" />
+         <Color val="255,255,255" />
+         <Visible val="{$parent/SprintBar/@Visible}" />
+         <StateGroup name="Region">
+            <DefaultState val="enUS" />
+            <State name="koKR">
+               <When type="Option" localeiddata="koKR" />
+               <Action type="SetProperty" Style="GameButtonCharge" />
+            </State>
+            <State name="enUS" />
+         </StateGroup>
+      </Frame>
+      <Frame type="Frame" name="BackgroundContainer">
+         <Anchor side="Top" relative="$parent/SprintBarBorder" pos="Min" offset="-23" />
+         <Anchor side="Left" relative="$parent/SprintBarBorder" pos="Min" offset="0" />
+         <Width val="112" />
+         <Height val="25" />
+         <RenderPriority val="500" />
+         <Visible val="{$parent/SprintBar/@Visible}" />
+         <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate">
+            <Anchor relative="$parent" />
+            <Alpha val="50" />
+         </Frame>
+      </Frame>
+      <Frame type="Label" name="GetSprintLabel">
+         <Anchor relative="$parent/PercentageDisplay" />
+         <Alpha val="0" />
+         <Text val="{$SprintBar/MathB/@ResultRound}" />
+         <Frame type="TextFormatFrame" name="FormattedText">
+            <Anchor relative="$parent" />
+            <FormatText val="Sprint: %0%%" />
+            <Replacement index="0" val="{$parent/@Text}" />
+        </Frame>
+      </Frame>
+      <Frame type="Image" name="SprintBarBorder">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="695" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="321" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Width val="207" />
+         <Height val="25" />
+         <Texture val="@@UI/HeroPanelHealthBarBackground" />
+         <TextureType val="Border" />
+         <Tiled val="true" />
+         <RenderPriority val="450" />
+         <Alpha val="175" />
+         <Visible val="{$parent/SprintBar/@Visible}" />
+      </Frame>
+      <Frame type="ProgressBar" name="SprintBar">
+         <Anchor side="Top" relative="$parent" pos="Mid" offset="695" />
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="325" />
+         <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+         <Width val="200" />
+         <Height val="20" />
+         <MinValue val="0" />
+         <MaxValue val="32" />
+         <Value val="{SprintBehaviors/@Result}" />
+         <Tooltip val="Sprint Bar" />
+         <TooltipFrame val="UADStandardTooltip" />
+         <AcceptsMouse val="true" />
+         <Alpha val="250" />
+         <Handle val="SprintBar" />
+         <Visible val="False" />
+         <Frame type="Frame" name="FillImageContainer">
+            <Anchor relative="$parent" />
+            <Frame type="Image" name="FillImage">
+               <Anchor relative="$parent" />
+               <Texture val="Assets\Textures\Sprint_Bar.dds" />
+               <BlendMode val="Normal" />
+            </Frame>
+         </Frame>
+         <Frame type="Image" name="Segment1" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-160" />
+         </Frame>
+         <Frame type="Image" name="Segment2" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-120" />
+         </Frame>
+         <Frame type="Image" name="Segment3" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-80" />
+         </Frame>
+         <Frame type="Image" name="Segment4" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-40" />
+         </Frame>
+         <Frame type="Image" name="Segment5" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+         </Frame>
+         <Frame type="Image" name="Segment6" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="40" />
+         </Frame>
+         <Frame type="Image" name="Segment7" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="80" />
+         </Frame>
+         <Frame type="Image" name="Segment8" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="120" />
+         </Frame>
+         <Frame type="Image" name="Segment9" template="SprintBar/SprintSegmentTemplate">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="160" />
+         </Frame>
+         <StateGroup name="SprintTint">
+            <State name="0">
+               <When type="Property" frame="$this" Value="0" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#000000" />
+            </State>
+            <State name="1">
+               <When type="Property" frame="$this" Value="1" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF0000" />
+            </State>
+            <State name="2">
+               <When type="Property" frame="$this" Value="2" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF0000" />
+            </State>
+            <State name="3">
+               <When type="Property" frame="$this" Value="3" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF0000" />
+            </State>
+            <State name="4">
+               <When type="Property" frame="$this" Value="4" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF1100" />
+            </State>
+            <State name="5">
+               <When type="Property" frame="$this" Value="5" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF2300" />
+            </State>
+            <State name="6">
+               <When type="Property" frame="$this" Value="6" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF3400" />
+            </State>
+            <State name="7">
+               <When type="Property" frame="$this" Value="7" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF4600" />
+            </State>
+            <State name="8">
+               <When type="Property" frame="$this" Value="8" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF5700" />
+            </State>
+            <State name="9">
+               <When type="Property" frame="$this" Value="9" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF6900" />
+            </State>
+            <State name="10">
+               <When type="Property" frame="$this" Value="10" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF7B00" />
+            </State>
+            <State name="11">
+               <When type="Property" frame="$this" Value="11" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF8C00" />
+            </State>
+            <State name="12">
+               <When type="Property" frame="$this" Value="12" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FF9E00" />
+            </State>
+            <State name="13">
+               <When type="Property" frame="$this" Value="13" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FFAF00" />
+            </State>
+            <State name="14">
+               <When type="Property" frame="$this" Value="14" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FFC100" />
+            </State>
+            <State name="15">
+               <When type="Property" frame="$this" Value="15" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FFD300" />
+            </State>
+            <State name="16">
+               <When type="Property" frame="$this" Value="16" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FFE400" />
+            </State>
+            <State name="17">
+               <When type="Property" frame="$this" Value="17" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#FFF600" />
+            </State>
+            <State name="18">
+               <When type="Property" frame="$this" Value="18" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#F7FF00" />
+            </State>
+            <State name="19">
+               <When type="Property" frame="$this" Value="19" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#E5FF00" />
+            </State>
+            <State name="20">
+               <When type="Property" frame="$this" Value="20" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#D4FF00" />
+            </State>
+            <State name="21">
+               <When type="Property" frame="$this" Value="21" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#C2FF00" />
+            </State>
+            <State name="22">
+               <When type="Property" frame="$this" Value="22" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#B0FF00" />
+            </State>
+            <State name="23">
+               <When type="Property" frame="$this" Value="23" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#9FFF00" />
+            </State>
+            <State name="24">
+               <When type="Property" frame="$this" Value="24" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#8DFF00" />
+            </State>
+            <State name="25">
+               <When type="Property" frame="$this" Value="25" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#7CFF00" />
+            </State>
+            <State name="26">
+               <When type="Property" frame="$this" Value="26" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#6AFF00" />
+            </State>
+            <State name="27">
+               <When type="Property" frame="$this" Value="27" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#58FF00" />
+            </State>
+            <State name="28">
+               <When type="Property" frame="$this" Value="28" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#47FF00" />
+            </State>
+            <State name="29">
+               <When type="Property" frame="$this" Value="29" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#35FF00" />
+            </State>
+            <State name="30">
+               <When type="Property" frame="$this" Value="30" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#24FF00" />
+            </State>
+            <State name="31">
+               <When type="Property" frame="$this" Value="31" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#12FF00" />
+            </State>
+            <State name="32">
+               <When type="Property" frame="$this" Value="32" />
+               <Action type="SetProperty" frame="$this/FillImageContainer/FillImage" Color="#00FF00" />
+            </State>
+         </StateGroup>
+         <!--
+         <StateGroup name="SprintBarState">
+            <DefaultState val="Hidden" />
+            <State name="Visible">
+               <When type="Property" frame="$HUDButton" Visible="True" />
+               <Action type="SetProperty" frame="$parent/SprintBarBorder" Visible="True" />
+               <Action type="SetProperty" frame="$parent/SprintBar" Visible="True" />
+            </State>
+            <State name="Hidden">
+               <When type="Property" frame="$HUDButton" Visible="False" />
+               <Action type="SetProperty" frame="$parent/SprintBarBorder" Visible="False" />
+               <Action type="SetProperty" frame="$parent/SprintBar" Visible="False" />
+            </State>
+         </StateGroup> -->
+         <Frame type="DataRefFrame" name="BehaviorSprint">
+            <Anchor relative="$parent" />
+            <Argument name="Ref" val="$BehaviorStackCount:Sprint$" />
+         </Frame>
+         <Frame type="DataRefFrame" name="BehaviorSprintEnergy">
+            <Anchor relative="$parent" />
+            <Argument name="Ref" val="$BehaviorStackCount:SprintEnergy$" />
+         </Frame>
+         <Frame type="MathFrame" name="SprintBehaviors">
+            <Anchor relative="$parent" />
+            <A val="{$parent/BehaviorSprint/@RealValue}" />
+            <B val="{$parent/BehaviorSprintEnergy/@RealValue}" />
+            <Operator val="Add" />
+         </Frame>
+         <Frame type="MathFrame" name="MathA">
+            <Anchor relative="$parent" />
+            <A val="{$SprintBar/@Value}" />
+            <B val="{$SprintBar/@MaxValue}" />
+            <Operator val="Divide" />
+         </Frame>
+         <Frame type="MathFrame" name="MathB">
+            <Anchor relative="$parent" />
+            <A val="{$parent/MathA/@Result}" />
+            <B val="100" />
+            <Operator val="Multiply" />
+         </Frame>
+      </Frame>
+   </Frame>
+</Desc>
