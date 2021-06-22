@@ -1,0 +1,10 @@
+bin/*.sc2mod
+bin/*.sc2map
+bin/*
+binlocal/*
+Publish/
+*.jar
+*.class
+tools/Art/*
+tools/M3 Utility/*
+tools/Replay Utility/*
