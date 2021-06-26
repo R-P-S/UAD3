@@ -1,10 +1,10 @@
-bin/*.sc2mod
-bin/*.sc2map
-bin/*
-binlocal/*
+Bin/*.sc2mod
+Bin/*.sc2map
+Bin/*
+Binlocal/*
 Publish/
 *.jar
 *.class
-tools/Art/*
-tools/M3 Utility/*
-tools/Replay Utility/*
+Tools/Art/*
+Tools/M3 Utility/*
+Tools/Replay Utility/*
