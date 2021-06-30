@@ -5786,6 +5786,7 @@ void lib90F7C81D_gf_TurnOffAchievements () {
     TriggerEnable(lib90F7C81D_gt_BigPharma, false);
     TriggerEnable(lib90F7C81D_gt_BattleReady, false);
     TriggerEnable(lib90F7C81D_gt_FullAutoPlease, false);
+    TriggerEnable(lib90F7C81D_gt_PointOfImpact, false);
     TriggerEnable(lib90F7C81D_gt_BoobyTrap, false);
     TriggerEnable(lib90F7C81D_gt_EyeSeeYou, false);
     TriggerEnable(lib90F7C81D_gt_TargetLockedIn, false);
@@ -9381,7 +9382,9 @@ bool lib90F7C81D_gt_HeroDeath_Func (bool testConds, bool runActions) {
     lib90F7C81D_gv_playersHeroisDead[lv_heroKilled] = true;
     SoundPlayOnUnit(SoundLink("diebuzz", -1), PlayerGroupAll(), lv_deadHero, 0.0, 100.0, 0.0);
     lib90F7C81D_gv_sTATS.lv_deaths[lv_heroKilled] += 1;
-    lv_penalty = lib90F7C81D_gv_weeklyModifier.lv_revive_Penalty[lv_heroKilled];
+    if ((lib90F7C81D_gv_weeklyModifier.lv_race_Against_Time == true)) {
+        lv_penalty = 60;
+    }
     if ((lib90F7C81D_gv_sTATS.lv_deaths[lv_heroKilled] > 1) && (PlayerGroupHasPlayer(lib90F7C81D_gv_players, lv_killingplayer) == false)) {
         lib90F7C81D_gv_revivePenalty[lv_heroKilled] += (5 * lib90F7C81D_gv_sTATS.lv_deaths[lv_heroKilled]);
     }
@@ -12145,21 +12148,12 @@ void lib90F7C81D_gt_Week5_Init () {
 //--------------------------------------------------------------------------------------------------
 bool lib90F7C81D_gt_Week6_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
-    playergroup auto1C0EA0CB_g;
-    int auto1C0EA0CB_var;
-
     // Actions
     if (!runActions) {
         return true;
     }
 
-    auto1C0EA0CB_g = lib90F7C81D_gv_players;
-    auto1C0EA0CB_var = -1;
-    while (true) {
-        auto1C0EA0CB_var = PlayerGroupNextPlayer(auto1C0EA0CB_g, auto1C0EA0CB_var);
-        if (auto1C0EA0CB_var < 0) { break; }
-        lib90F7C81D_gv_weeklyModifier.lv_revive_Penalty[auto1C0EA0CB_var] = 60;
-    }
+    lib90F7C81D_gv_weeklyModifier.lv_race_Against_Time = true;
     PlayerAddResponse(14, "Barrier");
     return true;
 }
@@ -12606,6 +12600,46 @@ bool lib90F7C81D_gt_FullAutoPlease_Func (bool testConds, bool runActions) {
 void lib90F7C81D_gt_FullAutoPlease_Init () {
     lib90F7C81D_gt_FullAutoPlease = TriggerCreate("lib90F7C81D_gt_FullAutoPlease_Func");
     TriggerAddEventUnitBehaviorChange(lib90F7C81D_gt_FullAutoPlease, null, "FullAuto", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Point Of Impact
+//--------------------------------------------------------------------------------------------------
+bool lib90F7C81D_gt_PointOfImpact_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_damageSource;
+    fixed lv_damageTaken;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_damageSource = EventUnitDamageSourceUnit();
+    lv_damageTaken = EventUnitDamageAmount();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib90F7C81D_gf_CreateTextTagWithAnimation(lv_damageSource, FixedToString(lv_damageTaken, 0), "FCT_Status_Crit", lib90F7C81D_ge_FCTDirection_Middle, PlayerGroupSingle(UnitGetOwner(lv_damageSource)), "Ref_Overhead", 0.8125, 0, true);
+    if ((UnitGetType(lv_damageSource) == "AutomaticRifleman") && (lib90F7C81D_gv_bankData.lv_achievementsUnlocked[83][EventUnitDamageSourcePlayer()] == false) && (lib90F7C81D_gv_achievementPanel.lv_achievementsDisabled == false)) {
+        lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()] += FixedToInt(lv_damageTaken);
+        libNtve_gf_SetDialogItemText(lib90F7C81D_gv_achievementPanel.lv_mOSAchievementsCurP[2][1], IntToText(lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()]), PlayerGroupSingle(EventUnitDamageSourcePlayer()));
+        if ((lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()] >= 50000)) {
+            lib90F7C81D_gv_bankData.lv_achievementsUnlocked[83][EventUnitDamageSourcePlayer()] = true;
+            lib90F7C81D_gf_FlashAchievementBadge("Point Of Impact", EventUnitDamageSourcePlayer());
+            DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[2][1], PlayerGroupSingle(EventUnitDamageSourcePlayer()), "AchievementBadge", "Earned");
+        }
+    }
+    lv_damageSource = null;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib90F7C81D_gt_PointOfImpact_Init () {
+    lib90F7C81D_gt_PointOfImpact = TriggerCreate("lib90F7C81D_gt_PointOfImpact_Func");
+    TriggerAddEventUnitDamaged(lib90F7C81D_gt_PointOfImpact, null, c_unitDamageTypeRanged, c_unitDamageEither, "MachineGunCriticalDamage");
+    TriggerAddEventUnitDamaged(lib90F7C81D_gt_PointOfImpact, null, c_unitDamageTypeRanged, c_unitDamageEither, "M41SAWCriticalDamage");
+    TriggerAddEventUnitDamaged(lib90F7C81D_gt_PointOfImpact, null, c_unitDamageTypeRanged, c_unitDamageEither, "M241MMGCriticalDamage");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14630,15 +14664,6 @@ bool lib90F7C81D_gt_CriticalHitDamageText_Func (bool testConds, bool runActions)
     }
 
     lib90F7C81D_gf_CreateTextTagWithAnimation(lv_damageSource, FixedToString(lv_damageTaken, 0), "FCT_Status_Crit", lib90F7C81D_ge_FCTDirection_Middle, PlayerGroupSingle(UnitGetOwner(lv_damageSource)), "Ref_Overhead", 0.8125, 0, true);
-    if ((UnitGetType(lv_damageSource) == "AutomaticRifleman") && (lib90F7C81D_gv_bankData.lv_achievementsUnlocked[83][EventUnitDamageSourcePlayer()] == false) && (lib90F7C81D_gv_achievementPanel.lv_achievementsDisabled == false)) {
-        lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()] += FixedToInt(lv_damageTaken);
-        libNtve_gf_SetDialogItemText(lib90F7C81D_gv_achievementPanel.lv_mOSAchievementsCurP[2][1], IntToText(lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()]), PlayerGroupSingle(EventUnitDamageSourcePlayer()));
-        if ((lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[9][EventUnitDamageSourcePlayer()] >= 50000)) {
-            lib90F7C81D_gv_bankData.lv_achievementsUnlocked[83][EventUnitDamageSourcePlayer()] = true;
-            lib90F7C81D_gf_FlashAchievementBadge("Point Of Impact", EventUnitDamageSourcePlayer());
-            DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[2][1], PlayerGroupSingle(EventUnitDamageSourcePlayer()), "AchievementBadge", "Earned");
-        }
-    }
     lv_damageSource = null;
     return true;
 }
@@ -14647,14 +14672,11 @@ bool lib90F7C81D_gt_CriticalHitDamageText_Func (bool testConds, bool runActions)
 void lib90F7C81D_gt_CriticalHitDamageText_Init () {
     lib90F7C81D_gt_CriticalHitDamageText = TriggerCreate("lib90F7C81D_gt_CriticalHitDamageText_Func");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "AssaultRifleCriticalDamage");
-    TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "MachineGunCriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "SOFARCriticalDamage");
-    TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "M41SAWCriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "HK42CriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "StynerBR2CriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "M5MARCriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "USMCRCriticalDamage");
-    TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "M241MMGCriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "DMRCriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "Mk14CriticalDamage");
     TriggerAddEventUnitDamaged(lib90F7C81D_gt_CriticalHitDamageText, null, c_unitDamageTypeRanged, c_unitDamageEither, "M92TorrentCriticalDamage");
@@ -17896,6 +17918,7 @@ void lib90F7C81D_InitTriggers () {
     lib90F7C81D_gt_NotEnoughEnergy_Init();
     lib90F7C81D_gt_BigPharma_Init();
     lib90F7C81D_gt_FullAutoPlease_Init();
+    lib90F7C81D_gt_PointOfImpact_Init();
     lib90F7C81D_gt_BattleReady_Init();
     lib90F7C81D_gt_BoobyTrap_Init();
     lib90F7C81D_gt_EyeSeeYou_Init();

@@ -110,7 +110,7 @@
     <CItem id="DeathMachine">
         <Flags index="DropOnDeath" value="1"/>
         <Class value="WeaponMinigun"/>
-        <EquipBehaviorArray value="DeathMachine"/>
+        <EquipBehaviorArray value="DeathMachineController"/>
         <EquipWeaponArray Link="DeathMachine"/>
     </CItem>
     <CItemAbil id="RepairKit">

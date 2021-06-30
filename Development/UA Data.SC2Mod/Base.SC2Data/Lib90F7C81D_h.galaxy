@@ -195,7 +195,7 @@ struct lib90F7C81D_gs_WeeklyModifier {
     int lv_mode;
     int[3] lv_icons;
     bool lv_enabled;
-    int[13] lv_revive_Penalty;
+    bool lv_race_Against_Time;
     bool lv_random_Weather_Disable;
     bool lv_going_Dark_Enabled;
     bool lv_tier1;
@@ -914,6 +914,7 @@ trigger lib90F7C81D_gt_PullThePin;
 trigger lib90F7C81D_gt_NotEnoughEnergy;
 trigger lib90F7C81D_gt_BigPharma;
 trigger lib90F7C81D_gt_FullAutoPlease;
+trigger lib90F7C81D_gt_PointOfImpact;
 trigger lib90F7C81D_gt_BattleReady;
 trigger lib90F7C81D_gt_BoobyTrap;
 trigger lib90F7C81D_gt_EyeSeeYou;

@@ -7,11 +7,11 @@
         <Value>Assets\Arcade Icon\UAD_Logo.tga</Value>
     </Icon>
     <Dependencies>
-        <Value>file:Mods\UAD\Development\UA Data.SC2Mod</Value>
+        <Value>file:Mods\UAD3\Development\UA Data.SC2Mod</Value>
     </Dependencies>
     <ModifiableDependencies>
-        <Value>Mods\UAD\Development\Utility.SC2Mod</Value>
-        <Value>Mods\UAD\Development\UA Data.SC2Mod</Value>
+        <Value>Mods\UAD3\Development\Utility.SC2Mod</Value>
+        <Value>Mods\UAD3\Development\UA Data.SC2Mod</Value>
     </ModifiableDependencies>
     <Screenshot>
         <File>
