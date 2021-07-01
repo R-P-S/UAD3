@@ -47,6 +47,17 @@
             <Value> </Value>
         </Flags>
     </ScreenshotHowToPlay>
+    <PatchNote>
+        <Version>
+            <Value>3.26</Value>
+        </Version>
+        <Date>
+            <Value>6/12/2021</Value>
+        </Date>
+        <Notes>
+            <Value>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15</Value>
+        </Notes>
+    </PatchNote>
     <Preload>
         <Value>AssetFile;UI\Layout\MenuBackGroundTemplate.SC2Layout</Value>
         <Value>AssetFile;UI\Layout\CharSelection.SC2Layout</Value>
