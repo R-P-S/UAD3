@@ -24,6 +24,6 @@ This repository contains a open source version of UAD for StarCraft II.
 1. When making pull requests please leave a detailed description of what the commit contains.  All pull requests will be reviewed before being accepted.
 2. To make map load faster, change Editor startup settings to load triggers module instead of terrain in File -> Preferences -> Startup
 3. Editor bank files are located in Documents\StarCraft II\Banks [UAD|UAD3]
-4. While in test mode additional Editor cheats can be used for convenience. For full reference see [Docs/Editor/SC2 Editor Cheats.txt](Docs/Editor/SC2 Editor Cheats.txt)
+4. While in test mode additional Editor cheats can be used for convenience. For full reference see [Docs/Editor/SC2 Editor Cheats.txt](https://github.com/R-P-S/UAD3/blob/main/Docs/Editor/SC2%20Editor%20Cheats.txt)
 
 For any further questions you can find us on UAD Discord channel: https://discord.gg/Vr99pGD
