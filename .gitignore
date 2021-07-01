@@ -1,6 +1,4 @@
-Bin/*.sc2mod
-Bin/*.sc2map
-Bin/*
+Bin/
 Binlocal/*
 Publish/
 *.jar
