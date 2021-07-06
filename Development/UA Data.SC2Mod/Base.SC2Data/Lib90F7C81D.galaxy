@@ -4292,6 +4292,7 @@ void lib90F7C81D_gf_SetupSkinPanel (int lp_player) {
         else {
             if ((lib90F7C81D_gv_bankData.lv_decalsUnlocked[lv_index][lp_player] == true)) {
                 lib90F7C81D_gv_bankData.lv_decalsUnlocked[lv_index][lp_player] = true;
+                lib90F7C81D_gf_UnlockTexture(lib90F7C81D_ge_TextureType_Decal, "Default", UserDataInstance("Decals", lv_index), lp_player, false);
             }
         }
     }
