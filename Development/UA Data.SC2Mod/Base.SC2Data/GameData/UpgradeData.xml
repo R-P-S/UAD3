@@ -409,6 +409,8 @@
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[1].Radius" Value="0.09"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[0].Radius" Value="0.036"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,MDeathMachineSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
@@ -436,9 +438,11 @@
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.05"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.05"/>
         <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.5"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.5"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.5"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.5"/>
         <EffectArray Reference="Effect,DeathMachine,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.05"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.05"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.05"/>
         <InfoTooltipPriority value="1"/>
@@ -696,13 +700,17 @@
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.35"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.35"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.35"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.35"/>
         <EffectArray Reference="Effect,DeathMachine,Random" Value="0.035"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.035"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.035"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.035"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[1].Radius" Value="0.09"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[0].Radius" Value="0.036"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
@@ -738,6 +746,8 @@
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.02"/>
         <EffectArray Reference="Weapon,DeathMachine,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,DeathMachine,Range" Value="0.75"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.2"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.02"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMinigun"/>
         <LeaderPriority value="1"/>
@@ -770,13 +780,17 @@
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.8"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.8"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.8"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.8"/>
         <EffectArray Reference="Effect,DeathMachine,Random" Value="0.08"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.08"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.08"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.08"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[1].Radius" Value="0.09"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[0].Radius" Value="0.036"/>
+        <EffectArray Reference="Effect,DeathMachineAir,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
@@ -805,9 +819,11 @@
         <EffectArray Reference="Weapon,M935Minigun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M935Minigun,Range" Value="0.75"/>
         <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.55"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.55"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.55"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.55"/>
         <EffectArray Reference="Effect,DeathMachine,Random" Value="0.055"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.055"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.055"/>
         <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.055"/>
         <EffectArray Reference="Weapon,DeathMachine,MinScanRange" Value="0.75"/>
