@@ -1267,7 +1267,6 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <RemoveValidatorArray value="CanSpendEnergy"/>
         <RemoveValidatorArray value="hasEnergy"/>
-        <RemoveValidatorArray value="DeathMachineNotEquipped"/>
         <Modification>
             <VitalRegenArray index="Energy" value="-0.25"/>
         </Modification>

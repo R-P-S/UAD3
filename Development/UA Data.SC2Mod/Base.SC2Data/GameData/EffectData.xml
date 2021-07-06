@@ -173,6 +173,42 @@
         <Player Value="Source"/>
         <Target Value="TargetUnitOrPoint"/>
     </CEffectIssueOrder>
+    <CEffectDamage id="DeathMachineAir" parent="TemplateShotgunDamage">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="5"/>
+        <Random value="0.5"/>
+        <AreaArray index="0" Radius="0.36" Fraction="1"/>
+        <AreaArray index="1" Radius="0.9" Fraction="0.4"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Ground,Psionic,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="DeathMachineBulletAir" parent="TemplateLaunchMissileRifle">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="DeathMachineAir"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="DeathMachineCPAir" parent="TemplateCreatePersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="DeathMachineBulletAir"/>
+        <ExpireDelay value="4"/>
+        <PeriodCount value="5"/>
+        <PeriodicValidator value="MineralsGE1"/>
+        <PeriodicEffectArray value="DeathMachineLaunchMissileBurstSetAir"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="DeathMachineFiringModeSwitch" parent="TemplateSwitch">
+        <CaseArray Validator="HasImprovedTimingMotor" Effect="DeathMachineImprovedTimingMotorSwitch"/>
+        <CaseDefault value="DeathMachineSwitch"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="DeathMachineImprovedTimingMotorSwitch" parent="TemplateSwitch">
+        <CaseArray Validator="TargetIsAir" Effect="DeathMachineCPAir"/>
+        <CaseDefault value="DeathMachineCP"/>
+    </CEffectSwitch>
+    <CEffectSet id="DeathMachineLaunchMissileBurstSetAir" parent="TemplateSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="DeathMachineBulletAir"/>
+        <EffectArray value="MineralCost1"/>
+        <EffectArray value="TitaniumBarrelFittingEnergyCost"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="EquipRocketLauncher">
         <EditorCategories value=""/>
     </CEffectApplyBehavior>
@@ -215,7 +251,7 @@
         <PeriodicEffectArray value="DeathMachineLaunchMissileBurstSet"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="DeathMachineImprovedTimingMotorSpreadCP" parent="TemplateCreatePersistent">
+    <CEffectCreatePersistent id="DeathMachineSpreadCP" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
         <Flags index="RandomOffset" value="1"/>
         <InitialEffect value="DeathMachineSpreadLaunchMissile"/>
@@ -234,7 +270,7 @@
         <PeriodicOffsetArray value="0,0,0"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="DeathMachineImprovedTimingMotorSpreadCPAirGTE35" parent="TemplateCreatePersistent">
+    <CEffectCreatePersistent id="DeathMachineSpreadCPAirGTE35" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
         <Flags index="RandomOffset" value="1"/>
         <InitialEffect value="DeathMachineSpreadLaunchMissileAir"/>
@@ -253,7 +289,7 @@
         <PeriodicOffsetArray value="0,0,0"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="DeathMachineImprovedTimingMotorSpreadCPAirLT35" parent="TemplateCreatePersistent">
+    <CEffectCreatePersistent id="DeathMachineSpreadCPAirLT35" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
         <Flags index="RandomOffset" value="1"/>
         <InitialEffect value="DeathMachineSpreadLaunchMissileAir"/>
@@ -272,12 +308,12 @@
         <PeriodicOffsetArray value="0,0,0"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectSwitch id="DeathMachineImprovedTimingMotorSwitch" parent="TemplateSwitch">
+    <CEffectSwitch id="DeathMachineSwitch" parent="TemplateSwitch">
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="TargetIsGroundLT35Away" Effect="DeathMachineCP"/>
-        <CaseArray Validator="TargetIsAirLT35Away" Effect="DeathMachineImprovedTimingMotorSpreadCPAirLT35"/>
-        <CaseArray Validator="TargetIsAirGTE35Away" Effect="DeathMachineImprovedTimingMotorSpreadCPAirGTE35"/>
-        <CaseDefault value="DeathMachineImprovedTimingMotorSpreadCP"/>
+        <CaseArray Validator="TargetIsAirLT35Away" Effect="DeathMachineSpreadCPAirLT35"/>
+        <CaseArray Validator="TargetIsAirGTE35Away" Effect="DeathMachineSpreadCPAirGTE35"/>
+        <CaseDefault value="DeathMachineSpreadCP"/>
         <TargetLocationType value="UnitOrPoint"/>
     </CEffectSwitch>
     <CEffectApplyBehavior id="DeathMachineItemAB">
@@ -431,99 +467,6 @@
         <EffectArray value="DeathMachineItemAB"/>
         <EffectArray value="WeaponSlotEquippedAB"/>
     </CEffectSet>
-    <CEffectCreatePersistent id="DeathMachineSpreadCP" parent="TemplateCreatePersistent">
-        <EditorCategories value="Race:Terran"/>
-        <Flags index="RandomOffset" value="1"/>
-        <InitialEffect value="DeathMachineSpreadLaunchMissile"/>
-        <ExpireDelay value="4"/>
-        <PeriodCount value="5"/>
-        <PeriodicValidator value="MineralsGE1"/>
-        <PeriodicEffectArray value="DeathMachineLaunchMissileSpreadBurstSet"/>
-        <PeriodicOffsetArray value="2,2,0"/>
-        <PeriodicOffsetArray value="-2,2,0"/>
-        <PeriodicOffsetArray value="2,-2,0"/>
-        <PeriodicOffsetArray value="-2,-2,0"/>
-        <PeriodicOffsetArray value="-1,1,0"/>
-        <PeriodicOffsetArray value="1,1,0"/>
-        <PeriodicOffsetArray value="-1,-1,0"/>
-        <PeriodicOffsetArray value="1,-1,0"/>
-        <PeriodicOffsetArray value="0,0,0"/>
-        <PeriodicOffsetArray value="2,-1,0"/>
-        <PeriodicOffsetArray value="2,1,0"/>
-        <PeriodicOffsetArray value="1,2,0"/>
-        <PeriodicOffsetArray value="-1,2,0"/>
-        <PeriodicOffsetArray value="1,-2,0"/>
-        <PeriodicOffsetArray value="-1,-2,0"/>
-        <PeriodicOffsetArray value="-2,1,0"/>
-        <PeriodicOffsetArray value="-2,-1,0"/>
-        <PeriodicOffsetArray value="1,0,0"/>
-        <PeriodicOffsetArray value="-1,0,0"/>
-        <PeriodicOffsetArray value="0,1,0"/>
-        <PeriodicOffsetArray value="0,-1,0"/>
-        <PeriodicPeriodArray value="0.0625"/>
-    </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="DeathMachineSpreadCPAirGTE35" parent="TemplateCreatePersistent">
-        <EditorCategories value="Race:Terran"/>
-        <Flags index="RandomOffset" value="1"/>
-        <InitialEffect value="DeathMachineSpreadLaunchMissileAir"/>
-        <ExpireDelay value="4"/>
-        <PeriodCount value="5"/>
-        <PeriodicValidator value="MineralsGE1"/>
-        <PeriodicEffectArray value="DeathMachineLaunchMissileSpreadBurstSetAir"/>
-        <PeriodicOffsetArray value="2.5,2.5,0"/>
-        <PeriodicOffsetArray value="-2.5,2.5,0"/>
-        <PeriodicOffsetArray value="2.5,-2.5,0"/>
-        <PeriodicOffsetArray value="-2.5,-2.5,0"/>
-        <PeriodicOffsetArray value="-1.25,1.25,0"/>
-        <PeriodicOffsetArray value="1.25,1.25,0"/>
-        <PeriodicOffsetArray value="-1.25,-1.25,0"/>
-        <PeriodicOffsetArray value="1.25,-1.25,0"/>
-        <PeriodicOffsetArray value="0,0,0"/>
-        <PeriodicOffsetArray value="2.5,-1.25,0"/>
-        <PeriodicOffsetArray value="2.5,1.25,0"/>
-        <PeriodicOffsetArray value="1.25,2.5,0"/>
-        <PeriodicOffsetArray value="-1.25,2.5,0"/>
-        <PeriodicOffsetArray value="1.25,-2.5,0"/>
-        <PeriodicOffsetArray value="-1.25,-2.5,0"/>
-        <PeriodicOffsetArray value="-2.5,1.25,0"/>
-        <PeriodicOffsetArray value="-2.5,-1.25,0"/>
-        <PeriodicOffsetArray value="1.25,0,0"/>
-        <PeriodicOffsetArray value="-1.25,0,0"/>
-        <PeriodicOffsetArray value="0,1.25,0"/>
-        <PeriodicOffsetArray value="0,-1.25,0"/>
-        <PeriodicPeriodArray value="0.0625"/>
-    </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="DeathMachineSpreadCPAirLT35" parent="TemplateCreatePersistent">
-        <EditorCategories value="Race:Terran"/>
-        <Flags index="RandomOffset" value="1"/>
-        <InitialEffect value="DeathMachineSpreadLaunchMissileAir"/>
-        <ExpireDelay value="4"/>
-        <PeriodCount value="5"/>
-        <PeriodicValidator value="MineralsGE1"/>
-        <PeriodicEffectArray value="DeathMachineLaunchMissileSpreadBurstSetAir"/>
-        <PeriodicOffsetArray value="2,2,0"/>
-        <PeriodicOffsetArray value="-2,2,0"/>
-        <PeriodicOffsetArray value="2,-2,0"/>
-        <PeriodicOffsetArray value="-2,-2,0"/>
-        <PeriodicOffsetArray value="-1,1,0"/>
-        <PeriodicOffsetArray value="1,1,0"/>
-        <PeriodicOffsetArray value="-1,-1,0"/>
-        <PeriodicOffsetArray value="1,-1,0"/>
-        <PeriodicOffsetArray value="0,0,0"/>
-        <PeriodicOffsetArray value="2,-1,0"/>
-        <PeriodicOffsetArray value="2,1,0"/>
-        <PeriodicOffsetArray value="1,2,0"/>
-        <PeriodicOffsetArray value="-1,2,0"/>
-        <PeriodicOffsetArray value="1,-2,0"/>
-        <PeriodicOffsetArray value="-1,-2,0"/>
-        <PeriodicOffsetArray value="-2,1,0"/>
-        <PeriodicOffsetArray value="-2,-1,0"/>
-        <PeriodicOffsetArray value="1,0,0"/>
-        <PeriodicOffsetArray value="-1,0,0"/>
-        <PeriodicOffsetArray value="0,1,0"/>
-        <PeriodicOffsetArray value="0,-1,0"/>
-        <PeriodicPeriodArray value="0.0625"/>
-    </CEffectCreatePersistent>
     <CEffectDamage id="DeathMachineSpreadDamage" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
         <Amount value="5"/>

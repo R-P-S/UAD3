@@ -196,7 +196,7 @@
             <Charge CountMax="350" CountStart="350"/>
         </Cost>
         <Period value="0.7"/>
-        <Effect value="DeathMachineImprovedTimingMotorSwitch"/>
+        <Effect value="DeathMachineFiringModeSwitch"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="XR42" parent="WeaponTemplate">
         <EditorCategories value="Race:Terran"/>
