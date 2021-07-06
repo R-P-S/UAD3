@@ -365,6 +365,23 @@
             <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
         </TerrainSquibs>
     </CActorUnit>
+    <CActorAction id="DeathMachineAttackAir" parent="WeaponAttackTemplate" effectImpact="DeathMachineAir" effectLaunch="DeathMachineBulletAir">
+        <LaunchSiteOps Ops="SOpAttachHarness LocalOffsetY018Z006"/>
+        <LaunchAssets Scale="1.500000" Sound="MinigunAttackLaunch"/>
+        <Beam value="DeathMachineAttackBeam"/>
+        <ImpactMap index="None" ModelReaction="CombatShotgunAttackImpactReaction"/>
+        <ImpactMap index="Dirt" ModelReaction=""/>
+        <ImpactMap index="Rock" ModelReaction=""/>
+        <ImpactMap index="Snow" ModelReaction=""/>
+        <ImpactMap index="Sand" ModelReaction=""/>
+        <ImpactMap index="Water" ModelReaction=""/>
+        <ImpactMap index="Flesh" ModelReaction=""/>
+        <ImpactMap index="LightArmor" ModelReaction=""/>
+        <ImpactMap index="Metal" ModelReaction=""/>
+        <ImpactMap index="Shield" ModelReaction="CombatShotgunAttackImpactReactionShield"/>
+        <DamageMap index="None" Model="CombatShotgunAttackDamage"/>
+        <DamageMap index="Flesh" Model=""/>
+    </CActorAction>
     <CActorModelMaterial id="GlazeYellowJacket" parent="GlazeParent">
         <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 0.150000 AsTimeScale"/>
         <On Terms="Behavior.GlazeYellowJacket.On" Send="Create"/>

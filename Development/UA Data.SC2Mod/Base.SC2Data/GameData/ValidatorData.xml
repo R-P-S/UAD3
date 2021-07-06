@@ -42,6 +42,11 @@
         <Find value="1"/>
         <Value value="AntiVeninSUPrioritization"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareDamageTakenTime id="CasterLastDamaged5Seconds">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="5"/>
+    </CValidatorUnitCompareDamageTakenTime>
     <CValidatorUnitCompareBehaviorCount id="DeathMachineNotEquipped">
         <WhichUnit Value="Caster"/>
         <Behavior value="DeathMachine"/>
