@@ -10420,6 +10420,7 @@ Validator/Name/CasterIsSquadLeader=Caster Is Squad Leader
 Validator/Name/CasterIsUserComputer=Caster Is User Computer
 Validator/Name/CasterLastAttacked3Seconds=Caster Last Attacked 3 Seconds
 Validator/Name/CasterLastDamaged3Seconds=Caster Last Damaged 3 Seconds
+Validator/Name/CasterLastDamaged5Seconds=Caster Last Damaged 5 Seconds
 Validator/Name/CasterLifeOrEnergyNotFull=Caster Life Or Energy Not Full
 Validator/Name/CasterNotIssuedOrderJump=Caster Not Issued Order Jump 
 Validator/Name/CasterNotIssuedOrderMove=Caster Not Issued Order Move
