@@ -1273,7 +1273,6 @@
         <EditorCategories value="Race:Terran"/>
         <Behavior value="HeatSignature"/>
         <WhichUnit Value="Caster"/>
-        <ValidatorArray index="0" value="CasterIsGhost"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="HeatSignatureIPRAB">
         <EditorCategories value="Race:Terran"/>

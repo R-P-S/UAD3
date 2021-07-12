@@ -698,6 +698,7 @@
         <MaxStackCount value="100"/>
         <StackAlias value="HeatSig"/>
         <InfoFlags index="Hidden" value="1"/>
+        <RemoveValidatorArray value="CasterIsGhost"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="HeatSignatureDissapate">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
