@@ -77,6 +77,8 @@
             <LayoutButtons Face="PerformSelfAidSecondNature" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research4" Row="2" Column="3"/>
             <LayoutButtons Face="HeatSensorPotency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research9" Row="0" Column="2"/>
             <LayoutButtons Face="HeatSensorLightFilter" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research8" Row="1" Column="2"/>
+            <LayoutButtons Face="LaserDesignatorWeakPointTargeting" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research10" Row="0" Column="1"/>
+            <LayoutButtons Face="LaserDesignatorLongevity" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research11" Row="1" Column="1"/>
         </CardLayouts>
     </CUnit>
 </Catalog>
