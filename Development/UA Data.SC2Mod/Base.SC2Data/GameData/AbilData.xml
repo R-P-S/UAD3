@@ -1405,6 +1405,12 @@
         <InfoArray index="Research9" Upgrade="HeatSensorPotency">
             <Button DefaultButtonFace="HeatSensorPotency" Requirements="HeatSensorPotency"/>
         </InfoArray>
+        <InfoArray index="Research10" Upgrade="LaserDesignatorWeakPointTargeting">
+            <Button DefaultButtonFace="LaserDesignatorWeakPointTargeting"/>
+        </InfoArray>
+        <InfoArray index="Research11" Upgrade="LaserDesignatorLongevity">
+            <Button DefaultButtonFace="LaserDesignatorLongevity"/>
+        </InfoArray>
         <DefaultButtonCardId value="0004"/>
     </CAbilResearch>
     <CAbilInventory id="HeroInventoryMinigunNew">

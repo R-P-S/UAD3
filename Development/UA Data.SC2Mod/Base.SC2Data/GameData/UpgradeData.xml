@@ -3110,12 +3110,14 @@
         <Icon value="Assets\Custom Icons\btn-upgrade-terran-lazertargetingsystem.dds"/>
         <EffectArray Reference="Behavior,LaserDesignator,Duration" Value="20.000000"/>
         <EffectArray Reference="Abil,LaserDesignatorCAV,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Abil,LaserDesignatorGhost,Cost[0].Vital[Energy]" Value="5"/>
     </CUpgrade>
     <CUpgrade id="LaserDesignatorWeakPointTargeting" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Custom Icons\btn-upgrade-terran-lazertargetingsystem.dds"/>
         <EffectArray Reference="Behavior,LaserDesignator,DamageResponse.ModifyFraction" Value="0.03"/>
         <EffectArray Reference="Abil,LaserDesignatorCAV,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Abil,LaserDesignatorGhost,Cost[0].Vital[Energy]" Value="5"/>
     </CUpgrade>
     <CUpgrade id="Leadership1" parent="Research">
         <Icon value="Buttons\Abilities\BTNLeadership.dds"/>

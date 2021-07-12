@@ -275,7 +275,7 @@ Abil/Name/LaserDesignator=Laser Designator
 Abil/Name/LaserDesignator2=Laser Designator
 Abil/Name/LaserDesignatorCAV=Laser Designator
 Abil/Name/LaserDesignatorFSS=Laser Designator FSS
-Abil/Name/LaserDesignatorGhost=Laser Designator 
+Abil/Name/LaserDesignatorGhost=Laser Designator
 Abil/Name/LaserDesignatorOSS=Laser Designator
 Abil/Name/LaserEnforcerSkills=Laser Enforcer Skills
 Abil/Name/Leap=Leap
@@ -2377,7 +2377,7 @@ Button/Tooltip/Dilophosaur=Bulky acid spitting creature that inflicts partial bl
 Button/Tooltip/Disarm=Disarms mines, converting them to a portable item form.
 Button/Tooltip/DisruptorDrone=Disruptor drones utilize flash and sonic pulse to slow and stun targets.
 Button/Tooltip/DisruptorRounds=Disruptor rounds cause the target to take 0.25% additional damage. Disruptor rounds can stack up to <d ref="Behavior,DisruptorRoundsTarget,MaxStackCount"/> times and last for <d ref="Behavior,DisruptorRoundsTarget,Duration"/> seconds, but have their duration refreshed every time a new stack is applied. Costs 1 energy per shot. Cannot be active at the same time as cryo rounds.
-Button/Tooltip/DisruptorRoundsTarget=Disruptor rounds cause the target to take 0.25% additional damage. Disruptor rounds can stack up to <d ref="Behavior,DisruptorRoundsTarget,MaxStackCount"/> times and last for 1.5 seconds, but have their duration refreshed every time a new stack is applied.
+Button/Tooltip/DisruptorRoundsTarget=Disruptor rounds cause the target to take 0.25% additional damage. Disruptor rounds can stack up to <d ref="Behavior,DisruptorRoundsTarget,MaxStackCount"/> times and last for 1.5 seconds, but have their duration refreshed every time a new stack is applied.<n/><n/>Stacks: <d ref="$BehaviorStackCount:DisruptorRoundsTarget$"/>
 Button/Tooltip/DrJashan=Male Civilian.
 Button/Tooltip/Drake=Mutated insect with the ability to send electrical pulses with its bite and hover over land with its gliding fins.
 Button/Tooltip/DropMagazine=Drops magazines into your inventory.
