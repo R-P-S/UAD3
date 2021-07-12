@@ -3828,6 +3828,7 @@
         <Icon value="BTNMeleeAttack.dds"/>
         <AlertIcon value="BTNMeleeAttack.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <TooltipAppender Validator="CasterIsGhost" Text="Ghost/RifleButt"/>
     </CButton>
     <CButton id="Rifleman" parent="TemplateButton">
         <Icon value="Buttons/BTNSoldier.dds"/>

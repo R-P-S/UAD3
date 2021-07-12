@@ -312,6 +312,10 @@ void lib90F7C81D_InitVariables () {
     for (init_i = 0; init_i <= 12; init_i += 1) {
         lib90F7C81D_gv_visorTextTimer[init_i] = TimerCreate();
     }
+    for (init_i1 = 0; init_i1 <= 3; init_i1 += 1) {
+        lib90F7C81D_gv_spinner.lv_label[init_i1] = c_invalidDialogControlId;
+    }
+    lib90F7C81D_gv_spinner.lv_frame = c_invalidDialogControlId;
     lib90F7C81D_gv_timeOfDay.lv_timeOfDayLabel = c_invalidDialogControlId;
     lib90F7C81D_gv_timeOfDay.lv_currentLighting = "UADDay";
     lib90F7C81D_gv_tipPanel.lv_tipDragPanel = c_invalidDialogControlId;
@@ -4175,7 +4179,7 @@ int lib90F7C81D_gf_GetModifier () {
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_unix_start = 1622354400;
+    lv_unix_start = 1622332800;
     lv_unix_cur = DateTimeToInt(lib90F7C81D_gv_weeklyModifier.lv_date_Time);
     lv_unix_diff = (lv_unix_cur - lv_unix_start);
     lv_week = (lv_unix_diff / 604800);
@@ -6584,6 +6588,8 @@ void lib90F7C81D_gf_InitializeUIItems () {
     const int auto2F3B153C_ai = 1;
     const int autoE5840DAF_ae = 3;
     const int autoE5840DAF_ai = 1;
+    const int autoCC7EE917_ae = 3;
+    const int autoCC7EE917_ai = 1;
 
     // Variable Initialization
     lv_int = 1;
@@ -6996,6 +7002,15 @@ void lib90F7C81D_gf_InitializeUIItems () {
     for ( ; ( (autoE5840DAF_ai >= 0 && lv_index <= autoE5840DAF_ae) || (autoE5840DAF_ai < 0 && lv_index >= autoE5840DAF_ae) ) ; lv_index += autoE5840DAF_ai ) {
         DialogControlAddDataPoint(lib90F7C81D_gv_graph.lv_frame, PlayerGroupAll(), GameGetMissionTime(), 0.0, (lv_i + 1));
     }
+    DialogControlHookupStandard(c_triggerControlTypePanel, "$Spinner");
+    lib90F7C81D_gv_spinner.lv_frame = DialogControlLastCreated();
+    lv_i = 0;
+    for ( ; ( (autoCC7EE917_ai >= 0 && lv_i <= autoCC7EE917_ae) || (autoCC7EE917_ai < 0 && lv_i >= autoCC7EE917_ae) ) ; lv_i += autoCC7EE917_ai ) {
+        DialogControlHookup(lib90F7C81D_gv_spinner.lv_frame, c_triggerControlTypeLabel, "Label" + IntToString(lv_i));
+        lib90F7C81D_gv_spinner.lv_label[lv_i] = DialogControlLastCreated();
+    }
+    lib90F7C81D_gf_SetSpinnerMinimum(1, PlayerGroupAll());
+    lib90F7C81D_gf_SetSpinnerMaximum(3, PlayerGroupAll());
 }
 
 void lib90F7C81D_gf_InitializeMovieFrame (string lp_path, structref<lib90F7C81D_gs_Movie_Player> lp_dialogItem) {
@@ -7412,6 +7427,36 @@ bool auto_lib90F7C81D_gf_FadeVisorTextDialog_TriggerFunc (bool testConds, bool r
     // Implementation
     DialogControlFadeTransparency(lib90F7C81D_gv_visorText[lp_player], PlayerGroupSingle(lp_player), 0.0625, 100.0);
     return true;
+}
+
+void lib90F7C81D_gf_SetSpinnerMaximum (int lp_amount, playergroup lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_spinner.lv_label[0], IntToText(lp_amount), lp_player);
+}
+
+void lib90F7C81D_gf_SetSpinnerMinimum (int lp_amount, playergroup lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_spinner.lv_label[1], IntToText(lp_amount), lp_player);
+}
+
+void lib90F7C81D_gf_SetSpinnerMajorStep (int lp_amount, playergroup lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_spinner.lv_label[2], IntToText(lp_amount), lp_player);
+}
+
+void lib90F7C81D_gf_SetSpinnerMinorStep (int lp_amount, playergroup lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemText(lib90F7C81D_gv_spinner.lv_label[3], IntToText(lp_amount), lp_player);
+}
+
+void lib90F7C81D_gf_ResetSpinner (playergroup lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    DialogControlSendAnimationEvent(lib90F7C81D_gv_spinner.lv_frame, lp_player, "Reset");
 }
 
 trigger auto_lib90F7C81D_gf_CreateTextTagWithAnimation_Trigger = null;

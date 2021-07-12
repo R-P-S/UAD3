@@ -2920,7 +2920,7 @@ Button/Tooltip/RepairQuickFix=Increases the rate of repair by 10%, but increases
 Button/Tooltip/ResearchData=
 Button/Tooltip/Revive=Revives a nearby dead soldier.<n/>Level 1: 7 second delay - Energy cost 180<n/>Level 2: 6 second delay - Energy cost 120<n/>Level 3: 5 second delay - Energy cost 100<n/>
 Button/Tooltip/ReviveNew=Channels revive, reducing the revive timer on a deceased friendly soldier by 1 second every <d ref= "Effect,ReviveCreatePersist,PeriodicPeriodArray[0]" precision="1"/> second(s). Drains <d ref= "Effect,ReviveEnergySubtract,VitalArray.Change[0] * (-1)" precision ="1"/> energy per second reduced on the target's revive timer.
-Button/Tooltip/RifleButt=Knocks back nearby tier 3 ground units and deals <d ref="Effect,RifleButtDamageNew,Amount"/> damage. <n/>Will raise Ghosts heat signature by 1 when used<n/><n/><c val="6A006A">Tier 3 units always use zerg weapons & armor level 0 for their weapon/armor buttons. A unit is not considered ground if it can cliff walk.</c>
+Button/Tooltip/RifleButt=Knocks back nearby tier 3 ground units and deals <d ref="Effect,RifleButtDamageNew,Amount"/> damage.<n/><n/><c val="6A006A">Tier 3 units always use zerg weapons & armor level 0 for their weapon/armor buttons. A unit is not considered ground if it can cliff walk.</c>
 Button/Tooltip/RifleMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and grants a 10% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16%, critical chance by 2.5%, and raises critical multiplier to 2.5x
 Button/Tooltip/Rifleman=MOS: 11B (Infantry) Role: Rifleman<n/>The infantry rifleman is a versatile soldier on the battlefield. His duties range from simple security to basic reconnaissance.<n/>Abilities:<n/>-Soldier Skills<n/>-Marksmanship<n/>-Frag Grenade<n/>-Support Grenades<n/>-Focus Fire
 Button/Tooltip/RiflemanGroundFlare=Throws a ground flare at the target point, revealing the area and providing a light source for 4 minutes.
@@ -5830,6 +5830,7 @@ FullAuto/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 FullAuto/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 FullAuto/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
 Genesis/OuterArmor=Outer Armor
+Ghost/RifleButt= <n/><n/><c val="FFFF8A">Heat signature will increase by 1 when used
 Good luck, soldier!=
 HERocket/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 HERocket/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2

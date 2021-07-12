@@ -3,6 +3,7 @@
     <Include path="UI/Layout/StandardUADTemplates.SC2Layout"/>
     <Include path="UI/Layout/Status.SC2Layout"/>
     <Include path="UI/Layout/SandBox.SC2Layout"/>
+    <Include path="UI/Layout/SpinnerTemplate.SC2Layout"/>
     <Include path="UI/Layout/AchievementTemplates.SC2Layout"/>
     <Include path="UI/Layout/DebugTemplate.SC2Layout"/>
     <Include path="UI/Layout/PlayerUpgradesTemplate.SC2Layout"/>
@@ -72,4 +73,11 @@
     <Include path="UI/Layout/Dialogue.SC2Layout"/>
     <Include path="UI/Layout/FrameRates.SC2Layout"/>
 <!--<Include path="UI/Layout/BankUtility.SC2Layout" requiredtoload="IS_DEBUG_PANEL_ENABLED"/>/>-->
+    <Include path="UI/Layout/Console_Skins/Template_Main.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_Alliance.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_ArcadeCabinet.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_Horde.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_Imperial.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_Scourge.SC2Layout"/>
+    <Include path="UI/Layout/Console_Skins/Template_Sentinels.SC2Layout"/>
 </Desc>

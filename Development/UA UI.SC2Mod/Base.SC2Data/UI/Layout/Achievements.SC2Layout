@@ -691,6 +691,20 @@
                   <Text val="Medals &amp; Ribbons" />
                </Frame>
                <!-- Medal Page Spinner -->
+               <Frame type="Frame" name="SpinnerContainer">
+                  <Anchor side="Top" relative="$parent/Background" pos="Min" offset="300" />
+                  <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-125" />
+                  <Width val="120"/>
+                  <Height val="48"/>
+                  <Frame type="Spinner" name="Spinner" template="SpinnerTemplate/SpinnerTemplate">
+                     <Anchor relative="$parent"/>
+                     <Handle val="Spinner"/>
+                     <Frame type="Label" name="StandardGlueSpinnerLabel">
+                        <Handle val="SpinnerLabel"/>
+                     </Frame>  
+                  </Frame> 
+               </Frame>
+               <!-- 
                <Frame type="Button" name="ButtonPrev" template="StandardUADTemplates/PageButtonTemplate">
                   <Anchor side="Top" relative="$parent/Background" pos="Min" offset="250" />
                   <Anchor side="Left" relative="$parent/Background" pos="Min" offset="-60" />
@@ -710,8 +724,8 @@
                         <When type="Property" Pushed="False" />
                      </State>
                   </StateGroup>
-               </Frame>
-               <!-- Medal Page Spinner -->
+               </Frame> -->
+               <!-- Medal Page Spinner 
                <Frame type="Button" name="ButtonNext" template="StandardUADTemplates/PageButtonTemplate">
                   <Anchor side="Top" relative="$parent/ButtonPrev" pos="Min" offset="80" />
                   <Anchor side="Left" relative="$parent/ButtonPrev" pos="Min" offset="0" />
@@ -737,14 +751,16 @@
                         <When type="Property" Pushed="False" />
                      </State>
                   </StateGroup>
-               </Frame>
+               </Frame> -->
                <!-- Medal Page Spinner Label -->
                <Frame type="Label" name="PageNum" template="AchievementTemplates/CDLabelTemplate">
-                  <Anchor side="Top" relative="$parent/ButtonPrev" pos="Min" offset="65" />
-                  <Anchor side="Left" relative="$parent/ButtonPrev" pos="Min" offset="16" />
+                  <Anchor side="Top" relative="$parent/SpinnerContainer" pos="Min" offset="65" />
+                  <Anchor side="Left" relative="$parent/SpinnerContainer" pos="Min" offset="16" />
                   <Width val="25" />
                   <Height val="25" />
-                  <Text val="1" />
+                  <Text val="{$SpinnerLabel/@Text}" />
+                  <Visible val="False" />
+                  <!--
                   <StateGroup name="PageState">
                      <DefaultState val="Page1" />
                      <State name="Page1" />
@@ -766,7 +782,7 @@
                         <Action type="SetProperty" Text="3" />
                         <Action type="SetProperty" frame="$parent/ButtonPrev" Enabled="False" />
                      </State>
-                  </StateGroup>
+                  </StateGroup> -->
                </Frame>
                <!-- Medals Background Addition -->
                <Frame type="Frame" name="Background">

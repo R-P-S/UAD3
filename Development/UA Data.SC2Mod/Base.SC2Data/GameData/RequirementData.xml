@@ -75,6 +75,16 @@
         <NodeArray index="Use" Link="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeHeatSensorLightFilterCompleteOnly0"/>
         <NodeArray index="Show" Link="EqCountUpgradeHeatSensorPotencyCompleteOnly0"/>
     </CRequirement>
+    <CRequirement id="LaserDesignatorLongevityGhost">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLaserDesignatorLongevityCompleteOnly0"/>
+    </CRequirement>
+    <CRequirement id="LaserDesignatorWeakPointTargetingGhost">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0"/>
+    </CRequirement>
     <CRequirement id="LightFilterGhostShowClassicCard">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Use" Link="Eq3285440711CountUpgradeHeatSensorLightFilterCompleteOnly1"/>

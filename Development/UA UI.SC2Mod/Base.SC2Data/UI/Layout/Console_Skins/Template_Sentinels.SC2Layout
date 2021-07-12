@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" file="ConsoleSkin_Sentinels">
+    <StateGroup name="DisplayState">
+      <State name="Terran_Sentinels">
+        <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Sentinels" />
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

@@ -1406,10 +1406,10 @@
             <Button DefaultButtonFace="HeatSensorPotency" Requirements="HeatSensorPotency"/>
         </InfoArray>
         <InfoArray index="Research10" Upgrade="LaserDesignatorWeakPointTargeting">
-            <Button DefaultButtonFace="LaserDesignatorWeakPointTargeting"/>
+            <Button DefaultButtonFace="LaserDesignatorWeakPointTargeting" Requirements="LaserDesignatorWeakPointTargetingGhost"/>
         </InfoArray>
         <InfoArray index="Research11" Upgrade="LaserDesignatorLongevity">
-            <Button DefaultButtonFace="LaserDesignatorLongevity"/>
+            <Button DefaultButtonFace="LaserDesignatorLongevity" Requirements="LaserDesignatorLongevityGhost"/>
         </InfoArray>
         <DefaultButtonCardId value="0004"/>
     </CAbilResearch>

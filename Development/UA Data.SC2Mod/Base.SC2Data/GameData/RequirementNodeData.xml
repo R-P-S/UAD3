@@ -1151,6 +1151,16 @@
         <OperandArray value="GTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeHeatSensorPotencyCompleteOnly0"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="GTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="GTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndGTE3450494117CountUpgradeMonomolecularWire1CompleteOnly1Eq2953232113CountUpgradeMonomolecularWireStunningBlowCompleteOnly0">
         <OperandArray value="GTE3450494117CountUpgradeMonomolecularWire1CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeMonomolecularWireStunningBlowCompleteOnly0"/>

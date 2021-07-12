@@ -369,6 +369,11 @@ struct lib90F7C81D_gs_Movie_Player {
     bool lv_movie_Playing;
 };
 
+struct lib90F7C81D_gs_Spinner {
+    int[4] lv_label;
+    int lv_frame;
+};
+
 struct lib90F7C81D_gs_TimeOfDay {
     int lv_timeOfDayLabel;
     string lv_currentLighting;
@@ -573,6 +578,7 @@ int lib90F7C81D_gv_uIicon;
 int lib90F7C81D_gv_visorTextDialog;
 int[13] lib90F7C81D_gv_visorText;
 timer[13] lib90F7C81D_gv_visorTextTimer;
+lib90F7C81D_gs_Spinner lib90F7C81D_gv_spinner;
 lib90F7C81D_gs_TimeOfDay lib90F7C81D_gv_timeOfDay;
 lib90F7C81D_gs_TipPanel lib90F7C81D_gv_tipPanel;
 lib90F7C81D_gs_HeroPanel lib90F7C81D_gv_heroPanel;
@@ -810,6 +816,11 @@ void lib90F7C81D_gf_EnableDisablePingPanel (bool lp_enableDisable, playergroup l
 void lib90F7C81D_gf_CreateVisorTextDialog ();
 void lib90F7C81D_gf_DisplayVisorTextDialog (text lp_text, int lp_player);
 void lib90F7C81D_gf_FadeVisorTextDialog (int lp_player);
+void lib90F7C81D_gf_SetSpinnerMaximum (int lp_amount, playergroup lp_player);
+void lib90F7C81D_gf_SetSpinnerMinimum (int lp_amount, playergroup lp_player);
+void lib90F7C81D_gf_SetSpinnerMajorStep (int lp_amount, playergroup lp_player);
+void lib90F7C81D_gf_SetSpinnerMinorStep (int lp_amount, playergroup lp_player);
+void lib90F7C81D_gf_ResetSpinner (playergroup lp_player);
 void lib90F7C81D_gf_CreateTextTagWithAnimation (unit lp_displayUnit, string lp_displayText, string lp_style, int lp_direction, playergroup lp_displayPlayers, string lp_attachment, fixed lp_time, int lp_yOffset, bool lp_critical);
 void lib90F7C81D_gf_CreateTextTagForAllPlayers (unit lp_unit, text lp_text);
 void lib90F7C81D_gf_FloatingCombatTextApplyAnimation (int lp_textFrame, string lp_style, playergroup lp_displayPlayers);

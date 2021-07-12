@@ -5185,8 +5185,10 @@ Requirement/EditorPrefix/JavelinMissileLaserGuidance=SU -
 Requirement/EditorPrefix/JavelinSkillsSafeEmissions=SU -
 Requirement/EditorPrefix/JavelinSkillsSwiftLaunch=SU -
 Requirement/EditorPrefix/LaserDesignatorLongevity=SU -
+Requirement/EditorPrefix/LaserDesignatorLongevityGhost=SU -
 Requirement/EditorPrefix/LaserDesignatorPotency=SU -
 Requirement/EditorPrefix/LaserDesignatorWeakPointTargeting=SU -
+Requirement/EditorPrefix/LaserDesignatorWeakPointTargetingGhost=SU -
 Requirement/EditorPrefix/LightFilterHeatSensor=SU -
 Requirement/EditorPrefix/LightFilterPotency=SU -
 Requirement/EditorPrefix/MarksmanshipSniper=SU -
@@ -5294,7 +5296,9 @@ Requirement/EditorSuffix/GroundFlarePotencySDM=- SDM
 Requirement/EditorSuffix/HeatSensorShowCC=Classic Card
 Requirement/EditorSuffix/HeatSensorShowCC2=Custom Card
 Requirement/EditorSuffix/LaserDesignatorAbilityGhost=(Ghost)
+Requirement/EditorSuffix/LaserDesignatorLongevityGhost=(Ghost)
 Requirement/EditorSuffix/LaserDesignatorUseGhost=(Ghost)
+Requirement/EditorSuffix/LaserDesignatorWeakPointTargetingGhost=(Ghost)
 Requirement/EditorSuffix/LightFilterShowCC=Classic Card
 Requirement/EditorSuffix/LightFilterShowCC2=Custom Card
 Requirement/EditorSuffix/LightSensorShowClassicCard=Classic Card
@@ -5724,9 +5728,11 @@ Requirement/Name/LaserBurnLearn=Laser Burn Learn
 Requirement/Name/LaserDesignatorAbility=Laser Designator Ability
 Requirement/Name/LaserDesignatorAbilityGhost=Laser Designator Ability 
 Requirement/Name/LaserDesignatorLongevity=Laser Designator: Longevity
+Requirement/Name/LaserDesignatorLongevityGhost=Laser Designator: Longevity
 Requirement/Name/LaserDesignatorUse=Laser Designator Use
 Requirement/Name/LaserDesignatorUseGhost=Laser Designator Use
 Requirement/Name/LaserDesignatorWeakPointTargeting=Laser Designator: Weak Point Targeting
+Requirement/Name/LaserDesignatorWeakPointTargetingGhost=Laser Designator: Weak Point Targeting
 Requirement/Name/LaserEnforcerSkills1=Laser Enforcer Skills 1
 Requirement/Name/LaserEnforcerSkills2=Laser Enforcer Skills 2
 Requirement/Name/LaserEnforcerSkills3=Laser Enforcer Skills 3
@@ -6497,6 +6503,8 @@ RequirementNode/Name/AndGTE3181245084CountUpgradeStingerMissile1CompleteOnly1Eq2
 RequirementNode/Name/AndGTE3181245084CountUpgradeStingerMissile1CompleteOnly1Eq2953232113CountUpgradeStingerMissileEnhancedTrackingCompleteOnly0=CountUpgrade(StingerMissile1,CompleteOnly) >= {Stinger Missile 1}1 && CountUpgrade(StingerMissileEnhancedTracking,CompleteOnly) == {1 Skill Upgrade per Ability}0
 RequirementNode/Name/AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeHeatSensorLightFilterCompleteOnly0=CountUpgrade(InfiltratorLevel3,CompleteOnly) >= {Infiltrator 3}1 && CountUpgrade(HeatSensorLightFilter,CompleteOnly) == {1 Skill Upgrade per Ability}0
 RequirementNode/Name/AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeHeatSensorPotencyCompleteOnly0=CountUpgrade(InfiltratorLevel3,CompleteOnly) >= {Infiltrator 3}1 && CountUpgrade(HeatSensorPotency,CompleteOnly) == {1 Skill Upgrade per Ability}0
+RequirementNode/Name/AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0=CountUpgrade(InfiltratorLevel3,CompleteOnly) >= {Infiltrator 3}1 && CountUpgrade(LaserDesignatorLongevity,CompleteOnly) == {1 Skill Upgrade per Ability}0
+RequirementNode/Name/AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0=CountUpgrade(InfiltratorLevel3,CompleteOnly) >= {Infiltrator 3}1 && CountUpgrade(LaserDesignatorWeakPointTargeting,CompleteOnly) == {1 Skill Upgrade per Ability}0
 RequirementNode/Name/AndGTE3447350149CountAbilSecurityCompleteOnlyAtUnit2OrAndEq981512461CountAbilSJHyperionBansheesQueuedOrBetter0LT223606906CountAbilSecurityCompleteOnlyAtUnit4AndLTE1461848182CountUnitM1SentryGunQueuedOrBetter1GTE473313262CountAbilSecurityCompleteOnlyAtUnit4=CountAbil(Security,CompleteOnlyAtUnit) >= {Security Level 2}2 && ((CountAbil(SJHyperionBanshees,QueuedOrBetter) == {Max 1 Sentry Gun}0 && CountAbil(Security,CompleteOnlyAtUnit) < {Security Level 1-3}4) || (CountUnit(M1SentryGun,QueuedOrBetter) <= {Max 2 Sentry Guns}1 && CountAbil(Security,CompleteOnlyAtUnit) >= {Security Level 4}4))
 RequirementNode/Name/AndGTE3447350149CountAbilSecurityCompleteOnlyAtUnit2OrAndEq981512461CountBehaviorClassIIIHemmorrhagingQueuedOrBetter0LT223606906CountAbilSecurityCompleteOnlyAtUnit4AndLTE1461848182CountUnitM1SentryGunQueuedOrBetter1GTE473313262CountAbilSecurityCompleteOnlyAtUnit4=CountAbil(Security,CompleteOnlyAtUnit) >= {Security Level 2}2 && ((CountBehavior(ClassIIIHemmorrhaging,QueuedOrBetter) == {Max 1 Sentry Gun}0 && CountAbil(Security,CompleteOnlyAtUnit) < {Security Level 1-3}4) || (CountUnit(M1SentryGun,QueuedOrBetter) <= {Max 2 Sentry Guns}1 && CountAbil(Security,CompleteOnlyAtUnit) >= {Security Level 4}4))
 RequirementNode/Name/AndGTE3450494117CountUpgradeMonomolecularWire1CompleteOnly1Eq2953232113CountUpgradeMonomolecularWireStunningBlowCompleteOnly0=CountUpgrade(MonomolecularWire1,CompleteOnly) >= {Monomolecular Wire 1}1 && CountUpgrade(MonomolecularWireStunningBlow,CompleteOnly) == {1 Skill Upgrade per Ability}0

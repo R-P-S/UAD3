@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" file="ConsoleSkin_Template">
+    <!-- Info Panel -->
+    <Frame type="Frame" name="InfoPanelImageContainer">
+      <Visible val="False" />
+    </Frame>
+    <!-- Minimap Panel -->
+    <Frame type="Frame" name="MinimapPanelImageContainer">
+      <Visible val="False" />
+    </Frame>
+    <!-- Command Panel -->
+    <Frame type="Frame" name="CommandPanelImageContainer">
+      <Visible val="False" />
+    </Frame>
+  </Frame>
+</Desc>

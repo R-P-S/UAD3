@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" file="ConsoleSkin_Scourge">
+    <StateGroup name="DisplayState">
+      <State name="Terran_Scourge">
+        <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Scourge" />
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" file="ConsoleSkin_Imperial">
+    <StateGroup name="DisplayState">
+      <State name="Terran_Imperial">
+        <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Imperial" />
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

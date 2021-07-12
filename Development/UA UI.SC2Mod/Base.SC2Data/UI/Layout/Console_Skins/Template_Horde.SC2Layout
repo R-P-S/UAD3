@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" file="ConsoleSkin_Horde">
+    <StateGroup name="DisplayState">
+      <State name="Terran_Horde">
+        <When type="Property" frame="$ConsolePanel" CurrentConsoleSkin="ConsoleTerran_Horde" />
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

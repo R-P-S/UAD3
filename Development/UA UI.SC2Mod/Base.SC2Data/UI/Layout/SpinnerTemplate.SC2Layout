@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>    
+    <!-- Spinner Template -->
+    <Frame type="Spinner" name="SpinnerTemplate" template="TeamResourcePanel/TeamResourceSpinnerTemplate">
+        <Anchor relative="$parent"/>
+        <Maximum val="{Label0/@Text}"/>
+        <Minimum val="{Label1/@Text}"/>
+        <MajorStep val="{Label2/@Text}"/>
+        <MinorStep val="{Label3/@Text}"/>
+        <Value val="0"/>
+        <!-- Maximum -->
+        <Frame type="Label" name="Label0">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+            <Text val="100"/>
+        </Frame>
+        <!-- Minimum -->
+        <Frame type="Label" name="Label1">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+            <Text val="0"/>
+        </Frame>
+        <!-- Major Step -->
+        <Frame type="Label" name="Label2">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+            <Text val="2"/>
+        </Frame>
+         <!-- Minor Step -->
+        <Frame type="Label" name="Label3">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+            <Text val="1"/>
+        </Frame>
+        <Animation name="ResetSpinner">
+            <Event event="Reset" action="Reset,Play"/>
+            <Controller type="Property" frame="$this" property="Value" end="Pause">
+                <Key type="Property" time="0" value="0"/>
+            </Controller>
+        </Animation>
+    </Frame>
+</Desc>
