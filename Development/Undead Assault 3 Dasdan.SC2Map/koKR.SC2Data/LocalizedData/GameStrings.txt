@@ -1,0 +1,1143 @@
+﻿Attribute001/Name=Key1
+Attribute001/Value001/Name=
+Attribute002/Desc=Choose your MOS Preference. (Does not actually pick it for you)
+Attribute002/Name=MOS Preference
+Attribute002/Value001/Desc=I will pick later in-game and fill a role that will significantly help my team.
+Attribute002/Value001/Name=Fill
+Attribute002/Value002/Desc=Unlocked by default.
+Attribute002/Value002/Name=Rifleman
+Attribute002/Value003/Desc=Unlocked by default.
+Attribute002/Value003/Name=Combat Medic
+Attribute002/Value004/Desc=Requires PV2 (500 Experience).
+Attribute002/Value004/Name=Automatic Rifleman
+Attribute002/Value005/Desc=Requires SPC (2,000 Experience).
+Attribute002/Value005/Name=SFAAT
+Attribute002/Value006/Desc=Requires PFC (1,100 Experience).
+Attribute002/Value006/Name=Cavalry Scout
+Attribute002/Value007/Desc=Requires CPL (3,200 Experience).
+Attribute002/Value007/Name=Javelin Gunner
+Attribute002/Value008/Desc=Requires SGT (5,000 Experience).
+Attribute002/Value008/Name=Squad Designated Marksman
+Attribute002/Value009/Desc=Requires SSG (8,000 Experience).
+Attribute002/Value009/Name=Platoon Leader
+Attribute002/Value010/Desc=Requires SFC (13,000 Experience).
+Attribute002/Value010/Name=Flamethrower
+Attribute002/Value011/Desc=Requires 1SG (30,000 Experience).
+Attribute002/Value011/Name=Cyborg
+Attribute002/Value012/Desc=Requires MSG (20,000 Experience).
+Attribute002/Value012/Name=Combat Engineer
+Attribute003/Desc=Select game mode type.
+Attribute003/Name=Game Type
+Attribute003/Value001/Desc=Test out different MOS units or spawn zombie units to put your skills to the test.
+Attribute003/Value001/Name=Sandbox
+Attribute003/Value002/Desc=Campaign & Survival Modes
+Attribute003/Value002/Name=Standard
+Attribute003/Value003/Desc=It's you versus everyone else in this fun PVP mode.  Will you step over the corpses of your enemies to victory or fade away to nothing?
+Attribute003/Value003/Name=Deathmatch
+Attribute004/Name=Key2
+Attribute004/Value001/Name=
+Attribute005/Name=Key3
+Attribute005/Value001/Name=
+Button/ChargeText=<d Score="LearnSkillsCurrent" Player="current"/>
+Button/Tooltip/Zombie2=Basic undead unit. Can rise shortly after dying.
+DOCSTR_ATRocket=<c val="FFFF8A">AT Rocket</c></n>Fires an AT rocket at the target point, dealing <d ref="Effect,ATRocketDamage,Amount"/> in a small area.<n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c><n/><n/><c val="FFFF8A">Level 1:</c> Enables the ability<n/><c val="FFFF8A">Level 2:</c> Increases rocket speed by 20%<n/><c val="FFFF8A">Level 3:</c> Increases damage dealt by 20% and energy cost by 5<n/><c val="FFFF8A">Level 4:</c> Increases damage dealt by 40% and energy cost by 5
+DocInfo/DescLong=UA3D is a team oriented survival game where you complete missions whilst fighting AI zombies and PMC for EXP and other rewards.<n/><n/>Story-wise, it runs parallel to UA3's story, but overrides the fate of Dasdan as revealed in UA3 radio chatter.<n/><n/>Join us on discord!
+DocInfo/DescShort=1-12, The more the merrier!
+DocInfo/HowToPlayAdvanced00=Sprint and Jump are your bread and butter, use them outmaneuver your enemies.
+DocInfo/HowToPlayAdvanced01=All heroes can revive other downed heroes. However, medics can revive others 5x faster!
+DocInfo/HowToPlayAdvanced02=You can only reload if you have magazines readied, load them by using the magazine or ammo case item (but don't overencumber yourself!).
+DocInfo/HowToPlayAdvanced03=Items are the little crates you will randomly find on the ground, right click them to pick them up
+DocInfo/HowToPlayAdvanced04=Join our SC2 group to get into private games, and our steam group to discuss the game!
+DocInfo/HowToPlayBasic00=Teamwork is key! Stay together!
+DocInfo/HowToPlayBasic01=Focus on the objectives (on the top left of the screen). Mouse over them to read more.
+DocInfo/HowToPlayBasic02=Stay alive.
+DocInfo/HowToPlayWinning00=Complete mission objectives
+DocInfo/Name=Undead Assault 3: Dasdan
+DocInfo/PatchNote001=- Ghost Mos released
+DocInfo/PatchNote002=- Hard difficulty for campaign enabled
+DocInfo/PatchNote003=- Campaign achievements added
+DocInfo/PatchNote004=- Weekly modifier challenges
+DocInfo/PatchNote005=- Fixed Mos decals unlocking incorrect decal
+DocInfo/PatchNote006=
+DocInfo/PatchNote007=New Items:
+DocInfo/PatchNote008=- Cryo Grenade
+DocInfo/PatchNote009=- Cryo Mine
+DocInfo/PatchNote010=- IPR, Ghost weapon
+DocInfo/PatchNote011=- XR-42, Ghost weapon
+DocInfo/PatchNote012=- M935 Minigun, Cyborg weapon 
+DocInfo/PatchNote013=- Death Machine, Cyborg weapon
+DocInfo/PatchNote014=
+DocInfo/PatchNote015=- Map is now open source
+DocInfo/Screenshot01=Unlock various camouflages & decals
+DocInfo/Screenshot02=Earn medals
+DocInfo/Screenshot03=Multiple modes to play
+DocInfo/Screenshot04=Earn XP to level your hero
+DocInfo/Website=https://discord.gg/Vr99pGD
+LoadingScreen/TextBody=<s val="ArcadeFighterExtraLife">Undead Assault 3: Dasdan</s>
+LoadingScreen/Tip=<s val="GameButtonCharge">Press <c val="00FF80">\</c> to toggle the HUD on/off.
+LoadingScreen/Title=</n>
+MapInfo/Player00/Name=
+MapInfo/Player01/Name=
+MapInfo/Player02/Name=
+MapInfo/Player03/Name=
+MapInfo/Player04/Name=
+MapInfo/Player05/Name=
+MapInfo/Player06/Name=
+MapInfo/Player07/Name=
+MapInfo/Player08/Name=
+MapInfo/Player09/Name=
+MapInfo/Player10/Name=
+MapInfo/Player11/Name=
+MapInfo/Player12/Name=
+MapInfo/Player13/Name=
+MapInfo/Player14/Name=
+MapInfo/Player15/Name=
+MapInfo/Team00/Name=Outlaws
+Param/Expression/0458959B=Destroy the Sanies <c val="FF0000">[Red Pings]</c> with the satchel charges. <c val="FF0000">(~A~/~B~)</c>
+Param/Expression/049F18B0=Boss Rush Loop: Switch Case ~A~
+Param/Expression/06AC9D66=Boss Rush Loop: Switch Case ~A~
+Param/Expression/0961F5B7=SetScale ~A~
+Param/Expression/09F053A5=Game Mode: Campaign<n/>Difficulty: ~A~<n/>Number of Players: ~B~
+Param/Expression/0DF62114=Using Region: ~A~
+Param/Expression/10EEB383=Evacuate civilians to Dasdan. <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/117AF8EA=Created MATV ID: ~A~
+Param/Expression/11C2D4FC=Convoy Creation Chunk ~A~
+Param/Expression/12588A71=Spawn Count: ~A~
+Param/Expression/13A0F59B=-- West TCP Tip -- Index = ~A~
+Param/Expression/1575A70E=p end value: ~A~
+Param/Expression/177CB507=Vehicles Exctracted: <c val="FFFF00">(~A~/6)</c>, Refugees Extracted: <c val="FFFF00">(~B~/~C~)</c>
+Param/Expression/21A06BA0=Destroy the Sanies <c val="FF0000">[Red Pings]</c> with the satchel charges. <c val="FF0000">(~A~/~B~)</c>
+Param/Expression/223CC4B9=Boss Rush Loop: Switch Case ~A~
+Param/Expression/22850608=Boss Rush Loop: Switch Case ~A~
+Param/Expression/24287E6D=Chapter 2 - Mission 05 - RouteIndex =  ~A~
+Param/Expression/277D09CA=Spawning Sentry
+Param/Expression/28679350=Boss Rush Loop: Switch Case ~A~
+Param/Expression/286D8561=Game Mode = ~A~  ~B~
+Param/Expression/2E864474=Defend <c val="008000">~B~</c> (Round: <c val="00FFFF">~A~</c>)
+Param/Expression/3119201B=Kill the RA Saboteurs. <c val="FFFF00">(~A~/4)</c>
+Param/Expression/31A0AB12=Spawn Count < 3
+Param/Expression/348358DA=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/37352170=Silos Disarmed: ~A~
+Param/Expression/373E982B=Protect the town civillians and local police force.<c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/38397100=Protect the town civillians and local police force.<c val="00FF94">(~A~/~B~)</c>
+Param/Expression/38FD237E=Chapter: ~A~
+Param/Expression/40115253=Refugee Waves Escorted: <c val="FFFF00">(~A~/10)</c>
+Param/Expression/41729566=Assist in the evacuation of Dasdan. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/440E749A=Kill Apiary threat to the North. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/4745209E=Boss Defend Success!
+Param/Expression/48BD1DF5=Region Chosen: ~A~
+Param/Expression/4BC389CD=Spawn Count >= 3
+Param/Expression/511AD51D=Destroy optional Sanies <c val="00FFFF">[Blue Pings]</c> with the satchel charges. <c val="00FFFF">(~A~/4)</c>
+Param/Expression/530EBEE8=Random Chosen: Section ~A~ Bonus ~B~
+Param/Expression/556EDAA1=<c val="008000">Raider 6:</c> Ravensword, we lost the satchel to ~A~
+Param/Expression/57851949=Escort refugee waves to Dasdan.<c val="FFFF00">(~A~/10)</c>
+Param/Expression/57FEE25C=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/58CAD539=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/591771EE=Escort reservists to town barracks (~A~/8)
+Param/Expression/5A14CDD1=Collect scrap parts from around Dasdan. <c val="FFFF00">(~A~/~B~)
+Param/Expression/5FBD5469=Escort and defend farmer Blackma to the silos. <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/600869FF=Destroy the Sanies <c val="FF0000">[Red Pings]</c> with the satchel charges. <c val="FF0000">(~A~/~B~)</c>
+Param/Expression/6512EF4B=Boss Rush Loop: Switch Case ~A~
+Param/Expression/676E25A5=Disarm the nuclear silos. <c val="FFFF00">(~A~/6)</c>
+Param/Expression/68EDC3FD=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/6A5FAF97=Boss Rush Loop: Switch Case ~A~
+Param/Expression/6CF51CEF=Spawning Sentry
+Param/Expression/6D972EA7=Escort refugee waves to Dasdan. <c val="FFFF00">(~A~/10)</c>
+Param/Expression/6DD3A7FF=Boss Defend Success!
+Param/Expression/7458D29A=Boss Rush Loop: Switch Case ~A~
+Param/Expression/768157DE=Chapter 2 - Mission 05 - APC Index =  ~A~
+Param/Expression/7A73335A=Escort the civilian cargo trucks to the South TCP exit. (~A~/~B~)
+Param/Expression/7C41447E=Silos Disarmed: ~A~
+Param/Expression/813D57CB=Destroy the RA tanks defending the power plant. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/854930D4=Boss: ~A~<n/>Count: ~B~
+Param/Expression/869A9CD2=Boss Rush Loop: Switch Case ~A~
+Param/Expression/87BB9021=Moving Convoy ~A~ to Point ~B~
+Param/Expression/8E17CAA9=Destroy the spider eggs. <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/90C88008=Disarm the nuclear silos. <c val="FFFF00">(~A~/6)</c>
+Param/Expression/9144C3EB=Escort the civilian cargo trucks to the South TCP exit. (~A~/~B~)
+Param/Expression/934792BA=Escort and defend engineers.<c val="FFFF00">(~A~/6)</c>
+Param/Expression/94205B0B=Retrieve & Setup Mk88s Sentries around town. <c val="008000">(~A~/10)</c>
+Param/Expression/984B6178=Assist in the evacuation of Dasdan. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/98FF1D54=Civ Count: ~A~
+Param/Expression/9ACC3DC5=Eliminate the <c val="800000">Tier 1</c> Threat [<c val="800000">~A~</c> (<c val="000080">~B~</c>)]
+Param/Expression/9D8891B1=Current Round: ~A~
+Param/Expression/9EA19D78=Destroy the spider eggs. <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/9F811B57=Escort reservists to town barracks (~A~/8)
+Param/Expression/A44867C9=Protect the town civillians and local police force.<c val="FF0000">(~A~/~B~)</c>
+Param/Expression/A9962F13=Escort and defend farmer Blackma to the silos. <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/AD56969F=Sentry Time Given: ~A~
+Param/Expression/ADE35C5E=Transport food item samples to the phantom <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/B0AC68F7=<c val="FFFF00">Engineer:</c> Vehicle ~A~ has been repaired.
+Param/Expression/BA75CF01=Escort and defend engineers.<c val="FFFF00">(~A~/6)</c>
+Param/Expression/BA7D1358=Defend TCP ~A~
+Param/Expression/BDF8DE03=Move to <c val="008000">~B~</c> (Round: <c val="00FFFF">~A~</c>)
+Param/Expression/C1654842=Rush Region: ~A~<n/>Rush Time (Unscaled): ~B~<n/>Rush Time (Scaled): ~C~<n/>Rush Name: ~D~<n/>Rush Radius: ~E~
+Param/Expression/C31642AB=Protect the town civillians and local police force.<c val="008000">(~A~/~B~)</c>
+Param/Expression/C49616EF=Transport food item samples to the phantom <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/C54C4274=Moving Convoy ~A~ to Point ~B~
+Param/Expression/C640BD54=Boss Rush Loop: Switch Case ~A~
+Param/Expression/C6C2B9C7=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/CB65B12A=Silos Disarmed: ~A~
+Param/Expression/CF3795DC=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/CFC166AD=Wait for instructions............
+Param/Expression/D173846B=Assist in the evacuation of Dasdan. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/D2B8462A= Scrap parts collected: <c val="FFFF00">(~A~/~B~)
+Param/Expression/D4FB0D6B=Evacuate civilians to Dasdan <c val="00FF40">(~A~/~B~)</c>
+Param/Expression/D7C33514=Escort the civilian cargo trucks to town. (~A~/~B~)
+Param/Expression/D92A3DBA=Retrieve and Setup Mk88s Sentries around town. <c val="00FF40">(~A~/10)</c>
+Param/Expression/DE4EF45A=Boss Rush Loop: Switch Case ~A~
+Param/Expression/DF6CE6EB=Created Cargo Truck ID: ~A~
+Param/Expression/E2FAA793=Destroy the RA tanks defending the power plant. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/E578C87E=Boss Rush Loop: Switch Case ~A~
+Param/Expression/EDBB7F5E=Defend all the TCPs without becoming overrun.
+Param/Expression/F100FEB8=Number of Cops: ~A~<n/>Number of Friendlies: ~B~<n/>Number of Zombies: ~C~<n/>Zombies Supply: ~D~<n/>TCP:~E~
+Param/Expression/F5912E75=Boss Rush Loop: Switch Case ~A~
+Param/Expression/F5E971F0=Destroy optional Sanies <c val="00FFFF">[Blue Pings]</c> with the satchel charges. <c val="00FFFF">(~A~/4)</c>
+Param/Expression/F79FB8B5=- Region Used
+Param/Expression/F8E6B516=Civilian Spawn: MSV2_~A~_~B~
+Param/Expression/FB2A9C56=Kill Apiary threat to the North. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/FEAC7106=Collect scrap parts from around Dasdan. <c val="FFFF00">(~A~/~B~)
+Param/Expression/FF9DF1A2=Kill the RA Saboteurs. <c val="FFFF00">(~A~/4)</c>
+Param/Expression/FFC4D093=Some primary objective.
+Param/Value/00A8681E=<n/>
+Param/Value/00BE2CE9=<c val="FF8000">Police Chief: </c>I'm getting the Reservists armed up right now, we'll be putting them to use out there once they've got gear.
+Param/Value/00D33F3B=<c val="004000">Ravensword: </c>Raider-6, we are no longer able to track the hostile T1 contact. You are on your own.
+Param/Value/00D47296=Beware of convoy hijackers.
+Param/Value/01223DD5=Min Wave: 
+Param/Value/0154C156=<c val="FF8000">Mayor: </c>Oh no... We can't let this slow down preparations for the evacuation. Redouble your efforts Raider-6. We have to save the ones who remain.
+Param/Value/019ABD4B=Civilian House
+Param/Value/01B8E264=Defend me!
+Param/Value/01D95DB6=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/01F819DC=Civillians Escorted 
+Param/Value/0217983D=Convoy T1 - Late: Ares
+Param/Value/0269F772=<c val="FFFFFF">
+Param/Value/0278D68A=<c val="004000">Saber-6: </c>We appreciate the assist Raider-6. Good luck to all of you. You're going to need it.
+Param/Value/0297C6D6=<c val="00FF80">
+Param/Value/02A6F22B=Target Silo Index: 
+Param/Value/03E11228=Satchel Item Use: 
+Param/Value/03F0E607=Vehicle
+Param/Value/03F252C8=Protect Rebel Squad and it's commander from the advancing PMC.
+Param/Value/042E4696=<c val="FF8000">Police Chief: </c>Excellent. With sentry turrets to increase security around Dasdan, we should be able to use the town as our operating base.
+Param/Value/04731FFB=Nuclear Silo
+Param/Value/048AA5F3=Rebel 6 Location
+Param/Value/04FBF563=<c val="FF8000">Mayor: </c>Raiders, we're ready to begin evacuating Dasdan. The Chief has everyone organizing into two groups to head for Thalim.
+Param/Value/05026188=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/0532F552=Abdul Mission: Success
+Param/Value/059151C5=Chapter 2 - Refugee End
+Param/Value/05E8CA50=<c val="004000">Ravensword: </c>Raider-6, that is the last of the refugees coming from the east. Security for their evacuation effort takes top priority.
+Param/Value/061ED2F9=<c val="FF8000">Ravensword: </c>This will not be easy and now the RA are on alert.  We are sending your squad an LLDR to help.  Good luck Outlaws.
+Param/Value/062D419A=-- Create Convoy --
+Param/Value/066BDE7B=<c val="004000">Ravensword: </c>Acknowledged Raider-6. Over and out.
+Param/Value/069535B7=Repaired Vehicle ID: 
+Param/Value/06B94ED5=-- Create Debris --
+Param/Value/06F8E26C=<c val="008000">Raider 6: </c>Affirmative, moving to engage.
+Param/Value/07064EC5=<c val="FFFFFF">Prologue missions 1-4 available for testing.<n/>Note: Saving and EXP award is disabled but all heroes/skill upgrades are unlocked.</c>
+Param/Value/072EAEE7=Do not attempt to leave town.. it is too dangerous.
+Param/Value/0890FBA3=<c val="008000">Police Chief: </c>What are you doing Raiders! That route is now impassable, go defend another TCP.
+Param/Value/096C6339=Beginner
+Param/Value/09B3794F=<n/>
+Param/Value/0A244861=Sanies Zombies: Random Spawned
+Param/Value/0A6FB21C=24
+Param/Value/0AC1E4D5=<c val="004000">Saber-6: </c>The plan is for surviving elements, regardless of combat effectiveness, to rally at Thalim to put up a strong stand. If that fails, High Command is looking at deploying nuclear capable bombers...
+Param/Value/0AC847AA=Chapter 3 - Mission 04 - Creating Warbot
+Param/Value/0AECD35C=-- Convoy Exit --
+Param/Value/0B2FE8CC=<c val="008000">Pilot:</c> Moving in for landing.
+Param/Value/0B6587CA=First Win Bonus
+Param/Value/0B985598=<c val="004000">Ravensword: </c>Affirmative, Ravensword.
+Param/Value/0C080DFA=Deathmatch Setup
+Param/Value/0C221C89=4
+Param/Value/0C55CFCB=IsCS
+Param/Value/0C9BFA8D= Target  
+Param/Value/0D51BD52=Chapter 1 - Mission 08 - Them
+Param/Value/0D6C2C64=Farmer Blackma Killed Before Completing All Silos. No Items To Be Returned (Mission Will End)
+Param/Value/0DA08906=RA Squad Leader
+Param/Value/0E457F83=<c val="800000">Trucker: </c>Thanks for the assistance lads! I lifted this stuff from an abandoned truck, and I reckon you fellas need it more than I do!
+Param/Value/0E47A839=Mission Survival
+Param/Value/0EDED36A=, 
+Param/Value/0F284408=Exit Terminal Region
+Param/Value/0F5BED69=Sanies Zombies: Close Spawned
+Param/Value/0FCA1FF4=Sector 
+Param/Value/0FD09DC9=T1 Dummy
+Param/Value/101C8DA7=<c val="FF8000">Ravensword: </c>The RA are planning to irradiate AO Dasdan by detonating small nuclear devices within the silos around the AO.
+Param/Value/102E36FE=<c val="FFFF8A">Next Level: </c><c val="00FF80">
+Param/Value/1064AF49=Invalid command.
+Param/Value/10C0E63E=Exit Strategy Mission: Failed
+Param/Value/10E50751=<c val="008000">Pilot:</c> Moving in for landing.
+Param/Value/11FCA8B4=Destroying bonus sanies will grant more XP, hero levels, & a supply cache.
+Param/Value/12539046=Sentry Timer Expired.
+Param/Value/126CE23D=Widower
+Param/Value/128835E1=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/12F661C6=-- Ping Route --
+Param/Value/1328DC6C=Sanie Zombies Spawned
+Param/Value/13796E3D=<c val="008000">Police Chief: </c>Raiders you have failed to defend even a single outpost and many more lives will be lost now due to your incompetence.
+Param/Value/13D06891=Start Route 1
+Param/Value/13D08571=<c val="FF0000">Infestation Thriving</c>
+Param/Value/13E17AB5= - 
+Param/Value/14366F71=/
+Param/Value/146973C9=
+Param/Value/147583F4=Location: 
+Param/Value/14CF52E9=Chapter 3 - Mission 01 - The Old Crew End
+Param/Value/15B12A88= [
+Param/Value/15E67DB8=Silo Index: 
+Param/Value/160F232E=<c val="008000">Ravensword Main:</c> Provide security for this AO until evac arrives. ETA 50 minutes.
+Param/Value/161EA71E=<c val="004000">Ravensword: </c>Raider-6, civilian evacuees from eastern sectors are arriving shortly in your AO by transport truck to take shelter in Dasdan.
+Param/Value/1643F4AE=7
+Param/Value/16D3F2BF=<c val="004000">Saber-6: </c>Affirmative, Raider-6. We're beating feet to Dasdan now, over and out.
+Param/Value/1709BD77=Mission Success
+Param/Value/170C5435=<c val="004000">Ravensword: </c>Trucks will be arriving shortly from the TCPs and make their way into town to drop off the evacuees.
+Param/Value/1710C4ED=<c val="FF8000">Mayor: </c>With the National Guard motor pools abandoned, and the increasing number of civilians in town, we're going to need to secure additional transportation for them.
+Param/Value/1715E205=East Truck Stopped
+Param/Value/17670913=PVT
+Param/Value/179F2378=Abdul Mission: Failed
+Param/Value/17E985C8=<c val="FF8000">Police Chief: </c>Unfortunately, I lack the manpower to dispatch officers to the residents living in the outskirts of Dasdan. We need you all to round up the civilians and escort them into the town-proper.
+Param/Value/17EF7C74=Rock Avalanche
+Param/Value/183D1214=Dasdan House Searched
+Param/Value/184E9952= Incoming..
+Param/Value/18840649=Apiary Mission: Success
+Param/Value/19234D55=Can you survive the onslaught?
+Param/Value/192EA344=Roll: 
+Param/Value/196F2C3A=Spider Egg
+Param/Value/1A18DB28=<c val="004000">Ravensword: </c>In addition, retreating elements have as of yet not been able to organize an effective defense. We're asking you all to stay behind to buy time for the evacuation and allow friendly forces in the west to reorganize.
+Param/Value/1A4E200B=Revelations
+Param/Value/1B06FEAD=<c val="FF8000">Ravensword: </c>The RA...our plan to...stop....
+Param/Value/1B56D412=Additional reinforcements for the town.
+Param/Value/1C009174=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/1C2B5C15=<c val="008000">Soldier:</c> We lost a engineer!
+Param/Value/1C7AAE8D=<c val="FF8000">Police Chief: </c>We lack the proper credentials to deploy them, but with you guys here, we can set them up along the ramparts of Dasdan to increase security.
+Param/Value/1D257181=Sentry Item Use: 
+Param/Value/1D7A8FEE=Spawn Boss
+Param/Value/1DA88464=-- Bonus Reward --
+Param/Value/1DC7221D=<c val="FF0000">Sentry Placement Invalid.</c>
+Param/Value/1E01C08D=<c val="008000">Raider 6:</c> Wave 
+Param/Value/1E2FD2DD=<c val="008000">Raider-6: </c> We'll move in to assist your officers.
+Param/Value/1E730B26=-- Start Route Creation --
+Param/Value/1F03946F=Current XP: 
+Param/Value/1FB3CE5A=4
+Param/Value/1FB87772=Civilian
+Param/Value/1FDA6EB1=Sabotage the RA attempt to irradiate the AO by hacking the power substation.
+Param/Value/204721F3=Food samples from the storage silos must be obtained and taken back to the phantom for further analysis.
+Param/Value/204F3ED7= Unlocked Bear Claw Decal
+Param/Value/20C92292=Chapter 1 - Mission 06 - Akma's Revenge
+Param/Value/20EA9A5C=The Great Escape: Failed
+Param/Value/215C8591= has leveled 
+Param/Value/218F337F=<s val="Descript_Left"><c val="00FF80">Max Level
+Param/Value/21D725B2=<c val="FF8000">Mayor: </c>Our current focus is gathering all citizens of Dasdan within the town limits for when we pull the trigger on an evacuation.
+Param/Value/21E1310F=Wave Selection: Requirements not met.. Repicking..
+Param/Value/21EDBA16=Tanks A Lot: Success
+Param/Value/224DF208=region highlight
+Param/Value/231FD39A=General
+Param/Value/23401595=
+Param/Value/2356B232=Point A to B Timer Expired
+Param/Value/235D0C01=<c val="FF8000">Ravensword: </c>Go and search the houses within Dasdan and find these documents.
+Param/Value/23ADE948=
+Param/Value/23DBD8B2=Wave: 
+Param/Value/23ED1B4F=<c val="FFFF00">Engineer:</c> On our way to the vehicle locations.
+Param/Value/240B48F8=<c val="800000">Abdul: </c>Hello?  Is there anyone out there that can help repair my truck?
+Param/Value/24217DF9=Chapter 2 - Mission 06 - Parting Gift (Bonus)
+Param/Value/244EB628=<c val="800000">Trucker: </c>Oh thank goodness! You bunch are the first living faces I've seen in a minute!
+Param/Value/256A7DED=<c val="004000">Saber-6: </c>Worse. Eastern sectors have broken into full retreat. The tide of infected headed this way is incalculable. There's too many requests for reinforcements, and not enough bodies to help any of them.
+Param/Value/259B39EA=RA Terminal
+Param/Value/25EE653B=The Great Escape: Success
+Param/Value/263B0C19=<n/><c val="00BF60">Welcome to Undead Assault 3: Dasdan! (UAD for short)<n/><n/>UAD is a successor to UA3, and in some cases, UAC.<n/>Many of the mechanics you know from past undead assault games have changed in some fashion, so make sure to read all tooltips with the expectation that things DO NOT do what they used to do. I'll put a few here for you so you get a little taste of what differences this game has to offer:<n/><n/>-Map is totally different. Not only is the layout new, but it was even done from a straight-up blank map - as compared to the typical restructuring of the Thalim AO.<n/>-Medics are no longer the only character who can revive. Every character who dies now has a 30 second revive timer, other characters can revive dead characters by targeting the dead character's dead hero indicator with the revive ability and channeling it. Medic reduces the timer by 5 every 1 second, other characters reduce it by 1 every 1 second.<n/>-Every MOS does or will have a different skillset than what they previously had. Some may be very similar, others very different, but they're all different, at least a little bit.<n/>-The jam mechanic has been completely removed<n/>-Armor items behavior significantly different (I'll let you guys play around with this one a little ;) )<n/>-... And countless other things<n/><n/>Now, here are a few more technical things that you'll want to know to succeed:<n/>"Counters" have been simplified to a predictable system. There are 3 main types of targets you're going to want to pay attention to when determining counters, these are: light units, heavy units, and units with "armor" (what we call "armor" in this game is what you likely know as protoss shields, note that standard SC2 armor will not be a part of this game, so don't confuse it with that). There are many different damage types and all scale differently based on what type of target you are attacking. I will summarize them here:<n/><n/>-Bullet: 100% vs light, 100% vs heavy, 25% vs armor<n/>-Explosive - Fragmentation: 150% vs light, 100% vs heavy, 50% vs armor<n/>-Explosive - Anti-Tank: 100% vs light, 150% vs heavy, 50% vs armor<n/>-Fire: 200% vs light, 100% vs heavy, 10% vs armor<n/>-Acid: 100% vs everything<n/>-Plasma: 100% vs everything<n/><n/>These damage types only do different amounts of damage vs targets with armor:<n/>-Slashing: 25% vs armor<n/>-Blunt: 35% vs armor<n/>-Piercing: 80% vs armor<n/><n/>Skills should ALWAYS say their damage type in bright yellow at the bottom of their tooltip, and zombies will say it in their weapon tooltip. All basic attacks from heroes currently deal bullet damage.<n/><n/>The ailment system also got a huge revamp, now there is a wide variety of ailments and they are categorized such that only certain items/abilities can cure certain ailments. Now the tooltips on relevant skills SHOULD suffice for this area, but I figure people are gonna get confused anyways so lets just talk about this as a safeguard:<n/>-If the ailment is minor: any basic skill/item that cures that ailment's type can cure it.<n/>-If the ailment is moderate: only advanced items and level 2 skills that cures that ailment's type can cure it.<n/>-If the ailment is severe: only a level 2 skill with its emergency protocols skill upgrade can cure it. Luckily, severe ailments are only obtained by letting a moderate ailment sit too long, so with diligence you won't have to deal with this.<n/>-If the ailment type is lacerations or bone damage: first aid kit style skills can cure it if they are the proper level.<n/>-If the ailment type is hemorrhage or infection: injection/clot style skills can cure it if they are the proper level.<n/>-If the ailment type is poison: anti-venin style skills can cure it if they are the proper level.
+Param/Value/268E25AE=Tanks A Lot: Failure
+Param/Value/26F23FD0=Player 
+Param/Value/26F93236=<c val="FF8000">Mayor: </c>Were we in better times I'd want to get to know you lot, but I fear time is working against us. The Chief will brief you on our current security situation.
+Param/Value/277F1811=<c val="008000">Soldier:</c> Satchel has been placed. Secure the area!
+Param/Value/27DC65A2=Shattered
+Param/Value/281C8CDE=Farmer Blackma
+Param/Value/2872ACDC=Wave Completed.
+Param/Value/2886D0A7=Saber 6 Commander Dead
+Param/Value/28AAEC0B=Mission Survival
+Param/Value/28CDA994=-- Convoy Movement --
+Param/Value/292C48A0=<c val="008000">Raider-6: </c>Affirmative, Ravensword. We'll kill 'em all or die trying.
+Param/Value/293364DA=<c val="008000">Reservist: </c>Better than sitting on my couch!
+Param/Value/293B3975=<c val="008000">Raider-6: </c>We failed to rescue any civilians from the town outskirts.
+Param/Value/293E2472=Civilian House
+Param/Value/2A4D392D=Chapter 2 - Mission 06 - Parting Gift (Bonus)
+Param/Value/2A932944=Scrap Part Location
+Param/Value/2AF1BFBA=Chapter 2 - Escalation End
+Param/Value/2B4B96CD=<c val="FF8000">Police Chief: </c>There's a load of engineers in town familiar with the operation of these vehicles. I'm sure they are chomping at the bit to help out, so we can send them out to get the vehicles ready.
+Param/Value/2B738694=<c val="008000">Raider-6-1: </c>Gas, gas, gas!.
+Param/Value/2B7A3D53=<s val="StandardTooltipHeader_Terr">PMC Squad: Random</s><n/><n/><s val="StandardTooltip_Terr">RA - Squad Leader<n/>RA - Rifleman<n/>RA - Automatic Rifleman<n/>RA - Medic<n/>RA - Shotgunner<n/>RA - Marksman<n/>RA - Sniper<n/>RA - Forward Observer</s>
+Param/Value/2BC9A9C2=Terminal Successfully Hacked
+Param/Value/2C0B820C=Boss Unit Dies
+Param/Value/2D351890=<c val="FF8000">Outlaw Commander: </c>Affirmative. We read you Ravensword. Over.
+Param/Value/2D4456F3=Refugees run
+Param/Value/2E6E1AF3=<s val="BossBarHP"><c val="00FF40">Cache 
+Param/Value/2EC5DDFC=Private
+Param/Value/2FC489A4=Mission Success
+Param/Value/2FF14F72=FLAWLESS VICTORY!!
+Param/Value/3035385B=Sanies Loop: Switch Case 9
+Param/Value/3082E80D=Normal
+Param/Value/3096862F=Invalid command.
+Param/Value/30BFD92E= Earned Maximum Effort
+Param/Value/30FB5D66=<c val="008000">Ravensword: </c>Eliminate the nest structures before they reach maturity. We will update your TACNET with their current locations.
+Param/Value/31A5101C=<c val="FF8000">Mayor: </c>For now, we want those sentries set up. I'm expecting things to get worse before they get better.
+Param/Value/31A5598B=<c val="FF8000">Ravensword: </c>Outlaw Squad do you read? Over.
+Param/Value/31A70659=Boss Rush
+Param/Value/31D622AB=<c val="008000">Soldier:</c> Satchel countdown has started. Rally around the satchel and defend!
+Param/Value/32463C94=MOS Level: 
+Param/Value/32D3C759=Egg Max: 
+Param/Value/32D3E226=The Old Crew Mission: Failure
+Param/Value/33078BF6=(<c val="FFFFFF">Click To Ping)</c>
+Param/Value/3353A07A=Sanies Loop: Cicadis
+Param/Value/335B998E=Defend me!
+Param/Value/33613220=<c val="008000">Farmer: </c> Fine, fine! Follow me.
+Param/Value/336751AB=Them Mission: Failed
+Param/Value/33EA79E2=Exit Silo Region
+Param/Value/34C58D06=Prologue - Mission 00 - Conduct KLE
+Param/Value/35491CC3= decal unlocked.</c>
+Param/Value/357AC624=Kill the Widower
+Param/Value/3594D5D9=<c val="004000">Ravensword: </c>We are working on moving them further from the hotzones, but transportation is becoming more difficult as frontline stability deteriorates. 
+Param/Value/3619627D=Sample Return To Phantom Count: 
+Param/Value/36510BFE=Wave: 
+Param/Value/36660A1D=Kill the unknown threat
+Param/Value/36803DB0=
+Param/Value/36874AA2=1
+Param/Value/36C33B04=ID: 
+Param/Value/3706E54D=<c val="FF8000">Outlaw CO: </c>Roger that. Over and out.
+Param/Value/37547C42=<n/>
+Param/Value/37A44428=<c val="008000">Pilot:</c> Reinforcements on the way.
+Param/Value/37C1A54A=<c val="008000">Raider-6: </c>Ravensword, we failed to escort any civilians successfully. We are regrouping in town to provide security for those remaining.
+Param/Value/37C66192=<c val="008000">Ravensword:</c> Sanies will be designated in blue, if they are optional.
+Param/Value/37DEB861=Exit Search Region
+Param/Value/384966DF= Level Unlocked
+Param/Value/3854CB16=Survive until evac arrives
+Param/Value/392BAD4A=Parting Gift: Success
+Param/Value/39772F5E=Invalid Paramemter (ON / OFF)
+Param/Value/39D2129A= Level: </c><c val="00FF80">
+Param/Value/39EA4A8E=Lurking Fear
+Param/Value/3A463D75=-- Setup Convoy Routes --
+Param/Value/3A46EC21=Abdul Rescued
+Param/Value/3A7DDD02=+1 Skill Upgrade is available to use. Open the Skill Upgrade menu. Hotkeys <c val="00FFFF">[Z+V]</c>
+Param/Value/3B6D60D8=-- Spawn Satchel --
+Param/Value/3B82416C=Weather: Cloudy
+Param/Value/3B89716A=Apiary Mission: Failed
+Param/Value/3BA462F6=West Truck Stopped
+Param/Value/3C14EE73=<c val="008000">Ravensword:</c> The convoy has arrived, escort the convoy to the exit point.
+Param/Value/3C46AF4C=Convoy Started
+Param/Value/3C844EBD=
+Param/Value/3CB990E9=<c val="008000">Raider-6: </c>Copy that, Saber-6. We'll move into position around your unit to provide additional security on your way to town. Welcome to Dasdan.
+Param/Value/3CC68E36=<c val="008000">Ravensword: </c>The worst of this wave has been cleared. Containment has not been re-established over hot zones. Raider-6, you are now in the fight. Dig in and expect heavy resistance.
+Param/Value/3D26A8FA=Who reads this anyway?
+Param/Value/3D408477=-- Rush Boss --
+Param/Value/3DDA25B1=East TCP Spawn
+Param/Value/3DF17171=Refugees will spawn from the South and East TCP entrance.  Help bring them to Dasdan safely.
+Param/Value/3E2ACC08=<c val="008000">Ravensword: </c>Raider 6, the nest structures in your AO have hatched. Prepare for hostile contacts.
+Param/Value/3EA308E0=<c val="FF0000">Infestation Out Of Control!</c>
+Param/Value/3EC0DD3C=
+Param/Value/3ECE946E=-- South TCP Tip2 --
+Param/Value/3EE029D6=<c val="008000">Ravensword:</c> Copy that, abort mission.
+Param/Value/3EF6520E=(<c val="FFFFFF">Click To Ping)</c>
+Param/Value/3F3FF2B6=The city will evacuate using the repaired vehicles from the motor pools.  If none are available the will leave on foot.
+Param/Value/3F43D06B=Sanies Loop: Switch Case 7
+Param/Value/3F588038=<c val="00FF80">Survival bonus
+Param/Value/3F72B28B=1
+Param/Value/3FD8499C=
+Param/Value/40875829=Civilian Killed
+Param/Value/408B734A=Rebel 6 must survive.
+Param/Value/409F7729=<c val="FF8000">Police Officer:</c> The Mayor and Chief are surprised to have you guys here, but they'll see you now.
+Param/Value/40B0382A=Kill the RA in northwest LZ interferring with the communication system.
+Param/Value/40D08600=Convoy
+Param/Value/40F32B8E=Go, Go, Go!
+Param/Value/4175ED1C=<c val="FF8000">Police Chief: </c>We'll still need security from you folks until we can get out of the town limits and make way to Thalim.
+Param/Value/41BFD43D=Rock Avalanche
+Param/Value/426CB1B5=Beware of hoopers
+Param/Value/42B2458D=Max Wave: 
+Param/Value/42E8B526=1
+Param/Value/43203683= camouflage pattern unlocked.</c>
+Param/Value/432E224E=A trucker got stranded while trying to flee the infected, help him repair his truck.
+Param/Value/433653E5=Rally at this point for the convoy arrival.
+Param/Value/436343C8=Sandbox Setup
+Param/Value/437C05F3=<c val="FF8000">Ravensword: </c>Intel reports show that enemy PMC have taken root in the town south of your position.
+Param/Value/437CC481=<c val="FF8000">Mayor: </c>No! Where are my people? Where are they?
+Param/Value/43801124=- Escort Successfully Entered town.
+Param/Value/43BB8E38=Player 
+Param/Value/43CC257B=- Player Initiated talk to 'Mayor / Chief' (Enter Region)
+Param/Value/44274CAA=Protect DA PO PO
+Param/Value/44967ED6=-- Select Random Zone --
+Param/Value/44CF2776=<c val="008000">Raider-6: </c>Affirmative, Ravensword! Moving in to engage and eliminate.
+Param/Value/451F2939=Wave Selection: Requirements not met.. Repicking..
+Param/Value/45B1CBBB=<c val="FF8000">Rebel 6: </c>Thank you for guarding my men and I after our ship was shot down.
+Param/Value/45D741BD=2
+Param/Value/4605687D=Player 
+Param/Value/46750949=Abdul's Vehicle Repaired
+Param/Value/46841173=<c val="008000">Reservist: </c>......
+Param/Value/47718DA9=Many mutated spider eggs have appeared around the AO, destroy them before they hatch.
+Param/Value/479596A2=Game Mode: Boss Rush
+Param/Value/48CD303D=<c val="008000">Raider 6:</c> Affirmative.
+Param/Value/49444AFF=<c val="008000">Reservist: </c> There's no time to waste! 
+Param/Value/4A2B19DE=Jam It: Success
+Param/Value/4A7DB9DD=<c val="004000">Ravensword: </c>Potential waterborne contamination can be investigated by providing samples from the local farm in Dasdan.
+Param/Value/4A9833C9=Cacumen
+Param/Value/4B3946E2= has leveled 
+Param/Value/4B5F8B71=Rock Avalanche
+Param/Value/4B6161A4=
+Param/Value/4B80B11C=3
+Param/Value/4BB79973=-- Setup Cargo Truck Routes --
+Param/Value/4BD24E30=House  
+Param/Value/4CC5294C=Silo Max: 
+Param/Value/4CC7B94E=<c val="008000">Soldier:</c> Located multiple sentry guns in this area.
+Param/Value/4CD1522C=Civilian
+Param/Value/4CE77391=All 10 Sentry Placed
+Param/Value/4D091F37=Empty motorpool, calling the other one.
+Param/Value/4D0B11F8=Widower Killed
+Param/Value/4D5730C0=Rock Avalanche
+Param/Value/4D61325E=Satchel Item Use: 
+Param/Value/4EB92F86=<n/>
+Param/Value/4EBF8FA4=<c val="008000">Raider 6:</c> Roger that. We'll be helping ourselves to them as we locate them.
+Param/Value/4ECAE450=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/4F12637C=Chapter 2
+Param/Value/4F2ED6C4=<c val="008000">Raider-6-2: </c>Masks, get your masks on!
+Param/Value/4F68F2D6=Ordering T1's Attack
+Param/Value/4FEFE9B0=<c val="008000">Soldier:</c> Located a sentry gun in this area.
+Param/Value/50581675=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/5088A830=<c val="FF8000">Outlaw: </c>We found the documents.
+Param/Value/509EBDCD=1
+Param/Value/50E75059=Chapter 2 - Mission 01 - Escalation Setup
+Param/Value/51143354=
+Param/Value/51383E80= [
+Param/Value/51B18E9F= XP Gained.
+Param/Value/522B8323=Sanies Loop: Ground T1
+Param/Value/5259E75C=<c val="008000">Ravensword: </c>Raider-6, no more trucks are entering your AO. Continue to provide security over Dasdan in the meanwhile.
+Param/Value/5261E4E0=M200 Satchel
+Param/Value/52977307= XP Gained.
+Param/Value/531E214B=Prologue - Mission 01 - Sentry Guns
+Param/Value/547C2765=Biometric ID Recognized
+Param/Value/550CDC8B=<c val="000080">Police Officer:</c> Glad you gents could make it. The mayor is  waiting in town for you all. Follow me, please.
+Param/Value/5549DD91=IsCS
+Param/Value/55AEA143=
+Param/Value/56129818=Route: 
+Param/Value/56B78DF9=
+Param/Value/574B3DC4=Hurry, let's go!
+Param/Value/57C942D0=Enter Terminal Region
+Param/Value/57D6BF2A=Invalid command.
+Param/Value/583A0786=<s val="Descript_Left"><c val="00FF80">
+Param/Value/585EB86C=Spider King Bonus Mission Earned
+Param/Value/5880C496=Invalid command.
+Param/Value/58A4606A=Wave: 
+Param/Value/58E29F54=<n/>
+Param/Value/593FBA49=Tanks Destroyed
+Param/Value/597FF4FD=Resupply
+Param/Value/5987992C=-- Arachnathid Spawn --
+Param/Value/5A1E43F0=Spawn Egg In Spider Region: 
+Param/Value/5A2AA538=<c val="008000">Soldier:</c> No sentry guns located in this area.
+Param/Value/5A532048=Spider King Mission: Success
+Param/Value/5A59C824=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/5A94EEB9= 
+Param/Value/5ACA00BF=Eliminate the Bruiser Brothers...
+Param/Value/5B088A49=Exiting
+Param/Value/5B4FF456=Made it to 50!
+Param/Value/5B6B413A=<c val="00FF80">Infestation Destroyed
+Param/Value/5B863451=<c val="008000">Raider 6: </c>Affirmative, moving to engage.
+Param/Value/5BA98B08=Route: 
+Param/Value/5BD04210=<c val="008000">Farmer: </c>What in the god damn is this here!?
+Param/Value/5BD68853=<n/>
+Param/Value/5C3BBCA8=-- Convoy Exit Tip --
+Param/Value/5CA6DA2D=<c val="FF8000">Police Chief: </c>With the increasing presence of undead, it is only a matter of time before Dasdan is overrun. We need to take the initiative here.
+Param/Value/5CC7E7A8= 
+Param/Value/5CE24276=Destroy Sanies to clear a path for the convoy.
+Param/Value/5D4DBF71=0
+Param/Value/5DBA1F06=Additional reinforcements for the town.
+Param/Value/5DD747E2=Convoy T1 - Early: Baron
+Param/Value/5DE2A6E4=Convoy T1 - Late: Widower
+Param/Value/5EBDAB67=]
+Param/Value/5F21A0E5=<c val="FF8000">Police Chief: </c>We really could have used more of those sentries Raiders.
+Param/Value/5F96C2DD=<c val="008000">Raider 6:</c> Affirmative.
+Param/Value/600C852D=Rank: 
+Param/Value/601B62B8=<c val="FF8000">Mayor: </c>Godspeed and good luck, Raiders.
+Param/Value/602BAB52=Mission Success
+Param/Value/602BFD7C=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/60AC5B63=Parting Gift: Failed
+Param/Value/60ACF5D0=<c val="008000">Raider-6: </c>Shouter, this is Raider-6. You picked a bad place to break down. We'll move in to assist with repairs to your vehicle if we are able.
+Param/Value/60B1A128=Total XP: 
+Param/Value/6118EAC8=<c val="008000">Ravensword:</c> Clear sanies to navigate a convoy through the AO.
+Param/Value/613D2D65=<c val="FF0000">Infestation Not Contained</c>
+Param/Value/614CD9B8=Engineer
+Param/Value/615ABA19=Secure the convoy rally point.
+Param/Value/617881BA= Earned Bruiser Bros
+Param/Value/61D23BFF=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/623813E8=
+Param/Value/6283C18F=<c val="004000">Ravensword: </c>Raider-6, be advised. A friendly element is retreating to your sector. The most recent reports indicate that containment of eastern sectors has collapsed entirely.
+Param/Value/62C343D1=<n/>
+Param/Value/630F9908=Roll: 
+Param/Value/642C5F99=]
+Param/Value/64377631=Prologue - Mission 04 - Escort Cargo Trucks
+Param/Value/64C07279=What's the Plan: Failed
+Param/Value/64C59E75=<c val="004000">Ravensword : </c>Raider-6, the full retreat of eastern sectors includes a number of refugees who were unable to make it on the first wave of trucks.
+Param/Value/64D5B7FF=Bonus: Items
+Param/Value/6505CE11=Start defend timer
+Param/Value/651CE5DE=-- Rush Boss Exit --
+Param/Value/653B6FC8=Jam It: Failure
+Param/Value/65AF646D=<n/>
+Param/Value/66DB8F5E=<c val="008000">Raider-6-1: </c>To hell with it, kill as many as you can! Light 'em up!
+Param/Value/67D77F85=Escort to the barracks
+Param/Value/67FA0058=For the Rebellion: Success
+Param/Value/68DC5371=
+Param/Value/68EA7BE1=Lurking Fear
+Param/Value/69060E54=Rebel 6 Commander Death
+Param/Value/69366916=<c val="008000">Raider 6: </c>Ravensword, Raider-6 failed to secure samples of the crops. We are pulling back to regroup.
+Param/Value/6956AB77=<s val="Item_Header">
+Param/Value/69C59BFC=Town Extracted
+Param/Value/69EC1BA7=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/6A0B5508=5
+Param/Value/6A5F10DE=Evac Truck
+Param/Value/6A6F57BC=2
+Param/Value/6AFCC48C=Chapter 3 - Mission 02 - For the Rebellion Setup
+Param/Value/6B76C247=<c val="008000">Ravensword:</c> Raider 6, The AO is at risk of being overrun with zombies. Defend Dasdan at all costs.
+Param/Value/6B7915F2=Sentry Created
+Param/Value/6C065281=<c val="004000">Saber-6: </c>You need to get your people out of Dasdan ASAP. Satellite imagery is all the intel we have at the moment, and that intel is getting relayed too slowly to be useful for the boots on the ground.
+Param/Value/6C28D261=Rewrite Hash
+Param/Value/6C72C0E8=<c val="FF8000">Police Chief: </c>The local National Guard unit was activated to help increase presence in the east, but they left behind a few sentry turrets in their motor pools and supply depots.
+Param/Value/6D149323=Vehicles Repaired 
+Param/Value/6D2B52C9=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/6D4A90E8=<c val="FF8000">Mayor: </c>Is it truly that bad out there? The first wave of refugees had troubling rumors to spread through the town.
+Param/Value/6DB3A470=<c val="004000">Ravensword: </c>Friendly elements in eastern AOs report multiple Broken Arrow requests. Casualty reports are disconcerting. Maintain security of the AO, escort Saber-6 through your AO, and debrief with them before they retreat to Thalim.
+Param/Value/6E7EA797=Rank: 
+Param/Value/6E7F1956=ID: 
+Param/Value/6EC25C49=</n>
+Param/Value/6FDFE493=<c val="FF8000">Mayor: </c>Despite the National Guard unit being pulled out of town, I am made aware that a few non-essential personnel were left behind to monitor their depots and supply caches.
+Param/Value/6FFE71B0=Sanies Loop: Flying T1
+Param/Value/702A9617=<c val="008000">Raider 6: </c>Ravensword, farmer Blackma is KIA. We will secure what food samples we have to the phantom.
+Param/Value/704CB68D=<c val="FF8000">Ravensword: </c>Outlaws, you've managed to win but at what cost?  The town and it's people are gone.
+Param/Value/704EA9D3=PMC Squad
+Param/Value/7065B91B=<c val="004000">Raider-6: </c>Affirmative, Saber-6. Fight the good fight. Over and out.
+Param/Value/717A9CC3=-- Spawn Satchel --
+Param/Value/7196DBF8=</n>
+Param/Value/71ABEE0C=
+Param/Value/720200BE=Computer Hacked
+Param/Value/72704983= XP, 
+Param/Value/72933192=The more civillians you rescue the more experience you will gain.
+Param/Value/72BA9D61=Unit is Idle
+Param/Value/730EF4CA=XP: 
+Param/Value/73471F4D=
+Param/Value/7348FAE7=Phantom Reinforcements
+Param/Value/73532D45=2
+Param/Value/735CE0F4=1
+Param/Value/747EB7A3=Convoy Death
+Param/Value/74AE57D2=Saber 6 Arrives at Mayor
+Param/Value/74AF99AD=3
+Param/Value/74BFA1D9=<c val="FF8000">Police Chief: </c>Our team does not have time to deal with deploying sentries. We are moving on to more pressing objectives.
+Param/Value/74CD67B0=<c val="FF8000">Mayor: </c>Copy that, Raider-6. The Chief and I are working as fast as possible to get Dasdan ready for the evacuation.
+Param/Value/74F7F0DD=<c val="008000">Raider-6: </c>Don't be. Get your people to safety. We'll draw the hordes to us, which should give the convoy enough time to shelter in Thalim.
+Param/Value/7512CA11=Sanies Loop: Switch Case 12
+Param/Value/7566F2B2=<c val="008000">Ravensword: </c>Affirmative Raider-6. Continue to provide security for the AO.
+Param/Value/757A25F0=<c val="FF8000">Ravensword: </c>You must prevent the reactors from melting down.
+Param/Value/75A95231=3
+Param/Value/75F723A0= Completed
+Param/Value/7610A5D2=Evac has been delayed, hold out a little longer.
+Param/Value/765B30D6=Beginner
+Param/Value/765EA894=Refugee Mission: Success
+Param/Value/766C69A4=<c val="FF8000">Mayor: </c>Thank you Raiders. Without you who knows what would have happened to us. Are you coming with us?
+Param/Value/76D3CC44=Keep farmer Blackma alive while he collects the food samples from the silos.
+Param/Value/77371DE6=<c val="FF8000">Ravensword: </c>Intel reports also show the town to be currently guarded, furthering our belief that there is sensitive information worth guarding.
+Param/Value/7739C83D= - Initialize
+Param/Value/77B114C5=<c val="FFFFFF">
+Param/Value/77F20AF6=variant 2
+Param/Value/77FD7C59=Campaign Demo
+Param/Value/7827E358=<c val="008000">Reservist: </c>My medical exemption is overruled? Shit.
+Param/Value/787CEAEC=Secure East, West, South TCP's
+Param/Value/78B487CB=2
+Param/Value/78E6885A=Convoy T1 - Early: Gourmand
+Param/Value/7934F96E=<c val="FF8000">Police Chief: </c>The second group of engineers are ready for escort.
+Param/Value/79777846=<c val="FFFF8A">Rank: </c><c val="00FF80">
+Param/Value/79916F71=Eggs Destroyed 
+Param/Value/79C6BB3D= :: Rewrite Hash
+Param/Value/7A1FCFE9=<c val="008000">Raider-6: </c>Roger that, Ravensword.
+Param/Value/7A2BE353=Escalation Mission: Success
+Param/Value/7A2C7E17=<c val="FF8000">Ravensword: </c>You must find...northwest LZ and disable...restore comms.
+Param/Value/7A6559F5=∞
+Param/Value/7A65DC82=Chapter 3
+Param/Value/7B63DB99=Escort Saber 6 Commander.
+Param/Value/7B9F4748=Engineers Remaining: 
+Param/Value/7BCAECF0=-- Convoy Exit --
+Param/Value/7C026FCA="<c val="008000">AUC Command:</c> CAS is on station."
+Param/Value/7C36E928=Akma's Revenge Mission: Success
+Param/Value/7C63155D=Chapter 3 - Mission 03 - What's the Plan End
+Param/Value/7C7FDE3B=-- Random Bonus --
+Param/Value/7CBB0499=Sanies Loop: Switch Case 0
+Param/Value/7CFD206A=<c val="00FF80">
+Param/Value/7CFFD351=What's the Plan: Success
+Param/Value/7D3C0802=Silo Finished
+Param/Value/7DE36830=
+Param/Value/7E16CE81=MOS XP: 
+Param/Value/7EBD9BF1=1
+Param/Value/7ED04B8E=Items Sent
+Param/Value/7F67A218=Sanies Loop: Switch Case 3
+Param/Value/7FEDC42F=Engineers Remaining: 
+Param/Value/804789FB=Sector: 
+Param/Value/80901CD5=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/80A6CE20=<c val="FF8000">Ravensword: </c>These PMC shot down another squad code-named Rebel en route to support you.  Travel south and check the wreckage for survivors.  Do you copy?
+Param/Value/80C4373D=<c val="FF0000">Biometric ID Unrecognized</c>
+Param/Value/818805C9=<c val="00FF80">Survival completed
+Param/Value/81C8BFEF=2
+Param/Value/81E103DF=
+Param/Value/82A3D73E=Player 
+Param/Value/82AC64F9=-- South TCP Tip --
+Param/Value/82B4C0B4=<c val="FF8000">Police Chief: </c> I can spare a few officers to each of the TCPs around town. We need to establish a presence around town to keep the worst of the infected out of Dasdan.
+Param/Value/82FA735B=Chapter 3 - Mission 02 - For The Rebellion End
+Param/Value/83CBF60E=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/83FD6A39=Total XP: 
+Param/Value/841CBFA5=<c val="00FF80">Survived for 50 minutes
+Param/Value/846D7001=Chapter 2 - Mission 02 - Bulwark
+Param/Value/847AFA8C=Secure East TCP
+Param/Value/853B8EBA=<c val="008000">Ravensword:</c> Bonus objective has already been completed.
+Param/Value/85853018=
+Param/Value/859592D0=Spawn Sentrys
+Param/Value/85CC2B1F=<c val="008000">Ravensword: </c>Raider-6, the remaining nest structures appear to be hatching. Expect additional hostile contacts.
+Param/Value/862D09C6=Optional Sanie Objective... Kill Me, Maybe?
+Param/Value/86349D5E=Meet farmer Blackma so you can investigate the silos.
+Param/Value/864DEA1D=Start Route 2
+Param/Value/86A20F90=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/86CD483E=-- Cargo Truck Movement --
+Param/Value/86F2219E=Convoy
+Param/Value/86F84068=Rock Avalanche
+Param/Value/8700ACD2=Saboteurs Killed
+Param/Value/8736125B=Apiaries Killed 
+Param/Value/87696815=Them Mission: Success
+Param/Value/87CE052A=<c val="008000">Raider-6: </c>We've retrieved as many civilians possible from the outskirts. We'll continue to provide security for Dasdan.
+Param/Value/87DF95DB=
+Param/Value/8831BFBC=PMC Saboteur
+Param/Value/8983719C=<s val="Descript_Left"><c val="00FF80">Rank: 
+Param/Value/89C3DAD8=<c val="008000">Soldier:</c> Lets get to the phantom, move!
+Param/Value/89CFFBBE=RA Squad Leader
+Param/Value/8A763283=Sanies Loop: Switch Case 2
+Param/Value/8ABC0AA7=<s val="UAD">Bring Civs<n/>   Here</s>
+Param/Value/8AD9C9EE=<c val="008000">Pilot:</c> We're here, but we barely made it!
+Param/Value/8AF68B37=Games Played: 
+Param/Value/8B83CA35=Enter Silo Region
+Param/Value/8C10652D=Widower Killed
+Param/Value/8C181CCC=XP Gained: +
+Param/Value/8C283FED=<c val="008000">Raider-6: </c>Affirmative, Ravensword.
+Param/Value/8D424E33=<s val="Item_Header">
+Param/Value/8D8182D3=<c val="FF8000">Police Chief: </c>Escort them to the motor pools and protect them while they perform repairs on the vehicles.
+Param/Value/8D9E4509=Convoy
+Param/Value/8DA5EAEF=<c val="008000">Raider 6:</c> Logs show the last platoon to operate in the AO, 3 years ago, left 5 caches at random locations in the AO. They are marked by a rock with a red X.
+Param/Value/8E2307FF=Meet Farmer Blackma
+Param/Value/8E92490D=Items Sent
+Param/Value/8F07082F=<s val="Descript_Left"><c val="FF0000">Requires Rank: 
+Param/Value/8F342F70=.  
+Param/Value/8F62B2F0=Biometric ID Recognized
+Param/Value/8F6E3794=Akma's Revenge Mission: Success
+Param/Value/8F757EBC=Load Civs
+Param/Value/8FEF9055=Civilian House
+Param/Value/90DFF277=0
+Param/Value/90F81150=Boss Time
+Param/Value/911DAC65=<c val="FF8000">Police Chief: </c>I'll start organizing the civilians, keep up the good work in the meantime Raiders.
+Param/Value/91AA444B=<c val="008000">Raider-6: </c>Much obliged. You need to get out of here on the double. We're gonna have 10 metric clusterfucks of corpses on top of us soon, and you won't want to be anywhere near here!
+Param/Value/91B8614D=<c val="004000">Ravensword: </c>Escort the farmer, collect samples from their crops, and deliver them to an enroute Phantom.
+Param/Value/924F0787=Convoy Exiting
+Param/Value/92859740=Repair Abdul's Truck
+Param/Value/932E8CD1=Satchel - 
+Param/Value/934CD6E1=Sanies Loop: Flying T1
+Param/Value/939E3DEF=Akma's Revenge Mission: Failed
+Param/Value/93BE730F=
+Param/Value/942ED8E2=Shattered
+Param/Value/943E0CDF=
+Param/Value/94D5298F=A massive infected unit known as Darreus has been spotted in the Northern Sector.
+Param/Value/94FEBE09=Sanies Loop: Ground T1
+Param/Value/953E8EBF=South TCP Spawn
+Param/Value/95B2B767=XP Gained: +
+Param/Value/95C5B2F5=-- Wave Items --
+Param/Value/95D729E3=Sabotage the RA attempt to irradiate the AO by hacking the power substation.
+Param/Value/966CAA97=-- Ping Route --
+Param/Value/96D1A216=Secure West TCP
+Param/Value/974523C4=<c val="FF8000">Ravensword: </c>The nuclear silos in the region have been armed and will detonate shortly.
+Param/Value/978E01A9=<s val="Descript_Left"><c val="00FF80">
+Param/Value/9871951A= has been promoted to <s val="ArcadeFighterScoreTitle">
+Param/Value/98A3DCB6=Sanies Loop: Switch Case 4
+Param/Value/98D37ADE=Escort Civilians Here
+Param/Value/98DFA821=Convoy
+Param/Value/99037B19=Moving To Silo Target
+Param/Value/9969E2EB=Place a sentry here
+Param/Value/99968AD0=For the Rebellion: Failure
+Param/Value/9ADFA5C3=<c val="008000">Ravensword: </c>With the samples in our custody, we can send them to be examined for potential contamination. Continue to provide security for the Dasdan AO Raider-6.
+Param/Value/9B331FE5=<c val="FF8000">Ravensword: </c>We need you and you men to secure the Helipad and await further instructions.  We have reason to believe there are enemy milita in the area.  Do not leave the Helipad area unguarded.
+Param/Value/9BB3389B=Stand in the circle and shoot you fok
+Param/Value/9BC81E88=Chapter 1 - Mission 07 - Mass Recall
+Param/Value/9C7ECA3B=Sanies Loop: Switch Case 11
+Param/Value/9C824CB6=-- Create Cargo Trucks --
+Param/Value/9D2B9437=Farmer Blackma Killed Before Completing All Silos. Items Active To Be Returned
+Param/Value/9DBAAB11=Sanies Loop: Switch Case 6
+Param/Value/9E621D5D=<n/>
+Param/Value/9E6FAB3A=Fire in the desync!
+Param/Value/9E8CCFA1=With the outbreak spiraling out of control, a mandatory evacuation order has been issued. Help escort civilians into Dasdan.
+Param/Value/9EAA41FA=
+Param/Value/9EE3D9CF=<c val="008000">Saber-6-2: </c>All Saber elements, this is 6-2. The commander is dead, I am taking command. We are pushing out to Thalim immediately! Go, go, go!
+Param/Value/9F527ABA=<c val="00FF80">
+Param/Value/9F6CE1A9=Chapter 1
+Param/Value/9F912F89=
+Param/Value/9FC00DB0=<s val="GameButtonCharge"><c val="00FF00">Night Vision Enabled</c></s>
+Param/Value/9FCF234E=Cache 
+Param/Value/9FF0AFA8=Escort Saber 6 Commander to Thalim
+Param/Value/A01F5EEE=Times Used:
+Param/Value/A03A25D7=Wartime Production: Success
+Param/Value/A07494F3=Bonus: Cops
+Param/Value/A1084153=
+Param/Value/A109E2D6=4
+Param/Value/A172BA0A=Chapter 2 - Mission 04 - Abdul the Alive Terrorist
+Param/Value/A18660AD=<c val="FFFF8A">Total XP: </c><c val="00FF80">
+Param/Value/A1C6FBB7=Route: 
+Param/Value/A2452781=Convoy ETA
+Param/Value/A2A21B8A=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/A35B6995=XP Totals
+Param/Value/A36924C5=Defeat Darreus
+Param/Value/A418A5D0=1
+Param/Value/A450CC4D=route: 
+Param/Value/A4A4FF4C=Games Played: 
+Param/Value/A4A5FC4D=Invalid Paramemter (WAVE/BOSS)
+Param/Value/A4AD9FE1=Defend the satchel charge.
+Param/Value/A4CE2E4E=Civilian House
+Param/Value/A50B2D0C=<c val="FFFF8A">Next Rank: </c><c val="00FF80">
+Param/Value/A54C39A6=.  
+Param/Value/A551E141=Saber Squad Member Death
+Param/Value/A57E8C55=<c val="00FF80">
+Param/Value/A584D8C8= Earned Just A Scratch
+Param/Value/A5867E64=Silo Start
+Param/Value/A5D9F8C4=<c val="008000">Raider-6: </c>Oh, shit.
+Param/Value/A5ECC09D=Phantom
+Param/Value/A67361BB=Spawn Mobs Wave 
+Param/Value/A6762866=West Truck2 Stopped
+Param/Value/A69133AA=-- East TCP Tip --
+Param/Value/A7080700=<c val="00FF80">Infestation Hampered
+Param/Value/A7473D6B=Silo Loop Stopped
+Param/Value/A77E0012=Start Route: 
+Param/Value/A7A8E9E2=Kill as many infected as possible.
+Param/Value/A7B29541=<c val="00FF80">Survival bonus
+Param/Value/A7F7787C=Player Leave Region: Boss Rush
+Param/Value/A7FFF33D=An unknown threat has entered the AO.
+Param/Value/A856778A=
+Param/Value/A8BF1C1A=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/A8D739AB=Beginner
+Param/Value/A8FE6730=Convoy T1 - Late: Minerva
+Param/Value/A9669EB0=
+Param/Value/A9FA34FF=Pick Reservist Location
+Param/Value/A9FB7113=Weather: Intense Sunlight
+Param/Value/AA3749F2= Earned Mission Impossible
+Param/Value/AA4A03BE=South Truck Stopped
+Param/Value/AA72BE28=Create Ping
+Param/Value/AA7EE9E9= XP: </c><c val="00FF80">
+Param/Value/AAAE9A9F=Chapter 3
+Param/Value/AB8E09F6=<c val="008000">Soldier:</c> Let's get to the Phantom, move!
+Param/Value/AC1E17F3= XP
+Param/Value/AC20E39A=Chapter 2
+Param/Value/AC44938B=Chapter 3 - Mission 04 - Wartime Production End
+Param/Value/AC596FBC=Player 
+Param/Value/AC63806E=Weather: Clear
+Param/Value/AC70EDFA=Sanies Loop: Switch Case 8
+Param/Value/AC7DDEB0=Police Officer
+Param/Value/ACA74005=<c val="004000">Ravensword: </c>Affirmative, Raider-6, break contact, regroup, and continue to provide security for Dasdan.
+Param/Value/ACDA3585=<c val="004000">Saber-6: </c>I am the commander of Saber-6. I presume you are the Mayor of Dasdan? We have something you're going to want to hear...
+Param/Value/ACFBEF11=Satchel Death
+Param/Value/AD0D7279=Rock Avalanche
+Param/Value/AD5209E8=Farmer Blackma Meeting Start
+Param/Value/AD5B4674=Escort & Defend the convoy.
+Param/Value/AD85F20E=Refugee Mission: Failed
+Param/Value/ADE9EC43=Player 
+Param/Value/AE039C63=Route 2
+Param/Value/AE1ABBF6=<c val="008000">Raider-6: </c>Roger that Ravensword, wilco.
+Param/Value/AE41681B=<c val="008000">Raider 6: </c>Affirmative, digging in.
+Param/Value/AE89ED4D=For the Rebellion!
+Param/Value/AEECCCFA=<c val="008000">Ravensword:</c> Secure the rally point for the convoy to move in.
+Param/Value/AFC3B2AF=<c val="004000">Ravensword: </c>Affirmative, Raider-6. Continue to provide security for Dasdan until the civilians can extract.
+Param/Value/AFD42EDA=<c val="004000">Saber-6: </c>Godspeed. We're pushing out of Dasdan immediately.
+Param/Value/AFE02155=Mass Recall Mission: Failed
+Param/Value/AFE3A1F5=-- East TCP Tip2 --
+Param/Value/AFF339BB=2
+Param/Value/AFF6C9E3=Rock Avalanche
+Param/Value/B026EBBB=<c val="FF8000">Ravensword: </c>Welcome to Dasdan Outlaw squad.
+Param/Value/B02D5508=Incoming Civilians
+Param/Value/B06803ED=-- Satchel Drop --
+Param/Value/B07E2537=5
+Param/Value/B0AB7569=Convoy T1 - Early: Immussilus
+Param/Value/B12B99F4=Talk to Mayor and Police Chief.
+Param/Value/B1406570=ID: 
+Param/Value/B155F91D=Chapter 3 - Mission 07 - Finale
+Param/Value/B159678D=Chapter 1
+Param/Value/B19B0A5C=Enter Search Region
+Param/Value/B20A3DF1=All Bossess left or dead
+Param/Value/B22F158F=We're leaving, let's go!
+Param/Value/B28AA06F=Escalation Mission: Failed
+Param/Value/B2FD3234=<c val="FF8000">Mayor: </c>Given current circumstances, we are past a state of emergency. I want them in uniforms, given weapons, and told to man a post. We need every able body we can get between us and them.
+Param/Value/B32DCA5E=2
+Param/Value/B33F3ECB=Start Route: 
+Param/Value/B34AE130=Core Sanie Objective... Kill Me!
+Param/Value/B38B22E5=-- Timed Rush Boss Death --
+Param/Value/B3BFF6F5=Prologue - Mission 03 - Preserve the Reserve
+Param/Value/B3C0F0B8=Revelations
+Param/Value/B415BC30=Chapter 2 - Mission 05 - The Great Escape
+Param/Value/B4C9D40D=XP Gained: +
+Param/Value/B4E28519=Secure the landing pad and await further instructions.
+Param/Value/B56B8A61=<c val="008000">Raider 6:</c> Ravensword, the convoy has been destroyed
+Param/Value/B6241959=Chapter 3 - Mission 03 - What's the Plan Setup
+Param/Value/B64C8F63=Scrap Pickup
+Param/Value/B6572516=actor deletion
+Param/Value/B6D49262=<c val="008000">Farmer: </c> I ain't going nowhere no how! This'll all blow over, just gotta stay inside!
+Param/Value/B705193D=Campaign Victory Bonus XP
+Param/Value/B754E646=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/B7813E65=<c val="008000">Ravensword:</c> Satchel Charge enroute to location...
+Param/Value/B79EED42=minimap ping
+Param/Value/B7C036DD=<c val="FF0000">Move closer to the target.</c>
+Param/Value/B7EDD73D=Spawning Tier 1...
+Param/Value/B7EF5D73=A huge spider has appeared from the cave network. Kill it before it ravages Dasdan!
+Param/Value/B840463B=Silo
+Param/Value/B9046515=<c val="008000">Police Chief: </c>Thank you for your assistance with the civilians.  The drivers have agreed to leave and continue looking for survivors.
+Param/Value/B9355E32=<c val="FF8000">Outlaw Commander: </c>Copy that.  Outlaws out.
+Param/Value/B96B4A82=Times Used:
+Param/Value/B988948E=Follow Police Escort <c val="00FF00">[Green Ping]</c>
+Param/Value/BA502845= decal unlocked.</c>
+Param/Value/BA543466=6
+Param/Value/BA73A6BE= [
+Param/Value/BB392422=<c val="008000">Raider 6: </c>Sir, there is very little time to explain. We need you to collect samples from your crops pending an investigation on the current outbreak's spread.
+Param/Value/BB8E45C5= XP, 
+Param/Value/BBE10E16=4
+Param/Value/BC1123BC=<c val="FF8000">Ravensword: </c>Outstanding job Outlaws!  Hopefully one day the inhabitants of Dasdan will be able to return to their homes safely.
+Param/Value/BC2B6008=<c val="008000">Raider-6: </c>Here they come! Dig in and give 'em hell, Raiders!
+Param/Value/BCD3FA6A=KLE Location
+Param/Value/BD50939A=<c val="008000">Raider-6: </c>Ravensword, T1 contact eliminated successfully.
+Param/Value/BD698846=Total Vehicles Repaired: 
+Param/Value/BD9461AF=<c val="004000">Ravensword: </c>Raider-6, current intel on the spread of the infection is lacking. Current hypotheses include a great deal of speculation, but no substance.
+Param/Value/BDC4CF30=<c val="008000">Soldier:</c> I can hear something large coming our way!
+Param/Value/BEB3B814=<n/>
+Param/Value/BEB9B1A1= 
+Param/Value/BEE5A6B6= 
+Param/Value/BEF3770A=Spawn Boss
+Param/Value/BF43E874=New Bank Created
+Param/Value/BF45D575=Weather: Fog
+Param/Value/BF64BB22=<c val="004000">Ravensword: </c>Eliminate the nest structures before they reach maturity. We will update your TACNET with their current locations.
+Param/Value/BFD0D99E=<c val="FF8000">Mayor: </c>Despite your best efforts Raider-6, I am only seeing a complete evacuation of Dasdan as our course of action.
+Param/Value/C0C42B67=]
+Param/Value/C109B5E6=<c val="FF8000">Mayor:</c> I need you to defend key objectives.
+Param/Value/C1526A5B=<c val="004000">Ravensword:</c> Raider-6, eastern sectors have experienced a breach of containment. Expect spillover, your AO is about to get hot.
+Param/Value/C1960153=<c val="008000">Raider 6:</c> Surveillance drone has left the bird and is online.
+Param/Value/C1A0904A=1 to 9 Sentry Placed
+Param/Value/C32649AA=Sector 
+Param/Value/C361265A=Chapter 2 - Mission 03 - Pest Control
+Param/Value/C371514D=Units are idle
+Param/Value/C379A46D=<c val="004000">Ravensword : </c>Efforts are being made to direct them towards Dasdan to join in the evacuation. Provide security for their retreat and shelter until an evacuation effort can be made.
+Param/Value/C3ED41F6=Sanies Loop: Switch Case 1
+Param/Value/C588876E=<c val="FF8000">Ravensword: </c>Outlaws, it appears that high ranking RA officers have been going in and out of Dasdan and using the town as a meeting place.  We have reason to believe they are keeping sensitive documents hidden within the town.
+Param/Value/C5926EA3=Zones: 
+Param/Value/C5B8E4E3=Spider King Mission: Failed
+Param/Value/C6AA5DC5=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/C6C6B3E0=Refugee Exit
+Param/Value/C7603CF9=<c val="004000">Saber-6: </c>Raider-6, Saber-6 has arrived on site. We are making our way into Dasdan to pass intel to the locals on the current situation out east.
+Param/Value/C7C18F72=3
+Param/Value/C8216356=<c val="FF8000">Mayor: </c>Excellent! This gives us more material to work with while we organize the evacuation of Dasdan.
+Param/Value/C84605F3=Start Point A to B Timer
+Param/Value/C87744E8=<c val="008000">Raider-6: </c>Ravensword, enemy resistance is currently too heavy. We cannot eliminate the apiaries at this time.
+Param/Value/C8786C77=<c val="00FF80">Infestation Contained
+Param/Value/C8802C07=<c val="FF8000">Mayor: </c>... I'm terribly sorry.
+Param/Value/C8899E52=Help the stranded trucker repair his vehicle.
+Param/Value/C8FE7FF6=<c val="008000">Raider 6:</c> K.
+Param/Value/C9177739=Defend Dasdan at all costs.
+Param/Value/C9A80512=Additional reinforcements for the town.
+Param/Value/C9B38D0D=Bruiser Brothers
+Param/Value/C9D5DC4C=<n/>
+Param/Value/C9F5452A=Wartime Production: Failed
+Param/Value/CA3BE481=Boom. Boom.
+Param/Value/CA432D1E=</n></n><c val="FFFF8A">Game XP: </c><c val="00FF80">
+Param/Value/CAA6FE0D=Convoy T1 - Early: Gargantuan
+Param/Value/CABF4FF0=MOS XP: 
+Param/Value/CAC1B875=<c val="FF8000">Police Chief: </c>Grab the repair kit from the West Motorpool and use it to repair his truck.
+Param/Value/CB422C9D=We need to move, now!
+Param/Value/CBCB2C31=Spawn Apiaries
+Param/Value/CC223BCE=Exit Strategy Mission: Success
+Param/Value/CC684DE4=Undead Assault 3: Dasdan
+Param/Value/CC7FF693=<c val="008000">Ravenswood:</c> Raider 6, your evac has delayed, you will have to hold a out little longer.
+Param/Value/CC9922C9=<c val="008000">Raider 6:</c> Understood.
+Param/Value/CCBBC73D=Gamemode: 
+Param/Value/CD065D06=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/CD20F876=Defend Against The RA Advance
+Param/Value/CD39F4AE=T1 Boss - Widower
+Param/Value/CD407850=South Truck2 Stopped
+Param/Value/CDD46B8A=<c val="FF8000">Police Chief: </c>Mercy with you, Raiders. Let's roll out!
+Param/Value/CE081647=A plague is spreading through the air.  Kill as many infected before you succumb to it.
+Param/Value/CE43B1BA=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/CE74A1D9=Chapter 1 - Mission 09 - The Spider King
+Param/Value/CE99BD99= Earned Flawless Victory - Mission Survival
+Param/Value/CF2D2FBA=Spawn Mobs Wave 
+Param/Value/CF9ECEF6=Chapter 3 - Mission 06 - Jam It!
+Param/Value/CFE0246B=<c val="FF8000">Mayor: </c>The remaining reservists can be located at the outskirts of town. Get their asses in town on the double.
+Param/Value/D0208BA9=<c val="FF8000">Mayor: </c>A number of trucks remain in disrepair that we could use to evacuate the civilians still in town to Thalim in the west.
+Param/Value/D04F7DAF=Would you like to skip the Prologue and start at Chapter 1?<n/><c val="FF0000">*Not recommended for new players</c>
+Param/Value/D0548CA6=Bonus Zone: 
+Param/Value/D1437CA5=<n/>
+Param/Value/D1B7FA15=<c val="FFFFFF">
+Param/Value/D207904E=<s val="Item_Header">
+Param/Value/D21F1FA2=Mass Recall Mission: Success
+Param/Value/D231BE8E=Silo Completed Count: 
+Param/Value/D26EBE7A=<c val="008000">Raider-6: </c>Negative. We have intel that says if we abandon our position here, you and your people won't make it to safety before the undead are on top of you.
+Param/Value/D275D621=Farmer Blackma Killed Before Getting To A Silo. (Mission Will End)
+Param/Value/D28B9164=Mission Time
+Param/Value/D2B503F8=-- West TCP Tip2 --
+Param/Value/D3499354=Bruiser Brothers: Dead
+Param/Value/D3E89136=<c val="008000">Police Chief: </c>Raiders, I need to you go to the remaining TCP outposts and prepare to escort the civilian cargo trucks to the safety of our town.
+Param/Value/D3F7E9C8=Broken down trucks around the AO must be repaired so they can be used for evacuation later
+Param/Value/D46CFAD7= Is Squad Leader
+Param/Value/D516258D=Search the houses in Thalim for the hidden documents.
+Param/Value/D55FFA40=Secure South TCP
+Param/Value/D6AB7C12=<c val="FF8000">Police Chief: </c>Mayor, we need to leave NOW!
+Param/Value/D6CC4D11=<c val="FF8000">Mayor: </c>Merciful lord. I appreciate this immensely, commander.
+Param/Value/D7363D11=Truck Enter Dasdan
+Param/Value/D84A3EE6=East Truck2 Stopped
+Param/Value/D856051A=Hooked MATV to Boss Bar
+Param/Value/D8E8710E=<c val="008000">Raider 6: </c> We'll provide cover, now move it!
+Param/Value/D94A1BF3=<c val="00FF80">
+Param/Value/D94A8A45=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/D9D5A5CE=<c val="FF8000">Mayor: </c>No, no, no! We failed them... we failed them all...
+Param/Value/D9E604AF=<c val="FF8000">Police Chief: </c>Someone go help that civillian.
+Param/Value/DA4CC2BA=<n/>
+Param/Value/DAD0D5E9=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/DADB08B3=Engineer ID: 
+Param/Value/DB26577D= Found
+Param/Value/DBCB2704=<n/><n/><c val="FFFF8A">
+Param/Value/DBCF1DAC=-- Bonus Check --
+Param/Value/DBF8B1C6=<c val="FF8000">Mayor: </c>This is it, Raiders. We either escape now or get consumed by the hordes. Make it count.
+Param/Value/DCB9B213=Chapter 1 - Mission 05 - Exit Strategy
+Param/Value/DCD120F8=<c val="004000">Ravensword: </c>Copy that Raider-6, continue providing security for the Dasdan AO.
+Param/Value/DD2257A5=<c val="008000">Ravensword:</c> Copy that, abort mission.
+Param/Value/DD2B9804=<c val="FF8000">Police Chief: </c>A number of supply caches were also left by the Guard as they were pulled out of town. They are marked with rocks that have a red "X" on them.
+Param/Value/DD361DDD=Farmer Blackma Killed
+Param/Value/DD6B8F65= to level: <s val="ArcadeFighterScoreTitle">
+Param/Value/DD92A114=Escalation Mission: Failed
+Param/Value/DDA1CAEE=All Silos Completed
+Param/Value/DE4DFA81=<c val="FF8000">Ravensword: </c>Good job with those documents.  We now know the RA's plan and need you to sabotage them.
+Param/Value/DE518178=<c val="008000">Soldier:</c> Satchel countdown has begun. Rally around it and defend!
+Param/Value/DE5A8425=<n/><c val="FFFF8A">
+Param/Value/DE83350F= Vehicle Repair Point Entered
+Param/Value/DF1B1324=Wave Instance: 
+Param/Value/E0030115=Potential Mk88 Item Location
+Param/Value/E01E5B93=<c val="008000">Police Chief: </c>We've lost control of the outer perimeter of Dasdan! Pull back! Pull back!
+Param/Value/E02B0E15=Hack the computer terminal inside the generator area.
+Param/Value/E0DBDD38=Civilian Escorted Count: 
+Param/Value/E178BE19=Waves and waves and waves and waves.
+Param/Value/E194DD96=Route: 
+Param/Value/E1B060C8=Weather: Snow
+Param/Value/E1ED3AAC=<c val="FF8000">Rebel 6: </c>Some of our engineers survived the crash and were hiding within the wreckage.
+Param/Value/E259A432=6
+Param/Value/E2695F6A= camouflage pattern unlocked.</c>
+Param/Value/E28DB456=<c val="008000">Soldier:</c> Satchel has been placed. Secure the area!
+Param/Value/E2C1A763=Extraction Point
+Param/Value/E34551D7=-- Move Convoy --
+Param/Value/E366C282=<c val="800000">Trucker: </c>Hey! Can anyone hear me? I'm having trouble keeping this rig running! Any assistance possible would be appreciated, the corpses are headed straight this way!
+Param/Value/E39A7405=<c val="FF8000">Outlaw CO: </c>Sir. What are we doing in this hell hole?
+Param/Value/E3A5FA8F=</n>
+Param/Value/E3DCB128=<c val="008000">Raider 6: </c>Roger that, Ravensword.
+Param/Value/E420D2F7=<c val="008000">Reservist: </c>How did you get this address!? Wait, what? Let's go!
+Param/Value/E483F597=1
+Param/Value/E49BD6B7= XP Progress: 
+Param/Value/E4D16093=<c val="008000">Raider-6: </c>Copy that, Ravensword. We've got this handled for now.
+Param/Value/E507B7AD=<c val="004000">Ravensword: </c>Raider-6, ISR tracked a T1 hostile in the area of Dasdan. Current whereabouts are unknown, but it appears to have laid several nests before hiding 
+Param/Value/E51C3E0B= to level: <s val="ArcadeFighterScoreTitle">
+Param/Value/E59134A5=Kill the RA in northwest LZ interferring with the communication system.
+Param/Value/E5A52085=Pinging Route
+Param/Value/E66F10DD=6
+Param/Value/E730E4BF=Weather: Blood Moon
+Param/Value/E78AF43F=Chapter 3 - Mission 01 - The Old Crew Setup
+Param/Value/E795DCF1=<c val="008000">Pilot:</c> We're here, but we barely made it! Get on the bird now!
+Param/Value/E7A49490=Wave Selection: Requirements not met.. Repicking..
+Param/Value/E7BADA1D=Darreus
+Param/Value/E8973CA5=<c val="FF8000">Ravensword: </c>Outlaws you have failed to protect and town and the region.  The land is now uninhabitable due to your failure.
+Param/Value/E8A8F9FD=Defend me!
+Param/Value/E8AE3A6C=<c val="FF8000">Mayor:</c> Afternoon Raider 6, we've been expecting you.
+Param/Value/E8BDEC38=Wait complete
+Param/Value/E91C5F04=Uncovered cache items.
+Param/Value/E975DCD0=Survive for 30 minutes
+Param/Value/E9A54644=Apiaries have moved in from the North, they must be destroyed.
+Param/Value/EA274314=Rebels engineers will use the scrap parts to construct support robots.
+Param/Value/EA844CC9=<c val="008000">Reservist: </c>It was only a matter of time, I say.
+Param/Value/EB2CC9B7=<c val="004000">Ravensword: </c>The apiaries are no longer a threat to Dasdan. Disengage with any remaining apiaries and provide security for the town.
+Param/Value/EBB2DEDF=We're leaving, let's go!
+Param/Value/EBCEA160=Phantom
+Param/Value/EBFFC77E=<c val="FFFF00">Engineer:</c> Repairing vehicle.
+Param/Value/EC1220BF=Prologue - Mission 02 - TCP Containment
+Param/Value/EC5E47B9=<c val="008000">Police Chief: </c>Thank you for your assistance with the civilians.  The drivers have agreed to leave and continue looking for survivors.
+Param/Value/EC80C0E2= : Total XP Gained: 
+Param/Value/EC9DA161=-- Metasis Spawn --
+Param/Value/ECFD6766= Wins: 
+Param/Value/ED0016CB=Target: 
+Param/Value/ED1394BE=</n>
+Param/Value/ED617FA2=<c val="008000">Raider-6: </c>We could not mobilize any Reservists in time. We need to focus on maintaining security around the AO.
+Param/Value/EDC45DB2=Sanies Loop: Switch Case 5
+Param/Value/EE0B7169=
+Param/Value/EE2E81EE=Mission Success
+Param/Value/EE4C2077=Conduct KLE
+Param/Value/EE81451C=Sanies Loop: Switch Case 10
+Param/Value/EEC01030=Move
+Param/Value/EEECC31F=+1 Skill Upgrade is available to use. Open the Skill Upgrade menu. Hotkeys <c val="00FFFF">[Z+V]</c>
+Param/Value/EF520442=-- Bruiser Brothers --
+Param/Value/EFBB2BEF=Team Saber 6 will arrive from either the North or East.  You must escort them into Dasdan.
+Param/Value/EFD2C0B7= Location
+Param/Value/EFE310AA=<c val="008000">Raider 6:</c> Resupply enroute...
+Param/Value/F0554B13=<c val="008000">Ravensword:</c> Raider 6, The AO is at risk of being overrun with zombies. Provide security for this AO until evac arrives. ETA 30 minutes.
+Param/Value/F082B5E6=MOS Level: 
+Param/Value/F1676F34=<c val="008000">Reservist: </c> Things are that bad? Lead the way.
+Param/Value/F19744BF=<c val="004000">Raider 6: </c>Affirmative, Ravensword. We'll move to provide security as they enter Dasdan.
+Param/Value/F1FCE9C4=Samples Collected 
+Param/Value/F24B7AB3=3
+Param/Value/F29EE67C=-- Progress Round --
+Param/Value/F2B074D5=Route: 
+Param/Value/F2EA50E6=<c val="FF8000">Outlaw: </c>Nothing in this house.
+Param/Value/F336F9F1=<c val="008000">Raider-6: </c>We failed to secure any additional vehicles. We're pulling back to regroup.
+Param/Value/F339D61F=5
+Param/Value/F382745D=Escort the truck<n/>
+Param/Value/F3A6FD20=<c val="008000">Ravensword:</c> Convoy enroute to AO, stand by.
+Param/Value/F3C7CA7D=Chapter 3 - Mission 04 - Wartime Production Setup
+Param/Value/F43A9FB4=Satchel Damaged
+Param/Value/F54EE837=<c val="008000">Raider-6-3: </c>Our masks aren't rates for this shit!
+Param/Value/F5A566E0=Survive until evac arrives
+Param/Value/F5EB2C3F=Rock Avalanche
+Param/Value/F6291A6B=
+Param/Value/F648EB31=<c val="008000">Raider-6: </c>Wilco.
+Param/Value/F8AB56D2=Chapter 3 - Mission 05 - Tanks A Lot
+Param/Value/F8C97283=<c val="004000">Ravensword: </c>Raider-6, Saber-6 has been entirely wiped out.
+Param/Value/F8CCEF4F=<c val="008000">Raider 6: </c>Affirmative, preparing for contact.
+Param/Value/F8D6105E=
+Param/Value/F8FDDB31=Vehicle died
+Param/Value/F9139794=The Old Crew Mission: Success
+Param/Value/F943C4A5=<c val="00FF80">
+Param/Value/F949BE2F=<c val="FF8000">Ravensword: </c>We were too late to late to stop the RA soldiers and they have put their plan in motion.
+Param/Value/F9EC66A4= Searched
+Param/Value/F9F4DAFC=<c val="004000">Ravensword: </c>Be advised Raider-6, the undead horde is only a few mikes from entering your AO. If you abandon your positions, the convoy will have no hope of making it to Thalim safely.
+Param/Value/FA4A7AC9=All Bosses Dead
+Param/Value/FB39E058=<c val="FF8000">Rebel 6: </c>If you are willing and able to gather extra scrap parts from the AO, we can construct some robots for support.
+Param/Value/FB574CB2=<c val="008000">Reservist: </c>I was already getting up, get out of my way!
+Param/Value/FBAAAA8E=<c val="800000">Trucker: </c>Don't need to tell me twice!
+Param/Value/FBC17C50=-- Start Sanie Spawning --
+Param/Value/FBDAD940=-- Rush Boss Timer --
+Param/Value/FBF7B17A=<c val="FF8000">Rebel: </c>Commander no!
+Param/Value/FC0A0967=Satchel Charge
+Param/Value/FC3B9807=<c val="FF8000">Police Chief: </c>We have officers at each entrance to town and also at the roads leading into the town outskirts. However, we can do better to secure Dasdan.
+Param/Value/FC5E4DBB=Weather: Rainstorm
+Param/Value/FCCBCC99=<c val="008000">Ravensword:</c> Sanies will designated in red for the convoy route.
+Param/Value/FD008601= has been promoted to <s val="ArcadeFighterScoreTitle">
+Param/Value/FD0B489A=0 Sentry Placed
+Param/Value/FDD3ED91=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/FDEFA47B=Saber 6 Leaves For Thalim.
+Param/Value/FE15A17A=Eggs Destroyed: 
+Param/Value/FE4A2CD4=<c val="004000">Ravensword: </c>Raider-6, the swarm of undead from the east is beginning to enter your AO. Apiaries have entered Dasdan's outskirts precipitating their arrival. Eliminate them before they overrun Dasdan with their spawn.
+Param/Value/FE6DE02A=All bosses dead
+Param/Value/FE812ADB=<c val="008000">Ravensword: </c>Raider-6, be advised, the destruction of the nest structures appears to have lured out the T1 contact from earlier. Prepare for a fight.
+Param/Value/FE97E2D3=Saber 6 Arrives at West TCP
+Param/Value/FEA6FEAB= 
+Param/Value/FEB2E186=Find the hidden RA documents within Dasdan
+Param/Value/FF11EA94=Abdul Exit
+Param/Value/FF161C52=Civillian Location
+Param/Value/FF21EAC4=Player 
+Param/Value/FF7BA554=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
+Param/Value/FF8D8984=Truck or Civ death
+Param/Value/FFBEDAD9= Bonus 
+Unit/InfectedVesania=Infected Vesania
+Unit/LifeArmorName/Zombie2LifeArmor=Rotting Flesh
+Unit/ShieldArmorName/Zombie2ShieldArmor=Mutated Shell
+Variant001/ModeDesc=Campaign & Survival Modes
+Variant001/ModeName=Standard
+Variant001/Team/00=Raider 6
+Variant002/ModeDesc=Test out different MOS units or spawn zombie units to put your skills to the test.
+Variant002/ModeName=Sandbox
+Variant002/Team/00=Raider 6
+Variant003/ModeDesc=PVP mode
+Variant003/ModeName=Deathmatch
+Variant003/Team/00=Red Team
+Variant003/Team/01=Blue Team
