@@ -14,7 +14,7 @@ This repository contains a open source version of UAD for StarCraft II.
 
 ## Translating
 * To help translate the game see: [Game Translator](https://github.com/R-P-S/UAD3/tree/main/Tools/Game%20Translator)
-* Launch SC2_GameTranslater.exe & open one of the existing projects & set the target language
+* Launch "SC2_GameTranslater.exe" open one of the existing projects & set the target language
   1. Development/Undead Assault 3 Dasdan.SC2Map/Map_Translation.SC2GameTran
   2. Development/UA Data.SC2Mod/Data_Translation.SC2GameTran
   3. Development/UA UI.SC2Mod/UI_Translation.SC2GameTran
