@@ -1718,7 +1718,6 @@
             <Cooldown TimeUse="60"/>
         </Cost>
         <BehaviorArray value="ImprovedTimingMotor"/>
-        <ValidatorArray value="DeathMachineNotEquipped"/>
     </CAbilBehavior>
     <CAbilEffectTarget id="ShredderMissiles" parent="TemplateEffectTarget">
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
