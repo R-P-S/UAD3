@@ -1731,6 +1731,7 @@
     </CValidatorCombine>
     <CValidatorCombine id="WeaponNotFlameOrPlasma">
         <CombineArray value="Flamethrower"/>
+        <CombineArray value="Ghost"/>
         <Negate value="1"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="WeaponSlotEquipped">
@@ -5014,7 +5015,7 @@
         <Value value="Flamethrower"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="Ghost">
-        <Value value="GhostHero"/>
+        <Value value="GhostMOS"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="FlamethrowerMini">
         <Value value="74DFlamethrower"/>
