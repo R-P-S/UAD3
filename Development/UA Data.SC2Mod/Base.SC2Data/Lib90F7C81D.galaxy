@@ -8243,8 +8243,6 @@ void lib90F7C81D_gf_CycleButton (unit lp_unit, abilcmd lp_autoCast, string lp_cu
     // Automatic Variable Declarations
     // Implementation
     UnitIssueOrder(lp_unit, OrderSetAutoCast(lp_autoCast, false), c_orderQueueReplace);
-    UnitAbilityEnable(lp_unit, lp_currentButton, false);
-    UnitAbilityEnable(lp_unit, lp_nextButton, true);
     UnitAbilityShow(lp_unit, lp_currentButton, false);
     UnitAbilityShow(lp_unit, lp_nextButton, true);
 }
