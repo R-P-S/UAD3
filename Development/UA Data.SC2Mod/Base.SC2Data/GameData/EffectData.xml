@@ -1236,7 +1236,7 @@
     </CEffectApplyBehavior>
     <CEffectSet id="DisarmCryoMineSet" parent="TemplateSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="DisarmWildfireMine"/>
+        <EffectArray value="DisarmCryoMine"/>
         <EffectArray value="DisarmRemoveUnit"/>
     </CEffectSet>
     <CEffectCreateUnit id="DisarmCryoMine" parent="TemplateCreateUnit">

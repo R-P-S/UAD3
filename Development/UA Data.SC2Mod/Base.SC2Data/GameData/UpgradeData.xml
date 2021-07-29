@@ -281,6 +281,7 @@
         <LeaderAlias value="CryoEquipment"/>
         <LeaderPriority value="4"/>
         <LeaderLevel value="2"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DisarmGhost,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
     </CUpgrade>
     <CUpgrade id="CryoEquipmentLevel3" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-nova-blink.dds"/>
@@ -289,7 +290,7 @@
         <LeaderPriority value="4"/>
         <LeaderLevel value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,DisarmGhost,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,CryoGrenadeSlowed,Duration" Value="0.062500"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,CryoGrenadeSlowed,Duration" Value="0.500000"/>
         <EffectArray Operation="Subtract" Reference="Abil,CryoGrenade,CastIntroTime[0]" Value="0.062500"/>
         <EffectArray Reference="Abil,CryoGrenade,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,Frozen8,Duration" Value="4.000000"/>
@@ -302,7 +303,7 @@
         <LeaderPriority value="4"/>
         <LeaderLevel value="4"/>
         <EffectArray Operation="Subtract" Reference="Abil,DisarmGhost,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,CryoMineSlowed,Duration" Value="0.062500"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,CryoMineSlowed,Duration" Value="0.250000"/>
         <EffectArray Operation="Subtract" Reference="Abil,PlaceCryoMine,CastIntroTime[0]" Value="0.125"/>
         <EffectArray Reference="Abil,PlaceCryoMine,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,Frozen10,Duration" Value="5.000000"/>
