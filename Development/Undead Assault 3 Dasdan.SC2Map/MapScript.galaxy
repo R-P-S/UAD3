@@ -353,7 +353,7 @@ struct gs_BossRush {
     bool lv_decayActive;
     region lv_spawnerRegion;
     unitgroup lv_spawnerUnitGroups;
-    string[13] lv_bossTypes;
+    string[12] lv_bossTypes;
     unitgroup lv_bossGroup;
     int lv_bossesKilled;
     region lv_lastRegion;
@@ -4221,13 +4221,13 @@ void gf_RushBoss () {
     int autoD6986A49_i;
 
     // Variable Initialization
-    lv_randomInt = RandomInt(0, 12);
+    lv_randomInt = RandomInt(0, 11);
     lv_randomCave = UnitGroupClosestToPoint(gv_bossRush.lv_spawnerUnitGroups, RegionGetCenter(gf_GetRushRegion()));
 
     // Implementation
     TriggerDebugOutput(gv_debug.lv_gameEventsType, StringExternal("Param/Value/3D408477"), gv_debug.lv_gameEvents);
     while ((gf_CheckRushBoss(gv_bossRush.lv_bossTypes[lv_randomInt]) == false)) {
-        lv_randomInt = RandomInt(0, 12);
+        lv_randomInt = RandomInt(0, 11);
     }
     lv_spawnCount = gf_GetBossCount(gv_bossRush.lv_bossTypes[lv_randomInt]);
     ObjectiveDestroy(lib90F7C81D_gv_mainObj);
@@ -4243,7 +4243,7 @@ void gf_RushBoss () {
     TriggerDebugOutput(gv_debug.lv_gameEventsType, TextExpressionAssemble("Param/Expression/854930D4"), gv_debug.lv_gameEvents);
     autoD6986A49_n = lv_spawnCount;
     for (autoD6986A49_i = 1; autoD6986A49_i <= autoD6986A49_n; autoD6986A49_i += 1) {
-        UnitCreate(1, gv_bossRush.lv_bossTypes[lv_randomInt], 0, 14, UnitGetPosition(lv_randomCave), 270.0);
+        UnitCreate(1, gv_bossRush.lv_bossTypes[lv_randomInt], c_unitCreateIgnorePlacement, 14, UnitGetPosition(lv_randomCave), 270.0);
         UnitGroupAdd(gv_bossRush.lv_bossGroup, UnitLastCreated());
         TriggerAddEventUnitDied(gt_TimedRushBossDeath, UnitRefFromUnit(UnitLastCreated()));
         UnitGroupAdd(lib90F7C81D_gv_undeadGroup, UnitLastCreated());
@@ -18816,12 +18816,7 @@ bool gt_Decay_Func (bool testConds, bool runActions) {
         for (;; autoA1150D40_u -= 1) {
             autoA1150D40_var = UnitGroupUnitFromEnd(autoA1150D40_g, autoA1150D40_u);
             if (autoA1150D40_var == null) { break; }
-            if ((libNtve_gf_UnitInRegion(autoA1150D40_var, gf_GetRushRegion()) == false)) {
-                UnitBehaviorAdd(autoA1150D40_var, "DarkDecay", autoA1150D40_var, 1);
-            }
-            else {
-                UnitBehaviorRemove(autoA1150D40_var, "DarkDecay", 1);
-            }
+            UnitBehaviorRemove(autoA1150D40_var, "DarkDecay", 1);
         }
     }
     return true;
@@ -18894,7 +18889,7 @@ bool gt_BossRushSetup_Func (bool testConds, bool runActions) {
     gv_bossRush.lv_spawnerRegion = RegionCircle(PointFromId(2067552197), 5.0);
     lv_locali = 1;
     for ( ; ( (auto4BA22FD0_ai >= 0 && lv_locali <= auto4BA22FD0_ae) || (auto4BA22FD0_ai < 0 && lv_locali >= auto4BA22FD0_ae) ) ; lv_locali += auto4BA22FD0_ai ) {
-        UnitCreate(1, "BossRushSpawner", 0, 0, RegionGetCenter(RegionFromName(("Cave " + IntToString(lv_locali)))), 270.0);
+        UnitCreate(1, "BossRushSpawner", 0, 14, RegionGetCenter(RegionFromName(("Cave " + IntToString(lv_locali)))), 270.0);
         UnitGroupAdd(gv_bossRush.lv_spawnerUnitGroups, UnitLastCreated());
     }
     gv_bossRush.lv_bossTypes[0] = "Arachnathid";
