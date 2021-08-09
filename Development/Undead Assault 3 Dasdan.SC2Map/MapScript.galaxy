@@ -2213,6 +2213,8 @@ void gf_Chapter3Items () {
     int auto9FD7AB42_val;
     int auto094B0845_val;
     int auto2862CA90_val;
+    int auto1518494D_val;
+    int autoAC4EB920_val;
 
     // Variable Initialization
 
@@ -2278,6 +2280,22 @@ void gf_Chapter3Items () {
             lib90F7C81D_gf_AirDropItemToRegionNEW("M9Flamethrower", RegionFromId(266), 1, 1, 1, 1);
         }
         else if (((UnitGetType(auto5E490BC6_var) == "GhostMOS"))) {
+            auto1518494D_val = RandomInt(0, 2);
+            if (auto1518494D_val == 1) {
+                lib90F7C81D_gf_AirDropItemToRegionNEW("XR42", RegionFromId(266), 1, 1, 1, 1);
+            }
+            else {
+                lib90F7C81D_gf_AirDropItemToRegionNEW("IPR", RegionFromId(266), 1, 1, 1, 1);
+            }
+        }
+        else if (((UnitGetType(auto5E490BC6_var) == "Cyborg"))) {
+            autoAC4EB920_val = RandomInt(0, 2);
+            if (autoAC4EB920_val == 1) {
+                lib90F7C81D_gf_AirDropItemToRegionNEW("DeathMachine", RegionFromId(266), 1, 1, 1, 1);
+            }
+            else {
+                lib90F7C81D_gf_AirDropItemToRegionNEW("M935Minigun", RegionFromId(266), 1, 1, 1, 1);
+            }
         }
     }
     lib90F7C81D_gf_SpawnItemAtLocationNEW("AmmoCase", 100, RegionRandomPoint(RegionFromId(266)), 100, 1, 2);
