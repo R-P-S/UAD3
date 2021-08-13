@@ -7599,6 +7599,9 @@
             <User Type="Camos" Instance="Octo Dark">
                 <Field Id="Camo"/>
             </User>
+            <User Type="AchievementBadge" Instance="Weekly Modifier 2">
+                <Field Id="Achievement"/>
+            </User>
         </Instances>
         <Instances Id="Week 3">
             <Image Image="Assets\Textures\justdie_coop.dds">

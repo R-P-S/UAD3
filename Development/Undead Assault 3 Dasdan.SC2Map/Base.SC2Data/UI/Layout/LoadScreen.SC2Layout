@@ -322,6 +322,52 @@
 				<TextureCoords top="1" left="1" bottom="0" right="0" layer="0"/>
 			</Frame>
 		</Frame>
+		<Frame type="Label" name="ProgressLabel">
+			<Anchor side="Top" relative="$parent/LoadingBarContainer" pos="Min" offset="0" />
+         	<Anchor side="Bottom" relative="$parent/LoadingBarContainer" pos="Max" offset="0" />
+         	<Anchor side="Left" relative="$parent/LoadingBarContainer" pos="Min" offset="4" />
+         	<Anchor side="Right" relative="$parent/LoadingBarContainer" pos="Max" offset="0" />
+            <Width val="140"/>
+            <Height val="50"/>
+            <Color val="0,255,168" />
+			<Style val="BattlenetTopNav" />
+            <Text val="{TFT/@Text}"/>
+			<RenderPriority val="1300"/>
+            <Frame type="TextFormatFrame" name="TFT">
+                <FormatText val="%0%%"/>
+                <Replacement val="0"/>
+            </Frame>
+            <StateGroup name="ProgressState">
+                <DefaultState val="Default"/>
+                <State name="Above100">
+                    <When type="Property" frame="Percent" operator="GreaterThan" ResultInt="100"/>
+                    <Action type="SetProperty" frame="TFT" Replacement="100"/>
+                </State>
+                <State name="Above0">
+                    <When type="Property" frame="Percent" operator="GreaterThanOrEqual" ResultInt="0"/>
+                    <Action type="SetProperty" frame="TFT" Replacement="{$parent/Percent/@ResultInt}"/>
+                </State>
+                <State name="Default"/>
+            </StateGroup>
+            <Frame type="MathFrame" name="Percent">
+                <A val="{$parent/Progress/@Result}"/>
+                <B val="100"/>
+                <Operator val="Multiply"/>
+            </Frame>  
+            <Frame type="MathFrame" name="Progress">
+                <A val="{Current/@Text}"/>
+                <B val="{Max/@Text}"/>
+                <Operator val="Divide"/>
+                <Frame type="Label" name="Current">
+                    <Anchor relative="$parent/$parent"/>
+                    <Text val="{$GlueUI/ScreenLoading/LoadingBar_Terr/LoadingBarImage/@Width}"/>
+                </Frame>
+                <Frame type="Label" name="Max">
+                    <Anchor relative="$parent/$parent"/>
+                    <Text val="{$GlueUI/ScreenLoading/LoadingBar_Terr/LoadingBarFrameImage/@Width}"/>
+                </Frame>
+            </Frame>
+        </Frame>
 		<StateGroup name="LoadState">
 			<DefaultState val="NotLoading" />
 			<State name="Loading">
