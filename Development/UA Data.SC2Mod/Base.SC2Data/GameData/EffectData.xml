@@ -6239,6 +6239,7 @@
         <PeriodicEffectArray value="LNMachineGunLaunchMissileBurstSet"/>
         <PeriodicPeriodArray value="0.125"/>
         <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="LNIncendiaryFireCreatePersist" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
@@ -6249,6 +6250,7 @@
         <PeriodicEffectArray value="LNMachineGunIncendiaryLaunchMissileBurstSet"/>
         <PeriodicPeriodArray value="0.125"/>
         <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="M241MMGCriticalFireCreatePersist" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
