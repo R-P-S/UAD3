@@ -9911,6 +9911,7 @@
         <Period value="1"/>
         <PeriodicEffect value="DarkDecayDoT"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <RemoveValidatorArray value="DecayFilter"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="WeatherEffectCops" parent="TemplateBuff">
         <BehaviorFlags index="Permanent" value="1"/>

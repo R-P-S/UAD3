@@ -1,4 +1,4 @@
-﻿Category/Name/lib_90F7C81D_0310CF66=Combat Engineer
+Category/Name/lib_90F7C81D_0310CF66=Combat Engineer
 Category/Name/lib_90F7C81D_040FF445=Vision
 Category/Name/lib_90F7C81D_05E76DA1=Combat Medic
 Category/Name/lib_90F7C81D_065EE436=Status Menu
@@ -2218,7 +2218,7 @@ Variable/Name/lib_90F7C81D_A9BAB585=Shotguns
 Variable/Name/lib_90F7C81D_A9F19F88=Prestige.Level
 Variable/Name/lib_90F7C81D_AA0AA801=HUD_Player_Frame_Name_Label
 Variable/Name/lib_90F7C81D_AAD2D67A=X Offset Actual
-Variable/Name/lib_90F7C81D_AAD549F1=Dead Hero Indicator
+Variable/Name/lib_90F7C81D_AAD549F1=죽은 병사 표시기
 Variable/Name/lib_90F7C81D_AB01C075=Echo
 Variable/Name/lib_90F7C81D_AB2C20E8=Tooltip
 Variable/Name/lib_90F7C81D_AB2D17F2=Index

@@ -51,6 +51,9 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="DeathMachine"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="DecayFilter">
+        <Filters value="-;Psionic,Structure,Missile,Stasis,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
     <CValidatorUnitCompareField id="FoodGT4">
         <WhichUnit Value="Source"/>
         <Compare value="GT"/>

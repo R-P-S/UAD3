@@ -10498,6 +10498,7 @@ Validator/Name/DMRMarksmanshipNegateL4=DMR Marksmanship Negate L4
 Validator/Name/DMRisEquipped=DMR is Equipped
 Validator/Name/DeathMachineIsEquipped=Death Machine Is Equipped
 Validator/Name/DeathMachineNotEquipped=Death Machine Not Equipped
+Validator/Name/DecayFilter=Decay Filter
 Validator/Name/DisableFirerateBuildupM41SAW=Disable Firerate Buildup M41 SAW
 Validator/Name/DisableFirerateBuildupMachineGun=Disable Firerate Buildup Machine Gun
 Validator/Name/Disarm=Disarm
