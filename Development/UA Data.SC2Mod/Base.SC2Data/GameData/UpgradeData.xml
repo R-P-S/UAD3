@@ -1553,6 +1553,7 @@
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,RevealRadius" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel3Dummy" parent="Research">
@@ -1567,12 +1568,14 @@
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Random" Value="0.56"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel2Dummy" parent="Research">
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel1Dummy" parent="Research">
@@ -3680,6 +3683,7 @@
         <Icon value="Assets\Textures\ui_aicommand_build_open_timingattack.dds"/>
         <EffectArray Operation="Subtract" Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="20"/>
         <EffectArray Operation="Subtract" Reference="Abil,ReinforcePosition,Cost[0].Cooldown.TimeUse" Value="24.000000"/>
+        <EffectArray Operation="Subtract" Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="20"/>
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
@@ -4372,6 +4376,7 @@
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
@@ -4389,6 +4394,7 @@
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Random" Value="0.56"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
@@ -4399,6 +4405,7 @@
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,RevealRadius" Value="1"/>
         <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
