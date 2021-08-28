@@ -987,6 +987,7 @@
         <Icon value="Assets\Buttons\Syringe_Purple_Upgraded.dds"/>
         <AlertIcon value="Assets\Buttons\Syringe_Purple_Upgraded.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="AdvancedFirstAidKit" parent="TemplateButton">
         <Icon value="Buttons\BTNMedicalKitAdv.dds"/>
@@ -999,6 +1000,7 @@
         <Icon value="Buttons\BTNMedicalKitAdv.dds"/>
         <AlertIcon value="Buttons\BTNMedicalKitAdv.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="AdvancedMedicalTraining" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
@@ -1016,6 +1018,7 @@
         <Icon value="Assets\Icon Pack\btn-ability-terran-combatdrugs.dds"/>
         <AlertIcon value="Assets\Icon Pack\btn-ability-terran-combatdrugs.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="AegisAura" parent="TemplateButton">
         <Icon value="Assets\Icon Pack\btn-custom-terran-raynor-commando.dds"/>
@@ -1041,6 +1044,7 @@
         <Icon value="Assets\Buttons\Syringe_Purple.dds"/>
         <AlertIcon value="Assets\Buttons\Syringe_Purple.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="ArachnathidCharge" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-ability-zerg-dehaka-ultralisk-brutalcharge.dds"/>
@@ -1167,6 +1171,7 @@
         <EditorCategories value="Race:Terran"/>
         <TooltipFlags index="ShowCooldown" value="0"/>
         <TooltipFlags index="ShowAutocast" value="0"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="ClassicCommandCardOff" parent="TemplateButton">
         <Icon value="Assets\Buttons\btn-tips-hotkeys-red.dds"/>
@@ -1174,6 +1179,7 @@
         <HotkeyAlias value="ClassicCommandCardOn"/>
         <TooltipFlags index="ShowCooldown" value="0"/>
         <TooltipFlags index="ShowAutocast" value="0"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="CommandCardRequirement" parent="TemplateButton">
         <Tooltip value=""/>
@@ -1224,6 +1230,7 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
         <EditorCategories value="Race:Neutral"/>
         <HotkeyAlias value="FirstAidKitSelfCast"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="FireShield" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
@@ -1328,6 +1335,7 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blinkshieldrestore.dds"/>
         <EditorCategories value="Race:Neutral"/>
         <HotkeyAlias value="FirstAidKitSelfCast"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="SuperiorEnergyCell" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-ability-protoss-blinkshieldrestore.dds"/>
@@ -1413,6 +1421,7 @@
         <Icon value="Assets\Icon Pack\btn-research-terran-microfiltering_off.dds"/>
         <AlertIcon value="Assets\Icon Pack\btn-research-terran-microfiltering_off.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="CancelG" parent="TemplateButton">
         <Icon value="Assets\Icon Pack\btn-command-cancel.dds"/>
@@ -1786,12 +1795,14 @@
         <TooltipFlags index="ShowAutocast" value="0"/>
         <Icon value="Assets\Icon Pack\btn-ability-terran-holdfire-color.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="WeaponsHoldOff" parent="TemplateButton">
         <TooltipFlags index="ShowCooldown" value="0"/>
         <TooltipFlags index="ShowAutocast" value="0"/>
         <Icon value="Assets\Icon Pack\btn-ability-terran-weaponsfree-color.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="JavelinMissile" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
@@ -1875,6 +1886,7 @@
         <Icon value="Assets\Icon Pack\btn-research-terran-microfiltering_infrared_off.dds"/>
         <AlertIcon value="Assets\Icon Pack\btn-research-terran-microfiltering_infrared_off.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="NewFragGrenade" parent="TemplateButton">
         <Icon value="BTNFragGrenade.dds"/>
@@ -1887,6 +1899,7 @@
         <Icon value="Assets\Textures\btn-research-terran-microfiltering_infrared.dds"/>
         <AlertIcon value="Assets\Textures\btn-research-terran-microfiltering_infrared.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="PredatorStrike" parent="TemplateButton">
         <Icon value="Assets\Icon Pack\btn-techupgrade-terran-devastatormissile-color.dds"/>
@@ -1899,6 +1912,7 @@
         <Icon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-stimpack-color.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="NOD" parent="TemplateButton">
         <TooltipFlags index="ShowCooldown" value="0"/>
@@ -1906,6 +1920,7 @@
         <Icon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
         <AlertIcon value="Assets\Textures\btn-research-terran-microfiltering.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="RapidFireIntensity" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
@@ -1933,6 +1948,7 @@
         <Icon value="Buttons\BTNMedicalKit.dds"/>
         <AlertIcon value="Buttons\BTNMedicalKit.dds"/>
         <EditorCategories value="Race:Neutral"/>
+        <Hotkey value=""/>
     </CButton>
     <CButton id="ReloadVulcanTurret" parent="TemplateButton">
         <TooltipFlags index="ShowCooldown" value="0"/>

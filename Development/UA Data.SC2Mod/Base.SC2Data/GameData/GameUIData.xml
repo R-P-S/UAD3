@@ -26,5 +26,8 @@
         <DisplayTimeInSeconds value="1"/>
         <BehaviorIconColors index="Positive" value="255,255,255,255"/>
         <BehaviorIconColors index="Negative" value="255,255,255,255"/>
+        <HotkeyInfoArray index="UIEditorSize1920x1200" Category="Hotkey/Category/13/SelfCast"/>
+        <HotkeyInfoArray index="UIEditorSize1920x1080" Category="Hotkey/Category/13/SelfCast"/>
+        <HotkeyInfoArray index="UIEditorSize2560x1600" Category="Hotkey/Category/13/SelfCast"/>
     </CGameUI>
 </Catalog>

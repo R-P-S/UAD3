@@ -2168,12 +2168,12 @@ Button/Tooltip/AdditionalActions=Opens up a list of additional actions.
 Button/Tooltip/AdrenalineRush=The commando can survive one fatal hit and gain movespeed for 20 seconds. You cannot be saved from death more than once every 4 minutes, nor can you be saved from effects that deal an excess of 1000 damage at once.
 Button/Tooltip/AdultWidow=Fully grown widow that produces a myriad of deadly poisons.
 Button/Tooltip/AdvancedAntiVeninShot=Injects the target with stronger Anti-Venin, curing them of all moderate poisons and heals for <d ref="Effect,AdvancedAntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.
-Button/Tooltip/AdvancedAntiVeninShotSelfCast=Injects the target with stronger Anti-Venin, curing them of all moderate poisons and heals for <d ref="Effect,AdvancedAntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/AdvancedAntiVeninShotSelfCast=Injects the target with stronger Anti-Venin, curing them of all moderate poisons and heals for <d ref="Effect,AdvancedAntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/AdvancedFirstAidKit=A better first aid kit that heals 200 life instantly along with curing breaks and moderate lacerations after a short cast time. Can target friendly biological units.
-Button/Tooltip/AdvancedFirstAidKitSelfCast=A better first aid kit that heals 200 life instantly along with curing breaks and moderate lacerations after a short cast time. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/AdvancedFirstAidKitSelfCast=A better first aid kit that heals 200 life instantly along with curing breaks and moderate lacerations after a short cast time. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/AdvancedMedicalTraining=Reduces the cast time of all combat medic abilities by 0.15 seconds.
 Button/Tooltip/AdvancedQuikClot=Quik Clot Combat Application Injection! Newly revised formula rapidly heals the most grievous of wounds faster than you can scream "medic!" Heals 200 hp instantly and removes moderate hemorrhage and infection ailments.
-Button/Tooltip/AdvancedQuikClotSelfCast=Quik Clot Combat Application Injection! Newly revised formula rapidly heals the most grievous of wounds faster than you can scream "medic!" Heals 200 hp instantly and removes moderate hemorrhage and infection ailments.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/AdvancedQuikClotSelfCast=Quik Clot Combat Application Injection! Newly revised formula rapidly heals the most grievous of wounds faster than you can scream "medic!" Heals 200 hp instantly and removes moderate hemorrhage and infection ailments.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/AegisAura=Inspire local forces to fight harder, increasing their attack and reload speeds by <d ref="(Behavior,AegisAura,Modification.AttackSpeedMultiplier - 1) * 100" precision="1"/>%. Aura affects units up to <d ref="Effect,AegisAuraSA,AreaArray[0].Radius"/> range away and lasts <d ref="Behavior,AegisAuraController,Duration"/> seconds. Drains <d ref="Behavior,AegisAuraController,Modification.VitalRegenArray * (-1)"/> energy while active.
 Button/Tooltip/AimAssistant=A small device that attaches to your weapon to improve aiming. Use to permanently improve your weapon.</n><c val="FF8000">Increases bullet damage dealt by 10%. Doesn't affect plasma or fire-based weaponry, nor does it stack.</c>
 Button/Tooltip/AirReconnaissance=Improves reconnaissance and vision on the AH-32 Viper. Each level improves vision range by 3.<n/>Level 1: Orbital Satellite Reconaissance.<n/>Level 2: Air Radar.<n/>Level 3: Improved Orbital Satellite Reconaissance.<n/>Level 4: Improved Air Radar.
@@ -2188,7 +2188,7 @@ Button/Tooltip/AntiVenin=Injects the target with Anti-Venin specifically made to
 Button/Tooltip/AntiVeninImproved=Injects the target with Anti-Venin specifically made to counteract the various poisons possessed by the zombies. Anti-Venin will take <d ref= "Behavior,AntiVenin,Duration"/> seconds to heal <d ref="Effect,AntiVeninHeal,VitalArray[0].Change"/> life and eliminate moderate poisons from the patient's body.
 Button/Tooltip/AntiVeninPrioritization=Removes the healing aspect of anti-venin, but reduces the energy cost by 25 and cooldown by 15.
 Button/Tooltip/AntiVeninShot=Injects the target with Anti-Venin, curing them of all minor poisons and heals for <d ref="Effect,AntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.
-Button/Tooltip/AntiVeninShotSelfCast=Injects the target with Anti-Venin, curing them of all minor poisons and heals for <d ref="Effect,AntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/AntiVeninShotSelfCast=Injects the target with Anti-Venin, curing them of all minor poisons and heals for <d ref="Effect,AntiVeninShotHeal,VitalArray[Life].Change"/> after 8 seconds. Can target friendly biological units.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/AntiVeninSuperImproved=Injects the target with Anti-Venin specifically made to counteract the various poisons possessed by the zombies. Anti-Venin will take <d ref= "Behavior,AntiVenin,Duration"/> seconds to heal <d ref="Effect,AntiVeninHeal,VitalArray[0].Change"/> life and eliminate severe poisons from the patient's body.
 Button/Tooltip/AntiVeninSwift=Reduces the time it takes anti-venin to cure patients by 6 seconds.
 Button/Tooltip/Apiary=Ranged undead hive that spawns Swarmers until killed.
@@ -2300,8 +2300,8 @@ Button/Tooltip/Cicadis=Insectoid undead creature. Likes to make nests called "Sa
 Button/Tooltip/CivilianEngineer=Unarmed engineer.
 Button/Tooltip/CivilianFemale2=Female Civilian.
 Button/Tooltip/CivilianLevels=Level 1: +1 stats</n>Level 2: Civilian Ability</n>Level 3: +2 stats</n>Level 4: +.05 MS</n>Level 5: Civilian Ability</n>Level 6: +3 stats</n>Level 7: +.08 MS</n>Level 8: +6 stats</n>Level 9: Civilian Ability</n>Level 10: Ultimate Ability & +10 stats
-Button/Tooltip/ClassicCommandCardOff=Jump & Sprint buttons are removed from the Z menu.<c val="FFFF8A"><n/><n/>Right click to switch to Status Menu. (Alt+J)
-Button/Tooltip/ClassicCommandCardOn=Jump & Sprint buttons are moved to the Z menu.<c val="FFFF8A"><n/><n/>Right click to switch to Status Menu. (Alt+J)
+Button/Tooltip/ClassicCommandCardOff=Jump & Sprint buttons are removed from the Z menu.<c val="FFFF8A"><n/><n/>Right click to switch to Status Menu.
+Button/Tooltip/ClassicCommandCardOn=Jump & Sprint buttons are moved to the Z menu.<c val="FFFF8A"><n/><n/>Right click to switch to Status Menu.
 Button/Tooltip/Cloak=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects. You may attack while cloaked without forcing decloak.<n/><n/><c val="f078ff">Drains 1 energy per second.</c> (this is less than your total energy regen)
 Button/Tooltip/CloseAirSupport=Calls for close air support (CAS) to fire a missile at the target spot, dealing <d ref="Effect,PredatorStrikeDamage,Amount"/> damage in a wide area. Takes approximately 5.7 seconds after the order has been given for the payload to be delivered.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c></n><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/ClusterRocketsMini=Fires a barrage of rockets at the target area, dealing 600 damage and temporarily stunning the targets.<n/><c val="FF0000">Explosives hurt allies.</c>
@@ -2389,7 +2389,7 @@ Button/Tooltip/EmptyVial=
 Button/Tooltip/EncumberingSlime=Shoot a stream of slime at a target unit and reduce their MS by 30% for 30 seconds.
 Button/Tooltip/EnergyBattery=An energy source for large machinery.
 Button/Tooltip/EnergyCell=An energy-dense cell made to regenerate your suit. Restores 30 energy instantly, then regenerates 120 energy over 40 seconds.
-Button/Tooltip/EnergyCellSelfCast=An energy-dense cell made to regenerate your suit. Restores 30 energy instantly, then regenerates 120 energy over 40 seconds.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/EnergyCellSelfCast=An energy-dense cell made to regenerate your suit. Restores 30 energy instantly, then regenerates 120 energy over 40 seconds.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/EnergyConservation=Uses a more efficient system to engulf the Automatic Rifleman's bullets in fire, reducing the energy cost of firing incendiary rounds by 33%.
 Button/Tooltip/EnergyGenerator=A stationary generator that restores the energy of nearby friendlies. Energy Generator autocasts a version of the engineer's arc cell at nearby friendlies when their energy gets too low.
 Button/Tooltip/EnergyGeneratorSignalBoost=Increases the ability range of energy generator arc cell by 33%.
@@ -2434,7 +2434,7 @@ Button/Tooltip/FirstAid=Apply standard first aid to a friendly target. Heals <d 
 Button/Tooltip/FirstAidEfficiency=Reduces the energy cost of first aid by 15 and the cooldown by 10.
 Button/Tooltip/FirstAidImproved=Apply standard first aid to a friendly target. Heals <d ref= "Effect,FirstAidHeal,VitalArray[0].Change"/> hp instantly along with curing breaks, sprains, and moderate lacerations after a short cast time.
 Button/Tooltip/FirstAidKit=Heals 100 life instantly along with curing sprains and minor lacerations after a short cast time. Can target friendly biological units.
-Button/Tooltip/FirstAidKitSelfCast=Apply standard first aid to a friendly target. Heals <d ref= "Effect,FirstAidHeal,VitalArray[0].Change"/> hp instantly along with curing sprains and minor lacerations after a short cast time.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/FirstAidKitSelfCast=Apply standard first aid to a friendly target. Heals <d ref= "Effect,FirstAidHeal,VitalArray[0].Change"/> hp instantly along with curing sprains and minor lacerations after a short cast time.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/FirstAidPotency=Increases the life healed by first aid by 50, and the energy cost by 5.
 Button/Tooltip/FirstAidSuperImproved=Apply standard first aid to a friendly target. Heals <d ref= "Effect,FirstAidHeal,VitalArray[0].Change"/> hp instantly along with curing breaks, sprains, and severe lacerations after a short cast time.
 Button/Tooltip/FlareGun=Fires a flare at the target point, illuminating the surrounding area for 45 seconds.
@@ -2756,8 +2756,8 @@ Button/Tooltip/MotionSensorCloakedDetection=Detects motion up to <d ref="Behavio
 Button/Tooltip/MotionSensorEarlyDetection=Increases the radar radius of motion sensor by 25%.
 Button/Tooltip/MuscleRelaxant=A benzodiazepine that aids in concentration and relaxation. Frequently used by snipers to improve accuracy and weapon control.<n/><c val="FF8000">Increases damage by 50%, attack speed by 15%, and range by 5 for 90 seconds. Does not stack.</c>
 Button/Tooltip/Mutant=Basic heavy undead unit.
-Button/Tooltip/NOD=Night Optic Device<n/><n/><c val="FFFF8A">Right click to switch to Infrared. (Alt+K)</c>
-Button/Tooltip/NODInfrared=Night Optic Device - Infrared<n/><n/><c val="FFFF8A">Right click to switch Infared off. (Alt+K)</c>
+Button/Tooltip/NOD=Night Optic Device<n/><n/><c val="FFFF8A">Right click to switch to Infrared.
+Button/Tooltip/NODInfrared=Night Optic Device - Infrared<n/><n/><c val="FFFF8A">Right click to switch Infared off.
 Button/Tooltip/NODOff=Turn NOD off.
 Button/Tooltip/NODOffInfrared=Turn NOD off - Infrared.
 Button/Tooltip/NanoArmor=Use nano bots to continually create armor over the battle bot. Generates <d ref="Behavior,NanoArmor,Modification.VitalMaxArray[1]"/> armor every <d ref="Behavior,NanoArmorGeneration,Period" precision="2"/> seconds at the expense of <d ref="(-1) * (Behavior,NanoArmorGeneration,Modification.VitalRegenArray)" precision="2"/> en/sec additional operating cost. Lasts for <d ref="Behavior,NanoArmorGeneration,Duration"/> seconds. Armor lasts for <d ref="Behavior,NanoArmorGeneration,Duration"/> seconds after the ability ends.
@@ -2853,7 +2853,7 @@ Button/Tooltip/PrototypeWeaponry=The commando is issued new weapons/devices fres
 Button/Tooltip/PsionicShockwave=Releases a burst of psionic energy radiating outward from the caster, knocking away all units and stunning them momentarily.
 Button/Tooltip/Pyrotechnician=Flamethrower troops can use their pyrotechnical skills to enhance their survivability in combat.<n/><n/><c val="FFFF8A">Level 1:</c> Enables firesuit and fire shield<n/><c val="FFFF8A">Level 2:</c> Enables plasma shield, and increases fire damage resist of firesuit by 20%<n/><c val="FFFF8A">Level 3:</c> Increases the melee damage resistance of fire shield by 10%, the burning buffs applied by 3, the duration of immobilized by 100%, the damage reflected by 67%, the initial energy cost by 5, the periodic energy cost by 5%, and increases fire damage resist of firesuit by 25%<n/><c val="FFFF8A">Level 4:</c> Increases the damage absorbed by plasma shield by 140%, the duration by 25%, the energy cost by 10, and increases fire damage resist of firesuit by 30%
 Button/Tooltip/QuikClot=Quik Clot Combat Application Injection! Heals 100 hp instantly and removes minor hemorrhage and infection ailments.
-Button/Tooltip/QuikClotSelfCast=Quik Clot Combat Application Injection! Heals 100 hp instantly and removes minor hemorrhage and infection ailments.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/QuikClotSelfCast=Quik Clot Combat Application Injection! Heals 100 hp instantly and removes minor hemorrhage and infection ailments.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/RAAnnihilator=A robotic terror. Serves as heavy support with a pulse cannon.
 Button/Tooltip/RAAssaultman=MOS: 11B (Infantry) Role: Assaultman<n/>Assaultman are designated within the platoon and have received special training in destroying airborne threats.
 Button/Tooltip/RAAutomaticRifleman=MOS: 11B (Infantry) Role: Automatic Rifleman<n/>The automatic rifleman provides fire support through the tactical use of his machine gun.  ARs are an important part of a squad, providing the base of fire to allow his squad breathing room to maneuver.
@@ -3022,14 +3022,15 @@ Button/Tooltip/SquadDesignatedMarksman=MOS 11B (Infantry) Role: Squad Designated
 Button/Tooltip/SquadLeaderMini=MOS: 11B (Infantry) Role: Rifleman<n/>The infantry rifleman is a versatile soldier on the battlefield.
 Button/Tooltip/StalkerZombie=Fast undead mutation with the ability to remain unseen without Detection. Can ram into targets.
 Button/Tooltip/StasisWeb=Launch a slew of sticky web, encasing targets near the impact into an unbreakable web. Webbed targets are put in stasis for 20 seconds and are vulnerable to having their life consumed by a Widower.
-Button/Tooltip/StatusMenuAilments=Change the status menu to ailment view.<c val="FFFF8A"><n/><n/>Right click to switch to Weapons Hold. (Alt+J)
-Button/Tooltip/StatusMenuInventory=Change the status menu to inventory view.<c val="FFFF8A"><n/><n/>Right click to switch to Weapons Hold. (Alt+J)
+Button/Tooltip/StatusMenuAilments=Change the status menu to ailment view.<c val="FFFF8A"><n/><n/>Right click to switch to Weapons Hold.
+Button/Tooltip/StatusMenuInventory=Change the status menu to inventory view.<c val="FFFF8A"><n/><n/>Right click to switch to Weapons Hold.
 Button/Tooltip/Stetmann2=Stetmann can heal his squad-mates at lightning speed. <n/><n/><c val="#ColorAttackInfo">Has no attack.</c><n/>
 Button/Tooltip/StingerMissile=Fires a stinger missile at the target air unit, dealing <d ref="Effect,StingerMissileImpactDamage,Amount"/> damage to the targeted unit and <d ref="Effect,StingerMissileDamage,Amount"/>  damage around the target.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/StingerMissileAnnihilation=Increases inner and outer aoe of stinger missile by 33% and energy cost by 5.
 Button/Tooltip/StingerMissileEnhancedTracking=Increases the range of stinger missile by 50%.
 Button/Tooltip/StingerMissileItem=Loads Missiles into a Stinger Missile Launcher
 Button/Tooltip/StingerMissileLauncher=Fires a stinger missile at the target air unit, dealing <d ref="Effect,StingerMissileLauncherImpactDamage,Amount"/> damage to the targeted unit and <d ref="Effect,StingerMissileLauncherDamage,Amount"/>  damage around the target.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
+Button/Tooltip/StonewallProtocol=Project a barrier around the cyborg that significantly reduces the force of attacks passing through it, preventing attacks from dealing more than <d ref="Behavior,StonewallProtocol,DamageResponse.ClampMaximum"/> damage, reducing their original damage by <d ref="100 * (1 - Behavior,StonewallProtocol,DamageResponse.ModifyFraction)" precision="1"/>%, and preventing ailments. Stonewall protocol can reduce the force of melee, ranged, and explosive damage.
 Button/Tooltip/StonewallProtocolLeftovers=Restores 200 health when stonewall protocol ends.
 Button/Tooltip/StonewallProtocolRockSolid=Increases the damage reduction of stonewall protocol by 10%, sets the maximum damage taken limit to 20, and increases the energy cost by 20%.
 Button/Tooltip/StopBarrels=Halts HMG barrels, disallowing attack but normalizing energy regen.
@@ -3043,7 +3044,7 @@ Button/Tooltip/SuccessiveStrikeExtraCharge=+2 successive strike charges.
 Button/Tooltip/SummonZulusJashan=Creates 12 zulus to help Jashan
 Button/Tooltip/SuperTransfusionJashan=Heals the target for 200 hp and gives them a buff for 100 bonus hp and .1 movement speed for 30 seconds. Cures all ailments too
 Button/Tooltip/SuperiorEnergyCell=A large, energy-dense cell made to regenerate your suit. Restores 60 energy instantly, then regenerates 240 energy over 40 seconds.
-Button/Tooltip/SuperiorEnergyCellSelfCast=A large, energy-dense cell made to regenerate your suit. Restores 60 energy instantly, then regenerates 240 energy over 40 seconds.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities. (Alt+H)</c>
+Button/Tooltip/SuperiorEnergyCellSelfCast=A large, energy-dense cell made to regenerate your suit. Restores 60 energy instantly, then regenerates 240 energy over 40 seconds.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/SupersonicPulse=Charges up an immense amount of energy over <d ref="Abil,SupersonicPulse,CastIntroTime[0]"/> seconds, then releases it to stun all enemies within <d ref="Effect,SupersonicPulseSA,AreaArray[0].Radius"/> range of the cyborg for <d ref="Effect,SupersonicPulseStunAB,Duration"/> seconds.<n/><n/><c val="BFBFFF">Massive enemies cannot be stunned.<c>
 Button/Tooltip/SupersonicPulseEfficiency=Reduces the energy cost of supersonic pulse by 20% and the cooldown by 10%.
 Button/Tooltip/SupersonicPulseHypersonic=Deals 10% max hp damage to all affected enemies, ignoring any armor. Massive enemies take 200 damage instead, and mechanical enemies are immune.
@@ -3104,8 +3105,8 @@ Button/Tooltip/WaveAlignment=This unit has been stunned by aligning waves.
 Button/Tooltip/WaveAmplifier=Amplifies the waves emitted from the laser rifle crystal. Amplified laser shots deal 12 more damage and have 5 more range. Attacks also have a 10% chance to stun the target for 2 seconds.
 Button/Tooltip/WeaponOverheating=The S41 Ripsaw - HVAP weapon can overheat. Each time you attack you gain an "Overheat" buff. Once you reach 60 Overheat buffs, you will Overheat and stop firing for <d ref="Behavior,Overheated,Duration[0]"/> seconds. You will be warned twice before you overheat.</n></n>To remove overheat buffs, you must stop your barrels. While the barrels are stopped, you will lose 10 overheat buffs every 0.75 seconds.<n/>
 Button/Tooltip/WeaponProficiency=Weapon Proficieny is your general skill with your weapon. Increasing weapon proficiency improves reload/unjam time, range, round switching time, and dexterity.<n/><n/>Level 1: +10% Reload/Unjam bonus, 1.5 range, 3.75s round switch, and 3 dexterity<n/>Level 2: +20% Reload/Unjam bonus, 3 range, 3.5s round switch, and 6 dexterity<n/>Level 3: +30% Reload/Unjam bonus, 4.5 range, 3.25s round switch, and 9 dexterity<n/>Level 4: +40% Reload/Unjam bonus, 6 range, 3s round switch, and 12 dexterity
-Button/Tooltip/WeaponsHoldOff=Enables attack ability.<c val="FFFF8A"><n/><n/>Right click to switch to Classic Command Card. (Alt+J)
-Button/Tooltip/WeaponsHoldOn=Disables attack ability.<c val="FFFF8A"><n/><n/>Right click to switch to Classic Command Card. (Alt+J)
+Button/Tooltip/WeaponsHoldOff=Enables attack ability.<c val="FFFF8A"><n/><n/>Right click to switch to Classic Command Card.
+Button/Tooltip/WeaponsHoldOn=Disables attack ability.<c val="FFFF8A"><n/><n/>Right click to switch to Classic Command Card.
 Button/Tooltip/Weaver=Fast flying undead unit that shoots globs of sticky green web at it's targets, slowing them on impact.
 Button/Tooltip/WhitePhosphorous=Radios the FDC to fire willy pete at the target area, dealing 200 damage per second for 25 seconds. Consumes 4 shells.
 Button/Tooltip/Wicked=Medium flying creature. Can stun on attack.
@@ -5840,6 +5841,7 @@ HealingKit/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 HealingKit/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
 HealingKit/CL4=<n/><n/><c val="FFFF8A">Current Level: </c>4
 Hell on Treads=Hell on Treads
+Hotkey/Category/13/SelfCast=Self Cast Panel
 IDMR Info=Improved Service Shotgun
 IncendiaryRounds/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 IncendiaryRounds/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
@@ -9531,6 +9533,9 @@ UI/ColorByPlayerTip=Color units using player colors.
 UI/GameMenuOptions_Control=<h/>Options
 UI/GameResultDialog/Quit=<h/>Quit
 UI/HelpGameMechanic_Minerals_Name=Minerals
+UI/Hotkey/Name/23/UIEditorSize1920x1200=Abilities
+UI/Hotkey/Name/24/UIEditorSize1920x1080=Weapons Hold
+UI/Hotkey/Name/27/UIEditorSize2560x1600=NODS
 UI/Minerals=Ammo
 UI/PingTip=Allows you to ping a location on the minimap or game world that only your allies will see.
 UI/PlayerMessage/HasLeftTheGame=

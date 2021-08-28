@@ -645,4 +645,7 @@ UI/Hotkey/MinimapTerrain=
 UI/Hotkey/StatusAlly_USD=
 UI/Hotkey/StatusEnemy_USD=
 UI/Hotkey/StatusOwner_USD=
+UI/Hotkey/UIEditorSize1920x1080=J
+UI/Hotkey/UIEditorSize1920x1200=H
+UI/Hotkey/UIEditorSize2560x1600=K 
 UI/Quit_Hotkey_USD=Q

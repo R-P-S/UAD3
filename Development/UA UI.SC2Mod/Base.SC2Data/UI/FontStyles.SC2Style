@@ -68,10 +68,10 @@
     </FontGroup>
 
     <FontGroup name="HeaderFontGroup">
-        <CodepointRange font="#BlizzardGlobal"/>
-        <CodepointRange font="UI\Fonts\Eurostile-Bol.otf"/>
+        <CodepointRange font="#BlizzardGlobal" comment="Full fallback"/>
         <!-- KoKR -->
-        <CodepointRange font="UI\Fonts\Nanum-Bol.ttf"/>
+        <CodepointRange font="UI\Fonts\Nanum-Bol.ttf"/> <!-- Unicode min|max ? -->
+        <CodepointRange font="UI\Fonts\Eurostile-Bol.otf" comment="Primary Font"/> 
     </FontGroup>
     <Constant name="FontHeader" val="HeaderFontGroup"/>
 

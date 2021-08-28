@@ -58,14 +58,17 @@
       <Frame type="CommandButton" name="CommandButton00" template="SelfCast/SelfCastButtonTemplate">
          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
          <Anchor side="Left" relative="$parent" pos="Min" offset="2" />
+         <HotkeyUse val="UIEditorSize1920x1200"/>
       </Frame>
       <Frame type="CommandButton" name="CommandButton01" template="SelfCast/SelfCastButtonTemplate">
          <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0" />
          <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="#Button_Offset" />
+         <HotkeyUse val="UIEditorSize1920x1080"/>
       </Frame>
       <Frame type="CommandButton" name="CommandButton02" template="SelfCast/SelfCastButtonTemplate">
          <Anchor side="Top" relative="$parent/CommandButton01" pos="Min" offset="0" />
          <Anchor side="Left" relative="$parent/CommandButton01" pos="Min" offset="#Button_Offset" />
+         <HotkeyUse val="UIEditorSize2560x1600"/>
       </Frame>
    </Frame>
    <!-- Drag Frame Template -->
