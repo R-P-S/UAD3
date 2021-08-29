@@ -2755,106 +2755,6 @@
         <GlossaryWeakArray index="1" removed="1"/>
         <GlossaryWeakArray index="2" removed="1"/>
     </CUnit>
-    <CUnit id="AH32Viper">
-        <DeathRevealRadius value="3"/>
-        <Race value="Terr"/>
-        <Mob value="Multiplayer"/>
-        <FlagArray index="Hero" value="1"/>
-        <FlagArray index="PreventDestroy" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <PlaneArray index="Air" value="1"/>
-        <Collide index="Flying" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <Attributes index="Heroic" value="1"/>
-        <LifeStart value="1350"/>
-        <LifeMax value="1350"/>
-        <LifeArmor value="10"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
-        <Mover value="Fly"/>
-        <Speed value="3.25"/>
-        <Acceleration value="3.25"/>
-        <StationaryTurningRate value="180"/>
-        <TurningRate value="180"/>
-        <Sight value="20"/>
-        <Height value="7"/>
-        <VisionHeight value="4"/>
-        <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="150"/>
-        <CostResource index="Vespene" value="100"/>
-        <RepairTime value="60"/>
-        <AttackTargetPriority value="20"/>
-        <DamageDealtXP value="1"/>
-        <DamageTakenXP value="1"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="LearnAbilitiesAH32Viper"/>
-        <AbilArray Link="SystemEnhancements"/>
-        <AbilArray Link="HurricaneMissilesHero"/>
-        <AbilArray Link="DevastatorMissile"/>
-        <AbilArray Link="AirReconnaissance"/>
-        <AbilArray Link="OrbitalSatelliteReconnaissanceViper"/>
-        <BehaviorArray Link="HeroLevels"/>
-        <BehaviorArray Link="HullStrength"/>
-        <BehaviorArray Link="Rotor"/>
-        <BehaviorArray Link="Mechanical"/>
-        <BehaviorArray Link="AirRadar"/>
-        <BehaviorArray Link="BurstFireFullyAutomatic"/>
-        <WeaponArray Link="Viper30mmChainGun" Turret="BradleyTurret"/>
-        <CardLayouts>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons>
-                <Face value="LearnAbilities"/>
-                <Type value="Submenu"/>
-                <SubmenuAbilState value="LearnAbilitiesAH32Viper"/>
-                <SubmenuCardId value="0002"/>
-                <Row value="1"/>
-                <Column value="4"/>
-            </LayoutButtons>
-            <LayoutButtons Face="HurricaneMissiles" Type="AbilCmd" AbilCmd="HurricaneMissilesHero,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="DevastatorMissile" Type="AbilCmd" AbilCmd="DevastatorMissile,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="OrbitalSatelliteReconnaissance" Type="AbilCmd" AbilCmd="OrbitalSatelliteReconnaissanceViper,Execute" Row="2" Column="0"/>
-            <LayoutButtons>
-                <Face value="AirRadar"/>
-                <Type value="Passive"/>
-                <Behavior value="AirRadar"/>
-                <Requirements value="AirRadar"/>
-                <Row value="2"/>
-                <Column value="4"/>
-            </LayoutButtons>
-            <LayoutButtons Face="OneLife" Type="Passive" Row="1" Column="0"/>
-            <LayoutButtons Face="InternalRepairs" Type="Passive" Row="1" Column="1"/>
-        </CardLayouts>
-        <CardLayouts CardId="0002">
-            <LayoutButtons Face="HurricaneMissiles" Type="AbilCmd" AbilCmd="LearnAbilitiesAH32Viper,Learn2" Row="0" Column="1"/>
-            <LayoutButtons Face="DevastatorMissile" Type="AbilCmd" AbilCmd="LearnAbilitiesAH32Viper,Learn3" Row="0" Column="2"/>
-            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
-            <LayoutButtons Face="SystemEnhancements" Type="AbilCmd" AbilCmd="LearnAbilitiesAH32Viper,Learn1" Row="0" Column="0"/>
-            <LayoutButtons Face="AirReconnaissance" Type="AbilCmd" AbilCmd="LearnAbilitiesAH32Viper,Learn4" Row="0" Column="3"/>
-        </CardLayouts>
-        <Radius value="2"/>
-        <SeparationRadius value="7"/>
-        <ScoreMake value="250"/>
-        <ScoreKill value="250"/>
-        <ScoreResult value="BuildOrder"/>
-        <SubgroupPriority value="11"/>
-        <MinimapRadius value="0.75"/>
-        <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
-        <SubgroupAlias value="Banshee"/>
-        <GlossaryCategory value="Unit/Category/TerranUnits"/>
-        <GlossaryPriority value="210"/>
-        <HotkeyCategory value="Unit/Category/TerranUnits"/>
-        <LifeRegenDelay value="10"/>
-        <LifeRegenRate value="1.5"/>
-        <EnergyStart value="240"/>
-        <EnergyMax value="240"/>
-        <EnergyRegenRate value="2.25"/>
-    </CUnit>
     <CUnit id="AS50Bipod" parent="ItemCrateTemplate">
         <Name value="Unit/Name/AS50Bipod"/>
         <Description value="Button/Tooltip/AS50Bipod"/>
@@ -3159,85 +3059,6 @@
         <Attributes index="Structure" value="1"/>
         <Attributes index="Heroic" value="1"/>
         <BehaviorArray Link="HeroIsDead"/>
-    </CUnit>
-    <CUnit id="DrJashanMOS">
-        <Description value="Button/Tooltip/ChooseDrJashanMOS"/>
-        <DeathRevealRadius value="3"/>
-        <Race value="Terr"/>
-        <FlagArray index="Hero" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="9999"/>
-        <Collide index="Ground" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
-        <Attributes index="Heroic" value="1"/>
-        <LifeStart value="500"/>
-        <LifeMax value="500"/>
-        <LifeArmor value="5"/>
-        <LifeRegenRate value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/FishArmor"/>
-        <Speed value="3"/>
-        <Acceleration value="1000"/>
-        <LateralAcceleration value="46.0625"/>
-        <Sight value="15"/>
-        <AttackTargetPriority value="20"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="OldSprint"/>
-        <AbilArray Link="PerformSelfAidInfantry"/>
-        <AbilArray Link="BlinkCivilian"/>
-        <AbilArray Link="GasGrenadeJashan"/>
-        <AbilArray Link="SuperTransfusionJashan"/>
-        <AbilArray Link="PlasmaMGLJashan"/>
-        <AbilArray Link="ZuluStormJashan"/>
-        <BehaviorArray Link="CivilianLevels"/>
-        <BehaviorArray Link="Dexterity"/>
-        <BehaviorArray Link="Fitness"/>
-        <BehaviorArray Link="StartingStatsCivilian"/>
-        <BehaviorArray Link="10Stats"/>
-        <BehaviorArray Link="2Stats"/>
-        <BehaviorArray Link="3Stats"/>
-        <BehaviorArray Link="6Stats"/>
-        <BehaviorArray Link="MSBuff1"/>
-        <BehaviorArray Link="MSBuff2"/>
-        <BehaviorArray Link="CivilianArmor"/>
-        <BehaviorArray Link="Immunity"/>
-        <WeaponArray Link="BitchSlap"/>
-        <CardLayouts>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AdditionalActions" Type="Submenu" SubmenuCardId="0002" Row="1" Column="4"/>
-            <LayoutButtons Face="CivilianLevels" Type="Passive" Row="1" Column="0"/>
-            <LayoutButtons Face="GasGrenadeJashan" Type="AbilCmd" AbilCmd="GasGrenadeJashan,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="SuperTransfusionJashan" Type="AbilCmd" AbilCmd="SuperTransfusionJashan,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="PlasmaMGLJashan" Type="AbilCmd" AbilCmd="PlasmaMGLJashan,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="SummonZulusJashan" Type="AbilCmd" AbilCmd="ZuluStormJashan,Execute" Row="2" Column="3"/>
-        </CardLayouts>
-        <CardLayouts CardId="0002">
-            <LayoutButtons Face="Sprint" Type="AbilCmd" AbilCmd="OldSprint,255" Row="0" Column="0"/>
-            <LayoutButtons Face="PerformSelfAid" Type="AbilCmd" AbilCmd="PerformSelfAidInfantry,255" Row="1" Column="0"/>
-            <LayoutButtons Face="ZeratulBlink" Type="AbilCmd" AbilCmd="BlinkCivilian,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
-        </CardLayouts>
-        <Radius value="0.25"/>
-        <SeparationRadius value="0.25"/>
-        <CargoSize value="1"/>
-        <SubgroupPriority value="4"/>
-        <MinimapRadius value="0.25"/>
-        <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
-        <LeaderAlias value=""/>
-        <HotkeyAlias value=""/>
-        <KillDisplay value="Always"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
     </CUnit>
     <CUnit id="Fatty">
         <Race value="Zerg"/>
@@ -3588,7 +3409,7 @@
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
         <LeaderAlias value="AutomaticRifleman"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="HeavyGunner"/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
         <GlossaryPriority value="21"/>
@@ -5233,84 +5054,6 @@
         <HotkeyAlias value=""/>
         <Fidget DelayMax="0" DelayMin="0"/>
     </CUnit>
-    <CUnit id="FarmerAkmaMOS">
-        <DeathRevealRadius value="3"/>
-        <Race value="Terr"/>
-        <FlagArray index="Hero" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <PlaneArray index="Ground" value="1"/>
-        <PushPriority value="9999"/>
-        <Collide index="Ground" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
-        <Attributes index="Heroic" value="1"/>
-        <LifeStart value="500"/>
-        <LifeMax value="500"/>
-        <LifeArmor value="5"/>
-        <LifeRegenRate value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/FishArmor"/>
-        <Speed value="3"/>
-        <Acceleration value="1000"/>
-        <LateralAcceleration value="46.0625"/>
-        <Sight value="15"/>
-        <AttackTargetPriority value="20"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="OldSprint"/>
-        <AbilArray Link="PerformSelfAidInfantry"/>
-        <AbilArray Link="FragGrenadeAkma"/>
-        <AbilArray Link="ShockwaveAkma"/>
-        <AbilArray Link="VoidRiftAkma"/>
-        <AbilArray Link="BlinkCivilian"/>
-        <AbilArray Link="AkmasBulldozer"/>
-        <BehaviorArray Link="CivilianLevels"/>
-        <BehaviorArray Link="Dexterity"/>
-        <BehaviorArray Link="Fitness"/>
-        <BehaviorArray Link="StartingStatsCivilian"/>
-        <BehaviorArray Link="10Stats"/>
-        <BehaviorArray Link="2Stats"/>
-        <BehaviorArray Link="3Stats"/>
-        <BehaviorArray Link="6Stats"/>
-        <BehaviorArray Link="MSBuff1"/>
-        <BehaviorArray Link="MSBuff2"/>
-        <BehaviorArray Link="CivilianArmor"/>
-        <BehaviorArray Link="Immunity"/>
-        <WeaponArray Link="SuckerPunch"/>
-        <CardLayouts>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AdditionalActions" Type="Submenu" SubmenuCardId="0002" Row="1" Column="4"/>
-            <LayoutButtons Face="FragGrenadeAkma" Type="AbilCmd" AbilCmd="FragGrenadeAkma,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="ShockwaveAkma" Type="AbilCmd" AbilCmd="ShockwaveAkma,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="VoidRiftAkma" Type="AbilCmd" AbilCmd="VoidRiftAkma,On" Row="2" Column="2"/>
-            <LayoutButtons Face="CivilianLevels" Type="Passive" Row="1" Column="0"/>
-            <LayoutButtons Face="BulldozerAkma" Type="AbilCmd" AbilCmd="AkmasBulldozer,Execute" Row="2" Column="3"/>
-        </CardLayouts>
-        <CardLayouts CardId="0002">
-            <LayoutButtons Face="Sprint" Type="AbilCmd" AbilCmd="OldSprint,255" Row="0" Column="0"/>
-            <LayoutButtons Face="PerformSelfAid" Type="AbilCmd" AbilCmd="PerformSelfAidInfantry,255" Row="1" Column="0"/>
-            <LayoutButtons Face="ZeratulBlink" Type="AbilCmd" AbilCmd="BlinkCivilian,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
-        </CardLayouts>
-        <Radius value="0.25"/>
-        <SeparationRadius value="0.25"/>
-        <CargoSize value="1"/>
-        <SubgroupPriority value="4"/>
-        <MinimapRadius value="0.25"/>
-        <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
-        <LeaderAlias value=""/>
-        <HotkeyAlias value=""/>
-        <KillDisplay value="Always"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
-    </CUnit>
     <CUnit id="IrradiateCloud">
         <ReviveType value="SmokeGrenade"/>
         <Race value="Terr"/>
@@ -5590,7 +5333,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="OrbitalSupportSpecialist"/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
         <GlossaryPriority value="21"/>
@@ -6245,7 +5988,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="Specter"/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
         <GlossaryPriority value="21"/>
@@ -7475,7 +7218,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="LaserEnforcer"/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
         <GlossaryPriority value="21"/>
@@ -9941,7 +9684,7 @@
         <ScoreResult value="Units"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="CommandoHero"/>
         <EquipmentArray/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
@@ -10601,7 +10344,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Melee"/>
         <TacticalAI value="Marine"/>
-        <HotkeyAlias value="Marine"/>
+        <HotkeyAlias value=""/>
         <SelectAlias value="FireSupportSpecialist"/>
         <GlossaryCategory value="Unit/Category/TerranUnits"/>
         <GlossaryPriority value="21"/>
@@ -11071,6 +10814,7 @@
         <ShieldArmorName value="Unit/ShieldArmorName/DroneArmor"/>
         <FlagArray index="UseLineOfSight" value="1"/>
         <EffectArray index="Death" value="ScrapPartsDropOnDeathSet"/>
+        <HotkeyAlias value=""/>
     </CUnit>
     <CUnit id="InfantryMarksman" parent="InfantryUnitTemplate">
         <EnergyStart value="20"/>

@@ -5991,54 +5991,6 @@
         <ValidatedArray index="Channel" value="0"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="LaserDesignatorPL" Requirements="OS3"/>
     </CAbilEffectTarget>
-    <CAbilLearn id="LearnAbilitiesAH32Viper" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesAH32Viper"/>
-        <InfoArray index="Learn1" Abil="SystemEnhancements">
-            <Button DefaultButtonFace="SystemEnhancements"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="HurricaneMissilesHero">
-            <Button DefaultButtonFace="HurricaneMissiles"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="DevastatorMissile">
-            <Button DefaultButtonFace="DevastatorMissile"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="AirReconnaissance">
-            <Button DefaultButtonFace="AirReconnaissance"/>
-        </InfoArray>
-    </CAbilLearn>
-    <CAbilLearn id="LearnAbilitiesHeavyGunner" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesHeavyGunner"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="WeaponProficiency">
-            <Button DefaultButtonFace="WeaponProficiency"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="Marksmanship">
-            <Button DefaultButtonFace="LearnMarksmanship"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="PreciseAim">
-            <Button DefaultButtonFace="PreciseAim" Requirements="PreciseAimRequirement"/>
-        </InfoArray>
-        <InfoArray index="Learn5" Abil="BeltLinking">
-            <Button DefaultButtonFace="BeltLinking"/>
-        </InfoArray>
-    </CAbilLearn>
-    <CAbilLearn id="LearnAbilitiesOSS" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesOSS"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="Surveillance">
-            <Button DefaultButtonFace="Surveillance"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="OrbitalStrike">
-            <Button DefaultButtonFace="LearnOrbitalStrike"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="OrbitalSupport">
-            <Button DefaultButtonFace="OrbitalSupport"/>
-        </InfoArray>
-    </CAbilLearn>
     <CAbilTransport id="MedivacTransport">
         <MaxCargoCount value="27"/>
         <TotalCargoSpace value="27"/>
@@ -6604,42 +6556,6 @@
         <AINotifyEffect value=""/>
         <CmdButtonArray index="Execute" DefaultButtonFace="LaserEnforcerSkills"/>
     </CAbilEffectInstant>
-    <CAbilLearn id="LearnAbilitiesLaserEnforcer" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesLaserEnforcer"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="LaserBurn">
-            <Button DefaultButtonFace="LaserBurn" Requirements="LaserBurnLearn"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="DefensiveTactics">
-            <Button DefaultButtonFace="DefensiveTactics2"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="LaserEnforcerSkills">
-            <Button DefaultButtonFace="LaserEnforcerSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn5" Abil="PlasmaGrenade">
-            <Button DefaultButtonFace="PlasmaGrenade"/>
-        </InfoArray>
-    </CAbilLearn>
-    <CAbilLearn id="LearnAbilitiesSpecter" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesSpecter"/>
-        <InfoArray index="Learn1" Abil="SpecterSkills">
-            <Button DefaultButtonFace="SpecterSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="Marksmanship">
-            <Button DefaultButtonFace="LearnMarksmanship"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="AssassinSkills">
-            <Button DefaultButtonFace="AssassinSkills" Requirements="LearnAssassinSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="SpecializedRounds">
-            <Button DefaultButtonFace="SpecializedRounds"/>
-        </InfoArray>
-        <InfoArray index="Learn5" Abil="ReconExpert">
-            <Button DefaultButtonFace="ReconExpert"/>
-        </InfoArray>
-    </CAbilLearn>
     <CAbilEffectInstant id="Mend">
         <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
         <Effect index="0" value="CharonHeal"/>
@@ -8323,24 +8239,6 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="PlacePlasmaMine"/>
         <PlaceUnit value="PlasmaMine"/>
     </CAbilEffectTarget>
-    <CAbilLearn id="LearnAbilitiesCommando" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesCommando"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="Marksmanship">
-            <Button DefaultButtonFace="LearnMarksmanship"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="SurvivalExpert">
-            <Button DefaultButtonFace="LearnSurvivalExpert"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="ExplosivesExpert">
-            <Button DefaultButtonFace="LearnExplosivesExpert"/>
-        </InfoArray>
-        <InfoArray index="Learn5" Abil="PrototypeWeaponry">
-            <Button DefaultButtonFace="LearnPrototypeWeaponry" Requirements="LearnPrototypeWeaponry"/>
-        </InfoArray>
-    </CAbilLearn>
     <!--CAbilMove id="move">-->
     <!--        <OrderArray index="0" Model="Assets\UI\Feedback\AIBeaconRally\AIBeaconRally.m3"/>-->
     <!--        <OrderArray index="1" Model="Assets\UI\Feedback\AIBeaconScout\AIBeaconScout.m3"/>-->
@@ -9085,34 +8983,6 @@
         <AINotifyEffect value="LaserDesignatorPL"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="LaserDesignatorPL" Requirements="JFO122"/>
     </CAbilEffectTarget>
-    <CAbilLearn id="LearnAbilitiesFSS" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesFSS"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="CallForFireFSS">
-            <Button DefaultButtonFace="CallForFireFSS"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="StrafeRun">
-            <Button DefaultButtonFace="JointFiresObserver"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="IndirectFireSupport">
-            <Button DefaultButtonFace="IndirectFireSupport"/>
-        </InfoArray>
-    </CAbilLearn>
-    <CAbilLearn id="LearnAbilitiesGhost" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesGhost"/>
-        <InfoArray index="Learn1" Abil="GhostSkills">
-            <Button DefaultButtonFace="GhostSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="PlasmaGrenade">
-            <Button DefaultButtonFace="PlasmaGrenade"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="Marksmanship">
-            <Button DefaultButtonFace="LearnMarksmanship"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="CombatEnhancements"/>
-    </CAbilLearn>
     <CAbilEffectTarget id="LiftBoots">
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
@@ -9979,24 +9849,6 @@
         <ProducedUnitArray value="Enforcer"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="31BEnforcer" Requirements="RankSGTNR"/>
     </CAbilEffectInstant>
-    <CAbilLearn id="LearnAbilitiesEnforcer" parent="LearnAbilityMOS">
-        <Name value="Abil/Name/LearnAbilitiesEnforcer"/>
-        <InfoArray index="Learn1" Abil="SoldierSkills">
-            <Button DefaultButtonFace="LearnSoldierSkills"/>
-        </InfoArray>
-        <InfoArray index="Learn2" Abil="ProtectandServe">
-            <Button DefaultButtonFace="ProtectandServe"/>
-        </InfoArray>
-        <InfoArray index="Learn3" Abil="Marksmanship">
-            <Button DefaultButtonFace="LearnMarksmanship"/>
-        </InfoArray>
-        <InfoArray index="Learn4" Abil="CrowdControl">
-            <Button DefaultButtonFace="CrowdControl"/>
-        </InfoArray>
-        <InfoArray index="Learn5" Abil="DefensiveTactics">
-            <Button DefaultButtonFace="DefensiveTactics"/>
-        </InfoArray>
-    </CAbilLearn>
     <CAbilEffectTarget id="MGLItem">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="MGLItemLaunchMissile"/>

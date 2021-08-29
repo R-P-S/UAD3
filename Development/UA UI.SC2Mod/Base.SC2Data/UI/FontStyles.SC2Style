@@ -75,6 +75,14 @@
     </FontGroup>
     <Constant name="FontHeader" val="HeaderFontGroup"/>
 
+    <FontGroup name="StandardFontGroup">
+        <CodepointRange font="#BlizzardGlobal" comment="Full fallback"/>
+        <!-- KoKR -->
+        <CodepointRange font="UI\Fonts\Nanum-Reg.ttf"/> <!-- Unicode min|max ? -->
+        <CodepointRange font="UI\Fonts\Eurostile-Reg.otf" comment="Primary Font"/>
+    </FontGroup>
+    <Constant name="FontStandard" val="StandardFontGroup"/>
+
     <!-- Color Constants -->
     <Constant name="TooltipNumbers" val="bfd4fd"/>
 
@@ -83,11 +91,36 @@
     <Style name="UADHeaderTemplate" font="#UADFontHeader" styleflags="Shadow|TightGradient" shadowoffset="#ShadowOffsetNormal" />
     <Style name="UADHeaderExtendedTemplate" font="#UADFontHeaderExtended" styleflags="Shadow|TightGradient" shadowoffset="#ShadowOffsetNormal" />
     <Style name="HeaderTemplate" font="#FontHeader" styleflags="Shadow" shadowoffset="#ShadowOffsetNormal"/>
+    <Style name="StandardTemplate" font="#FontStandard" styleflags="Shadow" shadowoffset="#ShadowOffsetNormal"/>
+
 
     <!-- In-Game UI Styles -->
     <Style name="UAD" font="UI\Fonts\BankGothic Bold.ttf" height="30" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | Outline" textcolor="255,0,255,64" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,168,0" shadowoffset="1" outlinewidth="1"/>
     <Style name="Descript_Left" template="HeaderTemplate" height="18" vjustify="Top" hjustify="Left" styleflags="Shadow | Outline" textcolor="255,161,255,179" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="1"/>
 <!--<Style name="Descript_Left_ko" template="HeaderTemplate" height="18" vjustify="Top" hjustify="Left" styleflags="Shadow | Outline" textcolor="255,161,255,179" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="1"/> -->
+    <Style name="0UI_LCD_RED" font="UI\Fonts\LiquidCrystal-Bold.otf" height="20" vjustify="Top" hjustify="Left" styleflags="Shadow | Glow | Outline" textcolor="255,255,0,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,128,255" shadowoffset="1" outlinewidth="1"/>
+    <Style name="ScoreScreenProgressLabelSmall" template="HeaderTemplate" height="14" vjustify="Middle" hjustify="Center" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="0"/>
+    <!-- -->
+    <Style name="Swarm_BoldXSmall 2C" template="HeaderTemplate" height="16" vjustify="Middle" hjustify="Center" styleflags="Shadow | Outline" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="1"/>
+    <Style name="Swarm_BoldXSmall 2" template="HeaderTemplate" height="16" vjustify="Middle" hjustify="Left" styleflags="Shadow | Outline" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="1"/>
+    <Style name="UnitWireframeVital 2" template="HeaderTemplate" height="14" vjustify="Middle" hjustify="Center" styleflags="Shadow" textcolor="255,0,0,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="0"/>
+    <Style name="InfoPaneHeroAttribute 2" template="HeaderTemplate" height="18" vjustify="Top" hjustify="Left" styleflags="Shadow" textcolor="255,155,255,190" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2" outlinewidth="0"/>
+    <Style name="Countdown_Small" template="StandardTemplate" height="10" vjustify="Middle" hjustify="Center" styleflags="Outline" textcolor="255,161,255,179" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="0" outlinewidth="1"/>
+    <Style name="Item_Description" template="HeaderTemplate" height="18" vjustify="Middle" hjustify="Center" styleflags="Shadow | Outline" textcolor="255,161,255,179" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="1"/>
+    <Style name="Item_Header" template="HeaderTemplate" height="23" vjustify="Middle" hjustify="Center" styleflags="Shadow | Outline" textcolor="255,161,255,179" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2" outlinewidth="1"/>
+    <Style name="0UI_LCD" font="UI\Fonts\LiquidCrystal-Bold.otf" height="20" vjustify="Top" hjustify="Left" styleflags="Shadow | Glow | Outline" textcolor="255,0,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,128,255" shadowoffset="1" outlinewidth="1"/>
+    <Style name="FCT_Basic_Normal" template="HeaderTemplate" height="23" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,102,0 - 255,255,84,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,115,0,0" glowmode="Normal" shadowoffset="1" outlinewidth="1"/>
+    <Style name="FCT_Ability_Normal" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,61,253 - 255,225,43,252" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,83,2,121" shadowoffset="1" outlinewidth="1"/>
+    <Style name="FCT_Heal_Normal" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Glow | TightGradient | Outline" textcolor="255,164,255,177 - 255,96,255,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,255,0" shadowoffset="1" outlinewidth="1"/>
+    <Style name="FCT_Status" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,255,255 - 255,0,255,64" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,255,255,255" glowmode="Add" shadowoffset="2" outlinewidth="1"/>
+    <Style name="FCT_Status_Crit" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | TightGradient | Outline" textcolor="255,255,255,255 - 255,179,229,254" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" outlinecolor="255,56,72,81" glowcolor="255,255,255,255" glowmode="Add" shadowoffset="2" outlinewidth="1"/>
+    <Style name="FCT_XP_Normal" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,255,255 - 255,255,232,163" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,255,162,0" shadowoffset="1" outlinewidth="1"/>
+    <Style name="FCT_Basic_Crit" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,255,255 - 255,255,0,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" outlinecolor="710d43" glowcolor="255,255,0,0" glowmode="Add" shadowoffset="2" outlinewidth="1"/>
+    <Style name="FCT_Ability_Crit" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,255,255 - 255,204,0,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" outlinecolor="610079" glowcolor="255,255,0,246" glowmode="Add" shadowoffset="2" outlinewidth="1"/>
+    <Style name="FCT_Heal_Crit" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,232,255,232 - 255,96,255,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" outlinecolor="009900" glowcolor="255,72,255,16" shadowoffset="1" outlinewidth="0"/>
+    <Style name="FCT_XP_Crit" template="HeaderTemplate" height="20" vjustify="Middle" hjustify="Center" fontflags="Outline" styleflags="Shadow | Glow | TightGradient | Outline" textcolor="255,255,255,255 - 255,255,232,163" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" outlinecolor="492106" glowcolor="255,255,162,0" shadowoffset="1" outlinewidth="2"/>
+    <Style name="BlueScreen" font="UI\Fonts\LucidaConsole.ttf" height="36" vjustify="Top" hjustify="Left" textcolor="255,255,255,255" highlightcolor="255,255,255,255" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0"/>
+
     <Style name="Debug" font="UI\Fonts\MyriadPro-Semibold.otf" height="28" vjustify="Top" hjustify="Left" styleflags="Outline" textcolor="255,255,255,255" highlightcolor="255,255,255,255" disabledcolor="255,255,255,255" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="0" outlinewidth="1"/>
     <Style name="NovaScoreMissionTitle" template="HeaderExtendedTemplate" height="24" textcolor="64dcad" vjustify="Middle" hjustify="Center" styleflags="!Shadow|!Glow|Uppercase"/>
     <Style name="NovaScoreScreenSectionTitle" template="HeaderExtendedTemplate" height="24" textcolor="d1f1e3" vjustify="Middle" hjustify="Center" styleflags="!Shadow|Glow|Uppercase" glowcolor="3eb089"/>

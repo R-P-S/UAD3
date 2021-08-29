@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-<Constant name="InfoText" val="&#x000a;UAD is a successor to UA3, and in some cases, UAC. Many of the mechanics you know from past undead assault games have changed in some fashion, so make sure to read all tooltips with the expectation that things DO NOT do what they used to do. I'll put a few here for you so you get a little taste of what differences this game has to offer:&#x000a;&#x000a;-Map is totally different. Not only is the layout new, but it was even done from a straight-up blank map - as compared to the typical restructuring of the Thalim AO.&#x000a;&#x000a;-Medics are no longer the only character who can revive. Every character who dies now has a 30 second revive timer, other characters can revive dead characters by targeting the dead character's dead hero indicator with the revive ability and channeling it. Medic reduces the timer by 5 every 1 second, other characters reduce it by 1 every 1 second.&#x000a;&#x000a;-Every MOS does or will have a different skillset than what they previously had.&#x000a;&#x000a;-Armor items behavior significantly different.&#x000a;&#x000a;-Weapons jam mechanic has been completely removed.&#x000a;&#x000a;-Skill Identifers [SI] have been replaced with Skill Upgrades [SU].&#x000a;&#x000a;-Banks from other Undead Assault maps cannot be transferred to UAD.&#x000a;&#x000a;-See the help menu [F12] to learn more." />
+<Constant name="InfoText" val="&#x000a;UAD is a successor to UA3, and in some cases, UAC. Many of the mechanics you know from past undead assault games have changed in some fashion, so make sure to read all tooltips with the expectation that things DO NOT do what they used to do. I'll put a few here for you so you get a little taste of what differences this game has to offer:&#x000a;&#x000a;Map is totally different. Not only is the layout new, but it was even done from a straight-up blank map - as compared to the typical restructuring of the Thalim AO.&#x000a;&#x000a;Medics are no longer the only character who can revive. Every character who dies now has a 30 second revive timer, other characters can revive dead characters by targeting the dead character's dead hero indicator with the revive ability and channeling it. Medic reduces the timer by 5 every 1 second, other characters reduce it by 1 every 1 second.&#x000a;&#x000a;• Every MOS does or will have a different skillset than what they previously had.&#x000a;&#x000a;• Armor items behavior significantly different.&#x000a;&#x000a;• Weapons jam mechanic has been completely removed.&#x000a;&#x000a;• Skill Identifers [SI] have been replaced with Skill Upgrades [SU].&#x000a;&#x000a;• Banks from other Undead Assault maps cannot be transferred to UAD.&#x000a;&#x000a;• See the help menu [F12] to learn more." />
+<Constant name="InfoText_KR" val="&#x000a;UAD는 UA3, 부분적으로 UAC를 계승하는 게임입니다. 당신이 알던 이전 언데드 어설트의 메커니즘에서 많은 변화가 있으므로, 예전 작들과 같은 방식이 아니라는 점을 인지하고 모든 툴팁을 읽어주시기 바랍니다. 이 게임이 제공하는 색다른 차이점들을 알려드리기 위해 예시로 몇 가지를 기술하겠습니다.&#x000a;&#x000a;맵이 완전히 다릅니다: 레이아웃이 다를 뿐만 아니라, 기존과는 다르게 처음부터 새롭게 제작한 맵입니다 – 기존과는 다르게 탈림 AO를 재구성해 만들지 않았습니다.&#x000a;&#x000a;메딕뿐만 아니라 다른 MOS도 플레이어를 부활시키는 게 가능합니다. 사망한 플레이어는 30초의 타이머를 가지며, 부활 스킬로 플레이어의 사망 표시기를 클릭하면(또는 우클릭) 채널링 상태로 부활시킵니다. 메딕은 초당 5만큼 타이머를 감소시키고, 다른 MOS들은 1만큼 감소시킵니다.&#x000a;&#x000a;-모든 MOS는 기존과는 다른 스킬들을 가집니다.&#x000a;&#x000a;• 아머 시스템이 완전히 다릅니다.&#x000a;&#x000a;• 총기 격발 불량 시스템이 완전히 제거되었습니다.&#x000a;&#x000a;• SI가 SU(Skill Upgrade)로 대체되었습니다.&#x000a;&#x000a;• 다른 언데드 어설트 맵의 뱅크를 UAD로 이전하는 것이 불가능합니다.&#x000a;&#x000a;• 더 자세한 사항을 알고 싶다면 [F12]를 누르십시오."/>
 <Constant name="WP1" val="Assets\Wallpaper\UAD_Wallpaper_1.dds" />
 <Constant name="WP2" val="Assets\Wallpaper\UAD_Wallpaper_2.jpg" />
 <Constant name="WP3" val="Assets\Wallpaper\UAD_Wallpaper_3.jpg" />
@@ -50,6 +51,7 @@
 					<Action type="SetProperty" frame="$parent/BackgroundImage3" Visible="True" />
 					<Action type="SetProperty" frame="$parent/InfoButton" Visible="False" />
 					<Action type="SetProperty" frame="$parent/LoadingFrame" Visible="False" />
+					<Action type="SetProperty" frame="$parent/ProgressLabel" Visible="False" />
 					<Action type="SetProperty" frame="$parent/LoadingBarBackDrop" Visible="False" />
 					<Action type="SetProperty" frame="$parent/LoadingBarContainer" Visible="False" />
 					<Action type="SetProperty" frame="$parent/LoadingBarImage0" Alpha="0" />
@@ -162,6 +164,14 @@
 				<Color val="255,255,255" />
 				<Style val="BattlenetTopNav" />
 				<Text val="INFO" />
+				<StateGroup name="Region">
+				  <DefaultState val="enUS" />
+				  <State name="koKR">
+				    <When type="Option" localeiddata="koKR" />
+					<Action type="SetProperty" frame="$this" Text="정보" />
+				  </State>
+				  <State name="enUS" />
+				</StateGroup>
 			</Frame>
 			<StateGroup name="Toggled">
 				<DefaultState val="NotToggled" />
@@ -242,6 +252,14 @@
 				<Color val="255,255,255" />
 				<Style val="ChatHelp" />
 				<Options val="ScaleToPreventTrunication|WordWrap" />
+				<StateGroup name="Region">
+				  <DefaultState val="enUS" />
+				  <State name="koKR">
+				    <When type="Option" localeiddata="koKR" />
+					<Action type="SetProperty" frame="$this" Text="#InfoText_KR" />
+				  </State>
+				  <State name="enUS" />
+				</StateGroup>
 			</Frame>
 			<Animation name="Show">
                 <Event event="OnShown" action="Reset,Play" frame="$this" />

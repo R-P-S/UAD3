@@ -3786,10 +3786,6 @@
         <EditorCategories value="Race:Neutral"/>
         <HotkeySet value="`"/>
     </CButton>
-    <CButton id="LearnAbilities">
-        <Icon value="Assets\Textures\btn-ability-terran-heal.dds"/>
-        <EditorCategories value="Race:Terran"/>
-    </CButton>
     <CButton id="AmmoCase">
         <Icon value="BTNAmmoCase.dds"/>
         <AlertIcon value="BTNAmmoCase.dds"/>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<StyleFile>
-    <Style name="0UI_LCD_RED" font="UI\Fonts\LiquidCrystal-Bold.otf" height="20" vjustify="Top" hjustify="Left" styleflags="Shadow | Glow | Outline" textcolor="255,255,0,0" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,128,255" shadowoffset="1" outlinewidth="1"/>
-    <Style name="ScoreScreenProgressLabelSmall" font="UI\Fonts\Eurostile-Bol.otf" height="14" vjustify="Middle" hjustify="Center" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,0,0,0" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="0"/>
-</StyleFile>
