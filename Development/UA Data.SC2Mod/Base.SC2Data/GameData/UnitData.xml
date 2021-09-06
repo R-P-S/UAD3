@@ -575,6 +575,37 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <IdleCommand value="PMCIssueOrderAttackWhenIdle,Execute"/>
     </CUnit>
+    <CUnit id="InventoryPanel">
+        <Race value="Terr"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoDeathEvent" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="PlayerRevivable" value="0"/>
+        <PlaneArray index="Ground" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <AbilArray Link="InventorySlot1"/>
+        <AbilArray Link="InventorySlot2"/>
+        <AbilArray Link="InventorySlot3"/>
+        <AbilArray Link="InventorySlot4"/>
+        <AbilArray Link="InventorySlot5"/>
+        <AbilArray Link="InventorySlot6"/>
+        <AbilArray Link="InventorySlot7"/>
+        <AbilArray Link="InventorySlot8"/>
+        <AbilArray Link="InventorySlot9"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Unit"/>
+        <CardLayouts>
+            <LayoutButtons Face="InventorySlot1" Type="AbilCmd" AbilCmd="InventorySlot1,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="InventorySlot2" Type="AbilCmd" AbilCmd="InventorySlot2,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="InventorySlot3" Type="AbilCmd" AbilCmd="InventorySlot3,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="InventorySlot4" Type="AbilCmd" AbilCmd="InventorySlot4,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="InventorySlot5" Type="AbilCmd" AbilCmd="InventorySlot5,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="InventorySlot6" Type="AbilCmd" AbilCmd="InventorySlot6,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="InventorySlot7" Type="AbilCmd" AbilCmd="InventorySlot7,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="InventorySlot8" Type="AbilCmd" AbilCmd="InventorySlot8,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="InventorySlot9" Type="AbilCmd" AbilCmd="InventorySlot9,Execute" Row="1" Column="3"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="MissilePlasmaRifleCryo" parent="MISSILE">
         <Mover value="BulletMover"/>
     </CUnit>

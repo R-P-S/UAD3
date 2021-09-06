@@ -62,6 +62,39 @@
          <RenderPriority val="520"/>
          <Visible val="False"/>
       </Frame>
+
+      <Frame type="UnitFrame" name="Item">
+         <Anchor relative="$parent"/>
+      </Frame>
+
+      <Frame type="Image" name="NormalImage">
+         <Anchor relative="$parent"/>
+         <DescFlags val=""/>
+         <StateGroup name="Item">
+            <DefaultState val="NoItem" />
+            <State name="NoItem">
+               <When type="Property" frame="$this" Texture="" index="0" />
+            </State>
+            <State name="HasItem">
+               <When type="Property" frame="$this" operator="NotEqual" Texture="" index="0" />
+               <Action type="SetProperty" frame="$parent/Item" UnitTag="{$parent/@ButtonOtherUnit}" />
+            </State>
+         </StateGroup>
+      </Frame>
+
+      <Frame type="TextFormatFrame" name="TFT_Button">
+         <FormatText val=""/>
+      </Frame>
+
+      <Frame type="TextFormatFrame" name="TFT_UnitTag">
+         <FormatText val=""/>
+      </Frame>
+
+      <Frame type="TextFormatFrame" name="TFT_Final">
+         <FormatText val="%0%&#xA;%1%"/>
+         <Replacement index="0" val="{$parent/TFT_Button/@Text}"/>
+         <Replacement index="1" val="{$parent/TFT_UnitTag/@Text}"/>
+      </Frame>
    </Frame>
 
    <Frame type="InventoryPanel" name="GameUI/UIContainer/ConsoleUIContainer/InventoryPanel" file="GameUI">
@@ -102,7 +135,7 @@
             <State name="OwnerIsCS_SelectsAlly">
                <When type="Property" frame="$NameLabel" operator="NotEqual" Text="Cavalry Scout" />
                <When type="Property" frame="$OwnerLabel" Text="IsCS" />
-               <Action type="SetAnchor" frame="$this" side="Bottom" relative="$parent" pos="Max" offset="132"/>
+               <Action type="SetAnchor" frame="$this" side="Bottom" relative="$parent" pos="Max" offset="-132"/>
             </State>
             <State name="OwnerNotCS_SelectsCS">
                <When type="Property" frame="$NameLabel" Text="Cavalry Scout" />
@@ -143,7 +176,6 @@
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
             <Handle val="InvSlot0" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse0" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -156,7 +188,7 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse1" />
+            <Handle val="InvSlot1" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -169,7 +201,7 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse2" />
+            <Handle val="InvSlot2" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -182,7 +214,7 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse3" />
+            <Handle val="InvSlot3" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -208,7 +240,7 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse4" />
+            <Handle val="InvSlot4" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -221,7 +253,7 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse5" />
+            <Handle val="InvSlot5" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
@@ -235,15 +267,13 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse6" />
             <Handle val="WeaponSlot" />
             <CollapseLayout val="True" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
             <Frame type="Image" name="NormalImage">
-            <Anchor relative="$parent"/>
-               <DescFlags val=""/>
+               
                <StateGroup name="WeaponSlot">
                   <DefaultState val="NoWeapon" />
                   <State name="NoWeapon">
@@ -293,14 +323,12 @@
             <Height val="#InvButtonSize" />
             <ClickOnDown val="True" />
             <DragMoveSlop val="300" />
-            <Shortcut val="@UI/Hotkey/InventorySlotUse7" />
             <Handle val="ArmorSlot" />
             <Frame type="Label" name="ChargeLabel">
                <Color val="0,255,128" />
             </Frame>
             <Frame type="Image" name="NormalImage">
-               <Anchor relative="$parent"/>
-               <DescFlags val=""/>
+               
                <StateGroup name="ArmorSlot">
                   <DefaultState val="NoArmor" />
                   <State name="NoArmor">

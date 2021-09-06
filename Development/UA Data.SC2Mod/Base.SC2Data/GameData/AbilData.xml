@@ -1154,6 +1154,87 @@
         <Effect index="0" value="InterferenceWaveSA"/>
         <Range value="3"/>
     </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot1" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot1"/>
+            <Cooldown Link="Abil/InventorySlot1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot2" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot2"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot2"/>
+            <Cooldown Link="Abil/InventorySlot2"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot2"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot3" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot3"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot3"/>
+            <Cooldown Link="Abil/InventorySlot3"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot3"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot4" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot4"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot4"/>
+            <Cooldown Link="Abil/InventorySlot4"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot4"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot5" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot5"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot5"/>
+            <Cooldown Link="Abil/InventorySlot5"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot5"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot6" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot6"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot6"/>
+            <Cooldown Link="Abil/InventorySlot6"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot6"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot7" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot7"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot7"/>
+            <Cooldown Link="Abil/InventorySlot7"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot7"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot8" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot8"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot8"/>
+            <Cooldown Link="Abil/InventorySlot8"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot8"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="InventorySlot9" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/InventorySlot9"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Cost index="0">
+            <Charge Link="Abil/InventorySlot9"/>
+            <Cooldown Link="Abil/InventorySlot9"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="InventorySlot9"/>
+    </CAbilEffectInstant>
     <CAbilEffectTarget id="XR42PulseCannon" parent="TemplateEffectTarget">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="XR42PulseCannonLaunch"/>

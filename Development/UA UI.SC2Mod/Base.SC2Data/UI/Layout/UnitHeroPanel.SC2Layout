@@ -895,6 +895,79 @@
                   <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="PlasmaCellPack" />
                </State>
             </StateGroup>
+
+            <StateGroup name="NameOffset">
+               <State name="Default"/>
+               <State name="NonHero">
+                  <When type="Property" frame="$parent/MovementSpeedLabel" Visible="True"/>
+                  <Action type="SetAnchor" frame="$this" side="Top" relative="$parent" pos="Min" offset="0"/>
+               </State>
+               <State name="Default"/>
+            </StateGroup>
+         </Frame>
+         <Frame type="SelectionUnitStatusPanel" name="UnitPanelSelection">
+            <Anchor relative="$parent" />
+            <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+               <Anchor relative="$parent"/>
+               <Frame type="UnitStatusMoveSpeedLabel" name="MoveSpeedLabel">
+                  <Anchor relative="$parent"/>
+                  <RoundMode val="None" />
+                  <Frame type="Label" name="SpeedLabel" template="TargetInfoPanel/StatusLabelTemplate">
+                     <Visible val="False"/>
+                     <Text val="{PRC/@Text}"/> 
+                     <Frame type="TextFormatFrame" name="PRC">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="#PRC2" />
+                        <Replacement index="0" val="{$parent/CurrentSpeed/@Result}" />
+                     </Frame>
+                     <Frame type="MathFrame" name="CurrentSpeed">
+                        <Anchor relative="$parent"/>
+                        <A val="{$parent/$parent/@CurrentValue}" />
+                        <B val="16"/>
+                        <Operator val="Multiply"/>
+                     </Frame>
+                  </Frame>
+                  <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+                     <Alpha val="0"/>
+                  </Frame>
+               </Frame>
+               <Frame type="TextFormatFrame" name="TooltipFormatFrame">
+                  <FormatText val="@UI/TargetInfoPanel/Tooltip/MoveSpeed" />
+                  <Replacement index="0" val="{$parent/MoveSpeedLabel/SpeedLabel/@Text}" />
+                  <ReplacedName index="0" val="amount" />
+               </Frame>
+            </Frame>
+         </Frame>
+         <Frame type="Label" name="MovementSpeedLabel">
+            <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <RenderPriority val="513"/>
+            <Height val="50"/>
+            <Style val="@@@InfoPaneUnitInfo"/>
+            <Text val="{TFT/@Text}"/>
+            <Frame type="TextFormatFrame" name="TFT">
+               <Anchor relative="$parent"/>
+               <FormatText val="%0% &lt;c val=&quot;FFFFFF&quot;&gt;%1%&lt;/c&gt;" />
+               <Replacement index="0" val="Speed" />
+               <Replacement index="1" val="{$parent/$parent/UnitPanelSelection/UnitStatusFrame0/MoveSpeedLabel/SpeedLabel/@Text}" />
+            </Frame>
+            <StateGroup name="Region">
+               <DefaultState val="enUS" />
+               <State name="koKR">
+                  <When type="Option" localeiddata="koKR" />
+                  <Action type="SetProperty" frame="TFT" Replacement="속도" index="0" />
+               </State>
+               <State name="enUS" />
+            </StateGroup>
+            <StateGroup name="VisibleState">
+               <DefaultState val="Visible" />
+               <State name="Hidden">
+                  <When type="Property" frame="$parent/ProgressBar" Visible="True" />
+                  <Action type="SetProperty" frame="$this" Alpha="0" />
+               </State>
+               <State name="Visible" />
+            </StateGroup>
          </Frame>
          <Frame type="Frame" name="EquipmentPanel">
             <Anchor side="Top" relative="$parent" pos="Min" offset="108" />
@@ -902,15 +975,7 @@
             <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
             <Height val="64" />
          </Frame>
-         <!--
-         <Frame type="Image" name="EquipmentIcon0" template="EquipmentIcon/EquipmentIconTemplate" >
-            <Anchor side="Top" relative="$parent/EquipmentPanel" pos="Min" offset="0" />
-            <Anchor side="Left" relative="$parent/EquipmentPanel" pos="Min" offset="0" />
-            <Anchor side="Bottom" relative="$parent/EquipmentPanel" pos="Max" offset="0" />
-            <Anchor side="Right" relative="$parent/EquipmentIconTemplate" pos="Min" offset="64" />
-            <Texture val="$parent/EquipmentIconTemplate/@Texture" />
-            <RenderPriority val="510" />
-         </Frame> -->
+
          <Frame type="ProgressBar" name="ProgressBar">
             <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0" />
             <Anchor side="Left" relative="$parent" pos="Min" offset="0" />

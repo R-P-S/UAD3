@@ -188,6 +188,7 @@
 <Unit id="ClaymoreItem"/>
 <Unit id="InfantryForwardObserver"/>
 <Unit id="InfantrySniper"/>
+<Unit id="InventoryPanel"/>
 <Unit id="ScrapPartsCampaign"/>
 <Unit id="MissionDummyUnit"/>
 <Unit id="RepairKit"/>

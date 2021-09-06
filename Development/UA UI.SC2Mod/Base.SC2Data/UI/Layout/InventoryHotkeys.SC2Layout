@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+   <Animation name="HotkeyPressedTemplate">
+      <Event event="Pushed" action="Reset, Play"/>
+      <Controller type="State" stateGroup="ButtonPressed" frame="$this" end="Pause">
+         <Key type="Identifier" time="0" value="Pressed"/>
+         <Key type="Identifier" time="0.0625" value="Default"/>
+      </Controller>
+   </Animation>
+
+   <Frame type="Frame" name="HoverTargetTemplate">
+        <AcceptsMouse val="True"/>
+
+        <StateGroup name="HoveredState">
+            <DefaultState val="NotHovered"/>
+            <State name="Hovered">
+                <When type="Property" frame="$this" Hovering="True"/>
+            </State>
+            <State name="NotHovered"/>
+        </StateGroup>
+    </Frame>
+
+    <Frame type="Frame" name="HoverTargetForcedTemplate">
+        <AcceptsMouse val="True"/>
+
+        <StateGroup name="HoveredState">
+            <DefaultState val="NotHovered"/>
+            <State name="Hovered"/>
+            <State name="NotHovered"/>
+        </StateGroup>
+
+        <Animation name="OnMouseEnter">
+            <Event event="OnMouseEnter" action="Reset,Play" frame="$this"/>
+            <Controller type="State" end="Pause" frame="$this" stateGroup="HoveredState">
+                <Key type="Identifier" time="0.0" value="Hovered"/>
+            </Controller>
+        </Animation>
+
+        <Animation name="OnMouseExit">
+            <Event event="OnMouseExit" action="Reset,Play" frame="$this"/>
+            <Controller type="State" end="Pause" frame="$this" stateGroup="HoveredState">
+                <Key type="Identifier" time="0.0" value="NotHovered"/>
+            </Controller>
+        </Animation>
+    </Frame>
+
+    <Frame type="CommandPanel" name="InventoryHotkeysTemplate" template="SelfCast/SelfCastCommandPanelTemplate">
+      <Anchor relative="$parent"/>
+      <!-- Main Inventory Hotkeys 00-07 -->
+      <Frame type="CommandButton" name="CommandButton00" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+         <Ignored val="True"/>
+         <Handle val="IHT0"/>
+         <HotkeyUse val="UIEditorSize720x406"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot0/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot0/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot0/TFT_UnitTag" FormatText="{$InvSlot0/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot0/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>  
+      </Frame>
+
+      <Frame type="CommandButton" name="CommandButton01" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton00" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT1"/>
+         <HotkeyUse val="UIEditorSize800x600"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot1/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot1/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot1/TFT_UnitTag" FormatText="{$InvSlot1/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot1/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+
+      <Frame type="CommandButton" name="CommandButton02" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton01" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton01" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT2"/>
+         <HotkeyUse val="UIEditorSize1024x768"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot2/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot2/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot2/TFT_UnitTag" FormatText="{$InvSlot2/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot2/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+
+      <Frame type="CommandButton" name="CommandButton03" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton02" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton02" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT3"/>
+         <HotkeyUse val="UIEditorSize1280x1024"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot3/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot3/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot3/TFT_UnitTag" FormatText="{$InvSlot3/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot3/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+
+      <Frame type="CommandButton" name="CommandButton04" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton03" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton03" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT4"/>
+         <HotkeyUse val="UIEditorSize1280x960"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot4/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot4/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot4/TFT_UnitTag" FormatText="{$InvSlot4/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot4/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+
+      <Frame type="CommandButton" name="CommandButton05" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton04" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton04" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT5"/>
+         <HotkeyUse val="UIEditorSize1280x720"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$InvSlot5/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$InvSlot5/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$InvSlot5/TFT_UnitTag" FormatText="{$InvSlot5/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$InvSlot5/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton06" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton05" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton05" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT6"/>
+         <HotkeyUse val="UIEditorSize1680x1050"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$WeaponSlot/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$WeaponSlot/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$WeaponSlot/TFT_UnitTag" FormatText="{$WeaponSlot/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$WeaponSlot/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton07" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton06" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton06" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT7"/>
+         <HotkeyUse val="UIEditorSize1400x1050"/>
+
+         <StateGroup name="EnabledState">
+            <DefaultState val="Disabled" />
+            <State name="Enabled">
+               <When type="StateGroup" frame="$ArmorSlot/NormalImage" Item="HasItem"/>
+               <When type="Property" frame="$InventoryContainer" Visible="True"/>
+               <Action type="SetProperty" frame="$this" Ignored="False"/>
+               <Action type="SetProperty" frame="$ArmorSlot/TFT_Button" FormatText="Slot"/>
+               <Action type="SetProperty" frame="$ArmorSlot/TFT_UnitTag" FormatText="{$ArmorSlot/Item/@UnitTag}"/>
+            </State>
+            <State name="Disabled"/>
+         </StateGroup>
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$ArmorSlot/TFT_Final/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+      <!-- Self Cast Button -->
+      <Frame type="CommandButton" name="CommandButton08" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton07" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton07" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT8"/>
+         <HotkeyUse val="UIEditorSize1600x1200"/> <!-- Control Button-->
+
+         <Animation name="HotKeyPress" template="InventoryHotkeys/HotkeyPressedTemplate"/>
+
+         <Frame type="TextFormatFrame" name="TFT_Button">
+            <FormatText val=""/>
+         </Frame>
+
+         <Frame type="TextFormatFrame" name="TFT_UnitTag">
+            <FormatText val=""/>
+         </Frame>
+
+         <Frame type="TextFormatFrame" name="TFT_SelfFinal">
+            <FormatText val="%0%&#xA;%1%"/>
+            <Replacement index="0" val="{$parent/TFT_Button/@Text}"/>
+            <Replacement index="1" val="{$parent/TFT_UnitTag/@Text}"/>
+         </Frame>
+
+         <StateGroup name="ButtonPressed">
+            <DefaultState val="Default"/>
+            <State name="Pressed">
+               <Action type="SetProperty" frame="$InvEB" Text="{$IHT8/TFT_SelfFinal/@Text}" undo="False"/>
+            </State>
+            <State name="Default"/>
+         </StateGroup>
+      </Frame>
+
+      <!-- Self Cast Logic -->
+      <StateGroup name="ActiveButton">
+         <DefaultState val="Default"/>
+         <State name="CommandButton00">
+            <When type="Property" frame="$InvSlot0" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton00" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton00"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot0/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton01">
+            <When type="Property" frame="$InvSlot1" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton01" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton01"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot1/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton02">
+            <When type="Property" frame="$InvSlot2" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton02" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton02"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot2/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton03">
+            <When type="Property" frame="$InvSlot3" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton03" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton03"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot3/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton04">
+            <When type="Property" frame="$InvSlot4" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton04" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton04"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot4/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton05">
+            <When type="Property" frame="$InvSlot5" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton05" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton05"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$InvSlot5/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton06">
+            <When type="Property" frame="$WeaponSlot" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton06" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton06"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$WeaponSlot/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="CommandButton07">
+            <When type="Property" frame="$ArmorSlot" operator="Equal" Hovering="True"/>
+            <When type="StateGroup" frame="$this/CommandButton07" EnabledState="Enabled"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_Button" FormatText="CommandButton07"/>
+            <Action type="SetProperty" frame="$this/CommandButton08/TFT_UnitTag" FormatText="{$ArmorSlot/Item/@UnitTag}"/>
+            <Action type="SetProperty" frame="$this/CommandButton08" Ignored="False"/>
+         </State>
+         <State name="Default"/>
+      </StateGroup>
+      <!-- Bandolier Hotkeys [Cavalry Scout] 
+      <Frame type="CommandButton" name="CommandButton09" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton08" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton08" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT9"/>
+         <HotkeyUse val="UIEditorSize2048x1536"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton10" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton09" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton09" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT10"/>
+         <HotkeyUse val="UIEditorSize2560x2048"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton11" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton10" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton10" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT11"/>
+         <HotkeyUse val="UIEditorSize4096x2560"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton12" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton11" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton11" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT12"/>
+         <HotkeyUse val="UIEditorSize4096x2304"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton13" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton12" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton12" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT13"/>
+         <HotkeyUse val="UIEditorSize4096x3072"/>
+      </Frame>
+      <Frame type="CommandButton" name="CommandButton14" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton13" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton13" pos="Min" offset="#Button_Offset" />
+         <Ignored val="True"/>
+         <Handle val="IHT14"/>
+         <HotkeyUse val="UIEditorDecreaseGridSpacing"/>
+      </Frame>
+        //Extra Button//
+      <Frame type="CommandButton" name="CommandButton15" template="SelfCast/SelfCastButtonTemplate">
+         <Anchor side="Top" relative="$parent/CommandButton14" pos="Min" offset="0" />
+         <Anchor side="Left" relative="$parent/CommandButton14" pos="Min" offset="#Button_Offset" />
+         <DescFlags val="CreationDeferred"/>
+         <Ignored val="True"/>
+         <Visible val="False"/>
+      </Frame> -->
+    </Frame>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+      <Frame type="Frame" name="OffScreenAnchor">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+         <Anchor side="Left" relative="$parent" pos="Min" offset="-5000"/>
+      </Frame>
+      <Frame type="Frame" name="InventoryHotkeyContainer">
+        <Anchor side="Top" relative="$parent/OffScreenAnchor" pos="Min" offset="0"/>
+         <Anchor side="Left" relative="$parent/OffScreenAnchor" pos="Min" offset="0"/>
+        <Height val="80"/>
+        <Width val="1070"/>
+        <Frame type="CommandPanel" name="InventoryHotkeys" template="InventoryHotkeys/InventoryHotkeysTemplate">
+         <Handle val="InventoryHotkeys"/>
+        </Frame>
+      </Frame>
+    </Frame>
+</Desc>

@@ -448,6 +448,18 @@
         <LocalAxis value="90.000000,-1.000000,2.250000"/>
         <InitialAngle value="260.000000"/>
     </CActorSiteOpRotator>
+    <CActorUnit id="InventoryPanel" parent="GenericUnitStandardNoAutoSoundLinks" unitName="InventoryPanel">
+        <Model value="Invisible"/>
+        <EditorModel value="Sphere"/>
+        <WalkAnimMoveSpeed value="0"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
     <CActorAction id="XR42PulseCannonAttack" parent="GenericAttack" effectImpact="XR42PulseCannonDamage" effectLaunch="XR42PulseCannonLaunch">
         <LaunchSiteOps Ops="SOpAttachHarness LocalOffsetY010"/>
         <LaunchAssets Model="PhotonCannonAttackImpact" Sound="PulseCannon"/>

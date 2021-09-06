@@ -4856,6 +4856,8 @@ bool auto_gf_RemoveUpgrades_TriggerFunc (bool testConds, bool runActions) {
     DialogControlSetAnimationState(lib90F7C81D_gv_commandCard.lv_selfCastFrame[lp_player], PlayerGroupAll(), "State", "Off");
     UnitRemove(lib90F7C81D_gv_commandCard.lv_selfCastUnit[lp_player]);
     lib90F7C81D_gv_commandCard.lv_selfCastUnit[lp_player] = null;
+    UnitRemove(lib90F7C81D_gv_inventory.lv_hotkey_unit[lp_player]);
+    lib90F7C81D_gv_inventory.lv_hotkey_unit[lp_player] = null;
     UnitRemove(lib90F7C81D_gv_playerHeroes[lp_player]);
     UnitGroupRemove(lib90F7C81D_gv_heroesGroup, lib90F7C81D_gv_playerHeroes[lp_player]);
     UnitGroupRemove(lib90F7C81D_gv_undeadTargetGroup, lib90F7C81D_gv_playerHeroes[lp_player]);
@@ -7048,6 +7050,10 @@ void gf_HookSelfCast (int lp_player) {
     if ((lib90F7C81D_gv_commandCard.lv_selfCastUnit[lp_player] == null)) {
         libNtve_gf_CreateUnitsWithDefaultFacing(1, "SelfCastPanel" + IntToString(lp_player), 0, lp_player, PointFromId(2067552197));
         lib90F7C81D_gv_commandCard.lv_selfCastUnit[lp_player] = UnitLastCreated();
+    }
+    if ((lib90F7C81D_gv_inventory.lv_hotkey_unit[lp_player] == null)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InventoryPanel", 0, lp_player, PointFromId(189817471));
+        lib90F7C81D_gv_inventory.lv_hotkey_unit[lp_player] = UnitLastCreated();
     }
 }
 

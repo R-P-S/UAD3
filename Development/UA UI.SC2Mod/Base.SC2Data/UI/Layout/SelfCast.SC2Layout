@@ -7,7 +7,7 @@
       <Width val="48" />
       <Height val="48" />
       <TooltipFrame val="TerranCommandTooltip" />
-      <ClickSound val="*@UI_SoA_SpellClick" />
+      <ClickSound val="@UI_GenericButton"/>
       <AcceptsMouse val="True" />
       <AcceptsMouseDropTarget val="False" />
       <CollapseLayout val="False" />

@@ -35,6 +35,42 @@
         <EditorCategories value="Race:Terran"/>
         <DefaultButtonLayout Row="1" Column="2"/>
     </CButton>
+    <CButton id="InventorySlot1" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot2" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot3" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot5" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot4" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot6" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot7" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot8" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InventorySlot9" parent="TemplateButton">
+        <Icon value="Assets\Icon Pack\btn-backpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="XR42" parent="TemplateButton">
         <Icon value="Assets\Buttons\BTN_PlasmaRifle_XR.dds"/>
         <EditorCategories value="Race:Terran"/>

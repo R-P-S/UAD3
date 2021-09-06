@@ -252,6 +252,15 @@ Abil/Name/Instructor=Instructor
 Abil/Name/IntelligenceShare=Intelligence Share
 Abil/Name/InterferenceWave=Interference Wave
 Abil/Name/InventoryGeneric=Inventory Generic
+Abil/Name/InventorySlot1=Inventory Slot 1
+Abil/Name/InventorySlot2=Inventory Slot 2
+Abil/Name/InventorySlot3=Inventory Slot 3
+Abil/Name/InventorySlot4=Inventory Slot 4
+Abil/Name/InventorySlot5=Inventory Slot 5
+Abil/Name/InventorySlot6=Inventory Slot 6
+Abil/Name/InventorySlot7=Inventory Slot 7
+Abil/Name/InventorySlot8=Inventory Slot 8
+Abil/Name/InventorySlot9=Inventory Slot 9
 Abil/Name/IonCannon=Ion Cannon
 Abil/Name/IonCannonGhost=Ion Cannon Ghost
 Abil/Name/IrradiateOSS=Irradiate
@@ -1317,6 +1326,7 @@ Behavior/Tooltip/SJPirateLightningStormStun=Movement speed is reduced temporaril
 Behavior/Tooltip/SearchingHouse=This unit is searching a house.
 Behavior/Tooltip/SelfRepair=This structure repairs itself by 2 hp/sec. Repairing can only be done at least 5 seconds after damage was last taken.
 Behavior/Tooltip/SevereLacerations=<c val="800000">Severe</c>, <c val="9FFF00">Laceration</c><n/>Large, infected, and left untreated for some time; severe lacerations are the result of not treating moderate lacerations. Afflicted take 1 damage every 0.4 seconds and increases damage taken by 30%. Can result in death if not treated in time.<n/><n/><c val="00FFFF">Remedies:</c><n/>[Ability]  Combat Medic - First Aid (Skill Upgrade Emergency Protocols)
+Behavior/Tooltip/ShieldGenerator=A recently developed device that creates a sturdy plasma shield around the user.<c val="FF8000"> Adds 100 shields, 10 shield armor, 5 shield regeneration rate, -.05 movement speed, and allows the user to put up a short lived plasma bubble that can absorb much more damage than the shield generator passively can</c>.
 Behavior/Tooltip/ShutOff=This unit shut down due to a lack of energy.
 Behavior/Tooltip/Slimed=Movement speed and Attack speed reduced by 20% for 10 seconds. Very light damage is dealt during this time too.
 Behavior/Tooltip/SmokeGrenade=This unit is being slowed by a smoke grenade.
@@ -1724,6 +1734,15 @@ Button/Name/IntelligenceShare=Intelligence Share
 Button/Name/InterferenceWave=Interference Wave
 Button/Name/InternalRepairs=Internal Repairs
 Button/Name/Inventory=Inventory
+Button/Name/InventorySlot1=Inventory Slot 1
+Button/Name/InventorySlot2=Inventory Slot 2
+Button/Name/InventorySlot3=Inventory Slot 3
+Button/Name/InventorySlot4=Inventory Slot 4
+Button/Name/InventorySlot5=Inventory Slot 5
+Button/Name/InventorySlot6=Inventory Slot 6
+Button/Name/InventorySlot7=Inventory Slot 7
+Button/Name/InventorySlot8=Inventory Slot 8
+Button/Name/InventorySlot9=Inventory Slot 9
 Button/Name/IonCannon=Ion Cannon
 Button/Name/IrradiateOSS=Irradiate
 Button/Name/IssueUndeadAttackOrder=Issue Undead Attack Order
@@ -3030,7 +3049,6 @@ Button/Tooltip/StingerMissileAnnihilation=Increases inner and outer aoe of sting
 Button/Tooltip/StingerMissileEnhancedTracking=Increases the range of stinger missile by 50%.
 Button/Tooltip/StingerMissileItem=Loads Missiles into a Stinger Missile Launcher
 Button/Tooltip/StingerMissileLauncher=Fires a stinger missile at the target air unit, dealing <d ref="Effect,StingerMissileLauncherImpactDamage,Amount"/> damage to the targeted unit and <d ref="Effect,StingerMissileLauncherDamage,Amount"/>  damage around the target.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
-Button/Tooltip/StonewallProtocol=Project a barrier around the cyborg that significantly reduces the force of attacks passing through it, preventing attacks from dealing more than <d ref="Behavior,StonewallProtocol,DamageResponse.ClampMaximum"/> damage, reducing their original damage by <d ref="100 * (1 - Behavior,StonewallProtocol,DamageResponse.ModifyFraction)" precision="1"/>%, and preventing ailments. Stonewall protocol can reduce the force of melee, ranged, and explosive damage.
 Button/Tooltip/StonewallProtocolLeftovers=Restores 200 health when stonewall protocol ends.
 Button/Tooltip/StonewallProtocolRockSolid=Increases the damage reduction of stonewall protocol by 10%, sets the maximum damage taken limit to 20, and increases the energy cost by 20%.
 Button/Tooltip/StopBarrels=Halts HMG barrels, disallowing attack but normalizing energy regen.
@@ -5841,7 +5859,9 @@ HealingKit/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 HealingKit/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
 HealingKit/CL4=<n/><n/><c val="FFFF8A">Current Level: </c>4
 Hell on Treads=Hell on Treads
-Hotkey/Category/13/SelfCast=Self Cast Panel
+Hotkey/Category/06/Inventory=Inventory<c val="FF0000"> (Deprecated)</c>
+Hotkey/Category/13/SelfCast=Self Cast Panel<img path="Assets\Textures\btn-ability-terran-stimpack-color.dds" height="28" width="28" alignment="AbsoluteMiddle"/>
+Hotkey/Category/14/UADINV=UAD Inventory <img path="Assets\Icon Pack\btn-backpack.dds" height="36" width="36" alignment="AbsoluteMiddle"/>
 IDMR Info=Improved Service Shotgun
 IncendiaryRounds/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 IncendiaryRounds/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
@@ -9533,8 +9553,17 @@ UI/ColorByPlayerTip=Color units using player colors.
 UI/GameMenuOptions_Control=<h/>Options
 UI/GameResultDialog/Quit=<h/>Quit
 UI/HelpGameMechanic_Minerals_Name=Minerals
+UI/Hotkey/Name/15/UIEditorSize720x406=Inventory Slot 1
+UI/Hotkey/Name/16/UIEditorSize800x600=Inventory Slot 2
+UI/Hotkey/Name/17/UIEditorSize1024x768=Inventory Slot 3
+UI/Hotkey/Name/18/UIEditorSize1280x1024=Inventory Slot 4
+UI/Hotkey/Name/19/UIEditorSize1280x960=Inventory Slot 5
+UI/Hotkey/Name/20/UIEditorSize1280x720=Inventory Slot 6
+UI/Hotkey/Name/21/UIEditorSize1680x1050=Inventory Slot 7 [Weapon]
+UI/Hotkey/Name/22/UIEditorSize1400x1050=Inventory Slot 8 [Armor]
 UI/Hotkey/Name/23/UIEditorSize1920x1200=Abilities
 UI/Hotkey/Name/24/UIEditorSize1920x1080=Weapons Hold
+UI/Hotkey/Name/25/UIEditorSize1600x1200=Inventory Self Cast Item
 UI/Hotkey/Name/27/UIEditorSize2560x1600=NODS
 UI/Minerals=Ammo
 UI/PingTip=Allows you to ping a location on the minimap or game world that only your allies will see.
@@ -9781,7 +9810,6 @@ Unit/Name/HellhoundActor=Hellhound
 Unit/Name/HeroSelector=Hero Selector
 Unit/Name/Hopper=Hopper
 Unit/Name/HopperActor=Hopper
-Unit/Name/HopperPlaceholder=Hopper Placeholder
 Unit/Name/Horror=Horror
 Unit/Name/Hull=Hull
 Unit/Name/Hunter=Hunter
@@ -9817,6 +9845,7 @@ Unit/Name/InfantrySniperActor=Infantry Sniper
 Unit/Name/Infected=Infected
 Unit/Name/Inferno=Inferno
 Unit/Name/InfestedSilo=Infested Silo
+Unit/Name/InventoryPanel=Inventory Panel
 Unit/Name/InvisibleMissile=Invisible Missile
 Unit/Name/InvisibleMissileTargetDummy=Invisible Missile Target Dummy
 Unit/Name/IonCannon=Ion Cannon

@@ -26,8 +26,17 @@
         <DisplayTimeInSeconds value="1"/>
         <BehaviorIconColors index="Positive" value="255,255,255,255"/>
         <BehaviorIconColors index="Negative" value="255,255,255,255"/>
+        <HotkeyInfoArray index="UIEditorSize720x406" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize800x600" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1024x768" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1280x1024" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1280x960" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1280x720" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1680x1050" Category="Hotkey/Category/14/UADINV"/>
+        <HotkeyInfoArray index="UIEditorSize1400x1050" Category="Hotkey/Category/14/UADINV"/>
         <HotkeyInfoArray index="UIEditorSize1920x1200" Category="Hotkey/Category/13/SelfCast"/>
         <HotkeyInfoArray index="UIEditorSize1920x1080" Category="Hotkey/Category/13/SelfCast"/>
+        <HotkeyInfoArray index="UIEditorSize1600x1200" Category="Hotkey/Category/14/UADINV"/>
         <HotkeyInfoArray index="UIEditorSize2560x1600" Category="Hotkey/Category/13/SelfCast"/>
     </CGameUI>
 </Catalog>

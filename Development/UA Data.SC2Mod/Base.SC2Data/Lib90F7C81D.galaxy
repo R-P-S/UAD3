@@ -280,6 +280,11 @@ void lib90F7C81D_InitVariables () {
     for (init_i1 = 0; init_i1 <= 5; init_i1 += 1) {
         lib90F7C81D_gv_inventory.lv_bandolierSlots[init_i1] = c_invalidDialogControlId;
     }
+    lib90F7C81D_gv_inventory.lv_hotkey_panel = c_invalidDialogControlId;
+    lib90F7C81D_gv_inventory.lv_item_eb = c_invalidDialogControlId;
+    for (init_i1 = 0; init_i1 <= 12; init_i1 += 1) {
+        lib90F7C81D_gv_inventory.lv_hotkey_group[init_i1] = UnitGroupEmpty();
+    }
     lib90F7C81D_gv_messageFrame.lv_directive = c_invalidDialogControlId;
     lib90F7C81D_gv_messageFrame.lv_objective = c_invalidDialogControlId;
     lib90F7C81D_gv_messageFrame.lv_debug = c_invalidDialogControlId;
@@ -7011,6 +7016,100 @@ void lib90F7C81D_gf_InitializeUIItems () {
     }
     lib90F7C81D_gf_SetSpinnerMinimum(1, PlayerGroupAll());
     lib90F7C81D_gf_SetSpinnerMaximum(3, PlayerGroupAll());
+    DialogControlHookupStandard(c_triggerControlTypeCommandPanel, "$InventoryHotkeys");
+    lib90F7C81D_gv_inventory.lv_hotkey_panel = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeEditBox, "$InvEB");
+    lib90F7C81D_gv_inventory.lv_item_eb = DialogControlLastCreated();
+    TriggerAddEventDialogControl(lib90F7C81D_gt_InventoryHotkeyUsed, c_playerAny, lib90F7C81D_gv_inventory.lv_item_eb, c_triggerControlEventTypeTextChanged);
+}
+
+order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item) {
+    // Variable Declarations
+    bool lv_hasItem;
+    order lv_order;
+    string lv_inventory_link;
+
+    // Automatic Variable Declarations
+    int autoB9ADA2FB_val;
+
+    // Variable Initialization
+    lv_hasItem = (lp_item != null);
+
+    // Implementation
+    lv_inventory_link = lib90F7C81D_gf_CAbilInventoryType(lp_player);
+    if ((lv_hasItem == true)) {
+        autoB9ADA2FB_val = lp_type;
+        if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Instant) {
+            lv_order = Order(AbilityCommand(lv_inventory_link, 3));
+        }
+        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Target) {
+            lv_order = Order(AbilityCommand(lv_inventory_link, 4));
+        }
+        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_On) {
+            lv_order = Order(AbilityCommand(lv_inventory_link, 8));
+        }
+        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Off) {
+            lv_order = Order(AbilityCommand(lv_inventory_link, 7));
+        }
+        else {
+        }
+        OrderSetTargetItem(lv_order, lp_item);
+        if (((OrderGetAbilityCommand(lv_order) == AbilityCommand("FirstAidKitItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedFirstAidKit", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AntiVeninShotItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedAntiVeninShot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("QuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedQuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("EnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuperiorEnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AimAssistant", 0)) || ((AbilityCommandGetAction(OrderGetAbilityCommand(lv_order)) == c_cmdActionTarget)))) {
+            OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
+        }
+    }
+    return lv_order;
+}
+
+string lib90F7C81D_gf_CAbilInventoryType (int lp_player) {
+    // Variable Declarations
+    string lv_cAbilInventory;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_cAbilInventory = "HeroInventoryRifleNew";
+
+    // Implementation
+    if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "AutomaticRifleman")) {
+        lv_cAbilInventory = "HeroInventoryMGNew";
+    }
+    else if (((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "SFAAT") || (UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "CombatEngineer"))) {
+        lv_cAbilInventory = "HeroInventoryShotgunNew";
+    }
+    else if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "CavalryScout")) {
+        lv_cAbilInventory = "HeroInventoryCS";
+    }
+    else if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "Flamethrower")) {
+        lv_cAbilInventory = "HeroInventoryFlameNew";
+    }
+    else if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "SquadDesignatedMarksman")) {
+        lv_cAbilInventory = "HeroInventorySDMNew";
+    }
+    else if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "Cyborg")) {
+        lv_cAbilInventory = "HeroInventoryMinigunNew";
+    }
+    else if ((UnitGetType(lib90F7C81D_gv_playerHeroes[lp_player]) == "GhostMOS")) {
+        lv_cAbilInventory = "HeroInventoryPlasmaNew";
+    }
+    return lv_cAbilInventory;
+}
+
+int lib90F7C81D_gf_UnitTagRecycle (unit lp_u) {
+    // Automatic Variable Declarations
+    // Implementation
+    return UnitGetTag(lp_u) & 0x0003ffff;
+}
+
+int lib90F7C81D_gf_UnitTagIndex (unit lp_u) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (UnitGetTag(lp_u) >> 18) & 0x00003fff;
+}
+
+string lib90F7C81D_gf_GetUnitTag (unit lp_u) {
+    // Automatic Variable Declarations
+    // Implementation
+    return IntToString(lib90F7C81D_gf_UnitTagIndex(lp_u)) + "#" + IntToString(lib90F7C81D_gf_UnitTagRecycle(lp_u));
 }
 
 void lib90F7C81D_gf_InitializeMovieFrame (string lp_path, structref<lib90F7C81D_gs_Movie_Player> lp_dialogItem) {
@@ -8692,6 +8791,8 @@ void lib90F7C81D_gf_HookUIToHero (int lp_player) {
     libNtve_gf_SetDialogItemText(lib90F7C81D_gv_sDPlayerNameFrame[lp_player], TextWithColor(PlayerName(lp_player), libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(lp_player, false))), PlayerGroupAll());
     UnitGroupAdd(lib90F7C81D_gv_commandCard.lv_cCGroup[lp_player], lib90F7C81D_gv_commandCard.lv_selfCastUnit[lp_player]);
     libNtve_gf_SetDialogItemUnitGroup(lib90F7C81D_gv_commandCard.lv_selfCastCC[lp_player], lib90F7C81D_gv_commandCard.lv_cCGroup[lp_player], PlayerGroupSingle(lp_player));
+    UnitGroupAdd(lib90F7C81D_gv_inventory.lv_hotkey_group[lp_player], lib90F7C81D_gv_inventory.lv_hotkey_unit[lp_player]);
+    libNtve_gf_SetDialogItemUnitGroup(lib90F7C81D_gv_inventory.lv_hotkey_panel, lib90F7C81D_gv_inventory.lv_hotkey_group[lp_player], PlayerGroupSingle(lp_player));
     DialogControlSetAnimationState(lib90F7C81D_gv_uIicon, PlayerGroupSingle(lp_player), "Image", IntToString(lib90F7C81D_gf_ImageIndex(lib90F7C81D_gv_playerHeroImage[lp_player])));
 }
 
@@ -15864,6 +15965,90 @@ void lib90F7C81D_gt_PMCKillCounter_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Inventory Hotkey Used
+//--------------------------------------------------------------------------------------------------
+bool lib90F7C81D_gt_InventoryHotkeyUsed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_payload;
+    string lv_c_button;
+    string lv_id;
+    order lv_cmd;
+    unitgroup lv_inventory;
+    string lv_item;
+    int lv_i;
+    int lv_slot;
+
+    // Automatic Variable Declarations
+    int auto1BB90B11_ae;
+    const int auto1BB90B11_ai = 1;
+
+    // Variable Initialization
+    lv_payload = libNtve_gf_DialogItemEditValue(EventDialogControl(), EventPlayer());
+    lv_c_button = "";
+    lv_id = "";
+    lv_inventory = UnitGroupEmpty();
+    lv_item = "";
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_payload != null))) {
+            return false;
+        }
+
+        if (!((UnitIsSelected(lib90F7C81D_gv_playerHeroes[EventPlayer()], EventPlayer()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_c_button = StringWord(lv_payload, 1);
+    lv_id = StringWord(lv_payload, 2);
+    lv_inventory = UnitInventoryGroup(lib90F7C81D_gv_playerHeroes[EventPlayer()]);
+    auto1BB90B11_ae = UnitGroupCount(lv_inventory, c_unitCountAll);
+    lv_i = 1;
+    for ( ; ( (auto1BB90B11_ai >= 0 && lv_i <= auto1BB90B11_ae) || (auto1BB90B11_ai < 0 && lv_i >= auto1BB90B11_ae) ) ; lv_i += auto1BB90B11_ai ) {
+        if ((lib90F7C81D_gf_GetUnitTag(UnitGroupUnit(lv_inventory, lv_i)) == lv_id)) {
+            lv_slot = lv_i;
+            break;
+        }
+    }
+    lv_item = CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot)), "Item", EventPlayer());
+    if ((CatalogEntryScope(c_gameCatalogItem, lv_item) == "CItemAbil")) {
+        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Target, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot));
+        if ((UnitOrderIsValid(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd) == true)) {
+            if ((lv_c_button == "Slot")) {
+                UISetTargetingOrder(PlayerGroupSingle(EventPlayer()), lib90F7C81D_gv_heroesGroup, lv_cmd, false);
+            }
+            else {
+                UnitIssueOrder(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd, c_orderQueueReplace);
+            }
+        }
+        else {
+            libNtve_gf_UIErrorMessage(PlayerGroupSingle(EventPlayer()), StringExternal("e_cmdError"), SoundLink("UI_GenericError", -1));
+        }
+    }
+    else {
+        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Instant, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot));
+        if ((UnitOrderIsValid(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd) == true) && (lv_c_button == "Slot")) {
+            UnitIssueOrder(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd, c_orderQueueReplace);
+        }
+        else {
+            libNtve_gf_UIErrorMessage(PlayerGroupSingle(EventPlayer()), StringExternal("e_cmdError"), SoundLink("UI_GenericError", -1));
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib90F7C81D_gt_InventoryHotkeyUsed_Init () {
+    lib90F7C81D_gt_InventoryHotkeyUsed = TriggerCreate("lib90F7C81D_gt_InventoryHotkeyUsed_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Ping Dead Hero's Button
 //--------------------------------------------------------------------------------------------------
 bool lib90F7C81D_gt_PingDeadHerosButton_Func (bool testConds, bool runActions) {
@@ -16987,6 +17172,10 @@ bool lib90F7C81D_gt_PlayerLeavesGame_Func (bool testConds, bool runActions) {
         UnitRemove(lib90F7C81D_gv_commandCard.lv_selfCastUnit[lv_pIndex]);
         lib90F7C81D_gv_commandCard.lv_cCGroup[lv_pIndex] = null;
         lib90F7C81D_gv_commandCard.lv_selfCastUnit[lv_pIndex] = null;
+        UnitGroupRemove(lib90F7C81D_gv_inventory.lv_hotkey_group[lv_pIndex], lib90F7C81D_gv_inventory.lv_hotkey_unit[lv_pIndex]);
+        UnitRemove(lib90F7C81D_gv_inventory.lv_hotkey_unit[lv_pIndex]);
+        lib90F7C81D_gv_inventory.lv_hotkey_group[lv_pIndex] = null;
+        lib90F7C81D_gv_inventory.lv_hotkey_unit[lv_pIndex] = null;
         if ((UnitGroupCount(lib90F7C81D_gv_heroesGroup, c_unitCountAlive) == 0) && (GameIsTestMap(false) == false)) {
             lib90F7C81D_gf_RunEvent("GameOver");
         }
@@ -18031,6 +18220,7 @@ void lib90F7C81D_InitTriggers () {
     lib90F7C81D_gt_GetFPS_Init();
     lib90F7C81D_gt_UpdateFPS_Init();
     lib90F7C81D_gt_PMCKillCounter_Init();
+    lib90F7C81D_gt_InventoryHotkeyUsed_Init();
     lib90F7C81D_gt_PingDeadHerosButton_Init();
     lib90F7C81D_gt_PingTeammates_Init();
     lib90F7C81D_gt_NewPlayerDeath_Init();

@@ -22,7 +22,7 @@
     <StateGroup name="BuffDebuffStates">
       <State name="Buff">
         <When type="Property" frame="$parent" operator="GreaterThan" CurrentValue="{$parent/@MaxValue}" />
-        <Action type="SetProperty" style="Storm_targetInfoPanel_Label_Buff" />
+  <!--  <Action type="SetProperty" style="Storm_targetInfoPanel_Label_Buff" /> -->
       </State>
       <State name="Debuff">
         <When type="Property" frame="$parent" operator="LessThan" CurrentValue="{$parent/@MaxValue}" />
@@ -215,13 +215,31 @@
             <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="-2" />
             <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="3" />
             <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
-            <Width val="40" />
+            <RoundMode val="None" />
+            <Width val="42" /> <!-- 40 -->
             <Height val="20" />
-            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+            <Frame type="Label" name="SpeedLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <Visible val="{$parent/@Visible}"/>
+              <Text val="{PRC/@Text}"/> 
+              <Frame type="TextFormatFrame" name="PRC">
+                <Anchor relative="$parent"/>
+                <FormatText val="#PRC2" />
+                <Replacement index="0" val="{$parent/CurrentSpeed/@Result}" />
+              </Frame>
+                <Frame type="MathFrame" name="CurrentSpeed">
+                  <Anchor relative="$parent"/>
+                  <A val="{$parent/$parent/@CurrentValue}" />
+                  <B val="16"/>
+                  <Operator val="Multiply"/>
+                </Frame>
+            </Frame>
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <Alpha val="0"/>
+            </Frame>
           </Frame>
           <Frame type="TextFormatFrame" name="TooltipFormatFrame">
             <FormatText val="@UI/TargetInfoPanel/Tooltip/MoveSpeed" />
-            <Replacement index="0" val="{$parent/MoveSpeedLabel/StatusLabel/@Text}" />
+            <Replacement index="0" val="{$parent/MoveSpeedLabel/SpeedLabel/@Text}" />
             <ReplacedName index="0" val="amount" />
           </Frame>
         </Frame>

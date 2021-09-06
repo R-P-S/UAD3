@@ -72,6 +72,7 @@
     <Include path="UI/Layout/Events.SC2Layout"/>
     <Include path="UI/Layout/Dialogue.SC2Layout"/>
     <Include path="UI/Layout/FrameRates.SC2Layout"/>
+    <Include path="UI/Layout/InventoryHotkeys.SC2Layout"/>
 <!--<Include path="UI/Layout/BankUtility.SC2Layout" requiredtoload="IS_DEBUG_PANEL_ENABLED"/>/>-->
     <Include path="UI/Layout/Console_Skins/Template_Main.SC2Layout"/>
     <Include path="UI/Layout/Console_Skins/Template_Alliance.SC2Layout"/>

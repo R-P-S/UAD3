@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
+   <!-- Format Precision Hack -->
+   <Constant name="PRC0" val="&#x3C;d ref=&#x22;Effect,DU_WEAP,Amount + %0%&#x22; precision=&#x22;0&#x22;/&#x3E;"/>
+   <Constant name="PRC1" val="&#x3C;d ref=&#x22;Effect,DU_WEAP,Amount + %0%&#x22; precision=&#x22;1&#x22;/&#x3E;"/>
+   <Constant name="PRC2" val="&#x3C;d ref=&#x22;Effect,DU_WEAP,Amount + %0%&#x22; precision=&#x22;2&#x22;/&#x3E;"/>
+   <Constant name="PRC3" val="&#x3C;d ref=&#x22;Effect,DU_WEAP,Amount + %0%&#x22; precision=&#x22;3&#x22;/&#x3E;"/>
+
    <!-- Constants -->
    <Constant name="Greybox_Color_Background" val="0,0,0" />
    <Constant name="Greybox_Color_ButtonStandard_Normal" val="0,0,0" />
