@@ -7023,7 +7023,7 @@ void lib90F7C81D_gf_InitializeUIItems () {
     TriggerAddEventDialogControl(lib90F7C81D_gt_InventoryHotkeyUsed, c_playerAny, lib90F7C81D_gv_inventory.lv_item_eb, c_triggerControlEventTypeTextChanged);
 }
 
-order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item) {
+order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item, string lp_hotkey) {
     // Variable Declarations
     bool lv_hasItem;
     order lv_order;
@@ -7054,8 +7054,13 @@ order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item)
         else {
         }
         OrderSetTargetItem(lv_order, lp_item);
-        if (((OrderGetAbilityCommand(lv_order) == AbilityCommand("FirstAidKitItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedFirstAidKit", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AntiVeninShotItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedAntiVeninShot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("QuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedQuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("EnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuperiorEnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AimAssistant", 0)) || ((AbilityCommandGetAction(OrderGetAbilityCommand(lv_order)) == c_cmdActionTarget)))) {
-            OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
+        if ((lp_type == lib90F7C81D_ge_OrderType_Target) && (lp_hotkey != "Slot")) {
+            if (((UnitGetType(lp_item) == "FirstAidKit") || (UnitGetType(lp_item) == "AdvancedFirstAidKit") || (UnitGetType(lp_item) == "AntiVeninShot") || (UnitGetType(lp_item) == "AdvancedAntiVeninShot") || (UnitGetType(lp_item) == "QuikClot") || (UnitGetType(lp_item) == "AdvancedQuikClot") || (UnitGetType(lp_item) == "EnergyCell") || (UnitGetType(lp_item) == "SuperiorEnergyCell") || (UnitGetType(lp_item) == "AimAssistant"))) {
+                OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
+            }
+            else {
+                lv_order = null;
+            }
         }
     }
     return lv_order;
@@ -16018,7 +16023,7 @@ bool lib90F7C81D_gt_InventoryHotkeyUsed_Func (bool testConds, bool runActions) {
     }
     lv_item = CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot)), "Item", EventPlayer());
     if ((CatalogEntryScope(c_gameCatalogItem, lv_item) == "CItemAbil")) {
-        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Target, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot));
+        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Target, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot), lv_c_button);
         if ((UnitOrderIsValid(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd) == true)) {
             if ((lv_c_button == "Slot")) {
                 UISetTargetingOrder(PlayerGroupSingle(EventPlayer()), lib90F7C81D_gv_heroesGroup, lv_cmd, false);
@@ -16032,7 +16037,7 @@ bool lib90F7C81D_gt_InventoryHotkeyUsed_Func (bool testConds, bool runActions) {
         }
     }
     else {
-        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Instant, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot));
+        lv_cmd = lib90F7C81D_gf_OrderConstructor(EventPlayer(), lib90F7C81D_ge_OrderType_Instant, UnitInventoryItem(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_slot), lv_c_button);
         if ((UnitOrderIsValid(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd) == true) && (lv_c_button == "Slot")) {
             UnitIssueOrder(lib90F7C81D_gv_playerHeroes[EventPlayer()], lv_cmd, c_orderQueueReplace);
         }

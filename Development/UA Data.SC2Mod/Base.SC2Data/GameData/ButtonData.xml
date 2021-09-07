@@ -1602,6 +1602,7 @@
         <Icon value="Assets\Icon Pack\btn-achievement-33-beta.dds"/>
         <AlertIcon value="Assets\Icon Pack\btn-achievement-33-beta.dds"/>
         <TintRacially value="0"/>
+        <HotkeyAlias value=""/>
     </CButton>
     <CButton id="AugmentationKit" parent="TemplateButton">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-repairbeamcloak.dds"/>
@@ -2476,6 +2477,7 @@
         <TintRacially value="0"/>
         <Icon value="Assets\Icon Pack\btn-command-holdposition-color.dds"/>
         <AlertIcon value="Assets\Icon Pack\btn-command-holdposition-color.dds"/>
+        <HotkeyAlias value=""/>
     </CButton>
     <CButton id="MovePatrol">
         <TintRacially value="0"/>

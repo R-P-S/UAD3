@@ -605,6 +605,11 @@
             <LayoutButtons Face="InventorySlot8" Type="AbilCmd" AbilCmd="InventorySlot8,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="InventorySlot9" Type="AbilCmd" AbilCmd="InventorySlot9,Execute" Row="1" Column="3"/>
         </CardLayouts>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <LifeArmor value="10"/>
+        <LifeRegenRate value="10"/>
+        <MinimapRadius value="0"/>
     </CUnit>
     <CUnit id="MissilePlasmaRifleCryo" parent="MISSILE">
         <Mover value="BulletMover"/>

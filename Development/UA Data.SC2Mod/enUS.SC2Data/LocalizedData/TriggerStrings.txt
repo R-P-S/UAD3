@@ -725,6 +725,7 @@ ParamDef/Name/lib_90F7C81D_5A86022F=player
 ParamDef/Name/lib_90F7C81D_5C506EF2=Modifier
 ParamDef/Name/lib_90F7C81D_5C92D802=chance
 ParamDef/Name/lib_90F7C81D_5D7F3DFC=Players
+ParamDef/Name/lib_90F7C81D_5FB73D5B=Hotkey
 ParamDef/Name/lib_90F7C81D_605AA364=charge string
 ParamDef/Name/lib_90F7C81D_60E3F189=Event
 ParamDef/Name/lib_90F7C81D_610877E2=PingLocation

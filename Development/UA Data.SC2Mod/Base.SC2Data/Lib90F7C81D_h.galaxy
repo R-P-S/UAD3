@@ -810,7 +810,7 @@ void lib90F7C81D_gf_UpdateCPCoordinates (int lp_panel, int lp_player);
 void lib90F7C81D_gf_HookupCoordinateReporter (int lp_panel, int lp_player);
 void lib90F7C81D_gf_FlashCCButton (int lp_player, string lp_button_Ability, fixed lp_time);
 void lib90F7C81D_gf_InitializeUIItems ();
-order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item);
+order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item, string lp_hotkey);
 string lib90F7C81D_gf_CAbilInventoryType (int lp_player);
 int lib90F7C81D_gf_UnitTagRecycle (unit lp_u);
 int lib90F7C81D_gf_UnitTagIndex (unit lp_u);

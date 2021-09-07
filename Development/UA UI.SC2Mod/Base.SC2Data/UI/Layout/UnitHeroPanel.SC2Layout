@@ -930,6 +930,14 @@
                   <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
                      <Alpha val="0"/>
                   </Frame>
+                  <StateGroup name="NoSpeed">
+                     <DefaultState val="NotZero" />
+                     <State name="Zero">
+                        <When type="Property" frame="$this" CurrentValue="0" />
+                        <Action type="SetProperty" frame="$UnitPanelMS" Alpha="0" />
+                     </State>
+                     <State name="NotZero" />
+                  </StateGroup>
                </Frame>
                <Frame type="TextFormatFrame" name="TooltipFormatFrame">
                   <FormatText val="@UI/TargetInfoPanel/Tooltip/MoveSpeed" />
@@ -942,6 +950,7 @@
             <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0"/>
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Handle val="UnitPanelMS"/>
             <RenderPriority val="513"/>
             <Height val="50"/>
             <Style val="@@@InfoPaneUnitInfo"/>
@@ -975,7 +984,6 @@
             <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
             <Height val="64" />
          </Frame>
-
          <Frame type="ProgressBar" name="ProgressBar">
             <Anchor side="Top" relative="$parent/NameLabel" pos="Max" offset="0" />
             <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
