@@ -547,11 +547,12 @@
         <Abil value="GroundFlareItem"/>
         <Face value="GroundFlareItem"/>
     </CItemAbil>
-    <CItem id="KineticIntegrator">
+    <CItemAbil id="KineticIntegrator">
         <Flags index="DropOnDeath" value="1"/>
         <Flags index="KillWhenDepleted" value="1"/>
         <Class value="Misc"/>
-    </CItem>
+        <Abil value="SuitKineticIntegrator"/>
+    </CItemAbil>
     <CItemEffectInstant id="MuscleRelaxant">
         <Flags index="DropOnDeath" value="1"/>
         <Flags index="KillWhenDepleted" value="1"/>

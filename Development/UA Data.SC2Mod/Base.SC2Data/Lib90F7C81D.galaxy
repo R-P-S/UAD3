@@ -7055,7 +7055,7 @@ order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item,
         }
         OrderSetTargetItem(lv_order, lp_item);
         if ((lp_type == lib90F7C81D_ge_OrderType_Target) && (lp_hotkey != "Slot")) {
-            if (((UnitGetType(lp_item) == "FirstAidKit") || (UnitGetType(lp_item) == "AdvancedFirstAidKit") || (UnitGetType(lp_item) == "AntiVeninShot") || (UnitGetType(lp_item) == "AdvancedAntiVeninShot") || (UnitGetType(lp_item) == "QuikClot") || (UnitGetType(lp_item) == "AdvancedQuikClot") || (UnitGetType(lp_item) == "EnergyCell") || (UnitGetType(lp_item) == "SuperiorEnergyCell") || (UnitGetType(lp_item) == "AimAssistant"))) {
+            if (((UnitGetType(lp_item) == "FirstAidKit") || (UnitGetType(lp_item) == "AdvancedFirstAidKit") || (UnitGetType(lp_item) == "AntiVeninShot") || (UnitGetType(lp_item) == "AdvancedAntiVeninShot") || (UnitGetType(lp_item) == "QuikClot") || (UnitGetType(lp_item) == "AdvancedQuikClot") || (UnitGetType(lp_item) == "EnergyCell") || (UnitGetType(lp_item) == "SuperiorEnergyCell") || (UnitGetType(lp_item) == "AimAssistant") || (UnitGetType(lp_item) == "KineticIntegrator"))) {
                 OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
             }
             else {
