@@ -546,6 +546,25 @@
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="Rounds"/>
     </CAbilEffectInstant>
+    <CAbilEffectInstant id="SuitKineticIntegrator" parent="TemplateEffectInstant">
+        <Name value="Abil/Name/SuitKineticIntegrator"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Effect index="0" value="KineticIntegratorAB"/>
+        <Flags index="Transient" value="0"/>
+        <Cost index="0">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="ItemCharges"/>
+            </Charge>
+            <Cooldown Link="Abil/SuitKineticIntegrator" Location="Unit" TimeUse="1"/>
+        </Cost>
+        <CastIntroTime value="1"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <ProgressButtonArray index="Cast" value="KineticIntegrator"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="KineticIntegrator"/>
+    </CAbilEffectInstant>
     <CAbilEffectTarget id="ArcCell" parent="TemplateEffectTarget">
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Effect index="0" value="ArcCellSwitch"/>

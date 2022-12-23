@@ -150,6 +150,11 @@
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
         <DisplayFlags index="CollapseBuffed" value="1"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="KineticIntegratorAB" parent="TemplateApplyBehavior">
+        <ValidatorArray index="0" value="SuitKineticIntegratorFilter"/>
+        <EditorCategories value="Race:Neutral"/>
+        <Behavior value="SuitKineticIntegrator"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="BinocularsSniper" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
         <ExpireDelay value="10"/>

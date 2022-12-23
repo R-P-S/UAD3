@@ -497,6 +497,7 @@ Abil/Name/StrafeDesignator=Strafe Designator
 Abil/Name/StrafeRun=Strafe Run
 Abil/Name/StrengthMode=Strength Mode
 Abil/Name/SuccessiveStrike=Successive Strike
+Abil/Name/SuitKineticIntegrator=Suit Kinetic Integrator
 Abil/Name/SuperTransfusionJashan=Super Transfusion Jashan
 Abil/Name/SuperiorEnergyCell=Superior Energy Cell
 Abil/Name/SuperiorEnergyCellSelfCast=Superior Energy Cell [Self Cast]
@@ -595,7 +596,7 @@ Actor/Highlight/Infernoant=<s val="Item_Header">Inferno</n><s val="Item_Descript
 Actor/Highlight/IrradiateCloudant=<s val="ABChoiceReplayButtonText">Irradiate Cloud</s>
 Actor/Highlight/KEC=<s val="Item_Header"><c val="0080FF">KEC</s>
 Actor/Highlight/KevlarBodyArmorant=<s val="Item_Header">Kevlar Body Armor</s></n><s val="Item_Description">[Armor Integrity: 100%]</s>
-Actor/Highlight/KineticIntegrator=<s val="Item_Header">Kinetic Integrator</n><s val="Item_Description">Regenerates Energy +1.25 Per Second</s></s>
+Actor/Highlight/KineticIntegrator=<s val="Item_Header">Kinetic Integrator</n><s val="Item_Description">Regenerates Energy +2.00 Per Second</s></s>
 Actor/Highlight/LLDR=<s val="Item_Header"><c val="0080FF">LLDR [5]</s>
 Actor/Highlight/LiftBoots=<s val="Item_Header">Lift Boots</s>
 Actor/Highlight/M1014ant=<s val="Item_Header">M1014</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 25</s></s></n><img path="Buttons\Portraits\BTNSFAAT.dds" height="30" width="30"/><img path="Buttons\Portraits\BTN_Combat_Engineer_Portrait.dds" height="30" width="30"/>
@@ -659,7 +660,6 @@ AdvancedAnitVeninInInventory=Inventory doesn't have any advanced anti venin shot
 AdvancedFirstAidKitInInventory=Inventory doesn't have any advanced first aid kits
 AdvancedQuikClotInInventory=Inventory doesn't have any advanced quik clots
 Aim=
-AimAssistCheck=Aim Assistant Can't Be Used By This Unit
 AimAssistantFilter=Only one Aim Assistant can be used. Can't be used on Local Nationals.
 AirSupport/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 AirSupport/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
@@ -1041,6 +1041,7 @@ Behavior/Name/StunnedSupersonic=Stunned
 Behavior/Name/Sturdy=Sturdy
 Behavior/Name/SturdyBoss=Sturdy
 Behavior/Name/SuccessiveStrike=Successive Strike
+Behavior/Name/SuitKineticIntegrator=Suit Kinetic Integrator
 Behavior/Name/SuitMalfunction=Suit Malfunction
 Behavior/Name/SuperToughSkin=Super Tough Skin
 Behavior/Name/SuperTransfusionBuff=Super Transfusion Buff
@@ -1343,6 +1344,7 @@ Behavior/Tooltip/StickyWeb=This unit is slowed by 2.5% per stack of this buff. S
 Behavior/Tooltip/Stryker-405L=Lightweight crossbow that generates outstanding speed.
 Behavior/Tooltip/Sturdy=+40% health
 Behavior/Tooltip/SturdyBoss=+20% health
+Behavior/Tooltip/SuitKineticIntegrator=Utilizes kinetic motion to create energy to power your suit.<n/><c val="FF8000">Regenerates 2.00 energy per second. Does not stack.</c>
 Behavior/Tooltip/SuitMalfunction=The storm caused your suit to malfunction.<n/><c val="FF8000">Energy will leak out at an alarming rate for 15 seconds.</c>
 Behavior/Tooltip/SuperToughSkin=This unit has extremely resistant skin that reduces all damage taken by 67%
 Behavior/Tooltip/SuperTransfusionBuff=Thank you Dr. Jashan!
@@ -2613,7 +2615,7 @@ Button/Tooltip/Juggernaught=Heavy assault infantry.<n/><n/><c val="#ColorAttackI
 Button/Tooltip/Jump=Jumps to the target location.<n/><n/>Cannot jump up cliffs. <c val="FF0000">Jumping down great heights can cause injury.</c>
 Button/Tooltip/KEC=<c val="C0C0C0">Kinetic Energy Capacitor</c><n/>A widely used, expensive industrial component used to generate energy on a larger scale than a Kinetic Integrator.
 Button/Tooltip/KevlarBodyArmor=A full-body armor designed to protect the wearer from simple zombie attacks and bites. Adds 125 armor.
-Button/Tooltip/KineticIntegrator=Utilizes kinetic motion to create energy to power your suit.<n/><c val="FF8000">Regenerates 1.25 energy per second. Does not stack.</c>
+Button/Tooltip/KineticIntegrator=Utilizes kinetic motion to create energy to power your suit.<n/><c val="FF8000">Regenerates 2.00 energy per second. Does not stack.</c>
 Button/Tooltip/KingDarreus="I am become death, Destroyer of Worlds."
 Button/Tooltip/Krill=Undead flyer that is cloaked and very small.
 Button/Tooltip/LLDR=Calls for close air support (CAS) to fire a missile at the target spot, dealing <d ref="Effect,PredatorStrikeDamage,Amount"/> damage in a wide area. Takes approximately 5.7 seconds after the order has been given for the payload to be delivered.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c></n><c val="FF0000">Explosives hurt allies.</c>
@@ -3187,7 +3189,7 @@ DocInfo/Author=illidan92/composure #200
 DocInfo/DescLong=data mod!<n/><n/><n/><n/>
 DocInfo/DescShort=1-12
 DocInfo/Name=UA3D_Data
-Doesn'tHaveAimAssistant=Only one aim assistant is allowed
+Doesn'tHaveKineticIntegrator=Only one kinetic integrator is allowed
 DoesntHaveMGL=Can Only Have One MGL
 Effect/Name/1Dexterity=1 Dexterity
 Effect/Name/1DexterityMechanical=1 Dexterity & Mechanical
@@ -4431,6 +4433,7 @@ Effect/Name/KevlarRemoveSet=Kevlar Remove Set
 Effect/Name/KevlarSet=Kevlar Set
 Effect/Name/KilledMutatedUnit=Killed Mutated Unit
 Effect/Name/KineticIntegrator=Kinetic Integrator
+Effect/Name/KineticIntegratorAB=Kinetic Integrator AB
 Effect/Name/KingDarreusClaws=King Darreus Claws
 Effect/Name/KratosDeath=Kratos Death
 Effect/Name/KratosDeathSet=Kratos Death Set
@@ -9534,6 +9537,7 @@ SoldierSkills/L2=<n/><n/><c val="FFFF8A">Current Level: 2</c>
 StingerMissile/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 StingerMissile/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 StingerMissile/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
+SuitKineticIntegratorCheck=Kinetic Integrator Can't Be Used By This Unit
 SuperiorEnergyCellInInventory=Inventory doesn't have any superior energy cells
 SupportGrenades/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 SupportGrenades/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2

@@ -549,8 +549,8 @@
     </CItemAbil>
     <CItem id="KineticIntegrator">
         <Flags index="DropOnDeath" value="1"/>
+        <Flags index="KillWhenDepleted" value="1"/>
         <Class value="Misc"/>
-        <CarryBehaviorArray value="KineticIntegrator"/>
     </CItem>
     <CItemEffectInstant id="MuscleRelaxant">
         <Flags index="DropOnDeath" value="1"/>

@@ -32995,8 +32995,8 @@
         <On index="0" Terms="ActorCreation" Send="Create SoundEmitter Doodad_Item"/>
         <On index="1" Terms="ActorCreation" Send="$Stand PlayForever"/>
         <On index="2" Terms="UnitBirth.KineticIntegrator"/>
-        <On index="3" Terms="UnitDeath" Send="Destroy"/>
-        <On index="4" removed="1"/>
+        <On index="3" Terms="ActorCreation" Send="SetTintColor 0,255,64"/>
+        <On index="4" Terms="UnitDeath" Send="Destroy"/>
         <On index="5" removed="1"/>
         <On index="6" removed="1"/>
         <On index="7" removed="1"/>

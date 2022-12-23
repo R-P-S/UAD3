@@ -34,6 +34,11 @@
         <Find value="1"/>
         <Value value="APESUSprinter"/>
     </CValidatorPlayerRequirement>
+    <CValidatorCombine id="SuitKineticIntegratorCheck">
+        <ResultFailed value="Error,SuitKineticIntegratorCheck,AC_UI_Error01"/>
+        <Type value="And"/>
+        <CombineArray value="NotLN2"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="AntiVeninSUSwift">
         <Find value="1"/>
         <Value value="AntiVeninSUSwift"/>
@@ -54,6 +59,10 @@
     <CValidatorUnitFilters id="DecayFilter">
         <Filters value="-;Psionic,Structure,Missile,Stasis,Hidden,Invulnerable"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="DoesntHaveSuitKineticIntegrator">
+        <ResultFailed value="Error,Doesn&apos;tHaveKineticIntegrator,AC_UI_Error01"/>
+        <Behavior value="SuitKineticIntegrator"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareField id="FoodGT4">
         <WhichUnit Value="Source"/>
         <Compare value="GT"/>
@@ -63,6 +72,14 @@
     <CValidatorUnitCompareBehaviorCount id="HasLightFilter">
         <Behavior value="LightFilterForGhost"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCondition id="SuitKineticIntegratorFilter">
+        <IfArray Test="SuitKineticIntegratorCheck" Return="DoesntHaveSuitKineticIntegrator"/>
+        <Else value="SuitKineticIntegratorCheck"/>
+    </CValidatorCondition>
+    <CValidatorUnitFilters id="NotLN2">
+        <ResultFailed value="Error,NotLN,AC_UI_Error01"/>
+        <Filters value="Heroic;-"/>
+    </CValidatorUnitFilters>
     <CValidatorUnitCompareBehaviorCount id="XR42IsEquipped">
         <WhichUnit Value="Caster"/>
         <Value value="1"/>

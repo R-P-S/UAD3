@@ -327,6 +327,13 @@
             <WeaponArray Link="DeathMachine"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="SuitKineticIntegrator">
+        <InfoIcon value="Buttons\BTNEnergyGenerator.dds"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="2"/>
+        </Modification>
+        <BehaviorFlags index="Permanent" value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="XR42">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Buttons\BTN_PlasmaRifle_XR.dds"/>

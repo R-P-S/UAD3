@@ -9413,6 +9413,11 @@
                 <Field Id="Item"/>
             </GameLink>
         </Instances>
+        <Instances Id="Kinetic Integrator">
+            <GameLink GameLink="KineticIntegrator">
+                <Field Id="Item"/>
+            </GameLink>
+        </Instances>
         <Instances Id="HK42">
             <GameLink GameLink="HK42">
                 <Field Id="Item"/>

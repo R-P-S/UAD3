@@ -3727,7 +3727,6 @@
         <Icon value="Buttons\BTNEnergyGenerator.dds"/>
         <AlertIcon value="Buttons\BTNEnergyGenerator.dds"/>
         <EditorCategories value="Race:Neutral"/>
-        <HotkeyAlias value="EnergyCell"/>
     </CButton>
     <CButton id="NanoInjection">
         <Icon value="Assets\Buttons\Syringe_Orange.dds"/>
