@@ -7030,7 +7030,7 @@ order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item,
     string lv_inventory_link;
 
     // Automatic Variable Declarations
-    int autoB9ADA2FB_val;
+    int auto01547A16_val;
 
     // Variable Initialization
     lv_hasItem = (lp_item != null);
@@ -7038,24 +7038,24 @@ order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item,
     // Implementation
     lv_inventory_link = lib90F7C81D_gf_CAbilInventoryType(lp_player);
     if ((lv_hasItem == true)) {
-        autoB9ADA2FB_val = lp_type;
-        if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Instant) {
+        auto01547A16_val = lp_type;
+        if (auto01547A16_val == lib90F7C81D_ge_OrderType_Instant) {
             lv_order = Order(AbilityCommand(lv_inventory_link, 3));
         }
-        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Target) {
+        else if (auto01547A16_val == lib90F7C81D_ge_OrderType_Target) {
             lv_order = Order(AbilityCommand(lv_inventory_link, 4));
         }
-        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_On) {
+        else if (auto01547A16_val == lib90F7C81D_ge_OrderType_On) {
             lv_order = Order(AbilityCommand(lv_inventory_link, 8));
         }
-        else if (autoB9ADA2FB_val == lib90F7C81D_ge_OrderType_Off) {
+        else if (auto01547A16_val == lib90F7C81D_ge_OrderType_Off) {
             lv_order = Order(AbilityCommand(lv_inventory_link, 7));
         }
         else {
         }
         OrderSetTargetItem(lv_order, lp_item);
         if ((lp_type == lib90F7C81D_ge_OrderType_Target) && (lp_hotkey != "Slot")) {
-            if (((UnitGetType(lp_item) == "FirstAidKit") || (UnitGetType(lp_item) == "AdvancedFirstAidKit") || (UnitGetType(lp_item) == "AntiVeninShot") || (UnitGetType(lp_item) == "AdvancedAntiVeninShot") || (UnitGetType(lp_item) == "QuikClot") || (UnitGetType(lp_item) == "AdvancedQuikClot") || (UnitGetType(lp_item) == "EnergyCell") || (UnitGetType(lp_item) == "SuperiorEnergyCell") || (UnitGetType(lp_item) == "AimAssistant"))) {
+            if (((OrderGetAbilityCommand(lv_order) == AbilityCommand("FirstAidKitItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedFirstAidKit", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AntiVeninShotItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedAntiVeninShot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("QuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedQuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("EnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuperiorEnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AimAssistant", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuitKineticIntegrator", 0)))) {
                 OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
             }
             else {
@@ -9757,7 +9757,12 @@ bool lib90F7C81D_gt_WeaponLogic_Func (bool testConds, bool runActions) {
             PlayerModifyPropertyFixed(UnitGetOwner(EventUnit()), c_playerPropMinerals, c_playerPropOperSetTo, lib90F7C81D_gv_stockWeaponRounds[UnitGetOwner(EventUnit())]);
         }
         if ((EventUnitInventoryChange() == c_unitInventoryChangeDrops)) {
-            UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_7AAEC5B7") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_CF1A39DC") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            if ((lv_itemtype == "M9Flamethrower")) {
+                UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_22F76315") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_F09EA870") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            }
+            else {
+                UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_7AAEC5B7") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_CF1A39DC") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            }
             UnitSetFacing(EventUnitInventoryItem(), RandomFixed(360.0, 180.0), 0.0);
         }
     }
@@ -9766,7 +9771,12 @@ bool lib90F7C81D_gt_WeaponLogic_Func (bool testConds, bool runActions) {
             if ((UnitIsAlive(EventUnit()) == false)) {
                 PlayerModifyPropertyFixed(UnitGetOwner(EventUnit()), c_playerPropMinerals, c_playerPropOperSetTo, lib90F7C81D_gv_stockWeaponRounds[UnitGetOwner(EventUnit())]);
             }
-            UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_CF210948") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_E26E5E6D") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            if ((lv_itemtype == "M9Flamethrower")) {
+                UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_CF210948") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_E26E5E6D") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            }
+            else {
+                UnitSetInfoText(EventUnitInventoryItem(), StringToText(""), (StringExternal("Param/Value/lib_90F7C81D_ECF9B642") + UnitGetName(EventUnitInventoryItem()) + StringExternal("Param/Value/lib_90F7C81D_339965E5") + FixedToText(UnitGetCustomValue(EventUnitInventoryItem(), lv_preset), 0) + lib90F7C81D_gf_GetWeaponTooltipIcons(lv_itemtype)), StringToText(""));
+            }
             UnitSetFacing(EventUnitInventoryItem(), RandomFixed(360.0, 180.0), 0.0);
         }
     }
@@ -11361,14 +11371,8 @@ bool lib90F7C81D_gt_ReinforcePosition_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     const int auto9E2AFF29_n = 2;
     int auto9E2AFF29_i;
-    const int auto4EEE652C_n = 3;
-    int auto4EEE652C_i;
-    const int auto321A5C2B_n = 4;
-    int auto321A5C2B_i;
-    const int autoB2A0FD2A_n = 5;
-    int autoB2A0FD2A_i;
-    const int autoECE5034F_n = 2;
-    int autoECE5034F_i;
+    const int autoBAAA818A_n = 3;
+    int autoBAAA818A_i;
     unitgroup auto65FCAB7E_g;
     int auto65FCAB7E_u;
     unit auto65FCAB7E_var;
@@ -11385,7 +11389,7 @@ bool lib90F7C81D_gt_ReinforcePosition_Func (bool testConds, bool runActions) {
     if ((RegionContainsPoint(RegionFromId(47), EventPlayerEffectUsedPoint(c_effectLocationTargetPoint)) == true)) {
         lib90F7C81D_gf_PingBeaconAdd("PingPanelBeaconDefend", EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), EventPlayer());
         RegionSetCenter(RegionFromId(48), EventPlayerEffectUsedPoint(c_effectLocationTargetPoint));
-        if ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training1", c_techCountCompleteOnly) == 1) && (TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training2", c_techCountCompleteOnly) == 0)) {
+        if ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training4", c_techCountCompleteOnly) == 0) && ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training1", c_techCountCompleteOnly) == 1) || (TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training2", c_techCountCompleteOnly) == 1) || (TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training3", c_techCountCompleteOnly) == 1))) {
             for (auto9E2AFF29_i = 1; auto9E2AFF29_i <= auto9E2AFF29_n; auto9E2AFF29_i += 1) {
                 libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficer", 0, 0, RegionRandomPoint(RegionFromId(45)));
                 TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
@@ -11401,40 +11405,8 @@ bool lib90F7C81D_gt_ReinforcePosition_Func (bool testConds, bool runActions) {
             UnitGroupAdd(lv_policeGroup, UnitLastCreated());
             UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
         }
-        else if ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training2", c_techCountCompleteOnly) == 1) && (TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training3", c_techCountCompleteOnly) == 0)) {
-            for (auto4EEE652C_i = 1; auto4EEE652C_i <= auto4EEE652C_n; auto4EEE652C_i += 1) {
-                libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficer", 0, 0, RegionRandomPoint(RegionFromId(45)));
-                TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
-                UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitGroupAdd(lv_policeGroup, UnitLastCreated());
-                UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
-            }
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficerShotgun", 0, 0, RegionRandomPoint(RegionFromId(45)));
-            TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
-            UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-            UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-            UnitGroupAdd(lv_policeGroup, UnitLastCreated());
-            UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
-        }
-        else if ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training3", c_techCountCompleteOnly) == 1) && (TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training4", c_techCountCompleteOnly) == 0)) {
-            for (auto321A5C2B_i = 1; auto321A5C2B_i <= auto321A5C2B_n; auto321A5C2B_i += 1) {
-                libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficer", 0, 0, RegionRandomPoint(RegionFromId(45)));
-                TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
-                UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitGroupAdd(lv_policeGroup, UnitLastCreated());
-                UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
-            }
-            libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficerShotgun", 0, 0, RegionRandomPoint(RegionFromId(45)));
-            TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
-            UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-            UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-            UnitGroupAdd(lv_policeGroup, UnitLastCreated());
-            UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
-        }
         else if ((TechTreeUpgradeCount(EventPlayerEffectUsedUnitOwner(c_effectPlayerSource), "Training4", c_techCountCompleteOnly) == 1)) {
-            for (autoB2A0FD2A_i = 1; autoB2A0FD2A_i <= autoB2A0FD2A_n; autoB2A0FD2A_i += 1) {
+            for (autoBAAA818A_i = 1; autoBAAA818A_i <= autoBAAA818A_n; autoBAAA818A_i += 1) {
                 libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficer", 0, 0, RegionRandomPoint(RegionFromId(45)));
                 TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
                 UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
@@ -11442,14 +11414,12 @@ bool lib90F7C81D_gt_ReinforcePosition_Func (bool testConds, bool runActions) {
                 UnitGroupAdd(lv_policeGroup, UnitLastCreated());
                 UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
             }
-            for (autoECE5034F_i = 1; autoECE5034F_i <= autoECE5034F_n; autoECE5034F_i += 1) {
-                libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficerShotgun", 0, 0, RegionRandomPoint(RegionFromId(45)));
-                TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
-                UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
-                UnitGroupAdd(lv_policeGroup, UnitLastCreated());
-                UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
-            }
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "PoliceOfficerShotgun", 0, 0, RegionRandomPoint(RegionFromId(45)));
+            TriggerAddEventUnitRegion(lib90F7C81D_gt_PopoReachesBarracks, UnitRefFromUnit(libE6C8C21C_gf_ReturnUnit(UnitLastCreated())), RegionFromId(45), true);
+            UnitBehaviorAdd(UnitLastCreated(), "ReinforcePositionTimedLife", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
+            UnitBehaviorAdd(UnitLastCreated(), "ArmoredVests", EventPlayerEffectUsedUnit(c_effectUnitCaster), 1);
+            UnitGroupAdd(lv_policeGroup, UnitLastCreated());
+            UnitGroupAdd(lib90F7C81D_gv_sFAAT.lv_police, UnitLastCreated());
         }
         Wait(0.75, c_timeGame);
         while ((UnitGroupCount(lv_policeGroup, c_unitCountAlive) > 0)) {
@@ -11769,6 +11739,48 @@ void lib90F7C81D_gt_IRSensor_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: IR Sensor - Intelligence Share
+//--------------------------------------------------------------------------------------------------
+bool lib90F7C81D_gt_UntitledTrigger001_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_u;
+
+    // Automatic Variable Declarations
+    playergroup autoD0B59512_g;
+    int autoD0B59512_var;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "IRSensorIntelligenceDummyUnit", 0, UnitGetOwner(EventUnit()), UnitGetPosition(EventUnit()));
+    lv_u = UnitLastCreated();
+    UnitBehaviorAdd(lv_u, "IRSensorIntelligenceShare", EventUnit(), 1);
+    UnitBehaviorAdd(lv_u, "KineticFollowBehavior", EventUnit(), 1);
+    UnitBehaviorAdd(EventUnit(), "IRSensorIntelligenceTracker", lv_u, 1);
+    UnitCreateEffectUnit(lv_u, "IRSensorAddTrackedUnit", EventUnit());
+    autoD0B59512_g = lib90F7C81D_gv_players;
+    autoD0B59512_var = -1;
+    while (true) {
+        autoD0B59512_var = PlayerGroupNextPlayer(autoD0B59512_g, autoD0B59512_var);
+        if (autoD0B59512_var < 0) { break; }
+        if ((libNtve_gf_PlayerIsEnemy(autoD0B59512_var, UnitGetOwner(lv_u), libNtve_ge_PlayerRelation_AllyMutual) == true)) {
+            libNtve_gf_ShareVisionofUnit(lv_u, true, autoD0B59512_var);
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib90F7C81D_gt_UntitledTrigger001_Init () {
+    lib90F7C81D_gt_UntitledTrigger001 = TriggerCreate("lib90F7C81D_gt_UntitledTrigger001_Func");
+    TriggerAddEventUnitAbility(lib90F7C81D_gt_UntitledTrigger001, null, AbilityCommand("GhostSkillUpgrades", 18), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Gap Generator Shroud
 //--------------------------------------------------------------------------------------------------
 bool lib90F7C81D_gt_GapGeneratorShroud_Func (bool testConds, bool runActions) {
@@ -11986,7 +11998,6 @@ void lib90F7C81D_gt_RocketWarning_Init () {
     TriggerAddEventUnitAbility(lib90F7C81D_gt_RocketWarning, null, AbilityCommand("StingerMissileLauncher", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib90F7C81D_gt_RocketWarning, null, AbilityCommand("MiniMRL", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib90F7C81D_gt_RocketWarning, null, AbilityCommand("MRL", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib90F7C81D_gt_RocketWarning, null, AbilityCommand("RAMRL", 0), c_abilEffectStageCast, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -12037,15 +12048,11 @@ void lib90F7C81D_gt_CameraShakeSmall_Init () {
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "FragGrenadeDamage4");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "ClusterRocketsDamage");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "HurricaneMissilesDamage");
-    TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "CrowdControlDamage");
-    TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "RACrowdControlDamage");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "RiflemanMGLDamage");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "MGLDamageItem");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "VesaniaGLDamage");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "OrbitalStrikeDamage1");
     TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "OrbitalStrikeEMPDamage");
-    TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "CycloneMissileDamage");
-    TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_CameraShakeSmall, c_playerAny, "CycloneMissileDamage");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14502,12 +14509,19 @@ bool lib90F7C81D_gt_FindersKeepers_Func (bool testConds, bool runActions) {
     }
 
     if ((EventUnitBehavior() == "IPR")) {
-        DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[11][3], PlayerGroupSingle(lv_player), ("ExtraIcon" + IntToString(1)), "Unlocked");
+        if ((lib90F7C81D_gv_mOSAchievements.lv_ghostFindersKeepers[0][lv_player] == false)) {
+            lib90F7C81D_gv_mOSAchievements.lv_ghostFindersKeepers[0][lv_player] = true;
+            DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[11][3], PlayerGroupSingle(lv_player), ("ExtraIcon" + IntToString(1)), "Unlocked");
+            lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[47][lv_player] += 1;
+        }
     }
     else {
-        DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[11][3], PlayerGroupSingle(lv_player), ("ExtraIcon" + IntToString(2)), "Unlocked");
+        if ((lib90F7C81D_gv_mOSAchievements.lv_ghostFindersKeepers[1][lv_player] == false)) {
+            lib90F7C81D_gv_mOSAchievements.lv_ghostFindersKeepers[1][lv_player] = true;
+            DialogControlSetAnimationState(lib90F7C81D_gv_achievementPanel.lv_mOSAchievements[11][3], PlayerGroupSingle(lv_player), ("ExtraIcon" + IntToString(2)), "Unlocked");
+            lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[47][lv_player] += 1;
+        }
     }
-    lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[47][lv_player] += 1;
     if ((lib90F7C81D_gv_mOSAchievements.lv_mOSAchievement[47][lv_player] >= 2) && (lib90F7C81D_gv_bankData.lv_achievementsUnlocked[121][lv_player] == false)) {
         lib90F7C81D_gv_bankData.lv_achievementsUnlocked[121][lv_player] = true;
         lib90F7C81D_gf_FlashAchievementBadge("Finders Keepers", lv_player);
@@ -15984,8 +15998,8 @@ bool lib90F7C81D_gt_InventoryHotkeyUsed_Func (bool testConds, bool runActions) {
     int lv_slot;
 
     // Automatic Variable Declarations
-    int auto1BB90B11_ae;
-    const int auto1BB90B11_ai = 1;
+    int auto9415A401_ae;
+    const int auto9415A401_ai = 1;
 
     // Variable Initialization
     lv_payload = libNtve_gf_DialogItemEditValue(EventDialogControl(), EventPlayer());
@@ -16013,9 +16027,9 @@ bool lib90F7C81D_gt_InventoryHotkeyUsed_Func (bool testConds, bool runActions) {
     lv_c_button = StringWord(lv_payload, 1);
     lv_id = StringWord(lv_payload, 2);
     lv_inventory = UnitInventoryGroup(lib90F7C81D_gv_playerHeroes[EventPlayer()]);
-    auto1BB90B11_ae = UnitGroupCount(lv_inventory, c_unitCountAll);
+    auto9415A401_ae = UnitGroupCount(lv_inventory, c_unitCountAll);
     lv_i = 1;
-    for ( ; ( (auto1BB90B11_ai >= 0 && lv_i <= auto1BB90B11_ae) || (auto1BB90B11_ai < 0 && lv_i >= auto1BB90B11_ae) ) ; lv_i += auto1BB90B11_ai ) {
+    for ( ; ( (auto9415A401_ai >= 0 && lv_i <= auto9415A401_ae) || (auto9415A401_ai < 0 && lv_i >= auto9415A401_ae) ) ; lv_i += auto9415A401_ai ) {
         if ((lib90F7C81D_gf_GetUnitTag(UnitGroupUnit(lv_inventory, lv_i)) == lv_id)) {
             lv_slot = lv_i;
             break;
@@ -18131,6 +18145,7 @@ void lib90F7C81D_InitTriggers () {
     lib90F7C81D_gt_ScrapPartsPickup_Init();
     lib90F7C81D_gt_GrappleHookResetHeight_Init();
     lib90F7C81D_gt_IRSensor_Init();
+    lib90F7C81D_gt_UntitledTrigger001_Init();
     lib90F7C81D_gt_GapGeneratorShroud_Init();
     lib90F7C81D_gt_MissionItemPickedUp_Init();
     lib90F7C81D_gt_MissionItemDropped_Init();

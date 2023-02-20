@@ -6,6 +6,95 @@
         <Alert value=""/>
         <LeaderLevel value="1"/>
     </CUpgrade>
+    <CUpgrade id="DetonateCryoMineSnapFreeze" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\Cryo_Mine.dds"/>
+        <EffectArray Reference="Abil,PlaceCryoMine,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,CryoMineDamage,Amount" Value="35"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,CryoMineSlowed,Duration" Value="0.375000"/>
+    </CUpgrade>
+    <CUpgrade id="CryoRoundsEfficiency" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Buttons\Abilities\BTNAmmoCryo.dds"/>
+        <EffectArray Reference="Effect,PlasmaRifleCryoRoundsEnergyCost,VitalArray[Energy].Change" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="CryoGrenadeExtraCharge" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-pulsegrenade.dds"/>
+        <EffectArray Operation="Set" Reference="Abil,CryoGrenade,Cost[0].Charge.CountMax" Value="2"/>
+        <EffectArray Operation="Set" Reference="Abil,CryoGrenade,Cost[0].Charge.CountStart" Value="2"/>
+        <EffectArray Operation="Set" Reference="Abil,CryoGrenade,Cost[0].Charge.CountUse" Value="1"/>
+        <EffectArray Operation="Set" Reference="Abil,CryoGrenade,Cost[0].Charge.TimeUse" Value="45.000000"/>
+        <EffectArray Operation="Set" Reference="Abil,CryoGrenade,Cost[0].Cooldown.TimeUse" Value="0.500000"/>
+    </CUpgrade>
+    <CUpgrade id="CryoRoundsLightCounter" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Buttons\Abilities\BTNAmmoCryo.dds"/>
+        <EffectArray Reference="Effect,PlasmaRifleCryoRoundsEnergyCost,VitalArray[Energy].Change" Value="-0.5"/>
+        <EffectArray Reference="Behavior,CryoRounds,Modification.DamageDealtAttributeMultiplier[Light]" Value="0.5"/>
+    </CUpgrade>
+    <CUpgrade id="CryoGrenadePermafrost" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-pulsegrenade.dds"/>
+        <EffectArray Reference="Abil,CryoGrenade,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,CryoFreezeFinishAB,Count" Value="10"/>
+    </CUpgrade>
+    <CUpgrade id="DetonateCryoMineEmbrittlement" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\Cryo_Mine.dds"/>
+        <EffectArray Reference="Abil,PlaceCryoMine,Cost[0].Vital[Energy]" Value="10"/>
+        <EffectArray Reference="Behavior,Frozen10,DamageResponse.ModifyFraction" Value="0.25"/>
+        <EffectArray Reference="Behavior,Frozen5,DamageResponse.ModifyFraction" Value="0.25"/>
+        <EffectArray Operation="Set" Reference="Behavior,Frozen10,Modification.StateFlags[SuppressCloak]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Behavior,Frozen5,Modification.StateFlags[SuppressCloak]" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="DisruptorRoundsHeavyCounter" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Buttons\Abilities\BTNAmmoDistruptor.dds"/>
+        <EffectArray Reference="Effect,PlasmaRifleDisruptorRoundsEnergyCost,VitalArray[Energy].Change" Value="-0.5"/>
+        <EffectArray Reference="Behavior,DisruptorRounds,Modification.DamageDealtAttributeMultiplier[Armored]" Value="0.5"/>
+    </CUpgrade>
+    <CUpgrade id="GapGeneratorBlinding" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-building-terran-sensortower-covertops.dds"/>
+        <EffectArray Reference="Abil,GapGenerator,Cost[0].Cooldown.TimeUse" Value="60.000000"/>
+        <EffectArray Reference="Behavior,GapGeneratorDisorientationHuman,Modification.DetectBonus" Value="-8"/>
+        <EffectArray Reference="Behavior,GapGeneratorDisorientationHuman,Modification.SightBonus" Value="-2"/>
+        <EffectArray Reference="Behavior,GapGeneratorDisorientationUndead,Modification.DetectBonus" Value="-8"/>
+    </CUpgrade>
+    <CUpgrade id="GapGeneratorDiscombobulate" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-building-terran-sensortower-covertops.dds"/>
+        <EffectArray Reference="Effect,GapGeneratorDiscombobulateAB,Chance" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="IRSensorIntelligenceShare" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-tychus-detection.dds"/>
+    </CUpgrade>
+    <CUpgrade id="IRSensorEarlyDetection" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-tychus-detection.dds"/>
+        <EffectArray Reference="Effect,IRSensorSA,AreaArray[0].Radius" Value="10"/>
+    </CUpgrade>
+    <CUpgrade id="DisruptorRoundsEfficiency" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Buttons\Abilities\BTNAmmoDistruptor.dds"/>
+        <EffectArray Reference="Effect,PlasmaRifleDisruptorRoundsEnergyCost,VitalArray[Energy].Change" Value="0.2"/>
+    </CUpgrade>
+    <CUpgrade id="InterferenceWaveExtraCharge" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-interferencematrix.dds"/>
+        <EffectArray Reference="Abil,InterferenceWave,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,InterferenceWave,Cost[0].Charge.CountStart" Value="1"/>
+        <EffectArray Reference="Abil,InterferenceWave,Cost[0].Charge.TimeUse" Value="5.000000"/>
+    </CUpgrade>
+    <CUpgrade id="InterferenceWaveWaveAmplification" parent="SkillUpgradesTemplate">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-interferencematrix.dds"/>
+        <EffectArray Reference="Abil,InterferenceWave,Cost[0].Vital[Energy]" Value="5"/>
+        <EffectArray Reference="Effect,InterferenceWaveSA,AreaArray[0].Radius" Value="3"/>
+        <EffectArray Reference="Actor,InterferenceWaveModel,Scale" Value="0.750000"/>
+    </CUpgrade>
     <CUpgrade id="ArchitectDurableFrameDummy" parent="SkillUpgradesTemplate">
         <Icon value="Assets\Icon Pack\btn-ability-terran-build.dds"/>
         <EffectArray Reference="Unit,VulcanMK88SentryGun,ShieldsMax" Value="10"/>
@@ -255,8 +344,8 @@
     </CUpgrade>
     <CUpgrade id="CombatEnhancementsLevel3" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-magrailmunitions.dds"/>
-        <EffectArray Operation="Set" Reference="Effect,PlasmaRifleDisruptorRoundsEnergyCost,VitalArray[Energy].Change" Value="-1.05"/>
-        <EffectArray Operation="Set" Reference="Behavior,DisruptorRoundsTarget,DamageResponse.ModifyFraction" Value="1.005"/>
+        <EffectArray Reference="Effect,PlasmaRifleDisruptorRoundsEnergyCost,VitalArray[Energy].Change" Value="-0.05"/>
+        <EffectArray Reference="Behavior,DisruptorRoundsTarget,DamageResponse.ModifyFraction" Value="0.003"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="CombatEnhancements"/>
         <LeaderPriority value="3"/>
@@ -264,8 +353,10 @@
     </CUpgrade>
     <CUpgrade id="CombatEnhancementsLevel4" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-magrailmunitions.dds"/>
-        <EffectArray Operation="Set" Reference="Effect,PlasmaRifleCryoRoundsEnergyCost,VitalArray[Energy].Change" Value="-1.05"/>
-        <EffectArray Operation="Set" Reference="Behavior,CryoRoundsTarget,Modification.MoveSpeedMultiplier" Value="0.98"/>
+        <EffectArray Reference="Effect,PlasmaRifleCryoRoundsEnergyCost,VitalArray[Energy].Change" Value="-0.05"/>
+        <EffectArray Reference="Behavior,CryoRoundsTarget,Modification.AdditiveAttackSpeedFactor" Value="-0.006"/>
+        <EffectArray Reference="Behavior,CryoRoundsTarget,Modification.AdditiveMoveSpeedFactor" Value="-0.01"/>
+        <EffectArray Reference="Accumulator,CryoRoundsMassiveReduction,MaxAccumulation" Value="0.008"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="CombatEnhancements"/>
         <LeaderPriority value="3"/>
@@ -291,7 +382,6 @@
         <LeaderLevel value="3"/>
         <EffectArray Operation="Subtract" Reference="Abil,DisarmGhost,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
         <EffectArray Operation="Subtract" Reference="Behavior,CryoGrenadeSlowed,Duration" Value="0.500000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,CryoGrenade,CastIntroTime[0]" Value="0.062500"/>
         <EffectArray Reference="Abil,CryoGrenade,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,Frozen8,Duration" Value="4.000000"/>
         <EffectArray Reference="Behavior,Frozen4,Duration" Value="2.000000"/>
@@ -304,7 +394,6 @@
         <LeaderLevel value="4"/>
         <EffectArray Operation="Subtract" Reference="Abil,DisarmGhost,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
         <EffectArray Operation="Subtract" Reference="Behavior,CryoMineSlowed,Duration" Value="0.250000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlaceCryoMine,CastIntroTime[0]" Value="0.125"/>
         <EffectArray Reference="Abil,PlaceCryoMine,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,Frozen10,Duration" Value="5.000000"/>
         <EffectArray Reference="Behavior,Frozen5,Duration" Value="2.500000"/>
@@ -326,7 +415,7 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Operation="Subtract" Reference="Behavior,FullAutoCyborg,Duration" Value="4.000000"/>
-        <EffectArray Reference="Behavior,FullAutoCyborg,Modification.AttackSpeedMultiplier" Value="1.7"/>
+        <EffectArray Reference="Behavior,FullAutoCyborg,Modification.AdditiveAttackSpeedFactor" Value="1.7"/>
         <EffectArray Reference="Behavior,Overheated,Duration" Value="0.750000"/>
         <EffectArray Reference="Abil,FullAutoCyborg,Cost[0].Cooldown.TimeUse" Value="30"/>
     </CUpgrade>
@@ -367,6 +456,7 @@
         <EffectArray Reference="Abil,BinocularsGhost,Cost[0].Vital[Energy]" Value="1"/>
         <EffectArray Reference="Effect,BinocularsMOS,RevealRadius" Value="3"/>
         <EffectArray Reference="Abil,InterferenceWave,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Effect,BinocularsSA,AreaArray[0].Radius" Value="3"/>
     </CUpgrade>
     <CUpgrade id="HeatSensorLightFilter" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
@@ -1551,9 +1641,6 @@
     <CUpgrade id="TrainingLevel4Dummy" parent="Research">
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,RevealRadius" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel3Dummy" parent="Research">
@@ -1566,16 +1653,14 @@
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamage,Random" Value="0.56"/>
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Amount" Value="2.48"/>
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Random" Value="0.56"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel2Dummy" parent="Research">
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountStart" Value="1"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountMax" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="TrainingLevel1Dummy" parent="Research">
@@ -1769,7 +1854,6 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-ability-tychus-firebat-oilspill.dds"/>
         <EffectArray Reference="Behavior,OilDouse,Duration" Value="3.000000"/>
-        <EffectArray Reference="Behavior,OilDouseMassive,Duration" Value="3.000000"/>
         <EffectArray Reference="Abil,OilDouse,Cost[0].Vital[Energy]" Value="5"/>
     </CUpgrade>
     <CUpgrade id="PlaceWildfireMineEfficiency" parent="SkillUpgradesTemplate">
@@ -1849,7 +1933,7 @@
     <CUpgrade id="BurningDebilitatingFlames" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-ability-zerg-fireroach-increasefiredamage.dds"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,Burning,Modification.AttackSpeedMultiplier" Value="0.01"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,Burning,Modification.AdditiveAttackSpeedFactor" Value="0.0092"/>
     </CUpgrade>
     <CUpgrade id="BurningRapidRoast" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
@@ -1955,7 +2039,6 @@
         <Icon value="Assets\Textures\btn-ability-tychus-firebat-oilspill.dds"/>
         <EffectArray Reference="Abil,OilDouse,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,OilDouse,Duration" Value="5.000000"/>
-        <EffectArray Reference="Behavior,OilDouseMassive,Duration" Value="5.000000"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="OilDouse"/>
         <LeaderPriority value="3"/>
@@ -1965,7 +2048,6 @@
         <Icon value="Assets\Textures\btn-ability-tychus-firebat-oilspill.dds"/>
         <EffectArray Reference="Abil,OilDouse,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Behavior,OilDouse,DamageResponse.ModifyFraction" Value="0.75"/>
-        <EffectArray Reference="Behavior,OilDouseMassive,DamageResponse.ModifyFraction" Value="0.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="OilDouse"/>
         <LeaderPriority value="3"/>
@@ -1975,7 +2057,6 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-ability-tychus-firebat-oilspill.dds"/>
         <EffectArray Reference="Behavior,OilDouse,DamageResponse.ModifyFraction" Value="0.2"/>
-        <EffectArray Reference="Behavior,OilDouseMassive,DamageResponse.ModifyFraction" Value="0.2"/>
         <EffectArray Operation="Subtract" Reference="Effect,OilDouseSA,AreaArray[0].Radius" Value="1"/>
     </CUpgrade>
     <CUpgrade id="PlasmaShieldUpgrade" parent="Research">
@@ -2087,7 +2168,7 @@
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Ranged]" Value="0.02"/>
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Spell]" Value="0.02"/>
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Splash]" Value="0.02"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadePL,CastIntroTime[0]" Value="0.050000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadePL,Cost[0].Vital[Energy]" Value="4"/>
         <EffectArray Reference="Abil,FragGrenadePL,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,FragGrenadePL,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2116,7 +2197,7 @@
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Ranged]" Value="0.01"/>
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Spell]" Value="0.01"/>
         <EffectArray Operation="Subtract" Reference="Behavior,InstructorTarget,Modification.DamageTakenFraction[Splash]" Value="0.01"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SmokeGrenadePL,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SmokeGrenadePL,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Abil,SmokeGrenadePL,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,SmokeGrenadePL,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2171,7 +2252,7 @@
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.DamageDealtFraction[Ranged]" Value="0.03"/>
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.DamageDealtFraction[Splash]" Value="0.03"/>
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.MoveSpeedBonus" Value="0.0200"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadePL,CastIntroTime[0]" Value="0.050000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadePL,Cost[0].Vital[Energy]" Value="4"/>
         <EffectArray Reference="Abil,FragGrenadePL,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,FragGrenadePL,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2195,7 +2276,7 @@
     <CUpgrade id="RapidFireIntensity" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
-        <EffectArray Reference="Behavior,RapidFire,Modification.AttackSpeedMultiplier" Value="0.5"/>
+        <EffectArray Reference="Behavior,RapidFire,Modification.AdditiveAttackSpeedFactor" Value="0.5"/>
         <EffectArray Reference="Behavior,Recoil,Duration" Value="0.100000"/>
     </CUpgrade>
     <CUpgrade id="RapidFireSleightofHand" parent="SkillUpgradesTemplate">
@@ -2299,6 +2380,7 @@
         <EffectArray Reference="Abil,BinocularsPL,Cost[0].Vital[Energy]" Value="2"/>
         <EffectArray Reference="Effect,BinocularsMOS,ExpireDelay" Value="2.500000"/>
         <EffectArray Reference="Effect,BinocularsMOS,RevealRadius" Value="2"/>
+        <EffectArray Reference="Abil,BinocularsGhost,Cost[0].Vital[Energy]" Value="2"/>
     </CUpgrade>
     <CUpgrade id="BinocularsTargetPainting" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
@@ -2316,7 +2398,6 @@
     <CUpgrade id="ClaymoreUpgradeCav" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-explosiveshrapnelshells.dds"/>
         <EffectArray Operation="Subtract" Reference="Abil,Disarm,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlaceClaymore,CastIntroTime[0]" Value="0.200000"/>
         <EffectArray Reference="Abil,PlaceClaymore,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,PlaceClaymore,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2344,7 +2425,7 @@
     <CUpgrade id="FragUpgradeCav" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-explosiveshrapnelshells.dds"/>
         <EffectArray Operation="Subtract" Reference="Abil,Disarm,Cost[0].Cooldown.TimeUse" Value="2.500000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadeCav,CastIntroTime[0]" Value="0.100000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadeCav,Cost[0].Vital[Energy]" Value="4"/>
         <EffectArray Reference="Abil,FragGrenadeCav,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,FragGrenadeCav,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2363,7 +2444,7 @@
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Reference="Abil,FullAuto,Cost[0].Vital[Energy]" Value="1.25"/>
         <EffectArray Reference="Behavior,FullAuto,Modification.VitalRegenArray[Energy]" Value="-0.250000"/>
-        <EffectArray Reference="Behavior,FullAuto,Modification.AttackSpeedMultiplier" Value="0.15"/>
+        <EffectArray Reference="Behavior,FullAuto,Modification.AdditiveAttackSpeedFactor" Value="0.15"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <MaxLevel value="2"/>
         <LeaderAlias value="FullAuto"/>
@@ -2374,7 +2455,7 @@
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Reference="Abil,FullAuto,Cost[0].Vital[Energy]" Value="1.25"/>
         <EffectArray Reference="Behavior,FullAuto,Modification.VitalRegenArray[Energy]" Value="-0.250000"/>
-        <EffectArray Reference="Behavior,FullAuto,Modification.AttackSpeedMultiplier" Value="0.45"/>
+        <EffectArray Reference="Behavior,FullAuto,Modification.AdditiveAttackSpeedFactor" Value="0.45"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="FullAuto"/>
         <LeaderPriority value="3"/>
@@ -2417,20 +2498,19 @@
     <CUpgrade id="AdvancedMedicalTraining" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,BloodTransfusion,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FirstAid,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NanoInjection,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AntiVenin,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AnabolicPerformanceEnhancement,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,CognitiveEnhancement,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PainKiller,CastIntroTime[0]" Value="0.150000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,Immunization,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,BloodTransfusion,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FirstAid,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NanoInjection,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AntiVenin,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AnabolicPerformanceEnhancement,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,CognitiveEnhancement,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,PainKiller,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,Immunization,CastIntroTime[0]" Value="0.250000"/>
     </CUpgrade>
     <CUpgrade id="AirRadar">
         <EffectArray Operation="Set" Reference="Behavior,AirRadar,Modification.Radar" Value="70"/>
         <EditorCategories value="Race:Terran"/>
     </CUpgrade>
-    <CUpgrade id="Akma"/>
     <CUpgrade id="FullAutoEfficiency" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
@@ -2461,8 +2541,8 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Buttons\Syringe_Blue.dds"/>
         <EffectArray Reference="Abil,AnabolicPerformanceEnhancement,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Behavior,AnabolicPerformanceEnhancement,Modification.MoveSpeedMultiplier" Value="0.03"/>
-        <EffectArray Reference="Behavior,AnabolicPerformanceEnhancementImproved,Modification.MoveSpeedMultiplier" Value="0.03"/>
+        <EffectArray Reference="Behavior,AnabolicPerformanceEnhancement,Modification.AdditiveMoveSpeedFactor" Value="0.03"/>
+        <EffectArray Reference="Behavior,AnabolicPerformanceEnhancementImproved,Modification.AdditiveMoveSpeedFactor" Value="0.03"/>
     </CUpgrade>
     <CUpgrade id="AntiVeninPrioritization" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
@@ -2565,12 +2645,6 @@
         <Icon value="Assets\Buttons\Syringe_Red.dds"/>
         <EffectArray Operation="Set" Reference="Effect,BloodTransfusionApplyBehavior,Behavior" Value="BloodTransfusionHealingAura"/>
     </CUpgrade>
-    <CUpgrade id="BlueCrystal">
-        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
-        <EffectArray Reference="Effect,D19LaserRifleDamage,Amount" Value="4"/>
-        <EffectArray Operation="Set" Reference="Effect,D19LaserBurn4Armor1,Chance" Value="0.25"/>
-        <EffectArray Operation="Set" Reference="Effect,D19LaserBurn5Armor2,Chance" Value="0.5"/>
-    </CUpgrade>
     <CUpgrade id="CASOnStation" parent="Research">
         <Alert value=""/>
         <Race value="Terr"/>
@@ -2626,37 +2700,10 @@
         <EffectArray Reference="Behavior,CognitiveEnhancement,Modification.DetectArc" Value="30.000000"/>
         <EffectArray Reference="Abil,CognitiveEnhancement,Cost[0].Vital[Energy]" Value="5"/>
     </CUpgrade>
-    <CUpgrade id="CrowdControl1">
-        <EffectArray Operation="Set" Reference="Effect,CrowdControlSA,AreaArray[0].Radius" Value="3.5"/>
-        <EffectArray Operation="Set" Reference="Behavior,CrowdControlSmokeTimedLife,Duration" Value="35.000000"/>
-        <EffectArray Operation="Set" Reference="Actor,CrowdControlUnit,Scale" Value="1.166000,1.166000,1.000000"/>
-        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
-    </CUpgrade>
-    <CUpgrade id="CrowdControl2">
-        <EffectArray Operation="Set" Reference="Effect,CrowdControlSA,AreaArray[0].Radius" Value="4"/>
-        <EffectArray Operation="Set" Reference="Behavior,CrowdControlSmokeTimedLife,Duration" Value="40.000000"/>
-        <EffectArray Operation="Set" Reference="Actor,CrowdControlUnit,Scale" Value="1.332000,1.332000,1.000000"/>
-        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
-        <LeaderAlias value="CrowdControl1"/>
-    </CUpgrade>
-    <CUpgrade id="CrowdControl3">
-        <EffectArray Operation="Set" Reference="Effect,CrowdControlSA,AreaArray[0].Radius" Value="4.5"/>
-        <EffectArray Operation="Set" Reference="Behavior,CrowdControlSmokeTimedLife,Duration" Value="45.000000"/>
-        <EffectArray Operation="Set" Reference="Actor,CrowdControlUnit,Scale" Value="1.498000,1.498000,1.000000"/>
-        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
-        <LeaderAlias value="CrowdControl1"/>
-    </CUpgrade>
     <CUpgrade id="DOOMOnly">
         <Alert value=""/>
         <EditorCategories value="Race:Terran"/>
         <LeaderAlias value="1Life"/>
-    </CUpgrade>
-    <CUpgrade id="Defender">
-        <EffectArray Operation="Set" Reference="Behavior,AuraOfValor2,Modification.LifeArmorBonus" Value="6"/>
-        <EffectArray Operation="Set" Reference="Behavior,AuraOfValor2,DamageResponse.Chance" Value="1"/>
-        <EffectArray Operation="Set" Reference="Behavior,AuraOfValor2,DamageResponse.ModifyFraction" Value="0.9"/>
-        <EffectArray Operation="Set" Reference="Behavior,BlastShield2,DamageResponse.ModifyFraction" Value="0.33"/>
-        <EditorCategories value="UpgradeType:SpellResearch,Race:Terran"/>
     </CUpgrade>
     <CUpgrade id="DevOnly">
         <Alert value=""/>
@@ -2672,10 +2719,6 @@
         <EffectArray Operation="Subtract" Reference="Abil,MotionSensorGhost,Cost[0].Vital[Energy]" Value="8"/>
         <EffectArray Operation="Subtract" Reference="Abil,LaserDesignatorGhost,Cost[0].Vital[Energy]" Value="7"/>
         <EffectArray Operation="Subtract" Reference="Abil,IonCannon,Cost[0].Vital[Energy]" Value="30"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlasmaGrenade,Cost[0].Vital[Energy]" Value="17"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlasmaGrenade,Cost[1].Vital[Energy]" Value="16"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlasmaGrenade,Cost[2].Vital[Energy]" Value="15"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlasmaGrenade,Cost[3].Vital[Energy]" Value="14"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
     </CUpgrade>
     <CUpgrade id="EnhancedScanners">
@@ -2799,7 +2842,7 @@
     <CUpgrade id="FragUpgrade" parent="Research">
         <Icon value="BTNFragGrenade.dds"/>
         <EffectArray Reference="Abil,NewFragGrenade,Cost[0].Charge.CountMax" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NewFragGrenade,CastIntroTime[0]" Value="0.050000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NewFragGrenade,Cost[0].Vital[Energy]" Value="4"/>
         <EffectArray Reference="Abil,NewFragGrenade,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <MaxLevel value="3"/>
@@ -2855,7 +2898,7 @@
     </CUpgrade>
     <CUpgrade id="GroundFlareUpgrade" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-flashgrenade.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,GroundFlare,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,GroundFlare,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Abil,GroundFlare,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,GroundFlare,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -2920,7 +2963,7 @@
         <EffectArray Reference="Abil,BinocularsSDM,Cost[0].Vital[Energy]" Value="1"/>
         <EffectArray Reference="Abil,GroundFlareSDM,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,GroundFlareSDM,Cost[0].Charge.CountStart" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,GroundFlareSDM,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,GroundFlareSDM,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Effect,BinocularsSA,AreaArray[0].Radius" Value="3"/>
         <EffectArray Reference="Weapon,Mk14,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,Mk14,Range" Value="0.75"/>
@@ -3091,10 +3134,10 @@
     <CUpgrade id="JavelinSkillsSwiftLaunch" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-ability-terran-armnuke.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,HERocket,CastIntroTime[0]" Value="0.280000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ATRocket,CastIntroTime[0]" Value="0.280000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,StingerMissile,CastIntroTime[0]" Value="0.280000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,JavelinMissile,CastIntroTime[0]" Value="0.280000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,HERocket,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ATRocket,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,StingerMissile,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,JavelinMissile,CastIntroTime[0]" Value="0.250000"/>
     </CUpgrade>
     <CUpgrade id="LaserDesignatorAbility" parent="Research">
         <Icon value="Assets\Textures\btn-ability-terran-scannersweep-color.dds"/>
@@ -3395,18 +3438,26 @@
     <CUpgrade id="MedicalScanVisor" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-dominationvisor.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,BloodTransfusion,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FirstAid,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NanoInjection,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AntiVenin,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AnabolicPerformanceEnhancement,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,CognitiveEnhancement,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PainKiller,CastIntroTime[0]" Value="0.300000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,Immunization,CastIntroTime[0]" Value="0.300000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,BloodTransfusion,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FirstAid,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NanoInjection,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AntiVenin,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AnabolicPerformanceEnhancement,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,CognitiveEnhancement,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,PainKiller,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,Immunization,CastIntroTime[0]" Value="0.250000"/>
         <EffectArray Operation="Set" Reference="Unit,CombatMedic,EffectArray[Birth]" Value="CombatMedicSpawnMSVSet"/>
         <EffectArray Operation="Set" Reference="Unit,CombatMedic,EffectArray[Revive]" Value="CombatMedicSpawnMSVSet"/>
         <EffectArray Operation="Set" Reference="Actor,CombatMedic,GroupIcon.Image[0]" Value="Assets\Wireframes\MOS_CombatMedicVisor_Wireframe.dds"/>
         <EffectArray Operation="Set" Reference="Actor,CombatMedic,Wireframe.Image[0]" Value="Assets\Wireframes\MOS_CombatMedicVisor_Wireframe.dds"/>
+        <EffectArray Reference="Abil,BloodTransfusion,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,FirstAid,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,NanoInjection,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,AntiVenin,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,AnabolicPerformanceEnhancement,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,CognitiveEnhancement,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,PainKiller,Range[0]" Value="1"/>
+        <EffectArray Reference="Abil,Immunization,Range[0]" Value="1"/>
         <AffectedUnitArray value="CombatMedic"/>
     </CUpgrade>
     <CUpgrade id="ModOnly"/>
@@ -3456,7 +3507,7 @@
         <EffectArray Reference="Abil,BinocularsCav,Cost[0].Vital[Energy]" Value="1"/>
         <EffectArray Reference="Abil,GroundFlareCav,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,GroundFlareCav,Cost[0].Charge.CountStart" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,GroundFlareCav,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,GroundFlareCav,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Effect,BinocularsSA,AreaArray[0].Radius" Value="3"/>
         <EffectArray Reference="Behavior,MotionSensorTimedLife,Modification.Radar" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -3476,7 +3527,7 @@
         <EffectArray Operation="Set" Reference="Unit,MotionSensor,Description" Value="Button/Tooltip/MotionSensorCloakedDetection"/>
     </CUpgrade>
     <CUpgrade id="MutationUpgrade" parent="Research">
-        <EffectArray Reference="Behavior,MutationUpgrade,Modification.AttackSpeedMultiplier" Value="0.025"/>
+        <EffectArray Reference="Behavior,MutationUpgrade,Modification.AdditiveAttackSpeedFactor" Value="0.025"/>
         <EffectArray Reference="Behavior,MutationUpgrade,Modification.DamageDealtFraction[Melee]" Value="0.025"/>
         <EffectArray Reference="Behavior,MutationUpgrade,Modification.DamageDealtFraction[Ranged]" Value="0.025"/>
         <EffectArray Reference="Behavior,MutationUpgrade,Modification.DamageDealtFraction[Spell]" Value="0.025"/>
@@ -3522,7 +3573,6 @@
         <EffectArray Operation="Set" Reference="Abil,OrbitalSatelliteReconnaissanceViper,Cost[0].Cooldown.TimeUse" Value="60.000000"/>
         <EditorCategories value="Race:Terran"/>
     </CUpgrade>
-    <CUpgrade id="Jashan"/>
     <CUpgrade id="LTGEN">
         <InfoTooltipPriority value="1"/>
         <Alert value=""/>
@@ -3608,7 +3658,7 @@
     <CUpgrade id="PerformSelfAidSecondNature" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PerformSelfAidHero,CastIntroTime[0]" Value="1.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,PerformSelfAidHero,CastIntroTime[0]" Value="0.500000"/>
         <EffectArray Operation="Subtract" Reference="Abil,PerformSelfAidHero,Cost[0].Vital[Energy]" Value="20"/>
     </CUpgrade>
     <CUpgrade id="PerformSelfAidSelfSufficient" parent="SkillUpgradesTemplate">
@@ -3640,7 +3690,7 @@
     <CUpgrade id="RapidFireUpgrade1" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Reference="Abil,RapidFire,Cost[0].Vital[Energy]" Value="1.25"/>
-        <EffectArray Reference="Behavior,RapidFire,Modification.AttackSpeedMultiplier" Value="0.4"/>
+        <EffectArray Reference="Behavior,RapidFire,Modification.AdditiveAttackSpeedFactor" Value="0.4"/>
         <EffectArray Reference="Behavior,RapidFire,Modification.VitalRegenArray[Energy]" Value="-0.250000"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <MaxLevel value="2"/>
@@ -3651,7 +3701,7 @@
     <CUpgrade id="RapidFireUpgrade2" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Reference="Abil,RapidFire,Cost[0].Vital[Energy]" Value="1.25"/>
-        <EffectArray Reference="Behavior,RapidFire,Modification.AttackSpeedMultiplier" Value="1.05"/>
+        <EffectArray Reference="Behavior,RapidFire,Modification.AdditiveAttackSpeedFactor" Value="1.05"/>
         <EffectArray Reference="Behavior,RapidFire,Modification.VitalRegenArray[Energy]" Value="-0.250000"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="RapidFire"/>
@@ -3682,7 +3732,7 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\ui_aicommand_build_open_timingattack.dds"/>
         <EffectArray Operation="Subtract" Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="20"/>
-        <EffectArray Operation="Subtract" Reference="Abil,ReinforcePosition,Cost[0].Cooldown.TimeUse" Value="24.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,ReinforcePosition,Cost[0].Charge.TimeUse" Value="8.000000"/>
         <EffectArray Operation="Subtract" Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="20"/>
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship1" parent="Research">
@@ -3941,7 +3991,7 @@
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.DamageDealtFraction[Ranged]" Value="0.02"/>
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.DamageDealtFraction[Splash]" Value="0.02"/>
         <EffectArray Reference="Behavior,BornToLeadTarget,Modification.MoveSpeedBonus" Value="0.011700"/>
-        <EffectArray Operation="Subtract" Reference="Abil,SmokeGrenadePL,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,SmokeGrenadePL,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Abil,SmokeGrenadePL,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,SmokeGrenadePL,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -3966,7 +4016,7 @@
     </CUpgrade>
     <CUpgrade id="SmokeUpgrade" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-flashgrenade.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,NewSmokeGrenade,CastIntroTime[0]" Value="0.150000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,NewSmokeGrenade,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Reference="Abil,NewSmokeGrenade,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Reference="Abil,NewSmokeGrenade,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
@@ -4169,8 +4219,8 @@
     </CUpgrade>
     <CUpgrade id="SuppressiveFire2" parent="Research">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-combatmastery.dds"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,SuppressiveFireSlow,Modification.MoveSpeedMultiplier" Value="0.03"/>
-        <EffectArray Operation="Set" Reference="Behavior,SuppressiveFireSlowMassive,Modification.MoveSpeedMultiplier" Value="0.99"/>
+        <EffectArray Reference="Accumulator,SuppressiveFireMovementMassiveReduction,MaxAccumulation" Value="0.384"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,SuppressiveFireSlow,Modification.AdditiveMoveSpeedFactor" Value="-0.03"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="MachineGunUpgrades"/>
         <LeaderPriority value="2"/>
@@ -4180,35 +4230,22 @@
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Effect,M241MMGCriticalImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M241MMGCriticalImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M241MMGImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M241MMGImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M241MMGIncendiaryImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M241MMGIncendiaryImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M241MMGIncendiaryImpactCritical,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M241MMGIncendiaryImpactCritical,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M41SAWCriticalImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M41SAWCriticalImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M41SAWImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M41SAWImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M41SAWIncendiaryImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M41SAWIncendiaryImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,M41SAWIncendiaryImpactCritical,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,M41SAWIncendiaryImpactCritical,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,MachineGunCriticalImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,MachineGunCriticalImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,MachineGunImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,MachineGunImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,MachineGunIncendiaryImpact,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,MachineGunIncendiaryImpact,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
         <EffectArray Operation="Set" Reference="Effect,MachineGunIncendiaryImpactCritical,EffectArray[1]" Value="SuppressiveFireSA"/>
-        <EffectArray Operation="Set" Reference="Effect,MachineGunIncendiaryImpactCritical,EffectArray[2]" Value="SuppressiveFireSAMassive"/>
     </CUpgrade>
     <CUpgrade id="SuppressiveFireTargetSuppression" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Operation="Subtract" Reference="Behavior,SuppressiveFireSlow,Modification.AttackSpeedMultiplier" Value="0.0385"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,SuppressiveFireSlowMassive,Modification.AttackSpeedMultiplier" Value="0.0385"/>
     </CUpgrade>
     <CUpgrade id="Survivalist">
         <EffectArray Operation="Subtract" Reference="Abil,PerformSelfAid,Cost[0].Vital[Energy]" Value="30"/>
@@ -4305,7 +4342,7 @@
         <EffectArray Reference="Behavior,FullAuto,Modification.AttackSpeedMultiplier" Value="0.15"/>
         <EffectArray Reference="Behavior,LNTactics,Modification.VitalRegenArray[Energy]" Value="0.500000"/>
         <EffectArray Reference="Abil,FragGrenadeLN,Cost[0].Charge.CountMax" Value="1"/>
-        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadeLN,CastIntroTime[0]" Value="0.050000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,FragGrenadeLN,Cost[0].Vital[Energy]" Value="4"/>
         <EffectArray Reference="Abil,FragGrenadeLN,Cost[0].Charge.CountStart" Value="1"/>
         <EffectArray Reference="Abil,SmokeGrenadeLNShotgunner,Cost[0].Charge.CountMax" Value="1"/>
         <EffectArray Operation="Subtract" Reference="Abil,SmokeGrenadeLNShotgunner,CastIntroTime[0]" Value="0.150000"/>
@@ -4346,8 +4383,8 @@
         <EffectArray Operation="Subtract" Reference="Effect,LNAutomaticRiflemanReload,Cost.Charge.CountUse" Value="40"/>
         <EffectArray Reference="Effect,ChargeCost1MG,Cost.Charge.CountMax" Value="40"/>
         <EffectArray Reference="Effect,ChargeCost1MG,Cost.Charge.CountStart" Value="40"/>
-        <EffectArray Operation="Subtract" Reference="Abil,HERocketLN,CastIntroTime[0]" Value="0.280000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,StingerMissileLN,CastIntroTime[0]" Value="0.280000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,HERocketLN,CastIntroTime[0]" Value="0.250000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,StingerMissileLN,CastIntroTime[0]" Value="0.250000"/>
     </CUpgrade>
     <CUpgrade id="TacticsSkill4" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
@@ -4374,9 +4411,8 @@
     </CUpgrade>
     <CUpgrade id="Training2" parent="Research">
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountStart" Value="1"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountMax" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
@@ -4392,9 +4428,8 @@
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamage,Random" Value="0.56"/>
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Amount" Value="2.48"/>
         <EffectArray Reference="Effect,PoliceShotgunSpreadDamageAir,Random" Value="0.56"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Charge.CountStart" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
@@ -4403,9 +4438,6 @@
     <CUpgrade id="Training4" parent="Research">
         <Icon value="Assets\Textures\btn-techupgrade-terran-consumption.dds"/>
         <EffectArray Reference="Effect,ReinforcePositionDrefDummy,PeriodCount" Value="1"/>
-        <EffectArray Reference="Effect,ReinforcePositionDrefDummy,RevealRadius" Value="1"/>
-        <EffectArray Reference="Abil,ReinforcePosition,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Reference="Effect,ReinforcePositionRefund,VitalArray[Energy].Change" Value="5"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Training"/>
         <LeaderPriority value="2"/>
@@ -4662,7 +4694,6 @@
     </CUpgrade>
     <CUpgrade id="WildfireGrenadeUpgrade" parent="Research">
         <Icon value="Assets\Textures\btn-ability-zerg-yagdra-firewave.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,WildfireGrenade,CastIntroTime[0]" Value="0.150000"/>
         <EffectArray Reference="Abil,WildfireGrenade,Cost[0].Vital[Energy]" Value="5"/>
         <EffectArray Reference="Effect,WildfireGrenadeDamage,Amount" Value="25"/>
         <EffectArray Reference="Effect,WildfireGrenadePersistentDamage,Amount" Value="0.5"/>
@@ -4686,9 +4717,7 @@
     </CUpgrade>
     <CUpgrade id="WildfireMineUpgrade" parent="Research">
         <Icon value="Assets\Textures\btn-ability-zerg-yagdra-firewave.dds"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlaceWildfireMine,CastIntroTime[0]" Value="0.200000"/>
         <EffectArray Reference="Abil,PlaceWildfireMine,Cost[0].Vital[Energy]" Value="5"/>
-        <EffectArray Operation="Subtract" Reference="Abil,PlaceWildfireMineItem,CastIntroTime[0]" Value="0.200000"/>
         <EffectArray Reference="Effect,WildfireMineDamage,Amount" Value="37.5"/>
         <EffectArray Reference="Effect,WildfireMinePersistentDamage,Amount" Value="0.75"/>
         <EffectArray Operation="Subtract" Reference="Abil,DisarmFlamer,Cost[0].Cooldown.TimeUse" Value="2.500000"/>

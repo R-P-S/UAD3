@@ -2,7 +2,7 @@
 <Catalog>
     <CUnit id="KevlarBodyArmor" parent="ItemCrateTemplate">
         <Name value="Unit/Name/KevlarBodyArmor"/>
-        <Description value="Button/Tooltip/KevlarBodyArmor"/>
+        <Description value="Button/UI/KevlarBodyArmor"/>
         <Item value="KevlarBodyArmor"/>
         <HotkeyAlias value="KevlarBodyArmor"/>
         <EquipmentArray index="0" Icon="Buttons\BTNKevlar.dds"/>
@@ -10,7 +10,7 @@
     </CUnit>
     <CUnit id="OPA" parent="ItemCrateTemplate">
         <Name value="Unit/Name/OPA"/>
-        <Description value="Button/Tooltip/OPA"/>
+        <Description value="Button/UI/OPA"/>
         <Item value="OPA"/>
         <HotkeyAlias value="OPA"/>
         <EquipmentArray index="0" Icon="Buttons\BTNPlateCarrier.dds"/>
@@ -18,7 +18,7 @@
     </CUnit>
     <CUnit id="SPCS" parent="ItemCrateTemplate">
         <Name value="Unit/Name/SPCS"/>
-        <Description value="Button/Tooltip/SPCS"/>
+        <Description value="Button/UI/SPCS_BTN"/>
         <Item value="SPCS"/>
         <HotkeyAlias value="SPCS"/>
         <EquipmentArray index="0" Icon="Buttons\BTNIOTV.dds"/>

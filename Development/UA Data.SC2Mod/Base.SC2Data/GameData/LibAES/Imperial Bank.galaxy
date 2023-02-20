@@ -72,7 +72,7 @@ bool ImperialBankLoad(structref<imperial_bank_t> obj, bank source){
  
     obj.owners = BankValueGetAsString(source, "IBH", "ID");
     acc = PlayerHandle(BankPlayer(source));
-    if( acc == "" ){ acc = "SC2E-TEST-ACCOUNT"; }
+    if( acc == "" ){ acc = "SC2E-TEST-ACCOUNT"; } //Manually input handle for offline testing
  
     ASCIIChannelSetup(ImperialBankASCIIConverter, obj.owners);
     SHA1HasherHashData(hasher, ImperialBankASCIIConverterRead, ASCIIChannelLength(ImperialBankASCIIConverter));
@@ -83,15 +83,19 @@ bool ImperialBankLoad(structref<imperial_bank_t> obj, bank source){
     if( !ImperialBankReadBlock(obj, "IBH", "HEAD", key, header) ||
       !ImperialBankReadHeader(obj, header) ){ return false; }
 
+    // Player has second account added to bank & authorized
     acc_2 = ImperialBankReadIBH2(obj.file, obj.owners);
     
+    // bool for bypassing UAD3 bank hash
     lib90F7C81D_gv_bankData.lv_regionAccountValidated[BankPlayer(source)] = acc_2;
     
+    // Following code checks if player is the owner of the bank file & tests bank hashes
+    // Check if player owns account handle (Account Origin)
     if( StringSub(obj.owners, obj.accounts[obj.loadowner].pos, obj.accounts[obj.loadowner].pos + obj.accounts[obj.loadowner].len - 1) == acc ){
-        obj.auth = BankVerify(source); 
-        if(obj.auth == false) { obj.auth = acc_2; } 
+        obj.auth = BankVerify(source); //default sc2 hash
+        if(obj.auth == false) { obj.auth = acc_2; } // second acct hash - Player switched region (NA)
     
-    } else { 
+    } else { // Check if player owns KR account handle - Player switch region (KR)
         if(acc == BankValueGetAsString(source, "IBH2", "ID")) { obj.auth = acc_2; }         
     } 
   
@@ -117,11 +121,11 @@ bool ImperialBankReadIBH2(bank source, string owner){
     string key1 = lib90F7C81D_gv_bankData.lv_key1;
     string key2 = lib90F7C81D_gv_bankData.lv_key2;
     string bankID = BankValueGetAsString(source, "IBH2", "ID");
-    
+    // Check if player has updated bank section/keys from discord bot
     if(!BankSectionExists(source, "IBH2") || BankKeyCount(source, "IBH2") != 2) { return false; }
-    
+    // Generate hash
     sig = SHA1(key1 + owner + bankID + key2);
-    
+    // Compare generated hash to bank key value
     if(sig != BankValueGetAsString(source, "IBH2", "HEAD")) { return false; }
 
     return true;

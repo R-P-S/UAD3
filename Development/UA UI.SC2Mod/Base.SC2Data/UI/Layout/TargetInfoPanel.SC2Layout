@@ -132,18 +132,31 @@
             <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
             <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="1" />
             <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
-            <FractionDigits val="1" />
-            <RoundMode val="None" />
-            <Height val="20" />
-            <Width val="60" />
-            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+            <Height val="20"/>
+            <Width val="60"/>
+
+            <Frame type="TextFormatFrame" name="TFF">
+              <Anchor relative="$parent"/>
+              <FormatText val="&lt;d ref=&quot;%0%&quot; precision=&quot;1&quot;/&gt;"/>
+              <Replacement index="0" val="{$parent/@CurrentValue}"/>
+            </Frame>
+
+            <Frame type="Label" name="LabelFinal" template="TargetInfoPanel/StatusLabelTemplate">
+              <Text val="{$parent/TFF/@Text}"/>
+            </Frame>
+
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <Alpha val="0"/>
+            </Frame>
           </Frame>
+
           <Frame type="TextFormatFrame" name="TooltipFormatFrame">
             <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackDamage" />
-            <Replacement index="0" val="{$parent/AttackDamageLabel/StatusLabel/@Text}" />
+            <Replacement index="0" val="{$parent/AttackDamageLabel/LabelFinal/@Text}" />
             <ReplacedName index="0" val="amount" />
           </Frame>
         </Frame>
+
         <Frame type="Frame" name="AttackSpeedFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
           <Anchor side="Top" relative="$parent/AttackDamageFrame" pos="Max" offset="-2" />
           <Anchor side="Left" relative="$parent/AttackDamageFrame" pos="Min" offset="0" />
@@ -156,22 +169,43 @@
             <Texture val="assets\icon pack\btn-upgrade-terran-gaussrifle.dds" />
             <TextureCoords top="0" left="1" bottom="1" right="0" />
           </Frame>
+
           <Frame type="UnitStatusAttackSpeedLabel" name="AttackSpeedLabel">
             <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
             <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="1" />
             <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="1" />
-            <RoundMode val="None" />
-            <FractionDigits val="2" />
             <Height val="20" />
             <Width val="60" />
-            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+
+            <Frame type="MathFrame" name="CurrentAttackSpeed">
+                <Anchor relative="$parent"/>
+                <A val="1"/>
+                <B val="{$parent/@CurrentValue}"/>
+                <Operator val="Divide"/>
+            </Frame>
+
+            <Frame type="TextFormatFrame" name="TFF">
+              <Anchor relative="$parent"/>
+              <FormatText val="&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;"/>
+              <Replacement index="0" val="{$parent/CurrentAttackSpeed/@Result}"/>
+            </Frame>
+
+            <Frame type="Label" name="LabelFinal" template="TargetInfoPanel/StatusLabelTemplate">
+              <Text val="{$parent/TFF/@Text}"/>
+            </Frame>
+
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <Alpha val="0"/>
+            </Frame>
           </Frame>
+
           <Frame type="TextFormatFrame" name="TooltipFormatFrame">
             <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackSpeed" />
-            <Replacement index="0" val="{$parent/AttackSpeedLabel/StatusLabel/@Text}" />
+            <Replacement index="0" val="{$parent/AttackSpeedLabel/LabelFinal/@Text}" />
             <ReplacedName index="0" val="amount" />
           </Frame>
         </Frame>
+
         <Frame type="Frame" name="AttackRangeFrame" template="TargetInfoPanel/TargetInfoStatFrameTemplate">
           <Anchor side="Top" relative="$parent" pos="Min" offset="-1" />
           <Anchor side="Left" relative="$parent" pos="Min" offset="76" />
@@ -183,19 +217,32 @@
             <Texture val="Assets/Textures/Storm_UI_Attack_Range_Icon.dds" /> -->
             <Texture val="assets\textures\cursor-target-enemy.dds" />
           </Frame>
+
           <Frame type="UnitStatusAttackRangeLabel" name="AttackRangeLabel">
             <Anchor side="Top" relative="$parent/StatIcon" pos="Mid" offset="1" />
             <Anchor side="Left" relative="$parent/StatIcon" pos="Max" offset="4" />
             <Anchor side="Bottom" relative="$parent/StatIcon" pos="Mid" offset="0" />
-            <RoundMode val="None" />
-            <FractionDigits val="1" />
             <Height val="20" />
             <Width val="38" />
-            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate" />
+
+            <Frame type="TextFormatFrame" name="TFF">
+              <Anchor relative="$parent"/>
+              <FormatText val="&lt;d ref=&quot;%0%&quot; precision=&quot;1&quot;/&gt;"/>
+              <Replacement index="0" val="{$parent/@CurrentValue}"/>
+            </Frame>
+
+            <Frame type="Label" name="LabelFinal" template="TargetInfoPanel/StatusLabelTemplate">
+              <Text val="{$parent/TFF/@Text}"/>
+            </Frame>
+
+            <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
+              <Alpha val="0"/>
+            </Frame>
           </Frame>
+
           <Frame type="TextFormatFrame" name="TooltipFormatFrame">
             <FormatText val="@UI/TargetInfoPanel/Tooltip/AttackRange" />
-            <Replacement index="0" val="{$parent/AttackRangeLabel/StatusLabel/@Text}" />
+            <Replacement index="0" val="{$parent/AttackRangeLabel/LabelFinal/@Text}" />
             <ReplacedName index="0" val="amount" />
           </Frame>
         </Frame>

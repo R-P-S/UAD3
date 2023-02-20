@@ -895,7 +895,7 @@
                   <Action type="SetState" frame="$parent/$parent/UnitPanel/UnitWireFrame/Image3" group="WireImageState" state="PlasmaCellPack" />
                </State>
             </StateGroup>
-
+            <!--
             <StateGroup name="NameOffset">
                <State name="Default"/>
                <State name="NonHero">
@@ -903,23 +903,28 @@
                   <Action type="SetAnchor" frame="$this" side="Top" relative="$parent" pos="Min" offset="0"/>
                </State>
                <State name="Default"/>
-            </StateGroup>
+            </StateGroup> -->
          </Frame>
+         <!--
          <Frame type="SelectionUnitStatusPanel" name="UnitPanelSelection">
             <Anchor relative="$parent" />
             <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
                <Anchor relative="$parent"/>
+
                <Frame type="UnitStatusMoveSpeedLabel" name="MoveSpeedLabel">
                   <Anchor relative="$parent"/>
                   <RoundMode val="None" />
+
                   <Frame type="Label" name="SpeedLabel" template="TargetInfoPanel/StatusLabelTemplate">
                      <Visible val="False"/>
                      <Text val="{PRC/@Text}"/> 
+
                      <Frame type="TextFormatFrame" name="PRC">
                         <Anchor relative="$parent"/>
                         <FormatText val="#PRC2" />
                         <Replacement index="0" val="{$parent/CurrentSpeed/@Result}" />
                      </Frame>
+
                      <Frame type="MathFrame" name="CurrentSpeed">
                         <Anchor relative="$parent"/>
                         <A val="{$parent/$parent/@CurrentValue}" />
@@ -927,11 +932,14 @@
                         <Operator val="Multiply"/>
                      </Frame>
                   </Frame>
+
                   <Frame type="Label" name="StatusLabel" template="TargetInfoPanel/StatusLabelTemplate">
                      <Alpha val="0"/>
                   </Frame>
+
                   <StateGroup name="NoSpeed">
                      <DefaultState val="NotZero" />
+
                      <State name="Zero">
                         <When type="Property" frame="$this" CurrentValue="0" />
                         <Action type="SetProperty" frame="$UnitPanelMS" Alpha="0" />
@@ -977,7 +985,7 @@
                </State>
                <State name="Visible" />
             </StateGroup>
-         </Frame>
+         </Frame> -->
          <Frame type="Frame" name="EquipmentPanel">
             <Anchor side="Top" relative="$parent" pos="Min" offset="108" />
             <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />

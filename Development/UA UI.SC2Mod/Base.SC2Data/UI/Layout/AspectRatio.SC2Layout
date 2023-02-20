@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+ 
+        <Frame type="AspectRatioFrame" name="AspectRatioListener_16x9">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Max" offset="0"/>
+            <Width val="1"/>
+            <Height val="1"/>
+            <MinVisibleAspectRatio val="1.77"/>
+        </Frame>
+                    
+        <Frame type="AspectRatioFrame" name="AspectRatioListener_16x10">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Max" offset="0"/>
+            <Width val="1"/>
+            <Height val="1"/>
+            <MinVisibleAspectRatio val="1.6"/>
+        </Frame>
+                    
+        <Frame type="AspectRatioFrame" name="AspectRatioListener_4x3">
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Max" offset="0"/>
+            <Width val="1"/>
+            <Height val="1"/>
+            <MinVisibleAspectRatio val="1.33"/>
+        </Frame>
+ 
+        <StateGroup name="AspectRatio">
+            <State name="16x9">
+                <When type="Property" frame="AspectRatioListener_16x9" Visible="True"/>
+            </State>
+      
+            <State name="16x10">
+                <When type="Property" frame="AspectRatioListener_16x10" Visible="True"/>
+                <Action type="SetAnchor" frame="$ConsoleUIContainer/UnitStatPanel" side="Left" relative="$parent" pos="Min" offset="400"/>
+            </State>
+ 
+            <State name="4x3">
+                <When type="Property" frame="AspectRatioListener_4x3" Visible="True"/>
+                <Action type="SetProperty" frame="$ConsoleUIContainer/UnitStatPanel" Alpha="0"/>
+            </State> 
+        </StateGroup>
+    </Frame>
+</Desc>

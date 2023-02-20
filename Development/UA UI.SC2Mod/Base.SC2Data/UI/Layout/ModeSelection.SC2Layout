@@ -244,6 +244,7 @@
                   <Visible val="False" />
                   <Handle val="Sandbox" />
                   <TooltipAnchorPosition val="BottomCenter" />
+                  <CollapseLayout val="True" />
                   <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
                      <Text val="Development Mode" />
                      <Color val="0,0,255" />
@@ -295,6 +296,7 @@
                   <Visible val="False" />
                   <Handle val="Deathmatch" />
                   <TooltipAnchorPosition val="BottomCenter" />
+                  <CollapseLayout val="True" />
                   <Frame type="Label" name="Label" template="StandardGreyboxTemplates/GenericButtonLabelTemplate">
                      <Text val="Deathmatch Mode" />
                      <Color val="0,0,255" />

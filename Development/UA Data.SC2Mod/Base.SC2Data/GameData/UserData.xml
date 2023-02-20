@@ -1121,6 +1121,9 @@
             <Text Text="UserData/AchievementModes/Career_Unlock_041">
                 <Field Id="Unlock" Index="41"/>
             </Text>
+            <Text Text="UserData/AchievementModes/Career_Unlock_042">
+                <Field Id="Unlock" Index="42"/>
+            </Text>
         </Instances>
         <Instances Id="Prologue">
             <Image Image="Assets\Achievements\Achievement_H.dds">
@@ -6724,8 +6727,53 @@
     <CUser id="DeveloperHandles">
         <Fields Id="Bank ID" Type="String" EditorColumn="1"/>
         <Instances Id="[Default]"/>
-        <Instances Id="#Name">
-            <String String="?-S?-?-??????">
+        <Instances Id="Rege [NA]">
+            <String String="1-S2-1-6287064">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="RPS [NA]">
+            <String String="1-S2-1-6016683">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="DOOM [NA]">
+            <String String="1-S2-1-1371409">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="HealPlox [NA]">
+            <String String="1-S2-1-1418506">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="Rege [KR]?">
+            <String String="3-S2-1-5891315">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="HealPlox [KR]">
+            <String String="3-S2-1-5961857">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="SC2E-TEST-ACCOUNT">
+            <String String="SC2E-TEST-ACCOUNT">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="lstalri1">
+            <String String="1-S2-1-4434269">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="lstalri2">
+            <String String="1-S2-1-11310764">
+                <Field Id="Bank ID"/>
+            </String>
+        </Instances>
+        <Instances Id="RPS [KR]">
+            <String String="3-S2-1-4759588">
                 <Field Id="Bank ID"/>
             </String>
         </Instances>
@@ -9413,6 +9461,11 @@
                 <Field Id="Item"/>
             </GameLink>
         </Instances>
+        <Instances Id="Kinetic Integrator">
+            <GameLink GameLink="KineticIntegrator">
+                <Field Id="Item"/>
+            </GameLink>
+        </Instances>
         <Instances Id="HK42">
             <GameLink GameLink="HK42">
                 <Field Id="Item"/>
@@ -9543,6 +9596,7 @@
         <Fields Id="UI Index" Type="Int" EditorColumn="16">
             <Flags index="Modifiable" value="1"/>
         </Fields>
+        <Fields Id="ID Index" Type="Int" EditorColumn="17"/>
         <Instances Id="[Default]">
             <Image>
                 <Field Id="MOS Image"/>
@@ -9617,6 +9671,9 @@
             <Int Int="3">
                 <Field Id="MOS Charges"/>
             </Int>
+            <Int Int="1">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="CM">
                 <Field Id="Bank Key"/>
             </String>
@@ -9660,6 +9717,9 @@
             </Int>
             <Int Int="2">
                 <Field Id="MOS Charges"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="ID Index"/>
             </Int>
             <String String="AR">
                 <Field Id="Bank Key"/>
@@ -9708,6 +9768,9 @@
             <Int Int="2">
                 <Field Id="MOS Charges"/>
             </Int>
+            <Int Int="3">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="BackPack">
                 <Field Id="Point (CC Dummy Unit)"/>
             </String>
@@ -9755,6 +9818,9 @@
             <Int Int="1">
                 <Field Id="MOS Charges"/>
             </Int>
+            <Int Int="4">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="SF">
                 <Field Id="Bank Key"/>
             </String>
@@ -9795,6 +9861,9 @@
             </Int>
             <Int Int="2">
                 <Field Id="MOS Charges"/>
+            </Int>
+            <Int Int="5">
+                <Field Id="ID Index"/>
             </Int>
             <String String="JG">
                 <Field Id="Bank Key"/>
@@ -9837,6 +9906,9 @@
             <Int Int="2">
                 <Field Id="MOS Charges"/>
             </Int>
+            <Int Int="6">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="SDM">
                 <Field Id="Bank Key"/>
             </String>
@@ -9877,6 +9949,9 @@
             </Int>
             <Int Int="60">
                 <Field Id="Ammo Rounds (Base Weapon)"/>
+            </Int>
+            <Int Int="7">
+                <Field Id="ID Index"/>
             </Int>
             <String String="Rifles">
                 <Field Id="Weapon Type"/>
@@ -9922,6 +9997,9 @@
             <Int Int="1">
                 <Field Id="UI Index"/>
             </Int>
+            <Int Int="8">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="Self Cast Dummy">
                 <Field Id="Point (CC Dummy Unit)"/>
             </String>
@@ -9963,6 +10041,9 @@
             <Int Int="1">
                 <Field Id="MOS Charges"/>
             </Int>
+            <Int Int="9">
+                <Field Id="ID Index"/>
+            </Int>
             <String String="CE">
                 <Field Id="Bank Key"/>
             </String>
@@ -10003,6 +10084,9 @@
             </Int>
             <Int Int="10">
                 <Field Id="Starting Magazines"/>
+            </Int>
+            <Int Int="10">
+                <Field Id="ID Index"/>
             </Int>
             <String String="CY">
                 <Field Id="Bank Key"/>
@@ -10047,6 +10131,9 @@
             </Int>
             <Int Int="2">
                 <Field Id="UI Index"/>
+            </Int>
+            <Int Int="11">
+                <Field Id="ID Index"/>
             </Int>
             <String String="Plasmas">
                 <Field Id="Weapon Type"/>
@@ -13169,13 +13256,13 @@
             <Int Int="100">
                 <Field Id="Weight Max"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight" Index="1"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight" Index="2"/>
             </Int>
             <Int Int="2">
@@ -13216,7 +13303,7 @@
             <Int Int="50">
                 <Field Id="Weight"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight" Index="1"/>
             </Int>
             <Int Int="50">
@@ -13225,7 +13312,7 @@
             <Int Int="50">
                 <Field Id="Weight" Index="4"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight" Index="5"/>
             </Int>
             <Int Int="100">
@@ -13270,7 +13357,7 @@
             <Int Int="3">
                 <Field Id="Group Allowed"/>
             </Int>
-            <Int Int="25">
+            <Int Int="10">
                 <Field Id="Weight" Index="3"/>
             </Int>
             <Unit Unit="FirstAidKit">
@@ -13798,6 +13885,9 @@
             </Int>
             <Int Int="25">
                 <Field Id="Weight" Index="9"/>
+            </Int>
+            <Int Int="20">
+                <Field Id="Weight" Index="11"/>
             </Int>
             <Unit Unit="GroundFlareItem">
                 <Field Id="Unit Name"/>

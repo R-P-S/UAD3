@@ -167,9 +167,9 @@
         <Collide index="Ground" value="0"/>
         <Collide index="Flying" value="1"/>
         <Attributes index="Light" value="1"/>
-        <LifeStart value="70"/>
-        <LifeMax value="70"/>
-        <Speed value="2.8085"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+        <Speed value="2.6992"/>
         <Height value="3"/>
         <BehaviorArray index="0" Link="MutationUpgrade"/>
         <BehaviorArray index="1" Link="WeatherEffectZombiesFlying"/>
@@ -183,6 +183,8 @@
         <SeparationRadius value="0.375"/>
         <MinimapRadius value="0.375"/>
         <Mover value="Fly"/>
+        <StationaryTurningRate value="270"/>
+        <TurningRate value="270"/>
     </CUnit>
     <CUnit id="Unburied" parent="TemplateT3Zombie">
         <Attributes index="Armored" value="1"/>

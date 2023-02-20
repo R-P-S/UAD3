@@ -500,6 +500,7 @@
                </Frame>
             </Frame>
             <Frame type="StandardTooltip" name="UADStandardTooltip" template="TooltipFrameTemplates/UADStandardTooltip"/>
+            <Frame type="StandardTooltip" name="UADStandardTooltipAlternate" template="TooltipFrameTemplates/UADStandardTooltipAlternate"/>
             <Frame type="MenuBar" name="MenuBar" template="MenuBar/MenuBarTemplate">
                <Frame type="SystemInfoTooltip" name="SystemInfoTooltip" template="TooltipFrameTemplates/SystemInfoTooltipTemplate"/>
                <Frame type="Image" name="MenuBarBackgroundImage">
@@ -1234,6 +1235,10 @@
                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
                <Visible val="false"/>
+               <ShowOnVictory val="True"/>
+               <ShowOnDefeat val="True"/>
+               <Alpha val="0"/>
+
                <Frame type="Button" name="QuitButton" template="StandardTemplates/StandardButtonTemplate">
                   <Handle val="GameResultDialog_QuitButton"/>
                   <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
@@ -1248,6 +1253,7 @@
                   Hover Image: UI/GameResultButtonHover
                   -->
                </Frame>
+
                <Frame type="ConvertToReplayButton" name="ConvertToReplayButton" template="StandardTemplates/StandardButtonTemplate">
                   <Anchor side="Top" relative="$parent/QuitButton" pos="Max" offset="0"/>
                   <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
@@ -1261,6 +1267,7 @@
                   <Alpha val="0" />
                   <AcceptsMouse val="False" />
                </Frame>
+
                <Frame type="Button" name="ReturnToGameButton" template="StandardTemplates/StandardButtonTemplate">
                   <Anchor side="Top" relative="$parent/ConvertToReplayButton" pos="Max" offset="0"/>
                   <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
@@ -1271,6 +1278,14 @@
                   <Alpha val="0" />
                   <AcceptsMouse val="False" />
                </Frame>
+               <!-- Auto clicks quit button for player -->
+               <Animation name="EndGameAnimClick">
+                     <Event event="OnShown" action="Reset,Play"/>
+
+                     <Controller type="Event" end="Pause" frame="QuitButton">
+                        <Key type="Event" time="0.0" event="ControlClickRequest"/>
+                     </Controller>
+               </Animation>
             </Frame>
          </Frame>
       </Frame>

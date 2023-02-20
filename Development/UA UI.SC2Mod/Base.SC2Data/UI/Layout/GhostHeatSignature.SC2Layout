@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/TriggerContainer" file="GameUI">
+        <Frame type="SelectionUnitStatusPanel" name="GhostHeatSignatureButtonFrame" template="SpecialFrameTemplates/GhostHeatSignatureButtonFrame"/>
+    </Frame>
+</Desc>

@@ -19,6 +19,8 @@
 <Actor id="Sunrays"/>
 <Behavior id="NoDraw"/>
 <Behavior id="WeaponsHold"/>
+<Behavior id="IRSensorIntelligenceTracker"/>
+<Behavior id="KineticFollowBehavior"/>
 <Behavior id="ArmorInInventory"/>
 <Behavior id="ArmorMain"/>
 <Behavior id="ScrapPartsPickup"/>
@@ -48,9 +50,11 @@
 <Behavior id="WeaponInInventory"/>
 <Behavior id="WeaponSwitch"/>
 <Behavior id="MotionSensorTimedLife"/>
+<Behavior id="IRSensorIntelligenceShare"/>
 <Button id="LearnSkills"/>
 <Effect id="PingPanelBeaconDefend"/>
 <Effect id="SuccessiveStrikeExpire"/>
+<Effect id="IRSensorAddTrackedUnit"/>
 <Effect id="OffensiveRallyBeacon"/>
 <Effect id="SetRallyPointBeacon"/>
 <Effect id="RallyLocalNationalsBeacon"/>
@@ -78,6 +82,7 @@
 <Unit id="TerranDropPod"/>
 <Unit id="MotionSensor"/>
 <Unit id="ScrapPartsPickup"/>
+<Unit id="IRSensorIntelligenceDummyUnit"/>
 <Unit id="PathDisplayUnitGround"/>
 <Unit id="PathDisplayUnitAir"/>
 <Unit id="CivilianEngineer"/>

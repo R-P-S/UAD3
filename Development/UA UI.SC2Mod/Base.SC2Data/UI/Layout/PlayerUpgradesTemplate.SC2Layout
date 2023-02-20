@@ -1900,6 +1900,104 @@
             <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
             <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/HeatSensorPotency" />
          </State>
+         <State name="141">
+            <When type="Property" Tooltip="Interference Wave: Extra Charge" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/InterferenceWaveExtraCharge" />
+         </State>
+         <State name="142">
+            <When type="Property" Tooltip="Interference Wave: Wave Amplification" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/InterferenceWaveWaveAmplification" />
+         </State>
+         <State name="143">
+            <When type="Property" Tooltip="Gap Generator: Blinding" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GapGeneratorBlinding" />
+         </State>
+         <State name="144">
+            <When type="Property" Tooltip="Gap Generator: Discombobulate" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/GapGeneratorDiscombobulate" />
+         </State>
+         <State name="145">
+            <When type="Property" Tooltip="IR Sensor: Intelligence Share" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/IRSensorIntelligenceShare" />
+         </State>
+         <State name="146">
+            <When type="Property" Tooltip="IR Sensor: Early Detection" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/IRSensorEarlyDetection" />
+         </State>
+         <State name="147">
+            <When type="Property" Tooltip="Cryo Rounds: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CryoRoundsEfficiency" />
+         </State>
+         <State name="148">
+            <When type="Property" Tooltip="Cryo Rounds: Light Counter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CryoRoundsLightCounter" />
+         </State>
+         <State name="149">
+            <When type="Property" Tooltip="Disruptor Rounds: Efficiency" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DisruptorRoundsEfficiency" />
+         </State>
+         <State name="150">
+            <When type="Property" Tooltip="Disruptor Rounds: Heavy Counter" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DisruptorRoundsHeavyCounter" />
+         </State>
+         <State name="151">
+            <When type="Property" Tooltip="Cryo Grenade: Extra Charge" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CryoGrenadeExtraCharge" />
+         </State>
+         <State name="152">
+            <When type="Property" Tooltip="Cryo Grenade: Permafrost" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/CryoGrenadePermafrost" />
+         </State>
+         <State name="153">
+            <When type="Property" Tooltip="Detonate Cryo Mine: Embrittlement" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DetonateCryoMineEmbrittlement" />
+         </State>
+         <State name="154">
+            <When type="Property" Tooltip="Detonate Cryo Mine: Snap Freeze" />
+            <Action type="SetProperty" frame="BackgroundButton/NormalImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="BackgroundButton/HoverImage" Color="0,191,255" />
+            <Action type="SetProperty" frame="NumberLabel" Alpha="0" />
+            <Action type="SetProperty" frame="BackgroundButton/Label" Tooltip="@Button/Tooltip/DetonateCryoMineSnapFreeze" />
+         </State>
       </Stategroup>
    </Frame>
    <Frame type="Control" name="UpgradesContainerTemplate">

@@ -162,6 +162,7 @@
 <Sound id="UI_Nova_BriefingTextCallout_Open"/>
 <Sound id="RadioChatter"/>
 <Soundtrack id="ZChar01MusicMain"/>
+<Soundtrack id="ZSpace02MusicMain"/>
 <Soundtrack id="nDLC_Music_Nova08_Main_Intense"/>
 <Soundtrack id="nDLC_Music_Nova09_Main_Intense"/>
 <Soundtrack id="nDLC_Music_Nova09_Main"/>
@@ -205,17 +206,16 @@
 <Unit id="PoliceOfficer"/>
 <Unit id="Glutton"/>
 <Unit id="InfantryAutomaticRifleman"/>
-<Unit id="Vesania"/>
 <Unit id="VulcanMK88SentryGun"/>
 <Unit id="M200SatchelCharge"/>
 <Unit id="MRLRocket2"/>
 <Unit id="Binoculars"/>
-<Unit id="Darreus"/>
 <Unit id="FragGrenade"/>
 <Unit id="FoodSample"/>
 <Unit id="InfantryMarksman"/>
 <Unit id="LMTV"/>
 <Unit id="M1Abrams"/>
+<Unit id="Vesania"/>
 <Unit id="Sanies"/>
 <Unit id="FirstAidKit"/>
 <Unit id="40mmGrenadeItem"/>
@@ -233,6 +233,7 @@
 <Unit id="AmmoCase"/>
 <Unit id="QuikClot"/>
 <Unit id="InfantryRifleman"/>
+<Unit id="Darreus"/>
 <Unit id="BossRushSpawner"/>
 <Unit id="StandHereText"/>
 <Unit id="SentryText"/>

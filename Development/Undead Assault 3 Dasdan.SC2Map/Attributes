@@ -80,6 +80,12 @@
             <Description Value="Attribute002/Value011/Desc"/>
             <Icon Value="Buttons\Portraits\BTN_Cyborg_Portrait.dds"/>
         </Value>
+        <Value>
+            <Id Value="13"/>
+            <Name Value="Attribute002/Value013/Name"/>
+            <Description Value="Attribute002/Value013/Desc"/>
+            <Icon Value="Buttons\Portraits\BTN_Ghost_Portrait.dds"/>
+        </Value>
         <Default>
             <Slot Id="0"/>
             <Value Id="1"/>
