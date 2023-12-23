@@ -3103,7 +3103,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Soldier Skills: Ocular Implants" />
+                        <Tooltip val="@Button/Name/SoldierSkillsOcularImplants" />
                         <Texture val="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3113,7 +3113,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />     
-                        <Tooltip val="Soldier Skills: Barbaric" />
+                        <Tooltip val="@Button/Name/SoldierSkillsBarbaric" />
                         <Texture val="Assets\Buttons\Btn_Custom_UAC_SoldierSkils.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3123,7 +3123,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Marksmanship: Weapon Proficiency" />
+                        <Tooltip val="@Button/Name/MarksmanshipWeaponProficiency" />
                         <Texture val="Assets\Textures\btn-tips-terran-penetrator.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH3" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3133,7 +3133,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Marksmanship: Sniper" />
+                        <Tooltip val="@Button/Name/MarksmanshipSniper" />
                         <Texture val="Assets\Textures\btn-tips-terran-penetrator.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH4" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3143,7 +3143,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Frag Grenade: MGL Delivery" />
+                        <Tooltip val="@Button/Name/FragGrenadeMGLDelivery" />
                         <Texture val="BTNFragGrenade.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH5" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3153,7 +3153,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Frag Grenade: Efficiency" />
+                        <Tooltip val="@Button/Name/FragGrenadeEfficiency" />
                         <Texture val="BTNFragGrenade.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH6" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3163,7 +3163,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Smoke Grenade: MGL Delivery" />
+                        <Tooltip val="@Button/Name/SmokeGrenadeMGLDelivery" />
                         <Texture val="BTNSmokeG.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH7" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3173,7 +3173,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Smoke Grenade: Plentiful" />
+                        <Tooltip val="@Button/Name/SmokeGrenadePlentiful" />
                         <Texture val="BTNSmokeG.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH8" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3183,7 +3183,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Ground Flare: MGL Delivery" />
+                        <Tooltip val="@Button/Name/GroundFlareMGLDelivery" />
                         <Texture val="BTN_CR_Mindblast.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH9" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3193,7 +3193,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Ground Flare: Potency" />
+                        <Tooltip val="@Button/Name/GroundFlarePotency" />
                         <Texture val="BTN_CR_Mindblast.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH10" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3203,7 +3203,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Focus Fire: Efficiency" />
+                        <Tooltip val="@Button/Name/FocusFireEfficiency" />
                         <Texture val="Buttons\BTNFocusFire.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH11" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3213,7 +3213,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Focus Fire: Marksmanship" />
+                        <Tooltip val="@Button/Name/FocusFireMarksmanship" />
                         <Texture val="Buttons\BTNFocusFire.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH12" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3223,7 +3223,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Perform Self-Aid: Effectiveness" />
+                        <Tooltip val="@Button/Name/PerformSelfAidEffectiveness" />
                         <Texture val="Assets\Textures\btn-research-zerg-cellularreactor.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH13" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3233,7 +3233,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Perform Self-Aid: Second Nature" />
+                        <Tooltip val="@Button/Name/PerformSelfAidSecondNature" />
                         <Texture val="Assets\Textures\btn-research-zerg-cellularreactor.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -3516,7 +3516,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Rifleman: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNRifleman0" />
                         <Texture val="Buttons/BTNSoldier.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3526,7 +3526,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Automatic Rifleman: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LN Automatic Rifleman0" />
                         <Texture val="Buttons\BTNAutoRifle.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3536,7 +3536,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Shotgunner: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNShotgunner0" />
                         <Texture val="Buttons\BTNMedic.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH3" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3546,7 +3546,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Marksman: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNMarksman0" />
                         <Texture val="Buttons\Portraits\BTNMarksman.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH4" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3556,7 +3556,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Javelin Gunner: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNJavelinGunner0" />
                         <Texture val="Assets\Textures\hillportrait_static.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH5" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3566,7 +3566,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="LN Ranger: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNRanger0" />
                         <Texture val="Buttons\Portraits\LN_Ranger_Portrait.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -3680,7 +3680,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="HE Rocket: Annihilation" />
+                        <Tooltip val="@Button/Name/HERocketAnnihilation" />
                         <Texture val="Buttons\Misc Items\BTNRocketLauncher.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3690,7 +3690,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />     
-                        <Tooltip val="HE Rocket: Concussive Impact" />
+                        <Tooltip val="@Button/Name/HERocketConcussiveImpact" />
                         <Texture val="Buttons\Misc Items\BTNRocketLauncher.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3700,7 +3700,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="AT Rocket: Pinpoint" />
+                        <Tooltip val="@Button/Name/ATRocketPinpoint" />
                         <Texture val="Assets\Textures\btn-ability-terran-punishergrenade-color.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH3" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3710,7 +3710,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="AT Rocket: Armor Melt" />
+                        <Tooltip val="@Button/Name/ATRocketArmorMelt" />
                         <Texture val="Assets\Textures\btn-ability-terran-punishergrenade-color.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH4" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3720,7 +3720,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Stinger Missile: Annihilation" />
+                        <Tooltip val="@Button/Name/StingerMissileAnnihilation" />
                         <Texture val="Assets\Textures\btn-ability-hornerhan-viking-missileupgrade.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH5" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3730,7 +3730,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Stinger Missile: Enhanced Tracking" />
+                        <Tooltip val="@Button/Name/StingerMissileEnhancedTracking" />
                         <Texture val="Assets\Textures\btn-ability-hornerhan-viking-missileupgrade.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH6" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3740,7 +3740,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Javelin Missile: Cluster Bombs" />
+                        <Tooltip val="@Button/Name/JavelinMissileClusterBombs" />
                         <Texture val="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH7" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3750,7 +3750,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Javelin Missile: Laser Guidance" />
+                        <Tooltip val="@Button/Name/JavelinMissileLaserGuidance" />
                         <Texture val="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -3911,7 +3911,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Attack Speed: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersAttackSpeed0" />
                         <Texture val="Assets\Textures\talent-raynor-level14-infantryattackspeed.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3921,7 +3921,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Damage Resist: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersDamageResist0" />
                         <Texture val="Assets\Textures\btn-techupgrade-terran-combatshield-color.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3931,7 +3931,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Explosive Damage: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersExplosiveDamage0" />
                         <Texture val="Assets\Textures\btn-ability-terran-unstablepayload.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH3" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3941,7 +3941,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Movement Speed: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersMovementSpeed0" />
                         <Texture val="Assets\Icon Pack\btn-DOTA-item-speedboots.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH4" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3951,7 +3951,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Range: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersRange0" />
                         <Texture val="Assets\Textures\btn-upgrade-swann-vehiclerangeincrease.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH5" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -3961,7 +3961,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Combat Orders Weapon Damage: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/CombatOrdersWeaponDamage0" />
                         <Texture val="Assets\Icon Pack\btn-upgrade-terran-infantryweaponslevel3-dark.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -4107,7 +4107,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Construct Attack Drone: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructAttackDrone0" />
                         <Texture val="Assets\Textures\btn-lostvinking_drone.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4117,7 +4117,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />     
-                        <Tooltip val="Construct Disruptor Drone: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructDisruptorDrone0" />
                         <Texture val="Assets\Textures\btn-unit-biomechanicaldrone.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4127,7 +4127,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Construct Repair Drone: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructRepairDrone0" />
                         <Texture val="Assets\Buttons\Repair_Drone.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH3" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4137,7 +4137,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Construct MK17 Sentry Gun: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructMK17SentryGun0" />
                         <Texture val="Assets\Textures\btn-building-terran-autoturret.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH4" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4147,7 +4147,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Construct MK18 Sentry Gun: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructMK18SentryGun0" />
                         <Texture val="Assets\Textures\btn-unit-terran-autoturret-umojan.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH5" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4157,7 +4157,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="Construct MK19 Sentry Gun: 0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/ConstructMK19SentryGun0" />
                         <Texture val="Assets\Textures\btn-unit-terran-autoturretblackops.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -4307,7 +4307,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="IPR" />
+                        <Tooltip val="@Unit/Name/IPR" />
                         <Texture val="Buttons\Weapons\BTNIPR.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH1" template="AchievementTemplates/AchievementExtraIconTemplate"> 
@@ -4317,7 +4317,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />     
-                        <Tooltip val="XR-42" />
+                        <Tooltip val="@Unit/Name/XR42" />
                         <Texture val="Assets\Buttons\BTN_PlasmaRifle_XR.dds" />
                      </Frame>
                      <StateGroup name="ExtraIconState1">
@@ -5557,7 +5557,7 @@
             <Anchor side="Right" relative="$parent/PROButtonBorder" pos="Mid" offset="0" />
             <Visible val="true" />
             <Texture val="Assets/Icon Pack/btn-custom-raynorsuit.dds" />
-            <Tooltip val="Achievements &amp;amp; Gameplay options" />
+            <Tooltip val="@UI/AchievementsTemplates/Tooltip/AchievementsGameplayoptions" />
             <TooltipFrame val="UADStandardTooltip" />
             <AcceptsMouseTooltip val="true" />
             <RenderPriority val="513" />
@@ -5671,7 +5671,7 @@
             <Anchor side="Right" relative="$parent/PROButtonBorder" pos="Mid" offset="0" />
             <Visible val="true" />
             <Texture val="Assets\Textures\btn-tips-tutorial.dds" />
-            <Tooltip val="Tips" />
+            <Tooltip val="@UI/AchievementsTemplates/Tooltip/Tips" />
             <TooltipFrame val="UADStandardTooltip" />
             <AcceptsMouseTooltip val="true" />
             <RenderPriority val="513" />
@@ -5792,7 +5792,7 @@
             <Anchor side="Right" relative="$parent/PROButtonBorder" pos="Mid" offset="0" />
             <Visible val="true" />
             <Texture val="Assets/Icon Pack/btn-ability-terran-basicbuild.dds" />
-            <Tooltip val="Skill Tree panel displays allies current ability levels &amp;amp; skill upgrades. Panel can be dragged by clicking the top left icon.&lt;n/&gt;&lt;c val=&quot;FFFFFF&quot;&gt;Hotkey (Backspace)&lt;/c&gt;" />
+            <Tooltip val="@UI/AchievementsTemplates/Tooltip/SkillTreePanel" />
             <AcceptsMouseTooltip val="true" />
             <TooltipFrame val="UADStandardTooltip" />
             <RenderPriority val="513" />

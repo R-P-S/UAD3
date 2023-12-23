@@ -246,3 +246,131 @@ UI/TargetInfoPanel/Tooltip/AttackRange=사거리: <c val="FFFFFF">%amount%</c>
 UI/TargetInfoPanel/Tooltip/AttackSpeed=공격 속도: <c val="FFFFFF">%amount%</c>
 UI/TargetInfoPanel/Tooltip/MoveSpeed=이동 속도: <c val="FFFFFF">%amount%</c>
 UI/TargetInfoPanel/Tooltip/PhysicalArmor=물리적 방어: <c val="FFFFFF">%amount%</c></n>공격으로 인한 피해를 줄입니다.
+<!--
+    Weapon Button Tooltips
+-->
+Button/UI/M9Flamethrower=The M9 Flamethrower was designed be more robust and allow the soldier to carry more fuel.<n/><n/>Damage: <d ref="Effect,M9FlamethrowerDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M9Flamethrower,Period" precision="3"/><n/>Range: <d ref="Weapon,M9Flamethrower,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M9Flamethrower,Modification.MoveSpeedBonus" precision="2"/><n/></c></c>Reload Speed: <c val="00FF94">-2%</c>
+Button/UI/M241MMG_BTN=The M241 Medium Machine Gun was fielded in 2041 to replace the aging M240L. It has greater damage and range than a SAW but adds 8lbs of additional weight.<n/><n/>Damage: <d ref="Effect,M241MMGDamage,Amount" precision="2"/><n/>Attack Speed: <d ref="Weapon,M241MMG,Period" precision="3"/><n/>Range: <d ref="Weapon,M241MMG,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M241MMG,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed:<c val="00FF94"> -3%</c>
+Button/UI/M41SAW_BTN=The M41 SAW is a superior variant to the standard issue SAW. It has the same stopping power and similar structure, however the components are made of Arcadium, a lighter, tougher material than the regular plastic and metal components, making the weapon lighter and increasing the fire rate.<n/><n/>Damage: <d ref="Effect,M41SAWDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M41SAW,Period" precision="3"/><n/>Range: <d ref="Weapon,M41SAW,Range"/><n/>Movement Speed Delta: <c val="00FF94"><d ref="Behavior,M41SAW,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: n/a<n/>Attack Speed buildup is 20% faster.
+Button/UI/DeathMachine=The Death Machine is the rolls-royce of miniguns. Its high firing rate and accuracy makes it extremely effective.<n/><n/>Damage: <d ref="Effect,DeathMachineSpreadDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,DeathMachine,Period" precision="3"/><n/>Range: <d ref="Weapon,DeathMachine,Range"/><n/>Movement Speed Delta: 0<n/></c>Reload Speed: <c val="00FF94">-5%</c><n/><n/><c val="FFFF00">Special Ability:</c> Passive - Improved Timing motor on by default. Using ITM makes the shots go directly at the target no matter the range
+Button/UI/M935Minigun=Rotary barrel machine gun with electric generator provides incredible rate of fire at the expense of its heavy weight.<n/><n/>Damage: <d ref="Effect,M935MinigunSpreadDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M935Minigun,Period" precision="3"/><n/>Range: <d ref="Weapon,M935Minigun,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M935Minigun,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="FF0000">+3%</c>
+Button/UI/IPR=The Improved Plasma Rifle Version 2  further refines the plasma induction system. Decreases heat signature chance. improves reload timing, and has a larger magazine size.<n/><n/>Damage: <d ref="Effect,PlasmaRifleDamageNew,Amount"/><n/>Attack Speed: <d ref="Weapon,IPR,Period" precision="3"/><n/>Range: <d ref="Weapon,IPR,Range"/><n/>Movement Speed Delta: <d ref="Behavior,IPR,Modification.MoveSpeedBonus" precision="2"/><n/>Reload Speed: <c val="00FF94">-3%</c>
+Button/UI/XR42=The XR-42, is a lightweight plasma weapon that features a pulse cannon ability. This ability will turbo charge the rifle and launch a high concentration of energy. Deals <d ref="Effect,XR42PulseCannonDamage,Amount"/> damage to the target location.<n/><n/>Damage: <d ref="Effect,PlasmaRifleDamageNew,Amount"/><n/>Attack Speed: <d ref="Weapon,XR42,Period" precision="3"/><n/>Range: <d ref="Weapon,XR42,Range" precision="3"/><n/>Movement Speed Delta: <c val="00FF80"><d ref="Behavior,XR42,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: n/a</c>
+Button/UI/HK42=A light, simple, accurate assault rifle.<n/><n/>Damage: <d ref="Effect,HK42Damage,Amount"/><n/>Attack Speed: <d ref="Weapon,HK42,Period" precision="3"/><n/>Range: <d ref="Weapon,HK42,Range"/><n/>Movement Speed Delta:<c val="00FF94"> <d ref="Behavior,HK42,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="FF0000">+2%</c>
+Button/UI/M5MAR_BTN=The M5 MAR, or Multipurpose Assault Rifle, is an assault rifle with an underslung grenade launcher capable of launching a variety of grenade types. Launches a large smoke grenade at the target point, stunning ground enemies in the target area for <d ref="Effect,SmokeScreenStunAB,Duration"/> second and slowing them over <d ref= "Behavior,SmokeScreenTimedLifeRifleman,Duration"/> seconds.<n/><n/>Damage: <d ref="Effect,M5MARDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M5MAR,Period" precision="3"/><n/>Range: <d ref="Weapon,M5MAR,Range"/><n/>Movement Speed Delta: <d ref="Behavior,M5MAR,Modification.MoveSpeedBonus" precision="2"/><n/>Reload Speed: <c val="00FF94">-3%</c><n/><n/><c val="BFBFFF">Massive enemies cannot be stunned</c><n/><c val="BFBFFF">Massive enemies are only 20% affected by slows</c><n/><c val="FFFF00">Can only target non-mechanical ground units.</c>
+Button/UI/SOFAR_BTN=The Special Operations Forces Assault Rifle (SOF - AR) was developed in the 2050s to accomodate the rapid fielding advancement of SOF gear. The SOF-AR is modular and accurate.<n/><n/>Damage: <d ref="Effect,SOFARDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,SOFAR,Period" precision="3"/><n/>Range: <d ref="Weapon,SOFAR,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,SOFAR,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="00FF94">-2%</c>
+Button/UI/StynerBR2_BTN=A battle rifle delivering higher stopping power at the cost of mobility and control.<n/><n/>Damage: <d ref="Effect,StynerBR2Damage,Amount"/><n/>Attack Speed: <d ref="Weapon,StynerBR2,Period" precision="3"/><n/>Range: <d ref="Weapon,StynerBR2,Range" precision="1"/><n/>Movement Speed Delta: <d ref="Behavior,StynerBR2,Modification.MoveSpeedBonus" precision="2"/><n/>Reload Speed: <c val="FF0000">+6%</c>
+Button/UI/USMCR_BTN=The US MCR (United States Marine Corps Rifle) is the standard issue USMC weapon. It has almost no recoil, allowing a far greater rate of fire.<n/><n/>Damage: <d ref="Effect,USMCRDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,USMCR,Period" precision="3"/><n/>Range: <d ref="Weapon,USMCR,Range"/><n/>Movement Speed Delta: <d ref="Behavior,USMCR,Modification.MoveSpeedBonus" precision="2"/><n/>Reload Speed: <c val="00FF94">-5%</c>
+Button/UI/M92Torrent=The M92 Torrent is a long ranged, high-powered rifle.<n/><n/>Damage: <d ref="Effect,M92TorrentDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M92Torrent,Period" precision="3"/><n/>Range: <d ref="Weapon,M92Torrent,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M92Torrent,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="FF0000">+6%</c>
+Button/UI/Mk14_BTN=The Mk14 offers improved recoil and stability for an increased rate of fire. The Mk14 also offers an additional 5 round capacity.<n/><n/>Damage: <d ref="Effect,Mk14Damage,Amount"/><n/>Attack Speed: <d ref="Weapon,Mk14,Period" precision="3"/><n/>Range: <d ref="Weapon,Mk14,Range"/><n/>Movement Speed Delta: <c val="00FF94"><d ref="Behavior,Mk14,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: n/a
+Button/UI/M1014=M1014 sets the standard for military shotgun performance and reliability.<n/><n/>Damage: <d ref="Effect,M1014SpreadDamage,Amount" precision="2"/><n>Attack Speed: <d ref="Weapon,M1014,Period" precision="2"/><n/>Range: <d ref="Weapon,M1014,Range"/><n/>Movement Speed Delta: <c val="00FF94"> <d ref="Behavior,M1014,Modification.MoveSpeedBonus" precision="2"/></c><n/>Reload Speed: <c val="00FF94">-7%</c>
+Button/UI/W1200=Winchester 1200 pump action shotgun.<n/><n/>Damage: <d ref="Effect,W1200SpreadDamage,Amount" precision="2"/><n>Attack Speed: <d ref="Weapon,W1200,Period" precision="2"/><n/>Range: <d ref="Weapon,W1200,Range"/><n/>Movement Speed Delta: n/a<n/>Reload Speed: <c val="00FF94">-4%</c>
+<!--
+    Armor Button Tooltips
+-->
+Button/UI/KevlarBodyArmor=A full-body armor designed to protect the wearer from simple zombie attacks and bites. Adds <d ref="Behavior,KevlarBodyArmor,Modification.VitalMaxArray[1]"/> armor.
+Button/UI/OPA=Organic Printed Armor. A light and durable body armor made of a plaque-like organic material. Improves movement speed by <d ref="Behavior,OPA,Modification.MoveSpeedBonus" precision="2"/> but increases explosive & fire damage by <d ref="100 * Behavior,OPA,Modification.DamageTakenFraction[Spell]" precision="2"/>%.
+Button/UI/SPCS_BTN=The Soldier Plate Carrier System is an adaptation of the IOTV with the focus being improved mobility for dismounted operations. Adds <d ref="Behavior,SPCS,Modification.VitalMaxArray[1]"/> armor.
+UI/Achievements/DecalCamouflage=위장 데칼
+UI/Achievements/ModeAchievements=모드 업적
+UI/Achievements/MOSAchievements=병과 업적
+UI/Achievements/MedalsRibbons=훈장&lt;/n&gt;약장
+UI/Achievements/Options=옵션
+UI/Achievements/Close=닫기
+UI/Achievements/CamoPatterns=위장 무늬
+UI/Achievements/Decals=데칼
+UI/Achievements/Campaign=캠페인
+UI/Achievements/MedalsandRibbons=훈장 &amp; 약장
+UI/Achievements/CameraShake=카메라 흔들림
+UI/Achievements/TacticalSprint=전술 기동
+UI/Achievements/SubmenuCancelHotkey=보조메뉴 닫기 단축키
+UI/Achievements/StatusMenuVitalText=상태창 체력 수치 표기
+UI/Achievements/SegmentedStatusBars=조각난 체력바
+UI/Achievements/Tooltip/ReturnToModes=돌아가기
+UI/Achievements/Tooltip/CameraShake=근처에서 폭발이 발생하면 카메라가 흔들립니다.
+UI/Achievements/Tooltip/TacticalSprint=근처에 폭발이 발생할 예정이면 자동으로 달립니다.
+UI/AchievementsTemplates/Novice=초심
+UI/AchievementsTemplates/MOSXP3000=병과 경험치: 3,000
+UI/AchievementsTemplates/1SkillUpgrade=스킬 업그레이드 +1
+UI/AchievementsTemplates/Adept=기초
+UI/AchievementsTemplates/MOSXP8000=병과 경험치: 8,000
+UI/AchievementsTemplates/Skilled=숙련
+UI/AchievementsTemplates/MOSXP16000=병과 경험치: 16,000
+UI/AchievementsTemplates/Expert=완숙
+UI/AchievementsTemplates/MOSXP30000=병과 경험치: 30,000
+UI/AchievementsTemplates/Camouflage=위장
+UI/AchievementsTemplates/Master=완벽
+UI/AchievementsTemplates/MOSXP50000=병과 경험치: 50,000
+UI/AchievementsTemplates/Decal=데칼
+UI/AchievementsTemplates/Mastery1=대가 I
+UI/AchievementsTemplates/MOSXP53000=병과 경험치: 53,000
+UI/AchievementsTemplates/Mastery2=대가 II
+UI/AchievementsTemplates/MOSXP56000=병과 경험치: 56,000
+UI/AchievementsTemplates/Mastery3=대가 III
+UI/AchievementsTemplates/MOSXP59000=병과 경험치: 59,000
+UI/AchievementsTemplates/Mastery4=대가 IV
+UI/AchievementsTemplates/MOSXP62000=병과 경험치: 62,000
+UI/AchievementsTemplates/Mastery5=대가 V
+UI/AchievementsTemplates/MOSXP65000=병과 경험치: 65,000
+UI/AchievementsTemplates/0=0
+UI/AchievementsTemplates/Survival=서바이벌
+UI/AchievementsTemplates/MissionSurvival=미션 서바이벌
+UI/AchievementsTemplates/BossRush=보스 러쉬
+UI/AchievementsTemplates/Campaign=캠페인
+UI/AchievementsTemplates/Career=경력
+UI/AchievementsTemplates/PrologueMissions=프롤로그
+UI/AchievementsTemplates/Chapter1Missions=1장 임무
+UI/AchievementsTemplates/Chapter2Missions=2장 임무
+UI/AchievementsTemplates/Chapter3Missions=3장 임무
+UI/AchievementsTemplates/Difficulty=난이도
+UI/AchievementsTemplates/Tooltip/Nightmare10=악몽: 10
+UI/AchievementsTemplates/Tooltip/Nightmare25=악몽: 25
+UI/AchievementsTemplates/Tooltip/Nightmare50=악몽: 50
+UI/AchievementsTemplates/Tooltip/Nightmare75=악몽: 75
+UI/AchievementsTemplates/Tooltip/Nightmare100=악몽: 100
+UI/AchievementsTemplates/Tooltip/Insane10=매우 어려움: 10
+UI/AchievementsTemplates/Tooltip/Insane25=매우 어려움: 25
+UI/AchievementsTemplates/Tooltip/Insane50=매우 어려움: 50
+UI/AchievementsTemplates/Tooltip/Insane75=매우 어려움: 75
+UI/AchievementsTemplates/Tooltip/Insane100=매우 어려움: 100
+UI/AchievementsTemplates/Tooltip/Hard10=어려움: 10
+UI/AchievementsTemplates/Tooltip/Hard25=어려움: 25
+UI/AchievementsTemplates/Tooltip/Hard50=어려움: 50
+UI/AchievementsTemplates/Tooltip/Hard75=어려움: 75
+UI/AchievementsTemplates/Tooltip/Hard100=어려움: 100
+UI/AchievementsTemplates/Tooltip/Normal10=보통: 10
+UI/AchievementsTemplates/Tooltip/Normal25=보통: 25
+UI/AchievementsTemplates/Tooltip/Normal50=보통: 50
+UI/AchievementsTemplates/Tooltip/Normal75=보통: 75
+UI/AchievementsTemplates/Tooltip/Normal100=보통: 100
+UI/AchievementsTemplates/Tooltip/Recruit10=쉬움: 10
+UI/AchievementsTemplates/Tooltip/Recruit25=쉬움: 25
+UI/AchievementsTemplates/Tooltip/Recruit50=쉬움: 50
+UI/AchievementsTemplates/Tooltip/Recruit75=쉬움: 75
+UI/AchievementsTemplates/Tooltip/Recruit100=쉬움: 100
+UI/AchievementsTemplates/Tooltip/FlawlessVictorySurvival=완벽한 승리 - 서바이벌
+UI/AchievementsTemplates/Tooltip/FlawlessVictoryMission Survival=완벽한 승리 - 미션 서바이벌
+UI/AchievementsTemplates/Tooltip/FlawlessVictoryBoss Rush=완벽한 승리 - 보스 러쉬
+UI/AchievementsTemplates/Tooltip/LNRifleman0=LN 소총수: 0
+UI/AchievementsTemplates/Tooltip/LNAutomaticRifleman0=LN 자동화기사수: 0
+UI/AchievementsTemplates/Tooltip/LNShotgunner0=LN 산탄총수: 0
+UI/AchievementsTemplates/Tooltip/LNMarksman0=LN 지정사수: 0
+UI/AchievementsTemplates/Tooltip/LNJavelinGunner0=LN 재블린사수: 0
+UI/AchievementsTemplates/Tooltip/LNRanger0=LN 레인저: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersAttackSpeed0=공격 속도 명령: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersDamageResist0=피해 저항 명령: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersExplosiveDamage0=폭발 피해 명령: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersMovementSpeed0=이동 속도 명령: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersRange0=사거리 명령: 0
+UI/AchievementsTemplates/Tooltip/CombatOrdersWeaponDamage0=무기 피해 명령: 0
+UI/AchievementsTemplates/Tooltip/ConstructAttackDrone0=공격 드론 제작: 0
+UI/AchievementsTemplates/Tooltip/ConstructDisruptorDrone0=분열 드론 제작: 0
+UI/AchievementsTemplates/Tooltip/ConstructRepairDrone0=수리 드론 제작: 0
+UI/AchievementsTemplates/Tooltip/ConstructMK17SentryGun0=MK17 자동포탑 건설: 0
+UI/AchievementsTemplates/Tooltip/ConstructMK18SentryGun0=MK18 자동포탑 건설: 0
+UI/AchievementsTemplates/Tooltip/ConstructMK19SentryGun0=MK19 자동포탑 건설: 0
+UI/AchievementsTemplates/Tooltip/IPR=IPR
+UI/AchievementsTemplates/Tooltip/XR-42=XR-42
+UI/AchievementsTemplates/Tooltip/AchievementsGameplayoptions=업적 &amp;amp; 옵션
+UI/AchievementsTemplates/Tooltip/Tips=팁
+UI/AchievementsTemplates/Tooltip/SkillTreePanel=스킬 트리 패널은 아군의 현재 스킬 레벨과 스킬 업그레이드 현황을 확인할 수 있습니다. 패널은 좌상단의 아이콘을 드래그하면 위치 조정이 가능합니다. 단축키: 백스페이스

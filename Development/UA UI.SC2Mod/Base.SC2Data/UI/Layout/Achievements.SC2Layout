@@ -233,7 +233,7 @@
                <Height val="75" />
                <Toggleable val="True" />
                <Frame type="Label" name="Label">
-                  <Text val="DECAL CAMOUFLAGE" />
+                  <Text val="@UI/Achievements/DecalCamouflage" />
                </Frame>
                <StateGroup name="ToggleState">
                   <DefaultState val="NotToggled" />
@@ -254,7 +254,7 @@
                <Height val="75" />
                <Toggleable val="True" />
                <Frame type="Label" name="Label">
-                  <Text val="MODE ACHIEVEMENTS" />
+                  <Text val="@UI/Achievements/ModeAchievements" />
                   <Options val="ScaleToPreventTruncation" />
                </Frame>
                <StateGroup name="ToggleState">
@@ -276,7 +276,7 @@
                <Height val="75" />
                <Toggleable val="True" />
                <Frame type="Label" name="Label">
-                  <Text val="MOS ACHIEVEMENTS" />
+                  <Text val="@UI/Achievements/MOSAchievements" />
                   <Options val="ScaleToPreventTruncation" />
                </Frame>
                <StateGroup name="ToggleState">
@@ -298,7 +298,7 @@
                <Height val="75" />
                <Toggleable val="True" />
                <Frame type="Label" name="Label">
-                  <Text val="MEDALS&lt;/n&gt;RIBBONS" />
+                  <Text val="@UI/Achievements/MedalsRibbons" />
                   <Options val="ScaleToPreventTruncation" />
                </Frame>
                <StateGroup name="ToggleState">
@@ -320,7 +320,7 @@
                <Height val="75" />
                <Toggleable val="True" />
                <Frame type="Label" name="Label">
-                  <Text val="Options" />
+                  <Text val="@UI/Achievements/Options" />
                   <Options val="ScaleToPreventTruncation" />
                </Frame>
                <StateGroup name="ToggleState">
@@ -342,7 +342,7 @@
                <Height val="75" />
                <Toggleable val="False" />
                <Frame type="Label" name="Label">
-                  <Text val="CLOSE" />
+                  <Text val="@UI/Achievements/Close" />
                </Frame>
                <Animation name="CloseButtonAnim">
                   <Event event="OnClick" action="Reset,Play" />
@@ -379,12 +379,12 @@
                <!-- Camo Title -->
                <Frame type="Label" name="CamoTitle" template="AchievementTemplates/CDLabelTemplate">
                   <Anchor relative="$parent/CamoContainer/LabelContainer" />
-                  <Text val="Camo Patterns" />
+                  <Text val="@UI/Achievements/CamoPatterns" />
                </Frame>
                <!-- Decal Title -->
                <Frame type="Label" name="DecalTitle" template="AchievementTemplates/CDLabelTemplate">
                   <Anchor relative="$parent/DecalContainer/LabelContainer" />
-                  <Text val="Decals" />
+                  <Text val="@UI/Achievements/Decals" />
                </Frame>
                <!-- EKG -->
                <Frame type="Frame" name="EKG" template="AchievementTemplates/EKGFrame">
@@ -612,7 +612,7 @@
                   </Frame>
                   <Frame type="Label" name="Label">
                      <Style val="BattlenetTopNavSmall" />
-                     <Text val="Campaign" />
+                     <Text val="@UI/Achievements/Campaign" />
                   </Frame>
                   <StateGroup name="Campaign">
                      <DefaultState val="NotToggled" />
@@ -641,7 +641,7 @@
                   <Width val="52" />
                   <Visible val="False" />
                   <AcceptsMouseTooltip val="True" />
-                  <Tooltip val="Return To Modes" />
+                  <Tooltip val="@UI/Achievements/Tooltip/ReturnToModes" />
                   <TooltipFrame val="UADStandardTooltip" />
                   <TooltipAnchorPosition val="TopCenter" />
                   <Frame type="Image" name="Icon">
@@ -688,7 +688,7 @@
                <!-- Medals Title -->
                <Frame type="Label" name="MedalsTitle" template="AchievementTemplates/CDLabelTemplate">
                   <Anchor relative="$parent/TitleContainer" />
-                  <Text val="Medals &amp; Ribbons" />
+                  <Text val="@UI/Achievements/MedalsandRibbons" />
                </Frame>
                <!-- Medal Page Spinner -->
                <Frame type="Frame" name="SpinnerContainer">
@@ -836,7 +836,7 @@
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
                      <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                      <RenderPriority val="550" />
-                     <Text val="Camera  Shake" />
+                     <Text val="@UI/Achievements/CameraShake" />
                   </Frame>
                   <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
@@ -845,7 +845,7 @@
                      <Height val="56" />
                      <RenderPriority val="550" />
                      <Handle val="GameplayOption0" />
-                     <Tooltip val="Camera will shake when in close proximity to explosions. " />
+                     <Tooltip val="@UI/Achievements/Tooltip/CameraShake" />
                      <TooltipFrame val="UADStandardTooltip" />
                   </Frame>
                   <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
@@ -862,7 +862,7 @@
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
                      <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                      <RenderPriority val="550" />
-                     <Text val="Tactical  Sprint" />
+                     <Text val="@UI/Achievements/TacticalSprint" />
                   </Frame>
                   <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
@@ -871,7 +871,7 @@
                      <Height val="56" />
                      <RenderPriority val="550" />
                      <Handle val="GameplayOption1" />
-                     <Tooltip val="Sprint will auto initiate when in danger to high explosives. E.g. frag grenade." />
+                     <Tooltip val="@UI/Achievements/Tooltip/TacticalSprint" />
                      <TooltipFrame val="UADStandardTooltip" />
                   </Frame>
                   <Frame type="Image" name="Background" template="AchievementTemplates/PanelBackgroundTemplate" />
@@ -888,7 +888,7 @@
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
                      <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                      <RenderPriority val="550" />
-                     <Text val="Submenu  Cancel  Hotkey" />
+                     <Text val="@UI/Achievements/SubmenuCancelHotkey" />
                   </Frame>
                   <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
@@ -912,7 +912,7 @@
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
                      <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                      <RenderPriority val="550" />
-                     <Text val="Status Menu Vital Text" />
+                     <Text val="@UI/Achievements/StatusMenuVitalText" />
                   </Frame>
                   <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
@@ -936,7 +936,7 @@
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-10" />
                      <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                      <RenderPriority val="550" />
-                     <Text val="Segmented Status Bars" />
+                     <Text val="@UI/Achievements/SegmentedStatusBars" />
                   </Frame>
                   <Frame type="Pulldown" name="Pulldown" template="StandardUADTemplates/UADPulldownTemplate">
                      <Anchor side="Top" relative="$parent" pos="Mid" offset="-28" />
