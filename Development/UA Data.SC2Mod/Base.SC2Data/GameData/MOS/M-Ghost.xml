@@ -35,7 +35,6 @@
             <LayoutButtons index="5" Face="SprintHero" Type="AbilCmd" AbilCmd="Sprint,Execute" Row="0" Column="4"/>
             <LayoutButtons index="8" Face="TeamLocation" Type="AbilCmd" AbilCmd="TeamLocation,Execute" Row="0" Column="1"/>
             <LayoutButtons Face="Jump" Type="AbilCmd" AbilCmd="JumpHero,Execute" Row="0" Column="0"/>
-            <LayoutButtons Face="HeatSignature" Type="Passive" Behavior="None" Row="0" Column="3"/>
         </CardLayouts>
         <CardLayouts index="2" CardId="0003">
             <LayoutButtons index="0" Face="Prone" Type="AbilCmd" AbilCmd="Prone,Execute" Row="0" Column="2"/>
@@ -79,6 +78,34 @@
             <LayoutButtons Face="HeatSensorLightFilter" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research8" Row="1" Column="2"/>
             <LayoutButtons Face="LaserDesignatorWeakPointTargeting" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research10" Row="0" Column="1"/>
             <LayoutButtons Face="LaserDesignatorLongevity" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research11" Row="1" Column="1"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0005" Row="0" Column="4"/>
+            <LayoutButtons Face="InterferenceWaveWaveAmplification" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research14" Row="0" Column="3"/>
+            <LayoutButtons Face="InterferenceWaveExtraCharge" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research15" Row="1" Column="3"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0006" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="BinocularsPotency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research12" Row="0" Column="0"/>
+            <LayoutButtons Face="BinocularsTargetPainting" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research13" Row="1" Column="0"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0006" Row="0" Column="4"/>
+            <LayoutButtons Face="GapGeneratorDiscombobulate" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research16" Row="0" Column="1"/>
+            <LayoutButtons Face="GapGeneratorBlinding" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research17" Row="1" Column="1"/>
+            <LayoutButtons Face="IRSensorEarlyDetection" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research18" Row="2" Column="0"/>
+            <LayoutButtons Face="IRSensorIntelligenceShare" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research19" Row="2" Column="1"/>
+            <LayoutButtons Face="DisruptorRoundsEfficiency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research20" Row="0" Column="2"/>
+            <LayoutButtons Face="CryoRoundsEfficiency" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research22" Row="0" Column="3"/>
+            <LayoutButtons Face="DisruptorRoundsHeavyCounter" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research21" Row="1" Column="2"/>
+            <LayoutButtons Face="CryoRoundsLightCounter" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research23" Row="1" Column="3"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0004" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0006">
+            <LayoutButtons Face="CryoGrenadeExtraCharge" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research24" Row="0" Column="0"/>
+            <LayoutButtons Face="DetonateCryoMineSnapFreeze" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research26" Row="0" Column="1"/>
+            <LayoutButtons Face="CryoGrenadePermafrost" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research25" Row="1" Column="0"/>
+            <LayoutButtons Face="DetonateCryoMineEmbrittlement" Type="AbilCmd" AbilCmd="GhostSkillUpgrades,Research27" Row="1" Column="1"/>
+            <LayoutButtons Face="CancelB" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="NextPage" Type="Submenu" SubmenuCardId="0004" Row="0" Column="4"/>
+            <LayoutButtons Face="PreviousPageG" Type="Submenu" SubmenuCardId="0005" Row="1" Column="4"/>
         </CardLayouts>
     </CUnit>
 </Catalog>

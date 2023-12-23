@@ -648,6 +648,7 @@
                   <TabListItem val="$this/ScrollableList/ContainerFrame/Button46" />
                   <TabListItem val="$this/ScrollableList/ContainerFrame/Button47" />
                   <TabListItem val="$this/ScrollableList/ContainerFrame/Button48" />
+                  <TabListItem val="$this/ScrollableList/ContainerFrame/Button49" />
                   <Frame type="Pulldown" name="ReadablePulldown">
                      <Anchor relative="$parent" />
                      <Visible val="False" />
@@ -675,7 +676,7 @@
                      <Frame type="ScrollBar" name="ScrollBar" template="SandBox/SandBoxScrollBarTemplate" />
                      <Frame type="Frame" name="ContainerFrame">
                         <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
-                        <Anchor side="Bottom" relative="$this/Button48" pos="Max" offset="20" />
+                        <Anchor side="Bottom" relative="$this/Button49" pos="Max" offset="20" />
                         <Anchor side="Left" relative="$parent" pos="Min" offset="20" />
                         <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
                         <!-- Tile Buttons -->
@@ -829,6 +830,9 @@
                         </Frame>
                         <Frame type="Button" name="Button48" template="SandBox/ButtonTemplate">
                            <Anchor side="Top" relative="$parent/Button47" pos="Min" offset="75" />
+                        </Frame>
+                        <Frame type="Button" name="Button49" template="SandBox/ButtonTemplate">
+                           <Anchor side="Top" relative="$parent/Button48" pos="Min" offset="75" />
                            <CollapseLayout val="True" />
                            <Visible val="False" />
                         </Frame>
@@ -1028,6 +1032,10 @@
                         <Frame type="Frame" name="ImageFrame48" template="SandBox/ImageBorderFrameTemplate">
                            <Anchor side="Top" relative="$parent/Button48" pos="Min" offset="9" />
                            <Anchor side="Left" relative="$parent/Button48" pos="Min" offset="15" />
+                        </Frame>
+                        <Frame type="Frame" name="ImageFrame49" template="SandBox/ImageBorderFrameTemplate">
+                           <Anchor side="Top" relative="$parent/Button49" pos="Min" offset="9" />
+                           <Anchor side="Left" relative="$parent/Button49" pos="Min" offset="15" />
                         </Frame>
                      </Frame>
                   </Frame>

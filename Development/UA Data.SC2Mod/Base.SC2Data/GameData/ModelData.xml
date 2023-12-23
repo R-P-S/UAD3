@@ -30,6 +30,12 @@
         <Model value="Assets\Effects\Terran\VultureChase_Nova_PulseGrenade\VultureChase_Nova_PulseGrenade.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="CryoMineImpact" parent="ImpactFX">
+        <Model value="Assets\COOP\Tychus\Effects\Tychus_Heavens_COOP_ImplosionGrenade_Impact\Tychus_Heavens_COOP_ImplosionGrenade_Impact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="1.750000,1.750000,1.500000"/>
+        <ScaleMin value="1.750000,1.750000,1.500000"/>
+    </CModel>
     <CModel id="GlazeParty" parent="Glaze">
         <Model value="Assets\Material\NanaKey_EF_ElitePurple_Material.m3"/>
         <Priority value="32"/>
@@ -1172,27 +1178,6 @@
             <Adaptions TriggerOnSubstring="Armour_diffuse" Slot="main"/>
         </TextureDeclares>
     </CModel>
-    <CModel id="Ignis20" parent="Unit" Race="Terran">
-        <Model value="Assets\Units\Terran\FirebatMercenary\FirebatMercenary.m3"/>
-        <Occlusion value="Show"/>
-        <TextureDeclares Prefix="Firebat_">
-            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
-            <Adaptions TriggerOnSubstring="_Emissive" Slot="main"/>
-            <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
-        </TextureDeclares>
-        <TextureDeclares Prefix="FirebatMercenary_">
-            <Adaptions TriggerOnSubstring="_Diffuse" Slot="head"/>
-            <Adaptions TriggerOnSubstring="_Emissive" Slot="head"/>
-            <Adaptions TriggerOnSubstring="_Specular" Slot="head"/>
-        </TextureDeclares>
-        <UnitGlossaryCamera value="Star2CameraMid04"/>
-    </CModel>
-    <CModel id="RaynorHOTSDeath" parent="UnitDeath">
-        <Model value="Assets\Units\Terran\MarineRaynorDeath\MarineRaynorDeath.m3"/>
-        <Lighting value="MarineRaynorDeath"/>
-        <ScaleMax value="3.000000,3.000000,3.000000"/>
-        <ScaleMin value="3.000000,3.000000,3.000000"/>
-    </CModel>
     <CModel id="PointDefenseDrone">
         <SelectionLayer value="0"/>
     </CModel>
@@ -1385,20 +1370,6 @@
     <CModel id="MatriarchSnowBeast">
         <ScaleMax value="1.000000,1.000000,1.000000"/>
         <ScaleMin value="1.000000,1.000000,1.000000"/>
-    </CModel>
-    <CModel id="Odin">
-        <ScaleMax value="1.900000,1.900000,1.900000"/>
-        <ScaleMin value="1.900000,1.900000,1.900000"/>
-        <TextureDeclares Prefix="Odin_">
-            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
-            <Adaptions TriggerOnSubstring="_Emissive" Slot="main"/>
-            <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
-        </TextureDeclares>
-        <TextureDeclares/>
-    </CModel>
-    <CModel id="RedstoneLavaCritter">
-        <ScaleMax value="5.600000,5.600000,5.600000"/>
-        <ScaleMin value="5.600000,5.600000,5.600000"/>
     </CModel>
     <CModel id="SnowBeast">
         <ScaleMax value="1.000000,1.000000,1.000000"/>
@@ -1848,10 +1819,6 @@
         <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Lighting value="MRLImpact"/>
-    </CModel>
-    <CModel id="Mutation" parent="FX">
-        <Model value="Assets\Effects\Zerg\DiseaseCloud\DiseaseCloud.m3"/>
-        <EditorCategories value="Race:Zerg"/>
     </CModel>
     <CModel id="Planet" parent="Unit">
         <Model value="Assets\UI\Starmap\PlanetViews\PlanetViewAgria\PlanetViewAgria.m3"/>
@@ -2352,5 +2319,12 @@
         <Model value="Assets\Effects\Neutral\Barrier_Coop\Barrier_Coop.m3"/>
         <ScaleMax value="0.800000,0.800000,0.800000"/>
         <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="ClaymoreAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="6.000000,8.000000,1.500000"/>
+        <ScaleMin value="6.000000,8.000000,1.500000"/>
     </CModel>
 </Catalog>

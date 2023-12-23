@@ -1966,10 +1966,6 @@
             <Visible val="True" />
             <StateGroup name="Progress" template="AchievementTemplates/ProgressTemplate"/>
          </Frame>
-         <Frame type="Frame" name="Achievement33" template="AchievementTemplates/AchievementBadgeTemplate">
-            <Visible val="True" />
-            <StateGroup name="Progress" template="AchievementTemplates/ProgressTemplate"/>
-         </Frame>
          <!-- Rank Achievements 33 to 59 -->
          <Frame type="Frame" name="Achievement33" template="AchievementTemplates/AchievementBadgeTemplate">
             <Visible val="True" />

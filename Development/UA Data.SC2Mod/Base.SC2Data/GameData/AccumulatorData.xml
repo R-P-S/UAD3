@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorSwitch id="FlashAttackSpeedSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="FlashAttackSpeedReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="FlashAttackSpeedReduction">
+        <MaxAccumulation value="-0.4"/>
+        <Behavior value="Flash"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="GapGeneratorDisorientationMassiveReduction">
+        <MaxAccumulation value="0.08"/>
+        <Behavior value="GapGeneratorDisorientationUndead"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="CryoRoundsMassiveReduction">
+        <MaxAccumulation value="0.008"/>
+        <Behavior value="CryoRoundsTarget"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorSwitch id="GapGeneratorSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="GapGeneratorDisorientationMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="SmokeGrenadeMassiveReduction">
+        <MaxAccumulation value="0.4"/>
+        <Behavior value="SmokeGrenade"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="OilDouseMassiveReduction">
+        <MaxAccumulation value="0.32"/>
+        <Behavior value="OilDouse"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="FlashMovementMassiveReduction">
+        <MaxAccumulation value="0.72"/>
+        <Behavior value="Flash"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="SuppressiveFireMovementMassiveReduction">
+        <MaxAccumulation value="0.016"/>
+        <Behavior value="SuppressiveFireSlow"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorSwitch id="SmokeGrenadeSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="SmokeGrenadeMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="FlareGunSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="FlareGunMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="FlareGunMassiveReduction">
+        <MaxAccumulation value="0.16"/>
+        <Behavior value="FlareGunSlow"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorSwitch id="ConcussiveImpactHESwitch">
+        <CaseArray Validator="IsMassive" Accumulator="ConcussiveImpactHEMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="ConcussiveImpactMortarStrikeSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="ConcussiveImpactMortarStrikeMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="ConcussiveImpactHEMassiveReduction">
+        <MaxAccumulation value="0.32"/>
+        <Behavior value="ConcussiveImpactSlow"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="ConcussiveImpactMortarStrikeMassiveReduction">
+        <MaxAccumulation value="0.32"/>
+        <Behavior value="ConcussiveImpactSlowMortarStrike"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorSwitch id="CryoRoundsSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="CryoRoundsMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="OilDouseSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="OilDouseMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="FlashMovementSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="FlashMovementMassiveReduction"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="SuppressiveFireMovementSwitch">
+        <CaseArray Validator="IsMassive" Accumulator="SuppressiveFireMovementMassiveReduction"/>
+    </CAccumulatorSwitch>
+</Catalog>

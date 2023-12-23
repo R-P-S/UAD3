@@ -29,21 +29,34 @@
       <Height val="20" />
       <HideMax val="true" />
       <RenderPriority val="515"/>
-      <FractionDigits val="2" />
-      <RoundMode val="None" />
       <VisibleToAlly val="True" />
+
       <Frame type="Label" name="StatusLabel">
         <Anchor relative="$parent" />
         <Visible val="False" />
         <TooltipFrame val="UADStandardTooltip" />
       </Frame>
+
+      <Frame type="TextFormatFrame" name="TFF">
+        <Anchor relative="$parent"/>
+        <FormatText val="&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;"/>
+        <Replacement index="0" val="{$parent/@CurrentValue}"/>
+      </Frame>
+
+      <Frame type="Label" name="LabelFinal">
+        <Anchor relative="$parent/StatusLabel"/>
+        <Text val="{$parent/TFF/@Text}"/>
+        <Alpha val="0"/>
+      </Frame>
+
       <Frame type="TextFormatFrame" name="RegenAmountFormatFrame">
         <Anchor relative="$parent" />
         <FormatText val="@UI/TargetInfoPanel/AmountPerSecond" />
-        <Replacement index="0" val="{$parent/StatusLabel/@Text}" />
+        <Replacement index="0" val="{$parent/LabelFinal/@Text}" />
         <ReplacedName index="0" val="amount" />
         <TooltipFrame val="UADStandardTooltip" />
       </Frame>
+
       <Frame type="Label" name="FormattedLabel">
         <Anchor relative="$parent" />
         <Style val="Storm_TargetInfoPanel_Label_Right" />
@@ -52,6 +65,7 @@
         <TooltipFrame val="UADStandardTooltip" />
       </Frame>
     </Frame>
+
     <Frame type="TextFormatFrame" name="RegenTooltipFormatFrame">
       <Anchor relative="$parent" />
       <FormatText val="@UI/TargetInfoPanel/EnergyRegenTooltip" />
@@ -61,6 +75,7 @@
       <ReplacedName index="1" val="regen" />
       <TooltipFrame val="UADStandardTooltip" />
     </Frame>
+
     <Frame type="TextFormatFrame" name="NoRegenTooltipFormatFrame">
       <Anchor relative="$parent" />
       <FormatText val="@UI/TargetInfoPanel/EnergyTooltip" />
@@ -68,6 +83,7 @@
       <ReplacedName index="0" val="energy" />
       <TooltipFrame val="UADStandardTooltip" />
     </Frame>
+
     <StateGroup name="TooltipStates">
       <State name="EnergyTooltip">
         <When type="Property" frame="UnitStatusEnergyRegenLabel" Visible="true" />
@@ -84,6 +100,7 @@
       </State>
     </StateGroup>
   </Frame>
+
   <Frame type="UnitStatusFrame" name="TargetInfoPanelUnitStatusBarTemplate">
     <Frame type="Image" name="HealthBarBackgroundImage">
       <Anchor side="Top" relative="$parent/HealthBar" pos="Min" offset="-2" />
@@ -142,23 +159,36 @@
         <Height val="20" />
         <HideMax val="True" />
         <RenderPriority val="515"/>
-        <FractionDigits val="2" />
         <VisibleWhenUserControlled val="true" />
         <VisibleToAlly val="True" />
         <ShowGrouping val="true" />
-        <RoundMode val="None" />
         <TooltipFrame val="UADStandardTooltip" />
+
         <Frame type="Label" name="StatusLabel">
           <Anchor relative="$parent" />
           <Visible val="false" />
           <TooltipFrame val="UADStandardTooltip" />
         </Frame>
+
+        <Frame type="TextFormatFrame" name="TFF">
+          <Anchor relative="$parent"/>
+          <FormatText val="&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;"/>
+          <Replacement index="0" val="{$parent/@CurrentValue}"/>
+        </Frame>
+
+        <Frame type="Label" name="LabelFinal">
+          <Anchor relative="$parent/StatusLabel"/>
+          <Text val="{$parent/TFF/@Text}"/>
+          <Alpha val="0"/>
+        </Frame>
+
         <Frame type="TextFormatFrame" name="RegenAmountFormatFrame">
           <Anchor relative="$parent" />
           <FormatText val="@UI/TargetInfoPanel/AmountPerSecond" />
-          <Replacement index="0" val="{$parent/StatusLabel/@Text}" />
+          <Replacement index="0" val="{$parent/LabelFinal/@Text}" />
           <ReplacedName index="0" val="amount" />
         </Frame>
+
         <Frame type="Label" name="FormattedLabel">
           <Anchor relative="$parent" />
           <Style val="Storm_TargetInfoPanel_Label_Right" />

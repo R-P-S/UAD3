@@ -2,7 +2,7 @@
 <Catalog>
     <CUnit id="XR42" parent="ItemCrateTemplate">
         <Name value="Unit/Name/XR42"/>
-        <Description value="Button/Tooltip/XR42"/>
+        <Description value="Button/UI/XR42"/>
         <EffectArray index="Birth" value="CreateWeapon"/>
         <Item value="XR42"/>
         <HotkeyAlias value="XR42"/>
@@ -10,7 +10,7 @@
     </CUnit>
     <CUnit id="DeathMachine" parent="ItemCrateTemplate">
         <Name value="Unit/Name/DeathMachine"/>
-        <Description value="Button/Tooltip/DeathMachine"/>
+        <Description value="Button/UI/DeathMachine"/>
         <EffectArray index="Birth" value="CreateWeapon"/>
         <Item value="DeathMachine"/>
         <HotkeyAlias value="DeathMachine"/>
@@ -18,7 +18,7 @@
     </CUnit>
     <CUnit id="M935Minigun" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M935Minigun"/>
-        <Description value="Button/Tooltip/M935Minigun"/>
+        <Description value="Button/UI/M935Minigun"/>
         <EffectArray index="Birth" value="CreateWeapon"/>
         <Item value="M935Minigun"/>
         <HotkeyAlias value="M935Minigun"/>
@@ -26,7 +26,7 @@
     </CUnit>
     <CUnit id="M1014" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M1014"/>
-        <Description value="Button/Tooltip/M1014"/>
+        <Description value="Button/UI/M1014"/>
         <Item value="M1014"/>
         <HotkeyAlias value="M1014"/>
         <EquipmentArray index="0" Icon="Assets\Custom Icons\BTN-SuperShotty.dds"/>
@@ -34,7 +34,7 @@
     </CUnit>
     <CUnit id="M92Torrent" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M92Torrent"/>
-        <Description value="Button/Tooltip/M92Torrent"/>
+        <Description value="Button/UI/M92Torrent"/>
         <Item value="M92Torrent"/>
         <HotkeyAlias value="M92Torrent"/>
         <EquipmentArray index="0" Icon="Buttons\M92.dds"/>
@@ -42,7 +42,7 @@
     </CUnit>
     <CUnit id="IPR" parent="ItemCrateTemplate">
         <Name value="Unit/Name/IPR"/>
-        <Description value="Button/Tooltip/IPR"/>
+        <Description value="Button/UI/IPR"/>
         <Item value="IPR"/>
         <HotkeyAlias value="IPR"/>
         <EquipmentArray index="0" Icon="Buttons\Weapons\BTNIPR.dds"/>
@@ -50,7 +50,7 @@
     </CUnit>
     <CUnit id="M241MMG" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M241MMG"/>
-        <Description value="Button/Tooltip/M241MMG"/>
+        <Description value="Button/UI/M241MMG_BTN"/>
         <Item value="M241MMG"/>
         <HotkeyAlias value="M241MMG"/>
         <EquipmentArray index="0" Icon="Buttons\BTNM241.dds"/>
@@ -58,7 +58,7 @@
     </CUnit>
     <CUnit id="M5MAR" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M5MAR"/>
-        <Description value="Button/Tooltip/M5MAR"/>
+        <Description value="Button/UI/M5MAR_BTN"/>
         <Item value="M5MAR"/>
         <HotkeyAlias value="M5MAR"/>
         <EquipmentArray index="0" Icon="Buttons/BTNMAR.dds"/>
@@ -66,7 +66,7 @@
     </CUnit>
     <CUnit id="SOFAR" parent="ItemCrateTemplate">
         <Name value="Unit/Name/SOFAR"/>
-        <Description value="Button/Tooltip/SOFAR"/>
+        <Description value="Button/UI/SOFAR_BTN"/>
         <Item value="SOFAR"/>
         <HotkeyAlias value="SOFAR"/>
         <EquipmentArray index="0" Icon="Buttons\Weapons\MEN7.dds"/>
@@ -74,7 +74,7 @@
     </CUnit>
     <CUnit id="USMCR" parent="ItemCrateTemplate">
         <Name value="Unit/Name/USMCR"/>
-        <Description value="Button/Tooltip/USMCR"/>
+        <Description value="Button/UI/USMCR_BTN"/>
         <Item value="USMCR"/>
         <HotkeyAlias value="USMCR"/>
         <EquipmentArray index="0" Icon="Buttons/BTNUSMCR.dds"/>
@@ -82,7 +82,7 @@
     </CUnit>
     <CUnit id="Mk14" parent="ItemCrateTemplate">
         <Name value="Unit/Name/Mk14"/>
-        <Description value="Button/Tooltip/Mk14"/>
+        <Description value="Button/UI/Mk14_BTN"/>
         <Item value="Mk14"/>
         <HotkeyAlias value="Mk14"/>
         <EquipmentArray index="0" Icon="Buttons\Weapons\IDMR2.dds"/>
@@ -90,7 +90,7 @@
     </CUnit>
     <CUnit id="M41SAW" parent="ItemCrateTemplate">
         <Name value="Unit/Name/M41SAW"/>
-        <Description value="Button/Tooltip/M41SAW"/>
+        <Description value="Button/UI/M41SAW_BTN"/>
         <Item value="M41SAW"/>
         <HotkeyAlias value="M41SAW"/>
         <EquipmentArray index="0" Icon="Buttons\Weapons\BTNLMG.dds"/>
@@ -101,10 +101,11 @@
         <Item value="M9Flamethrower"/>
         <EquipmentArray index="0" Icon="Assets\Icon Pack\btn-upgrade-terran-infernalpreigniter-level2.dds"/>
         <EffectArray index="Birth" value="CreateWeapon"/>
+        <Description value="Button/UI/M9Flamethrower"/>
     </CUnit>
     <CUnit id="HK42" parent="ItemCrateTemplate">
         <Name value="Unit/Name/HK42"/>
-        <Description value="Description/Tooltip/HK42"/>
+        <Description value="Button/UI/HK42"/>
         <Item value="HK42"/>
         <HotkeyAlias value="HK42"/>
         <EquipmentArray index="0" Icon="Buttons\BTNVOSS.dds"/>
@@ -112,7 +113,7 @@
     </CUnit>
     <CUnit id="StynerBR2" parent="ItemCrateTemplate">
         <Name value="Unit/Name/StynerBR2"/>
-        <Description value="Button/Tooltip/StynerBR2"/>
+        <Description value="Button/UI/StynerBR2_BTN"/>
         <Item value="StynerBR2"/>
         <HotkeyAlias value="StynerBR2"/>
         <EquipmentArray index="0" Icon="Buttons\BTNSCAR.dds"/>
@@ -120,7 +121,7 @@
     </CUnit>
     <CUnit id="W1200" parent="ItemCrateTemplate">
         <Name value="Unit/Name/W1200"/>
-        <Description value="Button/Tooltip/W1200"/>
+        <Description value="Button/UI/W1200"/>
         <Item value="W1200"/>
         <HotkeyAlias value="W1200"/>
         <EquipmentArray index="0" Icon="Buttons\Weapons\ISS-7.dds"/>

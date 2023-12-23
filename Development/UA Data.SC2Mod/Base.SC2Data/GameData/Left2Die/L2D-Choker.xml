@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CEffectDamage id="SpitDamage">
         <EditorCategories value="Race:Zerg"/>
@@ -141,6 +141,23 @@
         <Effect index="0" value="TentacleAttackInitialSet"/>
         <UninterruptibleArray index="Channel" value="1"/>
     </CAbilEffectTarget>
+    <CValidatorUnitCompareBehaviorCount id="HasInitialTentacleBehavior">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="InitialTentacleChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HasInitialTentacleBehaviorOrTentaclesActive">
+        <CombineArray value="HasInitialTentacleBehavior"/>
+        <CombineArray value="TentaclesActive"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="TargetHasNoTentacleEnRoute">
+        <Behavior value="TentacleEnRoute"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="TentaclesActive">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="TentaclesActive"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CButton id="TentacleAttack">
         <Icon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
         <EditorCategories value="Race:Zerg"/>
@@ -230,27 +247,6 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <On Terms="Effect.TentacleAttackDamage.Start; At Target" Send="Create"/>
     </CActorModel>
-    <CWeaponLegacy id="Bite">
-        <EditorCategories value="Race:Zerg"/>
-        <Options index="Melee" value="1"/>
-        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
-        <DisplayEffect value="BiteDamage"/>
-        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="0.1"/>
-        <Period value="0.696"/>
-        <Effect value="BiteDamage"/>
-    </CWeaponLegacy>
-    <CWeaponLegacy id="Spit">
-        <EditorCategories value="Race:Zerg"/>
-        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
-        <DisplayEffect value="SpitDamage"/>
-        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="8"/>
-        <Period value="1.5246"/>
-        <DamagePoint value="0"/>
-        <AllowedMovement value="Slowing"/>
-        <Effect value="SpitLaunchMissile"/>
-    </CWeaponLegacy>
     <CModel id="ChokerDeath" parent="UnitDeath" Race="Zerg">
         <LowQualityModel value="ZergSmallUnitDeathLow"/>
     </CModel>
@@ -283,6 +279,27 @@
         <TipabilityLength value="1.000000"/>
         <TipabilityWidth value="0.600000"/>
     </CModel>
+    <CWeaponLegacy id="Bite">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="BiteDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.1"/>
+        <Period value="0.696"/>
+        <Effect value="BiteDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Spit">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="SpitDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Period value="1.5246"/>
+        <DamagePoint value="0"/>
+        <AllowedMovement value="Slowing"/>
+        <Effect value="SpitLaunchMissile"/>
+    </CWeaponLegacy>
     <CMoverMissile id="SpitMissile">
         <HeightMap value="Air"/>
         <MotionPhases>
@@ -412,7 +429,7 @@
         <Race value="Zerg"/>
         <Mover value="MissileDefault"/>
     </CUnit>
-	<!--
+    <!--
     <CBehaviorBuff id="Choked">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-zerg-leech.dds"/>
@@ -438,24 +455,4 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <MaxStackCount value="0"/>
     </CBehaviorBuff>
-    <CValidatorUnitCompareBehaviorCount id="HasInitialTentacleBehavior">
-        <WhichUnit Value="Caster"/>
-        <Compare value="GT"/>
-        <Behavior value="InitialTentacleChannel"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorCombine id="HasInitialTentacleBehaviorOrTentaclesActive">
-        <CombineArray value="HasInitialTentacleBehavior"/>
-        <CombineArray value="TentaclesActive"/>
-    </CValidatorCombine>
-    <CValidatorUnitCompareBehaviorCount id="TargetHasNoTentacleEnRoute">
-        <Behavior value="TentacleEnRoute"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="TargetNotBeingChoked">
-        <Behavior value="Choked"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="TentaclesActive">
-        <WhichUnit Value="Caster"/>
-        <Compare value="GT"/>
-        <Behavior value="TentaclesActive"/>
-    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

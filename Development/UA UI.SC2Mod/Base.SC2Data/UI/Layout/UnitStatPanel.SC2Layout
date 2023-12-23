@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Label" name="StatLabelTemplate">
+        <Style val="@@@InfoPaneUnitType"/>
+        <CollapseLayout val="True"/>
+    </Frame>
+ 
+    <Frame type="InfoPanel" name="InfoPanelTemplate" template="InfoPanel/InfoPanelTemplate">
+ 
+        <Frame type="Frame" name="UnitPanel">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="Frame" name="InfoPaneUnit">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="InfoPaneQueue" name="InfoPaneQueue">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="InfoPaneProgress" name="InfoPaneProgress">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="InfoPaneCoopAI" name="InfoPaneCoopAI">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="InfoPaneCargo" name="InfoPaneCargo">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="InfoPaneGroup" name="InfoPaneGroup">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+ 
+        <Frame type="SelectionUnitStatusPanel" name="SelectionUnitStatusPanel">
+            <Anchor relative="$parent"/>
+ 
+            <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+                <Anchor relative="$parent"/>
+ 
+                <Frame type="UnitStatusAttackSpeedLabel" name="AttackSpeedLabel">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+ 
+                    <Frame type="Label" name="StatusLabel">
+                        <Anchor relative="$parent"/>
+                    </Frame>
+ 
+                    <Frame type="TextFormatFrame" name="TFF">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="Weapon Speed: &lt;c val=&quot;FFFFFF&quot;&gt;&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;&lt;/c&gt;"/>
+                        <Replacement index="0" val="{$parent/AttackSpeed/@Result}"/>
+                    </Frame>
+ 
+                    <Frame type="MathFrame" name="AttackSpeed">
+                        <Anchor relative="$parent"/>
+                        <A val="1"/>
+                        <B val="{$parent/@CurrentValue}"/>
+                        <Operator val="Divide"/>
+                    </Frame>
+                </Frame>
+ 
+                <Frame type="UnitStatusAttackRangeLabel" name="AttackRangeLabel">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <RoundMode val="Down"/>
+ 
+                    <Frame type="Label" name="StatusLabel">
+                        <Anchor relative="$parent"/>
+                    </Frame>
+ 
+                    <Frame type="TextFormatFrame" name="TFF">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="%0%&lt;c val=&quot;FFFFFF&quot;&gt;%1%&lt;/c&gt;"/>
+                        <Replacement val="@e_gameUIStringRangeColon" index="0"/>
+                        <Replacement val="{$parent/StatusLabel/@Text}" index="1"/>
+                    </Frame>
+
+                    <Frame type="TextFormatFrame" name="TFF+">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="%0%&lt;c val=&quot;FFFFFF&quot;&gt;%1%&lt;/c&gt;"/>
+                        <Replacement val="@e_gameUIStringRangeColon" index="0"/>
+                        <Replacement val="@e_gameUIStringMelee" index="1"/>
+                    </Frame>
+
+                    <StateGroup name="RangeState">
+                        <State name="Melee">
+                            <When type="Property" operator="GreaterThan" CurrentValue="0"/>
+                            <When type="Property" operator="LessThan" CurrentValue="1"/>
+                        </State>
+
+                        <State name="Ranged">
+                            <When type="Property" operator="GreaterThanOrEqual" CurrentValue="1"/>
+                        </State>
+                    </StateGroup>
+                </Frame>
+ 
+                <Frame type="UnitStatusMoveSpeedLabel" name="MoveSpeedLabel">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+ 
+                    <Frame type="Label" name="StatusLabel">
+                        <Anchor relative="$parent"/>
+                    </Frame>
+
+                    <Frame type="TextFormatFrame" name="TFF">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="Move Speed: &lt;c val=&quot;FFFFFF&quot;&gt;&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;&lt;/c&gt;"/>
+                        <Replacement index="0" val="{$parent/CurrentSpeed/@Result}"/>
+                    </Frame> 
+
+                     <Frame type="MathFrame" name="CurrentSpeed">
+                        <Anchor relative="$parent"/>
+                        <A val="{$parent/@CurrentValue}"/>
+                        <B val="16"/>
+                        <Operator val="Multiply"/>
+                    </Frame>
+
+                    <!--
+                        Setup below will display  Base (+- buff amount) w/ color
+
+                    <Frame type="TextFormatFrame" name="TFF">
+                        <Anchor relative="$parent"/>
+                        <FormatText val="Move Speed: &lt;c val=&quot;FFFFFF&quot;&gt;&lt;d ref=&quot;%0%&quot; precision=&quot;2&quot;/&gt;&lt;/c&gt; %1%%2%%5%%3% %6%%4%"/>
+                        <Replacement index="0" val="{$parent/BaseSpeed/@Result}"/>
+                        <Replacement index="1" val=""/>
+                        <Replacement index="2" val=""/>
+                        <Replacement index="3" val="{$parent/BuffDebuffLabel/@Text}"/>
+                        <Replacement index="4" val=""/>
+                        <Replacement index="5" val="&lt;d ref=&quot;"/>
+                        <Replacement index="6" val="&quot;precision=&quot;2&quot;/&gt;"/>
+                    </Frame>
+
+                    <Frame type="Label" name="BuffDebuffLabel">
+                        <Anchor relative="$parent"/>
+                        <Visible val="False"/>
+                    </Frame>
+
+                    <Frame type="MathFrame" name="BaseSpeed">
+                        <Anchor relative="$parent"/>
+                        <A val="{$parent/@MaxValue}"/>
+                        <B val="16"/>
+                        <Operator val="Multiply"/>
+                    </Frame>
+               
+                    <Frame type="MathFrame" name="BuffDebuffSpeed">
+                        <Anchor relative="$parent"/>
+                        <A val="{$parent/CurrentSpeed/@Result}"/>
+                        <B val="{$parent/BaseSpeed/@Result}"/>
+                        <Operator val="Subtract"/>
+                        <Handle val="BuffDebuffSpeed"/>  Handle needed for property bind to work in stategroup 
+                    </Frame>
+                 
+                    <StateGroup name="BuffDebuffStates">
+                        <State name="Default">
+                            <When type="Property" CurrentValue="{$this/@MaxValue}"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="" index="5"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="" index="6"/>
+                        </State>
+
+                        <State name="Buff">
+                            <When type="Property" operator="GreaterThan" CurrentValue="{$this/@MaxValue}"/>
+                            <Action type="SetProperty" frame="BuffDebuffLabel" Text="{$BuffDebuffSpeed/@Result}"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="(" index="1"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="&lt;c val=&quot;00FF00&quot;&gt;+" index="2"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="&lt;/c&gt;)" index="4"/>
+                        </State>
+                          
+                        <State name="Debuff">
+                            <When type="Property" operator="LessThan" CurrentValue="{$this/@MaxValue}"/>
+                            <Action type="SetProperty" frame="BuffDebuffLabel" Text="{$BuffDebuffSpeed/@Result}"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="(" index="1"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="&lt;c val=&quot;FF0000&quot;&gt;" index="2"/>
+                            <Action type="SetProperty" frame="TFF" Replacement="&lt;/c&gt;)" index="4"/>
+                        </State> 
+                    </StateGroup> -->
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame>
+
+    <Frame type="GameUI" name="GameUI" file="GameUI">
+
+        <Frame type="Frame" name="UIContainer">
+    
+            <Frame type="Frame" name="ConsoleUIContainer">
+
+                <Frame type="Frame" name="UnitStatPanel">
+                    <Anchor side="Top" relative="$parent/InfoPanel" pos="Min" offset="0"/>
+                    <Anchor side="Left" relative="$parent/InfoPanel" pos="Min" offset="-225"/>
+                    <Height val="199"/>
+                    <Width val="250"/>
+                    <AcceptsMouse val="False"/>
+                    <Enabled val="{$parent/InfoPanel/@Enabled}"/>
+                    <Visible val="{$parent/InfoPanel/InfoPaneUnit/@Visible}"/>
+
+                    <Frame type="Label" name="WeaponLabel" template="UnitStatPanel/StatLabelTemplate">
+                        <Anchor side="Top" relative="$parent" pos="Min" offset="45"/>
+                        <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+                        <Text val="{$UnitStatPanel/InfoPaneHero/WeaponLabel/@Text}"/>
+                    </Frame>
+             
+                    <Frame type="Label" name="WeaponSpeedLabel" template="UnitStatPanel/StatLabelTemplate">
+                        <Anchor side="Left" relative="$parent/WeaponLabel" pos="Min" offset="-1"/>
+                        <Anchor side="Bottom" relative="$parent/WeaponLabel" pos="Max" offset="4"/>
+                        <Text val="{$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/AttackSpeedLabel/TFF/@Text}"/>
+                    </Frame>
+             
+                    <Frame type="Label" name="AttackRangeLabel" template="UnitStatPanel/StatLabelTemplate">
+                        <Anchor side="Left" relative="$parent/WeaponSpeedLabel" pos="Min" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/WeaponSpeedLabel" pos="Max" offset="25"/>
+
+                        <StateGroup name="AttackType">
+                            <State name="Melee">
+                                <When type="StateGroup" frame="$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/AttackRangeLabel" RangeState="Melee"/>
+                                <Action type="SetProperty" Text="{$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/AttackRangeLabel/TFF+/@Text}"/>
+                            </State>
+
+                            <State name="Ranged">
+                                <When type="StateGroup" frame="$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/AttackRangeLabel" RangeState="Ranged"/>
+                                <Action type="SetProperty" Text="{$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/AttackRangeLabel/TFF/@Text}"/>
+                            </State>
+                        </StateGroup>
+                    </Frame>
+             
+                    <Frame type="Label" name="ArmorLabel" template="UnitStatPanel/StatLabelTemplate">
+                        <Anchor side="Left" relative="$parent/AttackRangeLabel" pos="Min" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/AttackRangeLabel" pos="Max" offset="25"/>
+                        <Text val="{$UnitStatPanel/InfoPaneHero/ArmorLabel/@Text}"/>
+                        <Visible val="False"/>
+                    </Frame>
+             
+                    <Frame type="Label" name="MoveSpeedLabel" template="UnitStatPanel/StatLabelTemplate">
+                        <Anchor side="Left" relative="$parent/ArmorLabel" pos="Min" offset="0"/>
+                        <Anchor side="Bottom" relative="$parent/ArmorLabel" pos="Max" offset="25"/>
+                        <Text val="{$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/MoveSpeedLabel/TFF/@Text}"/>
+                        <Visible val="{$UnitStatPanel/SelectionUnitStatusPanel/UnitStatusFrame0/MoveSpeedLabel/@Visible}"/>
+                    </Frame>
+             
+                    <StateGroup name="VisibleState">
+                        <DefaultState val="Visible"/>
+
+                        <State name="NoWeapon">
+                            <When type="Property" frame="WeaponLabel" Text=""/>
+                            <Action type="SetProperty" frame="WeaponSpeedLabel" Alpha="0"/>
+                            <Action type="SetProperty" frame="ArmorLabel" Alpha="0"/>
+                            <Action type="SetProperty" frame="AttackRangeLabel" Alpha="0"/>
+                            <!--
+                            <Action type="SetProperty" frame="MoveSpeedLabel" Alpha="0"/> 
+                            -->
+                         </State>
+
+                         <State name="Visible"/>
+                    </StateGroup>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="FullscreenUpperContainer">
+    
+                <Frame type="Frame" name="InfoPanelContainer">
+                    <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Mid" offset="-9999"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                    <Height val="200"/>
+                    <Width val="600"/>
+         
+                    <Frame type="Frame" name="InfoPanelTemplate" template="UnitStatPanel/InfoPanelTemplate">
+                        <Anchor side="Left" relative="$parent" pos="Mid" offset="-395"/>
+                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-20"/>
+                        <Anchor side="Right" relative="$parent" pos="Mid" offset="185"/>
+                        <Height val="199"/>
+                        <Handle val="UnitStatPanel"/>
+                    </Frame>
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

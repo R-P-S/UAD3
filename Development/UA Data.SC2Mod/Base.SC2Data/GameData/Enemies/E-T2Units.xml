@@ -100,9 +100,9 @@
     <CUnit id="T2Reaper" parent="TemplateT2Zombie">
         <FlagArray index="Cloaked" value="1"/>
         <Attributes index="Light" value="1"/>
-        <LifeStart value="575"/>
-        <LifeMax value="575"/>
-        <Speed value="3.1992"/>
+        <LifeStart value="450"/>
+        <LifeMax value="450"/>
+        <Speed value="3.1015"/>
         <BehaviorArray index="0" Link="KeenSense2"/>
         <BehaviorArray index="1" Link="MutationUpgrade"/>
         <BehaviorArray Link="WeatherEffectZombiesGround"/>
@@ -188,8 +188,8 @@
         <ShieldsStart value="150"/>
         <ShieldsMax value="150"/>
         <Speed value="2.5"/>
-        <StationaryTurningRate value="720"/>
-        <TurningRate value="720"/>
+        <StationaryTurningRate value="180"/>
+        <TurningRate value="180"/>
         <AbilArray index="3" removed="1"/>
         <BehaviorArray index="0" Link="WeatherEffectZombiesGround"/>
         <BehaviorArray index="1" Link="SpawnSwarmers"/>
@@ -291,8 +291,8 @@
         <Attributes index="Light" value="1"/>
         <LifeStart value="425"/>
         <LifeMax value="425"/>
-        <ShieldsStart value="100"/>
-        <ShieldsMax value="100"/>
+        <ShieldsStart value="50"/>
+        <ShieldsMax value="50"/>
         <Speed value="2.4101"/>
         <BehaviorArray Link="KeenSense2"/>
         <WeaponArray Link="ImpalingTentacle"/>

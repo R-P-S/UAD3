@@ -146,6 +146,30 @@
                   <Key type="Event" time="0" event="OFF" />
                </Controller>
             </Animation>
+            <!-- Open Skill Upgrades Menu -->
+            <StateGroup name="ClickAnimEvent">
+               <DefaultState val="Default"/>
+
+               <State name="ButtonPushed">
+                  <When type="Property" Pushed="True"/>
+                  <When type="Property" frame="$GameUI_CommandPanel/CommandButton10/NormalImage" Texture="assets\icon pack\btn-techupgrade-terran-neosteelbunker_mod.dds"/>
+                  <Action type="SendEvent" Event="OpenSkillUpgradesMenu"/>
+               </State>
+
+               <State name="Default"/>
+            </StateGroup>
+
+            <Animation name="ClickAnim">
+               <Event event="OpenSkillUpgradesMenu" action="Reset,Play"/>
+
+               <Controller type="Event" end="Pause" frame="$GameUI_CommandPanel/CommandButton10">
+                  <Key type="Event" time="0.0" event="ControlClickRequest"/>
+               </Controller>
+
+               <Controller type="Event" end="Pause" frame="$GameUI_CommandPanel/CommandButton13">
+                  <Key type="Event" time="0.0" event="ControlClickRequest"/>
+               </Controller>
+            </Animation>
          </Frame>
          <Frame type="Image" name="SkillUpgradesLabelContainer">
             <Width val="23" />

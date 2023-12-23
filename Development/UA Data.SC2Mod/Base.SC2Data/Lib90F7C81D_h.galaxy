@@ -275,6 +275,7 @@ struct lib90F7C81D_gs_MOSAchievements {
     fixed[13] lv_cyborgLifeCur;
     bool[13] lv_cyborgModeUsed;
     bool[13] lv_ghostHeatSignature;
+    bool[2][13] lv_ghostFindersKeepers;
     int[54][13] lv_mOSAchievement;
 };
 
@@ -915,6 +916,7 @@ trigger lib90F7C81D_gt_ArchitectResearched;
 trigger lib90F7C81D_gt_ScrapPartsPickup;
 trigger lib90F7C81D_gt_GrappleHookResetHeight;
 trigger lib90F7C81D_gt_IRSensor;
+trigger lib90F7C81D_gt_UntitledTrigger001;
 trigger lib90F7C81D_gt_GapGeneratorShroud;
 trigger lib90F7C81D_gt_MissionItemPickedUp;
 trigger lib90F7C81D_gt_MissionItemDropped;

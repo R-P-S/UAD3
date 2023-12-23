@@ -799,6 +799,14 @@
         <OperandArray value="EqCountUpgradeWildfireMineUpgradeCompleteOnly0"/>
         <OperandArray value="EqCountUpgradeWildfireGrenadeUpgradeCompleteOnly1"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AndGTE1041357462CountUpgradeInfiltratorLevel2CompleteOnly1Eq2953232113CountUpgradeInterferenceWaveExtraChargeCompleteOnly0">
+        <OperandArray value="GTE1041357462CountUpgradeInfiltratorLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeInterferenceWaveExtraChargeCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE1041357462CountUpgradeInfiltratorLevel2CompleteOnly1Eq2953232113CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly0">
+        <OperandArray value="GTE1041357462CountUpgradeInfiltratorLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly0"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndGTE1043825441CountBehaviorGunnerModeCompleteOnlyAtUnit1GTE1452881790CountUpgradeGunnerModeLevel2CompleteOnly1">
         <OperandArray value="GTE1043825441CountBehaviorGunnerModeCompleteOnlyAtUnit1"/>
         <OperandArray value="GTE1452881790CountUpgradeGunnerModeLevel2CompleteOnly1"/>
@@ -866,6 +874,14 @@
     <CRequirementAnd id="AndGTE1589223000CountUpgradeFireShieldUpgradeCompleteOnly1Eq2953232113CountUpgradeFireShieldRetributionCompleteOnly0">
         <OperandArray value="GTE1589223000CountUpgradeFireShieldUpgradeCompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeFireShieldRetributionCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE1590094819CountUpgradeCryoEquipmentLevel1CompleteOnly1Eq2953232113CountUpgradeCryoGrenadeExtraChargeCompleteOnly0">
+        <OperandArray value="GTE1590094819CountUpgradeCryoEquipmentLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeCryoGrenadeExtraChargeCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE1590094819CountUpgradeCryoEquipmentLevel1CompleteOnly1Eq2953232113CountUpgradeCryoGrenadePermafrostCompleteOnly0">
+        <OperandArray value="GTE1590094819CountUpgradeCryoEquipmentLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeCryoGrenadePermafrostCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE1683790468CountUpgradeTactics1CompleteOnly1LTE2761382800SumCountUpgradeTacticsAdvancedTacticsCompleteOnlyCountUpgradeTacticsBarbaricCompleteOnlyCountUpgradeTacticsSkill#3CompleteOnly1">
         <OperandArray value="GTE1683790468CountUpgradeTactics1CompleteOnly1"/>
@@ -950,6 +966,14 @@
     <CRequirementAnd id="AndGTE1965297964CountUpgradeHeartbeatSensorAbilityCompleteOnly1Eq2953232113CountUpgradeHeartbeatSensorISRCompleteOnly0">
         <OperandArray value="GTE1965297964CountUpgradeHeartbeatSensorAbilityCompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeHeartbeatSensorISRCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE2088695321CountUpgradeCombatEnhancementsLevel2CompleteOnly1Eq2953232113CountUpgradeCryoRoundsEfficiencyCompleteOnly0">
+        <OperandArray value="GTE2088695321CountUpgradeCombatEnhancementsLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeCryoRoundsEfficiencyCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE2088695321CountUpgradeCombatEnhancementsLevel2CompleteOnly1Eq2953232113CountUpgradeCryoRoundsLightCounterCompleteOnly0">
+        <OperandArray value="GTE2088695321CountUpgradeCombatEnhancementsLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeCryoRoundsLightCounterCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE2091091033CountUpgradeGroundFlareAbilityCavCompleteOnly1Eq2953232113CountUpgradeGroundFlareMGLDeliveryCompleteOnly0">
         <OperandArray value="GTE2091091033CountUpgradeGroundFlareAbilityCavCompleteOnly1"/>
@@ -1099,6 +1123,14 @@
         <OperandArray value="GTE283402831CountUpgradeSoldierSkillsBonus4CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeSoldierSkillsOcularImplantsCompleteOnly0"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AndGTE2866123660CountUpgradeCryoEquipmentLevel2CompleteOnly1Eq2953232113CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly0">
+        <OperandArray value="GTE2866123660CountUpgradeCryoEquipmentLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE2866123660CountUpgradeCryoEquipmentLevel2CompleteOnly1Eq2953232113CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly0">
+        <OperandArray value="GTE2866123660CountUpgradeCryoEquipmentLevel2CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly0"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndGTE2929671136CountBehaviorHeroLevelsDFMCompleteOnlyAtUnit5Eq643600613CountBehaviorReloadTimeCompleteOnlyAtUnit0">
         <OperandArray value="GTE2929671136CountBehaviorHeroLevelsDFMCompleteOnlyAtUnit5"/>
         <OperandArray value="Eq643600613CountBehaviorReloadTimeCompleteOnlyAtUnit0"/>
@@ -1152,12 +1184,10 @@
         <OperandArray value="Eq2953232113CountUpgradeHeatSensorPotencyCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="GTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeLaserDesignatorLongevityCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="GTE3285440711CountUpgradeInfiltratorLevel3CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeLaserDesignatorWeakPointTargetingCompleteOnly0"/>
     </CRequirementAnd>
@@ -1168,6 +1198,14 @@
     <CRequirementAnd id="AndGTE3450494117CountUpgradeMonomolecularWire1CompleteOnly1Eq2953232113CountUpgradeMonomolecularWireVolatilityCompleteOnly0">
         <OperandArray value="GTE3450494117CountUpgradeMonomolecularWire1CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeMonomolecularWireVolatilityCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3470446789CountUpgradeCombatEnhancementsLevel1CompleteOnly1Eq2953232113CountUpgradeDisruptorRoundsEfficiencyCompleteOnly0">
+        <OperandArray value="GTE3470446789CountUpgradeCombatEnhancementsLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeDisruptorRoundsEfficiencyCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3470446789CountUpgradeCombatEnhancementsLevel1CompleteOnly1Eq2953232113CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly0">
+        <OperandArray value="GTE3470446789CountUpgradeCombatEnhancementsLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE3472956365CountUpgradeGroundFlareAbilityCompleteOnly1Eq2953232113CountUpgradeGroundFlareMGLDeliveryCompleteOnly0">
         <OperandArray value="GTE3472956365CountUpgradeGroundFlareAbilityCompleteOnly1"/>
@@ -1180,6 +1218,14 @@
     <CRequirementAnd id="AndGTE3481158510CountBehaviorFMJRoundsCompleteOnlyAtUnit1GTE2500264136CountAbilPreciseAimCompleteOnlyAtUnit1">
         <OperandArray value="GTE3481158510CountBehaviorFMJRoundsCompleteOnlyAtUnit1"/>
         <OperandArray value="GTE2500264136CountAbilPreciseAimCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3497904259CountUpgradeInfiltratorLevel1CompleteOnly1Eq2953232113CountUpgradeBinocularsPotencyCompleteOnly0">
+        <OperandArray value="GTE3497904259CountUpgradeInfiltratorLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeBinocularsPotencyCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE3497904259CountUpgradeInfiltratorLevel1CompleteOnly1Eq2953232113CountUpgradeBinocularsTargetPaintingCompleteOnly0">
+        <OperandArray value="GTE3497904259CountUpgradeInfiltratorLevel1CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeBinocularsTargetPaintingCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE3499355508CountAbilSpecterSkillsCompleteOnlyAtUnit1GTE529531359CountAbilMarksmanshipCompleteOnlyAtUnit1GT2572712883CountBehaviorHeroLevelsCompleteOnlyAtUnitSum2CountAbilAssassinSkillsCompleteOnlyAtUnitCountAbilAssassinSkillsCompleteOnlyAtUnit">
         <OperandArray value="GTE3499355508CountAbilSpecterSkillsCompleteOnlyAtUnit1"/>
@@ -1285,6 +1331,22 @@
     <CRequirementAnd id="AndGTE4088065033CountUpgradeIncendiaryRounds1CompleteOnly1Eq2953232113CountUpgradeIncendiaryRoundsInfernalImpactCompleteOnly0">
         <OperandArray value="GTE4088065033CountUpgradeIncendiaryRounds1CompleteOnly1"/>
         <OperandArray value="Eq2953232113CountUpgradeIncendiaryRoundsInfernalImpactCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1Eq2953232113CountUpgradeGapGeneratorBlindingCompleteOnly0">
+        <OperandArray value="GTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeGapGeneratorBlindingCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1Eq2953232113CountUpgradeGapGeneratorDiscombobulateCompleteOnly0">
+        <OperandArray value="GTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeGapGeneratorDiscombobulateCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1Eq2953232113CountUpgradeIRSensorEarlyDetectionCompleteOnly0">
+        <OperandArray value="GTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeIRSensorEarlyDetectionCompleteOnly0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1Eq2953232113CountUpgradeIRSensorIntelligenceShareCompleteOnly0">
+        <OperandArray value="GTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1"/>
+        <OperandArray value="Eq2953232113CountUpgradeIRSensorIntelligenceShareCompleteOnly0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndGTE4244983899CountUpgradeMortarStrikeLevel2CompleteOnly1Eq2953232113CountUpgradeMortarStrikeConcussiveImpactCompleteOnly0">
         <OperandArray value="GTE4244983899CountUpgradeMortarStrikeLevel2CompleteOnly1"/>
@@ -1500,24 +1562,10 @@
         <Tooltip value=""/>
         <Count Link="CyborgStrength" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
-    <CRequirementCountAbil id="CountAbilDefensiveTacticsCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="DefensiveTactics" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountAbil>
     <CRequirementCountAbil id="CountAbilImprovedExoArmorCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
         <Count Link="ImprovedExoArmor" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountAbil>
-    <CRequirementCountAbil id="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat">
-        <Tooltip value=""/>
-        <Count Link="LaserBurn" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountAbil>
-    <CRequirementCountAbil id="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="LaserEnforcerSkills" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
     <CRequirementCountAbil id="CountAbilMarksmanshipCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
@@ -1587,11 +1635,6 @@
     <CRequirementCountBehavior id="CountBehaviorBornToLeadCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="BornToLead" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorCivilianLevelsCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="CivilianLevels" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorEMPShellsCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
@@ -1678,9 +1721,6 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="SoldierSkills4" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorSteelSaberCompleteOnlyAtUnitTechTreeCheat">
-        <Count Link="SteelSaber" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorStrengthModeCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="StrengthMode" State="CompleteOnlyAtUnit"/>
@@ -1761,10 +1801,6 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="RepairDrone" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
-    <CRequirementCountUnit id="CountUnitWraithLordTotal">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="WraithLord" State="Total"/>
-    </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgrade1LifeModifierCompleteOnly1508851257">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="1LifeModifier" State="CompleteOnly"/>
@@ -1820,11 +1856,6 @@
     <CRequirementCountUpgrade id="CountUpgradeAdvancedMedicalTrainingCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedMedicalTraining" State="CompleteOnly"/>
-    </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeAkmaCompleteOnly">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="Akma" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAnabolicPerformanceEnhancementDexterityCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -2115,6 +2146,22 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CryoEquipmentLevel4" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCryoGrenadeExtraChargeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CryoGrenadeExtraCharge" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCryoGrenadePermafrostCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CryoGrenadePermafrost" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCryoRoundsEfficiencyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CryoRoundsEfficiency" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCryoRoundsLightCounterCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CryoRoundsLightCounter" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCustomCommandCardCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CustomCommandCardOnMP" State="CompleteOnly"/>
@@ -2139,6 +2186,14 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="DetonateClaymorePotency" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DetonateCryoMineEmbrittlement" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DetonateCryoMineSnapFreeze" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeDetonateWildfireMineBlazeCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="DetonateWildfireMineBlaze" State="CompleteOnly"/>
@@ -2150,6 +2205,14 @@
     <CRequirementCountUpgrade id="CountUpgradeDisableInfestationLevelCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="DisableInfestationLevel" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDisruptorRoundsEfficiencyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DisruptorRoundsEfficiency" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DisruptorRoundsHeavyCounter" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEmergencyProtocolsCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -2315,6 +2378,14 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="FullAutoUpgrade2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGapGeneratorBlindingCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GapGeneratorBlinding" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGapGeneratorDiscombobulateCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GapGeneratorDiscombobulate" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGrappleHookEfficiencyCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="GrappleHookEfficiency" State="CompleteOnly"/>
@@ -2447,6 +2518,14 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="HunterModeTheHunt" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIRSensorEarlyDetectionCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IRSensorEarlyDetection" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIRSensorIntelligenceShareCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IRSensorIntelligenceShare" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeImmunizationAbilityCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ImmunizationAbility" State="CompleteOnly"/>
@@ -2511,10 +2590,13 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="InstructorResilient" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeJashanCompleteOnly">
+    <CRequirementCountUpgrade id="CountUpgradeInterferenceWaveExtraChargeCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="Jashan" State="CompleteOnly"/>
+        <Count Link="InterferenceWaveExtraCharge" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="InterferenceWaveWaveAmplification" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeJavelinMissile1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -3228,11 +3310,6 @@
     <CRequirementCountUpgrade id="CountUpgradeWO4CompleteOnlyTechTreeCheat">
         <Count Link="WO4" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeWaveAmplifierCompleteOnly">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value=""/>
-        <Count Link="WaveAmplifier" State="CompleteOnly"/>
-    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeWildfireGrenadeAbilityCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="WildfireGrenadeAbility" State="CompleteOnly"/>
@@ -3441,10 +3518,6 @@
         <OperandArray index="0" value="CountUpgradeGunnerModeLevel1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
-    <CRequirementEq id="Eq2821025729CountAbilSoldierSkillsCompleteOnlyAtUnit4">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementEq>
     <CRequirementEq id="Eq2821025729CountBehaviorSoldierSkills4CompleteOnlyAtUnit1">
         <OperandArray index="0" value="CountBehaviorSoldierSkills4CompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
@@ -3589,12 +3662,44 @@
         <OperandArray index="0" value="CountUpgradeConstructSentryGunSafeDeploymentCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeCryoGrenadeExtraChargeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoGrenadeExtraChargeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeCryoGrenadePermafrostCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoGrenadePermafrostCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeCryoRoundsEfficiencyCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoRoundsEfficiencyCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeCryoRoundsLightCounterCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoRoundsLightCounterCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeDetonateClaymorePotencyCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeDetonateClaymorePotencyCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeDetonateWildfireMineBlazeCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeDetonateWildfireMineBlazeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeDisruptorRoundsEfficiencyCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDisruptorRoundsEfficiencyCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeFireShieldResistanceCompleteOnly0">
@@ -3657,6 +3762,14 @@
         <OperandArray index="0" value="CountUpgradeFullAutoSteelBarrelCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeGapGeneratorBlindingCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeGapGeneratorBlindingCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeGapGeneratorDiscombobulateCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeGapGeneratorDiscombobulateCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeGrappleHookEfficiencyCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeGrappleHookEfficiencyCompleteOnly"/>
         <OperandArray index="1" value="0"/>
@@ -3713,6 +3826,14 @@
         <OperandArray index="0" value="CountUpgradeHunterModeTheHuntCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeIRSensorEarlyDetectionCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeIRSensorEarlyDetectionCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeIRSensorIntelligenceShareCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeIRSensorIntelligenceShareCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeImmunizationLongevityCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeImmunizationLongevityCompleteOnly"/>
         <OperandArray index="1" value="0"/>
@@ -3735,6 +3856,14 @@
     </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeInstructorResilientCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeInstructorResilientCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeInterferenceWaveExtraChargeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeInterferenceWaveExtraChargeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2953232113CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="Eq2953232113CountUpgradeJavelinMissileClusterBombsCompleteOnly0">
@@ -4097,17 +4226,9 @@
         <OperandArray index="0" value="CountUpgradeSmokeAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
-    <CRequirementEq id="Eq3824807800CountAbilSoldierSkillsCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementEq>
     <CRequirementEq id="Eq3855754601CountUpgradeOilDouse1CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeOilDouse1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
-    </CRequirementEq>
-    <CRequirementEq id="Eq389129910CountAbilSoldierSkillsCompleteOnlyAtUnit3">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
     </CRequirementEq>
     <CRequirementEq id="Eq3962676541CountUpgradeAVAbilityCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeAVAbilityCompleteOnly"/>
@@ -4173,10 +4294,6 @@
         <OperandArray index="0" value="CountUpgradeCASAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
-    <CRequirementEq id="Eq605371476CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat1">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementEq>
     <CRequirementEq id="Eq628613389CountUpgradeBTAbilityCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeBTAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -4208,31 +4325,6 @@
     <CRequirementEq id="Eq901695961CountUpgradeExpertLeaderINSCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeExpertLeaderINSCompleteOnly"/>
         <OperandArray index="1" value="1"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat1">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat2">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat3">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat5">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="5"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorEMPShellsCompleteOnlyAtUnit0">
         <Tooltip value=""/>
@@ -4268,14 +4360,6 @@
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorLightFilterForGhostCompleteOnlyAtUnit1">
         <OperandArray index="0" value="CountBehaviorLightFilterForGhostCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountBehaviorSteelSaberCompleteOnlyAtUnitTechTreeCheat0">
-        <OperandArray index="0" value="CountBehaviorSteelSaberCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="0"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountBehaviorSteelSaberCompleteOnlyAtUnitTechTreeCheat1">
-        <OperandArray index="0" value="CountBehaviorSteelSaberCompleteOnlyAtUnitTechTreeCheat"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorProne2CompleteOnlyAtUnit0">
@@ -4805,6 +4889,22 @@
         <OperandArray index="0" value="CountUpgradeCryoEquipmentLevel4CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeCryoGrenadeExtraChargeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoGrenadeExtraChargeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeCryoGrenadePermafrostCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoGrenadePermafrostCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeCryoRoundsEfficiencyCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoRoundsEfficiencyCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeCryoRoundsLightCounterCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeCryoRoundsLightCounterCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeCustomCommandCardCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeCustomCommandCardCompleteOnly"/>
         <OperandArray index="1" value="0"/>
@@ -4845,12 +4945,28 @@
         <OperandArray index="0" value="CountUpgradeDetonateClaymorePotencyCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDetonateCryoMineEmbrittlementCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDetonateCryoMineEmbrittlementCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDetonateCryoMineSnapFreezeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDetonateCryoMineSnapFreezeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeDetonateWildfireMineBlazeCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeDetonateWildfireMineBlazeCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeDisableInfestationLevelCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeDisableInfestationLevelCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDisruptorRoundsEfficiencyCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDisruptorRoundsEfficiencyCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDisruptorRoundsHeavyCounterCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeDisruptorRoundsHeavyCounterCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeEmergencyProtocolsCompleteOnly0">
@@ -5109,6 +5225,14 @@
         <OperandArray index="0" value="CountUpgradeFullAutoUpgrade2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeGapGeneratorBlindingCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeGapGeneratorBlindingCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeGapGeneratorDiscombobulateCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeGapGeneratorDiscombobulateCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeGrappleHookEfficiencyCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeGrappleHookEfficiencyCompleteOnly"/>
         <OperandArray index="1" value="0"/>
@@ -5309,6 +5433,14 @@
         <OperandArray index="0" value="CountUpgradeHunterModeTheHuntCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIRSensorEarlyDetectionCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeIRSensorEarlyDetectionCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIRSensorIntelligenceShareCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeIRSensorIntelligenceShareCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeImmunizationAbilityCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeImmunizationAbilityCompleteOnly"/>
         <OperandArray index="1" value="0"/>
@@ -5415,6 +5547,14 @@
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeInstructorResilientCompleteOnly0">
         <OperandArray index="0" value="CountUpgradeInstructorResilientCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInterferenceWaveExtraChargeCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeInterferenceWaveExtraChargeCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeInterferenceWaveWaveAmplificationCompleteOnly0">
+        <OperandArray index="0" value="CountUpgradeInterferenceWaveWaveAmplificationCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeJavelinMissile1CompleteOnly0">
@@ -6629,11 +6769,10 @@
         <OperandArray index="0" value="4"/>
         <OperandArray index="1" value="SumCountUnitMK17SentryGunQueuedOrBetterCountUnitMK18SentryGunQueuedOrBetterCountUnitMK19SentryGunQueuedOrBetterCountUnitAttackDroneQueuedOrBetterCountUnitDisruptorDroneQueuedOrBetterCountUnitRepairDroneQueuedOrBetter"/>
     </CRequirementGT>
-    <CRequirementGT id="GTCountBehaviorHeroLevelsCompleteOnlyAtUnitSumCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheatCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorHeroLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="SumCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheatCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-    </CRequirementGT>
+    <CRequirementGTE id="GTE1041357462CountUpgradeInfiltratorLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeInfiltratorLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
     <CRequirementGTE id="GTE1043825441CountBehaviorGunnerModeCompleteOnlyAtUnit1">
         <OperandArray index="0" value="CountBehaviorGunnerModeCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
@@ -6678,14 +6817,6 @@
         <OperandArray index="0" value="CountUpgradeStrengthModeLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE1310037230CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit3">
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTE1346337836CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit4">
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE1347271296CountAbilPrototypeWeaponryCompleteOnlyAtUnit2">
         <OperandArray index="0" value="CountAbilPrototypeWeaponryCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="2"/>
@@ -6702,10 +6833,6 @@
         <OperandArray index="0" value="CountUpgradeGunnerModeLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE1518786538CountAbilDefensiveTacticsCompleteOnlyAtUnit3">
-        <OperandArray index="0" value="CountAbilDefensiveTacticsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE154864059CountAbilSurvivalExpertCompleteOnlyAtUnit3">
         <OperandArray index="0" value="CountAbilSurvivalExpertCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="3"/>
@@ -6720,6 +6847,10 @@
     </CRequirementGTE>
     <CRequirementGTE id="GTE1589223000CountUpgradeFireShieldUpgradeCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeFireShieldUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTE1590094819CountUpgradeCryoEquipmentLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeCryoEquipmentLevel1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE1639004225CountAbilStrafeRunCompleteOnlyAtUnit1">
@@ -6814,6 +6945,10 @@
         <OperandArray index="0" value="CountAbilSurvivalExpertCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
+    <CRequirementGTE id="GTE2088695321CountUpgradeCombatEnhancementsLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeCombatEnhancementsLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
     <CRequirementGTE id="GTE2091091033CountUpgradeGroundFlareAbilityCavCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeGroundFlareAbilityCavCompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -6906,10 +7041,6 @@
         <OperandArray index="0" value="CountUpgradeWildfireGrenadeAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE2529122560CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat1">
-        <OperandArray index="0" value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE2542303410CountUpgradeBinocularsAbilityCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeBinocularsAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -6954,10 +7085,6 @@
         <OperandArray index="0" value="CountUpgradeTacticsSkill4CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE2821025729CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat4">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE283402831CountUpgradeSoldierSkillsBonus4CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeSoldierSkillsBonus4CompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -6965,6 +7092,10 @@
     <CRequirementGTE id="GTE2839160640CountAbilGhostSkillsCompleteOnlyAtUnitTechTreeCheat4">
         <OperandArray index="0" value="CountAbilGhostSkillsCompleteOnlyAtUnitTechTreeCheat"/>
         <OperandArray index="1" value="4"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTE2866123660CountUpgradeCryoEquipmentLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeCryoEquipmentLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE2929671136CountBehaviorHeroLevelsDFMCompleteOnlyAtUnit3">
         <OperandArray index="0" value="CountBehaviorHeroLevelsDFMCompleteOnlyAtUnit"/>
@@ -7098,12 +7229,20 @@
         <OperandArray index="0" value="CountUpgradeMonomolecularWire1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
+    <CRequirementGTE id="GTE3470446789CountUpgradeCombatEnhancementsLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeCombatEnhancementsLevel1CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
     <CRequirementGTE id="GTE3472956365CountUpgradeGroundFlareAbilityCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeGroundFlareAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE3481158510CountBehaviorFMJRoundsCompleteOnlyAtUnit1">
         <OperandArray index="0" value="CountBehaviorFMJRoundsCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTE3497904259CountUpgradeInfiltratorLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeInfiltratorLevel1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE3499355508CountAbilSpecterSkillsCompleteOnlyAtUnit1">
@@ -7140,18 +7279,6 @@
     </CRequirementGTE>
     <CRequirementGTE id="GTE3735114341CountAbilReconExpertCompleteOnlyAtUnit2">
         <OperandArray index="0" value="CountAbilReconExpertCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTE3824045224CountAbilDefensiveTacticsCompleteOnlyAtUnit1">
-        <OperandArray index="0" value="CountAbilDefensiveTacticsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTE3824807800CountAbilSoldierSkillsCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTE3824807800CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat2">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
         <OperandArray index="1" value="2"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE3855754601CountUpgradeOilDouse1CompleteOnly1">
@@ -7202,9 +7329,9 @@
         <OperandArray index="0" value="CountUpgradeIncendiaryRounds1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE4224772692CountAbilDefensiveTacticsCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="CountAbilDefensiveTacticsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
+    <CRequirementGTE id="GTE4110666772CountUpgradeInfiltratorLevel4CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeInfiltratorLevel4CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE4244983899CountUpgradeMortarStrikeLevel2CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeMortarStrikeLevel2CompleteOnly"/>
@@ -7242,10 +7369,6 @@
         <OperandArray index="0" value="CountBehaviorSuccessiveStrikeCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE605371476CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat1">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE607691878CountUpgradeArchitectLevel1CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeArchitectLevel1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -7274,10 +7397,6 @@
         <OperandArray index="0" value="CountUpgradeLaserDesignatorAbilityCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTE797818881CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit1">
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE841383899CountUpgradeHunterModeLevel4CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeHunterModeLevel4CompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -7301,10 +7420,6 @@
     <CRequirementGTE id="GTE910264704CountAbilSpecterSkillsCompleteOnlyAtUnit4">
         <OperandArray index="0" value="CountAbilSpecterSkillsCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTE948863562CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTE95265701CountUpgradeGunnerModeLevel4CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeGunnerModeLevel4CompleteOnly"/>
@@ -7402,16 +7517,6 @@
         <OperandArray index="0" value="CountAbilImprovedExoArmorCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTECountAbilLaserEnforcerSkillsCompleteOnlyAtUnit3">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountAbilLaserEnforcerSkillsCompleteOnlyAtUnit4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTECountAbilSoldierSkillsCompleteOnlyAtUnit3">
         <Tooltip value=""/>
         <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
@@ -7441,56 +7546,6 @@
         <OperandArray index="0" value="CountBehaviorBornToLeadCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit10">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="10"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit1">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit2">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit3">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit5">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="5"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit7">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="7"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit6">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="6"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit8">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="8"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountBehaviorCivilianLevelsCompleteOnlyAtUnit9">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountBehaviorCivilianLevelsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="9"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTECountBehaviorGunnerModeCompleteOnlyAtUnit1">
         <OperandArray index="0" value="CountBehaviorGunnerModeCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
@@ -7511,26 +7566,12 @@
         <OperandArray index="0" value="CountBehaviorSuccessiveStrikeCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTECountUnitWraithLordTotal1">
-        <OperandArray index="0" value="CountUnitWraithLordTotal"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountUpgradeAkmaCompleteOnly1">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountUpgradeAkmaCompleteOnly"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTECountUpgradeDMRMarksmanship1CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeDMRMarksmanship1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTECountUpgradeDevOnlyCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeDevOnlyCompleteOnly"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
-    <CRequirementGTE id="GTECountUpgradeJashanCompleteOnly1">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountUpgradeJashanCompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
     <CRequirementGTE id="GTECountUpgradeLeadership1CompleteOnly1">
@@ -7581,34 +7622,9 @@
         <OperandArray index="0" value="CountUpgradeUnstoppableT1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-    <CRequirementGTE id="GTECountUpgradeWaveAmplifierCompleteOnly1">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountUpgradeWaveAmplifierCompleteOnly"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementGTE>
     <CRequirementLT id="LT1854502845CountUpgradeBandolierCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeBandolierCompleteOnly"/>
         <OperandArray index="1" value="1"/>
-    </CRequirementLT>
-    <CRequirementLT id="LTCountAbilLaserEnforcerSkillsCompleteOnlyAtUnit3">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementLT>
-    <CRequirementLT id="LTCountAbilLaserEnforcerSkillsCompleteOnlyAtUnit4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilLaserEnforcerSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementLT>
-    <CRequirementLT id="LTCountAbilSoldierSkillsCompleteOnlyAtUnit4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementLT>
-    <CRequirementLT id="LTCountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat4">
-        <Tooltip value=""/>
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="4"/>
     </CRequirementLT>
     <CRequirementLT id="LTCountAbilSurvivalExpertCompleteOnlyAtUnit4">
         <Tooltip value=""/>
@@ -7823,18 +7839,12 @@
     <CRequirementCountAbil id="CountAbilMarksmanshipCompleteOnlyAtUnitTechTreeCheat">
         <Count Link="MarksmanshipRifle" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
-    <CRequirementCountAbil id="CountAbilPlasmaGrenadeCompleteOnlyAtUnit">
-        <Count Link="PlasmaBurn" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountAbil>
     <CRequirementCountAbil id="CountAbilRiflemanSkillsCompleteOnlyAtUnitTechTreeCheat">
         <Count Link="RiflemanSkills" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
     <CRequirementCountAbil id="CountAbilSoldierSkillsCompleteOnlyAtUnit">
         <Count Link="SoldierSkills" State="CompleteOnlyAtUnit"/>
         <Flags index="TechTreeCheat" value="0"/>
-    </CRequirementCountAbil>
-    <CRequirementCountAbil id="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat">
-        <Count Link="SoldierSkills" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
     <CRequirementCountBehavior id="CountBehaviorDecloaking1CompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
@@ -8047,18 +8057,6 @@
         <OperandArray index="0" value="CountAbilMarksmanshipCompleteOnlyAtUnitTechTreeCheat"/>
         <OperandArray index="1" value="4"/>
     </CRequirementEq>
-    <CRequirementEq id="EqCountAbilSoldierSkillsCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="2"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilSoldierSkillsCompleteOnlyAtUnit3">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountAbilSoldierSkillsCompleteOnlyAtUnit4">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="4"/>
-    </CRequirementEq>
     <CRequirementEq id="EqCountBehaviorDecloaking1CompleteOnlyAtUnit0">
         <Tooltip value=""/>
         <OperandArray index="0" value="CountBehaviorDecloaking1CompleteOnlyAtUnit"/>
@@ -8092,10 +8090,6 @@
         <OperandArray index="0" value="CountUpgradeRifleModeCompleteOnly"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
-    <CRequirementGTE id="GTE1791906363CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat3">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="3"/>
-    </CRequirementGTE>
     <CRequirementGTE id="GTE1805456185CountUpgradeCASOnStationCompleteOnly1">
         <OperandArray index="0" value="CountUpgradeCASOnStationCompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -8113,10 +8107,6 @@
         <OperandArray index="0" value="CountUnitSatchelChargeCEQueuedOrBetter"/>
         <OperandArray index="1" value="1"/>
     </CRequirementLT>
-    <CRequirementLTE id="LTECountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat1">
-        <OperandArray index="0" value="CountAbilSoldierSkillsCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray index="1" value="1"/>
-    </CRequirementLTE>
     <CRequirementOr id="OrEq3888807122CountUpgradeWO3CompleteOnlyTechTreeCheat1">
         <Tooltip value=""/>
         <OperandArray value="Eq3888807122CountUpgradeWO3CompleteOnlyTechTreeCheat1"/>
@@ -8177,11 +8167,6 @@
         <OperandArray value="2"/>
         <OperandArray value="CountUpgradeRapidFireUpgrade1CompleteOnly"/>
         <OperandArray value="CountUpgradeRapidFireUpgrade1CompleteOnly"/>
-    </CRequirementSum>
-    <CRequirementSum id="SumCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheatCountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat">
-        <Tooltip value=""/>
-        <OperandArray value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
-        <OperandArray value="CountAbilLaserBurnCompleteOnlyAtUnitTechTreeCheat"/>
     </CRequirementSum>
     <CRequirementSum id="SumCountUnitLNRiflemanQueuedOrBetterCountUnitLNAutomaticRiflemanQueuedOrBetterCountUnitLNMarksmanQueuedOrBetterCountUnitLNShotgunnerQueuedOrBetterCountUnitLNJavelinGunnerQueuedOrBetterCountUnitLNRangerQueuedOrBetter">
         <OperandArray value="CountUnitLNRiflemanQueuedOrBetter"/>

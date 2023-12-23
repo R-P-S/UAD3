@@ -23,6 +23,7 @@ void InitLibs () {
 //--------------------------------------------------------------------------------------------------
 // Constants
 //--------------------------------------------------------------------------------------------------
+const bool gv_dEBUG_GAME = true;
 const int gv_mOSMax = 12;
 const fixed gv_infestationTickRate = 40.0;
 
@@ -502,6 +503,8 @@ string ge_UndeadUnitFilter_Ident (int lp_val);
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+int gv_dEBUG_MODE;
+int gv_dEBUG_MOS;
 gs_Campaign gv_campaign;
 gs_Prologue gv_prologue;
 region gv_mission03ReservistRegions;
@@ -556,6 +559,8 @@ void InitGlobals () {
     int init_i1;
     int init_j1;
 
+    gv_dEBUG_MODE = UserDataGetInt("GameModes", "Sandbox", "Mode #", 1);
+    gv_dEBUG_MOS = UserDataGetInt("MOSSetup", "MOS - Ghost", "ID Index", 1);
     gv_campaign.lv_prologuepVote = c_invalidDialogControlId;
     gv_campaign.lv_prologuevTimer = c_invalidDialogControlId;
     gv_campaign.lv_prologueyButton = c_invalidDialogControlId;
@@ -834,6 +839,7 @@ int gf_InitSiloTimers (int lp_siloNumber);
 void gf_CampaignScriptedSpawns (int lp_missionEvent);
 void gf_MissionMenuInit ();
 int gf_CampaignVictoryMultiplier (int lp_earnedXP);
+void gf_ChapterTransition (int lp_chapter, bool lp_option);
 void gf_PolicePostInit ();
 void gf_SurvivalTimer ();
 void gf_StartMissionSurvivalVariant (trigger t, string lp_event);
@@ -1074,6 +1080,7 @@ trigger gt_FinaleEnd;
 trigger gt_PrologueVoteInit;
 trigger gt_PrologueVotes;
 trigger gt_PrologueVoteEnd;
+trigger gt_CampaignDebugCommands;
 trigger gt_CampaignMissionSelector;
 trigger gt_CampaignMissionStart;
 trigger gt_CampaignSingleMissionChecked;
@@ -1156,6 +1163,9 @@ trigger gt_CampaignRASpawnLoop;
 trigger gt_UndeadAIThink;
 trigger gt_ScaleDifficulty;
 trigger gt_ForceRemoveUndeadUnits;
+trigger gt_DevCommands;
+trigger gt_Whatami;
+trigger gt_DiceRoll;
 
 //--------------------------------------------------------------------------------------------------
 // Global Presets
@@ -2213,8 +2223,8 @@ void gf_Chapter3Items () {
     int auto9FD7AB42_val;
     int auto094B0845_val;
     int auto2862CA90_val;
-    int auto1518494D_val;
-    int autoAC4EB920_val;
+    int auto91B8D070_val;
+    int auto2770C048_val;
 
     // Variable Initialization
 
@@ -2280,8 +2290,8 @@ void gf_Chapter3Items () {
             lib90F7C81D_gf_AirDropItemToRegionNEW("M9Flamethrower", RegionFromId(266), 1, 1, 1, 1);
         }
         else if (((UnitGetType(auto5E490BC6_var) == "GhostMOS"))) {
-            auto1518494D_val = RandomInt(0, 2);
-            if (auto1518494D_val == 1) {
+            auto91B8D070_val = RandomInt(0, 2);
+            if (auto91B8D070_val == 1) {
                 lib90F7C81D_gf_AirDropItemToRegionNEW("XR42", RegionFromId(266), 1, 1, 1, 1);
             }
             else {
@@ -2289,8 +2299,8 @@ void gf_Chapter3Items () {
             }
         }
         else if (((UnitGetType(auto5E490BC6_var) == "Cyborg"))) {
-            autoAC4EB920_val = RandomInt(0, 2);
-            if (autoAC4EB920_val == 1) {
+            auto2770C048_val = RandomInt(0, 2);
+            if (auto2770C048_val == 1) {
                 lib90F7C81D_gf_AirDropItemToRegionNEW("DeathMachine", RegionFromId(266), 1, 1, 1, 1);
             }
             else {
@@ -3236,6 +3246,49 @@ int gf_CampaignVictoryMultiplier (int lp_earnedXP) {
     return FixedToInt(lv_result);
 }
 
+void gf_ChapterTransition (int lp_chapter, bool lp_option) {
+    // Automatic Variable Declarations
+    playergroup auto67C20AB8_g;
+    int auto67C20AB8_var;
+    playergroup autoF730BD09_g;
+    int autoF730BD09_var;
+
+    // Implementation
+    if ((lp_option == true)) {
+        UnitPauseAll(true);
+        auto67C20AB8_g = lib90F7C81D_gv_players;
+        auto67C20AB8_var = -1;
+        while (true) {
+            auto67C20AB8_var = PlayerGroupNextPlayer(auto67C20AB8_g, auto67C20AB8_var);
+            if (auto67C20AB8_var < 0) { break; }
+            DialogControlSetAnimationState(lib90F7C81D_gv_commandCard.lv_selfCastFrame[auto67C20AB8_var], PlayerGroupSingle(auto67C20AB8_var), "State", "Off");
+        }
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_backgroundMain, PlayerGroupAll(), "DisplayBlackMask");
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_backgroundMain, PlayerGroupAll(), "TransitionOn");
+        Wait(2.0, c_timeGame);
+        if ((lp_chapter == 2)) {
+            UIShowTextCrawl(PlayerGroupAll(), StringExternal("Param/Value/C81BBE46"), StringExternal("Param/Value/52F14859"), 0.0, SoundLink("UI_Nova_BriefingTextCallout_Open", -1), SoundLink("UI_TextPrintout", -1));
+        }
+        else if ((lp_chapter == 3)) {
+            UIShowTextCrawl(PlayerGroupAll(), StringExternal("Param/Value/6AB56E3E"), StringExternal("Param/Value/B67251A4"), 0.0, SoundLink("UI_Nova_BriefingTextCallout_Open", -1), SoundLink("UI_TextPrintout", -1));
+        }
+    }
+    else {
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_backgroundMain, PlayerGroupAll(), "TransitionOff");
+        UIHideTextCrawl(PlayerGroupAll());
+        Wait(3.5, c_timeReal);
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_backgroundMain, PlayerGroupAll(), "HideBlackMask");
+        UnitPauseAll(false);
+        autoF730BD09_g = lib90F7C81D_gv_players;
+        autoF730BD09_var = -1;
+        while (true) {
+            autoF730BD09_var = PlayerGroupNextPlayer(autoF730BD09_g, autoF730BD09_var);
+            if (autoF730BD09_var < 0) { break; }
+            DialogControlSetAnimationState(lib90F7C81D_gv_commandCard.lv_selfCastFrame[autoF730BD09_var], PlayerGroupSingle(autoF730BD09_var), "State", "On");
+        }
+    }
+}
+
 void gf_PolicePostInit () {
     // Variable Declarations
     int lv_i;
@@ -3391,6 +3444,7 @@ void gf_CreateConvoy () {
     Wait(RandomInt(70, 85), c_timeGame);
     ObjectiveCreate(StringExternal("Param/Value/5ACA00BF"), StringExternal("Param/Value/CA3BE481"), c_objectiveStateActive, false);
     gv_missionSurvivalVariant1.lv_bruiserBrothersObjective = ObjectiveLastCreated();
+    libNtve_gf_SetUpgradeLevelForPlayer(14, "BruiserBrothers", 1);
     TriggerEnable(gt_BruiserBrothers, true);
     TriggerEnable(gt_ConvoyUnstuck, true);
     lv_index = 0;
@@ -4590,15 +4644,15 @@ void gf_SendItemsBossRush () {
     int auto5103582A_i;
     int auto7D59185A_n;
     int auto7D59185A_i;
-    unitgroup auto6757B9DF_g;
-    int auto6757B9DF_u;
-    unit auto6757B9DF_var;
-    int autoBCF3FEE0_val;
-    int autoB1957EF4_val;
-    int auto8618430E_val;
-    int auto32B6BE80_val;
-    int auto0B42B0EC_val;
-    int auto9DAE940F_val;
+    unitgroup autoCE374E68_g;
+    int autoCE374E68_u;
+    unit autoCE374E68_var;
+    int autoC82071E8_val;
+    int auto11C0F205_val;
+    int auto0A3B707F_val;
+    int autoE088872B_val;
+    int auto6FA53CC5_val;
+    int auto8955DB00_val;
 
     // Variable Initialization
     lv_region = gf_GetRushRegion();
@@ -4640,71 +4694,71 @@ void gf_SendItemsBossRush () {
     lib90F7C81D_gf_AirDropItemToRegionNEW("MRL", lv_region, 25, 100, 1, 1);
     lib90F7C81D_gf_AirDropItemToRegionNEW("StingerMissileLauncher", lv_region, 33, 100, 1, 1);
     if ((gv_bossRush.lv_currentRound == 40)) {
-        auto6757B9DF_g = lib90F7C81D_gv_heroesGroup;
-        auto6757B9DF_u = UnitGroupCount(auto6757B9DF_g, c_unitCountAll);
-        for (;; auto6757B9DF_u -= 1) {
-            auto6757B9DF_var = UnitGroupUnitFromEnd(auto6757B9DF_g, auto6757B9DF_u);
-            if (auto6757B9DF_var == null) { break; }
-            if (((UnitGetType(auto6757B9DF_var) == "NewRifleman") || (UnitGetType(auto6757B9DF_var) == "CombatMedic") || (UnitGetType(auto6757B9DF_var) == "CavalryScout") || (UnitGetType(auto6757B9DF_var) == "PlatoonLeader") || (UnitGetType(auto6757B9DF_var) == "JavelinGunner"))) {
-                autoBCF3FEE0_val = RandomInt(0, 4);
-                if (autoBCF3FEE0_val == 1) {
+        autoCE374E68_g = lib90F7C81D_gv_heroesGroup;
+        autoCE374E68_u = UnitGroupCount(autoCE374E68_g, c_unitCountAll);
+        for (;; autoCE374E68_u -= 1) {
+            autoCE374E68_var = UnitGroupUnitFromEnd(autoCE374E68_g, autoCE374E68_u);
+            if (autoCE374E68_var == null) { break; }
+            if (((UnitGetType(autoCE374E68_var) == "NewRifleman") || (UnitGetType(autoCE374E68_var) == "CombatMedic") || (UnitGetType(autoCE374E68_var) == "CavalryScout") || (UnitGetType(autoCE374E68_var) == "PlatoonLeader") || (UnitGetType(autoCE374E68_var) == "JavelinGunner"))) {
+                autoC82071E8_val = RandomInt(0, 10);
+                if (autoC82071E8_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("HK42", lv_region, 1, 1, 1, 1);
                 }
-                else if (autoBCF3FEE0_val == 2) {
+                else if (autoC82071E8_val == 2) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("M5MAR", lv_region, 1, 1, 1, 1);
                 }
-                else if (autoBCF3FEE0_val == 3) {
+                else if (autoC82071E8_val == 3) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("USMCR", lv_region, 1, 1, 1, 1);
                 }
-                else if (autoBCF3FEE0_val == 4) {
+                else if (autoC82071E8_val == 4) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("SOFAR", lv_region, 1, 1, 1, 1);
                 }
                 else {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("StynerBR2", lv_region, 1, 1, 1, 1);
                 }
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "AutomaticRifleman"))) {
-                autoB1957EF4_val = RandomInt(0, 1);
-                if (autoB1957EF4_val == 1) {
+            else if (((UnitGetType(autoCE374E68_var) == "AutomaticRifleman"))) {
+                auto11C0F205_val = RandomInt(0, 2);
+                if (auto11C0F205_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("M41SAW", lv_region, 1, 1, 1, 1);
                 }
                 else {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("M241MMG", lv_region, 1, 1, 1, 1);
                 }
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "CombatEngineer") || (UnitGetType(auto6757B9DF_var) == "SFAAT"))) {
-                auto8618430E_val = RandomInt(0, 1);
-                if (auto8618430E_val == 1) {
+            else if (((UnitGetType(autoCE374E68_var) == "CombatEngineer") || (UnitGetType(autoCE374E68_var) == "SFAAT"))) {
+                auto0A3B707F_val = RandomInt(0, 2);
+                if (auto0A3B707F_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("M1014", lv_region, 1, 1, 1, 1);
                 }
                 else {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("W1200", lv_region, 1, 1, 1, 1);
                 }
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "SquadDesignatedMarksman"))) {
-                auto32B6BE80_val = RandomInt(0, 1);
-                if (auto32B6BE80_val == 1) {
+            else if (((UnitGetType(autoCE374E68_var) == "SquadDesignatedMarksman"))) {
+                autoE088872B_val = RandomInt(0, 2);
+                if (autoE088872B_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("M92Torrent", lv_region, 1, 1, 1, 1);
                 }
                 else {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("Mk14", lv_region, 1, 1, 1, 1);
                 }
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "Flamethrower"))) {
+            else if (((UnitGetType(autoCE374E68_var) == "Flamethrower"))) {
                 lib90F7C81D_gf_AirDropItemToRegionNEW("M9Flamethrower", lv_region, 1, 1, 1, 1);
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "GhostMOS"))) {
-                auto0B42B0EC_val = RandomInt(0, 1);
-                if (auto0B42B0EC_val == 1) {
+            else if (((UnitGetType(autoCE374E68_var) == "GhostMOS"))) {
+                auto6FA53CC5_val = RandomInt(0, 2);
+                if (auto6FA53CC5_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("XR42", lv_region, 1, 1, 1, 1);
                 }
                 else {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("IPR", lv_region, 1, 1, 1, 1);
                 }
             }
-            else if (((UnitGetType(auto6757B9DF_var) == "Cyborg"))) {
-                auto9DAE940F_val = RandomInt(0, 1);
-                if (auto9DAE940F_val == 1) {
+            else if (((UnitGetType(autoCE374E68_var) == "Cyborg"))) {
+                auto8955DB00_val = RandomInt(0, 2);
+                if (auto8955DB00_val == 1) {
                     lib90F7C81D_gf_AirDropItemToRegionNEW("DeathMachine", lv_region, 1, 1, 1, 1);
                 }
                 else {
@@ -8058,9 +8112,14 @@ bool gt_ModeController_Func (bool testConds, bool runActions) {
     TriggerEnable(lib90F7C81D_gt_GraphUpdate, true);
     libNtve_gf_StopTimer(lib90F7C81D_gv_missiontimer);
     lib90F7C81D_gf_GamesPlayedUpdate();
-    Wait(2.0, c_timeGame);
-    DialogControlSendAnimationEvent(lib90F7C81D_gv_sDFrame, PlayerGroupAll(), "Close");
-    Wait(3.0, c_timeGame);
+    if ((gv_dEBUG_GAME == true) && (GameIsTestMap(false) == true)) {
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_sDFrame, PlayerGroupAll(), "Close");
+    }
+    else {
+        Wait(2.0, c_timeGame);
+        DialogControlSendAnimationEvent(lib90F7C81D_gv_sDFrame, PlayerGroupAll(), "Close");
+        Wait(3.0, c_timeGame);
+    }
     lib90F7C81D_gf_MoveChatBar(lib90F7C81D_ge_ChatBarAnchor_Default);
     DialogControlSendAnimationEvent(gv_menu.lv_charScreen, PlayerGroupAll(), "HideCharSelection");
     DialogControlSendAnimationEvent(lib90F7C81D_gv_backgroundMain, PlayerGroupAll(), "Hide");
@@ -8070,7 +8129,7 @@ bool gt_ModeController_Func (bool testConds, bool runActions) {
     lv_playlist = RandomInt(0, 4);
     autoD861F4FF_val = lv_playlist;
     if (autoD861F4FF_val == 0) {
-        SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZChar01MusicMain", c_soundtrackCueAny, c_soundtrackIndexAny, true);
+        SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZSpace02MusicMain", c_soundtrackCueAny, c_soundtrackIndexAny, true);
     }
     else if (autoD861F4FF_val == 1) {
         SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "nDLC_Music_Nova09_Main", c_soundtrackCueAny, c_soundtrackIndexAny, true);
@@ -16288,6 +16347,195 @@ void gt_PrologueVoteEnd_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Campaign Debug Commands
+//--------------------------------------------------------------------------------------------------
+bool gt_CampaignDebugCommands_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_message;
+    int lv_user;
+    int lv_index;
+
+    // Automatic Variable Declarations
+    string autoA44EF864_val;
+    unitgroup auto47A9313B_g;
+    int auto47A9313B_u;
+    unit auto47A9313B_var;
+
+    // Variable Initialization
+    lv_message = EventChatMessage(false);
+    lv_user = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib90F7C81D_gf_DevHandles(PlayerHandle(EventPlayer())))) {
+            return false;
+        }
+
+        if (!((StringEqual(StringWord(lv_message, 1), "gm", c_stringNoCase) == true))) {
+            return false;
+        }
+
+        if (!(lib90F7C81D_gf_GetGameMode(1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoA44EF864_val = StringCase(StringWord(lv_message, 2), true);
+    if (autoA44EF864_val == "LIST") {
+        DialogControlSendAnimationEvent(gv_campaign_Missions.lv_missionPanel, PlayerGroupAll(), "Display");
+    }
+    else if (autoA44EF864_val == "TEST") {
+        lib90F7C81D_gf_RunCampaignEvent("TestMode");
+    }
+    else if (autoA44EF864_val == "SENTRY") {
+        gf_SpawnSentrys();
+    }
+    else if (autoA44EF864_val == "RM") {
+        auto47A9313B_g = UnitGroup("MK44SentryGun2", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto47A9313B_u = UnitGroupCount(auto47A9313B_g, c_unitCountAll);
+        for (;; auto47A9313B_u -= 1) {
+            auto47A9313B_var = UnitGroupUnitFromEnd(auto47A9313B_g, auto47A9313B_u);
+            if (auto47A9313B_var == null) { break; }
+            UnitRemove(auto47A9313B_var);
+        }
+    }
+    else if (autoA44EF864_val == "SKIP") {
+        TriggerEnable(gt_PrologueVoteInit, true);
+        TriggerExecute(gt_PrologueVoteInit, true, false);
+    }
+    else if (autoA44EF864_val == "MISSION00") {
+        TriggerEnable(gt_ConductKLE, true);
+        lib90F7C81D_gf_RunCampaignEvent("Prologue.Mission00");
+    }
+    else if (autoA44EF864_val == "MISSION02") {
+        TriggerEnable(gt_TCPContainmentSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Prologue.Mission02");
+    }
+    else if (autoA44EF864_val == "MISSION04") {
+        gv_prologue.lv_mission02TCPFailed[0] = false;
+        gv_prologue.lv_mission02TCPFailed[1] = false;
+        gv_prologue.lv_mission02TCPFailed[2] = false;
+        gv_prologue.lv_mission02TCPCountDefended = 3;
+        TriggerEnable(gt_EscortCargoTrucksSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Prologue.Mission04");
+    }
+    else if (autoA44EF864_val == "MISSION05") {
+        TriggerEnable(gt_EngineerEscortSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-1.Mission1");
+    }
+    else if (autoA44EF864_val == "MISSION06") {
+        TriggerEnable(gt_AkmasRevengeSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-1.Mission2");
+    }
+    else if (autoA44EF864_val == "MISSION07") {
+        TriggerEnable(gt_MassRecallSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-1.Mission3");
+    }
+    else if (autoA44EF864_val == "MISSION08") {
+        TriggerEnable(gt_SpiderEggSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-1.Mission4");
+    }
+    else if (autoA44EF864_val == "MISSION09") {
+        TriggerEnable(gt_SpiderKingSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-1.Mission5");
+    }
+    else if (autoA44EF864_val == "MISSION10") {
+        TriggerEnable(gt_EscalationSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission1");
+    }
+    else if (autoA44EF864_val == "MISSION11") {
+        TriggerEnable(gt_BulwarkSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission2");
+    }
+    else if (autoA44EF864_val == "MISSION12") {
+        TriggerEnable(gt_PestControlSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission3");
+    }
+    else if (autoA44EF864_val == "MISSION13") {
+        TriggerEnable(gt_AbdulSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission4");
+    }
+    else if (autoA44EF864_val == "MISSION14") {
+        TriggerEnable(gt_TheGreatEscapeSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission5");
+    }
+    else if (autoA44EF864_val == "MISSION15") {
+        TriggerEnable(gt_PartingGiftSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission6");
+    }
+    else if (autoA44EF864_val == "MISSION16") {
+        TriggerEnable(gt_Chapter2EndingSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission7");
+    }
+    else if (autoA44EF864_val == "MISSION17") {
+        TriggerEnable(gt_TheOldCrewSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission1");
+    }
+    else if (autoA44EF864_val == "MISSION18") {
+        TriggerEnable(gt_ForTheRebellionSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission2");
+    }
+    else if (autoA44EF864_val == "MISSION19") {
+        TriggerEnable(gt_WhatsThePlanSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission3");
+    }
+    else if (autoA44EF864_val == "MISSION20") {
+        TriggerEnable(gt_WartimeProductionSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission4");
+    }
+    else if (autoA44EF864_val == "MISSION21") {
+        TriggerEnable(gt_TanksAlotSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission5");
+    }
+    else if (autoA44EF864_val == "MISSION22") {
+        TriggerEnable(gt_JamItSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission6");
+    }
+    else if (autoA44EF864_val == "MISSION23") {
+        TriggerEnable(gt_FinaleSetup, true);
+        lib90F7C81D_gf_RunCampaignEvent("Chapter-3.Mission7");
+    }
+    else if (autoA44EF864_val == "SPAWNLOOP") {
+        if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "ON")) {
+            gf_SpawnLoopManager(lib90F7C81D_ge_LoopType_Campaign, true);
+        }
+        else if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "OFF")) {
+            gf_SpawnLoopManager(lib90F7C81D_ge_LoopType_Campaign, false);
+        }
+        else if (true) {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/97110CFF"));
+        }
+    }
+    else if (autoA44EF864_val == "CH3") {
+        if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "ON")) {
+            gv_campaign.lv_playChapterThree = true;
+        }
+        else if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "OFF")) {
+            gv_campaign.lv_playChapterThree = false;
+        }
+        else if (true) {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/A37C9629"));
+        }
+    }
+    else {
+        UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/8ED5B126"));
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CampaignDebugCommands_Init () {
+    gt_CampaignDebugCommands = TriggerCreate("gt_CampaignDebugCommands_Func");
+    TriggerEnable(gt_CampaignDebugCommands, false);
+    TriggerAddEventChatMessage(gt_CampaignDebugCommands, c_playerAny, "gm", false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Campaign Mission Selector
 //--------------------------------------------------------------------------------------------------
 bool gt_CampaignMissionSelector_Func (bool testConds, bool runActions) {
@@ -16608,6 +16856,7 @@ bool gt_CampaignSetup_Func (bool testConds, bool runActions) {
     TriggerEnable(TriggerGetCurrent(), false);
     lib90F7C81D_gf_TurnWeaponsItemsOnOff("Weapons&Items_1", true);
     lib90F7C81D_gf_ModifyWeaponsItemsLoop("Weapons&Items_1", 270.0, c_playerPropOperSetTo);
+    TriggerEnable(gt_CampaignDebugCommands, true);
     GameSetMissionTimePaused(false);
     TriggerEnable(lib90F7C81D_gt_PeriodicWeatherEvent, true);
     gf_UndeadGroupFilter(ge_UndeadUnitFilter_All, false);
@@ -20316,6 +20565,21 @@ bool gt_LoadBank_Func (bool testConds, bool runActions) {
         }
 
     }
+    if ((gv_dEBUG_GAME == true) && (GameIsTestMap(false) == true)) {
+        Wait(1.25, c_timeGame);
+        gf_SetupMOSUI();
+        gf_HideXPFrame("Close");
+        gf_UpdateVoteCount(gv_dEBUG_MODE);
+        TriggerEnable(gt_VoteTimerTimeout, true);
+        TimerStart(lib90F7C81D_gv_missiontimer, 0.0, false, c_timeGame);
+        UISetCursorVisible(PlayerGroupAll(), true);
+        TriggerEnable(lib90F7C81D_gt_PlayerLeavesGame, false);
+        gv_menu.lv_mOSSelected[1] = gv_dEBUG_MOS;
+        TriggerEnable(gt_AutoSelectMOS, true);
+        Wait(0.0625, c_timeGame);
+        lib90F7C81D_gf_RunEvent("AutoPick");
+        return true;
+    }
     Wait(2.0, c_timeGame);
     gf_SetupMOSUI();
     Wait(0.25, c_timeGame);
@@ -22164,6 +22428,387 @@ void gt_ForceRemoveUndeadUnits_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Dev Commands
+//--------------------------------------------------------------------------------------------------
+bool gt_DevCommands_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_message;
+    int lv_user;
+    int lv_index;
+    string lv_ailmentInstance;
+
+    // Automatic Variable Declarations
+    string auto0C951E18_val;
+    string auto204D4F00_val;
+    string auto5BC52D61_val;
+    string auto29A70942_val;
+    unitgroup auto90498B84_g;
+    int auto90498B84_u;
+    unit auto90498B84_var;
+    unitgroup autoC0FBB20A_g;
+    int autoC0FBB20A_u;
+    unit autoC0FBB20A_var;
+    playergroup auto10E06FC8_g;
+    int auto10E06FC8_var;
+    unitgroup auto1A35B0FE_g;
+    int auto1A35B0FE_u;
+    unit auto1A35B0FE_var;
+    unitgroup autoAFBC5748_g;
+    int autoAFBC5748_u;
+    unit autoAFBC5748_var;
+    unitgroup autoA71A477F_g;
+    int autoA71A477F_u;
+    unit autoA71A477F_var;
+    unitgroup autoD96D01A7_g;
+    int autoD96D01A7_u;
+    unit autoD96D01A7_var;
+    unitgroup auto11D7CE4D_g;
+    int auto11D7CE4D_u;
+    unit auto11D7CE4D_var;
+    string autoE5DFAAD7_userType;
+    int autoE5DFAAD7_i;
+    playergroup auto166D30EE_g;
+    int auto166D30EE_var;
+    unitgroup auto24F1D395_g;
+    int auto24F1D395_u;
+    unit auto24F1D395_var;
+
+    // Variable Initialization
+    lv_message = EventChatMessage(false);
+    lv_user = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!(lib90F7C81D_gf_DevHandles(PlayerHandle(EventPlayer())))) {
+            return false;
+        }
+
+        if (!((StringEqual(StringWord(lv_message, 1), "dev", c_stringNoCase) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto0C951E18_val = StringCase(StringWord(lv_message, 2), true);
+    if (auto0C951E18_val == "BO4") {
+        if ((StringToInt(StringWord(lv_message, 3)) < 13) && (StringToInt(StringWord(lv_message, 3)) >= 0)) {
+            UISetCursorVisible(PlayerGroupSingle(StringToInt(StringWord(lv_message, 3))), false);
+            DialogControlSendAnimationEvent(lib90F7C81D_gv_bsod, PlayerGroupSingle(StringToInt(StringWord(lv_message, 3))), "BO4");
+            Wait(8.0, c_timeGame);
+            UISetCursorVisible(PlayerGroupSingle(StringToInt(StringWord(lv_message, 3))), true);
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/3AE93CB9"));
+        }
+    }
+    else if (auto0C951E18_val == "C") {
+        if ((StringToInt(StringWord(lv_message, 3)) < 16) && (StringToInt(StringWord(lv_message, 3)) >= 0)) {
+            if ((PlayerGetAlliance(StringToInt(StringWord(lv_message, 3)), c_allianceIdControl, lv_user) == true)) {
+                PlayerSetAlliance(StringToInt(StringWord(lv_message, 3)), c_allianceIdVision, lv_user, false);
+                PlayerSetAlliance(StringToInt(StringWord(lv_message, 3)), c_allianceIdControl, lv_user, false);
+            }
+            else {
+                PlayerSetAlliance(StringToInt(StringWord(lv_message, 3)), c_allianceIdVision, lv_user, true);
+                PlayerSetAlliance(StringToInt(StringWord(lv_message, 3)), c_allianceIdControl, lv_user, true);
+            }
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/69ECE909"));
+        }
+    }
+    else if (auto0C951E18_val == "DEBUG") {
+        auto204D4F00_val = StringCase(StringWord(lv_message, 3), true);
+        if (auto204D4F00_val == "ON") {
+            TriggerDebugWindowOpen(true);
+        }
+        else if (auto204D4F00_val == "GE") {
+            auto5BC52D61_val = StringCase(StringWord(lv_message, 4), true);
+            if (auto5BC52D61_val == "OFF") {
+                gv_debug.lv_gameEvents = false;
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/3B1D8449"));
+            }
+            else if (auto5BC52D61_val == "ON") {
+                gv_debug.lv_gameEvents = true;
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/A78AB291"));
+            }
+            else {
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/9D2CDE51"));
+            }
+        }
+        else if (auto204D4F00_val == "SM") {
+            auto29A70942_val = StringCase(StringWord(lv_message, 4), true);
+            if (auto29A70942_val == "OFF") {
+                gv_debug.lv_spawnMechanics = false;
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/A049E67F"));
+            }
+            else if (auto29A70942_val == "ON") {
+                gv_debug.lv_spawnMechanics = true;
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/B6B66C44"));
+            }
+            else {
+                UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/18EEEC81"));
+            }
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/28F942AA"));
+        }
+    }
+    else if (auto0C951E18_val == "ALL") {
+        DialogControlSetAnimationState(gv_menu.lv_mOSButtonsContainer, PlayerGroupAll(), "DevelopementMode", "ON");
+    }
+    else if (auto0C951E18_val == "TEST") {
+        lib90F7C81D_gf_SetSpawnLoopTimer(lib90F7C81D_ge_LoopType_Main, 60.0);
+        gf_SpawnLoopManager(lib90F7C81D_ge_LoopType_Main, true);
+    }
+    else if (auto0C951E18_val == "CREATE") {
+        if ((StringToInt(StringWord(lv_message, 3)) > 0) && (StringToInt(StringWord(lv_message, 3)) < 13) && (UnitTypeFromString(StringWord(lv_message, 4)) != null)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(StringToInt(StringWord(lv_message, 3)), UnitTypeFromString(StringWord(lv_message, 4)), c_unitCreateIgnorePlacement, lv_user, CameraGetTarget(lv_user));
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/009AC9BC"));
+            libNtve_gf_SetDialogItemColor(DialogControlLastCreated(), Color(100,100,100), PlayerGroupAll());
+        }
+    }
+    else if (auto0C951E18_val == "REMOVE") {
+        auto90498B84_g = UnitGroupSelected(lv_user);
+        auto90498B84_u = UnitGroupCount(auto90498B84_g, c_unitCountAll);
+        for (;; auto90498B84_u -= 1) {
+            auto90498B84_var = UnitGroupUnitFromEnd(auto90498B84_g, auto90498B84_u);
+            if (auto90498B84_var == null) { break; }
+            UnitRemove(auto90498B84_var);
+        }
+    }
+    else if (auto0C951E18_val == "GIVE") {
+        if ((StringWord(lv_message, 3) != null) && (StringToInt(StringWord(lv_message, 3)) >= 0) && (StringToInt(StringWord(lv_message, 3)) <= 15)) {
+            autoC0FBB20A_g = UnitGroupSelected(lv_user);
+            autoC0FBB20A_u = UnitGroupCount(autoC0FBB20A_g, c_unitCountAll);
+            for (;; autoC0FBB20A_u -= 1) {
+                autoC0FBB20A_var = UnitGroupUnitFromEnd(autoC0FBB20A_g, autoC0FBB20A_u);
+                if (autoC0FBB20A_var == null) { break; }
+                UnitSetOwner(autoC0FBB20A_var, StringToInt(StringWord(lv_message, 3)), true);
+            }
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/6DE4890B"));
+        }
+    }
+    else if (auto0C951E18_val == "REVEAL") {
+        auto10E06FC8_g = PlayerGroupAll();
+        auto10E06FC8_var = -1;
+        while (true) {
+            auto10E06FC8_var = PlayerGroupNextPlayer(auto10E06FC8_g, auto10E06FC8_var);
+            if (auto10E06FC8_var < 0) { break; }
+            VisRevealArea(auto10E06FC8_var, RegionEntireMap(), 0.0, false);
+        }
+    }
+    else if (auto0C951E18_val == "XP") {
+        if ((StringWord(lv_message, 3) != null) && (StringToInt(StringWord(lv_message, 3)) >= 1) && (StringToInt(StringWord(lv_message, 3)) <= 20)) {
+            gf_AddHeroLevels(StringToInt(StringWord(lv_message, 3)));
+        }
+        else {
+            gf_AddHeroLevels(1);
+        }
+    }
+    else if (auto0C951E18_val == "KICK") {
+        if ((StringWord(lv_message, 3) != null) && (StringToInt(StringWord(lv_message, 3)) >= 1) && (StringToInt(StringWord(lv_message, 3)) <= 12)) {
+            KickFromGame(PlayerGroupSingle(StringToInt(StringWord(lv_message, 3))));
+        }
+
+    }
+    else if (auto0C951E18_val == "COOLDOWN") {
+        auto1A35B0FE_g = UnitGroupSelected(lv_user);
+        auto1A35B0FE_u = UnitGroupCount(auto1A35B0FE_g, c_unitCountAll);
+        for (;; auto1A35B0FE_u -= 1) {
+            auto1A35B0FE_var = UnitGroupUnitFromEnd(auto1A35B0FE_g, auto1A35B0FE_u);
+            if (auto1A35B0FE_var == null) { break; }
+            ResetAllAbilityCooldownsForUnit(auto1A35B0FE_var);
+        }
+    }
+    else if (auto0C951E18_val == "CD") {
+        autoAFBC5748_g = UnitGroupSelected(lv_user);
+        autoAFBC5748_u = UnitGroupCount(autoAFBC5748_g, c_unitCountAll);
+        for (;; autoAFBC5748_u -= 1) {
+            autoAFBC5748_var = UnitGroupUnitFromEnd(autoAFBC5748_g, autoAFBC5748_u);
+            if (autoAFBC5748_var == null) { break; }
+            ResetAllAbilityCooldownsForUnit(autoAFBC5748_var);
+        }
+    }
+    else if (auto0C951E18_val == "DEBUGSUPPLY") {
+        UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, IntToText(PlayerGetPropertyInt(14, c_playerPropSuppliesUsed)));
+    }
+    else if (auto0C951E18_val == "BUFF") {
+        if (((StringWord(lv_message, 3)) != null)) {
+            autoA71A477F_g = UnitGroupSelected(lv_user);
+            autoA71A477F_u = UnitGroupCount(autoA71A477F_g, c_unitCountAll);
+            for (;; autoA71A477F_u -= 1) {
+                autoA71A477F_var = UnitGroupUnitFromEnd(autoA71A477F_g, autoA71A477F_u);
+                if (autoA71A477F_var == null) { break; }
+                UnitBehaviorAdd(autoA71A477F_var, (StringWord(lv_message, 3)), autoA71A477F_var, 1);
+            }
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/DC709221"));
+        }
+    }
+    else if (auto0C951E18_val == "UNBUFF") {
+        if (((StringWord(lv_message, 3)) != null)) {
+            autoD96D01A7_g = UnitGroupSelected(lv_user);
+            autoD96D01A7_u = UnitGroupCount(autoD96D01A7_g, c_unitCountAll);
+            for (;; autoD96D01A7_u -= 1) {
+                autoD96D01A7_var = UnitGroupUnitFromEnd(autoD96D01A7_g, autoD96D01A7_u);
+                if (autoD96D01A7_var == null) { break; }
+                UnitBehaviorRemove(autoD96D01A7_var, (StringWord(lv_message, 3)), 1);
+            }
+        }
+        else {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/8DFFC688"));
+        }
+    }
+    else if (auto0C951E18_val == "HEAL") {
+        auto11D7CE4D_g = UnitGroupSelected(lv_user);
+        auto11D7CE4D_u = UnitGroupCount(auto11D7CE4D_g, c_unitCountAll);
+        for (;; auto11D7CE4D_u -= 1) {
+            auto11D7CE4D_var = UnitGroupUnitFromEnd(auto11D7CE4D_g, auto11D7CE4D_u);
+            if (auto11D7CE4D_var == null) { break; }
+            UnitSetPropertyFixed(auto11D7CE4D_var, c_unitPropLifePercent, 100.0);
+            UnitSetPropertyFixed(auto11D7CE4D_var, c_unitPropEnergyPercent, 100.0);
+            autoE5DFAAD7_userType = "Ailments";
+            autoE5DFAAD7_i = 1;
+            for ( ; autoE5DFAAD7_i <= UserDataInstanceCount(autoE5DFAAD7_userType) ; autoE5DFAAD7_i += 1 ) {
+                lv_ailmentInstance = UserDataInstance(autoE5DFAAD7_userType, autoE5DFAAD7_i);
+                if ((UnitHasBehavior2(auto11D7CE4D_var, UserDataGetGameLink("Ailments", lv_ailmentInstance, "Ailment Behavior", 1)) == true)) {
+                    UnitBehaviorRemove(auto11D7CE4D_var, UserDataGetGameLink("Ailments", lv_ailmentInstance, "Ailment Behavior", 1), 1);
+                }
+            }
+        }
+    }
+    else if (auto0C951E18_val == "REV") {
+        if ((StringWord(lv_message, 3) != null) && (StringToInt(StringWord(lv_message, 3)) >= 1) && (StringToInt(StringWord(lv_message, 3)) <= 12)) {
+            if ((lib90F7C81D_gv_playersHeroisDead[StringToInt(StringWord(lv_message, 3))] == true)) {
+                PlayerCreateEffectUnit(0, "ReviveModifyUnit", lib90F7C81D_gv_playerHeroes[StringToInt(StringWord(lv_message, 3))]);
+            }
+        }
+        else if ((StringWord(lv_message, 3) != null) && (StringEqual(StringWord(lv_message, 3), "all", c_stringNoCase) == true)) {
+            auto166D30EE_g = lib90F7C81D_gv_players;
+            auto166D30EE_var = -1;
+            while (true) {
+                auto166D30EE_var = PlayerGroupNextPlayer(auto166D30EE_g, auto166D30EE_var);
+                if (auto166D30EE_var < 0) { break; }
+                if ((lib90F7C81D_gv_playersHeroisDead[auto166D30EE_var] == true)) {
+                    PlayerCreateEffectUnit(0, "ReviveModifyUnit", lib90F7C81D_gv_playerHeroes[auto166D30EE_var]);
+                }
+            }
+        }
+        else if (true) {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/865662CF"));
+        }
+    }
+    else if (auto0C951E18_val == "SCRIPTED") {
+        if ((StringWord(lv_message, 3) != null) && (StringToInt(StringWord(lv_message, 3)) >= 4) && (StringToInt(StringWord(lv_message, 3)) <= 15)) {
+            gf_CampaignScriptedSpawns(StringToInt(StringWord(lv_message, 3)));
+        }
+        else if (true) {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/C2A36CC0"));
+        }
+    }
+    else if (auto0C951E18_val == "KILL") {
+        auto24F1D395_g = UnitGroupSelected(lv_user);
+        auto24F1D395_u = UnitGroupCount(auto24F1D395_g, c_unitCountAll);
+        for (;; auto24F1D395_u -= 1) {
+            auto24F1D395_var = UnitGroupUnitFromEnd(auto24F1D395_g, auto24F1D395_u);
+            if (auto24F1D395_var == null) { break; }
+            UnitKill(auto24F1D395_var);
+        }
+    }
+    else if (auto0C951E18_val == "IDK") {
+        if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "ON")) {
+            gf_SpawnLoopManager(lib90F7C81D_ge_LoopType_Campaign, true);
+        }
+        else if ((StringWord(lv_message, 3) != null) && (StringCase(StringWord(lv_message, 3), true) == "OFF")) {
+            gf_SpawnLoopManager(lib90F7C81D_ge_LoopType_Campaign, false);
+        }
+        else if (true) {
+            UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaSubtitle, StringExternal("Param/Value/39C7410F"));
+        }
+    }
+    else {
+        UIDisplayMessage(PlayerGroupSingle(lv_user), c_messageAreaError, StringExternal("Param/Value/FBB39279"));
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DevCommands_Init () {
+    gt_DevCommands = TriggerCreate("gt_DevCommands_Func");
+    TriggerAddEventChatMessage(gt_DevCommands, c_playerAny, "dev", false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Whatami
+//--------------------------------------------------------------------------------------------------
+bool gt_Whatami_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/363C3A28"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Whatami_Init () {
+    gt_Whatami = TriggerCreate("gt_Whatami_Func");
+    TriggerAddEventChatMessage(gt_Whatami, c_playerAny, "-whatami", false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DiceRoll
+//--------------------------------------------------------------------------------------------------
+bool gt_DiceRoll_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_message;
+    int lv_x;
+    int lv_roll;
+
+    // Automatic Variable Declarations
+    int auto46F27258_ae;
+    const int auto46F27258_ai = 1;
+
+    // Variable Initialization
+    lv_message = EventChatMessage(false);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((StringCase(StringWord(lv_message, 3), false) != "d")) {
+        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringExternal("Param/Value/C4E30CF8"));
+
+    }
+    auto46F27258_ae = StringToInt(StringWord(lv_message, 2));
+    lv_x = 1;
+    for ( ; ( (auto46F27258_ai >= 0 && lv_x <= auto46F27258_ae) || (auto46F27258_ai < 0 && lv_x >= auto46F27258_ae) ) ; lv_x += auto46F27258_ai ) {
+        lv_roll = (lv_roll + RandomInt(1, StringToInt(StringWord(lv_message, 4))));
+    }
+    TextExpressionSetToken("Param/Expression/91103C17", "A", IntToText(lv_roll));
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, TextExpressionAssemble("Param/Expression/91103C17"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DiceRoll_Init () {
+    gt_DiceRoll = TriggerCreate("gt_DiceRoll_Func");
+    TriggerAddEventChatMessage(gt_DiceRoll, c_playerAny, "-roll", false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -22285,6 +22930,7 @@ void InitTriggers () {
     gt_PrologueVoteInit_Init();
     gt_PrologueVotes_Init();
     gt_PrologueVoteEnd_Init();
+    gt_CampaignDebugCommands_Init();
     gt_CampaignMissionSelector_Init();
     gt_CampaignMissionStart_Init();
     gt_CampaignSingleMissionChecked_Init();
@@ -22367,6 +23013,9 @@ void InitTriggers () {
     gt_UndeadAIThink_Init();
     gt_ScaleDifficulty_Init();
     gt_ForceRemoveUndeadUnits_Init();
+    gt_DevCommands_Init();
+    gt_Whatami_Init();
+    gt_DiceRoll_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

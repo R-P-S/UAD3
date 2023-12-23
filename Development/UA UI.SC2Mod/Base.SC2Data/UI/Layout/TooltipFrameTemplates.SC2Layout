@@ -62,6 +62,7 @@
         <Frame type="Image" name="CornerTopRight" template="AchievementTemplates/CornerTopRightNoAnimTemplate" />
         <Frame type="Image" name="CornerBottomLeft" template="AchievementTemplates/CornerBottomLeftNoAnimTemplate" />
         <Frame type="Image" name="CornerBottomRight" template="AchievementTemplates/CornerBottomRightNoAnimTemplate" />
+
         <StateGroup name="TooltipState">
             <DefaultState val="DefaultSetting"/>
             <State name="HideTooltip">
@@ -71,6 +72,17 @@
             <State name="DefaultSetting" />
         </StateGroup>
     </Frame>
+
+    <Frame type="StandardTooltip" name="UADStandardTooltipAlternate" template="TooltipFrameTemplates/UADStandardTooltip">
+        <Anchor side="Bottom" relative="$ConsoleUIContainer/CommandPanel" pos="Max" offset="-250"/>
+        <Anchor side="Right" relative="$ConsoleUIContainer" pos="Max" offset="0"/>
+        <MaxWidth val="1200"/>
+        <MinWidth val="450"/>
+        <Width val="450"/>
+        <Height val="450"/>
+        <FadeTime val="1"/>
+    </Frame>
+
     <Frame type="StandardNameTooltip" name="UADStandardNameTooltipTemplate">
         <MaxWidth val="480"/>
         <Insets top="15" left="15" bottom="15" right="15"/>

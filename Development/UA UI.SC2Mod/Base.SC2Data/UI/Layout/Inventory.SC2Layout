@@ -508,7 +508,7 @@
             <AcceptsMouse val="True" />
             <TooltipAnchorPosition val="BottomRight" />
             <Tooltip val="" />
-            <TooltipFrame val="UADStandardTooltip" />
+            <TooltipFrame val="UADStandardTooltipAlternate" />
             <UseTooltip val="True" />
             <Handle val="WeaponIconImage" />
             <StateGroup name="WeaponType">
@@ -584,7 +584,7 @@
             <AcceptsMouse val="True" />
             <TooltipAnchorPosition val="BottomCenter" />
             <Tooltip val="@Button/Tooltip/EquipmentArmor" />
-            <TooltipFrame val="UADStandardTooltip" />
+            <TooltipFrame val="UADStandardTooltipAlternate" />
             <StateGroup name="ArmorType">
                <DefaultState val="Default" /> 
                <State name="Default" />

@@ -329,9 +329,10 @@
       </Frame>
       <Frame type="CommandButton" name="CommandButton01" template="CommandButtons/UADCommandButton"/>
       <Frame type="CommandButton" name="CommandButton02" template="CommandButtons/UADCommandButton"/>
-      <Frame type="CommandButton" name="CommandButton03" template="CommandButtons/UADCommandButton">
+      <Frame type="CommandButton" name="CommandButton03" template="CommandButtons/UADCommandButton"/>
+      <!--
          <Frame type="SelectionUnitStatusPanel" name="GhostHeatSignatureButtonFrame" template="SpecialFrameTemplates/GhostHeatSignatureButtonFrame"/>
-      </Frame>
+      </Frame> -->
       <Frame type="CommandButton" name="CommandButton04" template="CommandButtons/UADCommandButton"/>
       <Frame type="CommandButton" name="CommandButton05" template="CommandButtons/UADCommandButton"/>
       <Frame type="CommandButton" name="CommandButton06" template="CommandButtons/UADCommandButton"/>

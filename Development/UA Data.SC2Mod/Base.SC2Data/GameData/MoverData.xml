@@ -154,12 +154,6 @@
             <YawPitchRoll value="719.2968"/>
         </MotionPhases>
     </CMoverMissile>
-    <CMoverAvoid id="Smithy">
-        <PathMode value="Scaler"/>
-    </CMoverAvoid>
-    <CMoverMissile id="FungalGrowthWeapon">
-        <MotionPhases index="0" MaxSpeed="16"/>
-    </CMoverMissile>
     <CMoverMissile id="MonoWireMover">
         <MotionPhases>
             <Driver value="Guidance"/>
