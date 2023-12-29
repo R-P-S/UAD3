@@ -8870,6 +8870,7 @@ Upgrade/EditorPrefix/CapacitorLightweightModule=SU -
 Upgrade/EditorPrefix/CapacitorMaximumCapacity=SU -
 Upgrade/EditorPrefix/ChargeEfficiency=SU -
 Upgrade/EditorPrefix/ChargeSpeed=SU -
+Upgrade/EditorPrefix/ChineseEquipment=(RA)
 Upgrade/EditorPrefix/ClassicCommandCard=Self Cast -
 Upgrade/EditorPrefix/CognitiveEnhancementExtrasensory=SU -
 Upgrade/EditorPrefix/CognitiveEnhancementPotency=SU -

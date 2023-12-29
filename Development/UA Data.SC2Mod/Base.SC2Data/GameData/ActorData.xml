@@ -550,8 +550,6 @@
         <On Terms="Effect.BinocularsInfantry.Stop" Send="AnimBracketStop BSD"/>
         <On Terms="ActorCreation" Send="Create BinocularsVisual"/>
         <On Terms="ActorDestruction" Target="BinocularsVisual" Send="Destroy"/>
-        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
-        <On Terms="Effect.BinocularsSniper.Stop" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Model value="ScannerSweepModel"/>
     </CActorModel>
@@ -561,8 +559,6 @@
         <Filter index="Enemy" value="1"/>
         <On Terms="Effect.BinocularsInfantry.Start" Send="Create"/>
         <On Terms="Effect.BinocularsInfantry.Stop" Send="Destroy"/>
-        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
-        <On Terms="Effect.BinocularsSniper.Stop" Send="Destroy"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Sound value="OrbitalCommand_ScannerSweep"/>
     </CActorSound>
@@ -570,8 +566,6 @@
         <Filter index="Self" value="1"/>
         <On Terms="Effect.BinocularsInfantry.Start" Send="Create"/>
         <On Terms="Effect.BinocularsInfantry.Stop" Send="Destroy"/>
-        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
-        <On Terms="Effect.BinocularsSniper.Stop" Send="Destroy"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Sound value="OrbitalCommand_ScannerSweep_Others"/>
     </CActorSound>

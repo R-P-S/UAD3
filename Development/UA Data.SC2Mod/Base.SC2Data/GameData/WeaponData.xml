@@ -219,8 +219,8 @@
         <AcquireTargetSorts>
             <SortArray index="0" value="TSPriorityDescending"/>
         </AcquireTargetSorts>
-        <MinScanRange value="30"/>
-        <Range value="30"/>
+        <MinScanRange value="24"/>
+        <Range value="24"/>
         <Cost>
             <Resource index="Minerals" value="0"/>
             <Charge CountMax="15" CountStart="15" CountUse="1"/>

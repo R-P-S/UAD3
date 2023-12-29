@@ -6,6 +6,13 @@
         <Alert value=""/>
         <LeaderLevel value="1"/>
     </CUpgrade>
+    <CUpgrade id="ChineseEquipment">
+        <EffectArray Operation="Subtract" Reference="Effect,BinocularsInfantry,ExpireDelay" Value="2.500000"/>
+        <EffectArray Operation="Subtract" Reference="Effect,BinocularsInfantry,RevealRadius" Value="4"/>
+        <EffectArray Operation="Subtract" Reference="Actor,BinocularsVisual,Range" Value="4.000000"/>
+        <EffectArray Operation="Set" Reference="Actor,BinocularsModel,Scale" Value="0.700000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+    </CUpgrade>
     <CUpgrade id="DetonateCryoMineSnapFreeze" parent="SkillUpgradesTemplate">
         <InfoTooltipPriority value="1"/>
         <Icon value="Assets\Textures\Cryo_Mine.dds"/>

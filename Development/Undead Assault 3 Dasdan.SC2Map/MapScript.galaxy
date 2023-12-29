@@ -14202,6 +14202,7 @@ bool gt_TheOldCrewSetup_Func (bool testConds, bool runActions) {
     gv_mutateBuffCount = 0;
     libNtve_gf_SetDialogItemText(lib90F7C81D_gv_mutationLabel, IntToText(gv_mutateBuffCount), PlayerGroupAll());
     libNtve_gf_SetUpgradeLevelForPlayer(14, "MutationUpgrade", gv_mutateBuffCount);
+    libNtve_gf_SetUpgradeLevelForPlayer(15, "ChineseEquipment", 1);
     DialogControlSendAnimationEvent(gv_chapter_2.lv_transitionFrame, PlayerGroupAll(), "Hide");
     CameraSetBounds(PlayerGroupAll(), RegionFromId(207), true);
     gf_Chapter3Items();

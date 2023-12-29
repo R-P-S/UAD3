@@ -1165,13 +1165,14 @@
         </Cost>
         <Range value="40"/>
         <AutoCastFilters value="-;Player,Ally,Psionic,Structure,Missile,Dead,Hidden,Invulnerable"/>
-        <AutoCastRange value="30"/>
+        <AutoCastRange value="24"/>
         <CastIntroTime value="0.0625"/>
         <ShowProgressArray index="Cast" value="1"/>
         <ProgressButtonArray index="Cast" value="Binoculars"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BinocularsSniper">
             <Flags index="ToSelection" value="0"/>
         </CmdButtonArray>
+        <Effect index="0" value="BinocularsInfantry"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="InterferenceWave" parent="TemplateEffectInstant">
         <Name value="Abil/Name/InterferenceWave"/>

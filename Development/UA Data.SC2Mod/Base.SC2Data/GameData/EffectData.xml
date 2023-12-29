@@ -231,13 +231,6 @@
         <EditorCategories value="Race:Neutral"/>
         <Behavior value="SuitKineticIntegrator"/>
     </CEffectApplyBehavior>
-    <CEffectCreatePersistent id="BinocularsSniper" parent="TemplateCreatePersistent">
-        <EditorCategories value="Race:Terran"/>
-        <ExpireDelay value="10"/>
-        <RevealRadius value="8"/>
-        <RevealFlags index="Unfog" value="1"/>
-        <RevealFlags index="Detect" value="1"/>
-    </CEffectCreatePersistent>
     <CEffectEnumArea id="BloodTransfusionAISA">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetUnit"/>
