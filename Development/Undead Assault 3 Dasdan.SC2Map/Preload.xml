@@ -257,7 +257,6 @@
 <Unit id="SpittingSpider"/>
 <Unit id="Apiary"/>
 <User id="MOSSetup"/>
-<PlayerResponse id="CacumenBloodLust"/>
 <PlayerResponse id="PlayerHitStat"/>
 <PlayerResponse id="PMCDeath"/>
 </Preload>

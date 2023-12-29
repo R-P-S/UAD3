@@ -34,6 +34,12 @@
         <Find value="1"/>
         <Value value="APESUSprinter"/>
     </CValidatorPlayerRequirement>
+    <CValidatorCombine id="CryoFreezeFilter">
+        <CombineArray value="TargetIsConvoy"/>
+        <CombineArray value="TargetIsSatchel"/>
+        <Negate value="1"/>
+        <Type value="And"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="DoesntHaveFlashlight">
         <ResultFailed value="Error,Doesn&apos;tHaveFlashlight,AC_UI_Error01"/>
         <Behavior value="Flashlight"/>

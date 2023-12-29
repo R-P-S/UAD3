@@ -10,11 +10,15 @@
         <Mover value="Fly"/>
         <Speed value="3.3984"/>
         <BehaviorArray Link="KeenSense"/>
-        <BehaviorArray Link="BloodLustController"/>
         <WeaponArray Link="CacumenSledge"/>
         <Radius value="2.5"/>
         <SeparationRadius value="2.5"/>
         <MinimapRadius value="2.5"/>
+        <Height value="0.1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="1"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="Minerva" parent="TemplateT1Zombie">
         <Attributes index="Light" value="1"/>

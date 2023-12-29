@@ -1,0 +1,246 @@
+//=====================
+//  WeaponRange.galaxy
+//=====================
+static const int DATA_SPLIT_SEGMENT_MAX         =   64;
+static const int MAX_LOCAL                      =   12;
+static const int MAX_PLAYERS                    =   16;
+static const string DAMAGE_LOCALE               =   "Damage: Schaden: Daño: Dégâts : Danni: 공격력: Obrażenia: Dano: Урон: 伤害: 傷害: Daño:";
+static const string RANGE_LOCALE                =   "Range: Portée : Reichweite: Alcance: Rango: Portata: 사거리: Zasięg: Дальность: 攻击范围: 攻擊距離: Alcance:";
+static const string MELEE_LOCALE                =   "Melee Mêlée Nahkampf Cuerpo Melé Mischia 근접 Zwarcie ближний 近战 近戰 Corpo";
+static const string CATALOG_ACTOR_NAME_FIELD    =   "DisplayName";
+static const string CATALOG_ACTOR_RANGE_FIELD   =   "Range";
+static actor[MAX_PLAYERS] Weapon_Range_Actor;
+
+struct data_split_t {
+
+    string[DATA_SPLIT_SEGMENT_MAX] data;
+
+    int[DATA_SPLIT_SEGMENT_MAX] offset;
+
+    int count;
+};
+
+//typedef structref<data_split_t> dataSplit;
+
+static string StripTags(string input);
+static bool TooltipHasWeapon(string input);
+static string WeaponName(string input);
+static bool StringLocale(string input, int idx, string type);
+static string WeaponRange(string input, unit u);
+static void DestroyWeaponRangeActor(int idx);
+bool SplitString(structref<data_split_t> dsplit, string str, string sep);
+string SplitStringGet(string str, string sep, int idx);
+void log(string str);
+
+void log(string str) {
+    if(!GameIsOnline()){
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaDebug, StringToText(str));
+    }
+}
+
+bool SplitString(structref<data_split_t> dsplit, string str, string sep){
+    int i;
+    int posEnd;
+    int currOffset = 1;
+
+    if (str == "" || str == null) {
+        return true;
+    }
+
+    for (i = 0; i < DATA_SPLIT_SEGMENT_MAX; i += 1) {
+        dsplit.count = i + 1;
+        dsplit.offset[i] = currOffset;
+        posEnd = StringFind(str, sep, false);
+
+        if (posEnd == c_stringNotFound) {
+            dsplit.data[i] = StringSub(str, 1, StringLength(str));
+            break;
+        }
+        else {
+            dsplit.data[i] = StringSub(str, 1, posEnd - 1);
+            posEnd += 1;
+        }
+
+        currOffset += posEnd - 1;
+        str = StringSub(str, posEnd, StringLength(str));
+    }
+
+    if (i >= DATA_SPLIT_SEGMENT_MAX) {
+        return false;
+    }
+
+    return true;
+}
+
+string SplitStringGet(string str, string sep, int idx) {
+    data_split_t dsplit;
+    SplitString(dsplit, str, sep);
+
+    if (dsplit.count <= idx) {
+        log(
+            "couldnt split \"" + str + "\"" +
+            " by \"" + sep + "\"" +
+            " at idx " + IntToString(idx) +
+            " - not enough items: " + IntToString(dsplit.count)
+        );
+
+        return "";
+    }
+
+    return dsplit.data[idx];
+}
+
+static string StripTags(string input){
+    int tagStart;
+    int tagEnd;
+
+    input = StringReplaceWord(input, "</s>", " ", c_stringReplaceAll, false);
+    input = StringReplaceWord(input, "<n/>", " ", c_stringReplaceAll, false);
+    input = StringReplaceWord(input, "<sp/>", " ", c_stringReplaceAll, false);
+    input = StringReplaceWord(input, "  ", " ", c_stringReplaceAll, false);
+    
+    tagStart = StringFind(input, "<", false);
+    while (tagStart != c_stringNotFound){
+        tagEnd = StringFind(input, ">", false);
+        input = StringReplace(input, "", tagStart, tagEnd);
+        tagStart = StringFind(input, "<", false);
+    }
+
+    return input;
+}
+
+static bool TooltipHasWeapon(string input){
+    int i;
+    int wordIdx;
+
+    for (i = 1; i <= MAX_LOCAL; i += 1){
+        wordIdx = StringFind(input, StringWord(DAMAGE_LOCALE, i), c_stringCase);
+        if (wordIdx > 0 ) { return true; }    
+    }
+
+    return false;
+}
+
+static string WeaponName(string input){
+    int startIdx;
+    int endIdx;
+ 
+    startIdx = StringFind(input, "<s val=\"@@@StandardTooltipHeader\">", c_stringCase) + StringLength("<s val=\"@@@StandardTooltipHeader\">");
+    endIdx = StringFind(input, "</s>", c_stringCase);
+    
+    return StringSub(input, startIdx, endIdx - 1);
+}
+
+static bool StringLocale(string input, int idx, string type){
+    int i;
+
+    for (i = 1; i <= MAX_LOCAL; i += 1) {
+        if (type == "Range" && StringWord(input, idx) == StringWord(RANGE_LOCALE, i) || 
+            type != "Range" && StringWord(input, idx) == StringWord(MELEE_LOCALE, i)){
+            return true;  
+        }  
+    }
+
+    return false;
+}
+
+static string WeaponRange(string input, unit u){
+    int i = 1;
+    string tooltipHeader;
+    string rangeWord;
+    string modifierWord;
+    text textKey;
+    fixed rangeValue;
+    fixed modifierValue;
+    bool isRange = false;
+    bool hasModifierSign = false;
+    bool hasDebuff = false;
+
+    tooltipHeader = WeaponName(input);
+    input = StripTags(input);
+    
+    while (StringWord(input, i) != null){
+        isRange = StringLocale(input, i, "Range") && !StringLocale(input, i + 1, "Melee");
+        
+        if (isRange) {
+            rangeWord = SplitStringGet(input, " ", i + 1); 
+            modifierWord = SplitStringGet(input, " ", i + 2);
+            hasModifierSign = StringContains(modifierWord, "(+", c_stringAnywhere, false) || StringContains(modifierWord, "(-", c_stringAnywhere, false);
+
+            if (hasModifierSign) {
+                if (StringContains(modifierWord, "-", c_stringAnywhere, false)) { hasDebuff = true; }
+                modifierWord = StringReplaceWord(modifierWord, "(", "", c_stringReplaceAll, false);
+                modifierWord = StringReplaceWord(modifierWord, ")", "", c_stringReplaceAll, false);
+                modifierWord = StringReplaceWord(modifierWord, "+", "", c_stringReplaceAll, false);
+                modifierWord = StringReplaceWord(modifierWord, "-", "", c_stringReplaceAll, false); 
+
+                rangeValue = StringToFixed(rangeWord);
+                modifierValue = StringToFixed(modifierWord);
+
+                if (hasDebuff) {
+                    rangeValue -= modifierValue;
+                } else {
+                    rangeValue += modifierValue;
+                }
+                return FixedToString(rangeValue, c_fixedPrecisionAny);
+
+            } else { 
+                return rangeWord; 
+            }    
+        }
+        i += 1;
+    }
+    //Input Truncated Check
+    for (i = 1; i <= UnitWeaponCount(u); i += 1){
+        rangeValue = UnitWeaponRange(u, i);
+        if (rangeValue >= 1.0) {
+            textKey = StringExternal(CatalogFieldValueGet(c_gameCatalogWeapon, UnitWeaponGet(u, i), CATALOG_ACTOR_NAME_FIELD, UnitGetOwner(u)));
+            if (tooltipHeader == StringReplaceWord(TextToString(textKey), "</s>", "", c_stringReplaceAll, false)) { return FixedToString(rangeValue, c_fixedPrecisionAny); }
+        }
+    }
+    
+    return "";
+}
+
+void DestroyWeaponRangeActor(int idx){
+    if (Weapon_Range_Actor[idx] != null) {
+        ActorSend(Weapon_Range_Actor[idx], "Signal Destroy");
+        Weapon_Range_Actor[idx] = null;
+    }
+}
+
+bool CreateWeaponRangeIndicator (bool a, bool b){
+    unit u = UnitGroupUnit(UnitSubgroupSelected(EventPlayer()), 1);
+    string payload = libNtve_gf_DialogItemEditValue(EventDialogControl(), EventPlayer());
+    string range;
+
+    if (a) {
+        if (!payload != null) { return false; }
+    }
+
+    if (payload == "Destroy" || payload == "Hidden"){
+        DestroyWeaponRangeActor(EventPlayer());
+    }
+    else {
+        DestroyWeaponRangeActor(EventPlayer());
+
+        if (!TooltipHasWeapon(payload)) { return false; }
+        
+        range = WeaponRange(payload, u);
+        if (range == null) { return false; }
+
+        range = FixedToString(StringToFixed(range), c_fixedPrecisionAny); 
+        CatalogFieldValueModify(c_gameCatalogActor, "WeaponRangeIndicator", CATALOG_ACTOR_RANGE_FIELD, UnitGetOwner(u), range, c_upgradeOperationSet);
+        ActorCreate(ActorScopeFromUnit(u), "WeaponRangeIndicator", null, null, null);
+        Weapon_Range_Actor[EventPlayer()] = libNtve_gf_ActorLastCreated();
+        ActorSend(Weapon_Range_Actor[EventPlayer()], "SetVisibleToPlayers " + IntToString(EventPlayer()));
+    }
+     
+    return true;
+}
+
+void WeaponRangeInit() {
+    trigger t = TriggerCreate("CreateWeaponRangeIndicator");
+    DialogControlHookupStandard(c_triggerControlTypeEditBox, "$WPEB");
+    TriggerAddEventDialogControl(t, c_playerAny, DialogControlLastCreated(), c_triggerControlEventTypeTextChanged);     
+}

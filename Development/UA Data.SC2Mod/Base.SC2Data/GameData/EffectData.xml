@@ -147,6 +147,9 @@
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
     </CEffectDamage>
+    <CEffectDamage id="AddToSubgroup">
+        <EditorCategories value=""/>
+    </CEffectDamage>
     <CEffectApplyBehavior id="CryoFreeze4ABItem">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="Frozen4Item"/>
@@ -177,6 +180,7 @@
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="IsMassive" Effect="CryoFreezeFinishABItem"/>
         <CaseDefault value="CryoGrenadeSlowedABItem"/>
+        <ValidatorArray value="CryoFreezeFilter"/>
     </CEffectSwitch>
     <CEffectApplyBehavior id="CryoGrenadeSlowedABItem">
         <EditorCategories value="Race:Terran"/>
@@ -230,7 +234,7 @@
     <CEffectCreatePersistent id="BinocularsSniper" parent="TemplateCreatePersistent">
         <EditorCategories value="Race:Terran"/>
         <ExpireDelay value="10"/>
-        <RevealRadius value="12"/>
+        <RevealRadius value="8"/>
         <RevealFlags index="Unfog" value="1"/>
         <RevealFlags index="Detect" value="1"/>
     </CEffectCreatePersistent>
@@ -1073,6 +1077,7 @@
         <EditorCategories value="Race:Zerg"/>
         <WhichUnit Value="Caster"/>
         <Behavior value="BloodLust"/>
+        <ValidatorArray index="0" value="IsDead"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="BloodTransfusionSUL1AB">
         <ValidatorArray index="0" value="NonMechanicalValidators"/>
@@ -1334,6 +1339,7 @@
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="IsMassive" Effect="CryoFreezeFinishAB"/>
         <CaseDefault value="CryoGrenadeSlowedAB"/>
+        <ValidatorArray value="CryoFreezeFilter"/>
     </CEffectSwitch>
     <CEffectApplyBehavior id="CryoFreeze4AB">
         <EditorCategories value="Race:Terran"/>
@@ -1349,6 +1355,7 @@
         <WhichLocation Value="TargetPoint"/>
         <SpawnUnit value="CryoMineItem"/>
         <SpawnRange value="0"/>
+        <SpawnOwner Value="Neutral"/>
     </CEffectCreateUnit>
     <CEffectRemoveBehavior id="DisruptorRoundsRB">
         <ValidatorArray index="0" value="CryoRoundsEnabled"/>
@@ -4002,7 +4009,6 @@
         <ResponseFlags index="Flee" value="1"/>
         <ShieldFactor value="-0.65"/>
         <ArmorReduction value="0"/>
-        <Visibility value="Visible"/>
         <Flags index="Notification" value="1"/>
         <KindSplash value="Ranged"/>
         <Amount value="28"/>
@@ -4747,6 +4753,7 @@
         <WhichLocation Value="TargetPoint"/>
         <SpawnUnit value="WildfireMineItem"/>
         <SpawnRange value="0"/>
+        <SpawnOwner Value="Neutral"/>
     </CEffectCreateUnit>
     <CEffectSet id="DisarmWildfireMineSet" parent="TemplateSet">
         <EditorCategories value="Race:Terran"/>
@@ -7475,6 +7482,7 @@
         <WhichLocation Value="TargetPoint"/>
         <SpawnUnit value="ClaymoreItem"/>
         <SpawnRange value="0"/>
+        <SpawnOwner Value="Neutral"/>
     </CEffectCreateUnit>
     <CEffectSet id="DisarmClaymoreSet">
         <EditorCategories value="Race:Terran"/>
@@ -9909,7 +9917,6 @@
     <CEffectDamage id="VulcanTurretDamage" parent="TemplateDamageRifle">
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Flee" value="1"/>
-        <Visibility value="Visible"/>
         <Flags index="Notification" value="1"/>
         <KindSplash value="Ranged"/>
         <Amount value="32"/>
@@ -9924,7 +9931,6 @@
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Flee" value="1"/>
         <ArmorReduction value="0"/>
-        <Visibility value="Visible"/>
         <Flags index="Notification" value="1"/>
         <KindSplash value="Ranged"/>
         <SearchFilters value="-;Self,Psionic,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -14259,6 +14265,7 @@
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <DisplayFlags index="CollapseBuffed" value="1"/>
+        <DamageInheritEffect value="BloodLustAB"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="EelBiteBehav">
         <EditorCategories value="Race:Zerg"/>
@@ -15791,6 +15798,7 @@
         <Abil value="move"/>
         <Player Value="Source"/>
         <Target Value="TargetPoint"/>
+        <CmdFlags index="Preempt" value="1"/>
     </CEffectIssueOrder>
     <CEffectIssueOrder id="NPCEvadeIssueOrderJump">
         <ValidatorArray value="Pathable"/>
@@ -15798,6 +15806,7 @@
         <Abil value="NPCJump"/>
         <Player Value="Source"/>
         <Target Value="TargetPoint"/>
+        <CmdFlags index="Preempt" value="1"/>
     </CEffectIssueOrder>
     <CEffectCreatePersistent id="NPCEvadePersistent">
         <EditorCategories value="Race:Terran"/>

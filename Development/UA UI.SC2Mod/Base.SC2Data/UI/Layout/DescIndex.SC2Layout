@@ -75,6 +75,7 @@
     <Include path="UI/Layout/InventoryHotkeys.SC2Layout"/>
     <Include path="UI/Layout/GhostHeatSignature.SC2Layout"/>
     <Include path="UI/Layout/UnitStatPanel.SC2Layout"/>
+    <Include path="UI/Layout/WeaponRange.SC2Layout"/>
 <!--<Include path="UI/Layout/BankUtility.SC2Layout" requiredtoload="IS_DEBUG_PANEL_ENABLED"/>/>-->
     <Include path="UI/Layout/Console_Skins/Template_Main.SC2Layout"/>
     <Include path="UI/Layout/Console_Skins/Template_Alliance.SC2Layout"/>

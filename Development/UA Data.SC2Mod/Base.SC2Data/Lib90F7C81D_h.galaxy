@@ -1001,6 +1001,7 @@ trigger lib90F7C81D_gt_TempWeaponSpeedBuffSleightofHand;
 trigger lib90F7C81D_gt_ReloadBehaviorApply;
 trigger lib90F7C81D_gt_EncumberedWarning;
 trigger lib90F7C81D_gt_ReloadNPCBehaviorApply;
+trigger lib90F7C81D_gt_AddCiviliantoSubgroup;
 trigger lib90F7C81D_gt_StasisWebCutscene;
 trigger lib90F7C81D_gt_CameraButton;
 trigger lib90F7C81D_gt_Command;

@@ -356,6 +356,7 @@
         <HotkeyAlias value="ItemCrateTemplate"/>
         <EquipmentArray/>
         <Fidget DelayMax="0" DelayMin="0"/>
+        <EffectArray index="Create" value="MakeNeutral"/>
     </CUnit>
     <CUnit default="1" id="SelfCastPanelTemplate">
         <Name value="Unit/Name/SelfCastPanelTemplate"/>
@@ -760,6 +761,7 @@
         <BehaviorArray Link="CivilianWounded"/>
         <BehaviorArray Link="CivilianTakesDamage"/>
         <BehaviorArray Link="NPCSetSprintEnergy"/>
+        <BehaviorArray Link="CivilianSubgroup"/>
         <WeaponArray index="0" removed="1"/>
         <EffectArray index="Death" value="CiviliansDeathEffect"/>
         <CardLayouts index="0">
@@ -770,6 +772,7 @@
             <LayoutButtons index="4" removed="1"/>
         </CardLayouts>
         <AbilArray index="3" Link="NPCSprint"/>
+        <SubgroupAlias value="Civilian"/>
     </CUnit>
     <CUnit id="EnergyGenerator" parent="TemplateUnitUnspecific">
         <Race value="Terr"/>
@@ -8877,6 +8880,7 @@
         <BehaviorArray Link="CivilianWounded"/>
         <BehaviorArray Link="CivilianTakesDamage"/>
         <BehaviorArray Link="NPCSetSprintEnergy"/>
+        <BehaviorArray Link="CivilianSubgroup"/>
         <EffectArray index="Death" value="CiviliansDeathEffect"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Row="1" Column="1"/>

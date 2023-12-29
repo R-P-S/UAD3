@@ -3526,7 +3526,7 @@
                         <Height val="28" />
                         <AcceptsMouse val="True" />
                         <OnDisableDesaturationColor val="31533e" />
-                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LN Automatic Rifleman0" />
+                        <Tooltip val="@UI/AchievementsTemplates/Tooltip/LNAutomaticRifleman0" />
                         <Texture val="Buttons\BTNAutoRifle.dds" />
                      </Frame>
                      <Frame type="Image" name="ACH2" template="AchievementTemplates/AchievementExtraIconTemplate"> 

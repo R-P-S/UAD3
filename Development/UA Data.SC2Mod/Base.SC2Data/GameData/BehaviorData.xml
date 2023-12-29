@@ -267,6 +267,15 @@
         <Period value="5"/>
         <PeriodicEffect value="BloodTransfusionAISA"/>
     </CBehaviorBuff>
+    <CBehaviorClickResponse id="CivilianSubgroup">
+        <InfoFlags index="Hidden" value="1"/>
+        <Count value="2"/>
+        <CountDelay value="0.5"/>
+        <CountEffect value="AddToSubgroup"/>
+        <Relationship index="Ally" value="0"/>
+        <Relationship index="Neutral" value="0"/>
+        <Relationship index="Enemy" value="0"/>
+    </CBehaviorClickResponse>
     <CBehaviorBuff id="CryoGrenadeSlowedItem">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>

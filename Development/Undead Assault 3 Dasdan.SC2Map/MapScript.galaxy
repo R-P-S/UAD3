@@ -6240,11 +6240,11 @@ void gf_XPEvents () {
     // Variable Initialization
 
     // Implementation
-    if ((libNtve_gf_DateTimeisBetween(InitialDateTimeGet(), IntToDateTime(1562198400), IntToDateTime(1562284800)) == true)) {
+    if ((libNtve_gf_DateTimeisBetween(InitialDateTimeGet(), IntToDateTime(1703289600), IntToDateTime(1706659200)) == true)) {
         lv_allowBonus = true;
     }
     if ((lv_allowBonus == true)) {
-        gf_XPMultiplier(1.1);
+        gf_XPMultiplier(1.2);
     }
 }
 
@@ -12908,7 +12908,9 @@ bool gt_ApiaryDeath_Func (bool testConds, bool runActions) {
     ObjectiveSetName(lib90F7C81D_gv_secondObj, TextExpressionAssemble("Param/Expression/FB2A9C56"));
     if ((libNtve_gf_UnitGroupIsDead(gv_chapter_2.lv_mission12ApiaryGroup) == true)) {
         TriggerEnable(TriggerGetCurrent(), false);
-        lib90F7C81D_gf_AwardAchievement(64);
+        if ((lib90F7C81D_gf_DifficultyisGOE(3) == true)) {
+            lib90F7C81D_gf_AwardAchievement(64);
+        }
         TriggerExecute(gt_ApiaryEnd, true, false);
     }
     return true;
@@ -15779,7 +15781,6 @@ bool gt_FinaleSetup_Func (bool testConds, bool runActions) {
         Wait(0.0625, c_timeGame);
     }
     gf_CampaignScriptedSpawns(gv_campaign_Missions.lv_mission23Finale);
-    PlayerAddResponse(14, "CacumenBloodLust");
     while (true) {
         lv_randomRegion = RandomInt(1, 15);
         if ((lv_randomRegion != 9) && (lv_randomRegion != 12)) {

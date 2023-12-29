@@ -2699,7 +2699,7 @@ void lib90F7C81D_gf_EnableWeapon (int lp_index) {
             lib90F7C81D_gv_allowWeapon.lv_flamethrowers = true;
         }
     }
-    else if ((lv_weapon == "Minigun")) {
+    else if ((lv_weapon == "Miniguns")) {
         if ((lib90F7C81D_gv_allowWeapon.lv_minigun == false)) {
             lib90F7C81D_gv_allowWeapon.lv_minigun = true;
         }
@@ -7644,6 +7644,8 @@ bool auto_lib90F7C81D_gf_CreateTextTagWithAnimation_TriggerFunc (bool testConds,
     lib90F7C81D_gf_FloatingCombatTextApplyDirection(lv_frame, lp_direction, lp_displayPlayers);
     lib90F7C81D_gf_FloatingCombatTextApplyAnimation(lv_textFrame, lp_style, lp_displayPlayers);
     Wait(lp_time, c_timeGame);
+    DialogControlDestroy(lv_textFrame);
+    DialogControlDestroy(lv_frame);
     DialogDestroy(lv_dialog);
     return true;
 }
@@ -15395,6 +15397,57 @@ void lib90F7C81D_gt_ReloadNPCBehaviorApply_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Add Civilian to Subgroup
+//--------------------------------------------------------------------------------------------------
+bool lib90F7C81D_gt_AddCiviliantoSubgroup_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unitgroup lv_selected;
+    int lv_owner;
+    string lv_type;
+
+    // Automatic Variable Declarations
+    unitgroup auto8746094A_g;
+    int auto8746094A_u;
+    unit auto8746094A_var;
+
+    // Variable Initialization
+    lv_selected = UnitGroupEmpty();
+    lv_type = "";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(0.1875, c_timeGame);
+    lv_owner = EventPlayerEffectUsedUnitOwner(c_effectPlayerSource);
+    lv_selected = UnitGroupSelected(lv_owner);
+    if ((UnitGetType(UnitGroupUnit(lv_selected, 1)) == "CivilianFemale") && (TechTreeUnitCount(lv_owner, "Civilian", c_techCountCompleteOnly) >= 1)) {
+        lv_type = "Civilian";
+    }
+    else if ((UnitGetType(UnitGroupUnit(lv_selected, 1)) == "Civilian") && (TechTreeUnitCount(lv_owner, "CivilianFemale", c_techCountCompleteOnly) >= 1)) {
+        lv_type = "CivilianFemale";
+    }
+    if ((lv_type != null)) {
+        auto8746094A_g = UnitGroup(UnitTypeFromString(lv_type), lv_owner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto8746094A_u = UnitGroupCount(auto8746094A_g, c_unitCountAll);
+        for (;; auto8746094A_u -= 1) {
+            auto8746094A_var = UnitGroupUnitFromEnd(auto8746094A_g, auto8746094A_u);
+            if (auto8746094A_var == null) { break; }
+            UnitGroupAdd(lv_selected, auto8746094A_var);
+        }
+        UnitGroupSelect(lv_selected, lv_owner, true);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib90F7C81D_gt_AddCiviliantoSubgroup_Init () {
+    lib90F7C81D_gt_AddCiviliantoSubgroup = TriggerCreate("lib90F7C81D_gt_AddCiviliantoSubgroup_Func");
+    TriggerAddEventPlayerEffectUsed(lib90F7C81D_gt_AddCiviliantoSubgroup, c_playerAny, "AddToSubgroup");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Stasis Web Cutscene
 //--------------------------------------------------------------------------------------------------
 bool lib90F7C81D_gt_StasisWebCutscene_Func (bool testConds, bool runActions) {
@@ -18230,6 +18283,7 @@ void lib90F7C81D_InitTriggers () {
     lib90F7C81D_gt_ReloadBehaviorApply_Init();
     lib90F7C81D_gt_EncumberedWarning_Init();
     lib90F7C81D_gt_ReloadNPCBehaviorApply_Init();
+    lib90F7C81D_gt_AddCiviliantoSubgroup_Init();
     lib90F7C81D_gt_StasisWebCutscene_Init();
     lib90F7C81D_gt_CameraButton_Init();
     lib90F7C81D_gt_Command_Init();

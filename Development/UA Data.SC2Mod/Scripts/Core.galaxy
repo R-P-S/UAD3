@@ -3,4 +3,5 @@ void Core() {
     AIinit();
     ASCIIUtilInit();
     DeprecatedScript();
+    WeaponRangeInit();
 }

@@ -1164,7 +1164,7 @@
             <Cooldown Link="Abil/BinocularsSniper"/>
         </Cost>
         <Range value="40"/>
-        <AutoCastFilters value="Cloaked;Player,Ally,Psionic,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <AutoCastFilters value="-;Player,Ally,Psionic,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AutoCastRange value="30"/>
         <CastIntroTime value="0.0625"/>
         <ShowProgressArray index="Cast" value="1"/>
@@ -1963,7 +1963,7 @@
             <Cooldown Link="Abil/InfantryBinoculars"/>
         </Cost>
         <Range value="40"/>
-        <AutoCastFilters value="Cloaked;Player,Ally,Psionic,Structure,Missile,Dead,Hidden,Invulnerable"/>
+        <AutoCastFilters value="-;Player,Ally,Psionic,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <AutoCastRange value="13"/>
         <CastIntroTime value="0.0625"/>
         <ShowProgressArray index="Cast" value="1"/>

@@ -102,6 +102,7 @@
         <EquipmentArray index="0" Icon="Assets\Icon Pack\btn-upgrade-terran-infernalpreigniter-level2.dds"/>
         <EffectArray index="Birth" value="CreateWeapon"/>
         <Description value="Button/UI/M9Flamethrower"/>
+        <HotkeyAlias value="M9Flamethrower"/>
     </CUnit>
     <CUnit id="HK42" parent="ItemCrateTemplate">
         <Name value="Unit/Name/HK42"/>

@@ -274,13 +274,13 @@ Button/UI/SPCS_BTN=The Soldier Plate Carrier System is an adaptation of the IOTV
 UI/Achievements/DecalCamouflage=DECAL CAMOUFLAGE
 UI/Achievements/ModeAchievements=MODE ACHIEVEMENTS
 UI/Achievements/MOSAchievements=MOS ACHIEVEMENTS
-UI/Achievements/MedalsRibbons=MEDALS&lt;/n&gt;RIBBONS
+UI/Achievements/MedalsRibbons=MEDALS</n>RIBBONS
 UI/Achievements/Options=Options
 UI/Achievements/Close=CLOSE
 UI/Achievements/CamoPatterns=Camo Patterns
 UI/Achievements/Decals=Decals
 UI/Achievements/Campaign=Campaign
-UI/Achievements/MedalsandRibbons=Medals &amp; Ribbons
+UI/Achievements/MedalsandRibbons=Medals & Ribbons
 UI/Achievements/CameraShake=Camera  Shake
 UI/Achievements/TacticalSprint=Tactical  Sprint
 UI/Achievements/SubmenuCancelHotkey=Submenu  Cancel  Hotkey
@@ -369,6 +369,6 @@ UI/AchievementsTemplates/Tooltip/ConstructRepairDrone0=Construct Repair Drone: 0
 UI/AchievementsTemplates/Tooltip/ConstructMK17SentryGun0=Construct MK17 Sentry Gun: 0
 UI/AchievementsTemplates/Tooltip/ConstructMK18SentryGun0=Construct MK18 Sentry Gun: 0
 UI/AchievementsTemplates/Tooltip/ConstructMK19SentryGun0=Construct MK19 Sentry Gun: 0
-UI/AchievementsTemplates/Tooltip/AchievementsGameplayoptions=Achievements &amp;amp; Gameplay options
+UI/AchievementsTemplates/Tooltip/AchievementsGameplayoptions=Achievements & Gameplay options
 UI/AchievementsTemplates/Tooltip/Tips=Tips
-UI/AchievementsTemplates/Tooltip/SkillTreePanel=Skill Tree panel displays allies current ability levels &amp;amp; skill upgrades. Panel can be dragged by clicking the top left icon.&lt;n/&gt;&lt;c val=&quot;FFFFFF&quot;&gt;Hotkey (Backspace)&lt;/c&gt;
+UI/AchievementsTemplates/Tooltip/SkillTreePanel=Skill Tree panel displays allies current ability levels & skill upgrades. Panel can be dragged by clicking the top left icon.<n/><c val="FFFFFF">Hotkey (Backspace)</c>

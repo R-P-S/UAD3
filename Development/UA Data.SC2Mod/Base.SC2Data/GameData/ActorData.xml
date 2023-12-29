@@ -545,6 +545,50 @@
         <StatusBarFlags index="Duration" value="0"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
     </CActorUnit>
+    <CActorModel id="BinocularsModel" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.BinocularsInfantry.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsInfantry.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="Create BinocularsVisual"/>
+        <On Terms="ActorDestruction" Target="BinocularsVisual" Send="Destroy"/>
+        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsSniper.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="ScannerSweepModel"/>
+    </CActorModel>
+    <CActorSound id="BinocularsSound" parent="SoundContinuous">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <On Terms="Effect.BinocularsInfantry.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsInfantry.Stop" Send="Destroy"/>
+        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsSniper.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="OrbitalCommand_ScannerSweep"/>
+    </CActorSound>
+    <CActorSound id="BinocularsSoundOthers" parent="SoundContinuous">
+        <Filter index="Self" value="1"/>
+        <On Terms="Effect.BinocularsInfantry.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsInfantry.Stop" Send="Destroy"/>
+        <On Terms="Effect.BinocularsSniper.Start" Send="Create"/>
+        <On Terms="Effect.BinocularsSniper.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="OrbitalCommand_ScannerSweep_Others"/>
+    </CActorSound>
+    <CActorRange id="BinocularsVisual">
+        <Host Subject="BinocularsModel"/>
+        <Range value="8.000000"/>
+        <Icon value="Assets\Textures\ScannerSweepRadius_Diffuse.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
+    <CActorRange id="WeaponRangeIndicator">
+        <On Terms="Signal.*.Destroy" Send="Destroy"/>
+        <Filter index="All" value="1"/>
+        <IconScale value="0.004000,0.004000"/>
+        <IconArcLength value="0.100000"/>
+        <IconTint value="255,255,0,0"/>
+        <Icon value="Assets\Graph\ui_rangeicon.dds"/>
+    </CActorRange>
     <CActorAction id="XR42PulseCannonAttack" parent="GenericAttack" effectImpact="XR42PulseCannonDamage" effectLaunch="XR42PulseCannonLaunch">
         <LaunchSiteOps Ops="SOpAttachHarness LocalOffsetY010"/>
         <LaunchAssets Model="PhotonCannonAttackImpact" Sound="PulseCannon"/>

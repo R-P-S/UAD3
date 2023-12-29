@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="StandardTooltip" name="CustomTooltipTemplate" template="StandardTooltip/StandardTooltip"/>
+
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/TriggerContainer" file="GameUI">
+ 
+        <Frame type="EditBox" name="Weapon" template="StandardTemplates/StandardEditBoxTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-9999"/>
+            <Width val="250"/>
+            <Height val="60"/>
+            <Handle val="WPEB"/>
+            <UseAlternateTime val="True"/>
+            <InputDelayTimeout val="1"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="EquipmentIcon" name="EquipmentIconTemplate" file="EquipmentIcon">
+
+        <Frame type="Frame" name="CacheTooltip">
+            <Anchor relative="$parent"/>
+            <Tooltip val="{$parent/@Tooltip}"/>
+            <AcceptsMouse val="True"/>
+            <TooltipFrame val="UnitTip"/>
+        </Frame>
+
+        <Frame type="StandardTooltip" name="UnitTip" template="WeaponRange/CustomTooltipTemplate"/>
+
+        <Animation name="IconHoverAnim">
+            <Event event="OnMouseEnter" frame="CacheTooltip" action="DirectionForward,Play"/>
+            <Event event="OnMouseExit" frame="CacheTooltip" action="DirectionReverse,Play"/>
+
+            <Controller type="State" stateGroup="HoveredState" end="Pause">
+                <Key type="Identifier" time="0.0" value="NotHovered"/>
+                <Key type="Identifier" time="0.0" value="Hovered"/>
+            </Controller>
+        </Animation>
+
+        <StateGroup name="HoveredState">
+            <DefaultState val="Default"/>
+ 
+            <State name="Hovered"/>
+
+            <State name="NotHovered">
+                <Action type="SetProperty" frame="$WPEB" Text="Destroy" undo="False"/>
+            </State>
+
+            <State name="Default">
+                <Action type="SetProperty" frame="$WPEB" Text="Hidden" undo="False"/>
+            </State>
+        </StateGroup>
+
+        <StateGroup name="TipState"> 
+            <DefaultState val="Default"/>
+
+            <State name="Send">
+                <When type="StateGroup" HoveredState="Hovered"/>
+                <Action type="SetProperty" frame="$WPEB" Text="{$layer/UnitTip/Label/@Text}" undo="False"/>
+            </State>
+           
+            <State name="Default"/>
+        </StateGroup>
+    </Frame>
+
+    <!-- EquipmentIconTemplate for hero weapon icon -->
+    <Frame type="InfoPaneHero" name="GameUI/UIContainer/ConsoleUIContainer/InfoPanel/InfoPaneHero" file="GameUI">
+        <Frame type="EquipmentIcon" name="WeaponIcon" template="WeaponRange/EquipmentIconTemplate"/>
+    </Frame>
+</Desc>
