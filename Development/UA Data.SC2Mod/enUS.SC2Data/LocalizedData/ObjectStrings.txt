@@ -1327,6 +1327,7 @@ Actor/Name/QuikClot=Quik Clot
 Actor/Name/QuikClotSound=Quik Clot Sound
 Actor/Name/RAAnnihilatorAttack=RA Annihilator Attack
 Actor/Name/RAPhantomWreckage=RA Phantom Wreckage
+Actor/Name/RASquadLeaderGlow=RA Squad Leader Glow
 Actor/Name/RadioJammer=Radio Jammer
 Actor/Name/RailGunAction=Rail Gun Action
 Actor/Name/RainFireAttackDown=Rain Fire Attack Down

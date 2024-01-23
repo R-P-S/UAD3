@@ -269,7 +269,7 @@ Button/UI/W1200=Winchester 1200 pump action shotgun.<n/><n/>Damage: <d ref="Effe
     Armor Button Tooltips
 -->
 Button/UI/KevlarBodyArmor=A full-body armor designed to protect the wearer from simple zombie attacks and bites. Adds <d ref="Behavior,KevlarBodyArmor,Modification.VitalMaxArray[1]"/> armor.
-Button/UI/OPA=Organic Printed Armor. A light and durable body armor made of a plaque-like organic material. Improves movement speed by <d ref="Behavior,OPA,Modification.MoveSpeedBonus" precision="2"/> but increases explosive & fire damage by <d ref="100 * Behavior,OPA,Modification.DamageTakenFraction[Spell]" precision="2"/>%.
+Button/UI/OPA=Organic Printed Armor is a lightweight and durable body armor crafted from a plaque-like organic material. While it enhances movement speed by <d ref="Behavior,OPA,Modification.MoveSpeedBonus" precision="2"/>, it also amplifies the damage taken from explosive and fire sources by <d ref="100 * Behavior,OPA,Modification.DamageTakenFraction[Spell]" precision="2"/>%.
 Button/UI/SPCS_BTN=The Soldier Plate Carrier System is an adaptation of the IOTV with the focus being improved mobility for dismounted operations. Adds <d ref="Behavior,SPCS,Modification.VitalMaxArray[1]"/> armor.
 UI/Achievements/DecalCamouflage=DECAL CAMOUFLAGE
 UI/Achievements/ModeAchievements=MODE ACHIEVEMENTS

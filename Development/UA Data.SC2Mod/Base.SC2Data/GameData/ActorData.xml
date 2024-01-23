@@ -485,6 +485,18 @@
         <On Terms="StatusOn.*.IRSensorIntelligence" Send="Create IRSensorIntelligenceSilhouette"/>
         <On Terms="StatusOff.*.IRSensorIntelligence" Target="IRSensorIntelligenceSilhouette" Send="Destroy"/>
     </CActorSimple>
+    <CActorModel id="RASquadLeaderGlow" parent="ModelAddition">
+        <Inherits index="TeamColor" value="0"/>
+        <Inherits index="TintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="0"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="0"/>
+        <On index="0" Terms="Behavior.RASquadLeader.On" Send="Create"/>
+        <On index="2" Terms="Behavior.RASquadLeader.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 128,255,255"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpForwardNorth" HoldRotation="1"/>
+        <Model value="StukovHeroGlow"/>
+    </CActorModel>
     <CActorSiteOpLocalOffset id="LocalOffsetY022" parent="LocalOffsetTemplate">
         <LocalOffset value="0.000000,-0.220000,0.000000"/>
     </CActorSiteOpLocalOffset>
@@ -1135,6 +1147,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="HerculesPortrait"/>
         <HighlightTooltip value="Unit/Name/InfantryFowardObserverActor"/>
         <SoundArray index="Birth" value="Tosh_Birth"/>
@@ -1174,6 +1187,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="Sniper"/>
         <GroupIcon>
             <Image index="0" value="Assets\Wireframes\MOS_SDM_Wireframe.dds"/>
@@ -12910,6 +12924,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="TychusPortrait"/>
         <GroupIcon>
             <Image index="0" value="Assets\Wireframes\MOS_AutoRifleman_Wireframe.dds"/>
@@ -12955,6 +12970,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <HighlightTooltip value="Unit/Name/InfantryRiflemanActor"/>
     </CActorUnit>
     <CActorUnit id="InfantryMarksmanActor" parent="TemplateLNActor" unitName="InfantryMarksman">
@@ -12979,6 +12995,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="SpectrePortrait"/>
         <GroupIcon>
             <Image index="0" value="Assets\Wireframes\MOS_SDM_Wireframe.dds"/>
@@ -34201,6 +34218,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="ReaperPortrait"/>
         <GroupIcon>
             <Image index="0" value="Assets\Wireframes\MOS_Combat_Engineer.dds"/>
@@ -34263,6 +34281,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <PortraitModel value="HillPortrait"/>
         <AbilSoundArray/>
         <HighlightTooltip value="Unit/Name/InfantryJavelinGunnerActor"/>
@@ -34299,6 +34318,7 @@
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById DecalRA"/>
         <On Terms="ActorCreation; PlayerId 15 15" Send="TextureSelectById CamoRockAvalanche"/>
         <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById CamoWoodland1"/>
+        <On Terms="Behavior.RASquadLeader.On" Send="TextureSelectById DecalGold"/>
         <EventDataFootprint index="0" Actor="UnitFootprint" Model="RiflemanFootprint"/>
         <PortraitModel value="MedicPortrait"/>
         <AbilSoundArray/>

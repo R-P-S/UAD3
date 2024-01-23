@@ -237,6 +237,12 @@
       <Frame type="DataRefFrame" name="InfantrySniper" template="DebugTemplate/PMCDataRefUnitCountTemplate">
          <Argument name="UnitCount" val="InfantrySniper" />
       </Frame>
+      <Frame type="DataRefFrame" name="M1Abrams" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="M1Abrams" />
+      </Frame>
+      <Frame type="DataRefFrame" name="M2BradleyIFV" template="DebugTemplate/PMCDataRefUnitCountTemplate">
+         <Argument name="UnitCount" val="M2BradleyIFV" />
+      </Frame>
    </Frame>
    <StateGroup name="UnitDataTemplate">
       <DefaultState val="NoData" />
@@ -1234,7 +1240,7 @@
          <Frame type="Label" name="Title" template="AchievementTemplates/CDLabelTemplate">
             <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
             <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
-            <Width val="275" />
+            <Width val="285" />
             <Height val="50" />
             <Text val="PMC" />
             <Color val="255,255,0" />
@@ -1323,9 +1329,36 @@
                <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='InfantrySniper'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
             </Frame>
          </Frame>
-         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
-            <Anchor side="Bottom" relative="$parent/InfantrySniper" pos="Max" offset="25" />
+
+         <Frame type="Label" name="M1Abrams" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/InfantrySniper" pos="Max" offset="20" />
             <Anchor side="Left" relative="$parent/InfantrySniper" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/M1Abrams/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="M1 Abrams : %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='M1Abrams'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+
+         <Frame type="Label" name="M2BradleyIFV" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/M1Abrams" pos="Max" offset="20" />
+            <Anchor side="Left" relative="$parent/M1Abrams" pos="Min" offset="0" />
+            <Frame type="Label" name="Label">
+               <Text val="{$parent/$parent/PMCData/M2BradleyIFV/@RealValue}" />
+            </Frame>
+            <Frame type="TextFormatFrame" name="FormattedText">
+               <FormatText val="M2 Bradley IFV: %0% (%1%)" />
+               <Replacement index="0" val="{$parent/Label/@Text}" />
+               <Replacement index="1" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d Player='15' UnitCount='M2BradleyIFV'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%&lt;/c&gt;" />
+            </Frame>
+         </Frame>
+
+         <Frame type="Label" name="Split" template="DebugTemplate/UnitLabelTemplate">
+            <Anchor side="Bottom" relative="$parent/M2BradleyIFV" pos="Max" offset="25" />
+            <Anchor side="Left" relative="$parent/M2BradleyIFV" pos="Min" offset="0" />
             <Text val="-----------------------------------------------------------" />
             <Visible val="True" />
             <Color val="0,102,0" />
@@ -1336,7 +1369,7 @@
             <Anchor side="Left" relative="$parent/Split" pos="Min" offset="0" />
             <Frame type="TextFormatFrame" name="FormattedText">
                <FormatText val=" PMC Unit Total : %0%" />
-               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/]&quot;/&gt;" />
+               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/] + [d player='15' UnitCount='M1Abrams'/] + [d player='15' UnitCount='M2BradleyIFV'/] &quot;/&gt;" />
             </Frame>
             <Visible val="True" />
          </Frame>
@@ -1345,7 +1378,7 @@
             <Anchor side="Left" relative="$parent/PMCTotal" pos="Min" offset="0" />
             <Frame type="TextFormatFrame" name="FormattedText">
                <FormatText val=" PMC : %0%" />
-               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%" />
+               <Replacement index="0" val="&lt;c val=&quot;FFFF00&quot;&gt;&lt;d ref=&quot;[d player='15' UnitCount='InfantryRifleman'/] + [d player='15' UnitCount='InfantryAutomaticRifleman'/] + [d player='15' UnitCount='InfantryMedic'/] + [d player='15' UnitCount='InfantryShotgunner'/] + [d player='15' UnitCount='InfantryMarksman'/] + [d player='15' UnitCount='InfantryForwardObserver'/] + [d player='15' UnitCount='InfantrySniper'/] + [d player='15' UnitCount='M1Abrams'/] + [d player='15' UnitCount='M2BradleyIFV'/] / [d Score='UnitsActiveCount' player='15'/] *100&quot;  precision=&quot;1&quot;/&gt;%" />
             </Frame>
             <Visible val="True" />
          </Frame>

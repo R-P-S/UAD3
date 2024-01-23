@@ -2014,6 +2014,7 @@ Variable/Name/lib_90F7C81D_6F17D5D7=PingEffect
 Variable/Name/lib_90F7C81D_6F8A0D45=Index
 Variable/Name/lib_90F7C81D_6FB15352=health icon
 Variable/Name/lib_90F7C81D_6FBF512A=i
+Variable/Name/lib_90F7C81D_6FDE8651=SuccessCheck
 Variable/Name/lib_90F7C81D_6FFAAECB=Player
 Variable/Name/lib_90F7C81D_7009E506=i
 Variable/Name/lib_90F7C81D_702DD9EB=Count

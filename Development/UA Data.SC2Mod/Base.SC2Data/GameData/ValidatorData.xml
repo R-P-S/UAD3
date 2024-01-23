@@ -1840,6 +1840,7 @@
         <CombineArray value="Flamethrower"/>
         <CombineArray value="Ghost"/>
         <Negate value="1"/>
+        <Type value="And"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="WeaponSlotEquipped">
         <Behavior value="WeaponSlotEquipped"/>

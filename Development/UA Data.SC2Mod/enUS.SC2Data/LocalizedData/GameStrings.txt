@@ -603,6 +603,7 @@ AdvancedAnitVeninInInventory=Inventory doesn't have any advanced anti venin shot
 AdvancedFirstAidKitInInventory=Inventory doesn't have any advanced first aid kits
 AdvancedQuikClotInInventory=Inventory doesn't have any advanced quik clots
 Aim=
+AimAssistCheck=Can't Use Aim Assist
 AimAssistantFilter=Only one Aim Assistant can be used. Can't be used on Local Nationals.
 AirSupport/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 AirSupport/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
@@ -2863,7 +2864,7 @@ Button/UI/M92Torrent=The M92 Torrent is a long ranged, high-powered rifle.<n/><n
 Button/UI/M935Minigun=Rotary barrel machine gun with electric generator provides incredible rate of fire at the expense of its heavy weight.<n/><n/>Damage: <d ref="Effect,M935MinigunSpreadDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M935Minigun,Period" precision="3"/><n/>Range: <d ref="Weapon,M935Minigun,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M935Minigun,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="FF0000">+3%</c>
 Button/UI/M9Flamethrower=The M9 Flamethrower was designed be more robust and allow the soldier to carry more fuel.<n/><n/>Damage: <d ref="Effect,M9FlamethrowerDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,M9Flamethrower,Period" precision="3"/><n/>Range: <d ref="Weapon,M9Flamethrower,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,M9Flamethrower,Modification.MoveSpeedBonus" precision="2"/><n/></c></c>Reload Speed: <c val="00FF94">-2%</c>
 Button/UI/Mk14_BTN=The Mk14 offers improved recoil and stability for an increased rate of fire. The Mk14 also offers an additional 5 round capacity.<n/><n/>Damage: <d ref="Effect,Mk14Damage,Amount"/><n/>Attack Speed: <d ref="Weapon,Mk14,Period" precision="3"/><n/>Range: <d ref="Weapon,Mk14,Range"/><n/>Movement Speed Delta: <c val="00FF94"><d ref="Behavior,Mk14,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: n/a
-Button/UI/OPA=Organic Printed Armor. A light and durable body armor made of a plaque-like organic material. Improves movement speed by <d ref="Behavior,OPA,Modification.MoveSpeedBonus" precision="2"/> but increases explosive & fire damage by <d ref="100 * Behavior,OPA,Modification.DamageTakenFraction[Spell]" precision="2"/>%.
+Button/UI/OPA=Organic Printed Armor is a lightweight and durable body armor crafted from a plaque-like organic material. While it enhances movement speed by <d ref="Behavior,OPA,Modification.MoveSpeedBonus" precision="2"/>, it also amplifies the damage taken from explosive and fire sources by <d ref="100 * Behavior,OPA,Modification.DamageTakenFraction[Spell]" precision="2"/>%.
 Button/UI/SOFAR_BTN=The Special Operations Forces Assault Rifle (SOF - AR) was developed in the 2050s to accomodate the rapid fielding advancement of SOF gear. The SOF-AR is modular and accurate.<n/><n/>Damage: <d ref="Effect,SOFARDamage,Amount"/><n/>Attack Speed: <d ref="Weapon,SOFAR,Period" precision="3"/><n/>Range: <d ref="Weapon,SOFAR,Range"/><n/>Movement Speed Delta: <c val="FF0000"><d ref="Behavior,SOFAR,Modification.MoveSpeedBonus" precision="2"/><n/></c>Reload Speed: <c val="00FF94">-2%</c>
 Button/UI/SPCS_BTN=The Soldier Plate Carrier System is an adaptation of the IOTV with the focus being improved mobility for dismounted operations. Adds <d ref="Behavior,SPCS,Modification.VitalMaxArray[1]"/> armor.
 Button/UI/StynerBR2_BTN=A battle rifle delivering higher stopping power at the cost of mobility and control.<n/><n/>Damage: <d ref="Effect,StynerBR2Damage,Amount"/><n/>Attack Speed: <d ref="Weapon,StynerBR2,Period" precision="3"/><n/>Range: <d ref="Weapon,StynerBR2,Range" precision="1"/><n/>Movement Speed Delta: <d ref="Behavior,StynerBR2,Modification.MoveSpeedBonus" precision="2"/><n/>Reload Speed: <c val="FF0000">+6%</c>
@@ -2906,6 +2907,7 @@ DocInfo/Author=illidan92/composure #200
 DocInfo/DescLong=data mod!<n/><n/><n/><n/>
 DocInfo/DescShort=1-12
 DocInfo/Name=UA3D_Data
+Doesn'tHaveAimAssistant=Aim Assist Already Equipped
 Doesn'tHaveFlashlight=Only one flashlight is allowed
 Doesn'tHaveKineticIntegrator=Only one kintetic integrator is allowed
 DoesntHaveMGL=Can Only Have One MGL
@@ -8151,6 +8153,7 @@ Param/Value/lib_90F7C81D_02124F70=Hard
 Param/Value/lib_90F7C81D_022F6CA8=<s val="Item_Description">[Armor Integrity: 
 Param/Value/lib_90F7C81D_0290EE0B=<c val="ff0000">You have pinged too much.  Please wait a while before pinging again.</c>
 Param/Value/lib_90F7C81D_02A27036= [
+Param/Value/lib_90F7C81D_03721E39=instant
 Param/Value/lib_90F7C81D_055EC090= 
 Param/Value/lib_90F7C81D_07081AB0=</n>
 Param/Value/lib_90F7C81D_071D296B=<c val="00FFFF">You are now Delta Team Leader.</c> Hold (Alt + Left mouse button) to use the ping panel

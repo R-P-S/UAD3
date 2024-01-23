@@ -1131,6 +1131,7 @@ string lib90F7C81D_gf_RandomPMC () {
     int lv_weight;
     int lv_randWeight;
     int lv_weightMaxPool;
+    bool lv_successCheck;
 
     // Automatic Variable Declarations
     int auto0F5D50BC_ae;
@@ -1150,6 +1151,7 @@ string lib90F7C81D_gf_RandomPMC () {
             lv_randWeight = RandomInt(1, lv_weightMaxPool);
             lv_weight = (lv_randWeight - UserDataGetInt("PMCUnits", "All", "Weight", lv_index));
             if ((lv_weight <= 0)) {
+                lv_successCheck = true;
                 lib90F7C81D_gf_UpdatePMCPool(lv_index, lib90F7C81D_ge_PMCSlot_Substract);
                 break;
             }
@@ -1157,6 +1159,10 @@ string lib90F7C81D_gf_RandomPMC () {
                 lv_weightMaxPool -= UserDataGetInt("PMCUnits", "All", "Weight", lv_index);
             }
         }
+    }
+    if ((lv_successCheck == false)) {
+        lv_index = 1;
+        lib90F7C81D_gf_UpdatePMCPool(lv_index, lib90F7C81D_ge_PMCSlot_Substract);
     }
     return UserDataGetUnit("PMCUnits", "All", "Unit", lv_index);
 }
@@ -1205,7 +1211,10 @@ void lib90F7C81D_gf_ResetPMCPool () {
         if ((lv_index == 1)) {
             UserDataSetInt("PMCUnits", "All", "Unit Limit", lv_index, 12);
         }
-        else {
+        else if (((lv_index == 2) || (lv_index == 3) || (lv_index == 4))) {
+            UserDataSetInt("PMCUnits", "All", "Unit Limit", lv_index, 2);
+        }
+        else if (true) {
             UserDataSetInt("PMCUnits", "All", "Unit Limit", lv_index, 1);
         }
     }
@@ -1215,7 +1224,7 @@ void lib90F7C81D_gf_ResetPMCPool () {
 void lib90F7C81D_gf_PMCDifficulty () {
     // Automatic Variable Declarations
     // Implementation
-    if ((lib90F7C81D_gf_DifficultyisGOE(3) == true)) {
+    if ((lib90F7C81D_gf_DifficultyisGOE(4) == true)) {
         lib90F7C81D_gv_pMC.lv_maxUnitType += 2;
         UserDataSetInt("PMCUnits", "All", "Enabled", 6, 1);
         UserDataSetInt("PMCUnits", "All", "Enabled", 7, 1);
@@ -7055,7 +7064,7 @@ order lib90F7C81D_gf_OrderConstructor (int lp_player, int lp_type, unit lp_item,
         }
         OrderSetTargetItem(lv_order, lp_item);
         if ((lp_type == lib90F7C81D_ge_OrderType_Target) && (lp_hotkey != "Slot")) {
-            if (((OrderGetAbilityCommand(lv_order) == AbilityCommand("FirstAidKitItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedFirstAidKit", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AntiVeninShotItem", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedAntiVeninShot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("QuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AdvancedQuikClot", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("EnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuperiorEnergyCell", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("AimAssistant", 0)) || (OrderGetAbilityCommand(lv_order) == AbilityCommand("SuitKineticIntegrator", 0)))) {
+            if (((UnitGetType(lp_item) == "FirstAidKit") || (UnitGetType(lp_item) == "AdvancedFirstAidKit") || (UnitGetType(lp_item) == "AntiVeninShot") || (UnitGetType(lp_item) == "AdvancedAntiVeninShot") || (UnitGetType(lp_item) == "QuikClot") || (UnitGetType(lp_item) == "AdvancedQuikClot") || (UnitGetType(lp_item) == "EnergyCell") || (UnitGetType(lp_item) == "SuperiorEnergyCell"))) {
                 OrderSetTargetUnit(lv_order, lib90F7C81D_gv_playerHeroes[lp_player]);
             }
             else {
