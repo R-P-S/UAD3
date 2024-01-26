@@ -249,7 +249,7 @@
     </CEffectIssueOrder>
     <CEffectDamage id="DeathMachineAir" parent="TemplateShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.36" Fraction="1"/>
         <AreaArray index="1" Radius="0.9" Fraction="0.4"/>
@@ -306,7 +306,7 @@
     </CEffectSet>
     <CEffectDamage id="DeathMachine" parent="TemplateShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.36" Fraction="1"/>
         <AreaArray index="1" Radius="0.9" Fraction="0.4"/>
@@ -561,14 +561,14 @@
     </CEffectSet>
     <CEffectDamage id="DeathMachineSpreadDamage" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>
     </CEffectDamage>
     <CEffectDamage id="DeathMachineSpreadDamageAir" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>
@@ -745,7 +745,7 @@
     </CEffectSwitch>
     <CEffectDamage id="M935MinigunSpreadDamageAir" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="6"/>
+        <Amount value="7"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>
@@ -801,14 +801,14 @@
     </CEffectLaunchMissile>
     <CEffectDamage id="M935Minigun" parent="TemplateShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="6"/>
+        <Amount value="7"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.36" Fraction="1"/>
         <AreaArray index="1" Radius="0.9" Fraction="0.4"/>
     </CEffectDamage>
     <CEffectDamage id="M935MinigunSpreadDamage" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="6"/>
+        <Amount value="7"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>
@@ -882,7 +882,7 @@
     <CEffectModifyPlayer id="SetMineralsM935Minigun">
         <EditorCategories value="Race:Terran"/>
         <WhichPlayer Value="Caster"/>
-        <Resources index="Minerals" value="300"/>
+        <Resources index="Minerals" value="400"/>
     </CEffectModifyPlayer>
     <CEffectModifyPlayer id="SetMineralsDeathMachine">
         <EditorCategories value="Race:Terran"/>
@@ -2274,7 +2274,7 @@
     </CEffectApplyBehavior>
     <CEffectDamage id="M135Minigun" parent="TemplateShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.36" Fraction="1"/>
         <AreaArray index="1" Radius="0.9" Fraction="0.4"/>
@@ -2400,14 +2400,14 @@
     </CEffectCreatePersistent>
     <CEffectDamage id="M135MinigunSpreadDamage" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>
     </CEffectDamage>
     <CEffectDamage id="M135MinigunSpreadDamageAir" parent="TemplateSpreadShotgunDamage">
         <EditorCategories value="Race:Terran"/>
-        <Amount value="5"/>
+        <Amount value="6"/>
         <Random value="0.5"/>
         <AreaArray index="0" Radius="0.6" Fraction="1"/>
         <AreaArray index="1" Radius="1.5" Fraction="0.4"/>

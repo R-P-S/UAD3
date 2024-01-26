@@ -55,31 +55,17 @@ DocInfo/HowToPlayBasic01=Focus on the objectives (on the top left of the screen)
 DocInfo/HowToPlayBasic02=Stay alive.
 DocInfo/HowToPlayWinning00=Complete mission objectives
 DocInfo/Name=Undead Assault 3: Dasdan
-DocInfo/PatchNote001=-Fixed Ghost MOS lobby selection not appearing
-DocInfo/PatchNote002=-Fixed typo in chapter 2 ending dialogue
-DocInfo/PatchNote003=-Fixed Bruiser Bro's unit name in mission survival
-DocInfo/PatchNote004=-Reduced Flammer's Oil Douse skill cast time from 0.5 to 0.125
-DocInfo/PatchNote005=-Updated oil douse tooltip to reflect that it now grounds flying units
-DocInfo/PatchNote006=-Fixed Pest Control achievement
-DocInfo/PatchNote007=-Fixed issue where items could give vision to a player
-DocInfo/PatchNote008=-Fixed Javelin Missile tooltip
-DocInfo/PatchNote009=-Police tactical ai won't overwrite previous queued orders
-DocInfo/PatchNote010=-When hovering the cursor over the weapon icon in the unit panel, a range indicator will now be displayed
-DocInfo/PatchNote011=-Minigun weapon items will now spawn
-DocInfo/PatchNote012=-20% XP bonus until the end of January
-DocInfo/PatchNote013=-Unit stat panel will now display correct text for melee units
-DocInfo/PatchNote014=-QoL: Double-clicking any owned civilian will now select all
-DocInfo/PatchNote015=-Fix tootips for Disruptor Rounds and Disruptor Rounds Target by reducing precision from 4 to 1
-DocInfo/PatchNote016=-Fixed tooltip for Cryo Rounds and Cryo Rounds (target).
-DocInfo/PatchNote017=-Fixed Supressive Fire accumulator to properly slow massives.
-DocInfo/PatchNote018=-Police tactical ai won't overwrite previous queued orders.
-DocInfo/PatchNote019=-When hovering the cursor over the weapon icon in the unit panel, a range indicator will now be displayed.
-DocInfo/PatchNote020=-Minigun weapon items will now spawn.
-DocInfo/PatchNote021=-XP bonus of 20% until the end of January
-DocInfo/PatchNote022=-UI mod korean translation from Highseeker
-DocInfo/PatchNote023=-Fixed a few text keys from translation
-DocInfo/PatchNote024=-QoL: Double-clicking any owned civilian will now select all.
-DocInfo/PatchNote025=-Combat Engineer's sentry turrets will no longer reveal themselves when firing
+DocInfo/PatchNote001=-Enabled insane mode difficulty.
+DocInfo/PatchNote002=-Recruit difficulty will now buff players
+DocInfo/PatchNote003=-Buffed marksmanship levels from 4/7/11/16% to 5/10/15/20%
+DocInfo/PatchNote004=-Increased Cyborg weapon damage by +1
+DocInfo/PatchNote005=-Fixed an issue that caused MOS camo glazes to not apply
+DocInfo/PatchNote006=-Camo glazes now get applied to the unit model UI
+DocInfo/PatchNote007=-Weekly modifier rewards UI now uses a unit model frame for camos
+DocInfo/PatchNote008=-Lift boots have a chance to spawn during Campaign Ch.3
+DocInfo/PatchNote009=-Saber 6 commander is now easier to identify
+DocInfo/PatchNote010=-Attempt to fix LN spawn for SFAAT after chapter 3 transition
+DocInfo/PatchNote011=-Fixed a campaign bug caused civilians to not enter convoy trucks
 DocInfo/PatchNote026=-Infantry sniper range reduced from 30 to 24
 DocInfo/PatchNote027=-Infantry sniper binoculars autocast range reduced from 30 to 24 
 DocInfo/PatchNote028=-Replaced PMC's binoculars with the real cheap stuff from China
@@ -173,6 +159,7 @@ Param/Expression/813D57CB=Destroy the RA tanks defending the power plant. <c val
 Param/Expression/854930D4=Boss: ~A~<n/>Count: ~B~
 Param/Expression/869A9CD2=Boss Rush Loop: Switch Case ~A~
 Param/Expression/87BB9021=Moving Convoy ~A~ to Point ~B~
+Param/Expression/8B286E7B=Restore ~A~ LN's for SFAAT.
 Param/Expression/8E17CAA9=Destroy the spider eggs. <c val="00FF40">(~A~/~B~)</c>
 Param/Expression/90C88008=Disarm the nuclear silos. <c val="FFFF00">(~A~/6)</c>
 Param/Expression/91103C17=Dice Roll: ~A~
@@ -207,6 +194,7 @@ Param/Expression/D2B8462A= Scrap parts collected: <c val="FFFF00">(~A~/~B~)
 Param/Expression/D4FB0D6B=Evacuate civilians to Dasdan <c val="00FF40">(~A~/~B~)</c>
 Param/Expression/D7C33514=Escort the civilian cargo trucks to town. (~A~/~B~)
 Param/Expression/D92A3DBA=Retrieve and Setup Mk88s Sentries around town. <c val="00FF40">(~A~/10)</c>
+Param/Expression/DC4E4F31=Snapshot number of LN's for SFAAT: ~A~
 Param/Expression/DE4EF45A=Boss Rush Loop: Switch Case ~A~
 Param/Expression/DF6CE6EB=Created Cargo Truck ID: ~A~
 Param/Expression/E2FAA793=Destroy the RA tanks defending the power plant. <c val="FFFF00">(~A~/~B~)</c>
@@ -551,6 +539,7 @@ Param/Value/593FBA49=Tanks Destroyed
 Param/Value/597FF4FD=Resupply
 Param/Value/5987992C=-- Arachnathid Spawn --
 Param/Value/5A1E43F0=Spawn Egg In Spider Region: 
+Param/Value/5A1F0F76=Spawn soldiers
 Param/Value/5A2AA538=<c val="008000">Soldier:</c> No sentry guns located in this area.
 Param/Value/5A532048=Spider King Mission: Success
 Param/Value/5A59C824=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
@@ -613,6 +602,7 @@ Param/Value/69C59BFC=Town Extracted
 Param/Value/69EC1BA7=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
 Param/Value/69ECE909=Invalid Player #
 Param/Value/6A0B5508=5
+Param/Value/6A2FE59A=Add recruit buff behavior
 Param/Value/6A5F10DE=Evac Truck
 Param/Value/6A6F57BC=2
 Param/Value/6AB56E3E=Chapter ##

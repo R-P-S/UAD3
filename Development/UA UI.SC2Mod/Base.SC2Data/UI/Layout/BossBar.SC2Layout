@@ -200,4 +200,65 @@
          <Width val="100" />
       </Frame>
    </Frame>
+
+   <!-- SINGLE BAR TEMPLATE -->
+   <Frame type="UnitStatusFrame" name="Commander_Template">
+      <Height val="70"/>
+      <Width val="130"/>
+      <OwnerRenderPriority val="812"/>
+      <AllyRenderPriority val="712"/>
+      <EnemyRenderPriority val="612"/>
+      <RenderType val="HDR"/>
+
+      <Frame type="Frame" name="AttachPointFrame">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+         <Anchor side="Left" relative="$parent" pos="Min" offset="72"/>
+         <Height val="0"/>
+         <Width val="0"/>
+      </Frame>
+         
+      <Frame type="Image" name="Background">
+         <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+         <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+         <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+         <Height val="41"/>
+         <Width val="80"/>
+         <Texture val="Assets\Textures\ui_ingame_alliedcommander_herohealthframe_mengsk_background_singlebar.dds"/>
+         <RenderPriority val="500"/>
+      </Frame>
+         
+      <Frame type="Image" name="Icon">
+         <Anchor side="Top" relative="$parent/Background" pos="Mid" offset="-6"/>
+         <Anchor side="Bottom" relative="$parent/Background" pos="Mid" offset="-6"/>
+         <Anchor side="Left" relative="$parent/Background" pos="Mid" offset="-28"/>
+         <Anchor side="Right" relative="$parent/Background" pos="Mid" offset="-28"/>
+         <Width val="18"/>
+         <Height val="17"/>
+         <Texture val="Assets\Textures\ui_ingame_alliedcommander_herohealthframe_mengsk_veterancystar.dds"/>
+      </Frame>
+         
+      <Frame type="UnitStatusHealthBar" name="HealthBar">
+         <Anchor side="Top" relative="$parent/Background" pos="Min" offset="10"/>
+         <Anchor side="Left" relative="$parent/Background" pos="Min" offset="23"/>
+         <Height val="12"/>
+         <Width val="54"/>
+         <BackgroundShown val="true"/>
+         <BackgroundColor val="0, 0, 0"/>
+         <BarInsetRect top="2" left="2" bottom="2" right="2"/>
+         <BackgroundInsetRect top="1" left="1" bottom="1" right="1"/>
+         <RenderType val="HDR"/>
+         <Texture val="@UI/HotS_HeroUnit_Status_Bar"/>
+         <OwnerColor val="0, 255, 0"/>
+         <AllyColor val="0, 255, 0"/>
+         <EnemyColor val="150, 15, 50"/>
+         <ReductionColor val="255, 0, 0"/>
+         <ReductionShown val="true"/>
+         <IncreaseDuration val="100"/>
+         <DecreaseDuration val="100"/>
+         <SnapToDevicePixels val="True"/>
+         <Segmented val="true"/>
+         <SegmentGroupCount val="4"/>
+         <SegmentValue val="100"/>
+      </Frame>
+   </Frame>
 </Desc>

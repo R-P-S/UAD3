@@ -158,17 +158,6 @@ struct lib90F7C81D_gs_WeaponsItemsTimer {
     fixed lv_weaponsItemsTime_2;
 };
 
-struct lib90F7C81D_gs_AllowWeapon {
-    bool lv_rifles;
-    bool lv_automatics;
-    bool lv_shotguns;
-    bool lv_plasmas;
-    bool lv_sniper;
-    bool lv_dMR;
-    bool lv_flamethrowers;
-    bool lv_minigun;
-};
-
 struct lib90F7C81D_gs_Armor {
     int lv_count;
 };
@@ -288,6 +277,7 @@ struct lib90F7C81D_gs_MOSTexture {
     string[13] lv_decal;
     string[13] lv_rankInsignia;
     string[13] lv_material;
+    string[13] lv_materialID;
 };
 
 struct lib90F7C81D_gs_Gameplay {
@@ -527,7 +517,6 @@ lib90F7C81D_gs_WeaponsItemsTimer lib90F7C81D_gv_weaponsItemsTimer;
 int lib90F7C81D_gv_bossRushWaveDisplay;
 int lib90F7C81D_gv_bossRushWaveLabel;
 fixed[13] lib90F7C81D_gv_stockWeaponRounds;
-lib90F7C81D_gs_AllowWeapon lib90F7C81D_gv_allowWeapon;
 lib90F7C81D_gs_Armor lib90F7C81D_gv_armor;
 bool lib90F7C81D_gv_levelActorOn;
 lib90F7C81D_gs_SFAAT lib90F7C81D_gv_sFAAT;
@@ -797,11 +786,13 @@ string lib90F7C81D_gf_DifficultyImage (int lp_difficulty);
 int lib90F7C81D_gf_DifficultyWinAmount (int lp_difficulty, int lp_player);
 void lib90F7C81D_gf_UpdateMOSTextureFromIndex (string lp_userType, int lp_preset, int lp_player);
 void lib90F7C81D_gf_AddMaterial (string lp_camo, int lp_player);
+bool lib90F7C81D_gf_TextureIsUnlocked (int lp_preset, string lp_camos, string lp_decal, int lp_player);
 int lib90F7C81D_gf_Type (int lp_type);
 void lib90F7C81D_gf_UnlockTexture (int lp_preset, string lp_camos, string lp_decal, int lp_player, bool lp_saveBank);
 void lib90F7C81D_gf_UnlockMedal (string lp_medal, int lp_player);
 void lib90F7C81D_gf_RewardMedal (int lp_medal, int lp_player);
 void lib90F7C81D_gf_RibbonReward (int lp_index, int lp_panel, int lp_player);
+void lib90F7C81D_gf_DebugTextures ();
 void lib90F7C81D_gf_ReloadWeapon (int lp_player, int lp_controller);
 void lib90F7C81D_gf_UpdateReloadDurationLabel (unit lp_unit);
 abilcmd lib90F7C81D_gf_ReloadAbilitySkipCooldown (unit lp_unit);

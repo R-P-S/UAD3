@@ -180,7 +180,7 @@
         <MinScanRange value="10"/>
         <Range value="10"/>
         <Cost>
-            <Charge CountMax="300" CountStart="300"/>
+            <Charge CountMax="400" CountStart="400"/>
         </Cost>
         <Period value="0.75"/>
         <Effect value="M935MinigunFiringModeSwitch"/>

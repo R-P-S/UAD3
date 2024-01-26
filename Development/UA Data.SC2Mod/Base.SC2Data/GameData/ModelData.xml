@@ -36,6 +36,11 @@
         <ScaleMax value="1.750000,1.750000,1.500000"/>
         <ScaleMin value="1.750000,1.750000,1.500000"/>
     </CModel>
+    <CModel id="GlazeRed" parent="Glaze">
+        <Model value="Assets\Material\NanaKey_EF_EliteRed_Material.m3"/>
+        <Lighting value="GlazeYellowJacket"/>
+        <Priority value="32"/>
+    </CModel>
     <CModel id="GlazeParty" parent="Glaze">
         <Model value="Assets\Material\NanaKey_EF_ElitePurple_Material.m3"/>
         <Priority value="32"/>
@@ -50,6 +55,11 @@
     </CModel>
     <CModel id="GlazeYellowJacket" parent="Glaze">
         <Model value="Assets\Material\NanaKey_EF_EliteYellow_Material.m3"/>
+        <Priority value="32"/>
+    </CModel>
+    <CModel id="GlazeBlue" parent="Glaze">
+        <Model value="Assets\Material\NanaKey_EF_EliteBlue_Material.m3"/>
+        <Lighting value="GlazeYellowJacket"/>
         <Priority value="32"/>
     </CModel>
     <CModel id="M935Minigun" parent="Unit">

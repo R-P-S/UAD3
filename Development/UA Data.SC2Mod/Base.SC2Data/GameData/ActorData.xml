@@ -365,6 +365,19 @@
             <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
         </TerrainSquibs>
     </CActorUnit>
+    <CActorModel id="GlazeYellowJacketController" parent="GlazeControllerTemplate" ModelMaterial="GlazeYellowJacket" Behavior="GlazeYellowJacket"/>
+    <CActorModel id="GlazePartyController" parent="GlazeControllerTemplate" ModelMaterial="GlazeParty" Behavior="GlazeParty"/>
+    <CActorModelMaterial id="GlazeBlue" parent="GlazeTemplate">
+        <EditorCategories value=""/>
+    </CActorModelMaterial>
+    <CActorModel id="GlazeArticController" parent="GlazeControllerTemplate" ModelMaterial="GlazeArtic" Behavior="GlazeArtic"/>
+    <CActorModel id="GlazeOctoGreenController" parent="GlazeControllerTemplate" ModelMaterial="GlazeOctoGreen" Behavior="GlazeOctoGreen"/>
+    <CActorModel id="GlazeBluePowerUpController" parent="GlazeControllerTemplate" ModelMaterial="GlazeBluePowerUp" Behavior="GlazeBluePowerUp"/>
+    <CActorModel id="GlazeRedController" parent="GlazeControllerTemplate" ModelMaterial="GlazeRed" Behavior="GlazeRed"/>
+    <CActorModelMaterial id="GlazeRed" parent="GlazeTemplate">
+        <EditorCategories value=""/>
+    </CActorModelMaterial>
+    <CActorModel id="GlazeBlueController" parent="GlazeControllerTemplate" ModelMaterial="GlazeBlue" Behavior="GlazeBlue"/>
     <CActorModel id="IRSensorIntelligenceSilhouette">
         <CopySource value="_Selectable"/>
         <Terms value="Cap 1"/>
@@ -425,34 +438,10 @@
         <On Terms="UnitDeath.GapGenerator" Send="Destroy"/>
         <Range value="15.000000"/>
     </CActorRange>
-    <CActorModelMaterial id="GlazeYellowJacket" parent="GlazeParent">
-        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 0.150000 AsTimeScale"/>
-        <On Terms="Behavior.GlazeYellowJacket.On" Send="Create"/>
-        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
-        <On Terms="Behavior.GlazeYellowJacket.Off" Send="ModelMaterialRemoveFrom ::Main"/>
-        <On Terms="Behavior.GlazeYellowJacket.Off" Send="Destroy"/>
-    </CActorModelMaterial>
-    <CActorModelMaterial id="GlazeParty" parent="GlazeParent">
-        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 0.150000 AsTimeScale"/>
-        <On Terms="Behavior.GlazeParty.On" Send="Create"/>
-        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
-        <On Terms="Behavior.GlazeParty.Off" Send="ModelMaterialRemoveFrom ::Main"/>
-        <On Terms="Behavior.GlazeParty.Off" Send="Destroy"/>
-    </CActorModelMaterial>
-    <CActorModelMaterial id="GlazeOctoGreen" parent="GlazeParent">
-        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 0.150000 AsTimeScale"/>
-        <On Terms="Behavior.GlazeOctoGreen.On" Send="Create"/>
-        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
-        <On Terms="Behavior.GlazeOctoGreen.Off" Send="ModelMaterialRemoveFrom ::Main"/>
-        <On Terms="Behavior.GlazeOctoGreen.Off" Send="Destroy"/>
-    </CActorModelMaterial>
-    <CActorModelMaterial id="GlazeArtic" parent="GlazeParent">
-        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 0.150000 AsTimeScale"/>
-        <On Terms="Behavior.GlazeArtic.On" Send="Create"/>
-        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
-        <On Terms="Behavior.GlazeArtic.Off" Send="ModelMaterialRemoveFrom ::Main"/>
-        <On Terms="Behavior.GlazeArtic.Off" Send="Destroy"/>
-    </CActorModelMaterial>
+    <CActorModelMaterial id="GlazeYellowJacket" parent="GlazeTemplate"/>
+    <CActorModelMaterial id="GlazeParty" parent="GlazeTemplate"/>
+    <CActorModelMaterial id="GlazeOctoGreen" parent="GlazeTemplate"/>
+    <CActorModelMaterial id="GlazeArtic" parent="GlazeTemplate"/>
     <CActorModel id="HardenedWillRevive" parent="ModelAnimationStyleOneShot">
         <FogVisibility value="Hidden"/>
         <On Terms="Effect.FullHealCaster.Start; At Caster" Send="Create"/>
@@ -7431,10 +7420,7 @@
         <EditorCategories value=""/>
         <Model value="GlazeParasiticBomb"/>
     </CActorModelMaterial>
-    <CActorModel id="GlazeGlassController" parent="GlazeControllerTemplate" ModelMaterial="GlazeGlass" Behavior="GlazeGlass">
-        <EditorCategories value=""/>
-        <On index="6" removed="1"/>
-    </CActorModel>
+    <CActorModel id="GlazeGlassController" parent="GlazeControllerTemplate" ModelMaterial="GlazeGlass" Behavior="GlazeGlass"/>
     <CActorModelMaterial id="GlazeHellFire" parent="GlazeTemplate">
         <EditorCategories value=""/>
         <Model value="GlazeSentinelRepair"/>
@@ -23087,7 +23073,7 @@
         <On index="1" Terms="ActorCreation" Send="$Stand PlayForever"/>
         <On index="2" Terms="UnitBirth.LiftBoots"/>
         <On index="3" Terms="UnitDeath" Send="Destroy"/>
-        <On index="4" removed="1"/>
+        <On index="4" Terms="ActorCreation" Send="TextureSelectById ItemCrateBlue"/>
         <On index="5" removed="1"/>
         <On index="6" removed="1"/>
         <On index="7" removed="1"/>
@@ -34258,6 +34244,8 @@
         <On Terms="ActorCreation; PlayerId 0 13" Send="TextureSelectById CamoForestSniper"/>
         <UnitKillRank Text="UnitKillRank/CommanderActor"/>
         <HighlightTooltip value="Unit/Name/InfantryCommander"/>
+        <CustomUnitStatusFrame value="BossBar/Commander_Template"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
     </CActorUnit>
     <CActorUnit id="InfantryJavelinGunnerActor" parent="TemplateLNActor" unitName="InfantryJavelinGunner">
         <On index="0" Terms="UnitBirth.InfantryJavelinGunner" Send="Create SoundEmitter InfantryJavelinGunner_Ambience"/>

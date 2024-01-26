@@ -529,7 +529,6 @@
                         <Color val="0,0,0" />
                         <Height val="50" />
                         <Width val="185" />
-                        <Enabled val="False" />
                         <Toggleable val="True" />
                         <Tooltip val="@DOCSTR_InsaneDesc" />
                         <TooltipAnchorPosition val="BottomCenter" />
@@ -982,33 +981,36 @@
                         </Frame>
                         <!-- Reward Icons -->
                         <Frame type="Frame" name="Icon0" template="StandardUADTemplates/ModifierIconTemplate">
-                           <Anchor side="Top" relative="$parent" pos="Min" offset="27" />
+                           <Anchor side="Top" relative="$parent" pos="Min" offset="22" />
                            <Anchor side="Left" relative="$parent" pos="Min" offset="190" />
-                           <Width val="60" />
-                           <Height val="60" />
+                           <Width val="76" />
+                           <Height val="76" />
                            <Handle val="RewardIcon0" />
+                           <Frame type="UnitModelFrame" name="UnitModel">
+                              <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                              <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                              <Height val="72"/>
+                              <Width val="72"/>
+                              <Visible val="true"/>
+                              <TeamColorIndex val="1"/>
+                              <AcceptsMouse val="False"/>
+                              <TurningEnabled val="True"/>
+                              <Rotation val="335"/>
+                              <UnitLink val="NewRifleman"/>
+                              <Camera val="Star2CameraHigh00"/>
+                              <UnitWorldX val="0.02"/>
+                              <UnitWorldY val="0.2"/>
+                              <UnitWorldZ val="0.12"/>
+                              <Frame type="Model" name="Model">
+                                 <Anchor relative="$parent"/>
+                                 <UseAlternateTime val="false"/>
+                                 <UseAspectScaling val="false"/>
+                              </Frame>
+                           </Frame>
                            <Frame type="Image" name="IconImage">
                               <Width val="56" />
                               <Height val="56" />
-                           </Frame>
-                           <Frame type="Image" name="Shimmer">
-                              <Anchor relative="$parent"/>
-                              <LayerCount val="2"/>
-                              <BlendMode val="Add"/>
-                              <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameMask" layer="0"/>
-                              <TextureType val="Normal" layer="0"/>
-                              <AlphaLayer val="true" layer="0"/>
-                              <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameShimmer" layer="1"/>
-                              <TextureCoords top="0" left="0" bottom="1" right="1" layer="1"/>
-                              <Animation name="Shimmer">
-                                 <Event event="OnShown" action="Reset"/>
-                                 <Event event="OnShown" action="Play" />
-                                 <Controller type="LayerUV" layer="1" side="Top" relative="False" sidelock="True" end="Loop" >
-                                       <Key type="Curve" time="0" value="-1" out="fast"/>
-                                       <Key type="Curve" time="0.5" value="1" in="fast"/>
-                                       <Key type="Curve" time="6.6" value="1" in="fast"/>
-                                 </Controller>
-                              </Animation>
+                              <Visible val="False"/>
                            </Frame>
                            <Frame type="Image" name="Sparkle_Top">
                               <Anchor side="Top" relative="$parent" pos="Min" offset="-19"/>
@@ -1066,31 +1068,12 @@
                         <Frame type="Frame" name="Icon1" template="StandardUADTemplates/ModifierIconTemplate">
                            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0" />
                            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="20" />
-                           <Width val="60" />
-                           <Height val="60" />
+                           <Width val="76" />
+                           <Height val="76" />
                            <Handle val="RewardIcon1" />
                            <Frame type="Image" name="IconImage">
-                              <Width val="56" />
-                              <Height val="56" />
-                           </Frame>
-                           <Frame type="Image" name="Shimmer">
-                              <Anchor relative="$parent"/>
-                              <LayerCount val="2"/>
-                              <BlendMode val="Add"/>
-                              <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameMask" layer="0"/>
-                              <TextureType val="Normal" layer="0"/>
-                              <AlphaLayer val="true" layer="0"/>
-                              <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameShimmer" layer="1"/>
-                              <TextureCoords top="0" left="0" bottom="1" right="1" layer="1"/>
-                              <Animation name="Shimmer">
-                                 <Event event="OnShown" action="Reset"/>
-                                 <Event event="OnShown" action="Play" />
-                                 <Controller type="LayerUV" layer="1" side="Top" relative="False" sidelock="True" end="Loop" >
-                                       <Key type="Curve" time="0" value="-1" out="fast"/>
-                                       <Key type="Curve" time="0.5" value="1" in="fast"/>
-                                       <Key type="Curve" time="6.6" value="1" in="fast"/>
-                                 </Controller>
-                              </Animation>
+                              <Width val="72" />
+                              <Height val="72" />
                            </Frame>
                            <Frame type="Image" name="Sparkle_Top">
                               <Anchor side="Top" relative="$parent" pos="Min" offset="-19"/>

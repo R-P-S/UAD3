@@ -1152,7 +1152,6 @@
     </CAbilEffectTarget>
     <CAbilEffectTarget id="BinocularsSniper" parent="TemplateEffectTarget">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <DataCollection value="InfantryBinoculars"/>
         <Flags index="AllowMovement" value="0"/>
         <Flags index="AutoCast" value="1"/>
         <Flags index="AutoCastOn" value="1"/>
@@ -1173,6 +1172,7 @@
             <Flags index="ToSelection" value="0"/>
         </CmdButtonArray>
         <Effect index="0" value="BinocularsInfantry"/>
+        <AutoCastValidatorArray value="NotDetected"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="InterferenceWave" parent="TemplateEffectInstant">
         <Name value="Abil/Name/InterferenceWave"/>
@@ -1972,6 +1972,7 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="BinocularsInfantry">
             <Flags index="ToSelection" value="0"/>
         </CmdButtonArray>
+        <AutoCastValidatorArray value="NotDetected"/>
     </CAbilEffectTarget>
     <CAbilBehavior id="Loadout32mmCannons" parent="TemplateAbilityBehavior">
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>

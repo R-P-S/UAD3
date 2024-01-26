@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
+   <Frame type="ScreenMovie" name="ScreenMovie" template="ScreenMovie/ScreenMovie">
+        <Frame type="SubtitleDisplay" name="SubtitleDisplay">
+            <DescFlags val="CreationDeferred"/>
+        </Frame>
+        <Frame type="Image" name="FullscreenBlackoutImage">
+            <Visible val="False"/>
+        </Frame>
+   </Frame>
    <Frame type="UnitModelFrame" name="UnitModelFrameTemplate">
       <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
       <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
@@ -2769,6 +2777,26 @@
                <Key type="Curve" time="0.5" value="255" in="Slow" />
             </Controller>
          </Animation>
+      </Frame>
+
+      <Frame type="Frame" name="MovieContainer">
+         <Anchor side="Bottom" relative="$parent" pos="Max" offset="25"/>
+         <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+         <Height val="128"/>
+         <Width val="128"/>
+         <RenderPriority val="1200"/>
+         <AcceptsMouse val="False"/>
+         <Alpha val="125"/>
+         <Visible val="False"/>
+    <!-- <Visible val="{$MOSSelection/@Visible}"/> -->
+
+         <Frame type="Frame" name="ScreenMovie" template="CharSelection/ScreenMovie">
+            <Frame type="MovieFrame" name="Movie">
+         <!--  <File val="Assets/UI/UAD_Bio.ogv"/> -->
+               <Loop val="True"/>
+               <PauseAllowed val="False"/>
+            </Frame>
+         </Frame>
       </Frame>
    </Frame>
 </Desc>

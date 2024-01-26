@@ -97,6 +97,7 @@
 <Actor id="ChainLinkFenceDiagonal2" Variations="0,1,3"/>
 <Behavior id="GhostHoldFireB"/>
 <Behavior id="Invulnerable"/>
+<Behavior id="RecruitBuff"/>
 <Behavior id="AbdulTruckOverheat"/>
 <Behavior id="DisarmingSilo"/>
 <Behavior id="RASquadLeader"/>

@@ -349,6 +349,12 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="240"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="GlazeBlue">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GlazeRed">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="GlazeParty">
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
@@ -415,6 +421,18 @@
             <PlaneDelta index="Air" value="-1"/>
         </Modification>
         <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="RecruitBuff" parent="TemplateBuff">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-amoncloud.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Modification MoveSpeedBonus="0.1992">
+            <DamageDealtFraction index="Spell" value="1"/>
+            <DamageDealtFraction index="Melee" value="1"/>
+            <DamageDealtFraction index="Ranged" value="1"/>
+            <DamageDealtFraction index="Splash" value="1"/>
+            <VitalRegenArray index="Energy" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="SuitKineticIntegrator">
         <InfoIcon value="Buttons\BTNEnergyGenerator.dds"/>

@@ -565,8 +565,8 @@
         <EffectArray Reference="Effect,MiniEMPABMassive,Duration" Value="2.5"/>
     </CUpgrade>
     <CUpgrade id="PlasmaRifleMarksmanship1" parent="Research">
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="0.64"/>
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.08"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="0.8"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.1"/>
         <EffectArray Reference="Weapon,PlasmaRifleNew,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,PlasmaRifleNew,Range" Value="1"/>
         <EffectArray Reference="Weapon,IPR,MinScanRange" Value="1"/>
@@ -580,8 +580,8 @@
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
     </CUpgrade>
     <CUpgrade id="PlasmaRifleMarksmanship2" parent="Research">
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="1.12"/>
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.14"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="1.6"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.2"/>
         <EffectArray Operation="Set" Reference="Effect,HeatSignatureAB,Chance" Value="0.9"/>
         <EffectArray Operation="Set" Reference="Effect,HeatSignatureIPRAB,Chance" Value="0.7"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -591,8 +591,8 @@
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
     </CUpgrade>
     <CUpgrade id="PlasmaRifleMarksmanship3" parent="Research">
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="1.76"/>
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.22"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.3"/>
         <EffectArray Reference="Weapon,PlasmaRifleNew,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,PlasmaRifleNew,Range" Value="1"/>
         <EffectArray Reference="Weapon,IPR,MinScanRange" Value="1"/>
@@ -606,8 +606,8 @@
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
     </CUpgrade>
     <CUpgrade id="PlasmaRifleMarksmanship4" parent="Research">
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="2.56"/>
-        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.32"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="3.2"/>
+        <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.4"/>
         <EffectArray Operation="Set" Reference="Effect,HeatSignatureAB,Chance" Value="0.8"/>
         <EffectArray Operation="Set" Reference="Effect,HeatSignatureIPRAB,Chance" Value="0.6"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -773,38 +773,38 @@
     </CUpgrade>
     <CUpgrade id="MinigunMarksmanship2" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.035"/>
+        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.05"/>
         <EffectArray Reference="Effect,M135Minigun,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,M135Minigun,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
-        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.42"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.42"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.42"/>
-        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.035"/>
+        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.7"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.7"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.7"/>
+        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.05"/>
         <EffectArray Reference="Effect,M935Minigun,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,M935Minigun,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
-        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.35"/>
-        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.035"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.035"/>
+        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.6"/>
+        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.05"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.05"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,DeathMachineAir,AreaArray[0].Radius" Value="0.036"/>
@@ -820,32 +820,32 @@
     </CUpgrade>
     <CUpgrade id="MinigunMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.02"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.02"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.02"/>
+        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.03"/>
         <EffectArray Reference="Weapon,M135Minigun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M135Minigun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.24"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.24"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.24"/>
-        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.024"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.024"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.024"/>
+        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.35"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.35"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.35"/>
+        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.03"/>
         <EffectArray Reference="Weapon,M935Minigun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M935Minigun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.02"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.02"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.02"/>
+        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.03"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.03"/>
         <EffectArray Reference="Weapon,DeathMachine,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,DeathMachine,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.2"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.02"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.3"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.03"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMinigun"/>
         <LeaderPriority value="1"/>
@@ -853,38 +853,38 @@
     </CUpgrade>
     <CUpgrade id="MinigunMarksmanship4" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.08"/>
+        <EffectArray Reference="Effect,M135Minigun,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.1"/>
         <EffectArray Reference="Effect,M135Minigun,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,M135Minigun,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
-        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.96"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.96"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.96"/>
-        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.08"/>
+        <EffectArray Reference="Effect,M935Minigun,Amount" Value="1.4"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="1.4"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="1.4"/>
+        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.1"/>
         <EffectArray Reference="Effect,M935Minigun,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,M935Minigun,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamage,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamage,AreaArray[1].Radius" Value="0.15"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[0].Radius" Value="0.06"/>
         <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,AreaArray[1].Radius" Value="0.15"/>
-        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.8"/>
-        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.08"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.08"/>
+        <EffectArray Reference="Effect,DeathMachine,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="1.2"/>
+        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.1"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.1"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[0].Radius" Value="0.036"/>
         <EffectArray Reference="Effect,DeathMachine,AreaArray[1].Radius" Value="0.09"/>
         <EffectArray Reference="Effect,DeathMachineAir,AreaArray[0].Radius" Value="0.036"/>
@@ -900,30 +900,30 @@
     </CUpgrade>
     <CUpgrade id="MinigunMarksmanship3" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.055"/>
+        <EffectArray Reference="Effect,M135Minigun,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,M135Minigun,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamageAir,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,M135MinigunSpreadDamage,Random" Value="0.07"/>
         <EffectArray Reference="Weapon,M135Minigun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M135Minigun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,M935Minigun,Amount" Value="0.66"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="0.66"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="0.66"/>
-        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.055"/>
+        <EffectArray Reference="Effect,M935Minigun,Amount" Value="1.05"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Amount" Value="1.05"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Amount" Value="1.05"/>
+        <EffectArray Reference="Effect,M935Minigun,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamageAir,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,M935MinigunSpreadDamage,Random" Value="0.07"/>
         <EffectArray Reference="Weapon,M935Minigun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M935Minigun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.55"/>
-        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.055"/>
-        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.055"/>
+        <EffectArray Reference="Effect,DeathMachine,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Amount" Value="0.9"/>
+        <EffectArray Reference="Effect,DeathMachine,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,DeathMachineAir,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamageAir,Random" Value="0.07"/>
+        <EffectArray Reference="Effect,DeathMachineSpreadDamage,Random" Value="0.07"/>
         <EffectArray Reference="Weapon,DeathMachine,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,DeathMachine,Range" Value="0.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -3221,24 +3221,24 @@
     </CUpgrade>
     <CUpgrade id="MachinegunMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="0.88"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.24"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="1.1"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.3"/>
         <EffectArray Reference="Weapon,MachineGun,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,MachineGun,Range" Value="1"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="1.76"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="0.48"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="0.88"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.24"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="1.1"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.3"/>
         <EffectArray Reference="Weapon,M41SAW,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M41SAW,Range" Value="1"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="1.76"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="0.48"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="0.98"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.24"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="1.23"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.3"/>
         <EffectArray Reference="Weapon,M241MMG,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M241MMG,Range" Value="1"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="1.96"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="2.45"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="0.6"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMachineGun"/>
         <LeaderLevel value="1"/>
@@ -3246,21 +3246,21 @@
     </CUpgrade>
     <CUpgrade id="MachinegunMarksmanship2" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="1.54"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.42"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.6"/>
         <EffectArray Operation="Set" Reference="Weapon,MachineGun,CriticalChance" Value="0.08"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="3.08"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="0.84"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="1.54"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.42"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="4.4"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.6"/>
         <EffectArray Operation="Set" Reference="Weapon,M41SAW,CriticalChance" Value="0.08"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="3.08"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="0.84"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="1.715"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.42"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="4.4"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="2.45"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.6"/>
         <EffectArray Operation="Set" Reference="Weapon,M241MMG,CriticalChance" Value="0.08"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="3.43"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="4.9"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="1.2"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMachineGun"/>
         <LeaderLevel value="2"/>
@@ -3268,24 +3268,24 @@
     </CUpgrade>
     <CUpgrade id="MachinegunMarksmanship3" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="2.42"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.66"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="3.3"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.9"/>
         <EffectArray Reference="Weapon,MachineGun,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,MachineGun,Range" Value="1"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="4.84"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="2.42"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.66"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="6.6"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="3.3"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.9"/>
         <EffectArray Reference="Weapon,M41SAW,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M41SAW,Range" Value="1"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="4.84"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="2.695"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.66"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="6.6"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="3.67"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.9"/>
         <EffectArray Reference="Weapon,M241MMG,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M241MMG,Range" Value="1"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="5.39"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="1.32"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="7.35"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="1.8"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMachineGun"/>
         <LeaderLevel value="3"/>
@@ -3293,27 +3293,27 @@
     </CUpgrade>
     <CUpgrade id="MachinegunMarksmanship4" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="3.52"/>
-        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="0.96"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Amount" Value="4.4"/>
+        <EffectArray Reference="Effect,MachineGunDamage2,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,MachineGun,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="7.04"/>
-        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="1.92"/>
-        <EffectArray Operation="Multiply" Reference="Effect,MachineGunCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,MachineGunCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="3.52"/>
-        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="0.96"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Amount" Value="8.8"/>
+        <EffectArray Reference="Effect,MachineGunCriticalDamage,Random" Value="2.4"/>
+        <EffectArray Operation="Multiply" Reference="Effect,MachineGunCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,MachineGunCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Amount" Value="4.4"/>
+        <EffectArray Reference="Effect,M41SAWDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,M41SAW,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="7.04"/>
-        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="1.92"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M41SAWCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M41SAWCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="3.92"/>
-        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="0.96"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Amount" Value="8.8"/>
+        <EffectArray Reference="Effect,M41SAWCriticalDamage,Random" Value="2.4"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M41SAWCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M41SAWCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Amount" Value="4.9"/>
+        <EffectArray Reference="Effect,M241MMGDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,M241MMG,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="7.84"/>
-        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="1.92"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M241MMGCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M241MMGCriticalDamage,Amount" Value="1.25"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Amount" Value="9.8"/>
+        <EffectArray Reference="Effect,M241MMGCriticalDamage,Random" Value="2.4"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M241MMGCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M241MMGCriticalDamage,Amount" Value="1.56"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipMachineGun"/>
         <LeaderLevel value="4"/>
@@ -3746,42 +3746,42 @@
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="0.96"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="1.2"/>
         <EffectArray Reference="Weapon,AssaultRifle,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AssaultRifle,Range" Value="1"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="1.92"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="0.48"/>
-        <EffectArray Reference="Effect,HK42Damage,Amount" Value="1.04"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,HK42Damage,Amount" Value="1.3"/>
         <EffectArray Reference="Weapon,HK42,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,HK42,Range" Value="1"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="2.08"/>
-        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="2.6"/>
+        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="0.6"/>
         <EffectArray Reference="Weapon,SOFAR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,SOFAR,Range" Value="1"/>
-        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="1.12"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="2.24"/>
-        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="1.4"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="2.8"/>
+        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="0.6"/>
         <EffectArray Reference="Weapon,StynerBR2,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,StynerBR2,Range" Value="1"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="1.2"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="2.40"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="1.5"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="3.0"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="0.6"/>
         <EffectArray Reference="Weapon,M5MAR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M5MAR,Range" Value="1"/>
-        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="1.08"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="2.16"/>
-        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="0.48"/>
-        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="0.96"/>
+        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="1.35"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="2.7"/>
+        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="1.2"/>
         <EffectArray Reference="Weapon,USMCR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,USMCR,Range" Value="1"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="1.92"/>
-        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="0.6"/>
         <EffectArray Reference="Weapon,Carbine,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,Carbine,Range" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -3791,35 +3791,35 @@
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship2" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="1.68"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="3.36"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="4.8"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,AssaultRifle,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,HK42Damage,Amount" Value="1.82"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="3.64"/>
-        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,HK42Damage,Amount" Value="2.6"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="5.2"/>
+        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,HK42,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="1.96"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="3.92"/>
-        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="2.8"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="5.6"/>
+        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,SOFAR,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="2.10"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="4.20"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="3.0"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="6.0"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,StynerBR2,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="1.89"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="3.78"/>
-        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="2.7"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="5.4"/>
+        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,M5MAR,CriticalChance" Value="0.1"/>
-        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="1.68"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="3.36"/>
-        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="4.8"/>
+        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,USMCR,CriticalChance" Value="0.1"/>
         <EffectArray Operation="Set" Reference="Weapon,Carbine,CriticalChance" Value="0.1"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -3829,42 +3829,42 @@
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship3" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="2.64"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="3.6"/>
         <EffectArray Reference="Weapon,AssaultRifle,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AssaultRifle,Range" Value="1"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="5.28"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,HK42Damage,Amount" Value="2.86"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="7.2"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,HK42Damage,Amount" Value="3.9"/>
         <EffectArray Reference="Weapon,HK42,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,HK42,Range" Value="1"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="5.72"/>
-        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="3.08"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="7.8"/>
+        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="4.2"/>
         <EffectArray Reference="Weapon,SOFAR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,SOFAR,Range" Value="1"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="6.16"/>
-        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="3.30"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="8.4"/>
+        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="4.5"/>
         <EffectArray Reference="Weapon,StynerBR2,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,StynerBR2,Range" Value="1"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="6.16"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="2.97"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="8.4"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="4.05"/>
         <EffectArray Reference="Weapon,M5MAR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,M5MAR,Range" Value="1"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="6.60"/>
-        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="1.32"/>
-        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="2.64"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="9.0"/>
+        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="1.8"/>
+        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="3.6"/>
         <EffectArray Reference="Weapon,USMCR,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,USMCR,Range" Value="1"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="5.28"/>
-        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.66"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="1.32"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="7.2"/>
+        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="1.8"/>
         <EffectArray Reference="Weapon,Carbine,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,Carbine,Range" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -3874,48 +3874,48 @@
     </CUpgrade>
     <CUpgrade id="RifleMarksmanship4" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="3.84"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="7.68"/>
-        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.92"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Amount" Value="4.8"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="9.6"/>
+        <EffectArray Reference="Effect,AssaultRifleDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,AssaultRifleCriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,AssaultRifle,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,HK42Damage,Amount" Value="4.16"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="8.32"/>
-        <EffectArray Reference="Effect,HK42Damage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="1.92"/>
+        <EffectArray Operation="Multiply" Reference="Effect,AssaultRifleCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,AssaultRifleCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,HK42Damage,Amount" Value="5.2"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Amount" Value="10.4"/>
+        <EffectArray Reference="Effect,HK42Damage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,HK42CriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,HK42,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,HK42CriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,HK42CriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="4.48"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="8.96"/>
-        <EffectArray Reference="Effect,SOFARDamage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="1.92"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HK42CriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HK42CriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,SOFARDamage,Amount" Value="5.6"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Amount" Value="11.2"/>
+        <EffectArray Reference="Effect,SOFARDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,SOFARCriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,SOFAR,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,SOFARCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,SOFARCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="4.80"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="9.60"/>
-        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.92"/>
+        <EffectArray Operation="Multiply" Reference="Effect,SOFARCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,SOFARCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Amount" Value="6.0"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Amount" Value="12.0"/>
+        <EffectArray Reference="Effect,StynerBR2Damage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,StynerBR2CriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,StynerBR2,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,StynerBR2CriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="4.32"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="8.64"/>
-        <EffectArray Reference="Effect,M5MARDamage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="1.92"/>
+        <EffectArray Operation="Multiply" Reference="Effect,StynerBR2CriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,StynerBR2CriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,M5MARDamage,Amount" Value="5.4"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Amount" Value="10.8"/>
+        <EffectArray Reference="Effect,M5MARDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,M5MARCriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,M5MAR,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M5MARCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M5MARCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="3.84"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="7.68"/>
-        <EffectArray Reference="Effect,USMCRDamage,Random" Value="0.96"/>
-        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="1.92"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M5MARCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M5MARCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,USMCRDamage,Amount" Value="4.8"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Amount" Value="9.6"/>
+        <EffectArray Reference="Effect,USMCRDamage,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,USMCRCriticalDamage,Random" Value="2.4"/>
         <EffectArray Operation="Set" Reference="Weapon,USMCR,CriticalChance" Value="0.125"/>
-        <EffectArray Operation="Multiply" Reference="Effect,USMCRCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,USMCRCriticalDamage,Random" Value="1.25"/>
+        <EffectArray Operation="Multiply" Reference="Effect,USMCRCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,USMCRCriticalDamage,Random" Value="1.56"/>
         <EffectArray Operation="Set" Reference="Weapon,Carbine,CriticalChance" Value="0.125"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipRifle"/>
@@ -4268,32 +4268,32 @@
     </CUpgrade>
     <CUpgrade id="Tactics1" parent="Research">
         <Icon value="Assets\Textures\btn-ability-terran-battlefieldawareness.dds"/>
-        <EffectArray Reference="Effect,LNShotgun,Amount" Value="4.34"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Amount" Value="0.62"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Amount" Value="0.62"/>
-        <EffectArray Reference="Effect,LNShotgun,Random" Value="0.98"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Random" Value="0.14"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Random" Value="0.14"/>
+        <EffectArray Reference="Effect,LNShotgun,Amount" Value="5.43"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Amount" Value="0.78"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Amount" Value="0.78"/>
+        <EffectArray Reference="Effect,LNShotgun,Random" Value="1.23"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Random" Value="0.18"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Random" Value="0.18"/>
         <EffectArray Reference="Weapon,ShotgunLN,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,ShotgunLN,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,LNDMRDamage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,LNDMRDamage,Amount" Value="3.75"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifleLN,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifleLN,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,LNDMRCriticalDamage,Amount" Value="6"/>
-        <EffectArray Reference="Effect,LNDMRDamage,Random" Value="0.75"/>
-        <EffectArray Reference="Effect,LNDMRCriticalDamage,Random" Value="1.5"/>
-        <EffectArray Reference="Effect,LNARMachineGun,Amount" Value="0.88"/>
-        <EffectArray Reference="Effect,LNARMachineGun,Random" Value="0.24"/>
+        <EffectArray Reference="Effect,LNDMRCriticalDamage,Amount" Value="7.5"/>
+        <EffectArray Reference="Effect,LNDMRDamage,Random" Value="0.94"/>
+        <EffectArray Reference="Effect,LNDMRCriticalDamage,Random" Value="1.88"/>
+        <EffectArray Reference="Effect,LNARMachineGun,Amount" Value="1.1"/>
+        <EffectArray Reference="Effect,LNARMachineGun,Random" Value="0.3"/>
         <EffectArray Reference="Weapon,MachineGunLN,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,MachineGunLN,Range" Value="1"/>
-        <EffectArray Reference="Effect,LNARMachineGunCritical,Amount" Value="1.76"/>
-        <EffectArray Reference="Effect,LNARMachineGunCritical,Random" Value="0.48"/>
-        <EffectArray Reference="Effect,LNRiflemanRifle,Amount" Value="0.96"/>
+        <EffectArray Reference="Effect,LNARMachineGunCritical,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,LNARMachineGunCritical,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,LNRiflemanRifle,Amount" Value="1.2"/>
         <EffectArray Reference="Weapon,AssaultRifleLN,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AssaultRifleLN,Range" Value="1"/>
-        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Amount" Value="1.92"/>
-        <EffectArray Reference="Effect,LNRiflemanRifle,Random" Value="0.24"/>
-        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Random" Value="0.48"/>
+        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,LNRiflemanRifle,Random" Value="0.3"/>
+        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Random" Value="0.6"/>
         <EffectArray Reference="Abil,ShotgunBlastLN,Range[0]" Value="0.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <LeaderAlias value="Tactics"/>
@@ -4310,32 +4310,32 @@
     </CUpgrade>
     <CUpgrade id="Tactics3" parent="Research">
         <Icon value="Assets\Textures\btn-ability-terran-battlefieldawareness.dds"/>
-        <EffectArray Reference="Effect,LNShotgun,Amount" Value="7.595"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Amount" Value="1.085"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Amount" Value="1.085"/>
-        <EffectArray Reference="Effect,LNShotgun,Random" Value="1.715"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Random" Value="0.245"/>
-        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Random" Value="0.245"/>
+        <EffectArray Reference="Effect,LNShotgun,Amount" Value="10.85"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Amount" Value="1.55"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Amount" Value="1.55"/>
+        <EffectArray Reference="Effect,LNShotgun,Random" Value="2.45"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamage,Random" Value="0.35"/>
+        <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,Random" Value="0.35"/>
         <EffectArray Reference="Effect,LNShotgun,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,LNShotgun,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,LNShotgunSpreadDamage,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,LNShotgunSpreadDamage,AreaArray[1].Radius" Value="0.12"/>
         <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,LNShotgunSpreadDamageAir,AreaArray[1].Radius" Value="0.12"/>
-        <EffectArray Reference="Effect,LNDMRDamage,Amount" Value="5.25"/>
+        <EffectArray Reference="Effect,LNDMRDamage,Amount" Value="7.5"/>
         <EffectArray Operation="Set" Reference="Weapon,DesignatedMarksmanRifleLN,CriticalChance" Value="0.12"/>
-        <EffectArray Reference="Effect,LNDMRCriticalDamage,Amount" Value="10.5"/>
-        <EffectArray Reference="Effect,LNDMRDamage,Random" Value="1.3125"/>
-        <EffectArray Reference="Effect,LNDMRCriticalDamage,Random" Value="2.625"/>
-        <EffectArray Reference="Effect,LNARMachineGun,Amount" Value="1.54"/>
-        <EffectArray Reference="Effect,LNARMachineGun,Random" Value="0.42"/>
+        <EffectArray Reference="Effect,LNDMRCriticalDamage,Amount" Value="15.0"/>
+        <EffectArray Reference="Effect,LNDMRDamage,Random" Value="1.87"/>
+        <EffectArray Reference="Effect,LNDMRCriticalDamage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,LNARMachineGun,Amount" Value="2.2"/>
+        <EffectArray Reference="Effect,LNARMachineGun,Random" Value="0.6"/>
         <EffectArray Operation="Set" Reference="Weapon,MachineGunLN,CriticalChance" Value="0.08"/>
-        <EffectArray Reference="Effect,LNARMachineGunCritical,Amount" Value="3.08"/>
-        <EffectArray Reference="Effect,LNARMachineGunCritical,Random" Value="0.84"/>
-        <EffectArray Reference="Effect,LNRiflemanRifle,Amount" Value="1.68"/>
-        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Amount" Value="3.36"/>
-        <EffectArray Reference="Effect,LNRiflemanRifle,Random" Value="0.42"/>
-        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Random" Value="0.84"/>
+        <EffectArray Reference="Effect,LNARMachineGunCritical,Amount" Value="4.4"/>
+        <EffectArray Reference="Effect,LNARMachineGunCritical,Random" Value="1.2"/>
+        <EffectArray Reference="Effect,LNRiflemanRifle,Amount" Value="2.4"/>
+        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Amount" Value="4.8"/>
+        <EffectArray Reference="Effect,LNRiflemanRifle,Random" Value="0.6"/>
+        <EffectArray Reference="Effect,LNRiflemanRifleCritical,Random" Value="1.2"/>
         <EffectArray Operation="Set" Reference="Weapon,AssaultRifleLN,CriticalChance" Value="0.1"/>
         <EffectArray Operation="Set" Reference="Unit,HERocket,Mover" Value="UpgradedHERocket"/>
         <EffectArray Reference="Behavior,LNTactics,Modification.MoveSpeedBonus" Value="0.101500"/>
@@ -4532,28 +4532,28 @@
     </CUpgrade>
     <CUpgrade id="ShotgunMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="4.34"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="0.62"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="0.62"/>
-        <EffectArray Reference="Effect,CombatShotgun,Random" Value="0.98"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.14"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.14"/>
+        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="5.43"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="0.78"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="0.78"/>
+        <EffectArray Reference="Effect,CombatShotgun,Random" Value="1.23"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.18"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.18"/>
         <EffectArray Reference="Weapon,CombatShotgun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,CombatShotgun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,W1200Damage,Amount" Value="5.208"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="0.744"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="0.744"/>
-        <EffectArray Reference="Effect,W1200Damage,Random" Value="0.98"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.14"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.14"/>
+        <EffectArray Reference="Effect,W1200Damage,Amount" Value="6.51"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="0.93"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="0.93"/>
+        <EffectArray Reference="Effect,W1200Damage,Random" Value="1.23"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.18"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.18"/>
         <EffectArray Reference="Weapon,W1200,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,W1200,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,M1014Damage,Amount" Value="5.408"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="0.944"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="0.944"/>
-        <EffectArray Reference="Effect,M1014Damage,Random" Value="1.024"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.18"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.18"/>
+        <EffectArray Reference="Effect,M1014Damage,Amount" Value="6.76"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="1.18"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="1.18"/>
+        <EffectArray Reference="Effect,M1014Damage,Random" Value="1.28"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.23"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.23"/>
         <EffectArray Reference="Weapon,M1014,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M1014,Range" Value="0.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -4563,36 +4563,36 @@
     </CUpgrade>
     <CUpgrade id="ShotgunMarksmanship2" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="7.595"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="1.085"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="1.085"/>
-        <EffectArray Reference="Effect,CombatShotgun,Random" Value="1.715"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.245"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.245"/>
+        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="10.85"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="1.55"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="1.55"/>
+        <EffectArray Reference="Effect,CombatShotgun,Random" Value="2.45"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.35"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.35"/>
         <EffectArray Reference="Effect,CombatShotgun,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,CombatShotgun,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamage,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamage,AreaArray[1].Radius" Value="0.12"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,AreaArray[1].Radius" Value="0.12"/>
-        <EffectArray Reference="Effect,W1200Damage,Amount" Value="9.114"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="1.302"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="1.302"/>
-        <EffectArray Reference="Effect,W1200Damage,Random" Value="1.715"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.245"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.245"/>
+        <EffectArray Reference="Effect,W1200Damage,Amount" Value="13.02"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="1.86"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="1.86"/>
+        <EffectArray Reference="Effect,W1200Damage,Random" Value="2.45"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.35"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.35"/>
         <EffectArray Reference="Effect,W1200Damage,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,W1200Damage,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,W1200SpreadDamage,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,W1200SpreadDamage,AreaArray[1].Radius" Value="0.12"/>
         <EffectArray Reference="Effect,W1200SpreadDamageAir,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,W1200SpreadDamageAir,AreaArray[1].Radius" Value="0.12"/>
-        <EffectArray Reference="Effect,M1014Damage,Amount" Value="9.464"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="1.652"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="1.652"/>
-        <EffectArray Reference="Effect,M1014Damage,Random" Value="1.792"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.315"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.315"/>
+        <EffectArray Reference="Effect,M1014Damage,Amount" Value="13.52"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="2.36"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="2.36"/>
+        <EffectArray Reference="Effect,M1014Damage,Random" Value="2.56"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.45"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.45"/>
         <EffectArray Reference="Effect,M1014Damage,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,M1014Damage,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,M1014SpreadDamage,AreaArray[0].Radius" Value="0.05"/>
@@ -4606,28 +4606,28 @@
     </CUpgrade>
     <CUpgrade id="ShotgunMarksmanship3" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="11.935"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="1.705"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="1.705"/>
-        <EffectArray Reference="Effect,CombatShotgun,Random" Value="2.695"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.385"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.385"/>
+        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="16.27"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="2.32"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="2.32"/>
+        <EffectArray Reference="Effect,CombatShotgun,Random" Value="3.67"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.53"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.53"/>
         <EffectArray Reference="Weapon,CombatShotgun,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,CombatShotgun,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,W1200Damage,Amount" Value="14.322"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="2.046"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="2.046"/>
-        <EffectArray Reference="Effect,W1200Damage,Random" Value="2.695"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.385"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.385"/>
+        <EffectArray Reference="Effect,W1200Damage,Amount" Value="19.53"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="2.79"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="2.79"/>
+        <EffectArray Reference="Effect,W1200Damage,Random" Value="3.67"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.53"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.53"/>
         <EffectArray Reference="Weapon,W1200,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,W1200,Range" Value="0.75"/>
-        <EffectArray Reference="Effect,M1014Damage,Amount" Value="14.872"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="2.596"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="2.596"/>
-        <EffectArray Reference="Effect,M1014Damage,Random" Value="2.816"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.495"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.495"/>
+        <EffectArray Reference="Effect,M1014Damage,Amount" Value="20.28"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="3.54"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="3.54"/>
+        <EffectArray Reference="Effect,M1014Damage,Random" Value="3.84"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.67"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.67"/>
         <EffectArray Reference="Weapon,M1014,MinScanRange" Value="0.75"/>
         <EffectArray Reference="Weapon,M1014,Range" Value="0.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
@@ -4637,36 +4637,36 @@
     </CUpgrade>
     <CUpgrade id="ShotgunMarksmanship4" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="17.36"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="2.48"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="2.48"/>
-        <EffectArray Reference="Effect,CombatShotgun,Random" Value="3.92"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.56"/>
-        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.56"/>
+        <EffectArray Reference="Effect,CombatShotgun,Amount" Value="21.7"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Amount" Value="3.1"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Amount" Value="3.1"/>
+        <EffectArray Reference="Effect,CombatShotgun,Random" Value="4.9"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamage,Random" Value="0.7"/>
+        <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,Random" Value="0.7"/>
         <EffectArray Reference="Effect,CombatShotgun,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,CombatShotgun,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamage,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamage,AreaArray[1].Radius" Value="0.12"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,CombatShotgunSpreadDamageAir,AreaArray[1].Radius" Value="0.12"/>
-        <EffectArray Reference="Effect,W1200Damage,Amount" Value="20.83"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="2.97"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="2.97"/>
-        <EffectArray Reference="Effect,W1200Damage,Random" Value="3.92"/>
-        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.56"/>
-        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.56"/>
+        <EffectArray Reference="Effect,W1200Damage,Amount" Value="26.04"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Amount" Value="3.71"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Amount" Value="3.71"/>
+        <EffectArray Reference="Effect,W1200Damage,Random" Value="4.9"/>
+        <EffectArray Reference="Effect,W1200SpreadDamage,Random" Value="0.7"/>
+        <EffectArray Reference="Effect,W1200SpreadDamageAir,Random" Value="0.7"/>
         <EffectArray Reference="Effect,W1200Damage,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,W1200Damage,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,W1200SpreadDamage,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,W1200SpreadDamage,AreaArray[1].Radius" Value="0.12"/>
         <EffectArray Reference="Effect,W1200SpreadDamageAir,AreaArray[0].Radius" Value="0.05"/>
         <EffectArray Reference="Effect,W1200SpreadDamageAir,AreaArray[1].Radius" Value="0.12"/>
-        <EffectArray Reference="Effect,M1014Damage,Amount" Value="21.632"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="3.776"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="3.776"/>
-        <EffectArray Reference="Effect,M1014Damage,Random" Value="4.096"/>
-        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.72"/>
-        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.72"/>
+        <EffectArray Reference="Effect,M1014Damage,Amount" Value="27.04"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Amount" Value="4.72"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Amount" Value="4.72"/>
+        <EffectArray Reference="Effect,M1014Damage,Random" Value="5.12"/>
+        <EffectArray Reference="Effect,M1014SpreadDamage,Random" Value="0.9"/>
+        <EffectArray Reference="Effect,M1014SpreadDamageAir,Random" Value="0.9"/>
         <EffectArray Reference="Effect,M1014Damage,AreaArray[0].Radius" Value="0.03"/>
         <EffectArray Reference="Effect,M1014Damage,AreaArray[1].Radius" Value="0.072"/>
         <EffectArray Reference="Effect,M1014SpreadDamage,AreaArray[0].Radius" Value="0.05"/>
@@ -4741,21 +4741,21 @@
     </CUpgrade>
     <CUpgrade id="DMRMarksmanship2" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,DMRDamage,Amount" Value="5.25"/>
+        <EffectArray Reference="Effect,DMRDamage,Amount" Value="7.5"/>
         <EffectArray Operation="Set" Reference="Weapon,DesignatedMarksmanRifle,CriticalChance" Value="0.12"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="10.5"/>
-        <EffectArray Reference="Effect,DMRDamage,Random" Value="1.3125"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="2.625"/>
-        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="5.25"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="15.0"/>
+        <EffectArray Reference="Effect,DMRDamage,Random" Value="1.87"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="7.5"/>
         <EffectArray Operation="Set" Reference="Weapon,Mk14,CriticalChance" Value="0.12"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="10.5"/>
-        <EffectArray Reference="Effect,Mk14Damage,Random" Value="1.3125"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="2.625"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="7"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="15.0"/>
+        <EffectArray Reference="Effect,Mk14Damage,Random" Value="1.87"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="10.0"/>
         <EffectArray Operation="Set" Reference="Weapon,M92Torrent,CriticalChance" Value="0.12"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="14"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="1.3125"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="2.625"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="20.0"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="1.87"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="3.75"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipDMR"/>
         <LeaderLevel value="2"/>
@@ -4763,24 +4763,24 @@
     </CUpgrade>
     <CUpgrade id="DMRMarksmanship3" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,DMRDamage,Amount" Value="8.25"/>
+        <EffectArray Reference="Effect,DMRDamage,Amount" Value="11.25"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifle,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifle,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="16.5"/>
-        <EffectArray Reference="Effect,DMRDamage,Random" Value="2.0625"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="4.125"/>
-        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="8.25"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="22.5"/>
+        <EffectArray Reference="Effect,DMRDamage,Random" Value="2.81"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="5.62"/>
+        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="11.25"/>
         <EffectArray Reference="Weapon,Mk14,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,Mk14,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="16.5"/>
-        <EffectArray Reference="Effect,Mk14Damage,Random" Value="2.0625"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="4.125"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="11"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="22.5"/>
+        <EffectArray Reference="Effect,Mk14Damage,Random" Value="2.81"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="5.62"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="15.0"/>
         <EffectArray Reference="Weapon,M92Torrent,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,M92Torrent,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="22"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="2.0625"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="4.125"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="30.0"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="2.81"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="5.62"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipDMR"/>
         <LeaderLevel value="3"/>
@@ -4788,27 +4788,27 @@
     </CUpgrade>
     <CUpgrade id="DMRMarksmanship4" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,DMRDamage,Amount" Value="12"/>
+        <EffectArray Reference="Effect,DMRDamage,Amount" Value="15.0"/>
         <EffectArray Operation="Set" Reference="Weapon,DesignatedMarksmanRifle,CriticalChance" Value="0.15"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="24"/>
-        <EffectArray Reference="Effect,DMRDamage,Random" Value="3"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="6"/>
-        <EffectArray Operation="Multiply" Reference="Effect,DMRCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,DMRCriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="12"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="30.0"/>
+        <EffectArray Reference="Effect,DMRDamage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="7.5"/>
+        <EffectArray Operation="Multiply" Reference="Effect,DMRCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,DMRCriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="15.0"/>
         <EffectArray Operation="Set" Reference="Weapon,Mk14,CriticalChance" Value="0.15"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="24"/>
-        <EffectArray Reference="Effect,Mk14Damage,Random" Value="3"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="6"/>
-        <EffectArray Operation="Multiply" Reference="Effect,Mk14CriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,Mk14CriticalDamage,Random" Value="1.25"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="16"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="30.0"/>
+        <EffectArray Reference="Effect,Mk14Damage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="7.5"/>
+        <EffectArray Operation="Multiply" Reference="Effect,Mk14CriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,Mk14CriticalDamage,Random" Value="1.56"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="20.0"/>
         <EffectArray Operation="Set" Reference="Weapon,M92Torrent,CriticalChance" Value="0.15"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="32"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="3"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="6"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M92TorrentCriticalDamage,Amount" Value="1.25"/>
-        <EffectArray Operation="Multiply" Reference="Effect,M92TorrentCriticalDamage,Random" Value="1.25"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="40.0"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="3.75"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="7.5"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M92TorrentCriticalDamage,Amount" Value="1.56"/>
+        <EffectArray Operation="Multiply" Reference="Effect,M92TorrentCriticalDamage,Random" Value="1.56"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipDMR"/>
         <LeaderLevel value="4"/>
@@ -4816,24 +4816,24 @@
     </CUpgrade>
     <CUpgrade id="DMRMarksmanship1" parent="Research">
         <Icon value="Assets\Textures\btn-tips-terran-penetrator.dds"/>
-        <EffectArray Reference="Effect,DMRDamage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,DMRDamage,Amount" Value="3.75"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifle,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,DesignatedMarksmanRifle,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="6"/>
-        <EffectArray Reference="Effect,DMRDamage,Random" Value="0.75"/>
-        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="1.5"/>
-        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Amount" Value="7.5"/>
+        <EffectArray Reference="Effect,DMRDamage,Random" Value="0.94"/>
+        <EffectArray Reference="Effect,DMRCriticalDamage,Random" Value="1.88"/>
+        <EffectArray Reference="Effect,Mk14Damage,Amount" Value="3.75"/>
         <EffectArray Reference="Weapon,Mk14,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,Mk14,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="6"/>
-        <EffectArray Reference="Effect,Mk14Damage,Random" Value="0.75"/>
-        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="1.5"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="4"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Amount" Value="7.5"/>
+        <EffectArray Reference="Effect,Mk14Damage,Random" Value="0.94"/>
+        <EffectArray Reference="Effect,Mk14CriticalDamage,Random" Value="1.88"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Amount" Value="5.0"/>
         <EffectArray Reference="Weapon,M92Torrent,MinScanRange" Value="1.25"/>
         <EffectArray Reference="Weapon,M92Torrent,Range" Value="1.25"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="8"/>
-        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="0.75"/>
-        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="1.5"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Amount" Value="10.0"/>
+        <EffectArray Reference="Effect,M92TorrentDamage,Random" Value="0.94"/>
+        <EffectArray Reference="Effect,M92TorrentCriticalDamage,Random" Value="1.88"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipDMR"/>
         <LeaderLevel value="1"/>

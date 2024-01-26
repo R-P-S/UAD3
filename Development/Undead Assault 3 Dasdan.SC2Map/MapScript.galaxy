@@ -560,7 +560,7 @@ void InitGlobals () {
     int init_j1;
 
     gv_dEBUG_MODE = UserDataGetInt("GameModes", "Sandbox", "Mode #", 1);
-    gv_dEBUG_MOS = UserDataGetInt("MOSSetup", "MOS - Ghost", "ID Index", 1);
+    gv_dEBUG_MOS = UserDataGetInt("MOSSetup", "MOS - SFAAT", "ID Index", 1);
     gv_campaign.lv_prologuepVote = c_invalidDialogControlId;
     gv_campaign.lv_prologuevTimer = c_invalidDialogControlId;
     gv_campaign.lv_prologueyButton = c_invalidDialogControlId;
@@ -832,6 +832,7 @@ void gf_SpawnApiaries ();
 void gf_StartTruckRoute ();
 void gf_Chapter3Items ();
 void gf_OutlawPhantom ();
+void gf_CreateCrashSite ();
 void gf_SpawnOutlawSoldiers (int lp_groupSpawnCount);
 void gf_SpawnRAPowerStationDefense ();
 void gf_SpawnRASaboteurs ();
@@ -2177,10 +2178,20 @@ void gf_StartTruckRoute () {
             lv_pointIndex = 0;
             for ( ; ( (auto1033A86C_ai >= 0 && lv_pointIndex <= auto1033A86C_ae) || (auto1033A86C_ai < 0 && lv_pointIndex >= auto1033A86C_ae) ) ; lv_pointIndex += auto1033A86C_ai ) {
                 if ((gv_chapter_2.lv_mission14MotorPoolLocation == 0) && ((lv_pointIndex - lv_index) >= 0)) {
-                    UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[(lv_pointIndex - lv_index)]), c_orderQueueAddToEnd);
+                    if ((lv_pointIndex == 0)) {
+                        UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[(lv_pointIndex - lv_index)]), c_orderQueueReplace);
+                    }
+                    else {
+                        UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[(lv_pointIndex - lv_index)]), c_orderQueueAddToEnd);
+                    }
                 }
                 else if ((gv_chapter_2.lv_mission14MotorPoolLocation == 1) && ((lv_pointIndex - lv_index) >= -3)) {
-                    UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14NorthRoute1Points[(lv_pointIndex - (lv_index - 3))]), c_orderQueueAddToEnd);
+                    if ((lv_pointIndex == 0)) {
+                        UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14NorthRoute1Points[(lv_pointIndex - (lv_index - 3))]), c_orderQueueReplace);
+                    }
+                    else {
+                        UnitIssueOrder(gv_chapter_1.lv_mission05MATVUnit[lv_index], OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14NorthRoute1Points[(lv_pointIndex - (lv_index - 3))]), c_orderQueueAddToEnd);
+                    }
                 }
             }
         }
@@ -2342,8 +2353,8 @@ void gf_OutlawPhantom () {
     unitgroup autoFB43533C_g;
     int autoFB43533C_u;
     unit autoFB43533C_var;
-    int autoC353824C_ae;
-    const int autoC353824C_ai = 1;
+    int auto150DCA1B_n;
+    int auto150DCA1B_i;
 
     // Variable Initialization
 
@@ -2374,15 +2385,16 @@ void gf_OutlawPhantom () {
         if (autoFB43533C_var == null) { break; }
         PlayerCreateEffectUnit(0, "ReviveModifyUnit", autoFB43533C_var);
         Wait(0.0625, c_timeGame);
-        UnitSetPosition(autoFB43533C_var, RegionRandomPoint(RegionFromId(30)), false);
+        UnitSetPosition(autoFB43533C_var, RegionRandomPoint(RegionFromId(43)), false);
         UnitSetPropertyFixed(autoFB43533C_var, c_unitPropLifePercent, 100.0);
         UnitSetPropertyFixed(autoFB43533C_var, c_unitPropEnergyPercent, 100.0);
         CameraLockInput(UnitGetOwner(autoFB43533C_var), false);
         if ((UnitGetType(autoFB43533C_var) == "SFAAT")) {
+            TextExpressionSetToken("Param/Expression/8B286E7B", "A", IntToText(gv_chapter_2.lv_mission16SnapshotLN));
+            TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/8B286E7B"), true);
             RegionSetCenter(RegionFromId(62), RegionGetCenter(RegionFromId(30)));
-            autoC353824C_ae = gv_chapter_2.lv_mission16SnapshotLN;
-            lv_index = 1;
-            for ( ; ( (autoC353824C_ai >= 0 && lv_index <= autoC353824C_ae) || (autoC353824C_ai < 0 && lv_index >= autoC353824C_ae) ) ; lv_index += autoC353824C_ai ) {
+            auto150DCA1B_n = gv_chapter_2.lv_mission16SnapshotLN;
+            for (auto150DCA1B_i = 1; auto150DCA1B_i <= auto150DCA1B_n; auto150DCA1B_i += 1) {
                 PlayerCreateEffectUnit(UnitGetOwner(autoFB43533C_var), "RecruitLNDummy", autoFB43533C_var);
             }
         }
@@ -2398,6 +2410,30 @@ void gf_OutlawPhantom () {
     Wait(5.0, c_timeGame);
     UnitRemove(lv_phantom);
     lv_phantom = null;
+}
+
+void gf_CreateCrashSite () {
+    // Automatic Variable Declarations
+    playergroup auto39531A21_g;
+    int auto39531A21_var;
+
+    // Implementation
+    auto39531A21_g = lib90F7C81D_gv_players;
+    auto39531A21_var = -1;
+    while (true) {
+        auto39531A21_var = PlayerGroupNextPlayer(auto39531A21_g, auto39531A21_var);
+        if (auto39531A21_var < 0) { break; }
+        VisRevealArea(auto39531A21_var, RegionFromId(263), 10.0, false);
+    }
+    MinimapPing(PlayerGroupAll(), RegionGetCenter(RegionFromId(263)), 4.0, Color(100.00, 0.00, 0.00));
+    SoundPlayForPlayer(SoundLink("Doodad_CharCrashingDebrisDrop", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    SoundWait(SoundLastPlayed(), 2.0, c_soundOffsetEnd);
+    SoundPlayForPlayer(SoundLink("Banshee_Help", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    SoundWait(SoundLastPlayed(), 0.0, c_soundOffsetEnd);
+    libNtve_gf_CreateModelAtPoint("WreckedBattlecruiserHeliosFinal", PointFromId(1370697770));
+    ActorSend(libNtve_gf_ActorLastCreated(), "SetFacing 180.000000");
+    ActorSend(libNtve_gf_ActorLastCreated(), "AnimPlay Death Death PlayForever,NonLooping");
+    SoundPlayForPlayer(SoundLink("SS_Battlecruiser_Explode", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
 }
 
 void gf_SpawnOutlawSoldiers (int lp_groupSpawnCount) {
@@ -5133,6 +5169,10 @@ void gf_Phantom () {
     unit lv_phantom;
 
     // Automatic Variable Declarations
+    unitgroup auto0E2F6624_g;
+    int auto0E2F6624_u;
+    unit auto0E2F6624_var;
+
     // Variable Initialization
 
     // Implementation
@@ -5166,6 +5206,7 @@ void gf_Phantom () {
     Wait(2.0, c_timeGame);
     lib90F7C81D_gf_RunGameMode();
     Wait(1.0, c_timeGame);
+    TriggerDebugOutput(1, StringExternal("Param/Value/5A1F0F76"), true);
     gf_SpawnSoldiers();
     Wait(1.5, c_timeGame);
     DialogControlSendAnimationEvent(lib90F7C81D_gv_sDFrame, PlayerGroupAll(), "Show");
@@ -5183,6 +5224,32 @@ void gf_Phantom () {
     lv_phantom = null;
     GameSetPauseable(true);
     lib90F7C81D_gv_levelActorOn = true;
+    if ((lib90F7C81D_gf_DifficultyFromIndex(lib90F7C81D_gv_gamemode) == (1) == true)) {
+        auto0E2F6624_g = lib90F7C81D_gv_heroesGroup;
+        auto0E2F6624_u = UnitGroupCount(auto0E2F6624_g, c_unitCountAll);
+        for (;; auto0E2F6624_u -= 1) {
+            auto0E2F6624_var = UnitGroupUnitFromEnd(auto0E2F6624_g, auto0E2F6624_u);
+            if (auto0E2F6624_var == null) { break; }
+            TriggerDebugOutput(1, StringExternal("Param/Value/6A2FE59A"), true);
+            UnitBehaviorAddPlayer(auto0E2F6624_var, "RecruitBuff", 0, 1);
+        }
+        libNtve_gf_SetUpgradeLevelForPlayer(0, "TrainingLevel1Dummy", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(0, "Training2", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(0, "Training3", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(0, "Training4", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(13, "TrainingLevel1Dummy", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(13, "TrainingLevel2Dummy", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(13, "TrainingLevel3Dummy", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(13, "TrainingLevel4Dummy", 1);
+        TechTreeUpgradeAddLevel(0, "ArchitectLevel1Dummy", 1);
+        TechTreeUpgradeAddLevel(0, "ArchitectLevel2Dummy", 1);
+        TechTreeUpgradeAddLevel(0, "ArchitectLevel3Dummy", 1);
+        TechTreeUpgradeAddLevel(0, "ArchitectLevel4Dummy", 1);
+        TechTreeUpgradeAddLevel(13, "ArchitectLevel1Dummy", 1);
+        TechTreeUpgradeAddLevel(13, "ArchitectLevel2Dummy", 1);
+        TechTreeUpgradeAddLevel(13, "ArchitectLevel3Dummy", 1);
+        TechTreeUpgradeAddLevel(13, "ArchitectLevel4Dummy", 1);
+    }
 }
 
 void gf_SpawnCustomLocation () {
@@ -10093,10 +10160,10 @@ bool gt_EngineerEscortSetup_Func (bool testConds, bool runActions) {
         UnitCreate(1, "MATVConvoy", 0, 0, PointFromName("Mission05.M-ATV_" + IntToString(lv_index + 1)), PointGetFacing(PointFromName("Mission05.M-ATV_" + IntToString(lv_index + 1))));
         gv_chapter_1.lv_mission05MATVUnit[lv_index] = UnitLastCreated();
         UnitBehaviorAdd(gv_chapter_1.lv_mission05MATVUnit[lv_index], "Unpowered", gv_chapter_1.lv_mission05MATVUnit[lv_index], 1);
-        UnitBehaviorRemove(UnitLastCreated(), "ConvoyAntiStuck", 1);
-        UnitBehaviorRemove(UnitLastCreated(), "ConjoinATV", 1);
-        UnitSetPropertyFixed(UnitLastCreated(), c_unitPropLifeMax, 800.0);
-        UnitSetPropertyFixed(UnitLastCreated(), c_unitPropShieldsMax, 800.0);
+        UnitBehaviorRemove(gv_chapter_1.lv_mission05MATVUnit[lv_index], "ConvoyAntiStuck", 1);
+        UnitBehaviorRemove(gv_chapter_1.lv_mission05MATVUnit[lv_index], "ConjoinATV", 1);
+        UnitSetPropertyFixed(gv_chapter_1.lv_mission05MATVUnit[lv_index], c_unitPropLifeMax, 800.0);
+        UnitSetPropertyFixed(gv_chapter_1.lv_mission05MATVUnit[lv_index], c_unitPropShieldsMax, 800.0);
         libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), "PingObjective", PointFromName("Mission05.M-ATV_" + IntToString(lv_index + 1)), ColorWithAlpha(0.00, 100.00, 25.10, 0.00), 0.0, 270.0);
         gv_chapter_1.lv_mission05MATVLocationPing[lv_index] = PingLastCreated();
         PingSetScale(gv_chapter_1.lv_mission05MATVLocationPing[lv_index], 0.75);
@@ -13334,11 +13401,18 @@ bool gt_LoadUpCivilians_Func (bool testConds, bool runActions) {
     unit lv_randomTruck;
     unitgroup lv_civillianUnitGroup;
     int lv_index;
+    fixed lv_time;
 
     // Automatic Variable Declarations
+    unitgroup auto2332F41C_g;
+    int auto2332F41C_u;
+    unit auto2332F41C_var;
     unitgroup auto22575BA2_g;
     int auto22575BA2_u;
     unit auto22575BA2_var;
+    unitgroup auto2A0887BA_g;
+    int auto2A0887BA_u;
+    unit auto2A0887BA_var;
     unitgroup auto3F43C617_g;
     int auto3F43C617_u;
     unit auto3F43C617_var;
@@ -13346,11 +13420,14 @@ bool gt_LoadUpCivilians_Func (bool testConds, bool runActions) {
     int autoCE9C145D_u;
     unit autoCE9C145D_var;
     fixed auto89F3CC28_at;
-    const int auto7042E763_ae = 1;
-    const int auto7042E763_ai = -1;
     unitgroup auto15578558_g;
     int auto15578558_u;
     unit auto15578558_var;
+    const int auto7042E763_ae = 1;
+    const int auto7042E763_ai = -1;
+    unitgroup auto69FDA1DC_g;
+    int auto69FDA1DC_u;
+    unit auto69FDA1DC_var;
 
     // Variable Initialization
     lv_civillianUnitGroup = UnitGroupEmpty();
@@ -13368,9 +13445,19 @@ bool gt_LoadUpCivilians_Func (bool testConds, bool runActions) {
     }
 
     TriggerDebugOutput(gv_debug.lv_gameEventsType, StringExternal("Param/Value/8F757EBC"), gv_debug.lv_gameEvents);
-    UnitGroupWaitUntilIdle(gv_chapter_2.lv_mission14TruckUnitGroup, 0, true);
+    while ((lv_time < 40.0)) {
+        lv_time += 1.0;
+        Wait(1.0, c_timeGame);
+    }
     TriggerDebugOutput(gv_debug.lv_gameEventsType, StringExternal("Param/Value/C371514D"), gv_debug.lv_gameEvents);
     if ((gv_chapter_2.lv_mission14MotorPoolLocation == 0) && ((gv_chapter_1.lv_mission05MATVUnit[0] != null) || (gv_chapter_1.lv_mission05MATVUnit[1] != null) || (gv_chapter_1.lv_mission05MATVUnit[2] != null))) {
+        auto2332F41C_g = gv_chapter_2.lv_mission14TruckUnitGroup;
+        auto2332F41C_u = UnitGroupCount(auto2332F41C_g, c_unitCountAll);
+        for (;; auto2332F41C_u -= 1) {
+            auto2332F41C_var = UnitGroupUnitFromEnd(auto2332F41C_g, auto2332F41C_u);
+            if (auto2332F41C_var == null) { break; }
+            libNtve_gf_SendActorMessageToUnit(auto2332F41C_var, "AnimBracketStart Stand Stand,Work,Start {} {} OpeningPlayForever");
+        }
         auto22575BA2_g = UnitGroup(null, 0, RegionFromId(47), UnitFilter((1 << c_targetFilterBiological), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), (gv_chapter_2.lv_mission14RefugeeCount / 2));
         auto22575BA2_u = UnitGroupCount(auto22575BA2_g, c_unitCountAll);
         for (;; auto22575BA2_u -= 1) {
@@ -13390,6 +13477,13 @@ bool gt_LoadUpCivilians_Func (bool testConds, bool runActions) {
         }
     }
     else if ((gv_chapter_2.lv_mission14MotorPoolLocation == 1) && ((gv_chapter_1.lv_mission05MATVUnit[3] != null) || (gv_chapter_1.lv_mission05MATVUnit[4] != null) || (gv_chapter_1.lv_mission05MATVUnit[5] != null))) {
+        auto2A0887BA_g = gv_chapter_2.lv_mission14TruckUnitGroup;
+        auto2A0887BA_u = UnitGroupCount(auto2A0887BA_g, c_unitCountAll);
+        for (;; auto2A0887BA_u -= 1) {
+            auto2A0887BA_var = UnitGroupUnitFromEnd(auto2A0887BA_g, auto2A0887BA_u);
+            if (auto2A0887BA_var == null) { break; }
+            libNtve_gf_SendActorMessageToUnit(auto2A0887BA_var, "AnimBracketStart Stand Stand,Work,Start {} {} OpeningPlayForever");
+        }
         auto3F43C617_g = UnitGroup(null, 0, RegionFromId(47), UnitFilter((1 << c_targetFilterBiological), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), (gv_chapter_2.lv_mission14RefugeeCount / 2));
         auto3F43C617_u = UnitGroupCount(auto3F43C617_g, c_unitCountAll);
         for (;; auto3F43C617_u -= 1) {
@@ -13435,17 +13529,29 @@ bool gt_LoadUpCivilians_Func (bool testConds, bool runActions) {
         Wait(1.0, c_timeGame);
         auto89F3CC28_at = auto89F3CC28_at + 1.0;
     }
-    lv_index = 3;
-    for ( ; ( (auto7042E763_ai >= 0 && lv_index <= auto7042E763_ae) || (auto7042E763_ai < 0 && lv_index >= auto7042E763_ae) ) ; lv_index += auto7042E763_ai ) {
-        UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[lv_index]), c_orderQueueAddToEnd);
-        UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(1815007939)), c_orderQueueAddToEnd);
-    }
     auto15578558_g = gv_chapter_2.lv_mission14TruckUnitGroup;
     auto15578558_u = UnitGroupCount(auto15578558_g, c_unitCountAll);
     for (;; auto15578558_u -= 1) {
         auto15578558_var = UnitGroupUnitFromEnd(auto15578558_g, auto15578558_u);
         if (auto15578558_var == null) { break; }
-        UnitBehaviorAdd(auto15578558_var, "ConvoyAntiStuck", auto15578558_var, 1);
+        libNtve_gf_SendActorMessageToUnit(auto15578558_var, "AnimBracketStop Stand");
+    }
+    lv_index = 3;
+    for ( ; ( (auto7042E763_ai >= 0 && lv_index <= auto7042E763_ae) || (auto7042E763_ai < 0 && lv_index >= auto7042E763_ae) ) ; lv_index += auto7042E763_ai ) {
+        if ((lv_index == 3)) {
+            UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[lv_index]), c_orderQueueReplace);
+        }
+        else {
+            UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[lv_index]), c_orderQueueAddToEnd);
+        }
+    }
+    UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(1815007939)), c_orderQueueAddToEnd);
+    auto69FDA1DC_g = gv_chapter_2.lv_mission14TruckUnitGroup;
+    auto69FDA1DC_u = UnitGroupCount(auto69FDA1DC_g, c_unitCountAll);
+    for (;; auto69FDA1DC_u -= 1) {
+        auto69FDA1DC_var = UnitGroupUnitFromEnd(auto69FDA1DC_g, auto69FDA1DC_u);
+        if (auto69FDA1DC_var == null) { break; }
+        UnitBehaviorAdd(auto69FDA1DC_var, "ConvoyAntiStuck", auto69FDA1DC_var, 1);
     }
     return true;
 }
@@ -13787,9 +13893,6 @@ bool gt_TrucksStuck_Func (bool testConds, bool runActions) {
     int lv_index;
 
     // Automatic Variable Declarations
-    const int auto973866EE_ae = 1;
-    const int auto973866EE_ai = -1;
-
     // Variable Initialization
 
     // Actions
@@ -13797,11 +13900,7 @@ bool gt_TrucksStuck_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    lv_index = 3;
-    for ( ; ( (auto973866EE_ai >= 0 && lv_index <= auto973866EE_ae) || (auto973866EE_ai < 0 && lv_index >= auto973866EE_ae) ) ; lv_index += auto973866EE_ai ) {
-        UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), gv_chapter_2.lv_mission14WestRoute0Points[lv_index]), c_orderQueueAddToEnd);
-        UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(1815007939)), c_orderQueueAddToEnd);
-    }
+    UnitGroupIssueOrder(gv_chapter_2.lv_mission14TruckUnitGroup, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(1815007939)), c_orderQueueAddToEnd);
     return true;
 }
 
@@ -14042,10 +14141,11 @@ bool gt_Chapter2EndingSetup_Func (bool testConds, bool runActions) {
         if (auto898009FB_var == null) { break; }
         UnitBehaviorAddPlayer(auto898009FB_var, "ThePlague", 14, 1);
         if ((UnitGetType(auto898009FB_var) == "SFAAT")) {
+            TextExpressionSetToken("Param/Expression/DC4E4F31", "A", IntToText(UnitGroupCount(lib90F7C81D_gv_sFAAT.lv_localNationals, c_unitCountAlive)));
+            TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/DC4E4F31"), true);
             UnitAbilityEnable(auto898009FB_var, "RecruitLN", false);
             UnitAbilityReset(auto898009FB_var, AbilityCommand("RecruitLN", 0), c_spendLocationAll);
-            gv_chapter_2.lv_mission16SnapshotLN = UnitCount(null, UnitGetOwner(auto898009FB_var), RegionEntireMap(), UnitFilter((1 << c_targetFilterBiological), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            gv_chapter_2.lv_mission16SnapshotLN -= 1;
+            gv_chapter_2.lv_mission16SnapshotLN = UnitGroupCount(lib90F7C81D_gv_sFAAT.lv_localNationals, c_unitCountAlive);
         }
     }
     autoA5CA4B7E_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
@@ -14206,6 +14306,7 @@ bool gt_TheOldCrewSetup_Func (bool testConds, bool runActions) {
     libNtve_gf_SetDialogItemText(lib90F7C81D_gv_mutationLabel, IntToText(gv_mutateBuffCount), PlayerGroupAll());
     libNtve_gf_SetUpgradeLevelForPlayer(14, "MutationUpgrade", gv_mutateBuffCount);
     libNtve_gf_SetUpgradeLevelForPlayer(15, "ChineseEquipment", 1);
+    UserDataSetInt("SpawnedItems", "Special Items", "Group Allowed", 1, 1);
     DialogControlSendAnimationEvent(gv_chapter_2.lv_transitionFrame, PlayerGroupAll(), "Hide");
     CameraSetBounds(PlayerGroupAll(), RegionFromId(207), true);
     gf_Chapter3Items();
@@ -14273,9 +14374,6 @@ bool gt_PhantomReinforcements_Func (bool testConds, bool runActions) {
     unit lv_phantom;
 
     // Automatic Variable Declarations
-    playergroup auto6F4317B9_g;
-    int auto6F4317B9_var;
-
     // Variable Initialization
 
     // Conditions
@@ -14313,21 +14411,6 @@ bool gt_PhantomReinforcements_Func (bool testConds, bool runActions) {
     lv_phantom = null;
     gv_chapter_3.lv_mission17Reinforcements += 1;
     if ((gv_chapter_3.lv_mission17Reinforcements >= 3)) {
-        auto6F4317B9_g = lib90F7C81D_gv_players;
-        auto6F4317B9_var = -1;
-        while (true) {
-            auto6F4317B9_var = PlayerGroupNextPlayer(auto6F4317B9_g, auto6F4317B9_var);
-            if (auto6F4317B9_var < 0) { break; }
-            VisRevealArea(auto6F4317B9_var, RegionFromId(211), 10.0, false);
-        }
-        SoundPlayForPlayer(SoundLink("Doodad_CharCrashingDebrisDrop", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
-        SoundWait(SoundLastPlayed(), 2.0, c_soundOffsetEnd);
-        SoundPlayForPlayer(SoundLink("Banshee_Help", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
-        SoundWait(SoundLastPlayed(), 0.0, c_soundOffsetEnd);
-        libNtve_gf_CreateModelAtPoint("WreckedBattlecruiserHeliosFinal", PointFromId(1370697770));
-        ActorSend(libNtve_gf_ActorLastCreated(), "SetFacing 180.000000");
-        ActorSend(libNtve_gf_ActorLastCreated(), "AnimPlay Death Death PlayForever,NonLooping");
-        SoundPlayForPlayer(SoundLink("SS_Battlecruiser_Explode", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
         TriggerEnable(TriggerGetCurrent(), false);
     }
     else {
@@ -14386,6 +14469,7 @@ bool gt_TheOldCrewEnd_Func (bool testConds, bool runActions) {
     TriggerDestroy(gt_PhantomReinforcements);
     CameraSetBounds(PlayerGroupAll(), RegionEntireMap(), true);
     SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryMusic, true);
+    gf_CreateCrashSite();
     Wait(RandomFixed(20.0, 40.0), c_timeGame);
     if ((gv_campaign.lv_singleMission == false)) {
         TriggerEnable(gt_ForTheRebellionSetup, true);
@@ -16571,8 +16655,13 @@ void gt_CampaignMissionSelector_Init () {
 // Trigger: Campaign Mission Start
 //--------------------------------------------------------------------------------------------------
 bool gt_CampaignMissionStart_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_index;
+
     // Automatic Variable Declarations
     int auto1A265D65_val;
+    const int autoAB944964_ae = 5;
+    const int autoAB944964_ai = 1;
     unitgroup autoB1CB5E66_g;
     int autoB1CB5E66_u;
     unit autoB1CB5E66_var;
@@ -16600,6 +16689,8 @@ bool gt_CampaignMissionStart_Func (bool testConds, bool runActions) {
     unitgroup auto7CA997B9_g;
     int auto7CA997B9_u;
     unit auto7CA997B9_var;
+
+    // Variable Initialization
 
     // Conditions
     if (testConds) {
@@ -16671,6 +16762,18 @@ bool gt_CampaignMissionStart_Func (bool testConds, bool runActions) {
         lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission4");
     }
     else if (auto1A265D65_val == 14) {
+        gv_chapter_1.lv_mission05VehicleRepairCount += 1;
+        lv_index = 0;
+        for ( ; ( (autoAB944964_ai >= 0 && lv_index <= autoAB944964_ae) || (autoAB944964_ai < 0 && lv_index >= autoAB944964_ae) ) ; lv_index += autoAB944964_ai ) {
+            UnitCreate(1, "MATVConvoy", 0, 0, PointFromName("Mission05.M-ATV_" + IntToString(lv_index + 1)), PointGetFacing(PointFromName("Mission05.M-ATV_" + IntToString(lv_index + 1))));
+            gv_chapter_1.lv_mission05MATVUnit[lv_index] = UnitLastCreated();
+            UnitBehaviorAdd(gv_chapter_1.lv_mission05MATVUnit[lv_index], "Unpowered", gv_chapter_1.lv_mission05MATVUnit[lv_index], 1);
+            UnitBehaviorRemove(gv_chapter_1.lv_mission05MATVUnit[lv_index], "ConvoyAntiStuck", 1);
+            UnitBehaviorRemove(gv_chapter_1.lv_mission05MATVUnit[lv_index], "ConjoinATV", 1);
+            UnitSetPropertyFixed(gv_chapter_1.lv_mission05MATVUnit[lv_index], c_unitPropLifeMax, 800.0);
+            UnitSetPropertyFixed(gv_chapter_1.lv_mission05MATVUnit[lv_index], c_unitPropShieldsMax, 800.0);
+            gv_chapter_1.lv_mission05MATVRepaired[lv_index] = true;
+        }
         TriggerEnable(gt_TheGreatEscapeSetup, true);
         lib90F7C81D_gf_RunCampaignEvent("Chapter-2.Mission5");
     }
@@ -21363,7 +21466,7 @@ bool gt_AutoSelectMOS_Func (bool testConds, bool runActions) {
         auto97DF39A7_var = PlayerGroupNextPlayer(auto97DF39A7_g, auto97DF39A7_var);
         if (auto97DF39A7_var < 0) { break; }
         if ((PlayerStatus(auto97DF39A7_var) == c_playerStatusActive) && (lib90F7C81D_gv_playerHeroes[auto97DF39A7_var] == null)) {
-            if ((PlayerHandle(auto97DF39A7_var) == "1-S2-1-2812341")) {
+            if (((PlayerHandle(auto97DF39A7_var) == "1-S2-1-2812341") || ((GameIsTestMap(false) == true) && (gv_menu.lv_mOSSelected[auto97DF39A7_var] == 0)))) {
                 gf_UpdateMOSUI(0, auto97DF39A7_var);
             }
             else {

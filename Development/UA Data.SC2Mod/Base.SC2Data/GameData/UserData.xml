@@ -4612,7 +4612,7 @@
             </Text>
         </Instances>
         <Instances Id="Campaign: Hard">
-            <Image Image="Textures\marine_uad_diff_camo_forestsniper.dds">
+            <Image Image="Assets\Achievements\Achievement_Hard.dds">
                 <Field Id="Icon"/>
             </Image>
             <Text Text="UserData/AchievementBadge/Campaign: Hard_Description">
@@ -4623,6 +4623,50 @@
             </Text>
             <Text Text="UserData/AchievementBadge/Campaign: Hard_Unlock">
                 <Field Id="Unlock"/>
+            </Text>
+        </Instances>
+        <Instances Id="Campaign: Insane">
+            <Image Image="Assets\Achievements\Achievement_Insane.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Campaign: Insane_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Campaign: Insane_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Campaign: Insane_Unlock">
+                <Field Id="Unlock"/>
+            </Text>
+        </Instances>
+        <Instances Id="Campaign: Nightmare">
+            <Image Image="Assets\Achievements\Achievement_Nightmare.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Campaign: Nightmare_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Campaign: Nightmare_Description">
+                <Field Id="Description"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Campaign: Nightmare_Unlock">
+                <Field Id="Unlock"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Legion Of Merit">
+            <Image Image="Assets\Achievements\Achievement_Legion_Of_Merit.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Legion Of Merit_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Combat Action">
+            <Image Image="Assets\Achievements\Achievement_Combat_Action.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Combat Action_Name">
+                <Field Id="Name"/>
             </Text>
         </Instances>
         <Instances Id="Medal: Indomitable">
@@ -4637,6 +4681,108 @@
             </Text>
             <Text Text="UserData/AchievementBadge/Medal: Indomitable_Unlock">
                 <Field Id="Unlock"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Gallantry">
+            <Image Image="Assets\Achievements\Achievement_Gallantry.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Gallantry_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Purple Heart">
+            <Image Image="Assets\Achievements\Achievement_Purple_Heart.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Purple Heart_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Elite Warfare">
+            <Image Image="Assets\Achievements\Achievement_Elite_Warfare.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Elite Warfare_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Good Conduct">
+            <Image Image="Assets\Achievements\Achievement_Good_Conduct.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Good Conduct_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Marksmanship">
+            <Image Image="Assets\Achievements\Achievement_Marksmanship.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Marksmanship_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Distinguished Service">
+            <Image Image="Assets\Achievements\Achievement_Distinguished_Service.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Distinguished Service_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Star Of Affliction">
+            <Image Image="Assets\Achievements\Achievement_Star_Of_Affliction.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Star Of Affliction_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Medal: Star Of Affliction_Description">
+                <Field Id="Description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Honour">
+            <Image Image="Assets\Achievements\Achievement_Honour.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Honour_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Valor">
+            <Image Image="Assets\Achievements\Achievement_Valor.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Valor_Name">
+                <Field Id="Name"/>
+            </Text>
+            <Text Text="UserData/AchievementBadge/Medal: Valor_Description">
+                <Field Id="Description"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Bronze Star">
+            <Image Image="Assets\Achievements\Achievement_Bronze_Star.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Bronze Star_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Silver Star">
+            <Image Image="Assets\Achievements\Achievement_Silver_Star.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Silver Star_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medal: Gold Star">
+            <Image Image="Assets\Achievements\Achievement_Gold_Star.dds">
+                <Field Id="Icon"/>
+            </Image>
+            <Text Text="UserData/AchievementBadge/Medal: Gold Star_Name">
+                <Field Id="Name"/>
             </Text>
         </Instances>
     </CUser>
@@ -5934,6 +6080,7 @@
             <EditorColumn value="2"/>
             <EditorText value="Name"/>
         </Fields>
+        <Fields Id="Glaze" Type="String" EditorColumn="3"/>
         <Instances Id="[Default]"/>
         <Instances Id="Default">
             <GameLink GameLink="CamoDefault">
@@ -5974,6 +6121,9 @@
             <String String="Blue">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeBlue">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Cyan">
             <GameLink GameLink="CamoCyan">
@@ -5981,6 +6131,9 @@
             </GameLink>
             <String String="Cyan">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeArtic">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Lime">
@@ -5990,6 +6143,9 @@
             <String String="Lime">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeGlass">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Magenta">
             <GameLink GameLink="CamoMagenta">
@@ -5997,6 +6153,9 @@
             </GameLink>
             <String String="Magenta">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeBlue">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Maroon">
@@ -6006,6 +6165,9 @@
             <String String="Maroon">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeRed">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Orange">
             <GameLink GameLink="CamoOrange">
@@ -6013,6 +6175,9 @@
             </GameLink>
             <String String="Orange">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeHellFire">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Pink">
@@ -6022,6 +6187,9 @@
             <String String="Pink">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeBluePowerUp">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Purple">
             <GameLink GameLink="CamoPurple">
@@ -6029,6 +6197,9 @@
             </GameLink>
             <String String="Purple">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeParty">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Silver">
@@ -6038,6 +6209,9 @@
             <String String="Silver">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeGhost">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Red">
             <GameLink GameLink="CamoRed">
@@ -6045,6 +6219,9 @@
             </GameLink>
             <String String="Red">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeRed">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Yellow">
@@ -6109,6 +6286,9 @@
             </GameLink>
             <String String="Yellow Jacket">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeYellowJacket">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Red Tiger 2.0">
@@ -6205,6 +6385,9 @@
             </GameLink>
             <String String="Party 2.0">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeParty">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Urban I">
@@ -6326,6 +6509,9 @@
             <String String="Octo Green">
                 <Field Id="Camo Name"/>
             </String>
+            <String String="GlazeOctoGreen">
+                <Field Id="Glaze"/>
+            </String>
         </Instances>
         <Instances Id="Artic">
             <GameLink GameLink="CamoArtic">
@@ -6333,6 +6519,9 @@
             </GameLink>
             <String String="Artic">
                 <Field Id="Camo Name"/>
+            </String>
+            <String String="GlazeArtic">
+                <Field Id="Glaze"/>
             </String>
         </Instances>
         <Instances Id="Octo Dark">
@@ -7498,25 +7687,81 @@
     </CUser>
     <CUser id="Medals">
         <Instances Id="[Default]"/>
-        <Instances Id="Legion Of Merit"/>
-        <Instances Id="Combat Action"/>
+        <Instances Id="Legion Of Merit">
+            <User Type="AchievementBadge" Instance="Medal: Legion Of Merit">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Combat Action">
+            <User Type="AchievementBadge" Instance="Medal: Combat Action">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
         <Instances Id="Indomitable">
             <User Type="AchievementBadge" Instance="Medal: Indomitable">
                 <Field Id="Achievement"/>
             </User>
         </Instances>
-        <Instances Id="Gallantry"/>
-        <Instances Id="Purple Heart"/>
-        <Instances Id="Elite Warfare"/>
-        <Instances Id="Good Conduct"/>
-        <Instances Id="Marksmanship"/>
-        <Instances Id="Distinguished Service"/>
-        <Instances Id="Star Of Affliction"/>
-        <Instances Id="Honour"/>
-        <Instances Id="Valor"/>
-        <Instances Id="Bronze Star"/>
-        <Instances Id="Silver Star"/>
-        <Instances Id="Gold Star"/>
+        <Instances Id="Gallantry">
+            <User Type="AchievementBadge" Instance="Medal: Gallantry">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Purple Heart">
+            <User Type="AchievementBadge" Instance="Medal: Purple Heart">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Elite Warfare">
+            <User Type="AchievementBadge" Instance="Medal: Elite Warfare">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Good Conduct">
+            <User Type="AchievementBadge" Instance="Medal: Good Conduct">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Marksmanship">
+            <User Type="AchievementBadge" Instance="Medal: Marksmanship">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Distinguished Service">
+            <User Type="AchievementBadge" Instance="Medal: Distinguished Service">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Star Of Affliction">
+            <User Type="AchievementBadge" Instance="Medal: Star Of Affliction">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Honour">
+            <User Type="AchievementBadge" Instance="Medal: Honour">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Valor">
+            <User Type="AchievementBadge" Instance="Medal: Valor">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Bronze Star">
+            <User Type="AchievementBadge" Instance="Medal: Bronze Star">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Silver Star">
+            <User Type="AchievementBadge" Instance="Medal: Silver Star">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
+        <Instances Id="Gold Star">
+            <User Type="AchievementBadge" Instance="Medal: Gold Star">
+                <Field Id="Achievement"/>
+            </User>
+        </Instances>
         <Fields>
             <Id value="Achievement"/>
             <Type value="User"/>
@@ -9463,6 +9708,11 @@
         </Instances>
         <Instances Id="Kinetic Integrator">
             <GameLink GameLink="KineticIntegrator">
+                <Field Id="Item"/>
+            </GameLink>
+        </Instances>
+        <Instances Id="Lift Boots">
+            <GameLink GameLink="LiftBoots">
                 <Field Id="Item"/>
             </GameLink>
         </Instances>
@@ -13265,7 +13515,7 @@
             <Int Int="10">
                 <Field Id="Weight" Index="2"/>
             </Int>
-            <Int Int="2">
+            <Int Int="1">
                 <Field Id="Group Allowed"/>
             </Int>
             <Int Int="1">
@@ -13354,9 +13604,6 @@
             <Int Int="1">
                 <Field Id="Max Spawn Amount" Index="5"/>
             </Int>
-            <Int Int="3">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Int Int="10">
                 <Field Id="Weight" Index="3"/>
             </Int>
@@ -13380,9 +13627,6 @@
             </Unit>
         </Instances>
         <Instances Id="Rifles">
-            <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Int Int="5">
                 <Field Id="Index Max"/>
             </Int>
@@ -13475,9 +13719,6 @@
             <Int Int="15">
                 <Field Id="Weight" Index="1"/>
             </Int>
-            <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Unit Unit="M41SAW">
                 <Field Id="Unit Name"/>
             </Unit>
@@ -13486,9 +13727,6 @@
             </Unit>
         </Instances>
         <Instances Id="Shotguns">
-            <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Int Int="2">
                 <Field Id="Index Max"/>
             </Int>
@@ -13521,9 +13759,6 @@
             </Unit>
         </Instances>
         <Instances Id="DMR">
-            <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Int Int="2">
                 <Field Id="Index Max"/>
             </Int>
@@ -13557,9 +13792,6 @@
         </Instances>
         <Instances Id="Flamethrowers">
             <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
-            <Int Int="1">
                 <Field Id="Index Max"/>
             </Int>
             <Int Int="1">
@@ -13579,9 +13811,6 @@
             </Unit>
         </Instances>
         <Instances Id="Plasmas">
-            <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
             <Int Int="2">
                 <Field Id="Index Max"/>
             </Int>
@@ -13772,7 +14001,7 @@
             <Int Int="1">
                 <Field Id="Group Allowed"/>
             </Int>
-            <Int Int="13">
+            <Int Int="11">
                 <Field Id="Index Max"/>
             </Int>
             <Int Int="100">
@@ -13842,19 +14071,7 @@
                 <Field Id="Min Spawn Amount" Index="10"/>
             </Int>
             <Int Int="1">
-                <Field Id="Min Spawn Amount" Index="11"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Min Spawn Amount" Index="12"/>
-            </Int>
-            <Int Int="1">
                 <Field Id="Max Spawn Amount" Index="10"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Max Spawn Amount" Index="11"/>
-            </Int>
-            <Int Int="1">
-                <Field Id="Max Spawn Amount" Index="12"/>
             </Int>
             <Int Int="50">
                 <Field Id="Weight"/>
@@ -13887,7 +14104,7 @@
                 <Field Id="Weight" Index="9"/>
             </Int>
             <Int Int="20">
-                <Field Id="Weight" Index="11"/>
+                <Field Id="Weight" Index="10"/>
             </Int>
             <Unit Unit="GroundFlareItem">
                 <Field Id="Unit Name"/>
@@ -13919,14 +14136,8 @@
             <Unit Unit="SuperiorEnergyCell">
                 <Field Id="Unit Name" Index="9"/>
             </Unit>
-            <Unit Unit="LiftBoots">
-                <Field Id="Unit Name" Index="10"/>
-            </Unit>
             <Unit Unit="KineticIntegrator">
-                <Field Id="Unit Name" Index="11"/>
-            </Unit>
-            <Unit Unit="MuscleRelaxant">
-                <Field Id="Unit Name" Index="12"/>
+                <Field Id="Unit Name" Index="10"/>
             </Unit>
         </Instances>
         <Instances Id="Armor">
@@ -13993,9 +14204,6 @@
                 <Field Id="Max Spawn Amount"/>
             </Int>
             <Int Int="1">
-                <Field Id="Group Allowed"/>
-            </Int>
-            <Int Int="1">
                 <Field Id="Max Spawn Amount" Index="1"/>
             </Int>
             <Int Int="1">
@@ -14008,6 +14216,35 @@
                 <Field Id="Unit Name"/>
             </Unit>
             <Unit Unit="DeathMachine">
+                <Field Id="Unit Name" Index="1"/>
+            </Unit>
+        </Instances>
+        <Instances Id="Special Items">
+            <Int Int="100">
+                <Field Id="Weight Max"/>
+            </Int>
+            <Int Int="15">
+                <Field Id="Weight"/>
+            </Int>
+            <Int Int="2">
+                <Field Id="Index Max"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Min Spawn Amount"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Max Spawn Amount"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Min Spawn Amount" Index="1"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="Max Spawn Amount" Index="1"/>
+            </Int>
+            <Unit Unit="LiftBoots">
+                <Field Id="Unit Name"/>
+            </Unit>
+            <Unit Unit="MuscleRelaxant">
                 <Field Id="Unit Name" Index="1"/>
             </Unit>
         </Instances>
@@ -14177,7 +14414,7 @@
             </Text>
         </Instances>
         <Instances Id="M935 Minigun">
-            <Fixed Fixed="300">
+            <Fixed Fixed="400">
                 <Field Id="Rounds"/>
             </Fixed>
             <GameLink GameLink="M935Minigun">

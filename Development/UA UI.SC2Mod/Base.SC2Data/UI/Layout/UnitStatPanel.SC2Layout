@@ -76,7 +76,7 @@
                         <Anchor relative="$parent"/>
                         <FormatText val="%0%&lt;c val=&quot;FFFFFF&quot;&gt;%1%&lt;/c&gt;"/>
                         <Replacement val="@e_gameUIStringRangeColon" index="0"/>
-                        <Replacement val="{$parent/StatusLabel/@Text}" index="1"/>
+                        <Replacement val="{$parent/@CurrentValue}" index="1"/>
                     </Frame>
 
                     <Frame type="TextFormatFrame" name="TFF+">

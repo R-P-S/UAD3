@@ -543,7 +543,7 @@ Actor/Highlight/KEC=<s val="Item_Header"><c val="0080FF">KEC</s>
 Actor/Highlight/KevlarBodyArmorant=<s val="Item_Header">Kevlar Body Armor</s></n><s val="Item_Description">[Armor Integrity: 100%]</s>
 Actor/Highlight/KineticIntegrator=<s val="Item_Header">Kinetic Integrator</n><s val="Item_Description">Regenerates Energy +2.00 Per Second</s></s>
 Actor/Highlight/LLDR=<s val="Item_Header"><c val="0080FF">LLDR [5]</s>
-Actor/Highlight/LiftBoots=<s val="Item_Header">Lift Boots</s>
+Actor/Highlight/LiftBoots=<s val="Item_Header"><c val="0080FF">Lift Boots</s>
 Actor/Highlight/M1014ant=<s val="Item_Header">M1014</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 25</s></s></n><img path="Buttons\Portraits\BTNSFAAT.dds" height="30" width="30"/><img path="Buttons\Portraits\BTN_Combat_Engineer_Portrait.dds" height="30" width="30"/>
 Actor/Highlight/M135Minigunant=<s val="Item_Header">M135 Minigun</n><s val="Item_Description">[Weapon]</s></s></n><img path="Buttons\BTNAutoRifle.dds" height="25" width="25"/><img path="Assets\Textures\marinemercenaryportrait_static.dds" height="25" width="25"/>
 Actor/Highlight/M200SatchelCharge=M200 Satchel Charge
@@ -552,7 +552,7 @@ Actor/Highlight/M241MMGant=<s val="Item_Header">M241 MMG</n><s val="Item_Descrip
 Actor/Highlight/M41SAWant=<s val="Item_Header">M41 SAW</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 100</s></s></n><img path="Buttons\BTNAutoRifle.dds" height="30" width="30"/>
 Actor/Highlight/M5MAR=<s val="Item_Header">M5 MAR</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 55</s></s></n><img path="Buttons\BTNSoldier.dds" height="25" width="25"/><img path="Buttons\BTNSoldier.dds" height="30" width="30"/><img path="Buttons\Portraits\BTN_Combat_Medic_Portrait.dds" height="30" width="30"/><img path="Buttons\Portraits\BTNCavalryScout.dds" height="30" width="30"/><img path="Buttons\Portraits\BTN_Jav_Portrait.dds" height="30" width="30"/><img path="Assets\Buttons\BTN_PL.dds" height="30" width="30"/>
 Actor/Highlight/M92Torrentant=<s val="Item_Header">M92 Torrent</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 15</s></s></n><img path="Buttons\Portraits\BTNMarksman.dds" height="30" width="30"/>
-Actor/Highlight/M935Minigunant=<s val="Item_Header">M935 Minigun</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 300</s></s></s></n><img path="Assets\Textures\marinemercenaryportrait_static.dds" height="30" width="30"/>
+Actor/Highlight/M935Minigunant=<s val="Item_Header">M935 Minigun</n><s val="Item_Description">[Weapon]<n/>Rounds Remaining: 400</s></s></s></n><img path="Assets\Textures\marinemercenaryportrait_static.dds" height="30" width="30"/>
 Actor/Highlight/M9Flamethrowerant=<s val="Item_Header">M9 Flamethrower</n><s val="Item_Description">[Weapon]<n/>Fuel Remaining: 300</s></s></n><img path="firebat.dds" height="30" width="30"/>
 Actor/Highlight/MGL=<s val="Item_Header">MGL [7]</n><s val="Item_Description">Multi-Purpose Grenade Launcher</s></s>
 Actor/Highlight/MK44SentryGunPacked=<s val="Item_Header">MK44 Sentry Gun</s>
@@ -885,6 +885,7 @@ Behavior/Name/Prone=Prone
 Behavior/Name/Prone2=Prone
 Behavior/Name/RapidFire=Rapid Fire
 Behavior/Name/Recoil=Recoil
+Behavior/Name/RecruitBuff=RecruitBuff
 Behavior/Name/ReducedVision=Reduced Vision
 Behavior/Name/RefugeeSpeed=RefugeeSpeed
 Behavior/Name/Regenerator=Regenerator
@@ -1133,6 +1134,7 @@ Behavior/Tooltip/PreciseAim2=Fire with increased critical damage and chance, but
 Behavior/Tooltip/PreciseAim3=Fire with increased critical damage and chance, but restricted range and movement.
 Behavior/Tooltip/PreciseAim4=Fire with increased critical damage and chance, but restricted range and movement.
 Behavior/Tooltip/Recoil=Recklessly firing a powerful rifle took a toll on your shoulder. Attack speed temporarily reduced as you recover.
+Behavior/Tooltip/RecruitBuff=Welcome to Recruit Mode!
 Behavior/Tooltip/ReducedVision=Sight & weapon range is reduced at night.</n><c val="FF8000">(Turn on night vision)</c>
 Behavior/Tooltip/Regenerator=+30 life regeneration<n/>+1 energy regeneration
 Behavior/Tooltip/RegeneratorBoss=+15 life regeneration<n/>+0.5 energy regeneration
@@ -2143,7 +2145,7 @@ Button/Tooltip/CryoRoundsTarget=Cryo rounds cause the target to lose <d ref="-10
 Button/Tooltip/CuringKit=Along with healing kits, most combat medics carry curing kits that contain vital injections for curing infections and poisons. Standard curing kits contain nano-bot injections and anti-venin.<n/><n/><c val="FFFF8A">Level 1:</c> Enables nano injection<n/><c val="FFFF8A">Level 2:</c> Enables anti-venin<n/><c val="FFFF8A">Level 3:</c> Nano injection can heal moderate infections and hemorrhages<n/><c val="FFFF8A">Level 4:</c> Anti-venin can heal moderate poisons
 Button/Tooltip/Cursed=Huge human-like zombie bloated with volatile fluids. Instead of releasing those fluids in a wave upon death, cursed channel them in their hands to poison their prey.
 Button/Tooltip/CyborgCharge=Activate leg augmentations to increase movement speed by <d ref="(100 * Behavior,CyborgCharge,Modification.AdditiveMoveSpeedFactor)" precision="1"/>% of base movement speed for <d ref="Behavior,CyborgCharge,Duration" precision="1"/> seconds.
-Button/Tooltip/DMRMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 1.25<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and grants a 12% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 1.25<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16%, critical chance by 3%, and raises critical multiplier to 2.5x
+Button/Tooltip/DMRMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1.25<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 12% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 1.25<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/>, critical chance by 3%, and raises critical multiplier to 2.5x
 Button/Tooltip/DSSpecter=MOS 18S (Infantry) Role: Spec Ops Sniper<n/>Specters are good counter snipers, skilled at taking down enemies from afar and staying alive with their meta-flex cloak suit.
 Button/Tooltip/Darreus=Ridiculously large titan beetle. It will destroy everything if it is not killed.
 Button/Tooltip/Deactivate=Deactivate this mechanical unit. Deactivated units do not passively lose energy, but cannot do anything aside from reactivating or self-destructing. If this unit is hovering, it will drop down to ground level.
@@ -2385,7 +2387,7 @@ Button/Tooltip/Krill=Undead flyer that is cloaked and very small.
 Button/Tooltip/LLDR=Calls for close air support (CAS) to fire a missile at the target spot, dealing <d ref="Effect,PredatorStrikeDamage,Amount"/> damage in a wide area. Takes approximately 5.7 seconds after the order has been given for the payload to be delivered.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c></n><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/LMTV=Light Medium Tactical Vehicle.
 Button/Tooltip/LNAutomaticRifleman=MOS: 11B (Infantry) Role: Automatic Rifleman<n/>The automatic rifleman provides fire support through the tactical use of his machine gun.  ARs are an important part of a squad, providing the base of fire to allow his squad breathing room to maneuver.
-Button/Tooltip/LNAutomaticRiflemanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by 7% and grants a 8% chance to deal 2x damage
+Button/Tooltip/LNAutomaticRiflemanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 8% chance to deal 2x damage
 Button/Tooltip/LNBinoculars=Reveals a target area of radius <d ref="Effect,BinocularsMOS,RevealRadius" precision="2"/> for <d ref="Effect,BinocularsMOS,ExpireDelay[0]" precision="2"/> seconds. Detects invisible units.
 Button/Tooltip/LNCamouflage=Put on camouflage, making yourself invisible to most enemies. Reduces movement speed by <d ref="-100 * (Behavior,CamouflageLN,Modification.AdditiveMoveSpeedFactor)" precision="1"/>%, drains <d ref="(-1) * (Behavior,CamouflageLN,Modification.VitalRegenArray[2])" precision="2"/> energy per second, and increases critical chance by <d ref="100 * (Behavior,CamouflageLN,Modification.CriticalAttackChanceMultiplier - 1)"/>%.
 Button/Tooltip/LNFocusFire=Take a deep breath and focus squarely on your enemy's weak spots. Increases weapon damage by <d ref= "100 *(Behavior,FocusFireNew,Modification.DamageDealtFraction[Ranged])"/>% and range by <d ref= "Behavior,FocusFireNew,Modification.WeaponRange"/>. Drains <d ref= "(-1) * (Behavior,FocusFireNew,Modification.VitalRegenArray[2])" precision = "3"/> energy per second. Lasts <d ref= "Behavior,FocusFireNew,Duration"/> seconds.
@@ -2397,16 +2399,16 @@ Button/Tooltip/LNHERocket=Fires a HE rocket at the target point, dealing <d ref=
 Button/Tooltip/LNHERocketInfantry=Fires a HE rocket at the target point, dealing <d ref="Effect,HERocketDamage,Amount"/> damage in an area.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/LNJavelinGunner=MOS: 11B (Infantry) Role: Javelin Gunner<n/>Javelin Gunners are designated within the platoon and have received special training with the Javelin.
 Button/Tooltip/LNMarksman=MOS 11B (Infantry) Role: Marksman<n/>Marksmen are hand picked soldiers with excellent performance in marksmanship. They are usually issued special optics or long-range rifles for overwatch.
-Button/Tooltip/LNMarksmanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by 4% and range by 1.25<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by 7% and grants a 12% chance to deal 2x damage
+Button/Tooltip/LNMarksmanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1.25<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 12% chance to deal 2x damage
 Button/Tooltip/LNRanger=MOS: 11B (Infantry) Role: Ranger<n/>Rangers excel at using the wilderness to their advantage, often using camouflage to hide and attack undetected.
 Button/Tooltip/LNRapidFire=Fire as fast as possible, restricting range by <d ref="(-1) * (Behavior,RapidFire,Modification.WeaponRange)"/> but speeding up firerate by <d ref="(100) * (Behavior,RapidFire,Modification.AdditiveAttackSpeedFactor)" precision="1"/>%. Drains <d ref="(-1) * (Behavior,RapidFire,Modification.VitalRegenArray[2])" precision="2"/> energy per second. Lasts <d ref="Behavior,RapidFire,Duration"/> seconds. Suffer from recoil for <d ref="Behavior,Recoil,Duration" precision="1"/> seconds for each bullet fired while rapid firing once rapid fire ends. Recoil reduces attack speed by 200%.
 Button/Tooltip/LNReport=Display available recruits
 Button/Tooltip/LNRiflebutt=Knocks back nearby tier 3 ground units and deals <d ref="Effect,LNRifleButtDamage,Amount"/> damage<n/><n/><c val="6A006A">Tier 3 units always use zerg weapons & armor level 0 for their weapon/armor buttons. A unit is not considered ground if it can cliff walk.</c>
 Button/Tooltip/LNRifleman=MOS: 11B (Infantry) Role: Rifleman<n/>The infantry rifleman is a versatile soldier on the battlefield.
-Button/Tooltip/LNRiflemanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by 7% and grants a 10% chance to deal 2x damage
+Button/Tooltip/LNRiflemanMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 10% chance to deal 2x damage
 Button/Tooltip/LNSITREP=Displays Local Nationals who are sustaining ailments.
 Button/Tooltip/LNShotgunner=MOS: 11B (Infantry) Role: Shotgunner<n/>Shotgunners are great at hitting multiple enemies with their spread-shot.
-Button/Tooltip/LNShotgunnerMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by 4% and range by 0.75<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by 7% and pellet area of effect by 10%
+Button/Tooltip/LNShotgunnerMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Tactics 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 0.75<n/><c val="FFFF8A">Tactics 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and pellet area of effect by 10%
 Button/Tooltip/LNSmokeGrenadeRifleman=Throws a smoke grenade at the target point, slowing enemies in it's radius for <d ref= "Behavior,SmokeGrenadeTimedLife,Duration"/> seconds.<n/><n/><c val="BFBFFF">Massive enemies are only 20% affected by slows.</c><n/><c val="FFFF00">Can only target non-mechanical ground units.</c>
 Button/Tooltip/LNSmokeGrenadeShotgunner=Throws a smoke grenade at the target point, slowing enemies in it's radius for <d ref= "Behavior,SmokeGrenadeTimedLife,Duration"/> seconds.<n/><n/><c val="BFBFFF">Massive enemies are only 20% affected by slows.</c><n/><c val="FFFF00">Can only target non-mechanical ground units.</c>
 Button/Tooltip/LNStingerMissile=Fires a stinger missile at the target air unit, dealing <d ref="Effect,StingerMissileImpactDamage,Amount"/> damage to the targeted unit and <d ref="Effect,StingerMissileDamage,Amount"/>  damage around the target.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
@@ -2498,7 +2500,7 @@ Button/Tooltip/MK79SentryGunPacked=Throws a frag grenade at the target point, de
 Button/Tooltip/MRL=The Multi-purpose Rocket Launcher is the Army's cost-effective disposable rocket launcher. It is effective at destroying soft to medium armored targets at excellent range. Takes <d ref="Abil,MRL,CastIntroTime[0]" precision="1"/> seconds to ready and fire, and deals <d ref= "Effect,MRLDamageItem,Amount"/> damage to ground targets in an area.<n/><n/><c val="FFFF00">Damage type: Explosive - Anti-Tank.</c><n/><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/MRLRocket2=Loads Rockets into a MRL.
 Button/Tooltip/MTAVArmor=Standard issue armor for squad on squad combat.</n><c val="FF8000">Reduces bullet and explosive damage taken by 16% and adds 2 armor.</c>
-Button/Tooltip/MachineGunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and grants a 8% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16%, critical chance by 2%, and raises critical multiplier to 2.5x
+Button/Tooltip/MachineGunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 8% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/>, critical chance by 2%, and raises critical multiplier to 2.5x
 Button/Tooltip/MachineGunUpgrades=Machine Gun Upgrades: Upgrades the functionality of your machine gun to improve its belt and cause targets to move slower while you fire at them from a prone stance.<n/><c val="FFFF8A">Level 1:</c> Unlocks Belt Linking: increases magazine capacity by 40, and reduces reload time by 15%<n/><c val="FFFF8A">Level 2:</c> Unlocks Suppressive Fire: While prone, shots will slow the target by 2% for 0.5 seconds. Slow stacks 15 times.<n/><c val="FFFF8A">Level 3:</c> Improves Belt Linking: Magazine capacity bonus + 60, reload time bonus + 20%<n/><c val="FFFF8A">Level 4:</c> Improves Suppressive Fire: Slow + 3%
 Button/Tooltip/Magazines=Adds 3 magazines when used.<n/><c val="FF8000">Will become encumbered if over 15 magazines are readied.</c>
 Button/Tooltip/MarksmanSkills=Hone in your skills as a marksman with vigorous training and rangefinding expertise. Each level increases weapon range by 0.75.<n/><c val="FFFF8A">Level 1:</c> Enables Binoculars<n/><c val="FFFF8A">Level 2:</c> Enables Ground Flare and increases the range on binoculars by 15<n/><c val="FFFF8A">Level 3:</c> Enables Recon Drone, increases the reveal duration of binoculars by 3 seconds, and increases the energy cost of binoculars by 1<n/><c val="FFFF8A">Level 4:</c> Enables Hawkeyes, Increases the reveal radius of binoculars by 3, increases the energy cost of binoculars by 1, adds 1 charge to ground flare, and reduces ground flare energy cost by 10
@@ -2517,7 +2519,7 @@ Button/Tooltip/Minerva=Powerful yeti with the ability to leap onto targets.
 Button/Tooltip/MiniEMP=Fires a miniature emp device, destroying <d ref="-1 * Effect,MiniEMPEnergyDrain,VitalArray[2].Change"/> energy as well as disabling cloaking and detection for <d ref="Behavior,MiniEMP,Duration"/> seconds to all ground targets.<n/><n/><c val="BFBFFF">Massive enemies are only 25% affected by mini EMPs.</c>
 Button/Tooltip/MiniEMPLightsOut=Mechanical targets become stunned for 5 seconds after being EMPed. Biological targets are stunned for 2.5 seconds.
 Button/Tooltip/MiniEMPPotency=Increases the energy drain of mini EMP by 50%, the duration of cloak/detection suppression by 100%, and the energy cost by 33%.
-Button/Tooltip/MinigunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 0.75<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and bullet area of effect by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 0.75<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16% and bullet area of effect by 10%
+Button/Tooltip/MinigunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 0.75<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and bullet area of effect by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 0.75<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/> and bullet area of effect by 10%
 Button/Tooltip/MkIIBattleWalker=The MkII Battle Walker is a US designed Battle Walker meant to counter armored vehicles both on the ground and in the sky.
 Button/Tooltip/MonomolecularWire=Fire a monomolecular wire in the targeted direction that travels up to <d ref="Abil,MonomolecularWire,Range[0]"/> range away. Affected targets take <d ref="Effect,MonoWireDamage,Amount"/> damage, become immobilized for <d ref="Behavior,MonomolecularWire,Duration" precision="1"/> seconds, and become volatile for <d ref="Behavior,Volatile,Duration"/> seconds. Slices through a target's armor, hitting their HP directly instead of damaging armor.<n/><n/><c val="FFFF00">Can only target non-mechanical ground units.</c><n/><c val="BFBFFF">Massive enemies cannot be immobilized.</c><n/><c val="FF0000">Can hurt allies.</c>
 Button/Tooltip/MonomolecularWireStunningBlow=Increases the duration of Monomolecular Wire's immobilization by 1 second, and the energy cost by 5.
@@ -2598,7 +2600,7 @@ Button/Tooltip/PlagueFiend=Bloated undead flyer. Has a dangerous long range acid
 Button/Tooltip/PlagueVector=The Chrysalis where Kerrigan was fashioned into the Queen of Blades.
 Button/Tooltip/PlasmaInducer=A weapon attachment for plasma rifles.</n><c val="FF8000">Increases damage by 25% and range by 1.</c>
 Button/Tooltip/PlasmaMine=Manually detonated explosive device. Burns the ground for 8 seconds after the initial blast.
-Button/Tooltip/PlasmaRifleMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and reduces chance to increase heat signature by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16% and reduces chance to increase heat signature by 10%
+Button/Tooltip/PlasmaRifleMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and reduces chance to increase heat signature by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/> and reduces chance to increase heat signature by 10%
 Button/Tooltip/PlasmaRounds=Switches back to regular ammunition.
 Button/Tooltip/PlasmaRounds2=Switches back to regular ammunition.
 Button/Tooltip/PlasmaShield=Project a shield of plasma around yourself, reducing damage taken to <d ref="Behavior,PlasmaShield,DamageResponse.ClampMaximum" precision="2"/>, preventing ailments, and reflecting damage to melee attackers. Absorbs <d ref="Behavior,PlasmaShield,DamageResponse.ModifyLimit"/> damage before dissipating and reflects <d ref="Effect,PlasmaShieldDamageReflect,Amount"/> plasma damage to melee attackers. Lasts for <d ref="Behavior,PlasmaShield,Duration"/> seconds.
@@ -2662,7 +2664,7 @@ Button/Tooltip/ResearchData=
 Button/Tooltip/Revive=Revives a nearby dead soldier.<n/>Level 1: 7 second delay - Energy cost 180<n/>Level 2: 6 second delay - Energy cost 120<n/>Level 3: 5 second delay - Energy cost 100<n/>
 Button/Tooltip/ReviveNew=Channels revive, reducing the revive timer on a deceased friendly soldier by 1 second every <d ref= "Effect,ReviveCreatePersist,PeriodicPeriodArray[0]" precision="1"/> second(s). Drains <d ref= "Effect,ReviveEnergySubtract,VitalArray.Change[0] * (-1)" precision ="1"/> energy per second reduced on the target's revive timer.
 Button/Tooltip/RifleButt=Knocks back nearby tier 3 ground units and deals <d ref="Effect,RifleButtDamageNew,Amount"/> damage.<n/><n/><c val="6A006A">Tier 3 units always use zerg weapons & armor level 0 for their weapon/armor buttons. A unit is not considered ground if it can cliff walk.</c>
-Button/Tooltip/RifleMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and grants a 10% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16%, critical chance by 2.5%, and raises critical multiplier to 2.5x
+Button/Tooltip/RifleMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 1<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and grants a 10% chance to deal 2x damage<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 1<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/>, critical chance by 2.5%, and raises critical multiplier to 2.5x
 Button/Tooltip/Rifleman=MOS: 11B (Infantry) Role: Rifleman<n/>The infantry rifleman is a versatile soldier on the battlefield. His duties range from simple security to basic reconnaissance.<n/>Abilities:<n/>-Soldier Skills<n/>-Marksmanship<n/>-Frag Grenade<n/>-Support Grenades<n/>-Focus Fire
 Button/Tooltip/RiflemanGroundFlare=Throws a ground flare at the target point, revealing the area and providing a light source for 4 minutes.
 Button/Tooltip/RiflemanSkills2=Improves skill sets associated with the rifleman's role.<n/>Level 1: Learns smoke grenade.<n/>Level 2: Learns ground flare.<n/>Level 3: Improves smoke grenade.<n/>Level 4: Improves ground flare and replaces frag grenade with MGL.
@@ -2703,7 +2705,7 @@ Button/Tooltip/ShockTrooper=Shock Troopers use burst plasma rifles and have spec
 Button/Tooltip/ShockTroopers=Calls specialized Shock Trooper Pods from orbital stations to land in a target area. Drops 5 pods containing Shock Trooper robots that land after 15 seconds (-1.5 seconds per level of Orbital Support) and may land anywhere in a circle of radius 20 (-2 radius per level of Orbital Support)  around the target point. Shock Troopers will burn out after 90 seconds of field exposure.
 Button/Tooltip/Shocker=Tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/ShotgunBlastLN=Fires a shell with double the pellets at the target point. Damage and range are the same as your shotgun.</n></n><c val="FFFF00">The cursor splat shows the area where pellets can land, not the area where damage is dealt. The latter is based on where the pellets decide to land.</c>
-Button/Tooltip/ShotgunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by 4% and range by 0.75<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by 7% and pellet area of effect by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by 11% and range by 0.75<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by 16% and pellet area of effect by 10%
+Button/Tooltip/ShotgunMarksmanship=Marksmanship is your ability to accurately fire, reactively fire, and focus under stress.<n/><n/><c val="FFFF8A">Level 1:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText1"/> and range by 0.75<n/><c val="FFFF8A">Level 2:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText2"/> and pellet area of effect by 10%<n/><c val="FFFF8A">Level 3:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreBodyText3"/> and range by 0.75<n/><c val="FFFF8A">Level 4:</c> Increases weapon damage by <d stringref="Commander,UAD,LearnMoreTitleText1"/> and pellet area of effect by 10%
 Button/Tooltip/Shredder=Weak flying zombie; heavily mutated from original human. Can detect invisible units in a large radius.
 Button/Tooltip/ShredderMissiles=Fires off a volley of <d ref="Effect,ShredderMissilesCP,PeriodCount"/> missiles at a target zone, dealing <d ref="Effect,ShredderMissilesDamage,Amount"/> damage to targeted units and 10 damage around them. Missiles will spread out amongst any viable targets in the zone.<n/><n/><c val="FFFF00">Damage type: Explosive - Fragmentation.</c><n/><c val="FF0000">Explosives hurt allies.</c>
 Button/Tooltip/ShredderMissilesStagger=Shredder missiles cause non-massive targets to be stunned for 0.15 seconds.
@@ -8295,7 +8297,7 @@ Param/Value/lib_90F7C81D_AAC09E64=
 Param/Value/lib_90F7C81D_ABEC7A12=
 Param/Value/lib_90F7C81D_AE3A9DF2=<c val="00FFFF"> has joined Fireteam Delta.</c>
 Param/Value/lib_90F7C81D_B0D8A853=</s>
-Param/Value/lib_90F7C81D_B11E2FE7=<c val="008000">Ravensword:</c> A heavy snowstorm is moving through your AO. Thread carefully.
+Param/Value/lib_90F7C81D_B11E2FE7=<c val="008000">Ravensword:</c> A heavy snowstorm is moving through your AO. Tread carefully.
 Param/Value/lib_90F7C81D_B3044CA4=]</s>
 Param/Value/lib_90F7C81D_B40CE6D6=ON
 Param/Value/lib_90F7C81D_B51009C9=<n/>
@@ -8954,6 +8956,10 @@ TimeOfDayIsNight=Can only be used at night.
 Training/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 Training/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 Training/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
+UI/CampaignPurchase/InfoDialog/UAD/Standard/Item1/Description=5%
+UI/CampaignPurchase/InfoDialog/UAD/Standard/Item1/Title=20%
+UI/CampaignPurchase/InfoDialog/UAD/Standard/Item2/Description=10%
+UI/CampaignPurchase/InfoDialog/UAD/Standard/Item3/Description=15%
 UI/ColorByAllianceTip=Color units using colors selected in the Alliance Colors section of the Color Options Menu.
 UI/ColorByPlayerTip=Color units using player colors.
 UI/GameMenuOptions_Control=<h/>Options
@@ -10114,6 +10120,12 @@ UserData/AchievementBadge/Campaign: Hard Difficulty Win_Unlock=Camouflage: Fores
 UserData/AchievementBadge/Campaign: Hard_Description=Win campaign on Hard mode
 UserData/AchievementBadge/Campaign: Hard_Name=Campaign: Hard
 UserData/AchievementBadge/Campaign: Hard_Unlock=Camouflage: Forest Sniper
+UserData/AchievementBadge/Campaign: Insane_Description=Win campaign on Insane mode
+UserData/AchievementBadge/Campaign: Insane_Name=Campaign: Insane
+UserData/AchievementBadge/Campaign: Insane_Unlock=Camouflage: Night Hawk
+UserData/AchievementBadge/Campaign: Nightmare_Description=Win campaign on Nightmare mode
+UserData/AchievementBadge/Campaign: Nightmare_Name=Campaign: Nightmare
+UserData/AchievementBadge/Campaign: Nightmare_Unlock=Camouflage: SFG
 UserData/AchievementBadge/Captain_Description=XP: 375,000
 UserData/AchievementBadge/Captain_Name=Captain
 UserData/AchievementBadge/Chapter 1: Akmas Revenge _Description=Don't let the Farmer take any damage on Hard or higher difficulty
@@ -10319,9 +10331,25 @@ UserData/AchievementBadge/Mastery V_Description=MOS XP: 65,000
 UserData/AchievementBadge/Mastery V_Name=Mastery V
 UserData/AchievementBadge/Maximum Effort_Description=Complete the bonus satchel objective
 UserData/AchievementBadge/Maximum Effort_Name=Maximum Effort
+UserData/AchievementBadge/Medal: Bronze Star_Name=Bronze Star
+UserData/AchievementBadge/Medal: Combat Action_Name=Combat Action
+UserData/AchievementBadge/Medal: Distinguished Service_Name=Distinguished Service
+UserData/AchievementBadge/Medal: Elite Warfare_Name=Elite Warfare
+UserData/AchievementBadge/Medal: Gallantry_Name=Gallantry
+UserData/AchievementBadge/Medal: Gold Star_Name=Gold Star
+UserData/AchievementBadge/Medal: Good Conduct_Name=Good Conduct
+UserData/AchievementBadge/Medal: Honour_Name=Honour
 UserData/AchievementBadge/Medal: Indomitable_Description=Complete all Campaign achievements
 UserData/AchievementBadge/Medal: Indomitable_Name=Indomitable Medal
 UserData/AchievementBadge/Medal: Indomitable_Unlock=Camouflage: Type09
+UserData/AchievementBadge/Medal: Legion Of Merit_Name=Legion Of Merit
+UserData/AchievementBadge/Medal: Marksmanship_Name=Marksmanship
+UserData/AchievementBadge/Medal: Purple Heart_Name=Purple Heart
+UserData/AchievementBadge/Medal: Silver Star_Name=Silver Star
+UserData/AchievementBadge/Medal: Star Of Affliction_Description=Win 15 Nightmare games
+UserData/AchievementBadge/Medal: Star Of Affliction_Name=Star Of Affliction Medal
+UserData/AchievementBadge/Medal: Valor_Description=Win 10 Insane games
+UserData/AchievementBadge/Medal: Valor_Name=Valor Medal
 UserData/AchievementBadge/Mission Impossible_Description=Don't allow the main mission objective satchel charges to take any damage
 UserData/AchievementBadge/Mission Impossible_Name=Mission Impossible
 UserData/AchievementBadge/Mission Survival: 100_Description=Complete 100 games of Mission Survival
@@ -10397,7 +10425,7 @@ UserData/AchievementBadge/Prologue: Completionist_Description=Complete all Prolo
 UserData/AchievementBadge/Prologue: Completionist_Name=Prologue Completionist
 UserData/AchievementBadge/Prologue: Iron Defender_Description=Don't lose a TCP on hard or higher difficulty
 UserData/AchievementBadge/Prologue: Iron Defender_Name=Iron Defender
-UserData/AchievementBadge/Prologue: Locked Down Tight_Description=Don't let a cargo trucks get destroyed
+UserData/AchievementBadge/Prologue: Locked Down Tight_Description=Don't let a cargo truck get destroyed
 UserData/AchievementBadge/Prologue: Locked Down Tight_Name=Locked Down Tight
 UserData/AchievementBadge/Prologue: Safely Gathered_Description=Escort all reservists to Dasdan
 UserData/AchievementBadge/Prologue: Safely Gathered_Name=Safely Gathered
@@ -10850,7 +10878,7 @@ UserData/AchievementModes/Mission Survival_Unlock_001=Camouflage: Desert II
 UserData/AchievementModes/Prologue_Description=Find and place all sentry guns in less than <n/>2 1/2 minutes
 UserData/AchievementModes/Prologue_Description_001=Don't lose a TCP on hard or higher difficulty
 UserData/AchievementModes/Prologue_Description_002=Escort all reservists to Dasdan
-UserData/AchievementModes/Prologue_Description_003=Don't let a cargo trucks get destroyed
+UserData/AchievementModes/Prologue_Description_003=Don't let a cargo truck get destroyed
 UserData/AchievementModes/Prologue_Description_004=Complete all Prologue mission objectives
 UserData/AchievementModes/Prologue_Name=Speed Racer
 UserData/AchievementModes/Prologue_Name_001=Iron Defender
