@@ -885,7 +885,7 @@ Behavior/Name/Prone=Prone
 Behavior/Name/Prone2=Prone
 Behavior/Name/RapidFire=Rapid Fire
 Behavior/Name/Recoil=Recoil
-Behavior/Name/RecruitBuff=RecruitBuff
+Behavior/Name/RecruitBuff=Recruit Buff
 Behavior/Name/ReducedVision=Reduced Vision
 Behavior/Name/RefugeeSpeed=RefugeeSpeed
 Behavior/Name/Regenerator=Regenerator
@@ -2236,6 +2236,7 @@ Button/Tooltip/FlareGunFlare=Throws a ground flare at the target point, revealin
 Button/Tooltip/FlareGunItem=Fires a flare at the target point, illuminating the surrounding area for <d ref= "Behavior,FlareGun,Duration"/> seconds and slowing ground enemies in the area.<n/><n/><c val="BFBFFF">Massive enemies are only 20% affected by slows.<c/>
 Button/Tooltip/Flash=Dazes units in a target area with a bright flash, reducing their attack and movement speed by <d ref="(-100) * (Behavior,Flash,Modification.AdditiveMoveSpeedFactor)" precision="1"/>% for <d ref="Behavior,Flash,Duration[0]" precision="1"/> seconds. Massive enemies are especially resistant to flash.<n/><n/><c val="BFBFFF">Massive enemies are only 10% affected by flash's movement speed slow.</c><n/><c val="BFBFFF">Massive enemies are only 50% affected by flash's attack speed slow.</c><n/><c val="FFFF00">Can only target non-mechanical units.</c>
 Button/Tooltip/Flashlight=A special flashlight to aid in night operations. Contains a special lens that reveals invisible units up. Detects invisible units up to 10 range away in a 100 degree sector in front of themselves.
+Button/Tooltip/FlawlessScrapParts=Picking up scrap parts reduces the cooldown of construct abilities.
 Button/Tooltip/FocusFire2=Increases damage by 30%, range by 2, and improves critical shot for 15 seconds.
 Button/Tooltip/FocusFireConcentration=When focus fire is turned on, creates an 18 range aura that boosts friendly bullet damage by 10%. Increases the initial and periodic energy cost of focus fire by 5%. Expert leader aura range upgrade applies, duration does not.
 Button/Tooltip/FocusFireEfficiency=Reduces the initial cost of Focus Fire by 5, the periodic cost by 1, and the cooldown by 5%.
@@ -2532,6 +2533,7 @@ Button/Tooltip/MotionSensor=Detects motion up to <d ref="Behavior,MotionSensorTi
 Button/Tooltip/MotionSensorCloakDetection=Allows motion sensors to detect cloaked units on their radar.
 Button/Tooltip/MotionSensorCloakedDetection=Detects motion up to <d ref="Behavior,MotionSensorTimedLife,Modification.Radar"/> range away for you and your allies. Detects cloaked units.
 Button/Tooltip/MotionSensorEarlyDetection=Increases the radar radius of motion sensor by 25%.
+Button/Tooltip/MundaneScrapParts=Picking up scrap parts reduces the cooldown of construct abilities.
 Button/Tooltip/MuscleRelaxant=A benzodiazepine that aids in concentration and relaxation. Frequently used by snipers to improve accuracy and weapon control.<n/><c val="FF8000">Increases damage by 50%, attack speed by 15%, and range by 5 for 90 seconds. Does not stack.</c>
 Button/Tooltip/Mutant=Basic heavy undead unit.
 Button/Tooltip/NOD=Night Optic Device<n/><n/><c val="FFFF8A">Right click to switch to Infrared.
@@ -2624,6 +2626,7 @@ Button/Tooltip/Prone2=Goes into the prone position, slowing movement speed but i
 Button/Tooltip/PrototypeWeaponry=The commando is issued new weapons/devices fresh out of development by military scientists, +1 to mechanical skills per level. First level requires character level 3, then level 5, then level 7.<n/><n/>1: Unlocks Plasma Mine<n/>2: Unlocks Force Field Generator<n/>3: Unlocks Chrono Shift
 Button/Tooltip/PsionicShockwave=Releases a burst of psionic energy radiating outward from the caster, knocking away all units and stunning them momentarily.
 Button/Tooltip/Pyrotechnician=Flamethrower troops can use their pyrotechnical skills to enhance their survivability in combat.<n/><n/><c val="FFFF8A">Level 1:</c> Enables firesuit and fire shield<n/><c val="FFFF8A">Level 2:</c> Enables plasma shield, and increases fire damage resist of firesuit by 20%<n/><c val="FFFF8A">Level 3:</c> Increases the melee damage resistance of fire shield by 10%, the burning buffs applied by 3, the duration of immobilized by 100%, the damage reflected by 67%, the initial energy cost by 5, the periodic energy cost by 5%, and increases fire damage resist of firesuit by 25%<n/><c val="FFFF8A">Level 4:</c> Increases the damage absorbed by plasma shield by 140%, the duration by 25%, the energy cost by 10, and increases fire damage resist of firesuit by 30%
+Button/Tooltip/QualityScrapParts=Picking up scrap parts reduces the cooldown of construct abilities.
 Button/Tooltip/QuikClot=Quik Clot Combat Application Injection! Heals 100 hp instantly and removes minor hemorrhage and infection ailments.
 Button/Tooltip/QuikClotSelfCast=Quik Clot Combat Application Injection! Heals 100 hp instantly and removes minor hemorrhage and infection ailments.<n/><n/><c val="FFFF8A">Item will self apply without having to target.<n/><n/>Right click to cycle through item abilities.
 Button/Tooltip/RadarTower=Radar tower provides a large radius of vision
@@ -4490,6 +4493,8 @@ Effect/Name/OverheatedAB=Overheated AB
 Effect/Name/PKApplyBehavior=PK Apply Behavior
 Effect/Name/PMCKillCounterAB=PMC Kill Counter AB
 Effect/Name/PMCUnitIdle=PMC Unit Idle
+Effect/Name/ParachuteDescendingAB=Parachute Descending AB
+Effect/Name/ParachuteInitAB=Parachute Init AB
 Effect/Name/ParasiteEggsAB=Parasite Eggs AB
 Effect/Name/ParasiteEggsRB=Parasite Eggs RB
 Effect/Name/ParasiteEnergyGain=Parasite Energy Gain
@@ -9177,6 +9182,7 @@ Unit/Name/Flamethrower=Flamethrower
 Unit/Name/FlareGun=Flare Gun
 Unit/Name/FlareGunFlare=Flare Gun Flare
 Unit/Name/Flashlight=Flashlight
+Unit/Name/FlawlessScrapParts=Flawless Scrap Parts
 Unit/Name/FoodSample=Food Sample
 Unit/Name/ForceEffectActor=
 Unit/Name/ForceFieldGenerator=Force Field Generator
@@ -9329,6 +9335,7 @@ Unit/Name/MkIIBattleWalker=MkII Battle Walker
 Unit/Name/Morbus=Morbus
 Unit/Name/MorbusActor=Morbus
 Unit/Name/MotionSensor=Motion Sensor
+Unit/Name/MundaneScrapParts=Mundane Scrap Parts
 Unit/Name/MuscleRelaxant=Muscle Relaxant
 Unit/Name/Mutant=Mutant
 Unit/Name/MutantActor=Mutant
@@ -9360,6 +9367,7 @@ Unit/Name/PredatorDrone=Predator Drone
 Unit/Name/ProgressBarDummy=Progress Bar Dummy
 Unit/Name/ProjectileAccelerator=Projectile Accelerator
 Unit/Name/PulseCannonProjectile=Pulse Cannon Projectile
+Unit/Name/QualityScrapParts=Quality Scrap Parts
 Unit/Name/QuikClot=Quik Clot
 Unit/Name/RAAutoRifleActor=RA Automatic Rifleman
 Unit/Name/RAInfantryFowardObserverActor=RA Foward Observer

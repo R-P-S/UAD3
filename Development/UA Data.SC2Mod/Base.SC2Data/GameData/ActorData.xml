@@ -474,6 +474,74 @@
         <On Terms="StatusOn.*.IRSensorIntelligence" Send="Create IRSensorIntelligenceSilhouette"/>
         <On Terms="StatusOff.*.IRSensorIntelligence" Target="IRSensorIntelligenceSilhouette" Send="Destroy"/>
     </CActorSimple>
+    <CActorModel id="Parachute" parent="ModelAddition">
+        <Aliases value="_Parachute"/>
+        <Inherits index="ModelMaterials" value="0"/>
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Work,Start Stand,Work Stand,Work,End DontResetOnUnhide"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorUnit id="QualityScrapParts" parent="GenericUnitStandardNoAutoSoundLinks" unitName="QualityScrapParts">
+        <Macros value="AntiGravDeathRemoveMacro"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation" Send="Create FeedbackImpact"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupCreationSound"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupHover"/>
+        <On Terms="UnitDeathCustomize" Send="Create ScrapPartsPickupImpact"/>
+        <On Terms="ActorCreation" Send="SetTintColor 255,255,0"/>
+        <Model value="ScrapPartsPickupSmall"/>
+        <BuildModel value="ScrapPartsPickupSmall"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="ScrapPartsPickup"/>
+        <PlacementModel value="ScrapPartsPickupSmall"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="FlawlessScrapParts" parent="GenericUnitStandardNoAutoSoundLinks" unitName="FlawlessScrapParts">
+        <Macros value="AntiGravDeathRemoveMacro"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation" Send="Create FeedbackImpact"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupCreationSound"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupHover"/>
+        <On Terms="UnitDeathCustomize" Send="Create ScrapPartsPickupImpact"/>
+        <On Terms="ActorCreation" Send="SetTintColor 64,0,128"/>
+        <Model value="ScrapPartsPickupSmall"/>
+        <BuildModel value="ScrapPartsPickupSmall"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="ScrapPartsPickup"/>
+        <PlacementModel value="ScrapPartsPickupSmall"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorModel id="RASquadLeaderGlow" parent="ModelAddition">
         <Inherits index="TeamColor" value="0"/>
         <Inherits index="TintColor" value="0"/>
@@ -576,6 +644,36 @@
         <Icon value="Assets\Textures\ScannerSweepRadius_Diffuse.dds"/>
         <IconArcLength value="0.750000"/>
     </CActorRange>
+    <CActorUnit id="MundaneScrapParts" parent="GenericUnitStandardNoAutoSoundLinks" unitName="MundaneScrapParts">
+        <Macros value="AntiGravDeathRemoveMacro"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation" Send="Create FeedbackImpact"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupCreationSound"/>
+        <On Terms="ActorCreation" Send="Create ScrapPartsPickupHover"/>
+        <On Terms="UnitDeathCustomize" Send="Create ScrapPartsPickupImpact"/>
+        <On Terms="ActorCreation" Send="SetTintColor 0,128,0"/>
+        <Model value="ScrapPartsPickupSmall"/>
+        <BuildModel value="ScrapPartsPickupSmall"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="ScrapPartsPickup"/>
+        <PlacementModel value="ScrapPartsPickupSmall"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-ability-stetmann-scrapdrop.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorRange id="WeaponRangeIndicator">
         <On Terms="Signal.*.Destroy" Send="Destroy"/>
         <Filter index="All" value="1"/>
@@ -8600,7 +8698,6 @@
         <ShieldFlashType value="None"/>
     </CActorAction>
     <CActorEventMacro id="Animations">
-        <EditorCategories value=""/>
         <On Terms="Abil.Prone.SourcePrepStart; ValidateUnit IsNotProne" Send="AnimGroupApply Burrow Burrow Unburrow"/>
         <On Terms="Abil.Prone.SourcePrepStart; ValidateUnit IsProned" Send="AnimGroupRemove Burrow"/>
         <On Terms="Abil.FlareGunItem.SourceCastStart" Send="AnimPlay Superior Superior 0 -1.000000 -1.000000 0.350000"/>
@@ -8612,6 +8709,10 @@
         <On Terms="Abil.M5MARSmokeScreen.SourceCastStart" Send="AnimPlay Stand Ready 0 -1.000000 -1.000000 0.150000"/>
         <On Terms="Abil.XR42PulseCannon.SourcePrepStart" Send="AnimGroupApply Ready"/>
         <On Terms="Abil.XR42PulseCannon.SourceCastStop" Send="AnimGroupRemove Ready 0 0.000000 AsDuration"/>
+        <On Terms="Behavior.ParachuteInit.Create" Send="Create Parachute"/>
+        <On Terms="Behavior.ParachuteInit.Create" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.ParachuteDescending.Destroy" Target="_Parachute" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.ParachuteDescending.Destroy" Send="SetShowStatusBar 1"/>
     </CActorEventMacro>
     <CActorUnit id="BioResonator2" parent="GenericUnitStandard" unitName="BioResonator2">
         <Aliases value="_CreepEngulfable"/>

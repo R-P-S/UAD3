@@ -440,6 +440,12 @@
         <EditorCategories value="Race:Terran"/>
         <Behavior value="IRSensorIntelligenceTrackUnit"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ParachuteDescendingAB" parent="TemplateApplyBehavior">
+        <Behavior value="ParachuteDescending"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ParachuteInitAB" parent="TemplateApplyBehavior">
+        <Behavior value="ParachuteInit"/>
+    </CEffectApplyBehavior>
     <CEffectSwitch id="XR42Switch">
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="CryoRoundsEnabled" Effect="PlasmaRifleCryoRoundLaunchSet"/>

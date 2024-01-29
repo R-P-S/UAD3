@@ -422,6 +422,33 @@
         </Modification>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ParachuteDescending" parent="TemplateBuff">
+        <Duration value="5"/>
+        <Modification>
+            <StateFlags index="SuppressArmySelect" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilMove" value="1"/>
+            <PlaneDelta index="Ground" value="-1"/>
+            <PlaneDelta index="Air" value="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ParachuteInit" parent="TemplateBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.25"/>
+        <ExpireEffect value="ParachuteDescendingAB"/>
+        <Modification Height="12">
+            <StateFlags index="SuppressArmySelect" value="1"/>
+            <StateFlags index="NoDraw" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <HeightTime index="Stop" value="5"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilMove" value="1"/>
+            <PlaneDelta index="Ground" value="-1"/>
+            <PlaneDelta index="Air" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="RecruitBuff" parent="TemplateBuff">
         <BehaviorFlags index="Permanent" value="1"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-amoncloud.dds"/>

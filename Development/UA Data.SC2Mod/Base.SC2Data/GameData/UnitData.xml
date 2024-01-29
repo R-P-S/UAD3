@@ -634,6 +634,24 @@
     <CUnit id="MissilePlasmaRifleDisruptor" parent="MISSILE">
         <Mover value="BulletMover"/>
     </CUnit>
+    <CUnit id="QualityScrapParts">
+        <Facing value="45"/>
+        <Race value="Terr"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Destructible" value="1"/>
+        <FlagArray index="CameraFollow" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <Collide index="Structure" value="1"/>
+        <Height value="0.25"/>
+        <AbilArray Link="ScrapPartsPickup"/>
+        <BehaviorArray Link="ScrapPartsOwnerPeriodic"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Item"/>
+    </CUnit>
     <CUnit id="PathDisplayUnitGround">
         <FlagArray index="Uncommandable" value="1"/>
         <FlagArray index="Unselectable" value="1"/>
@@ -658,6 +676,24 @@
         <EditorCategories value="ObjectType:Other"/>
         <MinimapRadius value="0"/>
     </CUnit>
+    <CUnit id="FlawlessScrapParts">
+        <Facing value="45"/>
+        <Race value="Terr"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Destructible" value="1"/>
+        <FlagArray index="CameraFollow" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <Collide index="Structure" value="1"/>
+        <Height value="0.25"/>
+        <AbilArray Link="ScrapPartsPickup"/>
+        <BehaviorArray Link="ScrapPartsOwnerPeriodic"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Item"/>
+    </CUnit>
     <CUnit id="ScrapPartsCampaign">
         <Facing value="45"/>
         <Race value="Terr"/>
@@ -672,6 +708,24 @@
         <VisionHeight value="1"/>
         <AbilArray Link="ScrapPartsPickupCampaign"/>
         <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Item"/>
+    </CUnit>
+    <CUnit id="MundaneScrapParts">
+        <Facing value="45"/>
+        <Race value="Terr"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Destructible" value="1"/>
+        <FlagArray index="CameraFollow" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <Collide index="Structure" value="1"/>
+        <Height value="0.25"/>
+        <AbilArray Link="ScrapPartsPickup"/>
+        <BehaviorArray Link="ScrapPartsOwnerPeriodic"/>
+        <MinimapRadius value="0"/>
         <EditorCategories value="ObjectType:Item"/>
     </CUnit>
     <CUnit id="ShredderMissile" parent="MISSILE">

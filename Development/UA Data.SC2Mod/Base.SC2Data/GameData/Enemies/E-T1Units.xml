@@ -240,6 +240,7 @@
         <Radius value="3"/>
         <SeparationRadius value="3"/>
         <MinimapRadius value="3"/>
+        <Height value="0.1"/>
     </CUnit>
     <CUnit id="Raisuli" parent="TemplateT1Zombie">
         <Attributes index="Light" value="1"/>

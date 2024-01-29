@@ -68,6 +68,9 @@
         <ScaleMax value="0.400000,0.450000,0.400000"/>
         <ScaleMin value="0.400000,0.450000,0.400000"/>
     </CModel>
+    <CModel id="Parachute">
+        <Model value="Assets\Models\Misc\FrogKey_TO_Parachute.m3"/>
+    </CModel>
     <CModel id="PlasmaRifleXR42" parent="Unit">
         <Model value="Assets\Models\Weapons\UAD_Plasma_Rifle.m3"/>
         <EditorCategories value=""/>
