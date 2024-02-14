@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAccumulatorUserData id="HeatSignatureCount">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="100"/>
+        <Key value="HeatSignatureCount"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CAccumulatorUserData>
     <CAccumulatorSwitch id="FlashAttackSpeedSwitch">
         <CaseArray Validator="IsMassive" Accumulator="FlashAttackSpeedReduction"/>
     </CAccumulatorSwitch>

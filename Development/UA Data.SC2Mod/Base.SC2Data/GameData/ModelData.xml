@@ -636,6 +636,9 @@
         <Radius value="15.000000"/>
         <RadiusLoose value="15.000000"/>
     </CModel>
+    <CModel id="UH60Death">
+        <Model value="Assets\Models\Misc\NanaKey_TO_UH60_Animation_static_Death.m3"/>
+    </CModel>
     <CModel id="VespeneTankSilo" parent="Doodad">
         <Model value="Assets\Doodads\VespeneTank\VespeneTank_00.m3"/>
     </CModel>
@@ -1128,10 +1131,9 @@
         <EditorCategories value=""/>
     </CModel>
     <CModel id="UH60" parent="Unit">
-        <Model value="NanaKey_TO_UH60_Animation.m3"/>
+        <Model value="Assets\Models\Misc\NanaKey_TO_UH60_Animation.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Flags index="FreezeParticlesAndRibbonsOnAnimPause" value="1"/>
-        <Lighting value="Banshee"/>
         <Occlusion value="Show"/>
         <PlanetPanelCamera value="Star2CameraLow07"/>
         <ScaleMax value="1.250000,1.250000,1.250000"/>

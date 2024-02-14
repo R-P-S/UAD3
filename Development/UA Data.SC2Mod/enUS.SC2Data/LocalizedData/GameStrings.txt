@@ -2308,7 +2308,7 @@ Button/Tooltip/HeatSensor=Pull down a heat sensing visor to allow the naked eye 
 Button/Tooltip/HeatSensorCC=Pull down a heat sensing visor to allow the naked eye to see the heat signatures of enemies up to <d ref="Behavior,HeatSensor,Modification.Radar"/> range away in a full circle.
 Button/Tooltip/HeatSensorLightFilter=Grants the ability to toggle between Heat Sensor and Light Filter mode.
 Button/Tooltip/HeatSensorPotency=Increases the detection range of Heat Sensor by 3, and grants an additional 1 sight range.
-Button/Tooltip/HeatSignature=<s val="StandardTooltipHeader_Terr">Heat Signature</s><n/><n/>Raising your heat signature above 40 will force the cloaking to disengage. Heat signature dissipates at a rate of 1 count per second after not attacking for 5 seconds. Heat signature won't rise beyond 100.<n/>*Rifle Butt ability will raise heat signature by 1 when used.<n/>Current chance of gaining heat signature stacks without IPR: <d ref="100 * (Effect,HeatSignatureAB,Chance)"/>%, with IPR: <d ref="100 * (Effect,HeatSignatureIPRAB,Chance)"/>%
+Button/Tooltip/HeatSignature=<s val="StandardTooltipHeader_Terr">Heat Signature</s><n/><n/>Raising your heat signature above 40 will force the cloaking to disengage. Heat signature dissipates at a rate of 1 count per second after not attacking for 5 seconds. Heat signature won't rise beyond 100.<n/>*Rifle Butt ability will raise heat signature by 1 when used.<n/>Current chance of gaining heat signature stacks without IPR: <d ref="100 * (Effect,HeatSignatureAdd,Chance)"/>%, with IPR: <d ref="100 * (Effect,HeatSignatureAddIPR,Chance)"/>%
 Button/Tooltip/HeavyGunner=MOS: 11B (Infantry) Role: Heavy Gunner<n/>The heavy gunner weilds a powerful HMG that can tear through enemy armor. Heavy gunners are more than capable of annihilating armored targets that their lighter counterparts would have trouble with. The use of FMJ rounds will switch your roll from anti armor to anti light (groups).<n/>Abilities:<n/>-Soldier Skills<n/>-Marksmanship<n/>-Belt Linking<n/>-Precise Aim<n/>-Weapon Proficiency
 Button/Tooltip/Hellhound=Firey undead dog. Attacks with deadly fangs and fire breath
 Button/Tooltip/HeroSelector=Hero selector.
@@ -2686,7 +2686,7 @@ Button/Tooltip/Scorpio=An extremely fast scorpion zombie that has a poisonous at
 Button/Tooltip/ScrapParts=Scrap parts can be picked up to reduce the cooldown on build skills. Scrap parts will spawn periodically in old abandoned storage areas around the map, or possibly drop from destroyed mechanical units.<n/><n/>Scrap parts cooldown reduction: <d ref="(-1)*(Effect,ScrapPartsPickupReduceCooldown3,Cost[0].CooldownTimeUse)"/>s
 Button/Tooltip/ScrapParts1=Scrap Parts +1
 Button/Tooltip/ScrapParts2=Scrap Parts +2
-Button/Tooltip/ScrapPartsCampaign=Scrap Parts Campaign
+Button/Tooltip/ScrapPartsCampaign=Robot Scrap Parts
 Button/Tooltip/ScrapPartsPickup=Picking up scrap parts reduces the cooldown of construct abilities.
 Button/Tooltip/ScrapPartsPickup115Text=<s val="Kicker_Minerals"><c val="FF8000">-115 </c><IMG path="Assets\Textures\icon-time-terran.dds" alignment="absolutemiddle" height="28" width="28"/>
 Button/Tooltip/ScrapPartsPickup165Text=<s val="Kicker_Minerals"><c val="FF8000">-165 </c><IMG path="Assets\Textures\icon-time-terran.dds" alignment="absolutemiddle" height="28" width="28"/>
@@ -2820,7 +2820,7 @@ Button/Tooltip/Transmute=Consumes all armor to restore <d ref="Effect,TransmuteH
 Button/Tooltip/TransmuteEfficiency=Increases the health/energy per armor point ratio by 25%.
 Button/Tooltip/TransmuteRepurpose=Decreases the health per armor point ratio by 75%, but increases the energy per armor point ratio by 150%.
 Button/Tooltip/Turned=Tall slender undead that move faster compared to most other basic zombies. Often in small groups.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
-Button/Tooltip/UH60=Deadly gunship.<n/><n/><c val="FF0000">Armed with Rockets.</c>
+Button/Tooltip/UH60=
 Button/Tooltip/Unburied=Basic heavy undead unit. Stronger than regular zombies, but still quite weak.
 Button/Tooltip/Unclean=Mutation of risen. Moves and attacks faster, but is weaker.
 Button/Tooltip/UndeadCharge=Increases movement speed by 40% for 8 - 12 seconds.
@@ -3818,9 +3818,10 @@ Effect/Name/HardenedWillDamageResponeAB=Hardened Will Damage Respone AB
 Effect/Name/HardenedWillDamageResponseRB=Hardened Will Damage Response RB
 Effect/Name/HeartbeatEnum=Heartbeat Enum
 Effect/Name/HeartbeatTarget=Heartbeat Target
-Effect/Name/HeatSignatureAB=Heat Signature AB
-Effect/Name/HeatSignatureIPRAB=Heat Signature IPR AB
-Effect/Name/HeatSignatureRB=Heat Signature RB
+Effect/Name/HeatSignatureAdd=Heat Signature Add
+Effect/Name/HeatSignatureAddIPR=Heat Signature Add IPR
+Effect/Name/HeatSignatureSet=Heat Signature Set
+Effect/Name/HeatSignatureSubstract=Heat Signature Substract
 Effect/Name/HellfireFlamethrowersCP=Hellfire Flamethrowers CP
 Effect/Name/HellfireFlamethrowersDamage=Hellfire Flamethrowers Damage
 Effect/Name/HellfireFlamethrowersDummy=Hellfire Flamethrowers Dummy
@@ -3993,6 +3994,7 @@ Effect/Name/KilledMutatedUnit=Killed Mutated Unit
 Effect/Name/KineticApplyFollow=Kinetic Apply Follow
 Effect/Name/KineticIntegrator=Kinetic Integrator
 Effect/Name/KineticIntegratorAB=Kinetic Integrator AB
+Effect/Name/KiteAIThink=Kite AI Think
 Effect/Name/KratosDeath=Kratos Death
 Effect/Name/KratosDeathSet=Kratos Death Set
 Effect/Name/KrillBite=Krill Bite
@@ -5343,8 +5345,6 @@ MonomolecularWire/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 MonomolecularWire/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 MonomolecularWire/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
 NotLN=Can't be applied to Local Nationals
-Objective/Description/Mission01=In order to better understand the current situation, a meeting must be held with the AO's current ranking officer.
-Objective/Name/Mission01=Conduct KLE With Colonel Windsor
 OilDouse/CL1=<n/><n/><c val="FFFF8A">Current Level: </c>1
 OilDouse/CL2=<n/><n/><c val="FFFF8A">Current Level: </c>2
 OilDouse/CL3=<n/><n/><c val="FFFF8A">Current Level: </c>3
@@ -9112,7 +9112,6 @@ Unit/Name/ChiefScarland=Chief Scarland
 Unit/Name/Cicadis=Cicadis
 Unit/Name/CicadisActor=Hunterling
 Unit/Name/CicadisLeaping=Cicadis Leaping
-Unit/Name/CicadisPlaceholder=Cicadis Placeholder
 Unit/Name/CicadisPlaceholderActor=Hunterling Placeholder
 Unit/Name/CivilianEngineer=Civilian Engineer
 Unit/Name/Claymore=Claymore
@@ -9415,7 +9414,7 @@ Unit/Name/Scorpio=Scorpio
 Unit/Name/ScorpioActor=Scorpio<n/><c val="FFFF00">Detector</c>
 Unit/Name/ScrapParts1=Scrap Parts +1
 Unit/Name/ScrapParts2=Scrap Parts +2
-Unit/Name/ScrapPartsCampaign=Scrap Parts Campaign
+Unit/Name/ScrapPartsCampaign=Scrap Parts
 Unit/Name/ScrapPartsPickup=Scrap Parts Pickup
 Unit/Name/ScrapPartsPickupCampaign=Scrap Parts Campaign
 Unit/Name/ScrapPartsPickupMedium=Scrap Parts +2
@@ -10130,7 +10129,7 @@ UserData/AchievementBadge/Campaign: Hard_Name=Campaign: Hard
 UserData/AchievementBadge/Campaign: Hard_Unlock=Camouflage: Forest Sniper
 UserData/AchievementBadge/Campaign: Insane_Description=Win campaign on Insane mode
 UserData/AchievementBadge/Campaign: Insane_Name=Campaign: Insane
-UserData/AchievementBadge/Campaign: Insane_Unlock=Camouflage: Night Hawk
+UserData/AchievementBadge/Campaign: Insane_Unlock=Camouflage: Blood
 UserData/AchievementBadge/Campaign: Nightmare_Description=Win campaign on Nightmare mode
 UserData/AchievementBadge/Campaign: Nightmare_Name=Campaign: Nightmare
 UserData/AchievementBadge/Campaign: Nightmare_Unlock=Camouflage: SFG
@@ -10162,7 +10161,7 @@ UserData/AchievementBadge/Chapter 3: Divide & Conquer_Description=Kill all of th
 UserData/AchievementBadge/Chapter 3: Divide & Conquer_Name=Divide & Conquer
 UserData/AchievementBadge/Chapter 3: End Of Time_Description=Disarm All Of The Silos
 UserData/AchievementBadge/Chapter 3: End Of Time_Name=End Of Time
-UserData/AchievementBadge/Chapter 3: End Of Times_Description=Disarm All Of The Silos
+UserData/AchievementBadge/Chapter 3: End Of Times_Description=Disarm all of the silos
 UserData/AchievementBadge/Chapter 3: End Of Times_Name=End Of Times
 UserData/AchievementBadge/Chapter 3: Release The Kracken_Description=Defeat Cacumen on Hard or higher difficulty
 UserData/AchievementBadge/Chapter 3: Release The Kracken_Name=Release The Kracken
@@ -10345,6 +10344,7 @@ UserData/AchievementBadge/Medal: Distinguished Service_Name=Distinguished Servic
 UserData/AchievementBadge/Medal: Elite Warfare_Name=Elite Warfare
 UserData/AchievementBadge/Medal: Gallantry_Name=Gallantry
 UserData/AchievementBadge/Medal: Gold Star_Name=Gold Star
+UserData/AchievementBadge/Medal: Good Conduct_Description=Escort over 150 refugees out of Dasdan on Insane or higher difficulty
 UserData/AchievementBadge/Medal: Good Conduct_Name=Good Conduct
 UserData/AchievementBadge/Medal: Honour_Name=Honour
 UserData/AchievementBadge/Medal: Indomitable_Description=Complete all Campaign achievements

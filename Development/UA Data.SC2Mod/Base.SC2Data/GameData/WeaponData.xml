@@ -209,7 +209,7 @@
         </Cost>
         <Period value="0.1875"/>
         <Effect value="XR42Switch"/>
-        <PreEffect value="HeatSignatureAB"/>
+        <PreEffect value="HeatSignatureAdd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="SniperRifleInfantry" parent="WeaponTemplate">
         <EditorCategories value="Race:Terran"/>
@@ -369,7 +369,7 @@
         <Period value="0.1875"/>
         <DisplayEffect value="PlasmaRifleDamageNew"/>
         <Effect value="PlasmaRifleSwitch"/>
-        <PreEffect value="HeatSignatureAB"/>
+        <PreEffect value="HeatSignatureAdd"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="IPR" parent="WeaponTemplate">
         <EditorCategories value="Race:Terran"/>
@@ -382,7 +382,7 @@
         </Cost>
         <Period value="0.1875"/>
         <Effect value="IPRSwitch"/>
-        <PreEffect value="HeatSignatureIPRAB"/>
+        <PreEffect value="HeatSignatureAddIPR"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ShotgunInfantry" parent="WeaponTemplate">
         <EditorCategories value="Race:Terran"/>

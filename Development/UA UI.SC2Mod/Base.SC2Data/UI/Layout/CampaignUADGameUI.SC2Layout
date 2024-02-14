@@ -45,10 +45,27 @@
             <UseAlternateTime val="True" />
             <VisibilityOnFade val="True" />
             <Visible val="False" />
-            <AcceptsMouse val="False" />
+            <AcceptsMouse val="True"/>
+
             <Frame type="Image" name="BlackMask">
                 <Anchor relative="$parent" />
                 <Color val="0,0,0" />
+            </Frame>
+
+            <Frame type="Frame" name="TextContainer">
+                <Anchor side="Top" relative="$parent" pos="Mid" offset="500"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+                <Height val="1200"/>
+                <Width val="1200"/>
+
+                <Frame type="Label" name="Label">
+                    <Anchor relative="$parent"/>
+                    <WriteOutText val="True"/>
+                    <WriteOutTextDuration val="4000"/>
+                    <Options val="NewLineIfTruncated"/>
+                </Frame>
             </Frame>
             <Animation name="Show">
                 <Event event="Display" action="DirectionForward,Play"/>

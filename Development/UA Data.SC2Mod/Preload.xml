@@ -23,6 +23,7 @@
 <Behavior id="KineticFollowBehavior"/>
 <Behavior id="ArmorInInventory"/>
 <Behavior id="ArmorMain"/>
+<Behavior id="DisableEvade"/>
 <Behavior id="ScrapPartsPickup"/>
 <Behavior id="EnergyCellInInventoryApply"/>
 <Behavior id="EnergyCellInInventory"/>
@@ -37,6 +38,7 @@
 <Behavior id="AdvancedFirstAidInInventory"/>
 <Behavior id="AdvancedFirstAidKitInInventoryApply"/>
 <Behavior id="QuikClotInInventory"/>
+<Behavior id="AIResponse"/>
 <Behavior id="PlayerLeftGame"/>
 <Behavior id="AdvancedQuikClotInInventory"/>
 <Behavior id="AntiVeninInInventory"/>

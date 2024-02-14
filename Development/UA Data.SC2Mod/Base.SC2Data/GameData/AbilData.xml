@@ -1742,7 +1742,7 @@
         <AutoCastValidatorArray value="RiflebuttFilter"/>
         <AcquirePriority value="0"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="RifleButt" Requirements="NewRiflebuttRequirement"/>
-        <PrepEffect value="HeatSignatureAB"/>
+        <PrepEffect value="HeatSignatureAdd"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="RiflebuttLN" parent="TemplateEffectInstant">
         <Name value="Abil/Name/RiflebuttLN"/>

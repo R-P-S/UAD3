@@ -74,7 +74,7 @@
  
                     <Frame type="TextFormatFrame" name="TFF">
                         <Anchor relative="$parent"/>
-                        <FormatText val="%0%&lt;c val=&quot;FFFFFF&quot;&gt;%1%&lt;/c&gt;"/>
+                        <FormatText val="%0%&lt;c val=&quot;FFFFFF&quot;&gt;&lt;d ref=&quot;%1%&quot; precision=&quot;2&quot;/&gt;&lt;/c&gt;"/>
                         <Replacement val="@e_gameUIStringRangeColon" index="0"/>
                         <Replacement val="{$parent/@CurrentValue}" index="1"/>
                     </Frame>

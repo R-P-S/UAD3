@@ -4714,6 +4714,9 @@
             <Text Text="UserData/AchievementBadge/Medal: Good Conduct_Name">
                 <Field Id="Name"/>
             </Text>
+            <Text Text="UserData/AchievementBadge/Medal: Good Conduct_Description">
+                <Field Id="Description"/>
+            </Text>
         </Instances>
         <Instances Id="Medal: Marksmanship">
             <Image Image="Assets\Achievements\Achievement_Marksmanship.dds">
@@ -6213,11 +6216,11 @@
                 <Field Id="Glaze"/>
             </String>
         </Instances>
-        <Instances Id="Red">
+        <Instances Id="Blood">
             <GameLink GameLink="CamoRed">
                 <Field Id="Camo"/>
             </GameLink>
-            <String String="Red">
+            <String String="Blood">
                 <Field Id="Camo Name"/>
             </String>
             <String String="GlazeRed">
@@ -6948,16 +6951,6 @@
         </Instances>
         <Instances Id="SC2E-TEST-ACCOUNT">
             <String String="SC2E-TEST-ACCOUNT">
-                <Field Id="Bank ID"/>
-            </String>
-        </Instances>
-        <Instances Id="lstalri1">
-            <String String="1-S2-1-4434269">
-                <Field Id="Bank ID"/>
-            </String>
-        </Instances>
-        <Instances Id="lstalri2">
-            <String String="1-S2-1-11310764">
                 <Field Id="Bank ID"/>
             </String>
         </Instances>

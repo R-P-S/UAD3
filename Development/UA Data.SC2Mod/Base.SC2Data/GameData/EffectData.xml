@@ -212,6 +212,36 @@
         <EffectArray value="GapGeneratorDisorientationABP14"/>
         <EffectArray value="GapGeneratorDisorientationABP15"/>
     </CEffectSet>
+    <CEffectUserData id="HeatSignatureAdd">
+        <ValidatorArray value="HeatSignatureLTE100"/>
+        <ValidatorArray value="CasterIsGhost"/>
+        <EditorCategories value="Race:Terran"/>
+        <Key value="HeatSignatureCount"/>
+        <SourceKey value="HeatSignatureCount"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CEffectUserData>
+    <CEffectUserData id="HeatSignatureAddIPR">
+        <ValidatorArray value="HeatSignatureLTE100"/>
+        <EditorCategories value="Race:Terran"/>
+        <Chance value="0.8"/>
+        <Key value="HeatSignatureCount"/>
+        <SourceKey value="HeatSignatureCount"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CEffectUserData>
+    <CEffectUserData id="HeatSignatureSet">
+        <EditorCategories value="Race:Terran"/>
+        <Key value="HeatSignatureCount"/>
+        <Amount value="0"/>
+        <SourceKey value="HeatSignatureCount"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CEffectUserData>
+    <CEffectUserData id="HeatSignatureSubstract">
+        <EditorCategories value="Race:Terran"/>
+        <Key value="HeatSignatureCount"/>
+        <SourceKey value="HeatSignatureCount"/>
+        <Operation value="Subtract"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CEffectUserData>
     <CEffectAddTrackedUnit id="IRSensorAddTrackedUnit">
         <EditorCategories value=""/>
         <TrackerUnit Value="Target"/>
@@ -425,7 +455,6 @@
     <CEffectSet id="FlashlightSet">
         <ValidatorArray value="FlashlightFilter"/>
         <EditorCategories value=""/>
-        <EffectArray value="FlashlightAB"/>
         <EffectArray value="FlashlightRevealAB"/>
     </CEffectSet>
     <CEffectApplyBehavior id="OilDouseRemoveFlyingAB" parent="TemplateApplyBehavior">
@@ -446,6 +475,9 @@
     <CEffectApplyBehavior id="ParachuteInitAB" parent="TemplateApplyBehavior">
         <Behavior value="ParachuteInit"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="KiteAIThink">
+        <EditorCategories value=""/>
+    </CEffectDamage>
     <CEffectSwitch id="XR42Switch">
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="CryoRoundsEnabled" Effect="PlasmaRifleCryoRoundLaunchSet"/>
@@ -1380,22 +1412,6 @@
         <EffectArray value="EquipCommsHeadset"/>
         <EffectArray value="EquipCommsPack"/>
     </CEffectSet>
-    <CEffectApplyBehavior id="HeatSignatureAB">
-        <EditorCategories value="Race:Terran"/>
-        <Behavior value="HeatSignature"/>
-        <WhichUnit Value="Caster"/>
-    </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="HeatSignatureIPRAB">
-        <EditorCategories value="Race:Terran"/>
-        <Chance value="0.8"/>
-        <WhichUnit Value="Caster"/>
-        <Behavior value="HeatSignature"/>
-    </CEffectApplyBehavior>
-    <CEffectRemoveBehavior id="HeatSignatureRB">
-        <EditorCategories value="Race:Terran"/>
-        <BehaviorLink value="HeatSignature"/>
-        <Count value="1"/>
-    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="IPRItemAB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="IPR"/>

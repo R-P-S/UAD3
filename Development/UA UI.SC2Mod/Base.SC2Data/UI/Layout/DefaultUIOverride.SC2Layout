@@ -491,6 +491,7 @@
                <Height val="200"/>
                <Visible val="false"/>
                <RenderPriority val="1255" />
+               <Handle val="TextCrawlFrame"/>
                <Frame type="FlashFrame" name="FlashFrame">
                   <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
                   <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
@@ -498,6 +499,17 @@
                   <FlashInputEnabled val="false"/>
                   <UseAlternateTime val="true"/>
                </Frame>
+               <StateGroup name="Anchor">
+                  <DefaultState val="Default"/>
+                  <State name="BottomLeft">
+                     <When type="AnimationState" Anchor="BottomLeft"/>
+                     <Action type="SetAnchor" side="Top" relative="$this" pos="Max" offset="0"/>
+                     <Action type="SetAnchor" side="Right" relative="$this" pos="Max" offset="0"/>
+                     <Action type="SetAnchor" side="Left" relative="$parent" pos="Min" offset="20"/>
+                     <Action type="SetAnchor" side="Bottom" relative="$parent" pos="Max" offset="-240"/>
+                  </State>
+                  <State name="Default"/>
+               </StateGroup>
             </Frame>
             <Frame type="StandardTooltip" name="UADStandardTooltip" template="TooltipFrameTemplates/UADStandardTooltip"/>
             <Frame type="StandardTooltip" name="UADStandardTooltipAlternate" template="TooltipFrameTemplates/UADStandardTooltipAlternate"/>

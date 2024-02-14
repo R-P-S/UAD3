@@ -3819,6 +3819,7 @@
             <Tooltip val="Mode" />
             <TooltipFrame val="UADStandardTooltip" />
             <AcceptsMouseTooltip val="True" />
+            <Handle val="GameModeLabel"/>
             <StateGroup name="ModeLabelTooltip">
                <DefaultState val="" />
                <State name="Recruit">

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="ObjectivePanel" name="GameUI/UIContainer/ConsoleUIContainer/ObjectivePanel" file="GameUI">
+        <Frame type="Frame" name="ObjectiveContainer">
+            <Frame type="Label" name="PrimaryObjectivesLabel">
+                <AcceptsMouseTooltip val="True"/>
+                <Tooltip val="{TFF/@Text}"/>
+                <TooltipFrame val="UADStandardTooltip"/>
+
+                <Frame type="TextFormatFrame" name="TFF">
+                    <Anchor relative="$parent"/>
+                    <FormatText val="%0%&lt;/n&gt;%1%"/>
+                    <Replacement index="0" val="{$GameModeLabel/@Text}"/>
+                    <Replacement index="1" val="{$GameModeLabel/@Tooltip}"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Label" name="SecondaryObjectivesLabel">
+                <TooltipFrame val="UADStandardTooltip"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

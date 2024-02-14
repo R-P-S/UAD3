@@ -582,8 +582,8 @@
     <CUpgrade id="PlasmaRifleMarksmanship2" parent="Research">
         <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="1.6"/>
         <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.2"/>
-        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAB,Chance" Value="0.9"/>
-        <EffectArray Operation="Set" Reference="Effect,HeatSignatureIPRAB,Chance" Value="0.7"/>
+        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAdd,Chance" Value="0.9"/>
+        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAddIPR,Chance" Value="0.7"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipPlasmaRifle"/>
         <LeaderPriority value="1"/>
@@ -608,8 +608,8 @@
     <CUpgrade id="PlasmaRifleMarksmanship4" parent="Research">
         <EffectArray Reference="Effect,PlasmaRifleDamageNew,Amount" Value="3.2"/>
         <EffectArray Reference="Effect,PlasmaRifleDamageNew,Random" Value="0.4"/>
-        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAB,Chance" Value="0.8"/>
-        <EffectArray Operation="Set" Reference="Effect,HeatSignatureIPRAB,Chance" Value="0.6"/>
+        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAdd,Chance" Value="0.8"/>
+        <EffectArray Operation="Set" Reference="Effect,HeatSignatureAddIPR,Chance" Value="0.6"/>
         <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
         <LeaderAlias value="MarksmanshipPlasmaRifle"/>
         <LeaderPriority value="1"/>

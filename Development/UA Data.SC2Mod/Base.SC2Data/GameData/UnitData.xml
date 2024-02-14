@@ -40,6 +40,7 @@
         <AbilArray Link="LNInventory"/>
         <AbilArray Link="WeaponsHoldLN"/>
         <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray Link="Evade"/>
         <WeaponArray/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" Row="1" Column="0"/>
@@ -63,6 +64,8 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
         <BehaviorArray Link="NPCSetSprintEnergy"/>
+        <BehaviorArray Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <TauntDuration index="Cheer" value="5"/>
         <TauntDuration index="Dance" value="5"/>
         <TauntDuration index="Tease" value="5"/>
@@ -527,7 +530,9 @@
     </CUnit>
     <CUnit id="InfantryForwardObserver" parent="InfantryUnitTemplate">
         <BehaviorArray index="0" Link="RAForwardObserver"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
             <LayoutButtons index="1" Face="Jump" Type="AbilCmd" AbilCmd="NPCJump,Execute" Row="0" Column="0"/>
@@ -544,9 +549,10 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <EnergyStart value="8"/>
         <EnergyMax value="8"/>
-        <AbilArray Link="RoundsRemainingPoliceOfficerRifle"/>
+        <AbilArray index="10" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
         <AbilArray Link="MortarStrikeFO"/>
+        <AbilArray Link="Evade"/>
         <EffectArray index="Create" value="ForwardObserverSpawnSet"/>
         <IdleCommand value="PMCIssueOrderAttackWhenIdle,Execute"/>
     </CUnit>
@@ -554,11 +560,14 @@
         <EnergyStart value="20"/>
         <EnergyMax value="20"/>
         <AbilArray index="4" Link="ReloadNPCSniper"/>
-        <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
+        <AbilArray index="10" Link="PMCIssueOrderAttackWhenIdle"/>
         <AbilArray Link="BinocularsSniper"/>
         <AbilArray Link="RoundsRemainingNPCSniper"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="RASniper"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <EffectArray index="Create" value="SniperSpawnSet"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -736,15 +745,15 @@
         <EnergyStart value="150"/>
         <EnergyMax value="150"/>
         <Speed value="2.9218"/>
-        <AbilArray Link="RoundsRemainingPoliceOfficerRifle"/>
+        <AbilArray index="10" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray Link="FiremodeBurstLN"/>
         <AbilArray Link="FocusFireLN"/>
         <AbilArray Link="PlaceClaymoreLN"/>
         <AbilArray Link="CamouflageLN"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="CombatInexperience"/>
-        <BehaviorArray Link="LNTactics"/>
+        <BehaviorArray index="1" Link="CombatInexperience"/>
+        <BehaviorArray index="2" Link="LNTactics"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNRangerSpawnSet"/>
         <EffectArray index="Death" value="LocalNationalDeath"/>
@@ -880,7 +889,8 @@
     <CUnit id="InfantryCommander" parent="InfantryUnitTemplate">
         <AbilArray index="8" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
         <EffectArray index="Create" value="InfantryCommanderSpawnSet"/>
         <CardLayouts index="0">
@@ -901,12 +911,15 @@
     <CUnit id="InfantryMedic" parent="InfantryUnitTemplate">
         <AbilArray index="8" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
         <AbilArray Link="BloodTransfusionInfantry"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="RAMedic"/>
-        <BehaviorArray Link="BloodTransfusionAI"/>
+        <BehaviorArray index="1" Link="RAMedic"/>
+        <BehaviorArray index="2" Link="BloodTransfusionAI"/>
+        <BehaviorArray Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <EffectArray index="Create" value="InfantryMedicSpawnSet"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -1847,14 +1860,14 @@
         <AbilArray index="4" Link="ReloadNPCShotgun"/>
         <AbilArray index="7" Link="PerformSelfAidLN"/>
         <AbilArray index="9" Link="RoundsRemainingPoliceOfficerShotgun"/>
-        <AbilArray Link="SmokeGrenadeLNShotgunner"/>
+        <AbilArray index="10" Link="SmokeGrenadeLNShotgunner"/>
         <AbilArray Link="SmokeScreenLN"/>
         <AbilArray Link="ShotgunBlastLN"/>
         <AbilArray Link="LNInventory"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="LNTactics"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="CombatInexperience"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="CombatInexperience"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNShotgunnerSpawnSet"/>
         <EffectArray index="Death" value="LocalNationalDeath"/>
@@ -2568,23 +2581,18 @@
         <Sight value="15"/>
         <Height value="7"/>
         <Food value="0"/>
-        <KillXP value="400"/>
-        <AbilArray index="3" Link="HurricaneMissiles"/>
-        <AbilArray Link="MedivacTransport"/>
-        <BehaviorArray index="0" Link="HurricaneAI"/>
-        <BehaviorArray Link="HunterReveal"/>
-        <WeaponArray index="0" Link="30mmChainGun" Turret="BradleyTurret"/>
+        <KillXP value="0"/>
+        <AbilArray index="1" Link="move"/>
+        <AbilArray index="2" removed="1"/>
+        <AbilArray index="3" removed="1"/>
+        <BehaviorArray index="0" removed="1"/>
+        <WeaponArray index="0" Link=""/>
         <CardLayouts index="0">
-            <LayoutButtons index="5" Face="ClusterRocketsMini" Type="Passive" AbilCmd="HurricaneMissiles,Execute" Requirements="CloakingTechnologyBanshee" Column="2"/>
-            <LayoutButtons index="6" Face="MedivacUnloadAll" AbilCmd="MedivacTransport,UnloadAt"/>
-            <LayoutButtons index="7">
-                <Face value="MedivacLoad"/>
-                <Type value="AbilCmd"/>
-                <AbilCmd value="MedivacTransport,Load"/>
-                <Requirements value=""/>
-                <Row value="2"/>
-                <Column value="2"/>
-            </LayoutButtons>
+            <LayoutButtons index="3" Face="MovePatrol" AbilCmd="move,Patrol" Column="3"/>
+            <LayoutButtons index="4" removed="1"/>
+            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
             <LayoutButtons index="8" removed="1"/>
         </CardLayouts>
         <Radius value="2"/>
@@ -6672,14 +6680,14 @@
         <AbilArray index="5" Link="Prone"/>
         <AbilArray index="6" Link="PerformSelfAidLN"/>
         <AbilArray index="9" Link="ReloadNPCDMR"/>
-        <AbilArray Link="RoundsRemainingNPCDMR"/>
+        <AbilArray index="10" Link="RoundsRemainingNPCDMR"/>
         <AbilArray Link="BinocularsLN"/>
         <AbilArray Link="RapidFireLN"/>
         <AbilArray Link="GroundFlareLN"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="LNTactics"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="CombatInexperience"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="CombatInexperience"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNMarksmanSpawnSet"/>
         <EffectArray index="Death" value="LocalNationalDeath"/>
@@ -6785,11 +6793,14 @@
         <EnergyStart value="20"/>
         <EnergyMax value="20"/>
         <AbilArray index="4" Link="ReloadNPCDMR"/>
-        <AbilArray Link="RoundsRemainingNPCDMR"/>
+        <AbilArray index="10" Link="RoundsRemainingNPCDMR"/>
         <AbilArray Link="InfantryBinoculars"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="RAMarksman"/>
+        <BehaviorArray index="1" Link="RAMarksman"/>
+        <BehaviorArray index="2" Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <EffectArray index="Create" value="InfantryMarksmanSpawnSet"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -7673,13 +7684,13 @@
         <AbilArray index="4" Link="ReloadLNMachineGun"/>
         <AbilArray index="8" Link="PerformSelfAidLN"/>
         <AbilArray index="9" Link="IncendiaryRoundsLN"/>
-        <AbilArray Link="FullAutoLN"/>
+        <AbilArray index="10" Link="FullAutoLN"/>
         <AbilArray Link="RoundsRemainingLNAutomaticRifleman"/>
         <AbilArray Link="WeaponsHoldLN"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="LNTactics"/>
-        <BehaviorArray Link="FirerateBuildupControllerLN"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="1" Link="FirerateBuildupControllerLN"/>
+        <BehaviorArray index="2" Link="WeatherEffectGenericUnits"/>
         <BehaviorArray Link="CombatInexperience"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNAutomaticRiflemanSpawnSet"/>
@@ -7723,15 +7734,15 @@
         <AbilArray index="7" Link="FragGrenadeLN"/>
         <AbilArray index="8" Link="SmokeGrenadeLNRifleman"/>
         <AbilArray index="9" Link="FocusFireLN"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
         <AbilArray Link="LNInventory"/>
         <AbilArray Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray Link="WeaponsHoldLN"/>
         <AbilArray Link="FiremodeBurstLN"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="LNTactics"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="CombatInexperience"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="CombatInexperience"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNRiflemanSpawnSet"/>
         <EffectArray index="Death" value="LocalNationalDeath"/>
@@ -7772,14 +7783,14 @@
         <EnergyStart value="150"/>
         <EnergyMax value="150"/>
         <Speed value="2.8281"/>
-        <AbilArray Link="RoundsRemainingPoliceOfficerRifle"/>
+        <AbilArray index="10" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray Link="HERocketLN"/>
         <AbilArray Link="StingerMissileLN"/>
         <AbilArray Link="FiremodeBurstLN"/>
         <AbilArray Link="RiflebuttLN"/>
         <BehaviorArray index="0" Link="LNTactics"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="CombatInexperience"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="CombatInexperience"/>
         <BehaviorArray Link="AllyReveal"/>
         <EffectArray index="Create" value="LNJavelinGunnerSpawnSet"/>
         <EffectArray index="Death" value="LocalNationalDeath"/>
@@ -8138,9 +8149,10 @@
     </CUnit>
     <CUnit id="InfantryAutomaticRifleman" parent="InfantryUnitTemplate">
         <AbilArray index="4" Link="ReloadInfantryMachineGun"/>
-        <AbilArray Link="RoundsRemainingLNAutomaticRifleman"/>
+        <AbilArray index="10" Link="RoundsRemainingLNAutomaticRifleman"/>
         <AbilArray Link="FullAutoInfantry"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
+        <AbilArray Link="Evade"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
             <LayoutButtons index="1" Face="Jump" Type="AbilCmd" AbilCmd="NPCJump,Execute" Row="0" Column="0"/>
@@ -8157,8 +8169,10 @@
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <BehaviorArray index="0" Link="FirerateBuildupControllerInfantry"/>
-        <BehaviorArray Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="RAAutomaticRifleman"/>
+        <BehaviorArray index="1" Link="WeatherEffectGenericUnits"/>
+        <BehaviorArray index="2" Link="RAAutomaticRifleman"/>
+        <BehaviorArray Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <EffectArray index="Create" value="InfantryAutomaticRiflemanSpawnSet"/>
         <IdleCommand value="PMCIssueOrderAttackWhenIdle,Execute"/>
     </CUnit>
@@ -8598,7 +8612,6 @@
         <AbilArray index="7" Link="PerformSelfAidNPC"/>
         <AbilArray index="8" Link="SmokeGrenadeNPC"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="Evade"/>
         <WeaponArray index="0" Link="PoliceOfficerShotgun"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -8615,8 +8628,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <EffectArray index="Death" value="CopsDeathEffect"/>
         <ScoreMake value="50"/>
-        <BehaviorArray Link="WeatherEffectCops"/>
-        <BehaviorArray Link="AIResponse"/>
+        <BehaviorArray index="1" Link="WeatherEffectCops"/>
         <BehaviorArray Link="DisableEvade"/>
         <PushPriority value="10"/>
     </CUnit>
@@ -8808,11 +8820,9 @@
         <AbilArray index="7" Link="PerformSelfAidNPC"/>
         <AbilArray index="8" Link="FragGrenadeNPC"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="Evade"/>
         <EffectArray index="Death" value="CopsDeathEffect"/>
         <ScoreMake value="50"/>
-        <BehaviorArray Link="WeatherEffectCops"/>
-        <BehaviorArray Link="AIResponse"/>
+        <BehaviorArray index="1" Link="WeatherEffectCops"/>
         <BehaviorArray Link="DisableEvade"/>
         <PushPriority value="10"/>
     </CUnit>
@@ -8948,9 +8958,10 @@
     <CUnit id="InfantryRifleman" parent="InfantryUnitTemplate">
         <AbilArray index="8" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
         <AbilArray Link="FragGrenadeInfantry"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
+        <AbilArray Link="Evade"/>
         <EffectArray index="Create" value="InfantryRiflemanSpawnSet"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -8968,7 +8979,9 @@
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="RARifleman"/>
+        <BehaviorArray index="1" Link="RARifleman"/>
+        <BehaviorArray index="2" Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <IdleCommand value="PMCIssueOrderAttackWhenIdle,Execute"/>
     </CUnit>
     <CUnit id="TerranDropPod">
@@ -9694,11 +9707,14 @@
     <CUnit id="InfantryShotgunner" parent="InfantryUnitTemplate">
         <AbilArray index="4" Link="ReloadNPCShotgun"/>
         <AbilArray index="9" Link="RoundsRemainingPoliceOfficerShotgun"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
         <AbilArray Link="SmokeGrenade"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
-        <BehaviorArray Link="RAShotgunner"/>
+        <BehaviorArray index="1" Link="RAShotgunner"/>
+        <BehaviorArray index="2" Link="DisableEvade"/>
+        <BehaviorArray Link="AIResponse"/>
         <EffectArray index="Create" value="ShotgunnerSpawnSet"/>
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="0"/>
@@ -9718,9 +9734,10 @@
     <CUnit id="InfantryJavelinGunner" parent="InfantryUnitTemplate">
         <AbilArray index="8" Link="RoundsRemainingPoliceOfficerRifle"/>
         <AbilArray index="9" Link="WeaponsHoldLN"/>
-        <AbilArray Link="PerformSelfAidLN"/>
+        <AbilArray index="10" Link="PerformSelfAidLN"/>
         <AbilArray Link="PMCIssueOrderAttackWhenIdle"/>
         <AbilArray Link="HERocketInfantry"/>
+        <AbilArray Link="Evade"/>
         <BehaviorArray index="0" Link="WeatherEffectGenericUnits"/>
         <EffectArray index="Create" value="InfantryJavelinGunnerSpawnSet"/>
         <CardLayouts index="0">

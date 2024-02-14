@@ -470,6 +470,13 @@
         <DisableValidatorArray value="TargetIsMoving"/>
         <StackAlias value="KI"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AIKite" parent="TemplateBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <DisableValidatorArray value="UnitHasReinforcePosition"/>
+        <Period value="1.5"/>
+        <PeriodicEffect value="KiteAIThink"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="XR42">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Buttons\BTN_PlasmaRifle_XR.dds"/>
@@ -837,19 +844,12 @@
         <InfoFlags index="Hidden" value="1"/>
         <Requirements value="HardArmorBehaviorRequirement"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="HeatSignature">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <MaxStackCount value="100"/>
-        <StackAlias value="HeatSig"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <RemoveValidatorArray value="CasterIsGhost"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="HeatSignatureDissapate">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="HeatSignatureGT0"/>
         <DisableValidatorArray value="SourceLastAttacked5SecAgo"/>
         <Period value="1"/>
-        <PeriodicEffect value="HeatSignatureRB"/>
+        <PeriodicEffect value="HeatSignatureSubstract"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
@@ -907,6 +907,7 @@
             <StateFlags index="Cloak" value="1"/>
         </Modification>
         <BehaviorFlags index="Permanent" value="1"/>
+        <InitialEffect value="HeatSignatureSet"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="RAShotgunner">
         <InfoFlags index="Hidden" value="1"/>
@@ -7334,6 +7335,7 @@
         <InfoIcon value="Assets\Textures\btn-techupgrade-terran-ocularimplants.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Modification Detect="10" DetectArc="99.9975" DetectFilters="-;Missile"/>
+        <BehaviorFlags index="Permanent" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="BloodTransfusion">
         <InfoIcon value="Assets\Buttons\Syringe_Red.dds"/>

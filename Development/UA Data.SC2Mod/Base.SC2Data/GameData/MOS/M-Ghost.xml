@@ -11,7 +11,6 @@
         <BehaviorArray Link="MetaFlexArmor"/>
         <BehaviorArray Link="HeatSignatureDissapate"/>
         <BehaviorArray Link="IRSensor"/>
-        <BehaviorArray Link="HeatSensorGhost"/>
         <AbilArray Link="GhostResearch"/>
         <AbilArray Link="GhostSkillUpgrades"/>
         <AbilArray Link="HeroInventoryPlasmaNew"/>

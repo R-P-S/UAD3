@@ -55,28 +55,25 @@ DocInfo/HowToPlayBasic01=Focus on the objectives (on the top left of the screen)
 DocInfo/HowToPlayBasic02=Stay alive.
 DocInfo/HowToPlayWinning00=Complete mission objectives
 DocInfo/Name=Undead Assault 3: Dasdan
-DocInfo/PatchNote001=-Enabled insane mode difficulty.
-DocInfo/PatchNote002=-Recruit difficulty will now buff players
-DocInfo/PatchNote003=-Buffed marksmanship levels from 4/7/11/16% to 5/10/15/20%
-DocInfo/PatchNote004=-Increased Cyborg weapon damage by +1
-DocInfo/PatchNote005=-Fixed an issue that caused MOS camo glazes to not apply
-DocInfo/PatchNote006=-Camo glazes now get applied to the unit model UI
-DocInfo/PatchNote007=-Weekly modifier rewards UI now uses a unit model frame for camos
-DocInfo/PatchNote008=-Lift boots have a chance to spawn during Campaign Ch.3
-DocInfo/PatchNote009=-Saber 6 commander is now easier to identify
-DocInfo/PatchNote010=-Attempt to fix LN spawn for SFAAT after chapter 3 transition
-DocInfo/PatchNote011=-Fixed a campaign bug caused civilians to not enter convoy trucks
-DocInfo/PatchNote012=-Added ping route for trucks in Chapter 2 Great Escape mission
-DocInfo/PatchNote013=-Possible fix for Chapter 3 stuck after first mission.
-DocInfo/PatchNote014=-Add delay in pmc squad spawns for chapter 3 mission 1.
-DocInfo/PatchNote026=-Infantry sniper range reduced from 30 to 24
-DocInfo/PatchNote027=-Infantry sniper binoculars autocast range reduced from 30 to 24 
-DocInfo/PatchNote028=-Replaced PMC's binoculars with the real cheap stuff from China
-DocInfo/PatchNote029=-Enhanced visibility of RA Squad Leaders for easier identification
-DocInfo/PatchNote030=-Updated OPA tooltip for better clarity and information
-DocInfo/PatchNote031=-Resolved an issue allowing Aim Assistant use with flame & plasma weapons
-DocInfo/PatchNote032=-Addressed an issue where self-casting items were not functioning as intended
-DocInfo/PatchNote033=-Updated PMC spawns to remove bias towards marksmen
+DocInfo/PatchNote001=General:
+DocInfo/PatchNote002=-Fixed an issue that caused SITREP to not display ailments
+DocInfo/PatchNote003=-Fixed AI evade bug for heroes
+DocInfo/PatchNote004=-Fixed flashlight not staying equipped
+DocInfo/PatchNote005=
+DocInfo/PatchNote006=Cyborg:
+DocInfo/PatchNote007=-Fixed an issue that caused shredder missiles to not target PMC units
+DocInfo/PatchNote008=
+DocInfo/PatchNote009=Campaign:
+DocInfo/PatchNote010=-Reduced victory xp amount for recruit difficulty
+DocInfo/PatchNote011=-Hero XP will now be granted for failed missions at the start of the next chapter
+DocInfo/PatchNote012=-Status Bar added to convoy trucks
+DocInfo/PatchNote013=-Fixed Saber 6 mission not progressing if the Commander is killed
+DocInfo/PatchNote014=-Ares AI will now make more frequent attempts to attack Saber 6
+DocInfo/PatchNote015=-Improved Saber 6 AI to evade enemies at close range
+DocInfo/PatchNote016=-Caches & placed explosives will now get removed during Ch.2 to Ch.3 transition
+DocInfo/PatchNote017=-After action report will now display during Ch.2 to Ch.3 transition
+DocInfo/PatchNote018=-Ch.3 LN rally point fixed
+DocInfo/PatchNote019=-Nuclear silo minimap ping indicators will now display time remaining in the tooltip
 DocInfo/Screenshot01=Unlock various camouflages & decals
 DocInfo/Screenshot02=Earn medals
 DocInfo/Screenshot03=Multiple modes to play
@@ -159,6 +156,7 @@ Param/Expression/79E22722=--- PMC Squad ~A~ ---
 Param/Expression/7A73335A=Escort the civilian cargo trucks to the South TCP exit. (~A~/~B~)
 Param/Expression/7C41447E=Silos Disarmed: ~A~
 Param/Expression/813D57CB=Destroy the RA tanks defending the power plant. <c val="FFFF00">(~A~/~B~)</c>
+Param/Expression/84519E15=Nuclear Silo<n/>Time to Detonation: <d time="~A~"/>
 Param/Expression/854930D4=Boss: ~A~<n/>Count: ~B~
 Param/Expression/869A9CD2=Boss Rush Loop: Switch Case ~A~
 Param/Expression/87BB9021=Moving Convoy ~A~ to Point ~B~
@@ -173,6 +171,7 @@ Param/Expression/984B6178=Assist in the evacuation of Dasdan. <c val="FFFF00">(~
 Param/Expression/98FF1D54=Civ Count: ~A~
 Param/Expression/9ACC3DC5=Eliminate the <c val="800000">Tier 1</c> Threat [<c val="800000">~A~</c> (<c val="000080">~B~</c>)]
 Param/Expression/9D8891B1=Current Round: ~A~
+Param/Expression/9DD5A54A=<s val="AllianceHeader_Terr">After Action Report<n/><n/>Civilian Deaths: <c val="FFFFFF">~A~</c></s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">Raider-6, in spite of overwhelming odds and with no hope for rescue, sacrificed themselves to ensure that not only could friendly elements in Thalim reorganize for an effective defense, but that the entire civilian population of Dasdan could be evacuated to safety. There was not a single civilian casualty reported from the evacuees.<n/><n/>Their actions are above and beyond the most selfless acts of courage under fire, with great precision in the execution of their mission. This incredible feat of valor in the face of an insurmountable enemy force is a beacon of hope in this time of great crisis.<n/><n/>This tribunal sees fit to posthumously bestow upon Raider-6 the highest accolades possible in this army.</c></s>
 Param/Expression/9EA19D78=Destroy the spider eggs. <c val="00FF40">(~A~/~B~)</c>
 Param/Expression/9F811B57=Escort reservists to town barracks (~A~/8)
 Param/Expression/A44867C9=Protect the town civillians and local police force.<c val="FF0000">(~A~/~B~)</c>
@@ -184,6 +183,7 @@ Param/Expression/BA75CF01=Escort and defend engineers.<c val="FFFF00">(~A~/6)</c
 Param/Expression/BA7D1358=Defend TCP ~A~
 Param/Expression/BDF8DE03=Move to <c val="008000">~B~</c> (Round: <c val="00FFFF">~A~</c>)
 Param/Expression/C1654842=Rush Region: ~A~<n/>Rush Time (Unscaled): ~B~<n/>Rush Time (Scaled): ~C~<n/>Rush Name: ~D~<n/>Rush Radius: ~E~
+Param/Expression/C2F4E837=<s val="AllianceHeader_Terr">After Action Report<n/><n/>Civilian Deaths: <c val="FFFFFF">~A~</c></s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">In the face of great adversity did Raider-6 perform their duty. It is without question that they served in a way that few ever are called to serve. In the wake of their noble sacrifice did they give to the few survivors of Dasdan time to successfully evacuate. They gave to those brave soldiers in Thalim time to organize a defense against the oncoming tide.<n/><n/>There is no question that they performed their duties to the best of their abilities, though at great cost to military personnel and the citizens of Dasdan.</c></s>
 Param/Expression/C31642AB=Protect the town civillians and local police force.<c val="008000">(~A~/~B~)</c>
 Param/Expression/C49616EF=Transport food item samples to the phantom <c val="00FF40">(~A~/~B~)</c>
 Param/Expression/C54C4274=Moving Convoy ~A~ to Point ~B~
@@ -202,6 +202,7 @@ Param/Expression/DE4EF45A=Boss Rush Loop: Switch Case ~A~
 Param/Expression/DF6CE6EB=Created Cargo Truck ID: ~A~
 Param/Expression/E2FAA793=Destroy the RA tanks defending the power plant. <c val="FFFF00">(~A~/~B~)</c>
 Param/Expression/E578C87E=Boss Rush Loop: Switch Case ~A~
+Param/Expression/EA95D868=<s val="AllianceHeader_Terr">After Action Report<n/><n/>Civilian Deaths: <c val="FFFFFF">~A~</c></s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">Raider-6, in a time of great crisis, performed their duty to a commendable status. In the defense of Dasdan and it's citizens, they showed their unwavering courage in the face of impossible odds. In the performance of this duty did they show bravery of greatest degree. The loss of these courageous individuals is a lamentable loss.<n/><n/>In the wake of their sacrifice they successfully evacuated a large percentage of Dasdan's citizens, and allowed ample time for Thalim's beleaguered defenders to regroup and reorganize an effective defense.</c></s>
 Param/Expression/EDBB7F5E=Defend all the TCPs without becoming overrun.
 Param/Expression/F100FEB8=Number of Cops: ~A~<n/>Number of Friendlies: ~B~<n/>Number of Zombies: ~C~<n/>Zombies Supply: ~D~<n/>TCP:~E~
 Param/Expression/F5912E75=Boss Rush Loop: Switch Case ~A~
@@ -270,6 +271,7 @@ Param/Value/0E47A839=Mission Survival
 Param/Value/0EDED36A=, 
 Param/Value/0F284408=Exit Terminal Region
 Param/Value/0F5BED69=Sanies Zombies: Close Spawned
+Param/Value/0F7D3439=0
 Param/Value/0FCA1FF4=Sector 
 Param/Value/0FD09DC9=T1 Dummy
 Param/Value/101C8DA7=<c val="FF8000">Ravensword: </c>The RA are planning to irradiate AO Dasdan by detonating small nuclear devices within the silos around the AO.
@@ -379,6 +381,7 @@ Param/Value/2BC9A9C2=Terminal Successfully Hacked
 Param/Value/2C0B820C=Boss Unit Dies
 Param/Value/2D351890=<c val="FF8000">Outlaw Commander: </c>Affirmative. We read you Ravensword. Over.
 Param/Value/2D4456F3=Refugees run
+Param/Value/2E147D8B=<s val="AllianceHeader_Terr">After Action Report</s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">Raider-6, in spite of overwhelming odds and with no hope for rescue, sacrificed themselves to ensure that not only could friendly elements in Thalim reorganize for an effective defense, but that the entire civilian population of Dasdan could be evacuated to safety. There was not a single civilian casualty reported from the evacuees.<n/><n/>Their actions are above and beyond the most selfless acts of courage under fire, with great precision in the execution of their mission. This incredible feat of valor in the face of an insurmountable enemy force is a beacon of hope in this time of great crisis.<n/><n/>This tribunal sees fit to posthumously bestow upon Raider-6 the highest accolades possible in this army.</c></s>
 Param/Value/2E6E1AF3=<s val="BossBarHP"><c val="00FF40">Cache 
 Param/Value/2EC5DDFC=Private
 Param/Value/2FC489A4=Mission Success
@@ -485,6 +488,7 @@ Param/Value/46750949=Abdul's Vehicle Repaired
 Param/Value/46841173=<c val="008000">Reservist: </c>......
 Param/Value/47718DA9=Many mutated spider eggs have appeared around the AO, destroy them before they hatch.
 Param/Value/479596A2=Game Mode: Boss Rush
+Param/Value/4815B922=0
 Param/Value/48CD303D=<c val="008000">Raider 6:</c> Affirmative.
 Param/Value/49444AFF=<c val="008000">Reservist: </c> There's no time to waste! 
 Param/Value/4A2B19DE=Jam It: Success
@@ -493,6 +497,7 @@ Param/Value/4A9833C9=Cacumen
 Param/Value/4B3946E2= has leveled 
 Param/Value/4B5F8B71=Rock Avalanche
 Param/Value/4B6161A4=
+Param/Value/4B65D7DF=0
 Param/Value/4B80B11C=3
 Param/Value/4BB79973=-- Setup Cargo Truck Routes --
 Param/Value/4BD24E30=House  
@@ -608,6 +613,7 @@ Param/Value/6A0B5508=5
 Param/Value/6A2FE59A=Add recruit buff behavior
 Param/Value/6A5F10DE=Evac Truck
 Param/Value/6A6F57BC=2
+Param/Value/6A9B89E7=Revelations
 Param/Value/6AB56E3E=Chapter ##
 Param/Value/6AFCC48C=Chapter 3 - Mission 02 - For the Rebellion Setup
 Param/Value/6B76C247=<c val="008000">Ravensword:</c> Raider 6, The AO is at risk of being overrun with zombies. Defend Dasdan at all costs.
@@ -629,6 +635,7 @@ Param/Value/702A9617=<c val="008000">Raider 6: </c>Ravensword, farmer Blackma is
 Param/Value/704CB68D=<c val="FF8000">Ravensword: </c>Outlaws, you've managed to win but at what cost?  The town and it's people are gone.
 Param/Value/704EA9D3=PMC Squad
 Param/Value/7065B91B=<c val="004000">Raider-6: </c>Affirmative, Saber-6. Fight the good fight. Over and out.
+Param/Value/70D745F8=Engineers
 Param/Value/717A9CC3=-- Spawn Satchel --
 Param/Value/7196DBF8=</n>
 Param/Value/71ABEE0C=
@@ -697,6 +704,7 @@ Param/Value/80901CD5=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
 Param/Value/80A6CE20=<c val="FF8000">Ravensword: </c>These PMC shot down another squad code-named Rebel en route to support you.  Travel south and check the wreckage for survivors.  Do you copy?
 Param/Value/80C4373D=<c val="FF0000">Biometric ID Unrecognized</c>
 Param/Value/818805C9=<c val="00FF80">Survival completed
+Param/Value/81B15042=6
 Param/Value/81C8BFEF=2
 Param/Value/81E103DF=
 Param/Value/82A3D73E=Player 
@@ -726,6 +734,7 @@ Param/Value/87696815=Them Mission: Success
 Param/Value/87CE052A=<c val="008000">Raider-6: </c>We've retrieved as many civilians possible from the outskirts. We'll continue to provide security for Dasdan.
 Param/Value/87DF95DB=
 Param/Value/8831BFBC=PMC Saboteur
+Param/Value/88825590=0
 Param/Value/8983719C=<s val="Descript_Left"><c val="00FF80">Rank: 
 Param/Value/89C3DAD8=<c val="008000">Soldier:</c> Lets get to the phantom, move!
 Param/Value/89CFFBBE=RA Squad Leader
@@ -816,6 +825,7 @@ Param/Value/A2A21B8A=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
 Param/Value/A35B6995=XP Totals
 Param/Value/A36924C5=Defeat Darreus
 Param/Value/A37C9629=Must choose to set PlayChapterThree ON or OFF.
+Param/Value/A38F7E94=0
 Param/Value/A418A5D0=1
 Param/Value/A450CC4D=route: 
 Param/Value/A4A4FF4C=Games Played: 
@@ -931,6 +941,7 @@ Param/Value/BBE10E16=4
 Param/Value/BC1123BC=<c val="FF8000">Ravensword: </c>Outstanding job Outlaws!  Hopefully one day the inhabitants of Dasdan will be able to return to their homes safely.
 Param/Value/BC2B6008=<c val="008000">Raider-6: </c>Here they come! Dig in and give 'em hell, Raiders!
 Param/Value/BCD3FA6A=KLE Location
+Param/Value/BD3DB2C9=Engineers
 Param/Value/BD50939A=<c val="008000">Raider-6: </c>Ravensword, T1 contact eliminated successfully.
 Param/Value/BD698846=Total Vehicles Repaired: 
 Param/Value/BD9461AF=<c val="004000">Ravensword: </c>Raider-6, current intel on the spread of the infection is lacking. Current hypotheses include a great deal of speculation, but no substance.
@@ -982,6 +993,7 @@ Param/Value/CA432D1E=</n></n><c val="FFFF8A">Game XP: </c><c val="00FF80">
 Param/Value/CAA6FE0D=Convoy T1 - Early: Gargantuan
 Param/Value/CABF4FF0=MOS XP: 
 Param/Value/CAC1B875=<c val="FF8000">Police Chief: </c>Grab the repair kit from the West Motorpool and use it to repair his truck.
+Param/Value/CAD910DB=0
 Param/Value/CB422C9D=We need to move, now!
 Param/Value/CBCB2C31=Spawn Apiaries
 Param/Value/CC223BCE=Exit Strategy Mission: Success
@@ -993,6 +1005,7 @@ Param/Value/CD065D06=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
 Param/Value/CD20F876=Defend Against The RA Advance
 Param/Value/CD39F4AE=T1 Boss - Widower
 Param/Value/CD407850=South Truck2 Stopped
+Param/Value/CDB72509=<s val="AllianceHeader_Terr">After Action Report</s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">The sacrifice of the soldiers of Raider-6 is not without question of their bravery. There is no question they gave the ultimate sacrifice for those who remain. However, there is a question in the performance of their duties in life. Dasdan's civilian population was entirely decimated, with no reported survivors having made it to Thalim.<n/><n/>The only question is; Is it wrong to have wished they did better? Is it wrong to wish that more good could have come from their sacrifice?</c></s>
 Param/Value/CDD46B8A=<c val="FF8000">Police Chief: </c>Mercy with you, Raiders. Let's roll out!
 Param/Value/CE081647=A plague is spreading through the air.  Kill as many infected before you succumb to it.
 Param/Value/CE43B1BA=<c val="FF8000">Police Chief: </c>Blah Blah Blah Blah
@@ -1051,6 +1064,8 @@ Param/Value/DE4DFA81=<c val="FF8000">Ravensword: </c>Good job with those documen
 Param/Value/DE518178=<c val="008000">Soldier:</c> Satchel countdown has begun. Rally around it and defend!
 Param/Value/DE5A8425=<n/><c val="FFFF8A">
 Param/Value/DE83350F= Vehicle Repair Point Entered
+Param/Value/DED78929=Chapter 3
+Param/Value/DF092B80=<s val="AllianceHeader_Terr">After Action Report</s><n/><n/><s val="AllianceHeader_Terr"><c val="FFFFFF">Raider-6, in spite of overwhelming odds and with no hope for rescue, sacrificed themselves to ensure that not only could friendly elements in Thalim reorganize for an effective defense, but that the entire civilian population of Dasdan could be evacuated to safety. There was not a single civilian casualty reported from the evacuees.<n/><n/>Their actions are above and beyond the most selfless acts of courage under fire, with great precision in the execution of their mission. This incredible feat of valor in the face of an insurmountable enemy force is a beacon of hope in this time of great crisis.<n/><n/>This tribunal sees fit to posthumously bestow upon Raider-6 the highest accolades possible in this army.</c></s>
 Param/Value/DF1B1324=Wave Instance: 
 Param/Value/E0030115=Potential Mk88 Item Location
 Param/Value/E01E5B93=<c val="008000">Police Chief: </c>We've lost control of the outer perimeter of Dasdan! Pull back! Pull back!
@@ -1075,7 +1090,7 @@ Param/Value/E49BD6B7= XP Progress:
 Param/Value/E4D16093=<c val="008000">Raider-6: </c>Copy that, Ravensword. We've got this handled for now.
 Param/Value/E507B7AD=<c val="004000">Ravensword: </c>Raider-6, ISR tracked a T1 hostile in the area of Dasdan. Current whereabouts are unknown, but it appears to have laid several nests before hiding 
 Param/Value/E51C3E0B= to level: <s val="ArcadeFighterScoreTitle">
-Param/Value/E59134A5=Kill the RA in northwest LZ interferring with the communication system.
+Param/Value/E59134A5=Defuse the rigged silos before they can irradiate the entire AO.
 Param/Value/E5A52085=Pinging Route
 Param/Value/E66F10DD=6
 Param/Value/E730E4BF=Weather: Blood Moon
@@ -1126,7 +1141,7 @@ Param/Value/F2B074D5=Route:
 Param/Value/F2EA50E6=<c val="FF8000">Outlaw: </c>Nothing in this house.
 Param/Value/F336F9F1=<c val="008000">Raider-6: </c>We failed to secure any additional vehicles. We're pulling back to regroup.
 Param/Value/F339D61F=5
-Param/Value/F382745D=Escort the truck<n/>
+Param/Value/F382745D=Escort the truck
 Param/Value/F3A6FD20=<c val="008000">Ravensword:</c> Convoy enroute to AO, stand by.
 Param/Value/F3C7CA7D=Chapter 3 - Mission 04 - Wartime Production Setup
 Param/Value/F43A9FB4=Satchel Damaged

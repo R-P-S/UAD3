@@ -196,7 +196,7 @@
                     <CircularEndOffset val="360" />
                     <MinValue val="0" />
                     <MaxValue val="100" />
-                    <Value val="{$parent/HeatSignatureBehavior/@RealValue}" />
+                    <Value val="{$parent/HeatSignatureBehavior/@StringValue}" />
 
                     <Frame type="Frame" name="FillImageContainer">
                         <Anchor relative="$parent" />
@@ -251,7 +251,7 @@
 
                 <Frame type="DataRefFrame" name="HeatSignatureBehavior">
                     <Anchor relative="$parent" />
-                    <Argument name="Ref" val="$BehaviorStackCount:HeatSignature$" />
+                    <Argument name="Ref" val="$RunAccumulators:HeatSignatureCount$"/>
                 </Frame>
 
                 <Frame type="MathFrame" name="MathA">

@@ -163,8 +163,10 @@ static string WeaponRange(string input, unit u){
         isRange = StringLocale(input, i, "Range") && !StringLocale(input, i + 1, "Melee");
         
         if (isRange) {
-            rangeWord = SplitStringGet(input, " ", i + 1); 
-            modifierWord = SplitStringGet(input, " ", i + 2);
+            //rangeWord = SplitStringGet(input, " ", i + 1); 
+            //modifierWord = SplitStringGet(input, " ", i + 2);
+            rangeWord = StringWord(input, i + 1);
+            modifierWord = StringWord(input, i + 2);
             hasModifierSign = StringContains(modifierWord, "(+", c_stringAnywhere, false) || StringContains(modifierWord, "(-", c_stringAnywhere, false);
 
             if (hasModifierSign) {

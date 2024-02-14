@@ -42,7 +42,7 @@
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="DoesntHaveFlashlight">
         <ResultFailed value="Error,Doesn&apos;tHaveFlashlight,AC_UI_Error01"/>
-        <Behavior value="Flashlight"/>
+        <Behavior value="FlashlightReveal"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorCondition id="FlashlightFilter">
         <IfArray Test="NotLN2" Return="DoesntHaveFlashlight"/>
@@ -70,6 +70,12 @@
     <CValidatorUnitCompareBehaviorCount id="Frozen8Item">
         <Behavior value="Frozen8Item"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorEffectTreeUserData id="HeatSignatureLTE100">
+        <Compare value="LE"/>
+        <Value value="100"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+        <Key value="HeatSignatureCount"/>
+    </CValidatorEffectTreeUserData>
     <CValidatorLocationVision id="TargetHasVisionNegate">
         <WhichLocation Value="TargetUnitOrPoint"/>
         <Find value="0"/>
@@ -502,15 +508,17 @@
         <Find value="1"/>
         <Value value="CognitiveEnhancementExtrasensory2"/>
     </CValidatorPlayerRequirement>
-    <CValidatorUnitCompareBehaviorCount id="HeatSignatureLTE40">
+    <CValidatorEffectTreeUserData id="HeatSignatureLTE40">
         <Compare value="LE"/>
         <Value value="40"/>
-        <Behavior value="HeatSignature"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HeatSignatureGT0">
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+        <Key value="HeatSignatureCount"/>
+    </CValidatorEffectTreeUserData>
+    <CValidatorEffectTreeUserData id="HeatSignatureGT0">
         <Compare value="GT"/>
-        <Behavior value="HeatSignature"/>
-    </CValidatorUnitCompareBehaviorCount>
+        <Key value="HeatSignatureCount"/>
+        <BehaviorScope Behavior="MetaFlexArmor"/>
+    </CValidatorEffectTreeUserData>
     <CValidatorUnitCompareDamageDealtTime id="LastAttacked5SecondsAgo">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
@@ -810,7 +818,8 @@
         <WhichLocation Value="TargetPoint"/>
         <AreaArray Compare="GE" Radius="5"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
-        <SearchFilters value="Visible;Self,Player,Ally,Neutral,Psionic,Structure,Worker,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="Visible;Self,Player,Ally,Neutral,Psionic,Structure,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <ResultFailed value="MustTargetEnemyUnits"/>
     </CValidatorLocationEnumArea>
     <CValidatorUnitCompareVital id="CasterArmor100">
         <WhichUnit Value="Caster"/>

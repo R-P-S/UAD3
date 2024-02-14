@@ -476,8 +476,8 @@
     </CActorSimple>
     <CActorModel id="Parachute" parent="ModelAddition">
         <Aliases value="_Parachute"/>
-        <Inherits index="ModelMaterials" value="0"/>
         <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="ModelMaterials" value="0"/>
         <Inherits index="Scale" value="0"/>
         <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Work,Start Stand,Work Stand,Work,End DontResetOnUnhide"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
@@ -1917,6 +1917,10 @@
         <CustomUnitStatusFrame value="HeroStatusAnim/HeroStatus"/>
         <DeathArray index="Normal" ModelLink="VespeneTank"/>
         <StatusBarFlags index="Life" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-Terran-zergtunnelentrance.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-zergtunnelentrance.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorSound id="VolatileSpitExpireSound" parent="SoundOneShot">
         <FogVisibility value="Visible"/>
@@ -10756,6 +10760,19 @@
         <On index="3" Terms="UnitRevive.UH60"/>
         <On index="4" Terms="UnitConstruction.UH60.Start"/>
         <On index="5" Terms="UnitConstruction.UH60.Finish"/>
+        <On index="69" removed="1"/>
+        <On index="70" removed="1"/>
+        <On index="71" removed="1"/>
+        <On index="72" removed="1"/>
+        <On index="73" removed="1"/>
+        <On index="74" removed="1"/>
+        <On index="75" removed="1"/>
+        <On index="76" removed="1"/>
+        <On index="77" removed="1"/>
+        <On index="78" removed="1"/>
+        <On index="79" removed="1"/>
+        <On index="80" removed="1"/>
+        <On index="81" removed="1"/>
         <Model value="UH60"/>
         <BuildModel value="UH60"/>
         <PlacementModel value="UH60"/>
@@ -10777,6 +10794,11 @@
         <StatusBarFlags index="Workers" value="0"/>
         <StatusBarFlags index="Custom" value="0"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <AbilSoundArray index="0" AbilCmd="" Sound=""/>
+        <HeroIcon value="Assets\Custom Icons\wireframe-unit-ah25-hunter.dds"/>
+        <UnitIcon value="Assets\Custom Icons\wireframe-unit-ah25-hunter.dds"/>
+        <DeathArray index="Normal" ModelLink="UH60Death"/>
+        <DeathCustoms index="5" ActorModel=""/>
     </CActorUnit>
     <CActorUnit id="AH32Viper" parent="GenericUnitStandard" unitName="AH32Viper">
         <Macros value="TerrainSquibAnimations"/>
@@ -13294,7 +13316,7 @@
         <On index="0" Send="Create SoundEmitter JavelinGunner_Ambience"/>
         <PortraitModel value="HillPortrait"/>
         <WalkAnimMoveSpeed value="2.8281"/>
-        <HeroIcon value="Assets\Textures\hillportrait_static.dds"/>
+        <HeroIcon value="Buttons\Portraits\BTN_Jav_Portrait.dds"/>
         <HighlightTooltip value="Unit/Name/JavelinGunner"/>
         <SoundArray index="Ready" value="Hill_Ready"/>
         <SoundArray index="Help" value="Hill_Help"/>
@@ -13302,7 +13324,7 @@
         <SoundArray index="Yes" value="Hill_Yes"/>
         <SoundArray index="Attack" value="Hill_Attack"/>
         <SoundArray index="Pissed" value="Hill_Pissed"/>
-        <UnitIcon value="Assets\Textures\hillportrait_static.dds"/>
+        <UnitIcon value="Buttons\Portraits\BTN_Jav_Portrait.dds"/>
     </CActorUnit>
     <CActorDoodad id="JunkPileSpaceShips">
         <On index="0" Send="Create {} Doodad_JunkPileSpaceShips"/>
@@ -14136,7 +14158,7 @@
     <CActorUnit id="PlatoonLeader" parent="TemplateHeroActor" unitName="PlatoonLeader">
         <On index="0" Send="Create SoundEmitter PlatoonLeader_Ambience"/>
         <PortraitModel value="ToshPortrait"/>
-        <HeroIcon value="Assets\Textures\toshportrait_static.dds"/>
+        <HeroIcon value="Assets\Buttons\BTN_PL.dds"/>
         <HighlightTooltip value="Unit/Name/PlatoonLeader"/>
         <SoundArray index="Birth" value="Tosh_Birth"/>
         <SoundArray index="Ready" value="Tosh_Ready"/>
@@ -20175,6 +20197,7 @@
             <Image index="0" value="Assets\Wireframes\AH42_Wireframe.dds"/>
         </Wireframe>
         <WireframeShieldColor value="0,128,128,128"/>
+        <AbilSoundArray index="0" AbilCmd="" Sound=""/>
     </CActorUnit>
     <CActorUnit id="GargoyleActor" parent="TemplateT2Zombie" unitName="Gargoyle">
         <On index="50" Terms="ActorCreation" Send="Create InfestedCivilian_Moan"/>
@@ -22715,6 +22738,7 @@
         <On index="2" Terms="UnitBirth.AH32Viper" Send="Create"/>
         <On Terms="UnitBirth.UH60" Send="Create"/>
         <On Terms="UnitBirth.AH42" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
         <Inherits index="Decal" value="1"/>
     </CActorSound>
     <CActorAction id="HopperAttack" parent="GenericAttack" effectAttack="HopperClawsDamage">
